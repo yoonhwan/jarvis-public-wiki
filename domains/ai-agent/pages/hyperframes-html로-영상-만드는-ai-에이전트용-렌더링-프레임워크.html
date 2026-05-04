@@ -1,0 +1,71 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HyperFrames — HTML로 영상 만드는 AI 에이전트용 렌더링 프레임워크 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>HyperFrames — HTML로 영상 만드는 AI 에이전트용 렌더링 프레임워크</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>HyperFrames — HTML로 영상 만드는 AI 에이전트용 렌더링 프레임워크</h1>
+<blockquote>Source candidate from <code>News-Links/2026-04-29 HyperFrames OpenAI Codex 공식 플러그인/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>HyperFrames — HTML로 영상 만드는 AI 에이전트용 렌더링 프레임워크</h1>
+<blockquote>원본: <a href="https://www.threads.com/@h2smusic/post/DXqw7mBkyTh">https://www.threads.com/@h2smusic/post/DXqw7mBkyTh</a></blockquote>
+<blockquote>작성자: @h2smusic (Threads, 22시간 전)</blockquote>
+<h2>한 줄 요약</h2>
+<p>HeyGen의 <em>HyperFrames</em>가 <em>OpenAI Codex 플러그인</em> 형태까지 제공되면서, AI 에이전트가 <em>HTML 기반으로 영상 컴포지션을 작성하고 직접 렌더링</em>하는 흐름이 훨씬 쉬워졌다.</p>
+<h2>스레드 핵심 포인트</h2>
+<ul>
+<li><em>설치가 매우 간단</em>하다고 강조 — “단 한 줄 명령어”로 시작 가능</li>
+<li>사람 중심의 React 영상 제작 도구가 Remotion이라면,</li>
+</ul>
+<p>  HyperFrames는 <em>AI가 HTML을 써서 영상을 만드는 자동화 프레임워크</em>라는 포지셔닝</p>
+<ul>
+<li>언어 모델이 HTML을 잘 다룬다는 점을 전제로,</li>
+</ul>
+<p>  <em>에이전트 친화적인 영상 생성 인터페이스</em>를 설계한 것이 핵심</p>
+<ul>
+<li>OpenAI Codex의 <em>공식 플러그인</em> 형태 지원 소식이 포인트</li>
+</ul>
+<h2>공식 저장소 기준 팩트 체크</h2>
+<ul>
+<li>GitHub: <code>heygen-com/hyperframes</code></li>
+<li>슬로건: <em>Write HTML. Render video. Built for agents.</em></li>
+<li>라이선스: <em>Apache 2.0</em></li>
+<li>요구사항: <em>Node.js &gt;= 22</em>, <em>FFmpeg</em></li>
+<li>기본 철학:</li>
+<ul>
+<li><em>HTML-native</em> — React/전용 DSL 없이 HTML + CSS 중심</li>
+<li><em>AI-first</em> — 에이전트 워크플로우를 1급 시민으로 설계</li>
+<li><em>Deterministic rendering</em> — 같은 입력이면 같은 결과</li>
+</ul>
+<li>빠른 시작:</li>
+<ul>
+<li><code>npx skills add heygen-com/hyperframes</code></li>
+<li>Codex 플러그인 예시:</li>
+</ul>
+</ul>
+<p>    <code>codex plugin marketplace add heygen-com/hyperframes --sparse .codex-plugin --sparse skills --sparse assets</code></p>
+<h2>왜 흥미로운가</h2>
+<ul>
+<li>LLM은 HTML 구조 이해가 강해서 <em>비디오 레이아웃/오버레이/타임라인 구조를 자연스럽게 생성</em>하기 좋음</li>
+<li>React 컴포넌트 문법보다 <em>직접적인 HTML 조작</em>이 에이전트 생성 품질에 유리할 수 있음</li>
+<li>웹 페이지 → 영상, 문서 요약 → 영상, CSV → 애니메이션 차트 같은 <em>agentic video pipeline</em>에 잘 맞음</li>
+</ul>
+<h2>Remotion과의 차이 포인트</h2>
+<ul>
+<li><em>Remotion</em>: React 컴포넌트 중심</li>
+<li><em>HyperFrames</em>: HTML + CSS + GSAP 중심</li>
+<li>HyperFrames 쪽 설명은 “AI가 웹 언어로 영상을 만드는 데 더 자연스럽다”는 쪽에 무게</li>
+</ul>
+<h2>자비스 관점 메모</h2>
+<ul>
+<li>OpenClaw/skill-native 계열과 붙이면 <em>문서 → 발표 영상</em>, <em>리포트 → 쇼츠형 영상</em>, <em>대시보드 → 애니메이션 브리핑</em> 자동화 실험 후보가 됨</li>
+<li>특히 <em>HTML 기반 출력</em>을 잘 만드는 에이전트와 상성이 좋아 보임</li>
+<li>yoonhwan 오빠 프로젝트 기준으로는:</li>
+<ul>
+<li>BaseAgent 소개 영상 자동 생성</li>
+<li>Trading 리포트 시각 브리핑 영상화</li>
+<li>핸드오버 문서 → 짧은 설명 영상 변환</li>
+</ul>
+</ul>
+<p>  쪽이 바로 떠오름</p>
+<h2>관련 링크</h2>
+<ul>
+<li>Threads 원문: <a href="https://www.threads.com/@h2smusic/post/DXqw7mBkyTh">https://www.threads.com/@h2smusic/post/DXqw7mBkyTh</a></li>
+<li>GitHub: <a href="https://github.com/heygen-com/hyperframes">https://github.com/heygen-com/hyperframes</a></li>
+<li>문서: <a href="https://hyperframes.heygen.com/introduction">https://hyperframes.heygen.com/introduction</a></li>
+<li>NPM: <a href="https://www.npmjs.com/package/hyperframes">https://www.npmjs.com/package/hyperframes</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-04-29 HyperFrames OpenAI Codex 공식 플러그인/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

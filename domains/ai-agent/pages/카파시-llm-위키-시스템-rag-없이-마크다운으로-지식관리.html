@@ -1,0 +1,73 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>카파시 LLM 위키 시스템 — RAG 없이 마크다운으로 지식관리 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>카파시 LLM 위키 시스템 — RAG 없이 마크다운으로 지식관리</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>카파시 LLM 위키 시스템 — RAG 없이 마크다운으로 지식관리</h1>
+<blockquote>Source candidate from <code>News-Links/2026-04-08 카파시 LLM 위키 시스템/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>카파시 LLM 위키 시스템 — RAG 없이 마크다운으로 지식관리</h1>
+<blockquote><a href="https://www.threads.com/@aboutcorelab/post/DW32d-Vk5GM">원본 Threads 포스트</a> | <a href="https://aboutcorelab.com/llm-wiki-karpathy/">상세 분석 글</a> | <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">GitHub Gist (Karpathy)</a></blockquote>
+<h2>핵심 요약</h2>
+<p>Andrej Karpathy (AI의 아버지, vibe coding 창시자)가 공개한 <strong>LLM Knowledge Base</strong> 시스템.</p>
+<p>논문·기사·자료를 넣으면 AI가 알아서 마크다운 위키를 만들고, 기존 10~15개 문서를 업데이트하고, 백링크까지 자동 생성.</p>
+<p>카파시 본인이 <strong>100개 문서, 40만 단어</strong> 규모로 실제 운영 중.</p>
+<h2>왜 RAG를 버렸나</h2>
+<ul>
+<li>RAG: 질문할 때마다 원본 문서를 새로 읽어야 함 → 비효율</li>
+<li>LLM Wiki: 원본을 한 번 &quot;컴파일&quot;해서 구조화된 위키 생성 → 이후엔 위키에서 바로 꺼내씀</li>
+<li>복잡한 벡터 DB, 파이프라인 없음 — <strong>마크다운 파일 + 폴더 + LLM이 전부</strong></li>
+</ul>
+<h2>3-Layer 아키텍처</h2>
+<table><thead><tr><th>레이어</th><th>역할</th><th>관리자</th></tr></thead><tbody>
+<tr><td>Raw Sources</td><td>논문, 기사, 이미지 등 원본 (불변)</td><td>인간이 수집</td></tr>
+<tr><td>Wiki</td><td>마크다운 파일 — 요약, 개념 정리, 백링크</td><td>LLM 전담</td></tr>
+<tr><td>Schema</td><td>위키 구조와 규칙 정의 (CLAUDE.md 등)</td><td>인간+LLM 공동</td></tr>
+</tbody></table>
+<h3>워크플로우</h3>
+<ol>
+<li><strong>Data Ingest</strong> — 원본 자료를 <code>raw/</code> 폴더에 투입</li>
+<li><strong>LLM Compilation</strong> — LLM이 읽고 위키 페이지 생성/업데이트 (1 소스 → 10~15 페이지 영향)</li>
+<li><strong>Active Maintenance</strong> — 주기적으로 전체 점검, 불일치 수정, 새 연결 생성</li>
+</ol>
+<h2>카파시 13년 원칙 (핵심!)</h2>
+<p>도구가 아닌 원칙이 변하지 않았다:</p>
+<ul>
+<li><strong>능동적 참여</strong> — 수동 소비 금지, 직접 읽고 이해한 뒤 LLM 활용</li>
+<li><strong>구조화</strong> — 이해된 지식을 체계화</li>
+<li><strong>연결</strong> — 문서 간 백링크로 지식 복리 성장</li>
+</ul>
+<p>LLM은 이 원칙의 실행 비용을 극적으로 낮춰줄 뿐, 원칙 자체를 대체하지 않는다.</p>
+<h3>3단계 읽기법</h3>
+<ol>
+<li>Pass 1: 직접 읽기</li>
+<li>Pass 2: LLM에게 설명/요약 요청</li>
+<li>Pass 3: LLM과 Q&amp;A</li>
+</ol>
+<p><strong>수동 읽기가 먼저 — LLM은 능동적 학습의 도구</strong></p>
+<h2>왜 인간은 위키를 포기하나</h2>
+<blockquote>&quot;인간이 전통적 위키를 포기하는 이유는 유지보수 부담이 인지된 가치를 초과하기 때문이다.&quot; — Karpathy</blockquote>
+<ul>
+<li>Obsidian 사용자 150만+, 플러그인 2,700+</li>
+<li>하지만 꾸준히 유지하는 사람은 소수 → 디지털 쓰레기 문제</li>
+</ul>
+<p><strong>LLM의 해법</strong>: 피로 없음, 크로스 레퍼런스 자동 업데이트, 한 번에 15개 파일 수정 가능</p>
+<p>→ 유지보수 비용 ≈ 0 → 가치가 항상 비용 초과 → 포기하지 않게 됨</p>
+<h2>실무 적용 시 주의사항</h2>
+<ul>
+<li><strong>분류 먼저</strong>: 문서 유형별로 다른 추출 전략 (토큰 절약 + 품질 향상)</li>
+<li><strong>토큰 예산 설정</strong>: L0(~200) ~ L3(5-20K) 단계별 명시</li>
+<li><strong>이중 출력 규칙</strong>: 모든 작업 = 직접 산출물 + 위키 업데이트 (둘 다 필수!)</li>
+<li><strong>할루시네이션 주의</strong>: 출처 인용 강제, 정기 스팟체크, 인간이 편집장 역할 유지</li>
+<li><strong>스케일 한계</strong>: 100개 문서 OK, 수만 개는 RAG 하이브리드 필요할 수 있음</li>
+</ul>
+<h2>자비스와의 연관성</h2>
+<p>이 시스템은 자비스의 현재 구조와 유사:</p>
+<ul>
+<li><code>jarvis-vault</code> = Wiki 레이어</li>
+<li><code>MEMORY.md</code> + <code>memory/*.md</code> = Compiled Knowledge</li>
+<li><code>#threads-web-link</code> 채널 = Data Ingest 파이프라인</li>
+</ul>
+<p><strong>확장 아이디어</strong>: <code>raw/</code> 폴더 개념 도입 → 읽은 자료 자동 위키 컴파일 워크플로우</p>
+<h2>참고 링크</h2>
+<ul>
+<li><a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">GitHub Gist — llm-wiki</a></li>
+<li><a href="https://venturebeat.com/data/karpathy-shares-llm-knowledge-base-architecture-that-bypasses-rag-with-an">VentureBeat 분석</a></li>
+<li><a href="https://thenewstack.io/vibe-coding-is-passe/">The New Stack — vibe coding is passe</a></li>
+<li><a href="https://aboutcorelab.com/llm-wiki-karpathy/">aboutcorelab 상세 분석</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-04-08 카파시 LLM 위키 시스템/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

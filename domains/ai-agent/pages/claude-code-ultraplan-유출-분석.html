@@ -1,0 +1,33 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude Code ULTRAPLAN 유출 분석 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>Claude Code ULTRAPLAN 유출 분석</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Claude Code ULTRAPLAN 유출 분석</h1>
+<blockquote>Source candidate from <code>News-Links/2026-04-03 Claude Code ULTRAPLAN과 Plan Mode 한계 분석/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Claude Code ULTRAPLAN 유출 분석</h1>
+<h2>요약</h2>
+<p>Claude Code 소스코드에서 피처 플래그 44개 중 ULTRAPLAN이 발견됨. Matt Maher의 Plan Mode 벤치마크와 직접 연결되는 기능.</p>
+<h2>벤치마크 결과 (Matt Maher Planning Benchmark)</h2>
+<table><thead><tr><th>모델/도구</th><th>점수</th></tr></thead><tbody>
+<tr><td>GPT-5.4 extra high (Codex CLI)</td><td>95%</td></tr>
+<tr><td>Opus 4.6 (Cursor)</td><td>93%</td></tr>
+<tr><td>Opus 4.6 (Claude Code execution)</td><td>92.9%</td></tr>
+<tr><td>Sonnet 4.6 (Claude Code)</td><td>92.4%</td></tr>
+<tr><td>Opus 4.6 (Claude Code plan mode)</td><td>77%</td></tr>
+<tr><td>Gemini 3.1 Pro (Gemini CLI)</td><td>52%</td></tr>
+</tbody></table>
+<h2>핵심 인사이트</h2>
+<ol>
+<li><strong>Plan 모드 끄세요</strong> — Execution 모드에서 &#x27;계획을 세워줘&#x27;가 Opus 77%→92.9% (15점↑)</li>
+<li><strong>도구가 모델보다 중요</strong> — 같은 모델이 Cursor에 들어가면 전부 점수 상승 (예외 없음, 최대 16점)</li>
+<li>Cursor가 이긴 이유: 계획 완료 후 자체 검증 → 원본 요구사항과 대조 → 빠진 항목 자동 추가</li>
+</ol>
+<h2>ULTRAPLAN이란?</h2>
+<ul>
+<li>복잡한 계획 작업을 위한 별도 워크플로우</li>
+<li>현재 Plan 모드는 로컬 세션에서 돌아가지만, ULTRAPLAN은 별도 컨텍스트에서 실행</li>
+<li>계획 검증이 내장 — Maher가 Cursor에서 높은 점수를 본 이유와 같은 맥락</li>
+</ul>
+<h2>키워드</h2>
+<p>ULTRAPLAN, Claude Code, Plan Mode, Matt Maher, GPT-5.4, Cursor, 벤치마크</p>
+<h2>링크</h2>
+<ul>
+<li>벤치마크: <a href="https://github.com/bladnman/planning<em>benchmark">https://github.com/bladnman/planning</em>benchmark</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-04-03 Claude Code ULTRAPLAN과 Plan Mode 한계 분석/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

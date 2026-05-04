@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Memvid — AI 에이전트 메모리의 SQLite · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>Memvid — AI 에이전트 메모리의 SQLite</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Memvid — AI 에이전트 메모리의 SQLite</h1>
+<blockquote>Source candidate from <code>News-Links/2026-04-08 Memvid/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Memvid — AI 에이전트 메모리의 SQLite</h1>
+<blockquote>AI 에이전트에 기억력을 주려면 보통 벡터 DB를 띄우고, 임베딩 서비스를 연결하고, RAG 파이프라인을 조립합니다. Memvid는 이 모든 걸 <code>.mv2</code> 파일 하나로 대체합니다.</blockquote>
+<p><strong>Source</strong>: <a href="https://www.threads.com/@github.trending/post/DWxUXBsE5Uu">github.trending@Threads</a></p>
+<hr>
+<h2>핵심 개요</h2>
+<ul>
+<li><strong>BM25 전문 검색 + HNSW 벡터 검색 + 임베딩 + 메타데이터</strong> 전부 단일 <code>.mv2</code> 바이너리 파일 안에 내장</li>
+<li>서버 불필요 — <strong>완전 임베디드/서버리스</strong></li>
+<li>텍스트, PDF, 엑셀, 오디오 입력 지원</li>
+<li>Rust 코어 + Python / Node.js SDK 제공</li>
+<li>라이선스: Apache-2.0</li>
+</ul>
+<hr>
+<h2>핵심 비유: &quot;AI 에이전트 메모리의 SQLite&quot;</h2>
+<p>PostgreSQL 대신 SQLite를 쓰듯, Chroma/Qdrant/Weaviate 같은 벡터 DB 서버 대신 <strong><code>.mv2</code> 파일 하나</strong>를 쓴다.</p>
+<ul>
+<li>파일 복사 = 에이전트의 전체 기억 복제</li>
+<li>이메일로 전송 가능</li>
+<li>Git으로 버전 관리 가능</li>
+<li>서버 기반 메모리 시스템에서는 불가능한 일</li>
+</ul>
+<hr>
+<h2>진화 과정</h2>
+<table><thead><tr><th>버전</th><th>방식</th><th>특징</th></tr></thead><tbody>
+<tr><td>V1</td><td>Python — 텍스트를 QR코드로 변환 → MP4 저장</td><td>바이럴은 됐지만 실용성 낮음</td></tr>
+<tr><td>V2</td><td>Rust 완전 재작성</td><td>커스텀 바이너리 포맷, 하이브리드 검색, 크래시 복구 → 프로덕션급</td></tr>
+</tbody></table>
+<hr>
+<h2>.mv2 파일 구조</h2>
+<pre><code>4KB 헤더
+→ 내장 WAL (Write-Ahead Log)
+→ 데이터 세그먼트 (zstd/LZ4 압축)
+→ 인덱스 세그먼트
+→ 푸터</code></pre>
+<ul>
+<li>모든 쓰기: <strong>append-only</strong> (크래시 안전성 보장)</li>
+<li>읽기: <strong>memmap2 zero-copy</strong> 메모리 매핑</li>
+<li>동일 입력 → 바이트 단위 동일 출력 (결정론적 구조)</li>
+</ul>
+<hr>
+<h2>Cargo Feature Flags</h2>
+<table><thead><tr><th>Feature</th><th>추가 기능</th><th>용도</th></tr></thead><tbody>
+<tr><td>기본</td><td>lex + pdf_extract + simd</td><td>경량 바이너리</td></tr>
+<tr><td><code>vec</code></td><td>ONNX Runtime 로컬 임베딩</td><td>—</td></tr>
+<tr><td><code>whisper</code></td><td>오디오 전사</td><td>—</td></tr>
+<tr><td><code>clip</code></td><td>이미지 임베딩</td><td>—</td></tr>
+<tr><td><code>encryption</code></td><td>AES-GCM 암호화</td><td>—</td></tr>
+</tbody></table>
+<p>엣지 디바이스: 5MB 바이너리 / 풀 스펙: 전부 켜서 배포</p>
+<hr>
+<h2>경쟁 구도</h2>
+<table><thead><tr><th>솔루션</th><th>방식</th><th>서버 필요</th></tr></thead><tbody>
+<tr><td>Mem0</td><td>SaaS 기반</td><td>✅</td></tr>
+<tr><td>Zep</td><td>그래프 엔진</td><td>✅</td></tr>
+<tr><td>Letta (구 MemGPT)</td><td>LLM이 직접 메모리 관리</td><td>✅</td></tr>
+<tr><td><strong>Memvid</strong></td><td><strong>임베디드/서버리스</strong></td><td>❌</td></tr>
+</tbody></table>
+<h3>Memvid 한계</h3>
+<ul>
+<li>현재 <strong>단일 writer만 지원</strong> (멀티 에이전트 동시 쓰기 불가)</li>
+<li>네트워크 공유 메모리 기능은 직접 구현 필요</li>
+</ul>
+<hr>
+<h2>이런 분께 추천</h2>
+<ul>
+<li>에이전트에 장기 기억을 붙이고 싶은데 벡터 DB 운영이 부담인 개발자</li>
+<li>엣지/오프라인 환경에서 AI를 돌리는 팀</li>
+<li>RAG 파이프라인 복잡도에 지친 분</li>
+<li>에이전트 메모리를 Git처럼 버전 관리하고 싶은 분</li>
+</ul>
+<blockquote>멀티 에이전트 동시 쓰기나 팀 간 실시간 메모리 공유가 핵심이라면 서버 기반 솔루션이 더 적합</blockquote>
+<hr>
+<h2>현황 (2026년 기준)</h2>
+<ul>
+<li>⭐ GitHub 14K+ 스타</li>
+<li>👥 기여자 23명</li>
+<li>🚀 2026년 1~3월에만 6개 릴리즈</li>
+<li>커뮤니티 요청: MCP 통합, llama.cpp 연동 등</li>
+</ul>
+<hr>
+<h2>링크</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/memvid/memvid">memvid/memvid</a></li>
+<li>Threads 원문: <a href="https://www.threads.com/@github.trending/post/DWxUXBsE5Uu">https://www.threads.com/@github.trending/post/DWxUXBsE5Uu</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-04-08 Memvid/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

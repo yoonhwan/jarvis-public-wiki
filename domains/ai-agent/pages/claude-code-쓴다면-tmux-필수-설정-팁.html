@@ -1,0 +1,42 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude Code 쓴다면 tmux 필수 설정 팁 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>Claude Code 쓴다면 tmux 필수 설정 팁</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Claude Code 쓴다면 tmux 필수 설정 팁</h1>
+<blockquote>Source candidate from <code>News-Links/2026-02-24 Claude Code tmux 필수 설정 팁.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Claude Code 쓴다면 tmux 필수 설정 팁</h1>
+<h2>📋 요약</h2>
+<p>Claude Code 사용자를 위한 tmux 꿀팁. tmux는 하나의 터미널에서 여러 터미널을 관리하는 도구로, Claude Code의 터미널 사용 수요 증가에 맞춰 핵심 설정 2가지를 공유.</p>
+<h2>💡 핵심 내용</h2>
+<h3>tmux를 사용해야 하는 이유</h3>
+<ul>
+<li>터미널 창 관리 매우 쉬움</li>
+<li>실수로 터미널 종료해도 상관없음 (세션 유지)</li>
+</ul>
+<h3>필수 설정 2가지</h3>
+<pre><code># ~/.tmux.conf에 추가
+set -g mouse on
+set-option -g history-limit 50000</code></pre>
+<ol>
+<li><strong><code>set -g mouse on</code></strong> — 마우스 지원 활성화</li>
+<ul>
+<li>설정 안 하면 창간 이동, 위로 스크롤을 마우스로 할 수 없음</li>
+</ul>
+</ol>
+<ol>
+<li><strong><code>set-option -g history-limit 50000</code></strong> — 스크롤 히스토리 확장</li>
+<ul>
+<li>기본값 2000줄 → 50000줄로 확장</li>
+<li>긴 작업 시 히스토리를 못 보는 경우 방지</li>
+</ul>
+</ol>
+<h3>댓글 추천: oh-my-tmux</h3>
+<ul>
+<li><a href="https://www.threads.com/@shydecl">@shydecl</a> 추천: <a href="https://github.com/gpakosz/.tmux">oh-my-tmux (gpakosz/.tmux)</a></li>
+<li>tmux 설정을 편하게 관리할 수 있는 프레임워크</li>
+</ul>
+<h2>📊 반응</h2>
+<ul>
+<li>👁️ 20.2K views | ❤️ 228 likes | 💬 16 comments | 🔄 92 reposts | 📤 120 shares</li>
+</ul>
+<h2>🔗 원본</h2>
+<ul>
+<li><a href="https://www.threads.com/@devdesign.kr/post/DVGmtfMEhkJ">Threads 원문</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-02-24 Claude Code tmux 필수 설정 팁.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

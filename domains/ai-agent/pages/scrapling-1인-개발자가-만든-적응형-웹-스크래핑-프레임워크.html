@@ -1,0 +1,85 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Scrapling — 1인 개발자가 만든 적응형 웹 스크래핑 프레임워크 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>Scrapling — 1인 개발자가 만든 적응형 웹 스크래핑 프레임워크</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Scrapling — 1인 개발자가 만든 적응형 웹 스크래핑 프레임워크</h1>
+<blockquote>Source candidate from <code>News-Links/2026-04-29 Scrapling 적응형 웹 스크래핑 프레임워크/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Scrapling — 1인 개발자가 만든 적응형 웹 스크래핑 프레임워크</h1>
+<blockquote>원본: <a href="https://www.threads.com/@jisang0914/post/DXmUnGNGo4z">https://www.threads.com/@jisang0914/post/DXmUnGNGo4z</a></blockquote>
+<blockquote>작성자: @jisang0914 (Threads, 2일 전, 43.6K views)</blockquote>
+<blockquote>GitHub: <a href="https://github.com/D4Vinci/Scrapling">https://github.com/D4Vinci/Scrapling</a></blockquote>
+<h2>한 줄 요약</h2>
+<p>이집트 개발자 Karim Shoair가 혼자 만든 파이썬 웹 스크래핑 프레임워크. <strong>GitHub 38,700 스타</strong>, BS4 대비 최대 <strong>1,679배 빠름</strong>, Cloudflare 봇 차단 <strong>자동 우회</strong>, 사이트 리디자인되어도 셀렉터를 <strong>자동 재탐색</strong>(<code>adaptive=True</code> 한 줄).</p>
+<h2>핵심 키포인트</h2>
+<ul>
+<li><strong>개발자 커뮤니티 첫 반응 4개</strong> → 18개월 뒤 <strong>GitHub 전체 트렌딩 1위</strong></li>
+<li><strong>2026년 2월 v0.4 출시</strong> → 주당 8,000 스타 폭증 → WIRED 보도</li>
+<li><strong>Cloudflare CTO 코멘트</strong>: &quot;우리가 바꾸면 저쪽도 바꾼다&quot; (창과 방패 구도)</li>
+<li><strong>만든이 Karim Shoair</strong>: 원래 침투 테스트(보안) 도구 개발자 → 봇 차단 시스템을 뚫는 법을 아는 사람이 만든 우회 도구</li>
+<li>설치: <code>pip install scrapling</code> 한 줄, 오픈소스</li>
+</ul>
+<h2>기존 도구와 다른 점 3가지</h2>
+<table><thead><tr><th>#</th><th>차별점</th><th>효과</th></tr></thead><tbody>
+<tr><td>1</td><td>BS4 대비 <strong>1,679배 속도</strong></td><td>대규모 크롤링 비용/시간 단축</td></tr>
+<tr><td>2</td><td><strong>Cloudflare 등 봇 차단 자동 우회</strong></td><td>차단 회피용 별도 코드 불필요</td></tr>
+<tr><td>3</td><td><strong>셀렉터 자동 재탐색</strong> (adaptive)</td><td>사이트 리디자인되어도 코드 유지</td></tr>
+</tbody></table>
+<h3>3번이 핵심 — Adaptive Selector</h3>
+<ul>
+<li>요소를 처음 저장할 때 <strong>다차원 지문</strong>을 DB에 저장</li>
+<ul>
+<li>태그 / 텍스트 / 속성 / DOM 경로 / 부모 / 형제</li>
+</ul>
+<li>사이트 구조가 바뀌면 모든 요소를 순회하며 <strong>유사도 점수</strong> 계산</li>
+<li>코드 변경: <code>adaptive=True</code> 한 줄 추가로 끝</li>
+<li>기존 스크래핑은 CSS 셀렉터 하나 바뀌면 코드 다시 짜야 함</li>
+</ul>
+<h2>MCP 서버 (2026년 3월 말 업데이트)</h2>
+<ul>
+<li>Claude / Cursor 등 AI 도구에 웹 스크래핑 능력 <strong>직접 부착</strong></li>
+<li>경쟁 MCP 서버: 페이지 <strong>전체 HTML</strong>을 AI에 넘김 → 토큰 폭발</li>
+<li>Scrapling MCP: CSS 셀렉터로 <strong>필요한 부분만 추출</strong> → <strong>토큰 비용 절감</strong></li>
+<li>시사점: AI 에이전트가 직접 웹을 긁는 시대의 인프라 후보</li>
+</ul>
+<h2>바이럴 그림자 — 밈코인 사건</h2>
+<ul>
+<li>바이럴 직후 누군가 <code>$Scrapling</code> 밈코인을 만듦</li>
+<li>Karim이 순간적으로 홍보 → 5시간 만에 가격 폭락</li>
+<li>WIRED 인용: &quot;사기꾼들&quot; — 투자자 반응</li>
+<li>Karim이 게시물 삭제 + 사과: &quot;돈은 자선 단체에 기부, 어떤 이익도 취하지 않겠다&quot;</li>
+<li>교훈: 오픈소스가 바이럴 되면 개발자에게도 의도치 않은 시험이 옴</li>
+</ul>
+<h2>WIRED 기사 인용</h2>
+<blockquote>&quot;OpenClaw 유저들이 Scrapling으로 Cloudflare를 대규모로 우회하고 있다.&quot;</blockquote>
+<p>당시 OpenClaw이 GitHub 역사상 <strong>가장 빠르게 성장한 레포</strong>였고, 그 유저들이 Scrapling을 조합해 쓴 게 바이럴의 직접적 원인.</p>
+<blockquote>⚠️ 여기서 언급된 &quot;OpenClaw&quot;은 원문 표기 그대로. 우리 OpenClaw 프로덕트와 동명인지 동일 도구인지 검증 필요.</blockquote>
+<h2>큰 그림</h2>
+<ul>
+<li>웹 스크래핑 = AI 학습 데이터의 입구</li>
+<li>Cloudflare가 막고 → 스크래퍼가 뚫고 → Cloudflare가 다시 막는 군비 경쟁</li>
+<li>그 최전선에 38,700 스타짜리 <strong>1인 오픈소스</strong>가 있다</li>
+</ul>
+<h2>자비스 활용 후보 ⭐</h2>
+<ul>
+<li><strong>crawl-lab 프로젝트</strong>와 직접 연결 — 현재 BS4/playwright 기반이면 마이그레이션 검토</li>
+<li><strong>agent-browser 대안/보완</strong> — adaptive selector로 셀렉터 깨짐 문제 해결</li>
+<li><strong>OpenClaw MCP 통합</strong> — Scrapling MCP 서버를 OpenClaw에 추가하면 Slack/대시보드에서 직접 스크래핑</li>
+<li><strong>news-digest 스킬 안정성</strong> — 뉴스 사이트 리디자인에도 셀렉터 자동 복구</li>
+<li><strong>Cloudflare 우회 대체</strong> — 기존 우회 도구(undetected-chromedriver 등) 대체 가능성</li>
+</ul>
+<h2>액션 아이템</h2>
+<ul>
+<li>[ ] <code>pip install scrapling</code> 으로 crawl-lab 샌드박스에서 PoC</li>
+<li>[ ] <code>adaptive=True</code> 옵션 실측 (셀렉터 변경 시뮬레이션)</li>
+<li>[ ] Scrapling MCP 서버 mcp-manager로 추가 시도</li>
+<li>[ ] WIRED 원문 확인하여 &quot;OpenClaw&quot; 표기 검증</li>
+</ul>
+<h2>댓글 반응</h2>
+<ul>
+<li>&quot;쩌..쩔어&quot;</li>
+<li>&quot;아니 이런게 잇엇는데 왜 몰랏지 ai로 크롤링하는데..&quot;</li>
+<li>&quot;흥미롭네. Scraping github 주소 알려줄래?&quot;</li>
+<li>(봇한테 말걸어도 대답 안 한다는 농담 댓글에) 작성자: &quot;아닙니다 ^^&quot;</li>
+</ul>
+<h2>참여 지표</h2>
+<ul>
+<li>좋아요: 312 / 리포스트: 18 / 답글: 108 / 공유: 260 (1번 게시물 기준)</li>
+<li>후속 게시물 6개 (작성자가 직접 스레드 확장)</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-04-29 Scrapling 적응형 웹 스크래핑 프레임워크/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

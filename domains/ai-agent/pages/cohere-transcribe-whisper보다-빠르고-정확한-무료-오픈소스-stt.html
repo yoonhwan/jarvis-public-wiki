@@ -1,0 +1,69 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cohere Transcribe — Whisper보다 빠르고 정확한 무료 오픈소스 STT · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>Cohere Transcribe — Whisper보다 빠르고 정확한 무료 오픈소스 STT</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Cohere Transcribe — Whisper보다 빠르고 정확한 무료 오픈소스 STT</h1>
+<blockquote>Source candidate from <code>News-Links/2026-03-28 Cohere Transcribe - Whisper보다 빠른 무료 오픈소스 STT/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Cohere Transcribe — Whisper보다 빠르고 정확한 무료 오픈소스 STT</h1>
+<blockquote>원본: <a href="https://www.threads.com/@managerkim.ai/post/DWXTe-OkmEd">https://www.threads.com/@managerkim.ai/post/DWXTe-OkmEd</a></blockquote>
+<blockquote>원문 기사: <a href="https://managerkim.com/news/2026-03-27-cohere-transcribe-open-source-asr-beats-whisper-14-languages">https://managerkim.com/news/2026-03-27-cohere-transcribe-open-source-asr-beats-whisper-14-languages</a></blockquote>
+<h2>한 줄 요약</h2>
+<p>OpenAI Whisper보다 오류율 27% 낮고 3.6배 빠른 오픈소스 STT 모델. 한국어 포함 14개 언어, Apache 2.0 무료.</p>
+<h2>핵심 비교 (Whisper vs Cohere Transcribe)</h2>
+<table><thead><tr><th>항목</th><th>OpenAI Whisper Large v3</th><th>Cohere Transcribe</th></tr></thead><tbody>
+<tr><td>WER (오류율)</td><td>~7%</td><td>~5% (27% 낮음)</td></tr>
+<tr><td>RTFx (처리 속도)</td><td>146</td><td><strong>525</strong> (3.6배 빠름)</td></tr>
+<tr><td>1시간 음성 처리 시간</td><td>~25초</td><td><strong>~7초</strong></td></tr>
+<tr><td>라이선스</td><td>MIT</td><td>Apache 2.0</td></tr>
+<tr><td>한국어 지원</td><td>✅</td><td>✅</td></tr>
+</tbody></table>
+<h2>속도 지표 (RTFx)</h2>
+<ul>
+<li>RTFx = 실시간 대비 처리 배수 (숫자 클수록 빠름)</li>
+<li>1분짜리 음성 파일을 0.1초에 처리하면 RTFx = 600</li>
+<li><strong>Cohere: RTFx 525</strong> — 2시간 강의를 14초에 텍스트화 가능</li>
+</ul>
+<h2>인간 선호도 평가 결과</h2>
+<ul>
+<li>전문 평가자가 각 모델 결과물 직접 비교</li>
+<li>평균 승률 <strong>61%</strong> (50% = 동률 기준)</li>
+<li>IBM Granite 4.0 대비: <strong>78%</strong> 승</li>
+<li>NVIDIA Canary Qwen 2.5B 대비: <strong>67%</strong> 승</li>
+<li>정확성, 의미 보존, 고유명사 인식, 형식 모두 평가</li>
+</ul>
+<h2>지원 언어 (14개)</h2>
+<p>한국어, 영어, 프랑스어, 독일어, 이탈리아어, 스페인어, 포르투갈어, 그리스어, 네덜란드어, 폴란드어, 아랍어, 베트남어, 중국어, 일본어</p>
+<h2>시스템 요구사항</h2>
+<ul>
+<li>파라미터: 20억 개 (약 4~8GB VRAM)</li>
+<li>NVIDIA GPU 권장, CPU도 동작 (느림)</li>
+</ul>
+<h2>설치 및 사용법</h2>
+<pre><code>pip install &quot;transformers&gt;=4.56&quot;</code></pre>
+<pre><code>import torch
+from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq
+
+model_id = &quot;CohereLabs/cohere-transcribe-03-2026&quot;
+device = &quot;cuda:0&quot; if torch.cuda.is_available() else &quot;cpu&quot;
+
+processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
+model = AutoModelForSpeechSeq2Seq.from_pretrained(
+    model_id, trust_remote_code=True
+).to(device)
+model.eval()
+
+# 내 음성 파일 경로를 넣으면 됩니다</code></pre>
+<h2>활용 용도</h2>
+<ul>
+<li>한국어 회의록 자동 작성</li>
+<li>인터뷰 내용 정리</li>
+<li>강의 자막 생성</li>
+<li>SSH/CI 환경에서도 사용 가능</li>
+</ul>
+<h2>관련 링크</h2>
+<ul>
+<li>HuggingFace: <code>CohereLabs/cohere-transcribe-03-2026</code></li>
+<li>기사: <a href="https://managerkim.com/news/2026-03-27-cohere-transcribe-open-source-asr-beats-whisper-14-languages">https://managerkim.com/news/2026-03-27-cohere-transcribe-open-source-asr-beats-whisper-14-languages</a></li>
+</ul>
+<h2>커뮤니티 반응</h2>
+<ul>
+<li>&quot;위스퍼는 너무 구식이죠&quot; (sasirim)</li>
+<li>&quot;서비스에 STT 도입하려 했는데 좋네요&quot; (sungblab1119)</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-03-28 Cohere Transcribe - Whisper보다 빠른 무료 오픈소스 STT/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

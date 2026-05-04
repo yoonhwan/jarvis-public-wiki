@@ -1,0 +1,50 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Superpowers와 OpenSpec을 함께 사용하는 방법 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>Superpowers와 OpenSpec을 함께 사용하는 방법</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Superpowers와 OpenSpec을 함께 사용하는 방법</h1>
+<blockquote>Source candidate from <code>News-Links/2026-03-22 Superpowers와 OpenSpec을 함께 사용하는 방법/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Superpowers와 OpenSpec을 함께 사용하는 방법</h1>
+<blockquote>원본: <a href="https://www.threads.com/@write<em>dev.san/post/DWJymCTkv-t">https://www.threads.com/@write</em>dev.san/post/DWJymCTkv-t</a></blockquote>
+<h2>요약</h2>
+<p><strong>superpowers</strong>와 <strong>openspec</strong> 두 도구를 구현 규모에 따라 다르게 조합하여 사용하는 워크플로우를 제안하는 글. 핵심은 &quot;변경 크기에 따라 워크플로우를 나누는 것&quot;이며, 사양(spec)을 항상 최신 상태로 유지하는 것이 프로젝트 중후반부 비용을 줄이는 핵심이라고 강조한다.</p>
+<h2>두 도구의 강점</h2>
+<table><thead><tr><th>도구</th><th>강점</th></tr></thead><tbody>
+<tr><td><strong>superpowers</strong></td><td>심층적인 브레인스토밍, TDD, 동시 구현 (멀티 에이전트 오케스트레이션)</td></tr>
+<tr><td><strong>openspec</strong></td><td>사양을 항상 최신 상태로 유지. main spec + delta spec 구조</td></tr>
+</tbody></table>
+<ul>
+<li><strong>delta spec</strong>: 이번 변경에 대한 사양. 구현 완료 후 main spec에 반영됨.</li>
+<li>항상 최신 사양 안에서 논의와 구현이 진행됨.</li>
+</ul>
+<h2>구현 규모별 워크플로우</h2>
+<h3>1. 규모가 큰 구현/수정</h3>
+<p>초기 구현이나 큰 기능, 기존 구현의 대규모 변경.</p>
+<p><strong>1.1 superpowers로 구현</strong></p>
+<pre><code>/superpowers:brainstorming    → 구현 방향 논의
+/superpowers:write-plan       → 구체적 구현 계획 작성
+/superpowers:execute-plan     → 구현 실행</code></pre>
+<p><strong>1.2 openspec으로 사양 동기화</strong></p>
+<pre><code>/opsx:propose    → superpowers plan 기반으로 사양 생성 (이미 구현 완료이므로 tasks 전부 완료 처리)
+/opsx:archive    → delta spec을 보관하면서 main spec과 동기화</code></pre>
+<h3>2. 규모가 크진 않지만 사양이 필요한 구현</h3>
+<p>기존 openspec 워크플로우를 그대로 사용:</p>
+<pre><code>/opsx:propose → /opsx:apply → /opsx:archive</code></pre>
+<p>superpowers의 심층 계획이 불필요하지만, 사양은 남겨야 하는 규모.</p>
+<h3>3. 규모가 작은 구현/수정</h3>
+<p>별도 사양 작성이 번거로운 작은 수정들:</p>
+<ul>
+<li>에이전트로 바로 수정</li>
+<li><strong>spec-patch</strong> 커맨드로 사양에 반영</li>
+</ul>
+<blockquote>작은 수정이라도 사양에 반영하지 않으면, 에이전트가 원하는 방향과 다른 제안을 하고, 정책과 다른 수정을 하기 쉬움. 누적되면 이전 자료를 다시 찾아 인지시키거나, 자료가 없으면 재조사/재분석 필요 → 시간·토큰 낭비.</blockquote>
+<p><strong>Inline Spec Patch</strong>: <a href="https://gist.github.com/san-t">OpenSpec Inline Spec Patch</a> — ad-hoc 수정을 main spec에 직접 반영하는 커맨드</p>
+<h2>핵심 정리</h2>
+<table><thead><tr><th>변경 규모</th><th>워크플로우</th></tr></thead><tbody>
+<tr><td><strong>큰 수정</strong></td><td>superpowers로 계획·실행 → openspec으로 spec 동기화</td></tr>
+<tr><td><strong>중간 수정</strong></td><td>openspec 워크플로우로 처리</td></tr>
+<tr><td><strong>작은 수정</strong></td><td>바로 수정 → spec-patch로 동기화</td></tr>
+</tbody></table>
+<h2>저자의 인사이트</h2>
+<ul>
+<li>사양 유지에 토큰 소모는 있지만, 프로젝트 중후반부로 갈수록 <strong>사양 없이 진행하는 쪽이 더 큰 소모</strong>를 만든다.</li>
+<li>에이전트가 이전 결정을 모르면 시행착오가 반복되고, 매번 다시 맥락 설명 → 시간·토큰·피로도 누적.</li>
+<li><strong>&quot;이 방식이 저한테는 꽤 잘 맞고 있습니다.&quot;</strong></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-03-22 Superpowers와 OpenSpec을 함께 사용하는 방법/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

@@ -1,0 +1,86 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Anthropic Claude Skill 제작 가이드 - 5가지 핵심 패턴 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>Anthropic Claude Skill 제작 가이드 - 5가지 핵심 패턴</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Anthropic Claude Skill 제작 가이드 - 5가지 핵심 패턴</h1>
+<blockquote>Source candidate from <code>News-Links/Anthropic Claude Skill 제작 가이드 - 5가지 핵심 패턴.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Anthropic Claude Skill 제작 가이드 - 5가지 핵심 패턴</h1>
+<blockquote>[!info] 원본 링크</blockquote>
+<blockquote>- 🧵 Threads 포스트: <a href="https://www.threads.com/@<em>keunyoung</em>/post/DUUNQMpE2m3"><em>keunyoung</em> @ AI Threads</a></blockquote>
+<blockquote>- 📄 Anthropic 공식 블로그: <a href="https://claude.com/blog/complete-guide-to-building-skills-for-claude">A complete guide to building skills for Claude</a></blockquote>
+<blockquote>- 📥 가이드 PDF 다운로드: <a href="https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf?hsLang=en">The Complete Guide to Building Skills for Claude (PDF)</a></blockquote>
+<h2>요약</h2>
+<p>Anthropic이 직접 작성한 <strong>Claude Skill 제작 매뉴얼</strong>의 핵심 내용을 @<em>keunyoung</em>이 한국어로 정리한 쓰레드. Claude에게 반복되는 설명을 Skill로 자동화하고, 더 좋은 결과를 얻기 위한 <strong>5가지 핵심 패턴</strong>을 다룬다. Skill은 Claude가 특정 워크플로우를 일관되게 따르도록 가르치는 방법이며, 단독 사용 또는 MCP 연동 모두 가능하다.</p>
+<hr>
+<h2>5가지 핵심 패턴</h2>
+<h3>1. 순차 워크플로우 조정 (Sequential Workflow Orchestration)</h3>
+<p>단일 시스템 내에서 <strong>정해진 순서대로 단계를 실행</strong>하는 패턴.</p>
+<p><strong>예시:</strong> 고객 온보딩 → 계정 생성 &gt; 결제 설정 &gt; 구독 생성 &gt; 이메일 발송</p>
+<ul>
+<li>각 단계가 이전 단계의 결과(예: 계정 ID)를 사용</li>
+<li>중간 실패 시 완료된 부분을 롤백</li>
+</ul>
+<blockquote>[!tip] 핵심 포인트</blockquote>
+<blockquote>- ✅ <strong>단계 간 의존성을 명확히 정의</strong>하라 — 계정 ID 없이는 결제 설정 불가능</blockquote>
+<blockquote>- ✅ <strong>실패 시 롤백 범위를 미리 정해두라</strong> — 결제 실패 시 생성된 계정도 삭제할지 결정</blockquote>
+<hr>
+<h3>2. 멀티 MCP 조정 (Multi-MCP Coordination)</h3>
+<p>여러 <strong>외부 서비스를 넘나들며</strong> 작업하는 패턴.</p>
+<p><strong>예시:</strong> Figma에서 디자인 추출 &gt; Drive에 저장 &gt; Linear에 작업 생성 &gt; Slack으로 알림</p>
+<ul>
+<li>1번과의 차이: 각 단계가 <strong>다른 서비스</strong>를 호출</li>
+<li>핵심은 <strong>서비스 간 데이터 전달</strong> (Figma → Drive URL → Linear 첨부)</li>
+</ul>
+<blockquote>[!tip] 핵심 포인트</blockquote>
+<blockquote>- 각 서비스 호출 후 <strong>응답 검증</strong> 필수</blockquote>
+<blockquote>- 한 서비스 실패 시에도 <strong>전체가 멈추지 않는</strong> 에러 처리 설계</blockquote>
+<hr>
+<h3>3. 반복 개선 (Iterative Refinement)</h3>
+<p><strong>품질 기준 충족까지 검증-수정을 반복</strong>하는 패턴.</p>
+<p><strong>예시:</strong> 리포트 생성 → 초안 작성 &gt; 품질 검증 &gt; 문제 수정 &gt; 재검증 (기준 만족까지)</p>
+<blockquote>[!tip] 핵심 포인트</blockquote>
+<blockquote>- <strong>구체적 품질 기준 설정</strong> — &quot;좋은 리포트&quot; ❌ → &quot;필수 섹션 5개, 모든 차트에 출처, 오타 0개&quot; ✅</blockquote>
+<blockquote>- <strong>무한 루프 방지</strong> — 최대 3회 같은 반복 제한 설정</blockquote>
+<hr>
+<h3>4. 상황 인식 도구 선택 (Context-Aware Tool Selection)</h3>
+<p>같은 작업이지만 <strong>조건에 따라 다른 도구를 자동 선택</strong>하는 패턴.</p>
+<p><strong>예시:</strong> 파일 저장 시 → 10MB 이상이면 클라우드 / 협업 문서면 Notion / 코드 파일이면 GitHub</p>
+<ul>
+<li>3번과의 차이: 반복이 아닌 <strong>조건 분기</strong></li>
+</ul>
+<blockquote>[!tip] 핵심 포인트</blockquote>
+<blockquote>- <strong>명확한 결정 기준</strong> (파일 크기, 타입, 협업 필요) 정의</blockquote>
+<blockquote>- <strong>선택 이유 설명</strong> — &quot;15MB라서 클라우드에 저장했습니다&quot; (투명성 = 신뢰)</blockquote>
+<blockquote>- <strong>대체 옵션</strong> 준비 — 클라우드 실패 시 로컬 저장</blockquote>
+<hr>
+<h3>5. 도메인 전문 지능 (Domain-Specific Intelligence)</h3>
+<p><strong>전문가의 판단 기준을 규칙으로</strong> 만들어 자동화하는 패턴.</p>
+<p><strong>예시:</strong> 결제 처리 → 제재 리스트 확인 &gt; 국가별 규정 검토 &gt; 사기 위험 평가 &gt; 모두 통과 시 진행</p>
+<ul>
+<li>1~4번이 <strong>작업 흐름</strong>이라면, 5번은 <strong>도메인 지식 자동화</strong></li>
+</ul>
+<blockquote>[!tip] 핵심 포인트</blockquote>
+<blockquote>- 전문가 체크리스트를 <strong>규칙으로 코드화</strong></blockquote>
+<blockquote>- 모든 과정을 <strong>문서화</strong>하여 감사 추적 가능</blockquote>
+<blockquote>- 금융, 의료, 법률 등 <strong>규정 준수가 중요한 분야</strong>에 특히 유용</blockquote>
+<hr>
+<h2>Anthropic 공식 가이드 개요</h2>
+<blockquote>Skills let you teach Claude your workflows once and apply them consistently.</blockquote>
+<p><strong>공식 가이드가 다루는 내용:</strong></p>
+<ul>
+<li>기술 요구사항 및 Skill 구조 모범 사례</li>
+<li>단독 Skill + MCP 연동 워크플로우 패턴</li>
+<li>다양한 유즈케이스에서 검증된 패턴</li>
+<li>테스트, 반복 개선, 배포 방법</li>
+</ul>
+<p><strong>대상 독자:</strong></p>
+<ul>
+<li>일관된 워크플로우를 원하는 개발자</li>
+<li>MCP 커넥터에 워크플로우를 추가하려는 빌더</li>
+<li>반복 작업을 자동화하려는 파워 유저</li>
+<li>조직 표준화를 원하는 팀</li>
+</ul>
+<blockquote>[!note] 소요 시간</blockquote>
+<blockquote>자동화할 상위 2~3개 워크플로우를 알고 있다면, skill-creator를 사용해 약 <strong>15~30분</strong>이면 첫 번째 Skill을 만들고 테스트할 수 있다.</blockquote>
+<hr>
+<h2>관련 노트</h2>
+<ul>
+<li>[[Claude]] | [[Anthropic]] | [[MCP]] | [[AI Agent]]</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/Anthropic Claude Skill 제작 가이드 - 5가지 핵심 패턴.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

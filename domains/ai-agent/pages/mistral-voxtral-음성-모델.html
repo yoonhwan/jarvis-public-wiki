@@ -1,0 +1,380 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mistral Voxtral 음성 모델 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260504-204400-KST">Jarvis Wiki / ai-agent</a><h1>Mistral Voxtral 음성 모델</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Mistral Voxtral 음성 모델</h1>
+<blockquote>Source candidate from <code>News-Links/2026-02-08 Mistral Voxtral 음성 모델.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Mistral Voxtral 음성 모델</h1>
+<p><strong>출처</strong>: <a href="https://www.threads.com/@feelfree<em>ai/post/DUdSSStDG</em>t">Threads @feelfree_ai</a>  </p>
+<p><strong>작성일</strong>: 2026-02-08  </p>
+<p><strong>업데이트</strong>: 2026-02-08 (상세 스펙 추가)  </p>
+<p><strong>태그</strong>: #AI #STT #Mistral #OpenSource #VoiceModel</p>
+<hr>
+<h2>📌 개요</h2>
+<p>Mistral AI가 <strong>Whisper를 대체할 차세대 오픈소스 음성 모델</strong> Voxtral 시리즈를 출시했습니다.</p>
+<ul>
+<li><strong>Apache 2.0 라이선스</strong> - 완전 오픈소스, 상업적 활용 가능</li>
+<li><strong>SOTA 성능</strong> - Whisper large-v3, GPT-4o mini, Gemini 2.5 Flash 능가</li>
+<li><strong>초저비용</strong> - Whisper 대비 절반 이하 비용</li>
+<li><strong>멀티모달</strong> - 음성 + 텍스트 동시 처리</li>
+</ul>
+<hr>
+<h2>🎯 Voxtral 모델 라인업</h2>
+<h3>1️⃣ Voxtral Small (24B)</h3>
+<p><strong>프로덕션급 음성 이해 모델</strong> - 고성능 애플리케이션용</p>
+<h4>핵심 스펙</h4>
+<ul>
+<li><strong>모델 크기</strong>: 24B 파라미터</li>
+<li><strong>컨텍스트</strong>: 32k 토큰 (최대 40분 오디오)</li>
+<li><strong>멀티모달</strong>: 음성 + 텍스트 동시 처리</li>
+<li><strong>백본</strong>: Mistral Small 3.1 기반</li>
+</ul>
+<h4>주요 기능</h4>
+<ul>
+<li>✅ <strong>전용 전사 모드</strong> (Transcription-only mode)</li>
+<li>✅ <strong>음성 Q&amp;A</strong> - 오디오에 대한 질문에 직접 답변</li>
+<li>✅ <strong>요약 생성</strong> - 별도 ASR+LLM 체인 불필요</li>
+<li>✅ <strong>Function Calling</strong> - 음성 명령으로 API 직접 호출 (실험적)</li>
+<li>✅ <strong>텍스트 능력 유지</strong> - 백본 LLM 성능 그대로</li>
+</ul>
+<h4>벤치마크 성능</h4>
+<p><strong>FLEURS 벤치마크</strong> (9개 언어 평균 WER):</p>
+<ul>
+<li>Voxtral Small: <strong>전 언어에서 Whisper large-v3 능가</strong></li>
+<li>특히 유럽 언어에서 SOTA 달성 (영어, 프랑스어, 독일어, 스페인어, 이탈리아어, 포르투갈어, 네덜란드어)</li>
+</ul>
+<p><strong>영어 성능</strong>:</p>
+<ul>
+<li>Short-form (&lt;30초): <strong>ElevenLabs Scribe 수준 또는 초과</strong></li>
+<li>Long-form (&gt;30초): <strong>GPT-4o mini, Gemini 2.5 Flash 능가</strong></li>
+</ul>
+<p><strong>오디오 이해</strong> (Audio Understanding):</p>
+<ul>
+<li>GPT-4o mini, Gemini 2.5 Flash와 경쟁적</li>
+<li>Speech Translation에서 <strong>SOTA 달성</strong></li>
+</ul>
+<p><strong>텍스트 성능</strong>:</p>
+<ul>
+<li>Mistral Small 3.1 백본 성능 유지</li>
+<li>Drop-in replacement 가능</li>
+</ul>
+<hr>
+<h3>2️⃣ Voxtral Mini (3B)</h3>
+<p><strong>엣지/로컬 배포용 경량 모델</strong></p>
+<h4>핵심 스펙</h4>
+<ul>
+<li><strong>모델 크기</strong>: 3B 파라미터</li>
+<li><strong>컨텍스트</strong>: 32k 토큰</li>
+<li><strong>멀티모달</strong>: 음성 + 텍스트 동시 처리</li>
+<li><strong>백본</strong>: Ministral 기반</li>
+</ul>
+<h4>특징</h4>
+<ul>
+<li>🔹 로컬 노트북/엣지 디바이스에서 실행 가능</li>
+<li>🔹 Voxtral Small과 동일한 기능 세트</li>
+<li>🔹 Ministral과 drop-in replacement 가능</li>
+</ul>
+<hr>
+<h3>3️⃣ Voxtral Mini Transcribe</h3>
+<p><strong>API 전사 최적화 모델</strong> - 비용 효율 극대화</p>
+<h4>핵심 스펙</h4>
+<ul>
+<li><strong>API 가격</strong>: $0.001/분 (Whisper 대비 50% 절감)</li>
+<li><strong>지연시간</strong>: OpenAI Whisper 대비 절반 이하</li>
+<li><strong>전사 전용</strong>: 텍스트 생성에 최적화</li>
+</ul>
+<h4>성능</h4>
+<ul>
+<li><strong>Mozilla Common Voice</strong>: SOTA 성능</li>
+<li><strong>영어 short-form</strong>: Whisper large-v3 능가</li>
+<li><strong>가성비</strong>: OpenAI Whisper 절반 비용으로 더 나은 성능</li>
+</ul>
+<hr>
+<h3>4️⃣ Voxtral Realtime (4B)</h3>
+<p><strong>실시간 스트리밍 전사 모델</strong> - 대화형 AI 에이전트용</p>
+<h4>핵심 스펙</h4>
+<ul>
+<li><strong>초저지연</strong>: 200ms 미만 설정 가능</li>
+<li><strong>듀얼 스트림</strong>: 오디오 + 텍스트 동시 처리</li>
+<li><strong>다국어</strong>: 13개 언어 지원</li>
+<li><strong>성능</strong>: 대부분의 비스트리밍 모델 능가</li>
+</ul>
+<h4>특징</h4>
+<blockquote>&quot;Talk naturally. Talk fast. Talk ridiculously fast. Voxtral can handle it.&quot;</blockquote>
+<hr>
+<h2>🌍 지원 언어</h2>
+<h3>공식 지원 언어 (9개)</h3>
+<p>Voxtral Small/Mini 벤치마크 기준:</p>
+<ol>
+<li>🇬🇧 <strong>English</strong> (영어)</li>
+<li>🇪🇸 <strong>Spanish</strong> (스페인어)</li>
+<li>🇫🇷 <strong>French</strong> (프랑스어)</li>
+<li>🇵🇹 <strong>Portuguese</strong> (포르투갈어)</li>
+<li>🇮🇳 <strong>Hindi</strong> (힌디어)</li>
+<li>🇩🇪 <strong>German</strong> (독일어)</li>
+<li>🇳🇱 <strong>Dutch</strong> (네덜란드어)</li>
+<li>🇮🇹 <strong>Italian</strong> (이탈리아어)</li>
+<li>🇸🇦 <strong>Arabic</strong> (아랍어)</li>
+</ol>
+<h3>추가 언어</h3>
+<p>Voxtral Realtime: 13개 언어 지원 (구체적 목록 미공개)</p>
+<hr>
+<h2>🎤 화자 분리 (Speaker Diarization)</h2>
+<h3>현재 상태 (2026-02-08 기준)</h3>
+<h4>✅ API 지원 (실험적)</h4>
+<p>Voxtral Mini Transcribe API에서 <code>diarize</code> 파라미터 제공:</p>
+<pre><code>response = client.audio.transcriptions.create(
+    model=&quot;voxtral-mini-latest&quot;,
+    audio=audio_file,
+    diarize=True  # 화자 분리 활성화
+)</code></pre>
+<h4>제한사항</h4>
+<ul>
+<li>⚠️ <strong>Realtime과 호환 불가</strong> - 스트리밍 모드에서는 diarize 미지원</li>
+<li>⚠️ 화자 ID 정확도는 실험적 단계</li>
+</ul>
+<h4>🔜 로드맵 (Coming Soon)</h4>
+<p>Mistral AI 공식 블로그 발표:</p>
+<ul>
+<li><strong>Speaker segmentation</strong> - 고급 화자 분리</li>
+<li><strong>Advanced diarization</strong> - 정밀한 화자 구분</li>
+<li><strong>Emotion detection</strong> - 감정 인식</li>
+<li><strong>Age estimation</strong> - 화자 연령대 추정</li>
+<li><strong>Word-level timestamps</strong> - 단어 단위 타임스탬프</li>
+<li><strong>Non-speech audio recognition</strong> - 비음성 오디오 인식</li>
+</ul>
+<hr>
+<h2>📊 언어별 WER 성능 (상세)</h2>
+<h3>FLEURS 벤치마크 (9개 언어)</h3>
+<p><strong>Voxtral Small vs. Whisper large-v3</strong> - Macro-average WER (낮을수록 좋음)</p>
+<table><thead><tr><th>언어</th><th>Voxtral Small</th><th>Whisper large-v3</th><th>개선율</th></tr></thead><tbody>
+<tr><td>English</td><td><strong>SOTA</strong></td><td>-</td><td>✅ 능가</td></tr>
+<tr><td>French</td><td><strong>SOTA</strong></td><td>-</td><td>✅ 능가</td></tr>
+<tr><td>German</td><td><strong>SOTA</strong></td><td>-</td><td>✅ 능가</td></tr>
+<tr><td>Spanish</td><td><strong>SOTA</strong></td><td>-</td><td>✅ 능가</td></tr>
+<tr><td>Italian</td><td><strong>SOTA</strong></td><td>-</td><td>✅ 능가</td></tr>
+<tr><td>Portuguese</td><td><strong>SOTA</strong></td><td>-</td><td>✅ 능가</td></tr>
+<tr><td>Dutch</td><td><strong>SOTA</strong></td><td>-</td><td>✅ 능가</td></tr>
+<tr><td>Hindi</td><td><strong>SOTA</strong></td><td>-</td><td>✅ 능가</td></tr>
+<tr><td>Arabic</td><td><strong>우수</strong></td><td>-</td><td>✅ 능가</td></tr>
+</tbody></table>
+<p><em>공식 블로그: &quot;Voxtral Small outperforms Whisper on every task&quot;</em></p>
+<h3>Mozilla Common Voice 15.1 (8개 언어)</h3>
+<p><strong>Voxtral Small vs. 경쟁 모델</strong></p>
+<ul>
+<li>Voxtral Small: <strong>SOTA 달성</strong></li>
+<li>ElevenLabs Scribe: 근접</li>
+<li>GPT-4o mini: 뒤처짐</li>
+<li>Gemini 2.5 Flash: 뒤처짐</li>
+</ul>
+<h3>영어 벤치마크 상세</h3>
+<h4>Short-form (&lt;30초)</h4>
+<p>평가 데이터셋: LibriSpeech Clean, LibriSpeech Other, GigaSpeech, VoxPopuli, Switchboard, CHiME-4, SPGISpeech</p>
+<ul>
+<li>Voxtral Small: <strong>SOTA</strong></li>
+<li>ElevenLabs Scribe: 근접 (절반 비용으로 동등 성능)</li>
+<li>Whisper large-v3: 뒤처짐</li>
+</ul>
+<h4>Long-form (&gt;30초)</h4>
+<p>평가 데이터셋: Earnings-21 10-m, Earnings-22 10-m</p>
+<ul>
+<li>Voxtral Small: <strong>우수</strong></li>
+<li>GPT-4o mini: 뒤처짐</li>
+<li>Gemini 2.5 Flash: 뒤처짐</li>
+</ul>
+<hr>
+<h2>🛠️ 고급 기능</h2>
+<h3>1. Context Biasing (컨텍스트 바이어싱)</h3>
+<p><strong>용도</strong>: 고유명사, 기술 용어, 도메인 특화 어휘 정확도 향상</p>
+<pre><code>response = client.audio.transcriptions.create(
+    model=&quot;voxtral-mini-latest&quot;,
+    audio=audio_file,
+    context_bias=[
+        &quot;Kubernetes&quot;,
+        &quot;FastAPI&quot;,
+        &quot;LangGraph&quot;,
+        &quot;yoonhwan&quot;
+    ]
+)</code></pre>
+<p><strong>제약</strong>:</p>
+<ul>
+<li>최대 100개 단어/구문</li>
+<li>영어에 최적화 (다른 언어는 실험적)</li>
+</ul>
+<hr>
+<h3>2. Timestamp Granularity</h3>
+<p><strong>세그먼트/단어 단위 타임스탬프</strong></p>
+<pre><code>response = client.audio.transcriptions.create(
+    model=&quot;voxtral-mini-latest&quot;,
+    audio=audio_file,
+    timestamp_granularities=[&quot;segment&quot;, &quot;word&quot;]
+)</code></pre>
+<p><strong>제약</strong>:</p>
+<ul>
+<li>⚠️ <code>language</code> 파라미터와 동시 사용 불가 (둘 중 하나만 선택)</li>
+</ul>
+<hr>
+<h3>3. Function Calling (실험적)</h3>
+<p><strong>음성 명령으로 백엔드 함수 직접 호출</strong></p>
+<pre><code>tools = [{
+    &quot;type&quot;: &quot;function&quot;,
+    &quot;function&quot;: {
+        &quot;name&quot;: &quot;get_weather&quot;,
+        &quot;description&quot;: &quot;Get current weather&quot;,
+        &quot;parameters&quot;: {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+                &quot;location&quot;: {&quot;type&quot;: &quot;string&quot;},
+                &quot;format&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;enum&quot;: [&quot;celsius&quot;, &quot;fahrenheit&quot;]}
+            },
+            &quot;required&quot;: [&quot;location&quot;, &quot;format&quot;]
+        }
+    }
+}]
+
+response = client.chat.completions.create(
+    model=&quot;voxtral-small-latest&quot;,
+    messages=[{
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: [{&quot;type&quot;: &quot;audio&quot;, &quot;audio&quot;: audio_chunk}]
+    }],
+    tools=tools
+)</code></pre>
+<p><strong>활용</strong>:</p>
+<ul>
+<li>음성 기반 워크플로우 자동화</li>
+<li>대화형 AI 에이전트에 액션 트리거</li>
+<li>음성 → API 호출 직결 (ASR+NLU 체인 불필요)</li>
+</ul>
+<hr>
+<h3>4. Realtime Transcription</h3>
+<p><strong>실시간 스트리밍 전사</strong></p>
+<pre><code>from mistralai.realtime import RealtimeClient
+
+client = RealtimeClient(api_key=&quot;...&quot;)
+async for chunk in client.transcribe_stream(audio_stream):
+    print(chunk.text)  # 실시간 전사 결과</code></pre>
+<p><strong>특징</strong>:</p>
+<ul>
+<li>200ms 미만 레이턴시</li>
+<li>스트리밍 입력/출력</li>
+<li>⚠️ <code>diarize</code>와 호환 불가</li>
+</ul>
+<hr>
+<h2>💰 가격 비교</h2>
+<table><thead><tr><th>모델</th><th>가격 ($/min)</th><th>상대 비용</th></tr></thead><tbody>
+<tr><td><strong>Voxtral Mini Transcribe</strong></td><td>$0.001</td><td>기준 (1x)</td></tr>
+<tr><td>OpenAI Whisper</td><td>$0.006</td><td>6배</td></tr>
+<tr><td>ElevenLabs Scribe</td><td>~$0.002</td><td>2배</td></tr>
+<tr><td>Assembly AI</td><td>~$0.0025</td><td>2.5배</td></tr>
+</tbody></table>
+<p><strong>Voxtral의 가성비</strong>:</p>
+<ul>
+<li>Whisper 절반 비용으로 <strong>더 나은 성능</strong></li>
+<li>ElevenLabs Scribe 절반 비용으로 <strong>동등 성능</strong></li>
+</ul>
+<hr>
+<h2>🚀 활용 사례</h2>
+<h3>1️⃣ 실시간 대화형 AI 에이전트</h3>
+<ul>
+<li>Voxtral Realtime (200ms 지연) + 음성 합성</li>
+<li>자연스러운 음성 대화 인터페이스</li>
+<li><strong>예</strong>: 음성 비서, 고객 상담 봇</li>
+</ul>
+<h3>2️⃣ 회의록/통화 전사</h3>
+<ul>
+<li>Voxtral Small (고정밀) + 화자 분리 (diarize)</li>
+<li>긴 오디오 처리 (최대 40분)</li>
+<li><strong>예</strong>: Zoom/Teams 회의록 자동 생성</li>
+</ul>
+<h3>3️⃣ 다국어 콘텐츠 번역</h3>
+<ul>
+<li>Voxtral Small Speech Translation (SOTA)</li>
+<li>9개 언어 자동 감지 + 전사</li>
+<li><strong>예</strong>: 글로벌 콘텐츠 로컬라이제이션</li>
+</ul>
+<h3>4️⃣ 엣지 디바이스 배포</h3>
+<ul>
+<li>Voxtral Mini (3B) 로컬 실행</li>
+<li>인터넷 없이 완전 독립 동작</li>
+<li><strong>예</strong>: IoT 디바이스, 스마트 홈</li>
+</ul>
+<h3>5️⃣ 음성 워크플로우 자동화</h3>
+<ul>
+<li>Voxtral Function Calling</li>
+<li>음성 명령 → API 직접 호출</li>
+<li><strong>예</strong>: &quot;서울 날씨 알려줘&quot; → <code>get_weather(&quot;Seoul&quot;)</code> 자동 호출</li>
+</ul>
+<hr>
+<h2>🔗 공식 링크</h2>
+<h3>문서 &amp; 블로그</h3>
+<ul>
+<li><strong>공식 발표</strong>: <a href="https://mistral.ai/news/voxtral/">Voxtral 블로그</a></li>
+<li><strong>논문</strong>: <a href="https://arxiv.org/abs/2507.13264">arXiv:2507.13264</a> (17페이지)</li>
+<li><strong>API 문서</strong>: <a href="https://docs.mistral.ai/capabilities/audio/">Mistral Audio Docs</a></li>
+<li><strong>실시간 전사 블로그</strong>: <a href="https://mistral.ai/news/voxtral-transcribe-2">Voxtral transcribes at the speed of sound</a></li>
+</ul>
+<h3>모델 다운로드 (Hugging Face)</h3>
+<ul>
+<li><strong>Voxtral Small</strong>: <a href="https://huggingface.co/mistralai/Voxtral-Small-24B-2507">mistralai/Voxtral-Small-24B-2507</a></li>
+<li><strong>Voxtral Mini</strong>: <a href="https://huggingface.co/mistralai/Voxtral-Mini-3B-2507">mistralai/Voxtral-Mini-3B-2507</a></li>
+<li><strong>Voxtral Realtime</strong>: <a href="https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602">mistralai/Voxtral-Mini-4B-Realtime-2602</a></li>
+</ul>
+<h3>플레이그라운드</h3>
+<ul>
+<li><strong>Mistral Console</strong>: <a href="https://console.mistral.ai/build/audio/speech-to-text">Speech to Text</a></li>
+<li><strong>Le Chat</strong>: <a href="https://chat.mistral.ai">chat.mistral.ai</a> (음성 모드 제공)</li>
+</ul>
+<hr>
+<h2>📈 로드맵 &amp; Coming Soon</h2>
+<p>Mistral AI 공식 발표 (2026년 예정):</p>
+<ol>
+<li><strong>Speaker segmentation</strong> - 화자 구분 고도화</li>
+<li><strong>Emotion detection</strong> - 감정 인식</li>
+<li><strong>Age/gender estimation</strong> - 화자 속성 추정</li>
+<li><strong>Word-level timestamps</strong> - 단어 단위 타임스탬프</li>
+<li><strong>Non-speech audio recognition</strong> - 효과음, 음악, 배경 소음 인식</li>
+<li><strong>Extended context</strong> - 40분 이상 오디오 지원</li>
+</ol>
+<hr>
+<h2>💡 BaseAgent 적용 아이디어</h2>
+<h3>BYZ-Agents STT 프로바이더 추가</h3>
+<p>현재 STT 아키텍처 검토 중인 상황에서 Voxtral을 고려할 만한 이유:</p>
+<h4>✅ 장점</h4>
+<ol>
+<li><strong>비용 효율</strong>: Groq 10초 최소과금 문제 없음 (실제 사용량만 과금)</li>
+<li><strong>실시간성</strong>: Voxtral Realtime (200ms) + VAD → 중간 결과 표시 가능</li>
+<li><strong>다국어</strong>: 태국어 제외 8개 언어 SOTA (Groq와 동등 이상)</li>
+<li><strong>오픈소스</strong>: 로컬 배포 가능 → 민감 데이터 처리 시 유리</li>
+<li><strong>Function Calling</strong>: 음성 → 액션 직결 (PTT 버튼 시나리오에 적합)</li>
+</ol>
+<h4>⚠️ 단점</h4>
+<ol>
+<li><strong>태국어 미지원</strong> (현재 9개 언어만)</li>
+<li><strong>Function Calling 실험적 단계</strong> (프로덕션 안정성 미검증)</li>
+</ol>
+<h4>권장 하이브리드 아키텍처</h4>
+<pre><code>실시간 자막 (4개 언어):
+  - Voxtral Realtime → 중간 결과 스트리밍
+
+최종 전사 (정밀도 필요):
+  - Voxtral Small + Context Biasing + Diarize
+
+태국어 전용:
+  - Groq Whisper v3 Turbo (발화 단위 전송으로 비용 최적화)</code></pre>
+<hr>
+<h2>📌 메모</h2>
+<h3>yoonhwan 오빠 검토 사항</h3>
+<ul>
+<li>[ ] BYZ-Agents STT 프로바이더로 Voxtral 추가 여부 결정</li>
+<li>[ ] 태국어 지원 없는 점이 치명적인지 확인 필요</li>
+<li>[ ] Voxtral Realtime vs. Deepgram Nova-3 실시간 성능 비교 테스트</li>
+<li>[ ] Function Calling 안정성 검증 (실험적 기능)</li>
+</ul>
+<h3>추가 탐색 필요</h3>
+<ul>
+<li>[ ] 언어별 WER 수치 (논문 Table/Figure 확인)</li>
+<li>[ ] 13개 언어 전체 목록 (Voxtral Realtime)</li>
+<li>[ ] Enterprise 기능 (Private deployment, Domain-specific fine-tuning)</li>
+<li>[ ] Inworld TTS 연동 데모 (2026-08-06 웨비나)</li>
+</ul>
+<hr>
+<p><strong>마지막 업데이트</strong>: 2026-02-08 18:20 KST  </p>
+<p><strong>수집 소스</strong>: Mistral 공식 블로그, arXiv 논문, Hugging Face 모델 카드, Mistral API 문서</p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-02-08 Mistral Voxtral 음성 모델.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
