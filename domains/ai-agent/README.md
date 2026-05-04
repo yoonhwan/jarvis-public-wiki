@@ -1,8 +1,11 @@
-# ai-agent Wiki
+# ai-agent Wiki — legacy redirect
 
-Public GitHub Pages export of sanitized Obsidian `Wikis/ai-agent` pages.
+This repository is a legacy artifact.
 
-- Raw markdown files are excluded.
-- Full reviewed body content is rendered into HTML pages.
-- Generated: 2026-05-04T20:44:00.347415
-- Pages: 84
+Canonical public wiki now lives in one GitHub Pages repository:
+
+- Portal: https://yoonhwan.github.io/jarvis-public-wiki/?v=20260504-211758-KST
+- ai-agent: https://yoonhwan.github.io/jarvis-public-wiki/domains/ai-agent/?v=20260504-211758-KST
+- Canonical repo: https://github.com/yoonhwan/jarvis-public-wiki
+
+This repository is kept only to avoid breaking old links and will be archived/read-only.
