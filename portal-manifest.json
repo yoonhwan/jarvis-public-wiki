@@ -1,7 +1,7 @@
 {
   "version": "20260504-184235-KST",
   "domain_count": 2,
-  "page_count": 116,
+  "page_count": 115,
   "domains": [
     {
       "domain": "ai-agent",
@@ -13,7 +13,7 @@
       "domain": "trading",
       "public_url": "https://yoonhwan.github.io/trading-wiki/",
       "category_count": 2,
-      "page_count": 32
+      "page_count": 31
     }
   ]
 }
