@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-05T00:43:44.509130",
+  "generated_at": "2026-05-17T09:38:06.111710",
   "source": "Wikis/ai-agent/wiki",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260505-004344-KST",
+  "version": "20260517-093805-KST",
   "categories": {
     "concept": {
       "folder": "wiki/concepts",
@@ -531,5 +531,6 @@
       "url": "pages/카파시-llm-위키-시스템-rag-없이-마크다운으로-지식관리.html",
       "raw_body_merged": false
     }
-  ]
+  ],
+  "public_url": "https://yoonhwan.github.io/jarvis-public-wiki/domains/ai-agent/"
 }
