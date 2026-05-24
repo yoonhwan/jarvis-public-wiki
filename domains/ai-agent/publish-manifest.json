@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-17T09:38:06.111710",
+  "generated_at": "2026-05-24T10:35:32.612941",
   "source": "Wikis/ai-agent/wiki",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260517-093805-KST",
+  "version": "build-v2-20260524",
   "categories": {
     "concept": {
       "folder": "wiki/concepts",
@@ -34,9 +34,21 @@
       "raw_body_merged": false
     },
     {
+      "title": "Claude Code CLAUDE.md 4규칙과 후속 8규칙",
+      "source": "Wikis/ai-agent/wiki/concepts/Claude Code CLAUDE.md 4규칙과 후속 8규칙.md",
+      "url": "pages/claude-code-claude-md-4규칙과-후속-8규칙.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "Cohere Transcribe — Whisper보다 빠르고 정확한 무료 오픈소스 STT",
       "source": "Wikis/ai-agent/wiki/concepts/Cohere Transcribe — Whisper보다 빠르고 정확한 무료 오픈소스 STT.md",
       "url": "pages/cohere-transcribe-whisper보다-빠르고-정확한-무료-오픈소스-stt.html",
+      "raw_body_merged": false
+    },
+    {
+      "title": "Ctx2Skill - Skill.md 강화 루프",
+      "source": "Wikis/ai-agent/wiki/concepts/Ctx2Skill - Skill.md 강화 루프.md",
+      "url": "pages/ctx2skill-skill-md-강화-루프.html",
       "raw_body_merged": false
     },
     {
@@ -328,9 +340,21 @@
       "raw_body_merged": false
     },
     {
+      "title": "Supertonic TTS model - 167x faster than real-time",
+      "source": "Wikis/ai-agent/wiki/entities/Supertonic TTS model - 167x faster than real-time.md",
+      "url": "pages/supertonic-tts-model-167x-faster-than-real-time.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "Threads — superpowers와 openspec 함께 사용하는 방법 + 내부 링크 문서화",
       "source": "Wikis/ai-agent/wiki/entities/Threads — superpowers와 openspec 함께 사용하는 방법 + 내부 링크 문서화.md",
       "url": "pages/threads-superpowers와-openspec-함께-사용하는-방법-내부-링크-문서화.html",
+      "raw_body_merged": false
+    },
+    {
+      "title": "adamsreview 멀티 에이전트 코드 리뷰",
+      "source": "Wikis/ai-agent/wiki/entities/adamsreview 멀티 에이전트 코드 리뷰.md",
+      "url": "pages/adamsreview-멀티-에이전트-코드-리뷰.html",
       "raw_body_merged": false
     },
     {
@@ -355,6 +379,12 @@
       "title": "에이전틱 풀스택 바이브코딩 토탈 가이드",
       "source": "Wikis/ai-agent/wiki/entities/에이전틱 풀스택 바이브코딩 토탈 가이드.md",
       "url": "pages/에이전틱-풀스택-바이브코딩-토탈-가이드.html",
+      "raw_body_merged": false
+    },
+    {
+      "title": "한국 변호사를 위한 Claude Code 통합 패키지",
+      "source": "Wikis/ai-agent/wiki/entities/한국 변호사를 위한 Claude Code 통합 패키지.md",
+      "url": "pages/한국-변호사를-위한-claude-code-통합-패키지.html",
       "raw_body_merged": false
     },
     {
@@ -526,11 +556,22 @@
       "raw_body_merged": false
     },
     {
+      "title": "로컬 AI 음성 워크플로우 - TTS STT 목소리 클로닝",
+      "source": "Wikis/ai-agent/wiki/workflows/로컬 AI 음성 워크플로우 - TTS STT 목소리 클로닝.md",
+      "url": "pages/로컬-ai-음성-워크플로우-tts-stt-목소리-클로닝.html",
+      "raw_body_merged": false
+    },
+    {
+      "title": "오라클 클라우드 서버 무료로 얻기 성공기",
+      "source": "Wikis/ai-agent/wiki/workflows/오라클 클라우드 서버 무료로 얻기 성공기.md",
+      "url": "pages/오라클-클라우드-서버-무료로-얻기-성공기.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "카파시 LLM 위키 시스템 — RAG 없이 마크다운으로 지식관리",
       "source": "Wikis/ai-agent/wiki/workflows/카파시 LLM 위키 시스템 — RAG 없이 마크다운으로 지식관리.md",
       "url": "pages/카파시-llm-위키-시스템-rag-없이-마크다운으로-지식관리.html",
       "raw_body_merged": false
     }
-  ],
-  "public_url": "https://yoonhwan.github.io/jarvis-public-wiki/domains/ai-agent/"
+  ]
 }

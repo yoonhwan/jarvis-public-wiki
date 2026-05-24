@@ -1,0 +1,40 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>오라클 클라우드 서버 무료로 얻기 성공기 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=build-v2-20260524">Jarvis Wiki / ai-agent</a><h1>오라클 클라우드 서버 무료로 얻기 성공기</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>오라클 클라우드 서버 무료로 얻기 성공기</h1>
+<p><strong>한 줄 요약:</strong> Oracle Cloud Always Free에서 OCI CLI와 Codex를 활용해 A1 Flex 인스턴스를 생성·증설하여 최종적으로 4 OCPU / 24GB RAM 서버를 확보한 경험담.</p>
+<h2>워크플로우</h2>
+<h3>사전 준비</h3>
+<ol>
+<li>Oracle Cloud 계정 가입</li>
+<li>무료 티어 → 유료 계정 전환 (카드 등록만, 비용 없음)</li>
+<li>OCI CLI 설치 및 설정</li>
+<li>사용자 OCID, 테넌시 OCID, 리전 설정</li>
+<li>VCN/subnet 기본 네트워크 구성</li>
+</ol>
+<h3>Codex 자동화 흐름</h3>
+<ol>
+<li>Codex에게 &quot;OCI CLI로 무료 티어 한계까지 설정&quot; 지시</li>
+<li><strong>전략:</strong> 4 OCPU / 24GB → 실패 시 2 OCPU / 12GB로 낮춰 재시도</li>
+<li>예약 작업으로 천천히 재시도 + 성공 시 Telegram 알림</li>
+<li>성공 후 동일 인스턴스를 4 OCPU / 24GB로 증설</li>
+</ol>
+<h3>핵심 포인트</h3>
+<ul>
+<li><strong>&quot;Out of host capacity&quot;</strong> 에러는 설정 오류가 아니라 리전 용량 부족 → 스펙을 낮춰 생성 후 증설</li>
+<li><strong>&quot;요청 수락&quot;과 &quot;실제 스펙 반영&quot;을 구분</strong>해 상태 재확인 필수</li>
+<li>콘솔 수동 클릭이 아닌 OCI CLI를 통해 Codex/에이전트가 리소스 생성·확인·재시도 자동화</li>
+</ul>
+<h3>최종 결과</h3>
+<ul>
+<li>VM.Standard.A1.Flex, 4 OCPU / 24GB RAM</li>
+<li>Ubuntu 22.04 ARM</li>
+<li>춘천 리전</li>
+<li>Always Free (평생 무료)</li>
+</ul>
+<h2>자비스 관점</h2>
+<ul>
+<li>OCI CLI를 준비해 Codex/에이전트가 인프라 생성·확인·재시도를 수행한 자동화 사례</li>
+<li>AI 에이전트가 클라우드 리소스를 관리하는 워크플로우 참고 자료</li>
+</ul>
+<h2>관련 링크</h2>
+<ul>
+<li><a href="https://www.threads.com/@leehaksu/post/DYTcqcVmu7W">Threads 원문</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-05-14 오라클 클라우드 서버 무료로 얻기 성공기/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

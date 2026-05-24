@@ -1,0 +1,41 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude Code CLAUDE.md 4규칙과 후속 8규칙 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=build-v2-20260524">Jarvis Wiki / ai-agent</a><h1>Claude Code CLAUDE.md 4규칙과 후속 8규칙</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Claude Code CLAUDE.md 4규칙과 후속 8규칙</h1>
+<p><strong>한 줄 요약:</strong> Claude Code용 CLAUDE.md 규칙 템플릿을 소개하며, 카파시식 4규칙과 후속 8규칙이 모델의 재작성/실수 비용을 줄인다는 분석.</p>
+<h2>카파시의 4가지 기본 규칙 (Forrest Chang)</h2>
+<table><thead><tr><th>#</th><th>규칙</th><th>설명</th></tr></thead><tbody>
+<tr><td>1</td><td><strong>가정을 말로 꺼낸다</strong></td><td>침묵의 추측 금지. 애매하면 묻고, 헷갈리면 무엇이 헷갈리는지 이름 붙이기</td></tr>
+<tr><td>2</td><td><strong>최소 코드</strong></td><td>문제만 푸는 만큼만 작성. 추측성 기능 없음, 단발 코드에 추상화 없음</td></tr>
+<tr><td>3</td><td><strong>외과적 변경</strong></td><td>건드려야 할 곳만 건드리기. 인접 코드/주석/포맷 손대지 않음</td></tr>
+<tr><td>4</td><td><strong>목표 기반 실행</strong></td><td>단계 지시 대신 성공 기준 정의. 모델이 알아서 루프 돌게 함</td></tr>
+</tbody></table>
+<h2>후속 8규칙 (Mnilax, 5월 추가)</h2>
+<table><thead><tr><th>#</th><th>규칙</th></tr></thead><tbody>
+<tr><td>1</td><td>모델은 <strong>판단에만</strong> 쓰기. 라우팅/재시도는 코드로</td></tr>
+<tr><td>2</td><td><strong>토큰 예산</strong>: 작업당 4,000 / 세션당 30,000. 넘으면 요약 후 새로 시작</td></tr>
+<tr><td>3</td><td><strong>충돌은 드러내기</strong>: 두 패턴이 모순되면 하나 선택 후 이유 기록</td></tr>
+<tr><td>4</td><td><strong>쓰기 전에 읽기</strong>: 새 코드 전 export/호출자/공용 유틸 먼저 확인</td></tr>
+<tr><td>5</td><td><strong>테스트는 의도 검증</strong>: 동작만 통과하는 테스트는 무의미</td></tr>
+<tr><td>6</td><td><strong>매 단계 체크포인트</strong>: 묘사 불가능한 상태에서 넘어가지 않음</td></tr>
+<tr><td>7</td><td><strong>코드베이스 컨벤션 따르기</strong>: 동의하지 않아도 일단 따름</td></tr>
+<tr><td>8</td><td><strong>시끄럽게 실패하기</strong>: 조용한 성공이 가장 비싼 실패</td></tr>
+</tbody></table>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>65줄 템플릿, 준수율 약 80%, 실수율 한 자릿수</li>
+<li>규칙이 14개를 넘으면 준수율이 76%→52%로 하락</li>
+<li><strong>검증 가능한 짧은 규칙</strong>이 모델 행동을 좁히는 핵심</li>
+<li>&quot;주의해서 해줘&quot;, &quot;신중하게&quot; 같은 테스트 불가능한 말은 준수율 ~30%</li>
+<li>200줄이 CLAUDE.md의 실질적 천장</li>
+<li>예시 3개가 규칙 10개만큼 컨텍스트 소모</li>
+</ul>
+<h2>자비스 관점</h2>
+<ul>
+<li>&quot;규칙을 많이 쓰기&quot;보다 <strong>검증 가능한 짧은 규칙으로 모델 행동을 좁히기</strong>가 핵심</li>
+<li>기존 원칙(&quot;구현 전 설계/TDD&quot;, &quot;컨텍스트 오버플로우 의심 시 handoff&quot;, &quot;시끄럽게 실패하기&quot;)과 잘 맞음</li>
+<li>성능 수치(41%→11%, 3% 미만)는 원문 내 불일치가 지적되므로 참고 수준으로 취급</li>
+</ul>
+<h2>관련 링크</h2>
+<ul>
+<li><a href="https://www.threads.com/@unclejobs.ai/post/DYXO8a8CW8B">Threads 원문</a></li>
+<li><a href="https://x.com/Mnilax/status/2053116311132155938">Mnilax X 글</a></li>
+<li><a href="https://github.com/forrestchang/andrej-karpathy-skills">Forrest Chang 4규칙 레포</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-05-15 Claude Code CLAUDE.md 4규칙과 후속 8규칙/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

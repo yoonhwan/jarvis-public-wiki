@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-17T09:38:06.183696",
+  "generated_at": "2026-05-24T10:36:07.641456",
   "source": "Wikis/trading/wiki",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260517-093805-KST",
+  "version": "build-v2-20260524",
   "categories": {
     "concept": {
       "folder": "wiki/concepts",
@@ -114,6 +114,12 @@
       "raw_body_merged": false
     },
     {
+      "title": "변창석-Threads-딸에게-주식-공부를-가르치는-첫날",
+      "source": "Wikis/trading/wiki/entities/변창석-Threads-딸에게-주식-공부를-가르치는-첫날.md",
+      "url": "pages/변창석-threads-딸에게-주식-공부를-가르치는-첫날.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "시그마봇 거래소 차익거래 광고 (의심)",
       "source": "Wikis/trading/wiki/entities/시그마봇 거래소 차익거래 광고 (의심).md",
       "url": "pages/시그마봇-거래소-차익거래-광고-의심.html",
@@ -138,6 +144,18 @@
       "raw_body_merged": false
     },
     {
+      "title": "Threads-DYIzKocEmUr-원문-접근-제한",
+      "source": "Wikis/trading/wiki/references/Threads-DYIzKocEmUr-원문-접근-제한.md",
+      "url": "pages/threads-dyizkocemur-원문-접근-제한.html",
+      "raw_body_merged": false
+    },
+    {
+      "title": "Threads-Log-in",
+      "source": "Wikis/trading/wiki/references/Threads-Log-in.md",
+      "url": "pages/threads-log-in.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로",
       "source": "Wikis/trading/wiki/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로.md",
       "url": "pages/page.html",
@@ -159,6 +177,12 @@
       "title": "클로드 헤지펀드 (Threads Fund AI)",
       "source": "Wikis/trading/wiki/references/클로드 헤지펀드 (Threads Fund AI).md",
       "url": "pages/클로드-헤지펀드-threads-fund-ai.html",
+      "raw_body_merged": false
+    },
+    {
+      "title": "텐버거-찾는-꿀-Tip-어닝콜-리서치",
+      "source": "Wikis/trading/wiki/references/텐버거-찾는-꿀-Tip-어닝콜-리서치.md",
+      "url": "pages/텐버거-찾는-꿀-tip-어닝콜-리서치.html",
       "raw_body_merged": false
     },
     {
@@ -198,9 +222,21 @@
       "raw_body_merged": false
     },
     {
+      "title": "SPY-GOOG-장기투자-원칙",
+      "source": "Wikis/trading/wiki/strategies/SPY-GOOG-장기투자-원칙.md",
+      "url": "pages/spy-goog-장기투자-원칙.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "비트코인 선물 거래 5분봉 매매법 단 1가지 (실제 100억 트레이더들의 매매법)",
       "source": "Wikis/trading/wiki/strategies/비트코인 선물 거래 5분봉 매매법 단 1가지 (실제 100억 트레이더들의 매매법).md",
       "url": "pages/비트코인-선물-거래-5분봉-매매법-단-1가지-실제-100억-트레이더들의-매매법.html",
+      "raw_body_merged": false
+    },
+    {
+      "title": "평생-주식-8가지-철칙",
+      "source": "Wikis/trading/wiki/strategies/평생-주식-8가지-철칙.md",
+      "url": "pages/평생-주식-8가지-철칙.html",
       "raw_body_merged": false
     },
     {
@@ -209,6 +245,5 @@
       "url": "pages/해외에서-돈-쓸어-담는다는-트레이딩-기법-feat-팀멘사.html",
       "raw_body_merged": false
     }
-  ],
-  "public_url": "https://yoonhwan.github.io/jarvis-public-wiki/domains/trading/"
+  ]
 }
