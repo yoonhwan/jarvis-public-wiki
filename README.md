@@ -1,7 +1,8 @@
-# Jarvis Public Wiki
+# trading Wiki
 
-Single GitHub Pages export of the sanitized Obsidian wiki.
+Public GitHub Pages export of sanitized Obsidian `Wikis/pages` pages.
 
-- Public URL: https://yoonhwan.github.io/jarvis-public-wiki/
-- Source branch: `main` / `/`
-- Raw markdown files are excluded except these repository README files.
+- Raw markdown files are excluded.
+- Full reviewed body content is rendered into HTML pages.
+- Generated: 2026-06-09T12:46:47.486712
+- Pages: 148

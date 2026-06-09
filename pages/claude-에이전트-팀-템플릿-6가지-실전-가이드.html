@@ -1,0 +1,230 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude 에이전트 팀 템플릿 6가지 - 실전 가이드 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>Claude 에이전트 팀 템플릿 6가지 - 실전 가이드</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Claude 에이전트 팀 템플릿 6가지 - 실전 가이드</h1>
+<blockquote>Source candidate from <code>News-Links/2026-02-08 Claude 에이전트 팀 템플릿/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Claude 에이전트 팀 템플릿 6가지 - 실전 가이드</h1>
+<h2>메타데이터</h2>
+<ul>
+<li><strong>원문</strong>: <a href="https://techtaek.com/claude-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-%ED%8C%80-%ED%85%9C%ED%94%8C%EB%A6%BF-6%EA%B0%80%EC%A7%80-%EC%A7%81%EC%A0%91-%EC%8D%A8%EB%B3%B4%EA%B3%A0-%EC%A0%95%EB%A6%AC%ED%95%9C-%ED%98%84%EC%8B%A4/">techtaek.com</a></li>
+<li><strong>저장일</strong>: 2026-02-08</li>
+<li><strong>카테고리</strong>: #AI-Agent #Claude #Development</li>
+<li><strong>세컨드브레인</strong>: #실전가이드 #템플릿 #워크플로우 #비용최적화</li>
+</ul>
+<hr>
+<h2>핵심 요약</h2>
+<p>Anthropic 공식 데모 6종을 분석하고 산업별 에이전트 팀 템플릿 6가지를 직접 구성/테스트한 실전 가이드.</p>
+<p><strong>핵심 인사이트:</strong></p>
+<ul>
+<li>Agent Teams는 &quot;독립 작업 + 소통&quot; 구조</li>
+<li>서브에이전트 = 심부름꾼, Agent Teams = 팀원</li>
+<li><strong>역할 분리 + 최소 도구</strong>가 성공의 핵심</li>
+<li>리드는 sonnet, 워커는 haiku로 비용 80-90% 절감</li>
+</ul>
+<hr>
+<h2>Agent Teams vs Subagent</h2>
+<table><thead><tr><th>항목</th><th>Subagent</th><th>Agent Teams</th></tr></thead><tbody>
+<tr><td>컨텍스트</td><td>메인과 공유</td><td>각자 독립</td></tr>
+<tr><td>소통 방식</td><td>결과만 반환</td><td>직접 메시지 교환</td></tr>
+<tr><td>조율</td><td>메인이 관리</td><td>자체 조율 (공유 태스크)</td></tr>
+<tr><td>적합한 작업</td><td>단순 위임</td><td>복잡한 협업</td></tr>
+</tbody></table>
+<p><strong>언제 뭘 쓰나?</strong></p>
+<ul>
+<li>50-100줄 단위 스킬/에이전트 → <strong>Subagent</strong> (가성비 최고)</li>
+<li>대형 프로젝트 (여러 역할 협업 필요) → <strong>Agent Teams</strong></li>
+</ul>
+<hr>
+<h2>공식 데모 6종 분석</h2>
+<h3>1. Research Agent (Python) - 가장 완성도 높음</h3>
+<pre><code>Lead Agent (haiku)
+├── Researcher x4 (병렬)
+│   ├── tools: WebSearch, Write
+│   └── files/research_notes/*.md 저장
+├── Data Analyst x1
+│   ├── tools: Glob, Read, Bash, Write
+│   └── matplotlib 차트 생성
+└── Report Writer x1
+    ├── tools: Skill, Write, Glob, Read, Bash
+    └── reportlab PDF 생성</code></pre>
+<p><strong>실행 결과</strong>: 7분 54초, 82회 도구 호출, 비용 약 $0.05-0.10 (haiku)</p>
+<p><strong>핵심 패턴:</strong></p>
+<ul>
+<li>Lead는 Task 도구만 (직접 일하지 않고 지시만)</li>
+<li>각 에이전트는 필요한 도구만 부여</li>
+<li>파일 기반 소통 (files/ 폴더 저장 → 다음 단계 읽음)</li>
+</ul>
+<h3>2. Email Agent (TypeScript) - MCP 연동의 정석</h3>
+<ul>
+<li>React + Express 웹앱</li>
+<li>WebSocket 실시간 통신</li>
+<li>MCP 도구명을 직접 tools 배열에 추가 가능</li>
+<ul>
+<li><code>mcp<strong>email</strong>search_inbox</code></li>
+<li><code>mcp<strong>email</strong>read_emails</code></li>
+</ul>
+</ul>
+<p><strong>교훈</strong>: Slack, GitHub, DB 등 어떤 MCP 서버든 에이전트에 연결 가능</p>
+<h3>3-6. 나머지 데모</h3>
+<table><thead><tr><th>데모</th><th>언어</th><th>핵심</th></tr></thead><tbody>
+<tr><td>Resume Generator</td><td>TypeScript</td><td>WebSearch → DOCX 자동 생성</td></tr>
+<tr><td>Excel Demo</td><td>Electron + Python</td><td>AI 기반 스프레드시트 (openpyxl)</td></tr>
+<tr><td>Chat App</td><td>React + Express</td><td>SDK 웹앱 통합 레퍼런스</td></tr>
+<tr><td>Hello World V2</td><td>TypeScript</td><td>Session API (멀티턴, 세션 재개)</td></tr>
+</tbody></table>
+<hr>
+<h2>산업별 템플릿 6가지</h2>
+<p>상세 프롬프트는 [[templates.md]] 참고</p>
+<h3>1. 코딩 팀 (풀스택 개발)</h3>
+<ul>
+<li>Lead Architect (sonnet) + frontend/backend/test/reviewer (haiku)</li>
+<li><strong>핵심</strong>: 폴더 단위 역할 분리로 충돌 방지</li>
+<li>reviewer는 Read 전용 (Write 주면 오히려 꼬임)</li>
+</ul>
+<h3>2. DevOps 팀</h3>
+<ul>
+<li>infra-engineer, ci-cd-specialist, monitoring-agent, security-scanner</li>
+<li>참고: <a href="https://github.com/akin-ozer/cc-devops-skills">cc-devops-skills</a></li>
+</ul>
+<h3>3. 데이터 분석 팀</h3>
+<ul>
+<li>collector → analyst/ml-engineer (병렬) → report-writer</li>
+<li>공식 Research Agent와 동일 구조</li>
+</ul>
+<h3>4. 콘텐츠 팀 (블로그/마케팅)</h3>
+<ul>
+<li>researcher → <strong>writer (sonnet!)</strong> → editor → seo → sns</li>
+<li>⚠️ writer는 반드시 sonnet (haiku는 품질 저하)</li>
+</ul>
+<h3>5. 고객 지원 팀</h3>
+<ul>
+<li>ticket-classifier → knowledge-searcher → response-drafter → escalation-handler</li>
+</ul>
+<h3>6. 투자 분석 팀</h3>
+<ul>
+<li>market-scanner, fundamental/technical/news-analyst, risk-manager, report-generator</li>
+<li>저자의 @forge 에이전트 실전 구조</li>
+</ul>
+<hr>
+<h2>비용 최적화 전략</h2>
+<table><thead><tr><th>전략</th><th>설명</th><th>절약 효과</th></tr></thead><tbody>
+<tr><td>모델 선택</td><td>리드만 sonnet, 워커는 haiku</td><td>80-90%</td></tr>
+<tr><td>도구 제한</td><td>필요한 도구만 부여</td><td>불필요 호출 방지</td></tr>
+<tr><td>프롬프트 최적화</td><td>간결하고 구체적 지시</td><td>20-30%</td></tr>
+<tr><td>병렬 실행</td><td>독립 작업 동시 실행</td><td>시간 50% 단축</td></tr>
+<tr><td>파일 기반 캐싱</td><td>중간 결과 파일 저장</td><td>반복 작업 제거</td></tr>
+</tbody></table>
+<p><strong>비용 비교:</strong></p>
+<ul>
+<li>전원 haiku: $0.05-0.10 (~8분)</li>
+<li>리드 sonnet + 팀원 haiku: $0.20-0.50 (~7분) ⭐ <strong>추천</strong></li>
+<li>전원 sonnet: $0.50-1.00 (~6분)</li>
+<li>전원 opus: $5-10 (~5분)</li>
+</ul>
+<hr>
+<h2>활성화 방법 3가지</h2>
+<h3>1. settings.json (권장)</h3>
+<pre><code>{
+  &quot;env&quot;: {
+    &quot;CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS&quot;: &quot;1&quot;
+  }
+}</code></pre>
+<h3>2. 마크다운 에이전트 파일</h3>
+<pre><code>mkdir -p .claude/agents</code></pre>
+<pre><code># .claude/agents/reviewer.md
+---
+name: reviewer
+description: &quot;코드 리뷰 전문가&quot;
+tools: Read, Grep, Glob
+model: haiku
+---
+# 리뷰어 지침
+코드를 분석하고 개선 사항을 제안합니다.</code></pre>
+<h3>3. SDK AgentDefinition (코드)</h3>
+<pre><code>AgentDefinition(
+    description=&quot;코드 리뷰 전문가&quot;,
+    tools=[&quot;Read&quot;, &quot;Grep&quot;],
+    prompt=&quot;코드를 분석하고 개선 사항을 제안합니다.&quot;,
+    model=&quot;haiku&quot;
+)</code></pre>
+<hr>
+<h2>빠르게 시작하기</h2>
+<h3>방법 A: 공식 데모 클론</h3>
+<pre><code>git clone https://github.com/anthropics/claude-agent-sdk-demos.git
+cd claude-agent-sdk-demos/research-agent
+uv sync
+ANTHROPIC_API_KEY=your_key uv run python research_agent/agent.py</code></pre>
+<h3>방법 B: 커뮤니티 템플릿 설치</h3>
+<pre><code># 100+ 템플릿 한 번에
+npx claude-code-templates
+
+# 112개 에이전트 컬렉션
+git clone https://github.com/wshobson/agents.git
+cp -r agents/.claude/* .claude/</code></pre>
+<hr>
+<h2>실수하는 3가지</h2>
+<h3>1. 도구를 너무 많이 줌</h3>
+<pre><code># ❌ 나쁜 예
+researcher:
+  tools: WebSearch, Write, Read, Edit, Bash, Grep, Glob
+
+# ✅ 좋은 예
+researcher:
+  tools: WebSearch, Write</code></pre>
+<h3>2. 모든 에이전트를 같은 모델로</h3>
+<ul>
+<li>리드는 판단력 필요 → sonnet</li>
+<li>단순 작업자 → haiku</li>
+<li>전원 opus는 돈 낭비</li>
+</ul>
+<h3>3. 역할 경계가 불명확</h3>
+<pre><code># ❌ 나쁜 예
+agent-1: &quot;코드 작업합니다&quot;
+
+# ✅ 좋은 예
+frontend-dev: &quot;src/components/ 폴더의 React 컴포넌트만 담당&quot;</code></pre>
+<p><strong>해결책</strong>: 폴더 단위로 영역 나누기</p>
+<hr>
+<h2>실전 추천</h2>
+<p><strong>상황별 추천:</strong></p>
+<table><thead><tr><th>상황</th><th>추천</th><th>이유</th></tr></thead><tbody>
+<tr><td>처음 시작</td><td>공식 데모 클론</td><td>검증된 구조</td></tr>
+<tr><td>소규모 작업</td><td>Task Subagent</td><td>비용 효율, 안정성</td></tr>
+<tr><td>중규모 프로젝트</td><td>산업별 템플릿 복붙</td><td>역할 분리 검증됨</td></tr>
+<tr><td>대규모 프로젝트</td><td>Agent Teams + 커뮤니티 도구</td><td>자율 조율 필요</td></tr>
+<tr><td>빠르게 다양한 팀</td><td>npx claude-code-templates</td><td>100+ 템플릿 즉시 사용</td></tr>
+</tbody></table>
+<p><strong>저자의 실전 구성:</strong></p>
+<ul>
+<li>일반 작업: <strong>Task Subagent</strong> (가장 안정적, 비용 효율적)</li>
+<li>블로그 파이프라인: 스킬 조합으로 팀 구조 구현</li>
+<ul>
+<li><code>blog-pipeline (리드) → WebSearch → unified-blog-writer → sns-writer → telegram-sender</code></li>
+</ul>
+</ul>
+<hr>
+<h2>커뮤니티 리소스</h2>
+<p>상세 링크는 [[resources.md]] 참고</p>
+<p><strong>오케스트레이터:</strong></p>
+<ul>
+<li>Claude Squad (tmux 기반)</li>
+<li>TSK (Rust CLI + Docker)</li>
+<li>claude-code-by-agents (@mentions 조정)</li>
+</ul>
+<p><strong>템플릿 컬렉션:</strong></p>
+<ul>
+<li><a href="https://github.com/davila7/claude-code-templates">claude-code-templates</a> - 19.6K 스타, 100+ 템플릿</li>
+<li><a href="https://github.com/wshobson/agents">wshobson/agents</a> - 112개 에이전트</li>
+<li><a href="https://github.com/hesreallyhim/awesome-claude-code">awesome-claude-code</a> - 큐레이션</li>
+</ul>
+<hr>
+<h2>핵심 교훈</h2>
+<blockquote>에이전트 팀은 결국 <strong>&quot;누가 뭘 하고, 뭘 안 하는지&quot;</strong>를 명확히 정의하는 게 전부</blockquote>
+<p><strong>템플릿 가져다 쓰세요. 처음부터 만들 필요 없습니다.</strong></p>
+<hr>
+<h2>관련 노트</h2>
+<ul>
+<li>[[BaseAgent 프로젝트]] - AI Agent 개발 관련</li>
+<li>[[LangGraph 워크플로우]] - Multi-agent orchestration</li>
+<li>[[비용 최적화 전략]] - API 비용 관리</li>
+</ul>
+<hr>
+<p><strong>태그</strong>: #AI-Agent #Claude #Development #실전가이드 #템플릿 #워크플로우 #비용최적화 #Anthropic #AgentTeams</p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-02-08 Claude 에이전트 팀 템플릿/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

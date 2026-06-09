@@ -1,0 +1,185 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pencil Skill — OpenClaw 디자인 시스템 자동 생성 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>Pencil Skill — OpenClaw 디자인 시스템 자동 생성</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Pencil Skill — OpenClaw 디자인 시스템 자동 생성</h1>
+<blockquote>Source candidate from <code>News-Links/2026-02-28 Pencil Skill - OpenClaw 디자인 자동화/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Pencil Skill — OpenClaw 디자인 시스템 자동 생성</h1>
+<blockquote>Pencil이 MCP를 공식 지원하는데, 데스크탑 앱을 켜놔야 동작합니다. OpenClaw에서 활용하기엔 부족해서, 앱 없이 .pen 파일을 직접 생성/편집하는 Agent Skill을 만들었습니다.</blockquote>
+<h2>핵심 내용</h2>
+<h3>문제</h3>
+<ul>
+<li>Pencil MCP는 데스크탑 앱이 실행 중이어야 동작</li>
+<li>OpenClaw 같은 headless 환경에서는 활용 불가</li>
+</ul>
+<h3>해결: pencil-skill</h3>
+<ul>
+<li><code>.pen</code> 파일은 JSON 기반 → Node.js built-in만으로 읽기/쓰기/검증</li>
+<li><strong>CLI 스크립트 8개</strong> 제작</li>
+<li><strong>디자인 룰 41개</strong> 강제 적용:</li>
+<ul>
+<li>AI 단골 파란 버튼 차단</li>
+<li>4pt/8pt 그리드 강제</li>
+<li>컬러 하드코딩 금지</li>
+<li>Light/Dark 동시 생성 필수</li>
+</ul>
+</ul>
+<blockquote>Pencil 공식이 headless CLI를 &quot;coming soon&quot;이라고 해놨는데, 기다리기 싫어서 먼저 만든 거예요.</blockquote>
+<h3>설치 &amp; 사용</h3>
+<pre><code>npx skills add de-novo/pencil-skill</code></pre>
+<ul>
+<li>Claude Code, Cursor, Codex, Gemini CLI 전부 지원</li>
+<li>OpenClaw에서는 완전 무인 자동화</li>
+</ul>
+<h2>📸 스크린샷</h2>
+<figure class="media"><img src="../assets/media/pencil-skill-openclaw-디자인-시스템-자동-생성/screenshot_1.png" alt="screenshot_1.png"><figcaption>screenshot_1.png</figcaption></figure>
+<figure class="media"><img src="../assets/media/pencil-skill-openclaw-디자인-시스템-자동-생성/screenshot_2.png" alt="screenshot_2.png"><figcaption>screenshot_2.png</figcaption></figure>
+<h2>🔗 Links</h2>
+<ul>
+<li><a href="https://github.com/de-novo/pencil-skill">GitHub: de-novo/pencil-skill</a></li>
+<li><a href="https://www.threads.com/@obora.me/post/DVRLOtEE1u5">원본 스레드</a></li>
+</ul>
+<hr>
+<h2>💡 자비스 메모</h2>
+<ul>
+<li>Gas Town designer 크루에 pencil-skill 통합 검토 가능</li>
+<li>디자인 룰 41개 강제는 AI 생성 디자인의 품질 보장에 핵심적인 접근</li>
+<li>OpenClaw 커뮤니티 스킬 생태계 사례로 주목</li>
+</ul>
+<hr>
+<h2>📚 Pencil 공식 문서 요약 (docs.pencil.dev)</h2>
+<h3>Pencil이란?</h3>
+<ul>
+<li>IDE(VS Code, Cursor) 내장 <strong>벡터 디자인 툴</strong> + 독립 데스크탑 앱</li>
+<li><code>.pen</code> 파일 = JSON 기반, <strong>Git 버전 관리 가능</strong> (코드와 동일 커밋/브랜치/머지)</li>
+<li>설계 철학: <strong>디자인과 코드를 같은 환경에</strong> — Figma처럼 별도 앱 전환 불필요</li>
+</ul>
+<h3>핵심 기능: Design ↔ Code 양방향 싱크</h3>
+<table><thead><tr><th>방향</th><th>동작</th></tr></thead><tbody>
+<tr><td>Design → Code</td><td><code>.pen</code> 디자인 → React/Next.js/TypeScript 컴포넌트 자동 생성</td></tr>
+<tr><td>Code → Design</td><td>기존 코드 컴포넌트 → Pencil 캔버스로 역가져오기</td></tr>
+<tr><td>Two-Way Sync</td><td>디자인 수정 → 코드 반영, 코드 수정 → 디자인 반영 반복</td></tr>
+</tbody></table>
+<h3>MCP 서버 통합</h3>
+<ul>
+<li>Pencil 실행 시 <strong>MCP 서버 자동 기동</strong> (로컬, 클라우드 의존 없음)</li>
+<li>AI 에이전트(Claude Code, Codex CLI)가 <code>.pen</code> 파일 읽기/수정 가능</li>
+<li>Cursor Settings → Tools &amp; MCP에서 Pencil 서버 확인 가능</li>
+</ul>
+<h3>Design Token &amp; CSS Variable 싱크</h3>
+<ul>
+<li><code>globals.css</code>의 CSS 변수 ↔ Pencil 변수 양방향 동기화</li>
+<li>Figma 토큰 복사 → Pencil 변수로 변환 가능</li>
+<li>이미지는 Figma→Pencil 복사 안 됨 (SVG 또는 재임포트 필요)</li>
+</ul>
+<h3>설치 옵션</h3>
+<ul>
+<li><strong>VS Code/Cursor 확장</strong>: 마켓플레이스에서 &quot;Pencil&quot; 검색</li>
+<li><strong>데스크탑 앱</strong>: macOS(.dmg), Linux(.deb/.AppImage), Windows</li>
+<li><strong>AI 기능 필수</strong>: Claude Code CLI 인증 필요</li>
+<li>⚠️ Auto-save 미지원 — 자주 저장 필요</li>
+</ul>
+<hr>
+<h2>🔥 사용 사례 &amp; 인사이트 (웹 리서치)</h2>
+<h3>실제 사용 사례</h3>
+<p><strong>1. UI/UX 래피드 프로토타이핑</strong></p>
+<ul>
+<li>무한 캔버스에서 AI 프롬프트로 화면/컴포넌트 즉시 생성</li>
+<li>&quot;Create a login form&quot; → 디자인 + 코드 동시 산출</li>
+</ul>
+<p><strong>2. Figma → 프로덕션 코드 원스텝 변환</strong></p>
+<ul>
+<li>Figma 요소 복사 → Pencil에 붙여넣기 → 벡터/텍스트/스타일/레이아웃 보존</li>
+<li>AI가 매칭 React/HTML/CSS 컴포넌트 즉시 생성</li>
+</ul>
+<p><strong>3. 멀티 에이전트 병렬 작업 (AI Multiplayer)</strong></p>
+<ul>
+<li>에이전트 1: Pencil AI가 디자인 정제</li>
+<li>에이전트 2: 외부 에이전트(MCP 경유)가 코드 생성</li>
+<li><code>.pen</code> 파일 Git 커밋 → 브랜치/머지로 팀 협업</li>
+</ul>
+<p><strong>4. 기존 코드베이스 비주얼라이제이션</strong></p>
+<ul>
+<li><code>src/components/Button.tsx</code> → Pencil 캔버스에 비주얼 재현</li>
+<li>디자인 개선 → 코드에 다시 반영 → 반복 이터레이션</li>
+</ul>
+<hr>
+<h2>💡 자비스 인사이트 — 핵심 분석</h2>
+<h3>🎯 Gas Town 적용 포인트</h3>
+<p><strong>1. designer 크루 강화</strong></p>
+<ul>
+<li>현재 <code>uipro-cli</code> 기반 → Pencil 통합 시 <strong>Git 네이티브 디자인 파일</strong> 획득</li>
+<li><code>.pen</code> = JSON → 리뷰어 크루가 <strong>디자인 diff도 코드 리뷰처럼</strong> 가능</li>
+<li>pencil-skill로 headless 환경에서도 <code>.pen</code> 생성/수정 가능</li>
+</ul>
+<p><strong>2. 피드백 루프 확장</strong></p>
+<ul>
+<li>현재: coder → reviewer → tester</li>
+<li>확장: <strong>designer → coder → reviewer</strong> (디자인+코드 동시 리뷰)</li>
+</ul>
+<p><strong>3. Design Token 중앙 관리</strong></p>
+<ul>
+<li><code>globals.css</code> ↔ <code>.pen</code> 변수 양방향 싱크 = <strong>디자인 시스템 SSOT</strong></li>
+</ul>
+<h3>⚡ Pencil vs Figma</h3>
+<table><thead><tr><th></th><th>Pencil</th><th>Figma</th></tr></thead><tbody>
+<tr><td>파일</td><td><code>.pen</code> (JSON, Git)</td><td>클라우드 전용</td></tr>
+<tr><td>AI 통합</td><td>MCP 네이티브 (로컬)</td><td>플러그인/API 간접</td></tr>
+<tr><td>코드 싱크</td><td>양방향 실시간</td><td>단방향 (export)</td></tr>
+<tr><td>에이전트 자동화</td><td>✅ headless (pencil-skill)</td><td>❌ 브라우저 필수</td></tr>
+<tr><td>비용</td><td>무료/오픈 포맷</td><td>유료</td></tr>
+</tbody></table>
+<h3>🚀 액션 아이템</h3>
+<ol>
+<li>pencil-skill 테스트 → Gas Town designer 크루 통합 실험</li>
+<li><code>.pen</code> → React 파이프라인 프로토타입 (BaseAgent)</li>
+<li><code>.pen</code> JSON diff 기반 디자인 리뷰 자동화 검토</li>
+</ol>
+<hr>
+<h2>🐝 Pencil Swarm 모드 (AI Multiplayer)</h2>
+<blockquote>&quot;AI singleplayer is the new multiplayer&quot;</blockquote>
+<h3>핵심 개념</h3>
+<ul>
+<li><strong>최대 6개 AI 에이전트</strong>가 하나의 캔버스에서 동시 병렬 작업</li>
+<li>각 에이전트가 캔버스의 <strong>다른 영역을 담당</strong> — 순차 대기 없음</li>
+<li>실시간 화살표로 어떤 에이전트가 어디를 수정 중인지 시각 피드백</li>
+</ul>
+<h3>동작 예시</h3>
+<pre><code>에이전트 1 → &quot;히어로 섹션 강화&quot;
+에이전트 2 → &quot;추천사 섹션 추가&quot;
+에이전트 3 → &quot;푸터 리파인&quot;
+에이전트 4 → &quot;가격 페이지 생성&quot;
+→ 4개가 동시에 캔버스에 그려짐!</code></pre>
+<h3>워크플로우</h3>
+<ol>
+<li>Pencil 캔버스에서 여러 프롬프트 동시 입력</li>
+<li>에이전트들이 각자 담당 영역에서 병렬 생성</li>
+<li>캔버스에서 실시간 시각 피드백</li>
+<li>결과 확인 → 마음에 안 드는 부분만 추가 프롬프트</li>
+<li>확정 → 코드 export (React/HTML/CSS)</li>
+</ol>
+<h3>현재 상태 (2026-02)</h3>
+<ul>
+<li>AI Multiplayer: <strong>라이브</strong> (무료, 이메일 인증만)</li>
+<li>최대 6 에이전트 동시 가동</li>
+<li>VS Code/Cursor 확장 + 데스크탑 앱 모두 지원</li>
+<li>MCP로 외부 에이전트(Claude Code, Gemini) 연동 가능</li>
+</ul>
+<h3>Gas Town 연결점</h3>
+<ul>
+<li><strong>Pencil Swarm</strong>: 6개 AI 에이전트 → 디자인 캔버스에서 병렬 작업</li>
+<li><strong>Gas Town Convoy</strong>: N개 크루 → 코드베이스에서 병렬 작업</li>
+<li>결합 시: Pencil Swarm(디자인 병렬) → <code>.pen</code> Git 커밋 → Gas Town Convoy(코드 변환 병렬) = <strong>디자인~코드 전 구간 병렬 파이프라인</strong></li>
+</ul>
+<hr>
+<h2>🗣️ yoonhwan 오빠 의견 (대화 기록)</h2>
+<ul>
+<li>✅ Pencil 데스크탑 앱 설치 거부감 없음</li>
+<li>✅ CLI도 있으면 좋겠다 — 선택적 headless</li>
+<li>❌ MCP만으로는 별로 (앱 종속)</li>
+<li>🎯 <strong>&quot;AI가 프론트 작업하는 걸 눈으로 보는 게 좋다&quot;</strong></li>
+<li>Pencil 공식도 headless CLI &quot;coming soon&quot; 예고 중</li>
+</ul>
+<h3>추천 조합</h3>
+<ul>
+<li><strong>평소</strong>: Pencil 앱 + Claude Code (실시간 시각 피드백)</li>
+<li><strong>자동화/CI</strong>: pencil-skill CLI (Gas Town 무인 작업용)</li>
+<li><strong>Pencil 공식 CLI 나오면</strong>: 전환</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-02-28 Pencil Skill - OpenClaw 디자인 자동화/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

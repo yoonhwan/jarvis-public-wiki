@@ -1,0 +1,134 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude Code 완전 가이드 해커톤 우승자의 70가지 파워 팁 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>Claude Code 완전 가이드 해커톤 우승자의 70가지 파워 팁</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Claude Code 완전 가이드 해커톤 우승자의 70가지 파워 팁</h1>
+<blockquote>Source candidate from <code>News-Links/2026-02-09 Claude Code 완전 가이드 70가지 팁/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Claude Code 완전 가이드: 해커톤 우승자의 70가지 파워 팁</h1>
+<blockquote><strong>저자</strong>: Manus AI</blockquote>
+<blockquote><strong>기반 자료</strong>: ykdojo (Anthropic 해커톤 우승자) &amp; Ado Kukic (Anthropic DevRel)</blockquote>
+<blockquote><strong>원본</strong>: <a href="https://drive.google.com/file/d/1x2x1T4lzTISnHGN8nd4KtMhL8iwi6QgU/view">Google Drive PDF</a></blockquote>
+<blockquote><strong>첨부</strong>: [[Claude<em>Code</em>완전<em>가이드</em>70가지_팁.pdf]]</blockquote>
+<hr>
+<h2>📌 핵심 요약</h2>
+<p>Anthropic 해커톤 우승자 ykdojo의 43가지 팁 + Anthropic DevRel Ado Kukic의 31가지 팁을 집대성한 <strong>Claude Code 실전 가이드</strong>. 에이전틱 개발자(Agentic Developer)로서의 사고방식부터 고급 자동화까지 다룬다.</p>
+<hr>
+<h2>📖 목차 (13개 파트)</h2>
+<h3>Part 1: 에이전틱 개발자의 사고방식</h3>
+<ul>
+<li><strong>분해하고 정복하라</strong> — 큰 문제를 작은 단위로 쪼개서 AI에게 명확한 지시</li>
+<li><strong>계획 모드 vs YOLO 모드</strong> — <code>Shift+Tab</code> ×2로 Plan Mode, <code>--dangerously-skip-permissions</code>로 YOLO</li>
+<li><strong>컨텍스트 관리</strong> — &quot;AI 컨텍스트는 우유와 같다&quot; (신선하게 유지!)</li>
+<ul>
+<li>단일 목적 대화, HANDOFF.md로 선제적 압축, <code>/context</code>로 사용량 확인</li>
+</ul>
+<li><strong>올바른 추상화 수준</strong> — Vibe Coding(높은 추상화) ↔ Deep Dive(낮은 추상화) 상황별 선택</li>
+<li><strong>미지의 영역에서 용감하게</strong> — 모르는 기술도 AI와 반복적 탐구로 해결 가능</li>
+</ul>
+<h3>Part 2: 환경 설정과 필수 명령어</h3>
+<ul>
+<li><strong>커스텀 상태 라인</strong> — 토큰 사용량, Git 브랜치, MCP 수 실시간 표시</li>
+<li><strong>필수 슬래시 명령어</strong> — <code>/usage</code>, <code>/clear</code>, <code>/stats</code>, <code>/context</code>, <code>!</code> prefix (즉시 실행)</li>
+<li><strong>CLAUDE.md</strong> — AI를 위한 프로젝트 설명서. <code>/init</code>으로 자동 생성, 간결하게 유지</li>
+<li><strong>터미널 별칭</strong> — <code>alias c=&#x27;claude&#x27;</code>, <code>alias cc=&#x27;claude --continue&#x27;</code></li>
+<li><strong>세션 관리</strong> — <code>--continue</code>, <code>--resume</code>, <code>/rename</code>, <code>/export</code></li>
+</ul>
+<h3>Part 3: 생산성 핵심 기술</h3>
+<ul>
+<li><strong>음성 코딩</strong> — 타이핑 40WPM vs 말하기 150WPM (3.75배 속도 차이!)</li>
+<li><strong>터미널 출력 추출</strong> — pbcopy, VS Code, GitHub Desktop 활용</li>
+<li><strong>키보드 단축키</strong> — <code>Esc Esc</code>(되감기), <code>Ctrl+R</code>(역방향 검색), <code>Ctrl+S</code>(프롬프트 임시 저장)</li>
+<li><strong>Vim 모드</strong> — <code>/vim</code>으로 활성화</li>
+<li><strong>입력 박스 단축키</strong> — <code>Ctrl+G</code>로 외부 에디터에서 편집</li>
+</ul>
+<h3>Part 4: 컨텍스트 관리의 예술</h3>
+<ul>
+<li><strong>HANDOFF.md 기법</strong> — 대화가 길어지면 핸드오프 문서 생성 → <code>/clear</code> → 새 세션에서 로드</li>
+<li><strong>터미널 탭 멀티태스킹</strong> — 각 탭은 독립적인 &quot;두뇌&quot;</li>
+<li><strong>대화 복제</strong> — <code>/clone</code>(전체), <code>/half-clone</code>(반복제, 컨텍스트 절반)</li>
+<li><strong>realpath</strong> — 절대 경로로 혼란 방지</li>
+</ul>
+<h3>Part 5: Git &amp; GitHub 워크플로우</h3>
+<ul>
+<li><strong>자동 커밋 &amp; Draft PR</strong> — <code>gh</code> CLI 연동</li>
+<li><strong>Git worktrees</strong> — 병렬 브랜치 작업 (브랜치 전환 없이)</li>
+<li><strong>대화형 PR 리뷰</strong> — Claude가 보안 이슈, N+1 문제, 에러 핸들링 누락 발견</li>
+<li><strong>cc-safe</strong> — 위험한 승인 명령어 감사 도구 (<code>npm install -g cc-safe</code>)</li>
+</ul>
+<h3>Part 6: 고급 기능 - MCP, Hooks, Agents</h3>
+<ul>
+<li><strong>MCP</strong> — Playwright(브라우저), Supabase(DB), Firecrawl(크롤링) 등 외부 연동</li>
+<ul>
+<li>⚠️ 10개 미만 MCP, 80개 미만 도구 유지 권장</li>
+</ul>
+<li><strong>Hooks</strong> — PreToolUse/PostToolUse로 위험 명령어 차단, 알림 등 결정론적 제어</li>
+<li><strong>Skills</strong> — 재사용 가능한 지식 조각 (Claude가 자동 호출)</li>
+<li><strong>Agents (서브에이전트)</strong> — 독립 200k 컨텍스트, 병렬 실행, 전문화된 작업 위임</li>
+<li><strong>Plugins</strong> — Hooks + Skills + Agents + MCP를 번들로 배포</li>
+</ul>
+<h3>Part 7: 시스템 최적화와 자동화</h3>
+<ul>
+<li><strong>시스템 프롬프트 슬림화</strong> — ykdojo가 19k → 10k 이하로 절반 감소 (58개 패치)</li>
+<li><strong>지수 백오프</strong> — 장시간 작업 상태 확인 간격을 점진적으로 늘리기</li>
+<li><strong>백그라운드 실행</strong> — <code>Ctrl+B</code>로 백그라운드, 서브에이전트 병렬 실행</li>
+<li><strong>자동화의 자동화</strong> — Level 0(복붙) → Level 7(Hooks 자동화)까지 발전</li>
+<li><strong>Headless 모드</strong> — <code>claude -p &quot;prompt&quot;</code>로 CI/CD 파이프라인 통합</li>
+</ul>
+<h3>Part 8: 컨테이너와 샌드박스</h3>
+<ul>
+<li><strong>Docker 컨테이너</strong> — YOLO 모드는 반드시 컨테이너 안에서!</li>
+<li><strong>워커 Claude 오케스트레이션</strong> — 메인 Claude가 tmux로 컨테이너 내 워커 Claude 조율</li>
+<li><strong>Sandbox 모드</strong> — <code>/sandbox</code>로 신뢰할 수 있는 명령어만 자동 승인</li>
+</ul>
+<h3>Part 9: 브라우저 통합과 웹 자동화</h3>
+<ul>
+<li><strong>네이티브 Chrome 통합</strong> — <code>claude --chrome</code></li>
+<li><strong>Playwright MCP</strong> — 헤드리스 브라우저, E2E 테스트 자동화</li>
+<li><strong>Gemini CLI</strong> — Claude 접근 불가 웹사이트의 대체 수단</li>
+</ul>
+<h3>Part 10: 실전 활용 사례</h3>
+<ul>
+<li>작성-테스트 사이클(TDD), 글쓰기 도우미, 연구 도구, DevOps 엔지니어</li>
+<li>범용 인터페이스 (비디오 편집, 오디오 전사, 디스크 정리 등)</li>
+<li>출력 검증: 테스트 → GitHub Desktop → Draft PR → 자기 검증</li>
+</ul>
+<h3>Part 11: 고급 패턴과 철학</h3>
+<ul>
+<li><strong>10억 토큰 규칙</strong> — &quot;사용이 최고의 학습&quot;</li>
+<li><strong>개인화된 소프트웨어 시대</strong> — 자신만의 맞춤형 도구 제작</li>
+<li><strong>지식 공유의 선순환</strong> — 공유하면서 더 많이 배운다</li>
+</ul>
+<h3>Part 12: 고급 기능과 SDK</h3>
+<ul>
+<li><strong>Extended Thinking</strong> — <code>ultrathink</code> 키워드로 최대 32k 토큰 내부 추론</li>
+<li><strong>LSP 통합</strong> — IDE 수준 코드 인텔리전스</li>
+<li><strong>Claude Agent SDK</strong> — 10줄로 에이전트 만들기</li>
+<li><strong>팀 설정 공유</strong> — <code>.claude/team-settings.json</code></li>
+</ul>
+<h3>Part 13: 학습 로드맵</h3>
+<ul>
+<li><strong>초급 (1-3개월)</strong>: 기본 명령어, CLAUDE.md, 컨텍스트 관리, Git 통합</li>
+<li><strong>중급 (3-12개월)</strong>: MCP, Hooks, Skills, 컨테이너, 서브에이전트</li>
+<li><strong>고급 (1년+)</strong>: 시스템 프롬프트 패치, 커스텀 MCP 서버, 멀티에이전트 오케스트레이션, SDK</li>
+</ul>
+<hr>
+<h2>🔑 핵심 키워드 &amp; 명령어</h2>
+<table><thead><tr><th>기능</th><th>명령어/단축키</th></tr></thead><tbody>
+<tr><td>토큰 확인</td><td><code>/usage</code></td></tr>
+<tr><td>컨텍스트 확인</td><td><code>/context</code></td></tr>
+<tr><td>대화 초기화</td><td><code>/clear</code></td></tr>
+<tr><td>계획 모드</td><td><code>Shift+Tab</code> ×2</td></tr>
+<tr><td>되감기</td><td><code>Esc Esc</code></td></tr>
+<tr><td>즉시 실행</td><td><code>!command</code></td></tr>
+<tr><td>백그라운드</td><td><code>Ctrl+B</code></td></tr>
+<tr><td>YOLO 모드</td><td><code>--dangerously-skip-permissions</code></td></tr>
+<tr><td>Headless</td><td><code>claude -p &quot;prompt&quot;</code></td></tr>
+<tr><td>세션 이어가기</td><td><code>claude --continue</code></td></tr>
+</tbody></table>
+<hr>
+<h2>💡 인상적인 인사이트</h2>
+<ol>
+<li><strong>&quot;AI 컨텍스트는 우유와 같다&quot;</strong> — 신선하고 압축된 상태 유지가 핵심</li>
+<li><strong>YOLO 모드 = &quot;보호되지 않은 성관계&quot;</strong> — 반드시 컨테이너 안에서!</li>
+<li><strong>자동화의 자동화</strong> — 반복 3회 이상이면 자동화, 그 자동화도 자동화</li>
+<li><strong>AI는 부조종사, 주인공은 당신</strong> — 최종 결정과 책임은 개발자의 몫</li>
+</ol>
+<hr>
+<p>#claude-code #ai-coding #agentic-development #productivity #tips #guide #secondbrain</p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-02-09 Claude Code 완전 가이드 70가지 팁/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

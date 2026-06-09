@@ -1,0 +1,45 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>log4j 취약점 긴급대응 방안 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>log4j 취약점 긴급대응 방안</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>log4j 취약점 긴급대응 방안</h1>
+<blockquote>Source candidate from <code>News-Links/2026-03-15 log4j 취약점 긴급대응 방안/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>log4j 취약점 긴급대응 방안</h1>
+<blockquote>📄 원본: [[original.pdf]]</blockquote>
+<h2>📋 요약</h2>
+<ul>
+<li>Apache log4j2 라이브러리에서 JNDI 인젝션을 통한 <strong>원격코드실행(RCE) 취약점</strong> 발견 (CVE-2021-44228)</li>
+<li>CVSS 스코어 <strong>10점</strong> — 가장 치명적인 등급</li>
+<li>log4j2 <strong>2.0-beta9 ~ 2.14.1</strong> 버전을 사용하는 모든 Java 기반 소프트웨어에 영향</li>
+<li>중국 Alibaba Cloud 보안팀 Chen Zhaojun이 2021.11.24 보고</li>
+</ul>
+<h2>💡 키포인트</h2>
+<ul>
+<li>log4j2는 Java 로깅 프레임워크로, 수많은 Apache 프로젝트에 내장 (Struts2, Solr, Druid, Flink, Kafka 등)</li>
+<li>ElasticSearch, Flume, Hadoop, Logstash, Spring-Boot-starter-log4j2도 영향권</li>
+<li>공격자가 JNDI Lookup을 통해 원격 코드를 실행할 수 있음</li>
+</ul>
+<h2>🛡️ 대응 방안 (버전별)</h2>
+<h3>① 2.0-beta9 ~ 2.10.0</h3>
+<p><code>JndiLookup</code> 클래스를 classpath에서 제거:</p>
+<pre><code>zip -q -d log4j-core-*.jar org/apache/logging/log4j/core/lookup/JndiLookup.class</code></pre>
+<h3>② 2.10 ~ 2.14.1</h3>
+<p>시스템 설정 변경:</p>
+<pre><code>log4j2.formatMsgNoLookups=true
+# 또는 환경변수
+LOG4J_FORMAT_MSG_NO_LOOKUPS=true</code></pre>
+<h3>③ 모든 버전 (권장)</h3>
+<p>최신버전 <strong>2.15.0</strong> 이상으로 업데이트:</p>
+<ul>
+<li>다운로드: <a href="https://logging.apache.org/log4j/2.x/download.html">https://logging.apache.org/log4j/2.x/download.html</a></li>
+</ul>
+<h2>📝 영향받는 소프트웨어 목록</h2>
+<table><thead><tr><th>소프트웨어</th><th>비고</th></tr></thead><tbody>
+<tr><td>Apache Struts2</td><td>웹 프레임워크</td></tr>
+<tr><td>Apache Solr</td><td>검색 엔진</td></tr>
+<tr><td>Apache Druid</td><td>실시간 분석</td></tr>
+<tr><td>Apache Flink</td><td>스트림 처리</td></tr>
+<tr><td>ElasticSearch</td><td>검색/분석</td></tr>
+<tr><td>Flume</td><td>로그 수집</td></tr>
+<tr><td>Hadoop</td><td>빅데이터</td></tr>
+<tr><td>Logstash</td><td>로그 파이프라인</td></tr>
+<tr><td>Kafka</td><td>메시지 큐</td></tr>
+<tr><td>Spring-Boot-starter-log4j2</td><td>Spring Boot</td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-03-15 log4j 취약점 긴급대응 방안/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

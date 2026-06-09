@@ -1,0 +1,71 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>hwp2md — HWP(한글) 문서를 Markdown으로 변환하는 CLI 도구 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>hwp2md — HWP(한글) 문서를 Markdown으로 변환하는 CLI 도구</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>hwp2md — HWP(한글) 문서를 Markdown으로 변환하는 CLI 도구</h1>
+<blockquote>Source candidate from <code>News-Links/2026-03-15 hwp2md - HWP를 Markdown으로 변환하는 CLI 도구/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>hwp2md — HWP(한글) 문서를 Markdown으로 변환하는 CLI 도구</h1>
+<blockquote>원본: <a href="https://www.threads.com/@feelfree<em>ai/post/DV5PWaMjMOI">https://www.threads.com/@feelfree</em>ai/post/DV5PWaMjMOI</a></blockquote>
+<blockquote>GitHub: <a href="https://github.com/roboco-io/hwp2md">https://github.com/roboco-io/hwp2md</a></blockquote>
+<h2>요약</h2>
+<p>한국에서 피할 수 없는 HWP 파일을 명령어 한 줄로 Markdown으로 변환하는 Go 기반 CLI 도구. 단순 텍스트 추출을 넘어 <strong>복잡한 표나 구조를 최대한 살리며</strong>, 선택적으로 LLM을 연동해 가독성 높은 Markdown을 생성한다.</p>
+<h2>핵심 포인트</h2>
+<ul>
+<li><strong>HWPX + HWP 5.x (2002~2022) 모두 지원</strong></li>
+<li><strong>로컬 CLI 기반</strong> — 사내망/보안 이슈 해결 (웹 변환기 불필요)</li>
+<li><strong>2단계 파이프라인 아키텍처</strong>:</li>
+<ul>
+<li>Stage 1 (Parser): HWP → 중간 표현(IR) → 기본 Markdown</li>
+<li>Stage 2 (LLM, 선택적): IR → LLM → 가독성 향상된 Markdown</li>
+</ul>
+<li><strong>LLM 프로바이더 자유 선택</strong>: Anthropic(Claude), OpenAI(GPT), Google(Gemini), Upstage(Solar), Ollama(로컬)</li>
+<li>CI/CD 파이프라인이나 대량 문서 마이그레이션에 바로 투입 가능</li>
+<li>Claude Code를 활용한 바이브 코딩으로 개발됨</li>
+</ul>
+<h2>설치</h2>
+<pre><code># Go 설치
+go install github.com/roboco-io/hwp2md/cmd/hwp2md@latest
+
+# 또는 GitHub Releases에서 바이너리 다운로드 (macOS Apple Silicon)
+# hwp2md_*_darwin_arm64.tar.gz</code></pre>
+<h2>사용법</h2>
+<pre><code># 기본 변환 (Stage 1만)
+hwp2md document.hwpx -o output.md
+hwp2md document.hwp -o output.md
+
+# LLM 연동 변환 (Stage 1 + Stage 2)
+export ANTHROPIC_API_KEY=&quot;your-key&quot;
+hwp2md convert document.hwpx --llm
+
+# 다른 LLM 프로바이더
+hwp2md convert document.hwpx --llm --provider openai
+hwp2md convert document.hwpx --llm --provider ollama --model llama3.2
+
+# Upstage Document Parse (OCR 기반, 복잡한 레이아웃용)
+export UPSTAGE_API_KEY=&quot;your-key&quot;
+hwp2md document.hwpx --parser upstage
+
+# JSON IR 추출
+hwp2md extract document.hwpx -o output.json</code></pre>
+<h2>지원 현황</h2>
+<table><thead><tr><th>기능</th><th>상태</th></tr></thead><tbody>
+<tr><td>HWPX (XML, 2014+)</td><td>✅ 지원</td></tr>
+<tr><td>HWP 5.x (바이너리, 2002~2022)</td><td>✅ 지원</td></tr>
+<tr><td>문단/텍스트</td><td>✅ 지원</td></tr>
+<tr><td>테이블 (셀 병합 포함)</td><td>✅ 지원</td></tr>
+<tr><td>이미지 참조</td><td>⚠️ 부분 지원</td></tr>
+<tr><td>압축 문서</td><td>✅ 지원</td></tr>
+<tr><td>암호화/DRM 문서</td><td>❌ 미지원</td></tr>
+<tr><td>HWP 3.x</td><td>미정</td></tr>
+</tbody></table>
+<h2>활용 시나리오</h2>
+<ul>
+<li>사내 레거시 HWP 문서 → Git/Notion 마이그레이션</li>
+<li>CI/CD 파이프라인에서 대량 문서 자동 변환</li>
+<li>보안 이슈로 웹 변환기 사용이 어려운 환경</li>
+<li>LLM 연동으로 복잡한 표/구조를 가독성 높게 변환</li>
+</ul>
+<h2>기술 스택</h2>
+<ul>
+<li><strong>언어</strong>: Go 1.24+</li>
+<li><strong>아키텍처</strong>: 2단계 파이프라인 (Parser → LLM)</li>
+<li><strong>개발 방식</strong>: Claude Code 바이브 코딩</li>
+<li><strong>CI/CD</strong>: GitHub Actions + pre-commit/pre-push hooks</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-03-15 hwp2md - HWP를 Markdown으로 변환하는 CLI 도구/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

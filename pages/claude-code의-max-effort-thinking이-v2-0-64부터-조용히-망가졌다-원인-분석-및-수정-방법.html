@@ -1,0 +1,104 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude Code의 max effort thinking이 v2.0.64부터 조용히 망가졌다 — 원인 분석 및 수정 방법 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>Claude Code의 max effort thinking이 v2.0.64부터 조용히 망가졌다 — 원인 분석 및 수정 방법</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Claude Code의 max effort thinking이 v2.0.64부터 조용히 망가졌다 — 원인 분석 및 수정 방법</h1>
+<blockquote>Source candidate from <code>News-Links/2026-04-14 Claude Code max effort thinking 버그 수정/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Claude Code의 &quot;max effort&quot; thinking이 v2.0.64부터 조용히 망가졌다 — 원인 분석 및 수정 방법</h1>
+<blockquote><strong>원문</strong>: <a href="https://www.reddit.com/r/ClaudeCode/comments/1shjfxb/claude<em>codes</em>max<em>effort</em>thinking<em>has</em>been/">Reddit r/ClaudeCode</a></blockquote>
+<blockquote><strong>날짜</strong>: 2026-04-14</blockquote>
+<hr>
+<h2>TL;DR</h2>
+<p><code>alwaysThinkingEnabled: true</code>와 <code>CLAUDE<em>CODE</em>EFFORT_LEVEL=max</code>를 settings.json에 설정해도, Claude Code v2.0.64 이후 <strong>확장 사고(extended thinking)가 조용히 실패</strong>한다.</p>
+<p><strong>3개의 버그가 중첩</strong>되어 발생하며, 래퍼 스크립트로 해결 가능.</p>
+<hr>
+<h2>발견 경위</h2>
+<p>Claude Code 2.1.98에서 클래식 트릭 질문 테스트:</p>
+<blockquote>&quot;세차장이 50m 떨어져 있어. 운전해서 갈까, 걸어갈까?&quot;</blockquote>
+<p><strong>정답</strong>: 운전 (차가 세차장에 있어야 세차가 되니까)</p>
+<p><strong>Claude Code 답변</strong>: &quot;걸어가세요. 50m면 60초도 안 걸려요.&quot;</p>
+<p>→ 응답 시간 ~4초, ~80 출력 토큰 = <strong>확장 사고 미동작</strong> 패턴</p>
+<p>특이점:</p>
+<ul>
+<li><code>alwaysThinkingEnabled: true</code>와 <code>CLAUDE<em>CODE</em>EFFORT_LEVEL=max</code>가 이미 설정된 상태</li>
+<li>중립 디렉토리에서는 정답, 특정 프로젝트 폴더에서만 실패</li>
+<li><code>claude -p</code>(헤드리스)는 작동, 인터랙티브 TUI는 미작동</li>
+</ul>
+<hr>
+<h2>원인 분석 (3개 스택 버그)</h2>
+<h3>버그 1: <code>alwaysThinkingEnabled</code> — v2.0.64부터 조용히 무시됨</h3>
+<ul>
+<li>GitHub Issue #13532: &quot;alwaysThinkingEnabled setting not respected since v2.0.64&quot;</li>
+<li>Regression. 중복 처리되고 잠김. 패치 없음.</li>
+<li><strong>이 설정은 현재 아무것도 하지 않는다.</strong></li>
+</ul>
+<h3>버그 2: <code>settings.json.env</code>는 자식 프로세스에만 적용됨</h3>
+<ul>
+<li><code>settings.json.env</code>의 환경변수는 Claude가 생성하는 자식 프로세스(Bash 도구, MCP 서버, 훅)에만 전파됨</li>
+<li><strong>Claude 프로세스 자체에는 적용되지 않는다</strong></li>
+<li><code>MAX<em>THINKING</em>TOKENS</code>은 셸 환경변수여야 한다</li>
+</ul>
+<h3>버그 3: 대용량 자동 로드 프로젝트 컨텍스트가 모델을 표면 패턴 매칭으로 유도</h3>
+<ul>
+<li>사고가 활성화되어도 큰 컨텍스트가 reasoning을 방해함</li>
+<li>사용자 레벨 <code>~/.claude/CLAUDE.md</code>의 reasoning nudge로 해결</li>
+</ul>
+<h3>관련 함정 3가지</h3>
+<ol>
+<li><strong>Bash 해시 캐시</strong>: 새 래퍼가 기존 셸에서 보이지 않음 → 이전 경로를 래퍼로 심링크해야 함</li>
+<li><code>--append-system-prompt-file</code>: 인터랙티브 모드에서 조용히 무시되는 숨겨진 플래그. 대신 <code>~/.claude/CLAUDE.md</code> 사용</li>
+<li><strong>Claude Code가 자체 argv를 난독화</strong>: <code>/proc/&lt;pid&gt;/cmdline</code>으로 플래그 전달 확인 불가</li>
+</ol>
+<hr>
+<h2>수정 방법</h2>
+<h3>1단계: 래퍼 스크립트 생성</h3>
+<p><code>/usr/local/bin/claude</code> (기존 경로보다 PATH에서 앞서야 함):</p>
+<pre><code>#!/bin/bash
+export MAX_THINKING_TOKENS=&quot;${MAX_THINKING_TOKENS:-63999}&quot;
+export CLAUDE_CODE_ALWAYS_ENABLE_EFFORT=&quot;${CLAUDE_CODE_ALWAYS_ENABLE_EFFORT:-1}&quot;
+export CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING=&quot;${CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING:-1}&quot;
+export CLAUDE_CODE_EFFORT_LEVEL=&quot;${CLAUDE_CODE_EFFORT_LEVEL:-max}&quot;
+
+NUDGE_FILE=&quot;/etc/claude-code/thinking-nudge.txt&quot;
+CLI=&quot;/usr/lib/node_modules/@anthropic-ai/claude-code/cli.js&quot;
+
+if [ -f &quot;$NUDGE_FILE&quot; ]; then
+  exec &quot;$CLI&quot; --append-system-prompt-file &quot;$NUDGE_FILE&quot; &quot;$@&quot;
+else
+  exec &quot;$CLI&quot; &quot;$@&quot;
+fi</code></pre>
+<pre><code>chmod 755 /usr/local/bin/claude</code></pre>
+<h3>2단계: 기존 심링크를 래퍼로 연결</h3>
+<pre><code>ln -sfn /usr/local/bin/claude /usr/bin/claude</code></pre>
+<p>→ Bash 해시 캐시 문제 해결</p>
+<h3>3단계: Reasoning Nudge — <code>~/.claude/CLAUDE.md</code>에 추가</h3>
+<pre><code>Before answering any question, reason step by step. Many questions contain subtle
+constraints, hidden assumptions, or trick aspects that are invisible to surface-level
+pattern matching. Verify that the answer you are about to give is actually sensible
+given ALL the details in the question, not just the most salient one.</code></pre>
+<p>같은 내용을 <code>/etc/claude-code/thinking-nudge.txt</code>에도 저장 (래퍼의 <code>--append-system-prompt-file</code>용).</p>
+<h3>4단계: <code>.bashrc</code>/<code>.profile</code>의 오래된 <code>MAX<em>THINKING</em>TOKENS</code> 내보내기 제거</h3>
+<p>래퍼가 <code>${VAR:-default}</code> 패턴으로 기존 값을 우선하므로, 이전에 설정한 낮은 값이 래퍼의 63999 기본값을 덮어쓸 수 있음.</p>
+<hr>
+<h2>결과</h2>
+<ul>
+<li><strong>수정 전</strong>: 문제 프로젝트 폴더에서 5/5 실패, 응답 ~4초, ~80 출력 토큰, thinking 토큰 0</li>
+<li><strong>수정 후</strong>: 여러 폴더에서 25/25 연속 통과, <code>claude-opus-4-6</code> 및 <code>claude-opus-4-6[1m]</code> 모두, 응답 ~6-9초, 100-130 출력 토큰</li>
+</ul>
+<hr>
+<h2>영향 확인 방법</h2>
+<p>현재 Claude Code v2.0.64+ 사용 중이면서 <code>alwaysThinkingEnabled: true</code>를 믿고 있다면:</p>
+<pre><code>세차장이 50m 떨어져 있어. 운전해서 갈까, 걸어갈까?</code></pre>
+<p>빠르고 자신감 있는 &quot;걸어가세요&quot; 답변이 나오면 → <strong>이 버그의 영향을 받는 중</strong></p>
+<hr>
+<h2>관련 GitHub Issues</h2>
+<ul>
+<li><a href="https://github.com/anthropics/claude-code/issues/13532">#13532</a> — alwaysThinkingEnabled v2.0.64 regression (잠김)</li>
+<li><a href="https://github.com/anthropics/claude-code/issues/5257">#5257</a> — MAX<em>THINKING</em>TOKENS 동작</li>
+<li><a href="https://github.com/anthropics/claude-code/issues/13768">#13768</a> — thinking mode 미지속</li>
+<li><a href="https://github.com/anthropics/claude-code/issues/10623">#10623</a> — settings 미적용</li>
+<li><a href="https://github.com/anthropics/claude-code/issues/42796">#42796</a> — AMD AI 헤드의 reasoning effort 저하 리포트 (무시됨)</li>
+</ul>
+<hr>
+<h2>주요 댓글</h2>
+<blockquote>&quot;Anthropic이 구독자를 위해 의도적으로 이렇게 한 것 같다.&quot; (138 upvotes)</blockquote>
+<blockquote>&quot;몇 주째 이것과 싸웠는데 이유를 몰랐다. settings.json.env가 셸 env와 다르다는 것만으로도 영원히 못 찾았을 것 같다.&quot; (45 upvotes)</blockquote>
+<blockquote>&quot;이 심층 분석은 인간의 추론과 논리가 여전히 AI를 능가할 수 있다는 증거다.&quot; (25 upvotes)</blockquote>
+<blockquote>&quot;$200/월을 내고 claude-opus-4.6-27B-IQ2_XXS를 쓰고 있는 건지...&quot; (7 upvotes)</blockquote><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-04-14 Claude Code max effort thinking 버그 수정/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

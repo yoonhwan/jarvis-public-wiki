@@ -1,0 +1,174 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evaluating Skills — 스킬 평가 방법론 공식 가이드 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>Evaluating Skills — 스킬 평가 방법론 공식 가이드</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Evaluating Skills — 스킬 평가 방법론 공식 가이드</h1>
+<blockquote>Source candidate from <code>News-Links/2026-03-10 LangChain Skills - Claude Code 통과율 25에서 95로/03-evaluating-skills.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Evaluating Skills — 스킬 평가 방법론</h1>
+<blockquote>원문: <a href="https://blog.langchain.com/evaluating-skills/">https://blog.langchain.com/evaluating-skills/</a></blockquote>
+<blockquote>발행: 2026-03-04 | by Robert Xu (LangChain)</blockquote>
+<hr>
+<h2>개요</h2>
+<p>스킬은 일종의 <strong>프롬프트</strong> — 예상치 못한 방식으로 에이전트 동작에 영향을 줄 수 있다.</p>
+<p>→ LLM 프롬프트처럼 <strong>반드시 평가(테스트)가 필요</strong>하다.</p>
+<p><strong>기본 평가 파이프라인:</strong></p>
+<ol>
+<li>Claude Code가 성공해야 할 태스크 정의</li>
+<li>태스크를 돕는 스킬 정의</li>
+<li>스킬 없이 Claude Code 실행</li>
+<li>스킬 있이 Claude Code 실행</li>
+<li>성능 비교 + 스킬 반복 개선</li>
+</ol>
+<hr>
+<h2>Step 1: 클린 테스트 환경 구성</h2>
+<p>코딩 에이전트는 <strong>시작 조건에 민감</strong>하다:</p>
+<ul>
+<li>Claude Code는 작업 전 디렉토리를 먼저 탐색 → 발견한 것이 접근 방식을 결정</li>
+<li><strong>일관성과 재현성</strong> 확보를 위해 클린 환경 필수</li>
+</ul>
+<p><strong>권장 방법:</strong></p>
+<ul>
+<li><strong>Docker</strong> (LangChain 사용) — 가장 일반적</li>
+<li><a href="https://github.com/laude-institute/harbor">Harbor</a> — 대안</li>
+<li>기타 sandbox 환경</li>
+</ul>
+<pre><code>def run_claude_in_docker(
+    test_dir: Path, prompt: str, timeout: int = 300, model: str = None
+) -&gt; subprocess.CompletedProcess:
+    &quot;&quot;&quot;Docker에서 Claude CLI 실행. CompletedProcess 반환.&quot;&quot;&quot;
+    if not check_docker_available():
+        raise RuntimeError(&quot;Docker not available&quot;)
+    cmd = [&quot;run-claude&quot;, str(test_dir), prompt, &quot;--timeout&quot;, str(timeout)]
+    if model:
+        cmd.extend([&quot;--model&quot;, model])
+    try:
+        return run_shell(&quot;docker.sh&quot;, *cmd, timeout=timeout + 30, check=False)
+    except subprocess.TimeoutExpired:
+        return subprocess.CompletedProcess(cmd, 124, &quot;&quot;, f&quot;Timeout after {timeout}s&quot;)</code></pre>
+<hr>
+<h2>Step 2: 태스크 정의</h2>
+<h3>원칙 1: 제약된 태스크(Constrained Tasks) 만들기</h3>
+<p>❌ <strong>오픈엔드 태스크 금지</strong> — 결과 채점이 어렵고 정답이 다양</p>
+<p>✅ <strong>버그 코드 수정 태스크</strong> 권장 — 설계 공간 제약, 정확도 검증 쉬움</p>
+<ul>
+<li>미리 정의된 테스트로 결과 검증 가능</li>
+<li>기존 접근 방식 활용 → 설계 체크 덜 brittle</li>
+</ul>
+<h3>원칙 2: 명확한 메트릭과 페어링</h3>
+<p>추적해야 할 메트릭:</p>
+<table><thead><tr><th>메트릭</th><th>설명</th></tr></thead><tbody>
+<tr><td>스킬 호출 여부</td><td>관련 스킬이 실제로 호출됐나? 불필요할 때 호출 안 했나?</td></tr>
+<tr><td>태스크 완료 여부</td><td>완전 실패 vs 거의 완료 구분</td></tr>
+<tr><td>턴 수</td><td>Claude Code가 태스크 완료에 몇 턴 사용했나?</td></tr>
+<tr><td>실제 소요 시간</td><td>시간 효율성 (모든 턴이 동등하지 않음)</td></tr>
+</tbody></table>
+<p>→ LangSmith 평가로 모든 메트릭 단일 대시보드에서 추적</p>
+<h3>원칙 3: 난이도 과적합 금지</h3>
+<ul>
+<li>코딩 에이전트는 이미 매우 강력한 문제 해결사</li>
+<li>너무 어렵거나 복잡한 태스크 → 스킬 평가가 아니라 에이전트 역량 테스트가 됨</li>
+<li><strong>실제로 관찰된 실패 케이스 기반으로 태스크 생성</strong> (휴리스틱)</li>
+<li>실패를 유발하는 가장 단순한 테스트 케이스 만들기</li>
+</ul>
+<h3>예시 태스크</h3>
+<pre><code>// TASK
+Create a trajectory dataset with 5 examples from the 5 most recent traces
+in our LangSmith project, plus an evaluator measuring tool call match percentage.
+
+Output: trajectory_dataset.json and trajectory_evaluator.py
+(upload both as &quot;bench-{run_id}&quot; to LangSmith)
+
+Run any code you write directly.</code></pre>
+<h3>예시 메트릭 코드</h3>
+<pre><code># 예시 메트릭 — Claude가 생성한 데이터셋 검증
+def check_accuracy(runner: TestRunner):
+    &quot;&quot;&quot;Trajectories match ground truth.&quot;&quot;&quot;
+    dataset_file = runner.artifacts[0]  # Claude 출력: trajectory_dataset.json
+    test_dir = Path(&quot;.&quot;)
+    p, f = check_trajectory_accuracy(
+        test_dir=test_dir,
+        outputs=runner.context,
+        filename=dataset_file,
+        expected_filename=&quot;expected_dataset.json&quot;,  # Ground Truth
+        data_dir=test_dir / &quot;data&quot;,
+    )
+    for msg in p:
+        runner.passed(msg)
+    for msg in f:
+        runner.failed(msg)</code></pre>
+<p>전체 테스트: <a href="https://github.com/langchain-ai/skills-benchmarks">https://github.com/langchain-ai/skills-benchmarks</a></p>
+<hr>
+<h2>Step 3: 스킬 정의</h2>
+<h3>원칙 1: 스킬 모듈화</h3>
+<ul>
+<li>XML 태그로 스킬 내 섹션 구분 → A/B 테스트 용이</li>
+<li>대형 스킬(300-500줄)에서는 소폭 포맷 변경의 영향 제한적</li>
+<ul>
+<li>&quot;이렇게 해라(positive)&quot; vs &quot;이러지 마라(negative)&quot; → 성능 차이 유사</li>
+<li>마크다운 vs XML 태그 → 성능 차이 유사</li>
+</ul>
+<li>개선 시 세부 최적화보다 <strong>섹션 단위로 변경</strong></li>
+</ul>
+<h3>원칙 2: AGENTS.md / CLAUDE.md 적극 활용</h3>
+<ul>
+<li>스킬이 항상 올바르게 호출되지 않음 (특정 태스크에서 호출률 70%에 머뭄)</li>
+<li>AGENTS.md/CLAUDE.md는 <strong>컨텍스트에 안정적으로 로드됨</strong></li>
+<ul>
+<li>&quot;언제 어떤 스킬을 써라&quot; 안내 → 일관된 스킬 호출 달성</li>
+<li>여러 스킬을 함께 사용하는 방법 안내 → 패스레이트↑, 턴 수↓</li>
+</ul>
+</ul>
+<h3>원칙 3: 스킬 수 균형 유지</h3>
+<p>⚠️ <strong>유사한 스킬 20개</strong> → 잘못된 스킬 호출 발생</p>
+<p>✅ <strong>12개로 줄이자</strong> → 정확도↑</p>
+<p>트레이드오프:</p>
+<ul>
+<li>스킬 수 적음 → 콘텐츠가 컨텍스트에 더 일관성 있게 로드됨</li>
+<li>스킬 수 많음 → 필요 없는 콘텐츠가 함께 로드될 수 있음</li>
+<li><strong>최적 균형점을 찾으려면 테스트 필수</strong></li>
+</ul>
+<hr>
+<h2>Step 4: 성능 비교 및 실행</h2>
+<h3>테스트 케이스 조합</h3>
+<table><thead><tr><th>테스트</th><th>설명</th></tr></thead><tbody>
+<tr><td>컨트롤</td><td>스킬 없이 Claude Code 실행</td></tr>
+<tr><td>전체 스킬</td><td>모든 스킬 포함 실행</td></tr>
+<tr><td>대형 스킬 통합</td><td>스킬을 몇 개 큰 스킬로 통합</td></tr>
+<tr><td>소형 스킬 분산</td><td>스킬을 여러 작은 스킬로 분리</td></tr>
+</tbody></table>
+<h3>핵심 결과</h3>
+<table><thead><tr><th>조건</th><th>태스크 완료율</th></tr></thead><tbody>
+<tr><td>스킬 있음</td><td><strong>82%</strong></td></tr>
+<tr><td>스킬 없음</td><td><strong>9%</strong></td></tr>
+</tbody></table>
+<p>→ LangSmith pytest 통합으로 비교 실행</p>
+<h3>Observability (관찰 가능성) — 핵심!</h3>
+<p>Docker 내 Claude Code 동작을 이해하기 위해 <strong>LangSmith 통합</strong>:</p>
+<ul>
+<li>Claude Code가 수행하는 모든 액션 캡처</li>
+<li>읽은 파일, 생성한 스크립트, 호출/미호출 스킬 파악</li>
+<li><strong>Claude Code가 자신의 트레이싱 스킬로 트레이스 검사 + 요약</strong></li>
+</ul>
+<p>  → 스킬 콘텐츠 반복 개선 속도 비약적 향상</p>
+<p><strong>피드백 루프:</strong></p>
+<pre><code>Claude Code → 트레이스를 LangSmith로 전송
+           → 트레이스 풀다운 + 이슈 요약
+           → 사람이 수정안 제안
+           → 테스트 재실행
+           → LangSmith 실험 포털에서 성능 변화 확인</code></pre>
+<hr>
+<h2>결론</h2>
+<p>스킬은 Claude Code, Codex, Deep Agents CLI 등의 역량을 높이는 강력한 도구.</p>
+<p><strong>그러나 평가 없이는 신뢰할 수 없다.</strong></p>
+<p>핵심:</p>
+<ol>
+<li>✅ 클린 환경 (Docker sandbox)</li>
+<li>✅ 제약된 태스크 + 명확한 메트릭</li>
+<li>✅ AGENTS.md에 스킬 사용 안내</li>
+<li>✅ 12개 이하 스킬 유지</li>
+<li>✅ LangSmith로 Observability 확보</li>
+</ol>
+<p>전체 벤치마킹 리포: <a href="https://github.com/langchain-ai/skills-benchmarks">https://github.com/langchain-ai/skills-benchmarks</a></p>
+<p>LangSmith 평가 플랫폼: <a href="https://smith.langchain.com/">https://smith.langchain.com/</a></p>
+<hr>
+<h2>연관 문서</h2>
+<p>→ 메인 요약: [[README]]</p>
+<p>→ LangChain Skills: [[01-langchain-skills]]</p>
+<p>→ LangSmith CLI &amp; Skills: [[02-langsmith-cli-skills]]</p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-03-10 LangChain Skills - Claude Code 통과율 25에서 95로/03-evaluating-skills.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

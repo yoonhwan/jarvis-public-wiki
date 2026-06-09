@@ -1,0 +1,359 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Slack 기반 멀티에이전트 코딩 팀 허브 설계서 (OpenClaw NanoClaw) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>Slack 기반 멀티에이전트 코딩 팀 허브 설계서 (OpenClaw NanoClaw)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Slack 기반 멀티에이전트 코딩 팀 허브 설계서 (OpenClaw NanoClaw)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-03-16 Slack 기반 멀티에이전트 코딩 팀 허브 설계서/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Slack 기반 멀티에이전트 코딩 팀 허브 설계서 (OpenClaw / NanoClaw)</h1>
+<blockquote>목표: 허브 한 대에서 여러 &quot;역할 에이전트&quot;를 운용하고, 각 에이전트는 클라우드/온프레 환경에 맞게 배포된 실제 작업자로 동작하게 만들기. Slack을 중심 채널로 써서, 사람 + 에이전트 팀이 같이 일하는 구조.</blockquote>
+<hr>
+<h2>1. 기본 철학</h2>
+<h3>1.1 에이전트 정의</h3>
+<p>에이전트 = <strong>역할 + 스킬 + 기억 + 채널</strong></p>
+<ul>
+<li><strong>역할(Role)</strong></li>
+<ul>
+<li>이 에이전트가 담당하는 책임과 전문 영역</li>
+<li>예: 팀리더, 아키텍트, 프론트엔드, 백엔드, 악마의 반론가</li>
+</ul>
+<li><strong>스킬(Skills)</strong></li>
+<ul>
+<li>에이전트가 사용할 수 있는 도구 세트</li>
+<li>예: 코딩(Claude Code/Agent SDK), Git, 빌드/테스트, 리서치, Slack 메시지, 캘린더</li>
+</ul>
+<li><strong>기억(Memory)</strong></li>
+<ul>
+<li>에이전트가 축적해 가는 맥락/노하우/결정 기록</li>
+<li>OpenClaw: 에이전트 워크스페이스 디렉토리의 메모리 파일들</li>
+<li>NanoClaw: 컨테이너 내부 디렉토리(세션 로그, instructions 등)</li>
+</ul>
+<li><strong>채널(Channel)</strong></li>
+<ul>
+<li>사람 및 다른 시스템과 연결되는 입출력 인터페이스</li>
+<li>Slack / 텔레그램 / 웹 / CLI 등</li>
+</ul>
+</ul>
+<p>핵심: <strong>에이전트의 영속성을 위해 별도의 거대한 메모리 시스템을 새로 설계하지 않고</strong>, 프레임워크(OpenClaw/NanoClaw/Claude 에이전트)의 기본 메모리 + Slack/채널 맥락을 그대로 활용한다.</p>
+<hr>
+<h2>2. 3계층 아키텍처</h2>
+<h3>2.1 계층 구조</h3>
+<ol>
+<li><strong>사용자 인터페이스 층 (UI/채널)</strong></li>
+<ul>
+<li>Slack, Telegram, Web 등</li>
+<li>사람과 에이전트 팀이 상호작용하는 창구</li>
+<li>모든 알림·요청·결과가 여기에 드러난다</li>
+</ul>
+</ol>
+<ol>
+<li><strong>오케스트레이터 층 (허브 + 팀리더 에이전트)</strong></li>
+<ul>
+<li>NanoClaw / OpenClaw 허브 + &quot;모차르트&quot; 에이전트</li>
+<li>역할:</li>
+<ul>
+<li>사용자 요청 → 태스크로 변환</li>
+<li>어떤 역할 에이전트에 위임할지 결정</li>
+<li>에이전트 결과를 합성해 다시 사용자에게 응답</li>
+<li>Slack 이벤트/훅을 받아 상태머신을 돌리는 중앙 컨트롤러</li>
+</ul>
+</ul>
+</ol>
+<ol>
+<li><strong>작업자 층 (역할 에이전트들)</strong></li>
+<ul>
+<li>알렉스(아키텍트), 브레드(프론트), 로드니(서버), 데빌스(악마의 반론가) 등</li>
+<li>내부에서 코딩툴/모델/스킬을 실제로 실행하는 &quot;개별 작업자&quot;</li>
+<li>각 에이전트는 자기 워크스페이스와 모델, 스킬 번들을 가진다</li>
+</ul>
+</ol>
+<hr>
+<h2>3. 에이전트 팀 구성</h2>
+<h3>3.1 공통 에이전트 스펙</h3>
+<p>각 에이전트는 다음을 최소 단위로 가진다:</p>
+<ul>
+<li><strong>Provider / Model</strong></li>
+<ul>
+<li>예: Anthropic Claude (Opus, Sonnet, Claude Code 등)</li>
+</ul>
+<li><strong>Skills 번들</strong></li>
+<ul>
+<li>코딩: 프로젝트 코드 편집/리팩터링/테스트</li>
+<li>Git: PR, 브랜치, 커밋 관리</li>
+<li>리서치: 웹/문서 탐색</li>
+<li>Slack: 메시지 전송/요약</li>
+<li>기타 필요 도메인 스킬</li>
+</ul>
+<li><strong>Workspace / Memory</strong></li>
+<ul>
+<li>역할 정의 파일 (instructions.md, AGENT.md 등)</li>
+<li>memory/ 디렉토리(세션 요약, 결정, 히스토리)</li>
+<li>artifacts/ 디렉토리(리포트, diff, 로그, 문서)</li>
+</ul>
+<li><strong>채널 연결 정보</strong></li>
+<ul>
+<li>어떤 Slack 채널/쓰레드/멘션을 주로 사용하는지</li>
+<li>기타 메신저/웹 훅 엔드포인트</li>
+</ul>
+</ul>
+<h3>3.2 역할별 에이전트 예시</h3>
+<ul>
+<li><strong>모차르트 (팀리더 / 오케스트레이터)</strong></li>
+<ul>
+<li>책임: 사람 요청을 해석해 태스크 정의, 적절한 작업자 에이전트에게 위임, 결과 합성 및 최종 응답</li>
+<li>스킬: 태스크/상태 관리, Slack 요약/응답, 다른 에이전트 호출/조율</li>
+</ul>
+</ul>
+<ul>
+<li><strong>알렉스 (아키텍트)</strong></li>
+<ul>
+<li>책임: 시스템 설계, 모듈 경계, 인터페이스, ADR 작성</li>
+<li>스킬: 설계/문서화, 리서치, 코드 구조 리뷰</li>
+</ul>
+</ul>
+<ul>
+<li><strong>브레드 (클라이언트 코딩)</strong></li>
+<ul>
+<li>책임: 프론트/클라이언트 코드 구현 및 리팩터링</li>
+<li>스킬: JS/TS/React 등 클라 코드, Git, 브라우저 관련 도구</li>
+</ul>
+</ul>
+<ul>
+<li><strong>로드니 (서버 코딩)</strong></li>
+<ul>
+<li>책임: 백엔드/API/DB/인프라 코드 구현</li>
+<li>스킬: 서버 언어, DB, 인프라 IaC, 배포/모니터링 스킬</li>
+</ul>
+</ul>
+<ul>
+<li><strong>데빌스 (악마의 반론가)</strong></li>
+<ul>
+<li>책임: 설계/코드/결정에 대해 리스크/대안/가정 검증</li>
+<li>스킬: 리뷰 템플릿, 체크리스트, 리스크 모델링</li>
+</ul>
+</ul>
+<hr>
+<h2>4. 허브 + 분산 에이전트 구조</h2>
+<h3>4.1 개념도 (Mermaid)</h3>
+<pre><code>graph TD
+  subgraph Channels[사용자 채널]
+    Slack[Slack]
+    Tg[Telegram]
+    Web[Web UI]
+  end
+
+  User[사람(유저)] --- Slack
+
+  subgraph Hub[중앙 허브&lt;br/&gt;(NanoClaw / OpenClaw)]
+    Orchestrator[모차르트&lt;br/&gt;오케스트레이터 에이전트]
+    TaskStore[(태스크/상태 저장)]
+  end
+
+  Slack --&gt;|이벤트/메시지| Orchestrator
+  Tg --&gt; Orchestrator
+  Web --&gt; Orchestrator
+
+  Orchestrator --&gt; TaskStore
+  TaskStore --&gt; Orchestrator
+
+  subgraph Agents[분산 에이전트 풀&lt;br/&gt;(클라우드/온프레 컨테이너)]
+    Bread[브레드&lt;br/&gt;클라이언트 코딩]
+    Rodney[로드니&lt;br/&gt;서버 코딩]
+    Alex[알렉스&lt;br/&gt;아키텍트]
+    Devils[데빌스&lt;br/&gt;반론가]
+  end
+
+  Orchestrator --&gt;|태스크 위임/결과 수집| Bread
+  Orchestrator --&gt; Rodney
+  Orchestrator --&gt; Alex
+  Orchestrator --&gt; Devils
+
+  Bread --&gt;|작업 결과/상태| Orchestrator
+  Rodney --&gt; Orchestrator
+  Alex --&gt; Orchestrator
+  Devils --&gt; Orchestrator
+
+  Orchestrator --&gt;|요약/리포트| Slack</code></pre>
+<h3>4.2 배포 모델</h3>
+<ul>
+<li><strong>중앙 허브 1대 (또는 클러스터)</strong></li>
+<ul>
+<li>NanoClaw / OpenClaw 게이트웨이</li>
+<li>Slack/텔레그램/웹 등 모든 채널과 연결</li>
+<li>태스크/상태 관리 및 오케스트레이션 담당</li>
+</ul>
+</ul>
+<ul>
+<li><strong>에이전트 컨테이너들</strong></li>
+<ul>
+<li>브레드/로드니/알렉스/데빌스 각자의 컨테이너</li>
+<li>로컬, 클라우드, 온프레, 엣지 등 원하는 환경에 배포</li>
+<li>허브와는 RPC/큐/HTTP/메시지 버스로 통신</li>
+</ul>
+</ul>
+<hr>
+<h2>5. 통신 프로토콜 (심플 &amp; 일반화)</h2>
+<h3>5.1 기본 메시지 스키마</h3>
+<p>에이전트 간, 허브 ↔ 에이전트, Slack 훅 모두에 공통으로 쓰는 최소 포맷:</p>
+<pre><code>{
+  &quot;task_id&quot;: &quot;T-123&quot;,
+  &quot;from&quot;: &quot;MOZART&quot;,
+  &quot;to&quot;: &quot;BREAD&quot;,
+  &quot;status&quot;: &quot;pending&quot;,
+  &quot;summary&quot;: &quot;로그인 UI 구현 요청&quot;,
+  &quot;artifacts&quot;: [
+    {
+      &quot;type&quot;: &quot;link&quot;,
+      &quot;value&quot;: &quot;https://github.com/org/repo/pull/456&quot;
+    },
+    {
+      &quot;type&quot;: &quot;file&quot;,
+      &quot;value&quot;: &quot;artifacts/T-123/diff.patch&quot;
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;channel&quot;: &quot;slack&quot;,
+    &quot;thread_ts&quot;: &quot;1710761234.56789&quot;,
+    &quot;requested_by&quot;: &quot;@user&quot;
+  }
+}</code></pre>
+<p>이 한 타입으로:</p>
+<ul>
+<li>허브 → 에이전트: 작업 지시</li>
+<li>에이전트 → 허브: 진행 상황/완료 보고</li>
+<li>Slack 훅 → 허브: 유저 피드백/승인 이벤트</li>
+<li>허브 → Slack: 요약 메시지/결과 보고</li>
+</ul>
+<p>까지 모두 커버한다.</p>
+<h3>5.2 상태 머신 (태스크 수준)</h3>
+<ul>
+<li>상태:</li>
+<ul>
+<li><code>pending</code> → <code>working</code> → <code>done</code></li>
+<li>보조 상태: <code>needs-input</code>, <code>blocked</code>, <code>failed</code></li>
+</ul>
+<li>전이 예시:</li>
+<ul>
+<li><code>pending</code> → (에이전트 할당) → <code>working</code></li>
+<li><code>working</code> → (작업 완료) → <code>done</code></li>
+<li><code>working</code> → (추가 정보 필요) → <code>needs-input</code></li>
+<li><code>needs-input</code> → (유저 응답) → <code>working</code></li>
+<li><code>working</code> → (에러) → <code>failed</code></li>
+</ul>
+</ul>
+<p>허브(모차르트)가 이 상태 머신을 관리하고, 에이전트와 Slack 이벤트는 상태 변화의 트리거 역할만 한다.</p>
+<hr>
+<h2>6. Slack 중심 워크플로</h2>
+<h3>6.1 Slack에서 보는 관점</h3>
+<ul>
+<li><strong>유저</strong>는 그냥 Slack에서:</li>
+<ul>
+<li>채널/DM에서 &quot;@mozart 이번 로그인 기능 정리해줘&quot; 같은 메시지를 보냄</li>
+</ul>
+<li><strong>허브</strong>:</li>
+<ul>
+<li>이 메시지를 이벤트로 받아 태스크 생성 → 적절한 에이전트(BREAD/RODNEY 등)에 할당</li>
+</ul>
+<li><strong>작업자 에이전트</strong>:</li>
+<ul>
+<li>내부에서 코딩/테스트/리뷰 수행</li>
+<li>완료/중간 결과를 Slack 쓰레드에 다시 메시지로 보고</li>
+</ul>
+<li><strong>허브</strong>:</li>
+<ul>
+<li>Slack 훅으로 들어온 메시지/리액션/버튼을 해석해 태스크 상태를 업데이트하고,</li>
+<li>필요하면 다음 에이전트에게 위임 또는 워크플로 종료</li>
+</ul>
+</ul>
+<h3>6.2 모차르트 ↔ 브레드 1사이클 시퀀스</h3>
+<pre><code>sequenceDiagram
+  participant U as User
+  participant S as Slack
+  participant M as 모차르트 허브
+  participant B as 브레드 에이전트
+
+  U-&gt;&gt;S: &quot;새 로그인 UI 만들어줘&quot;
+  S-&gt;&gt;M: 메시지 이벤트(Webhook/Socket)
+
+  M-&gt;&gt;M: T-123 태스크 생성&lt;br/&gt;owner = 브레드
+  M-&gt;&gt;B: T-123 작업 요청&lt;br/&gt;요구사항/맥락 전달
+
+  B-&gt;&gt;B: 코드 작성/테스트/아티팩트 생성
+  B-&gt;&gt;M: T-123 완료 + 결과 요약/링크
+
+  M-&gt;&gt;S: T-123 결과 요약 메시지&lt;br/&gt;(쓰레드로 전송)
+  S-&gt;&gt;U: 결과 표시
+
+  S-&gt;&gt;M: (옵션) 유저 피드백/승인 이벤트
+  M-&gt;&gt;M: 후속 태스크 생성 또는 워크플로 종료</code></pre>
+<hr>
+<h2>7. OpenClaw vs NanoClaw 관점</h2>
+<h3>7.1 OpenClaw</h3>
+<ul>
+<li>기본 철학: <strong>Gateway(허브) 1개(또는 클러스터) + 그 안에 여러 에이전트 워크스페이스</strong></li>
+<li>장점:</li>
+<ul>
+<li>메신저/툴 연동이 풍부하고, 로컬 퍼스트 개인 비서에 최적</li>
+<li>에이전트별 워크스페이스·메모리 관리가 이미 잘 정의</li>
+</ul>
+<li>한계:</li>
+<ul>
+<li>각 에이전트를 완전히 다른 서버/리전에 &quot;서비스&quot;로 뿌려놓고 허브가 원격 호출하는 모델은, 추가 설계가 필요</li>
+</ul>
+</ul>
+<h3>7.2 NanoClaw</h3>
+<ul>
+<li>기본 철학: <strong>각 에이전트 = 컨테이너</strong>, 허브는 이를 스케줄/제어</li>
+<li>장점:</li>
+<ul>
+<li>컨테이너만 올릴 수 있는 환경이라면 어디든 에이전트 배포 가능</li>
+<li>권한/리소스/네트워크를 에이전트별로 강하게 격리</li>
+</ul>
+<li>자연스러운 패턴:</li>
+<ul>
+<li>중앙 허브 1대</li>
+<li>에이전트 컨테이너는 클라우드/온프레/엣지 등 원하는 곳에 배포</li>
+<li>허브가 Slack/채널과 연결된 &quot;중앙 관제탑&quot;</li>
+</ul>
+</ul>
+<p>이 기획서는 두 쪽 모두에 적용 가능한 <strong>상위 추상화</strong>고, 실제 구현에서 OpenClaw/NanoClaw에 맞게 adapter만 바꾸면 된다.</p>
+<hr>
+<h2>8. 최소 실행 가능한 버전 (MVP)</h2>
+<ol>
+<li><strong>에이전트 2개부터 시작</strong></li>
+<ul>
+<li>모차르트(팀리더)</li>
+<li>브레드(클라이언트/코딩)</li>
+</ul>
+</ol>
+<ol>
+<li><strong>채널 1개</strong></li>
+<ul>
+<li>Slack만 연결</li>
+</ul>
+</ol>
+<ol>
+<li><strong>통신 포맷</strong></li>
+<ul>
+<li>위에 정의한 JSON 스키마 한 종류만 사용</li>
+</ul>
+</ol>
+<ol>
+<li><strong>동작 범위</strong></li>
+<ul>
+<li>모차르트가 Slack에서 요구사항 수신</li>
+<li>브레드에게 작업 위임</li>
+<li>브레드가 코드/결과 정리 후 Slack에 보고</li>
+<li>모차르트가 그걸 받아 최종 메시지로 정리</li>
+</ul>
+</ol>
+<p>이게 안정적으로 돌아가면:</p>
+<ul>
+<li>로드니(서버), 알렉스(아키텍트), 데빌스(반론가) 추가</li>
+<li>skill-native의 21 크루 스킬을 역할별 스킬 번들로 재맵핑</li>
+<li>필요시 Redis/Kafka 같은 버스로 확장</li>
+</ul>
+<hr>
+<h2>9. 요약 키 포인트</h2>
+<ul>
+<li>&quot;에이전트 영속성/메모리&quot;를 새로 발명하지 말고, OpenClaw/NanoClaw/Claude 에이전트의 기본 워크스페이스 + Slack 맥락을 그대로 활용한다.</li>
+<li>에이전트 = <strong>역할 + 스킬 번들 + 워크스페이스 + 채널</strong>로만 정의하고, 코딩툴/모델은 내부 구현 디테일로 본다.</li>
+<li>허브 1대(모차르트)가 Slack과 통신하고, 분산된 작업자 에이전트(브레드/로드니/알렉스/데빌스)를 오케스트레이션한다.</li>
+<li>통신은 <code>task_id/from/to/status/summary/artifacts/meta</code> 정도의 심플한 JSON으로 통일해서, Slack 훅/에이전트 간 위임/상태 관리에 모두 재사용한다.</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-03-16 Slack 기반 멀티에이전트 코딩 팀 허브 설계서/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

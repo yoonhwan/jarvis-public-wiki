@@ -1,0 +1,89 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LangChain 스킬 공개, Claude Code 통과율 25 에서 95 로 끌어올린 방법 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>LangChain 스킬 공개, Claude Code 통과율 25 에서 95 로 끌어올린 방법</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>LangChain 스킬 공개, Claude Code 통과율 25 에서 95 로 끌어올린 방법</h1>
+<blockquote>Source candidate from <code>News-Links/2026-03-10 LangChain Skills - Claude Code 통과율 25에서 95로/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>LangChain 스킬 공개 — Claude Code 통과율 25% → 95%</h1>
+<blockquote>출처: <a href="https://aisparkup.com/posts/9881">aisparkup.com/posts/9881</a> | 2026-03-10</blockquote>
+<blockquote>아카이브: <a href="https://web.archive.org/web/20260310075513/https://aisparkup.com/posts/9881">https://web.archive.org/web/20260310075513/https://aisparkup.com/posts/9881</a></blockquote>
+<hr>
+<h2>📌 핵심 요약</h2>
+<p>LangChain이 AI 코딩 에이전트를 위한 <strong>첫 번째 스킬 세트</strong>를 공개했다.</p>
+<p>LangChain / LangGraph / LangSmith 생태계 특화 스킬을 장착하면:</p>
+<table><thead><tr><th>태스크</th><th>스킬 없음</th><th>스킬 있음</th></tr></thead><tbody>
+<tr><td>LangChain 태스크</td><td>25%</td><td><strong>95%</strong></td></tr>
+<tr><td>LangSmith 태스크</td><td>17%</td><td><strong>92%</strong></td></tr>
+</tbody></table>
+<hr>
+<h2>🧠 스킬(Skill)이란?</h2>
+<p><strong>코딩 에이전트의 성능을 높이기 위한 지침 + 스크립트의 묶음</strong></p>
+<p>핵심 설계 원칙: <strong>Progressive Disclosure (점진적 공개)</strong></p>
+<ul>
+<li>에이전트가 필요한 순간에만 해당 스킬을 불러온다</li>
+<li>처음부터 모든 정보를 컨텍스트에 넣으면 오히려 성능 하락</li>
+<li>마크다운 파일 + 스크립트 구성 → 어떤 코딩 에이전트에도 이식 가능</li>
+</ul>
+<hr>
+<h2>📦 공개된 스킬 목록</h2>
+<h3>LangChain Skills (11종)</h3>
+<p>→ 상세 가이드: [[01-langchain-skills]]</p>
+<table><thead><tr><th>카테고리</th><th>내용</th></tr></thead><tbody>
+<tr><td>LangChain</td><td><code>create_agent()</code>, middleware, tool patterns — 클래식 툴 콜링 에이전트 루프 기초</td></tr>
+<tr><td>LangGraph</td><td>primitives, Human-in-the-Loop, durable execution</td></tr>
+<tr><td>Deep Agents</td><td>오픈소스 Deep Agents 패키지 + prebuilt middleware + FileSystem</td></tr>
+</tbody></table>
+<p><strong>설치:</strong></p>
+<pre><code># 현재 프로젝트에 로컬 설치
+npx skills add langchain-ai/langchain-skills --skill &#x27;*&#x27; --yes
+
+# 전역 설치
+npx skills add langchain-ai/langchain-skills --skill &#x27;*&#x27; --yes --global
+
+# Claude Code에 연결
+npx skills add langchain-ai/langchain-skills --agent claude-code --skill &#x27;*&#x27; --yes --global</code></pre>
+<h3>LangSmith Skills (3종) + CLI</h3>
+<p>→ 상세 가이드: [[02-langsmith-cli-skills]]</p>
+<table><thead><tr><th>스킬</th><th>역할</th></tr></thead><tbody>
+<tr><td>trace</td><td>기존 코드에 트레이싱 추가 + 트레이스 조회</td></tr>
+<tr><td>dataset</td><td>테스트 데이터셋 구축</td></tr>
+<tr><td>evaluator</td><td>에이전트 성능 평가</td></tr>
+</tbody></table>
+<p><strong>LangSmith CLI 설치:</strong></p>
+<pre><code>curl -sSL https://raw.githubusercontent.com/langchain-ai/langsmith-cli/main/scripts/install.sh | sh</code></pre>
+<hr>
+<h2>🔄 에이전트가 에이전트를 개선하는 루프</h2>
+<p>LangSmith 스킬의 핵심 가치: <strong>자기 개선 사이클</strong></p>
+<pre><code>코딩 에이전트
+  → 실행 트레이스를 LangSmith로 전송
+  → 트레이스 분석 + 문제점 요약
+  → 테스트 데이터셋 + 평가자 자동 생성
+  → 에이전트 아키텍처 개선
+  → 반복</code></pre>
+<blockquote>&quot;에이전트 개선 루프는 점점 터미널 기반의 다른 에이전트에 의해 주도될 것&quot;</blockquote>
+<hr>
+<h2>📊 스킬 평가 방법론</h2>
+<p>→ 상세 가이드: [[03-evaluating-skills]]</p>
+<p>LangChain이 공개한 스킬 평가 4단계:</p>
+<ol>
+<li><strong>클린 테스트 환경 구성</strong> (Docker 등 일관된 sandbox)</li>
+<li><strong>태스크 정의</strong> (제약된 태스크 + 명확한 메트릭)</li>
+<li><strong>스킬 정의</strong> (AGENTS.md/CLAUDE.md 활용, 12개 이하 유지)</li>
+<li><strong>성능 비교</strong> (스킬 있음/없음 A/B 테스트)</li>
+</ol>
+<p><strong>핵심 발견:</strong></p>
+<ul>
+<li>스킬 포함 시 태스크 완료율 <strong>82%</strong>, 스킬 없으면 <strong>9%</strong></li>
+<li>스킬이 항상 올바르게 호출되지 않음 → AGENTS.md에 &quot;언제 어떤 스킬&quot; 안내 필수</li>
+<li>유사 스킬 20개 → 오호출 발생, <strong>12개로 줄이자 정확도↑</strong></li>
+</ul>
+<hr>
+<h2>🔗 GitHub 리포지토리</h2>
+<table><thead><tr><th>리포</th><th>링크</th></tr></thead><tbody>
+<tr><td>LangChain Skills</td><td><a href="https://github.com/langchain-ai/langchain-skills">https://github.com/langchain-ai/langchain-skills</a></td></tr>
+<tr><td>LangSmith Skills</td><td><a href="https://github.com/langchain-ai/langsmith-skills">https://github.com/langchain-ai/langsmith-skills</a></td></tr>
+<tr><td>Skills Benchmarks</td><td><a href="https://github.com/langchain-ai/skills-benchmarks">https://github.com/langchain-ai/skills-benchmarks</a></td></tr>
+<tr><td>LangSmith CLI</td><td><a href="https://github.com/langchain-ai/langsmith-cli">https://github.com/langchain-ai/langsmith-cli</a></td></tr>
+</tbody></table>
+<hr>
+<h2>💡 자비스 메모</h2>
+<p>이 스킬 시스템은 OpenClaw의 스킬 시스템(SKILL.md 기반 progressive disclosure)과 동일한 철학!</p>
+<p><code>npx skills add</code> 명령으로 Claude Code에 직접 설치 가능 →</p>
+<p>Gas Town 크루나 BaseAgent에 LangChain/LangSmith 스킬 붙이는 데 즉시 활용 가능.</p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-03-10 LangChain Skills - Claude Code 통과율 25에서 95로/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

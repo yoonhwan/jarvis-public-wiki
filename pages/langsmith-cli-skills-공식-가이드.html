@@ -1,0 +1,83 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LangSmith CLI &amp; Skills — 공식 가이드 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260609-034453-KST">Jarvis Wiki / trading</a><h1>LangSmith CLI &amp; Skills — 공식 가이드</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>LangSmith CLI &amp; Skills — 공식 가이드</h1>
+<blockquote>Source candidate from <code>News-Links/2026-03-10 LangChain Skills - Claude Code 통과율 25에서 95로/02-langsmith-cli-skills.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>LangSmith CLI &amp; Skills — 공식 가이드</h1>
+<blockquote>원문: <a href="https://blog.langchain.com/langsmith-cli-skills/">https://blog.langchain.com/langsmith-cli-skills/</a></blockquote>
+<blockquote>발행: 2026-03-04 | by LangChain Team</blockquote>
+<hr>
+<h2>성능 향상 수치</h2>
+<table><thead><tr><th>테스트</th><th>모델</th><th>통과율</th></tr></thead><tbody>
+<tr><td>Claude Code (스킬 없음)</td><td>Sonnet 4.6</td><td>17%</td></tr>
+<tr><td>Claude Code (스킬 있음)</td><td>Sonnet 4.6</td><td><strong>92%</strong></td></tr>
+</tbody></table>
+<hr>
+<h2>LangSmith CLI</h2>
+<p><strong>에이전트 네이티브 CLI</strong> — 코딩 에이전트(와 개발자)가 LangSmith 내 모든 것을 처리하는 빌딩블록</p>
+<h3>기능</h3>
+<ul>
+<li>트레이스 조회 (fetch traces)</li>
+<li>데이터셋 큐레이션 (curate datasets)</li>
+<li>실험 실행 (run experiments)</li>
+<li><strong>완전 터미널 기반 LangSmith 탐색</strong> — 코딩 에이전트가 터미널만으로 모든 것 처리 가능</li>
+</ul>
+<h3>설치</h3>
+<pre><code>curl -sSL https://raw.githubusercontent.com/langchain-ai/langsmith-cli/main/scripts/install.sh | sh</code></pre>
+<p>GitHub: <a href="https://github.com/langchain-ai/langsmith-cli">https://github.com/langchain-ai/langsmith-cli</a></p>
+<hr>
+<h2>3개 LangSmith Skills 상세</h2>
+<h3>Skill 1: trace</h3>
+<p><strong>기존 코드에 트레이싱 추가 + 트레이스 조회</strong></p>
+<ul>
+<li>에이전트 실행 추적</li>
+<li>트레이스 데이터 쿼리</li>
+</ul>
+<h3>Skill 2: dataset</h3>
+<p><strong>테스트 데이터셋 구축</strong></p>
+<ul>
+<li>예제 데이터셋 생성</li>
+<li>트레이스에서 데이터셋 빌드</li>
+</ul>
+<h3>Skill 3: evaluator</h3>
+<p><strong>에이전트 성능 평가</strong></p>
+<ul>
+<li>데이터셋 기반 평가 실행</li>
+<li>에이전트 정확도 검증</li>
+</ul>
+<hr>
+<h2>에이전트 자기 개선 루프 (핵심 가치!)</h2>
+<p>LangSmith 스킬이 가능하게 하는 <strong>덕목 사이클(Virtuous Cycle)</strong>:</p>
+<pre><code>1. 코딩 에이전트가 LangChain + LangSmith 스킬 사용
+   ↓
+2. 에이전트 자신의 실행에 트레이싱 로직 추가
+   ↓
+3. 생성된 트레이스로 동작 효과적으로 디버그
+   ↓
+4. 트레이스 → 체계적인 테스트 데이터셋 생성
+   ↓
+5. 데이터셋 + 평가자 생성 → 에이전트 정확도 검증
+   ↓
+6. 평가 + 사람 피드백 기반으로 에이전트 아키텍처 개선
+   ↓
+   반복 → 에이전트 스스로 진화</code></pre>
+<blockquote>&quot;에이전트 개선 루프는 점점 <strong>터미널 기반의 다른 에이전트</strong>에 의해 주도될 것&quot;</blockquote>
+<blockquote>LangSmith CLI는 그 흐름을 위한 기반 도구</blockquote>
+<hr>
+<h2>설치 방법</h2>
+<pre><code># 현재 프로젝트 (로컬)
+npx skills add langchain-ai/langsmith-skills --skill &#x27;*&#x27; --yes
+
+# 전역 (모든 프로젝트)
+npx skills add langchain-ai/langsmith-skills --skill &#x27;*&#x27; --yes --global
+
+# Claude Code에 특정 연결
+npx skills add langchain-ai/langsmith-skills --agent claude-code --skill &#x27;*&#x27; --yes --global</code></pre>
+<hr>
+<h2>GitHub</h2>
+<ul>
+<li><strong>langsmith-skills 리포</strong>: <a href="https://github.com/langchain-ai/langsmith-skills">https://github.com/langchain-ai/langsmith-skills</a></li>
+<li><strong>LangSmith CLI</strong>: <a href="https://github.com/langchain-ai/langsmith-cli">https://github.com/langchain-ai/langsmith-cli</a></li>
+</ul>
+<hr>
+<h2>연관 스킬</h2>
+<p>→ LangChain Skills: [[01-langchain-skills]]</p>
+<p>→ Skills 평가 방법론: [[03-evaluating-skills]]</p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-03-10 LangChain Skills - Claude Code 통과율 25에서 95로/02-langsmith-cli-skills.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
