@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T10:52:41.191576",
+  "generated_at": "2026-06-23T11:29:31.551044",
   "source": "Wikis/pages",
   "domain": "trading",
   "raw_markdown_files_included": false,
@@ -28,229 +28,267 @@
       "title": "@nowtimeisthat on Threads",
       "source": "Wikis/pages/entities/@nowtimeisthat on Threads.md",
       "url": "pages/nowtimeisthat-on-threads.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Hermes가 조사해준 GitHub에 AI 자동매매 오픈소스 1 | FinRL | ⭐3.1k · DRL 강화학습 기반 · 학술 근거 확실 2 | FinRLDeepSeek | ⭐323 · DRL+LLM 융합 논문 구현 · 내가 선택한 방향 3 | Tr…"
     },
     {
       "title": "Best Way (Margin, Futures, Perpetual etc.) To Scalp Cryptocurrencies",
       "source": "Wikis/pages/entities/Best Way (Margin, Futures, Perpetual etc.) To Scalp Cryptocurrencies.md",
       "url": "pages/best-way-margin-futures-perpetual-etc-to-scalp-cryptocurrencies.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "바이낸스 Perpetual Futures의 높은 수수료 문제로 스캘핑에 더 적합한 대안을 찾는 질문 글. 작성자는 ETHUSDT 1분봉 기준 약 15분 보유 스캘핑 전략을 사용 중이며, Quantfury 같은 대안 플랫폼을 고려 중."
     },
     {
       "title": "Claude Opus 4.6을 활용한 아웃리치 시스템 구축 10가지 프롬프트",
       "source": "Wikis/pages/entities/Claude Opus 4.6을 활용한 아웃리치 시스템 구축 10가지 프롬프트.md",
       "url": "pages/claude-opus-4-6을-활용한-아웃리치-시스템-구축-10가지-프롬프트.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "📊 조회수: 4.2K | ❤️ 24 | 💬 10 | 🔄 10 | 📤 14"
     },
     {
       "title": "Claude로 월스트리트 애널리스트처럼 주식 분석 — 10개 프롬프트",
       "source": "Wikis/pages/entities/Claude로 월스트리트 애널리스트처럼 주식 분석 — 10개 프롬프트.md",
       "url": "pages/claude로-월스트리트-애널리스트처럼-주식-분석-10개-프롬프트.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Claude AI를 사용해 골드만삭스, 모건스탠리, 브리지워터 등 월스트리트 최고 기관 수준의 주식 분석을 무료로 수행할 수 있는 10개 전문 프롬프트 모음. 각 프롬프트는 특정 금융 기관의 분석 방법론을 모방하여 설계됨."
     },
     {
       "title": "Codex 서브에이전트 136개 모음집",
       "source": "Wikis/pages/entities/Codex 서브에이전트 136개 모음집.md",
       "url": "pages/codex-서브에이전트-136개-모음집.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Claude Code 장애 시점에 맞춰 공유된 Codex 서브에이전트 136개 모음집. 10개 카테고리로 정리되어 있으며 폴더에 넣으면 바로 사용 가능."
     },
     {
       "title": "MCP 서버로 금 은 비트코인 실시간 데이터 조회하기",
       "source": "Wikis/pages/entities/MCP 서버로 금 은 비트코인 실시간 데이터 조회하기.md",
       "url": "pages/mcp-서버로-금-은-비트코인-실시간-데이터-조회하기.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "원본: Threads 포스트"
     },
     {
       "title": "OpenClaw 활용 사례 모음 — @yaaado_",
       "source": "Wikis/pages/entities/OpenClaw 활용 사례 모음 — @yaaado_.md",
       "url": "pages/openclaw-활용-사례-모음-yaaado.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "OpenClaw 유저 @yaaado가 실제로 세팅해서 쓰고 있는 신박한 활용 사례 7가지를 공유한 스레드. 팀 관리, 자동 트레이딩, 식당 예약, 크립토 리서치, 기차표 예매 등 실생활 + 업무 자동화의 다양한 사례."
     },
     {
       "title": "PostHog — 분석 도구 10개를 하나로 합친 오픈소스",
       "source": "Wikis/pages/entities/PostHog — 분석 도구 10개를 하나로 합친 오픈소스.md",
       "url": "pages/posthog-분석-도구-10개를-하나로-합친-오픈소스.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "GA + Amplitude + LaunchDarkly + Sentry를 단일 플랫폼으로 통합한 오픈소스 제품 분석 스택. ClickHouse 기반으로 수십억 이벤트 실시간 처리, MIT 라이선스, 셀프호스팅 가능."
     },
     {
       "title": "S&P500 커버드콜 옵션 매도 전략 — @jkimmorgan",
       "source": "Wikis/pages/entities/S&P500 커버드콜 옵션 매도 전략 — @jkimmorgan.md",
       "url": "pages/s-p500-커버드콜-옵션-매도-전략-jkimmorgan.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "1. S&P500 주식을 100주까지 모아라 — 옵션 1계약 = 100주 단위"
     },
     {
       "title": "TensorTrade 강화학습 알고리즘 트레이딩 Python 라이브러리",
       "source": "Wikis/pages/entities/TensorTrade 강화학습 알고리즘 트레이딩 Python 라이브러리.md",
       "url": "pages/tensortrade-강화학습-알고리즘-트레이딩-python-라이브러리.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "TensorTrade라는 강화학습 기반 알고리즘 트레이딩용 오픈소스 Python 프레임워크를 소개하는 Threads 게시물입니다."
     },
     {
       "title": "TradingView Screener MCP 연동 — AI 에이전트가 조건 검색을 직접 수행",
       "source": "Wikis/pages/entities/TradingView Screener MCP 연동 — AI 에이전트가 조건 검색을 직접 수행.md",
       "url": "pages/tradingview-screener-mcp-연동-ai-에이전트가-조건-검색을-직접-수행.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "TradingView 스크리너를 AI 에이전트에 붙여서, RSI·시가총액·시장 조건 같은 필터를 자연어로 지시하고 결과를 직접 표로 뽑아내는 MCP 연동 흐름이 등장했다."
     },
     {
       "title": "고졸퇴사자가 방구석컴퓨터 1대로 달러버는 방법",
       "source": "Wikis/pages/entities/고졸퇴사자가 방구석컴퓨터 1대로 달러버는 방법.md",
       "url": "pages/고졸퇴사자가-방구석컴퓨터-1대로-달러버는-방법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "전형적인 시그마봇 시세차익(arbitrage) 강의 마케팅 패턴. \"기수 신청\" 댓글로 미루어 유료 강의/리퍼럴 사업 가능성 높음. 실제 거래소 간 차익거래는 수수료·전송시간·슬리피지 고려 시 회당 2만원 마진은 비현실적. 정보 수집 차원에서만 보관."
     },
     {
       "title": "남편이 미국 동료 John에게 작별 노래를 선물한 이야기",
       "source": "Wikis/pages/entities/남편이 미국 동료 John에게 작별 노래를 선물한 이야기.md",
       "url": "pages/남편이-미국-동료-john에게-작별-노래를-선물한-이야기.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "남편의 동료 John이 미국으로 돌아가기 전 집에 놀러 왔다."
     },
     {
       "title": "띵크보이 AI 사이드잡 자동화 • AI 인사이트 (@think.5x)",
       "source": "Wikis/pages/entities/띵크보이 AI 사이드잡 자동화 • AI 인사이트 (@think.5x).md",
       "url": "pages/띵크보이-ai-사이드잡-자동화-ai-인사이트-think-5x.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "음성 AI 오픈소스 생태계가 빠르게 확장되고 있습니다. Whisper 이후를 노린 마이크로소프트의 VibeVoice가 46,000개 스타와 함께 등장했습니다. ASR과 실시간 스트리밍을 오픈소스로 공개한 MIT 라이선스 프로젝트입니다. TTS 모델…"
     },
     {
       "title": "마지막, 텐버거 찾는 꿀 Tip. 요새 어닝콜 많으니깐, 일일히 챙겨보기 힘드시죠",
       "source": "Wikis/pages/entities/마지막, 텐버거 찾는 꿀 Tip. 요새 어닝콜 많으니깐, 일일히 챙겨보기 힘드시죠.md",
       "url": "pages/마지막-텐버거-찾는-꿀-tip-요새-어닝콜-많으니깐-일일히-챙겨보기-힘드시죠.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "마지막, 텐버거 찾는 꿀 Tip. 요새 어닝콜 많으니깐, 일일히 챙겨보기 힘드시죠. 저는 보통 주말에 몰아서 하나씩 제가 놓친 기업들 찾아보는데요. 물론 chatgpt나 클로드, 제미나이로 찾아서 돌려볼 수 있는데 실제 CEO나 CFO, 그리고 뱅오…"
     },
     {
       "title": "미국 월배당 ETF TOP 5 — 월 배당으로 제 2의 월급 만들기",
       "source": "Wikis/pages/entities/미국 월배당 ETF TOP 5 — 월 배당으로 제 2의 월급 만들기.md",
       "url": "pages/미국-월배당-etf-top-5-월-배당으로-제-2의-월급-만들기.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "잠자는 동안에도 통장에 꽂히는 달러 월급을 현실로 만드는 방법. 단순히 배당률만 높은 종목이 아니라 성향별로 골라 담을 수 있게 핵심만 요약한 미국 월배당 ETF TOP 5."
     },
     {
       "title": "변창석 Threads — 딸에게 주식 공부를 가르치는 첫날",
       "source": "Wikis/pages/entities/변창석 Threads — 딸에게 주식 공부를 가르치는 첫날.md",
       "url": "pages/변창석-threads-딸에게-주식-공부를-가르치는-첫날.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "변창석이 고려대학교를 갓 졸업한 딸에게 주식 공부를 가르치기 시작한다고 알린 Threads 게시물."
     },
     {
       "title": "시그마봇 거래소 차익거래 광고 (의심)",
       "source": "Wikis/pages/entities/시그마봇 거래소 차익거래 광고 (의심).md",
       "url": "pages/시그마봇-거래소-차익거래-광고-의심.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "원본: https://www.threads.com/@sisenamza92/post/DXif9EUn157"
     },
     {
       "title": "유퀴즈 박현주 - 주가 지수 리밸런싱 투자 전략",
       "source": "Wikis/pages/entities/유퀴즈 박현주 - 주가 지수 리밸런싱 투자 전략.md",
       "url": "pages/유퀴즈-박현주-주가-지수-리밸런싱-투자-전략.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "원본: Instagram 포스트"
     },
     {
       "title": "평생 주식 8가지 철칙",
       "source": "Wikis/pages/entities/평생 주식 8가지 철칙.md",
       "url": "pages/평생-주식-8가지-철칙.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "장 초반 변동성, 시가 지지/이탈, 거래대금·유통시총 조건, 역배열 회피를 기준으로 한 단기 주식 매매 체크리스트."
     },
     {
       "title": "How to Trade Crypto Futures (Crypto Day Trading for Beginners)",
       "source": "Wikis/pages/references/How to Trade Crypto Futures (Crypto Day Trading for Beginners).md",
       "url": "pages/how-to-trade-crypto-futures-crypto-day-trading-for-beginners.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "1. 스팟 vs 선물 차이"
     },
     {
       "title": "OpenClaw 자동매매봇 구축 5단계 가이드",
       "source": "Wikis/pages/references/OpenClaw 자동매매봇 구축 5단계 가이드.md",
       "url": "pages/openclaw-자동매매봇-구축-5단계-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "OpenClaw는 내 대신 24시간 시장을 감시해야 하므로, 컴퓨터가 항상 켜져 있어야 합니다."
     },
     {
       "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 3",
       "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 3.md",
       "url": "pages/3.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각 영역(아키텍처, 프론트엔드, 백엔드, DB, 인증, 결제, 실시간, DevOps, 테스트, 프로젝트 관리, 디자인 시스템…"
     },
     {
       "title": "불스리서치 - ETF 효율 10배 높이는 방법",
       "source": "Wikis/pages/references/불스리서치 - ETF 효율 10배 높이는 방법.md",
       "url": "pages/불스리서치-etf-효율-10배-높이는-방법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "주식하면 무조건 외우세요"
     },
     {
       "title": "애 이름으로 적금 들지 마라 — 자녀 통장은 '연금저축펀드'부터",
       "source": "Wikis/pages/references/애 이름으로 적금 들지 마라 — 자녀 통장은 '연금저축펀드'부터.md",
       "url": "pages/애-이름으로-적금-들지-마라-자녀-통장은-연금저축펀드-부터.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "애 이름으로 적금 들고 뿌듯해하지마."
     },
     {
       "title": "자비스 트레이딩 시스템 v1.0",
       "source": "Wikis/pages/references/자비스 트레이딩 시스템 v1.0.md",
       "url": "pages/자비스-트레이딩-시스템-v1-0.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "목표: 자비스와 yoonhwan 오빠가 함께 성장하는 트레이딩 시스템"
     },
     {
       "title": "캔들스틱을 '언어'로 번역한 첫 번째 AI — Kronos",
       "source": "Wikis/pages/references/캔들스틱을 '언어'로 번역한 첫 번째 AI — Kronos.md",
       "url": "pages/캔들스틱을-언어-로-번역한-첫-번째-ai-kronos.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "캔들스틱을 '언어'로 번역한 첫 번째 AI가 나왔다."
     },
     {
       "title": "클로드 헤지펀드 (Threads Fund AI)",
       "source": "Wikis/pages/references/클로드 헤지펀드 (Threads Fund AI).md",
       "url": "pages/클로드-헤지펀드-threads-fund-ai.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "출처: Threads @choisungh"
     },
     {
       "title": "📌 주린이들 무조건 저장 — 주식으로 돈 절대 안 잃는 법",
       "source": "Wikis/pages/references/📌 주린이들 무조건 저장 — 주식으로 돈 절대 안 잃는 법.md",
       "url": "pages/주린이들-무조건-저장-주식으로-돈-절대-안-잃는-법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "책 #자본주의시대에서살아남기위한최소한의경제공부 할인 구매링크는 @billionman10 프로필에 있습니다."
     },
     {
       "title": "🚀 News-Links Q&A Bot 만들기 — LangGraph 초급 가이드",
       "source": "Wikis/pages/references/🚀 News-Links Q&A Bot 만들기 — LangGraph 초급 가이드.md",
       "url": "pages/news-links-q-a-bot-만들기-langgraph-초급-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "작성일: 2026-02-16"
     },
     {
       "title": "80만원에서 150억을 만든 RSI '진짜' 매매법!",
       "source": "Wikis/pages/strategies/80만원에서 150억을 만든 RSI '진짜' 매매법!.md",
       "url": "pages/80만원에서-150억을-만든-rsi-진짜-매매법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "🔗 원본: https://youtu.be/5Jm69jifbAk?si=zlYSxgTdaT1Ycni"
     },
     {
       "title": "80만원에서 150억을 만든 RSI '진짜' 매매법",
       "source": "Wikis/pages/strategies/80만원에서 150억을 만든 RSI '진짜' 매매법.md",
       "url": "pages/strategies-80만원에서-150억을-만든-rsi-진짜-매매법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "미국 전설의 트레이더 로스 카메론(Ross Cameron)이 단돈 80만원으로 1년 만에 150억을 만든 RSI 매매 전략을 소개하는 영상. RSI를 단독 진입 신호로 사용하지 않고, 볼린저 밴드 + 반전 캔들 또는 RSI 다이버전스 + MACD 확…"
     },
     {
       "title": "Binance Futures Setting Take Profit & Stop Loss (Step-by-Step)",
       "source": "Wikis/pages/strategies/Binance Futures Setting Take Profit & Stop Loss (Step-by-Step).md",
       "url": "pages/binance-futures-setting-take-profit-stop-loss-step-by-step.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "출처: YouTube"
     },
     {
       "title": "How to Set a Stop Loss & Take Profit with Crypto (Binance, Bybit)",
       "source": "Wikis/pages/strategies/How to Set a Stop Loss & Take Profit with Crypto (Binance, Bybit).md",
       "url": "pages/how-to-set-a-stop-loss-take-profit-with-crypto-binance-bybit.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "1. TP/SL의 본질 — 둘 다 동일한 매도 주문, 가격이 익절/손절을 결정"
     },
     {
       "title": "로컬 AI 음성 워크플로우와 TTS STT 목소리 클로닝",
       "source": "Wikis/pages/strategies/로컬 AI 음성 워크플로우와 TTS STT 목소리 클로닝.md",
       "url": "pages/로컬-ai-음성-워크플로우와-tts-stt-목소리-클로닝.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "ElevenLabs 같은 구독형 음성 서비스를 대체할 수 있는 로컬 AI 기반 TTS/STT/목소리 클로닝 워크플로우와 추천 모델 조합을 소개한 글."
     },
     {
       "title": "비트코인 선물 거래 5분봉 매매법 단 1가지 (실제 100억 트레이더들의 매매법)",
       "source": "Wikis/pages/strategies/비트코인 선물 거래 5분봉 매매법 단 1가지 (실제 100억 트레이더들의 매매법).md",
       "url": "pages/비트코인-선물-거래-5분봉-매매법-단-1가지-실제-100억-트레이더들의-매매법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "🔗 원본: https://youtu.be/cZXvGZoY6fE?si=ZYNlUDWKlKyNKBn4"
     },
     {
       "title": "진짜 자동매매 트레이더들이 기본적으로 통과해야하는 19가지 테스트",
       "source": "Wikis/pages/strategies/진짜 자동매매 트레이더들이 기본적으로 통과해야하는 19가지 테스트.md",
       "url": "pages/진짜-자동매매-트레이더들이-기본적으로-통과해야하는-19가지-테스트.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": ""
     },
     {
       "title": "해외에서 돈 쓸어 담는다는 트레이딩 기법 feat. 팀멘사",
       "source": "Wikis/pages/strategies/해외에서 돈 쓸어 담는다는 트레이딩 기법 feat. 팀멘사.md",
       "url": "pages/해외에서-돈-쓸어-담는다는-트레이딩-기법-feat-팀멘사.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "🔗 원본: https://youtu.be/6fEhvy7mREc?si=40yq4mZz9dOKDNMq"
     }
   ]
 }

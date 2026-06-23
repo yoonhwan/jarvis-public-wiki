@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T10:52:41.093546",
+  "generated_at": "2026-06-23T11:29:31.192386",
   "source": "Wikis/pages",
   "domain": "ai-agent",
   "raw_markdown_files_included": false,
@@ -32,667 +32,778 @@
       "title": "AI 에이전트 보안 — SmolVM 도메인 허용목록",
       "source": "Wikis/pages/concepts/AI 에이전트 보안 — SmolVM 도메인 허용목록.md",
       "url": "pages/ai-에이전트-보안-smolvm-도메인-허용목록.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "격리된 환경(VM)을 제공하는 건 이제 기본이지만, 외부 통신 제어가 핵심이라는 내용."
     },
     {
       "title": "Cohere Transcribe — Whisper보다 빠르고 정확한 무료 오픈소스 STT",
       "source": "Wikis/pages/concepts/Cohere Transcribe — Whisper보다 빠르고 정확한 무료 오픈소스 STT.md",
       "url": "pages/cohere-transcribe-whisper보다-빠르고-정확한-무료-오픈소스-stt.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "OpenAI Whisper보다 오류율 27% 낮고 3.6배 빠른 오픈소스 STT 모델. 한국어 포함 14개 언어, Apache 2.0 무료."
     },
     {
       "title": "Fireflies.ai — The #1 AI Notetaker for Meetings",
       "source": "Wikis/pages/concepts/Fireflies.ai — The #1 AI Notetaker for Meetings.md",
       "url": "pages/fireflies-ai-the-1-ai-notetaker-for-meetings.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "AI 기반 회의 자동 녹음·전사·요약·분석 SaaS. 100만+ 기업 사용, Fortune 500 CIO들이 선택하는 엔터프라이즈급 보안."
     },
     {
       "title": "Grafeo — Rust로 만든 고성능 그래프 데이터베이스",
       "source": "Wikis/pages/concepts/Grafeo — Rust로 만든 고성능 그래프 데이터베이스.md",
       "url": "pages/grafeo-rust로-만든-고성능-그래프-데이터베이스.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Grafeo는 Rust로 처음부터 만든 그래프 데이터베이스. 임베디드 라이브러리로도, 독립 서버로도 운영 가능하며 벤치마크상 Neo4j 대비 약 10배 빠른 성능을 보임."
     },
     {
       "title": "PSA Claude Code Has Two Cache Bugs That Can 10-20x Your Costs",
       "source": "Wikis/pages/concepts/PSA Claude Code Has Two Cache Bugs That Can 10-20x Your Costs.md",
       "url": "pages/psa-claude-code-has-two-cache-bugs-that-can-10-20x-your-costs.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "https://www.reddit.com/r/ClaudeAI/comments/1s7mkn3/psaclaudecodehastwocachebugsthatcan/"
     },
     {
       "title": "Palantir 신입 엔지니어가 입사 첫날 받는 책 5권",
       "source": "Wikis/pages/concepts/Palantir 신입 엔지니어가 입사 첫날 받는 책 5권.md",
       "url": "pages/palantir-신입-엔지니어가-입사-첫날-받는-책-5권.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Palantir는 신입 엔지니어에게 엔지니어링 책을 한 권도 주지 않는다. 대신 \"문제 해결의 본질\"에 집중하는 5권을 준다."
     },
     {
       "title": "PlayerZero — 세계 최초 엔지니어링 월드 모델",
       "source": "Wikis/pages/concepts/PlayerZero — 세계 최초 엔지니어링 월드 모델.md",
       "url": "pages/playerzero-세계-최초-엔지니어링-월드-모델.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "PlayerZero는 버그 원인 파악과 테스트를 자동으로 처리하는 \"엔지니어링 월드 모델\". 슬랙 대화, PR 리뷰, CI/CD 기록, 지원 티켓 등 흩어진 개발 맥락을 하나로 연결하여 에러의 근본 원인을 단 몇 분 만에 추적한다."
     },
     {
       "title": "SPY·GOOG 장기투자 원칙",
       "source": "Wikis/pages/concepts/SPY·GOOG 장기투자 원칙.md",
       "url": "pages/spy-goog-장기투자-원칙.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "매달 SPY와 GOOG에 투자하되, 하락 시 추가 매수하고 큰 상승 구간에서는 일부만 매도하는 단순한 장기 복리 전략을 소개한 글."
     },
     {
       "title": "Scrapling — 1인 개발자가 만든 적응형 웹 스크래핑 프레임워크",
       "source": "Wikis/pages/concepts/Scrapling — 1인 개발자가 만든 적응형 웹 스크래핑 프레임워크.md",
       "url": "pages/scrapling-1인-개발자가-만든-적응형-웹-스크래핑-프레임워크.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "이집트 개발자 Karim Shoair가 혼자 만든 파이썬 웹 스크래핑 프레임워크. GitHub 38,700 스타, BS4 대비 최대 1,679배 빠름, Cloudflare 봇 차단 자동 우회, 사이트 리디자인되어도 셀렉터를 자동 재탐색(adaptiv…"
     },
     {
       "title": "Supabase 관련 개발 팁 모음",
       "source": "Wikis/pages/concepts/Supabase 관련 개발 팁 모음.md",
       "url": "pages/supabase-관련-개발-팁-모음.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "1. MAU 5만까지 Free — MVP·PMF 찾기 전까지 DB 비용을 아낄 수 있어 최고."
     },
     {
       "title": "Supertonic just dropped a TTS model that’s 167x",
       "source": "Wikis/pages/concepts/Supertonic just dropped a TTS model that’s 167x.md",
       "url": "pages/supertonic-just-dropped-a-tts-model-that-s-167x.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Supertonic just dropped a TTS model that’s 167x faster than real-time speech."
     },
     {
       "title": "TablePro — macOS 네이티브 데이터베이스 클라이언트",
       "source": "Wikis/pages/concepts/TablePro — macOS 네이티브 데이터베이스 클라이언트.md",
       "url": "pages/tablepro-macos-네이티브-데이터베이스-클라이언트.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "TablePro는 macOS 전용 네이티브 데이터베이스 클라이언트로, AI 어시스턴트가 내장되어 있다. SQL 자동완성, 인라인 편집, AI 보조 기능이 핵심."
     },
     {
       "title": "Threads DYIzKocEmUr 원문 접근 제한",
       "source": "Wikis/pages/concepts/Threads DYIzKocEmUr 원문 접근 제한.md",
       "url": "pages/threads-dyizkocemur-원문-접근-제한.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Threads 원문 페이지가 현재 invalidpost / 로그인 페이지로만 응답하여, 원문 본문은 확인하지 못했고 링크와 접근 상태를 스크랩했습니다."
     },
     {
       "title": "Threads scrap - @dalgom.bami",
       "source": "Wikis/pages/concepts/Threads scrap - @dalgom.bami.md",
       "url": "pages/threads-scrap-dalgom-bami.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Pretext가 바이럴은 글자들 사이에 거대한 용이나 막 이미지가 지나가도 자연스럽게 움직이는 것으로 많이 됐지만 난 이 라이브러리가 나온 날 정말 환호성을 질렀다. 프론트엔드 엔지니어링을 한 때 깊게 팠던 입장에서 웹개발에서 제일 열받는 점 중 하…"
     },
     {
       "title": "Threads • Log in",
       "source": "Wikis/pages/concepts/Threads • Log in.md",
       "url": "pages/threads-log-in.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Join Threads to share ideas, ask questions, post random thoughts, find your people and more. Log in with your Instagram."
     },
     {
       "title": "VoxCPM — 오픈소스 음성 합성 AI",
       "source": "Wikis/pages/concepts/VoxCPM — 오픈소스 음성 합성 AI.md",
       "url": "pages/voxcpm-오픈소스-음성-합성-ai.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "GitHub 트렌드 1위, 별표 바로 2만+ 찍음. 오픈소스 음성 합성 AI VoxCPM2, 해외에서 이미 완전 난리났음."
     },
     {
       "title": "[와글와글 플러스] 이달부터 '어린이 과일 간식' 무상 제공",
       "source": "Wikis/pages/concepts/[와글와글 플러스] 이달부터 '어린이 과일 간식' 무상 제공.md",
       "url": "pages/와글와글-플러스-이달부터-어린이-과일-간식-무상-제공.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "2026년 3월부터 초등학교 1~2학년 돌봄 교실 학생 약 60만 명에게 국산 과일 간식이 주 1회 이상 무상 제공된다. 2018년부터 5년간 시범 운영 시 만족도 96%를 기록한 사업이 본격 시행되는 것으로, 사과·딸기·토마토 등 국내산 신선 과일…"
     },
     {
       "title": "aldegad (@darkest_alex) on Threads",
       "source": "Wikis/pages/concepts/aldegad (@darkest_alex) on Threads.md",
       "url": "pages/aldegad-darkest-alex-on-threads.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "자다깼는데 무료티어 경고가 뜨고 어어어?! 하는 사이에 무료 티어를 넘어버렸다!"
     },
     {
       "title": "log4j 취약점 긴급대응 방안",
       "source": "Wikis/pages/concepts/log4j 취약점 긴급대응 방안.md",
       "url": "pages/log4j-취약점-긴급대응-방안.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "JndiLookup 클래스를 classpath에서 제거:"
     },
     {
       "title": "termaid — 터미널에서 바로 Mermaid 렌더링",
       "source": "Wikis/pages/concepts/termaid — 터미널에서 바로 Mermaid 렌더링.md",
       "url": "pages/termaid-터미널에서-바로-mermaid-렌더링.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Mermaid 다이어그램을 브라우저 없이 터미널이나 Python 앱에서 바로 렌더링하는 pure Python 도구."
     },
     {
       "title": "⚡ ZVec — 알리바바의 초경량 인프로세스 벡터 데이터베이스",
       "source": "Wikis/pages/concepts/⚡ ZVec — 알리바바의 초경량 인프로세스 벡터 데이터베이스.md",
       "url": "pages/zvec-알리바바의-초경량-인프로세스-벡터-데이터베이스.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "알리바바에서 오픈소스로 공개한 \"벡터 DB계의 SQLite\". 서버 없이 앱/코드에 바로 내장(in-process)해서 쓸 수 있는 초경량 벡터 데이터베이스. 알리바바의 실전 검증된 Proxima 검색 엔진 기반."
     },
     {
       "title": "독일 개발자, Meta Llama 안전장치를 10분 만에 무력화",
       "source": "Wikis/pages/concepts/독일 개발자, Meta Llama 안전장치를 10분 만에 무력화.md",
       "url": "pages/독일-개발자-meta-llama-안전장치를-10분-만에-무력화.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "한 독일 개발자의 GitHub 프로그램 하나로 Meta Llama의 안전장치가 10분 만에 제거되었으며, FT가 5/25 직접 테스트해 보도함. 이미 검열 해제된 모델 3,500개, 누적 다운로드 1,300만 회."
     },
     {
       "title": "만약 내가 악마라면, 영유아를 이렇게 망칠 것 같아 — ok._mommy",
       "source": "Wikis/pages/concepts/만약 내가 악마라면, 영유아를 이렇게 망칠 것 같아 — ok._mommy.md",
       "url": "pages/만약-내가-악마라면-영유아를-이렇게-망칠-것-같아-ok-mommy.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Threads 사용자 ok.mommy가 작성한 육아 관련 카드뉴스(14장). emotionclassic2015(HoJin Lee)가 리포스트. 과잉보호/과잉간섭 육아가 아이에게 미치는 장기적 영향을 풍자적으로 표현한 콘텐츠."
     },
     {
       "title": "미국 상류층의 '가족 은행' — 록펠러 워터폴 방식",
       "source": "Wikis/pages/concepts/미국 상류층의 '가족 은행' — 록펠러 워터폴 방식.md",
       "url": "pages/미국-상류층의-가족-은행-록펠러-워터폴-방식.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "미국 상류층은 개인이 아닌 '가족 시스템'으로 돈을 굴린다."
     },
     {
       "title": "미군 2분 수면법",
       "source": "Wikis/pages/concepts/미군 2분 수면법.md",
       "url": "pages/미군-2분-수면법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "미군들이 2분 안에 잠들기 위해 사용했다는 수면법을 고3 조카에게 알려준 뒤 성적이 올랐다는 사례를 소개한 Threads 글."
     },
     {
       "title": "부자들은 아이에게 5살부터 이걸 가르친다 — @ogata_marito",
       "source": "Wikis/pages/concepts/부자들은 아이에게 5살부터 이걸 가르친다 — @ogata_marito.md",
       "url": "pages/부자들은-아이에게-5살부터-이걸-가르친다-ogata-marito.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "→ 핵심 대비: 부자 가정의 아이 10살 vs 일반인 40살 — 30년 격차"
     },
     {
       "title": "수서–광교 동선 아이 동반 셀프 바비큐 야외 식당 리서치",
       "source": "Wikis/pages/concepts/수서–광교 동선 아이 동반 셀프 바비큐 야외 식당 리서치.md",
       "url": "pages/수서-광교-동선-아이-동반-셀프-바비큐-야외-식당-리서치.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "작성일: 2026년 5월 14일"
     },
     {
       "title": "조던 피터슨 독서법 Threads",
       "source": "Wikis/pages/concepts/조던 피터슨 독서법 Threads.md",
       "url": "pages/조던-피터슨-독서법-threads.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "조던 피터슨이 책 내용을 암기할 때 쓰는 독서 방식이 있으며, 아이들의 책 읽기에 적용해보라는 취지의 Threads 글."
     },
     {
       "title": "학교에선 알려주지 않는 엘리트 집안의 교육 방식",
       "source": "Wikis/pages/concepts/학교에선 알려주지 않는 엘리트 집안의 교육 방식.md",
       "url": "pages/학교에선-알려주지-않는-엘리트-집안의-교육-방식.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "엘리트 집안의 교육 방식은 복종이 아닌 주도성, 지시가 아닌 사고력, 보호가 아닌 책임감을 키우는 데 초점을 둔다. 일반 가정과 엘리트 가정의 결정적 차이는 아이를 통제 대상으로 보느냐, 독립적 인격체로 보느냐에 있다."
     },
     {
       "title": "학원비가 아깝다는 생각, 오늘로 끝났습니다.",
       "source": "Wikis/pages/concepts/학원비가 아깝다는 생각, 오늘로 끝났습니다..md",
       "url": "pages/학원비가-아깝다는-생각-오늘로-끝났습니다.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "HKUDS 연구팀이 공개한 오픈소스 DeepTutor — 단순 Q&A 챗봇이 아닌, 학습자 수준을 진단하고 약점부터 재건하는 가정교사형 에이전트 파이프라인."
     },
     {
       "title": "회사가 파산했을때 체불 임금·퇴직금 받는 방법",
       "source": "Wikis/pages/concepts/회사가 파산했을때 체불 임금·퇴직금 받는 방법.md",
       "url": "pages/회사가-파산했을때-체불-임금-퇴직금-받는-방법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "회사 파산 시 체불 임금과 퇴직금을 받는 절차를 설명하는 유튜브 쇼츠."
     },
     {
       "title": "🎨 무료 아이콘 라이브러리 정리 (2026)",
       "source": "Wikis/pages/concepts/🎨 무료 아이콘 라이브러리 정리 (2026).md",
       "url": "pages/무료-아이콘-라이브러리-정리-2026.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Lucide vs Hugeicons 비교 이미지 포스트 (22.3K views, 295 likes). 댓글에서 Solar, Iconify 등 추가 추천이 쏟아짐."
     },
     {
       "title": "AI 경쟁은 모델보다 중요해지는 컴퓨트 경쟁 [2026 스탠포드 AI 인덱스 리포트 1부]",
       "source": "Wikis/pages/entities/AI 경쟁은 모델보다 중요해지는 컴퓨트 경쟁 [2026 스탠포드 AI 인덱스 리포트 1부].md",
       "url": "pages/ai-경쟁은-모델보다-중요해지는-컴퓨트-경쟁-2026-스탠포드-ai-인덱스-리포트-1부.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "2026 스탠포드 AI 인덱스 리포트를 분석하며 AI 경쟁의 본질이 모델 성능 경쟁에서 컴퓨트/인프라 경쟁으로 전환되고 있음을 데이터로 설명한다. 프론티어 AI는 이제 학계가 아닌 막대한 자본을 가진 소수 기업들의 설비 투자 경쟁으로 바뀌었으며, A…"
     },
     {
       "title": "AI 벤치마크 & SOTA 추적 사이트 가이드",
       "source": "Wikis/pages/entities/AI 벤치마크 & SOTA 추적 사이트 가이드.md",
       "url": "pages/ai-벤치마크-sota-추적-사이트-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "작성일: 2026-02-08"
     },
     {
       "title": "AI 음식 사진 과장 리뷰 프롬프트 유행",
       "source": "Wikis/pages/entities/AI 음식 사진 과장 리뷰 프롬프트 유행.md",
       "url": "pages/ai-음식-사진-과장-리뷰-프롬프트-유행.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "원본: https://www.threads.com/@ju0ju0/post/DXfuLv3j5K4"
     },
     {
       "title": "ARR 1,400억 회사의 무료 배포, Remotion 선점 전략",
       "source": "Wikis/pages/entities/ARR 1,400억 회사의 무료 배포, Remotion 선점 전략.md",
       "url": "pages/arr-1-400억-회사의-무료-배포-remotion-선점-전략.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "ARR 1,400억 원 규모 회사가 자사 제품을 무료로 푼 이유를, 단순한 퍼주기가 아니라 Remotion 생태계 선점 전략으로 해석한 글."
     },
     {
       "title": "BananaTape - GPT 이미지 시각 편집 도구",
       "source": "Wikis/pages/entities/BananaTape - GPT 이미지 시각 편집 도구.md",
       "url": "pages/bananatape-gpt-이미지-시각-편집-도구.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "원본: https://www.threads.com/@bunniesossdev/post/DXo4spikX0G"
     },
     {
       "title": "Boris Cherny 루프를 씁니다 — Agent Loop Engineering",
       "source": "Wikis/pages/entities/Boris Cherny 루프를 씁니다 — Agent Loop Engineering.md",
       "url": "pages/boris-cherny-루프를-씁니다-agent-loop-engineering.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "같은 주에 Peter Steinberger도 같은 메시지를 던졌습니다."
     },
     {
       "title": "ChatGPT한테 광고 마스터 모드 가 있다",
       "source": "Wikis/pages/entities/ChatGPT한테 광고 마스터 모드 가 있다.md",
       "url": "pages/chatgpt한테-광고-마스터-모드-가-있다.html",
-      "raw_body_merged": true
+      "raw_body_merged": true,
+      "excerpt": "ChatGPT한테 \"광고 마스터 모드\"가 있다"
     },
     {
       "title": "Claude Code CLAUDE.md 4규칙과 후속 8규칙",
       "source": "Wikis/pages/entities/Claude Code CLAUDE.md 4규칙과 후속 8규칙.md",
       "url": "pages/claude-code-claude-md-4규칙과-후속-8규칙.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Claude Code용 CLAUDE.md 규칙 템플릿을 소개하며, 카파시식 4규칙(가정 명시·최소 코드·외과적 변경·목표 기반 실행)과 후속 8규칙(토큰 예산, 충돌 드러내기, 쓰기 전 읽기, 의도 검증 테스트 등)이 모델의 재작성/실수 비용을 줄인…"
     },
     {
       "title": "Claude Code ULTRAPLAN 유출 분석",
       "source": "Wikis/pages/entities/Claude Code ULTRAPLAN 유출 분석.md",
       "url": "pages/claude-code-ultraplan-유출-분석.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Claude Code 소스코드에서 피처 플래그 44개 중 ULTRAPLAN이 발견됨. Matt Maher의 Plan Mode 벤치마크와 직접 연결되는 기능."
     },
     {
       "title": "Claude Code 인기 플러그인 TOP 50",
       "source": "Wikis/pages/entities/Claude Code 인기 플러그인 TOP 50.md",
       "url": "pages/claude-code-인기-플러그인-top-50.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "/plugins → 검색 → 설치"
     },
     {
       "title": "Claude Code의 max effort thinking이 v2.0.64부터 조용히 망가졌다 — 원인 분석 및 수정 방법",
       "source": "Wikis/pages/entities/Claude Code의 max effort thinking이 v2.0.64부터 조용히 망가졌다 — 원인 분석 및 수정 방법.md",
       "url": "pages/claude-code의-max-effort-thinking이-v2-0-64부터-조용히-망가졌다-원인-분석-및-수정-방법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "alwaysThinkingEnabled: true와 CLAUDECODEEFFORTLEVEL=max를 settings.json에 설정해도, Claude Code v2.0.64 이후 확장 사고(extended thinking)가 조용히 실패한다."
     },
     {
       "title": "Claude Fable 5 — System Prompt",
       "source": "Wikis/pages/entities/Claude Fable 5 — System Prompt.md",
       "url": "pages/claude-fable-5-system-prompt.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Threads 포스트 by CHOI (@choi.openai)가 공유한 GitHub 링크."
     },
     {
       "title": "Ctx2Skill Skill.md 강화 루프",
       "source": "Wikis/pages/entities/Ctx2Skill Skill.md 강화 루프.md",
       "url": "pages/ctx2skill-skill-md-강화-루프.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Ctx2Skill 논문은 긴 컨텍스트에서 스킬을 자동 추출·개선하는 자기진화형 multi-agent loop를 제안하며, Skill.md 강화 방식의 참고 자료로 볼 수 있다."
     },
     {
       "title": "Deep Agents — LangChain이 만든 Claude Code 아키텍처 오픈소스 클론",
       "source": "Wikis/pages/entities/Deep Agents — LangChain이 만든 Claude Code 아키텍처 오픈소스 클론.md",
       "url": "pages/deep-agents-langchain이-만든-claude-code-아키텍처-오픈소스-클론.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "LangChain이 Claude Code의 아키텍처를 MIT 라이선스로 완전 오픈소스화한 프로젝트. 'Deep Agents'라는 이름으로, LangGraph 기반의 프로덕션 레벨 에이전트 하니스(harness)를 제공한다. Claude Code에서…"
     },
     {
       "title": "Evaluating Skills — 스킬 평가 방법론 공식 가이드",
       "source": "Wikis/pages/entities/Evaluating Skills — 스킬 평가 방법론 공식 가이드.md",
       "url": "pages/evaluating-skills-스킬-평가-방법론-공식-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "스킬은 일종의 프롬프트 — 예상치 못한 방식으로 에이전트 동작에 영향을 줄 수 있다."
     },
     {
       "title": "Excalidraw 공식 MCP 서버 출시",
       "source": "Wikis/pages/entities/Excalidraw 공식 MCP 서버 출시.md",
       "url": "pages/excalidraw-공식-mcp-서버-출시.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Excalidraw가 공식 MCP(Model Context Protocol) 서버를 출시했다. AI 에이전트가 자연어 프롬프트만으로 손으로 그린 스타일의 다이어그램을 생성할 수 있다."
     },
     {
       "title": "ExtractCSS - 바이브 디자인용 Tailwind 코드 추출 크롬 익스텐션",
       "source": "Wikis/pages/entities/ExtractCSS - 바이브 디자인용 Tailwind 코드 추출 크롬 익스텐션.md",
       "url": "pages/extractcss-바이브-디자인용-tailwind-코드-추출-크롬-익스텐션.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "무료이지만 유료급 성능을 자랑하는 바이브 디자인(Vibe Design) 전용 도구. 마음에 드는 웹사이트의 디자인 요소를 클릭하면 Tailwind CSS 코드를 즉시 추출해주는 크롬 익스텐션."
     },
     {
       "title": "Gemini 마케팅 전략가 모드 프롬프트 5가지",
       "source": "Wikis/pages/entities/Gemini 마케팅 전략가 모드 프롬프트 5가지.md",
       "url": "pages/gemini-마케팅-전략가-모드-프롬프트-5가지.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Gemini에 \"마케팅 전략가 모드\"처럼 활용할 수 있는 프롬프트 세트를 소개하는 게시물."
     },
     {
       "title": "Google Research, Gemini-SQL2 공개 (자연어 → SQL)",
       "source": "Wikis/pages/entities/Google Research, Gemini-SQL2 공개 (자연어 → SQL).md",
       "url": "pages/google-research-gemini-sql2-공개-자연어-sql.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Google Research가 자연어를 SQL로 변환하는 Gemini-SQL2를 공개했다. Gemini 3.1 Pro 기반으로 개발되었으며, 텍스트로 질문하면 실제 실행 가능한 SQL 쿼리를 생성하는 것이 특징."
     },
     {
       "title": "Google Workspace 공식 CLI 출시 — Gmail·Drive·Calendar·Docs 터미널에서",
       "source": "Wikis/pages/entities/Google Workspace 공식 CLI 출시 — Gmail·Drive·Calendar·Docs 터미널에서.md",
       "url": "pages/google-workspace-공식-cli-출시-gmail-drive-calendar-docs-터미널에서.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Google이 공식 Workspace CLI를 출시. npm install -g @googleworkspace/cli 한 줄로 Gmail, Drive, Calendar, Docs, Sheets, Chat, Admin 등을 터미널에서 직접 제어 가능.…"
     },
     {
       "title": "HyperFrames — HTML로 영상 만드는 AI 에이전트용 렌더링 프레임워크",
       "source": "Wikis/pages/entities/HyperFrames — HTML로 영상 만드는 AI 에이전트용 렌더링 프레임워크.md",
       "url": "pages/hyperframes-html로-영상-만드는-ai-에이전트용-렌더링-프레임워크.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "HeyGen의 HyperFrames가 OpenAI Codex 플러그인 형태까지 제공되면서, AI 에이전트가 HTML 기반으로 영상 컴포지션을 작성하고 직접 렌더링하는 흐름이 훨씬 쉬워졌다."
     },
     {
       "title": "LangChain Skills — 공식 가이드",
       "source": "Wikis/pages/entities/LangChain Skills — 공식 가이드.md",
       "url": "pages/langchain-skills-공식-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "전문 도메인에서 코딩 에이전트 성능을 향상시키기 위해 큐레이션된 지침, 스크립트, 리소스의 묶음."
     },
     {
       "title": "LangSmith CLI & Skills — 공식 가이드",
       "source": "Wikis/pages/entities/LangSmith CLI & Skills — 공식 가이드.md",
       "url": "pages/langsmith-cli-skills-공식-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "에이전트 네이티브 CLI — 코딩 에이전트(와 개발자)가 LangSmith 내 모든 것을 처리하는 빌딩블록"
     },
     {
       "title": "Larry, OpenClaw 에이전트가 단 일주일 만에 800만 뷰를 달성 - 무료 스킬 공개",
       "source": "Wikis/pages/entities/Larry, OpenClaw 에이전트가 단 일주일 만에 800만 뷰를 달성 - 무료 스킬 공개.md",
       "url": "pages/larry-openclaw-에이전트가-단-일주일-만에-800만-뷰를-달성-무료-스킬-공개.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Ollie Warren의 OpenClaw 에이전트 Larry가 TikTok 슬라이드쇼 자동 생성으로 800만+ 뷰를 달성한 사례. 해당 스킬을 ClawHub에 무료 공개하고, 설치부터 운영까지 전체 워크스루를 제공하는 글."
     },
     {
       "title": "MOSS-TTS — 오픈소스 TTS 패밀리 5종",
       "source": "Wikis/pages/entities/MOSS-TTS — 오픈소스 TTS 패밀리 5종.md",
       "url": "pages/moss-tts-오픈소스-tts-패밀리-5종.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "복단대 OpenMOSS 팀이 오픈소스 TTS 패밀리 MOSS-TTS 5종을 공개. MOSS-TTSD는 주관 평가에서 Doubao·Gemini 2.5-pro까지 이겼으며, 제로샷 보이스 클로닝·31개 언어 지원·실시간 합성(TTFB 180ms)까지 가…"
     },
     {
       "title": "Memvid — AI 에이전트 메모리의 SQLite",
       "source": "Wikis/pages/entities/Memvid — AI 에이전트 메모리의 SQLite.md",
       "url": "pages/memvid-ai-에이전트-메모리의-sqlite.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Source: github.trending@Threads"
     },
     {
       "title": "Microsoft Qlib — AI 퀀트 투자 오픈소스 플랫폼",
       "source": "Wikis/pages/entities/Microsoft Qlib — AI 퀀트 투자 오픈소스 플랫폼.md",
       "url": "pages/microsoft-qlib-ai-퀀트-투자-오픈소스-플랫폼.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Microsoft가 개발한 Qlib — AI 기반 퀀트 투자 오픈소스 플랫폼 소개. GitHub 스타 36,000+개를 받은 대규모 프로젝트로, 투자 전략의 전체 파이프라인을 커버한다."
     },
     {
       "title": "Mistral Voxtral 음성 모델",
       "source": "Wikis/pages/entities/Mistral Voxtral 음성 모델.md",
       "url": "pages/mistral-voxtral-음성-모델.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "출처: Threads @feelfreeai"
     },
     {
       "title": "NanoClaw 메인 허브 기반 멀티에이전트 팀 총정리",
       "source": "Wikis/pages/entities/NanoClaw 메인 허브 기반 멀티에이전트 팀 총정리.md",
       "url": "pages/nanoclaw-메인-허브-기반-멀티에이전트-팀-총정리.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "에이전트 = 역할(Role) + 스킬(Skills) + 기억(Memory) + 채널(Channel)"
     },
     {
       "title": "OpenClaw 설치 필수 - Oc-Memory",
       "source": "Wikis/pages/entities/OpenClaw 설치 필수 - Oc-Memory.md",
       "url": "pages/openclaw-설치-필수-oc-memory.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "@asincartel 님이 개발한 Oc-Memory — OpenClaw의 장기 기억을 압축하여 토큰 비용을 90% 이상 절감할 수 있는 도구. @openclawko가 비개발자도 이해할 수 있도록 설치/세팅/사용법을 정리한 포스트."
     },
     {
       "title": "Pencil Skill — OpenClaw 디자인 시스템 자동 생성",
       "source": "Wikis/pages/entities/Pencil Skill — OpenClaw 디자인 시스템 자동 생성.md",
       "url": "pages/pencil-skill-openclaw-디자인-시스템-자동-생성.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "npx skills add de-novo/pencil-skill"
     },
     {
       "title": "SUPER GEMMA 4 26B — 한국 개발자 파인튜닝 모델",
       "source": "Wikis/pages/entities/SUPER GEMMA 4 26B — 한국 개발자 파인튜닝 모델.md",
       "url": "pages/super-gemma-4-26b-한국-개발자-파인튜닝-모델.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "한국인 개발자들이 파인튜닝한 SUPER GEMMA 4 26B 모델 공개. 일반 Gemma-4 26B 대비 성능이 크게 개선됐고 HuggingFace에서 화제."
     },
     {
       "title": "Slack 기반 멀티에이전트 코딩 팀 허브 설계서 (OpenClaw NanoClaw)",
       "source": "Wikis/pages/entities/Slack 기반 멀티에이전트 코딩 팀 허브 설계서 (OpenClaw NanoClaw).md",
       "url": "pages/slack-기반-멀티에이전트-코딩-팀-허브-설계서-openclaw-nanoclaw.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "에이전트 = 역할 + 스킬 + 기억 + 채널"
     },
     {
       "title": "Stripe Atlas로 미국 Delaware C-Corp 설립 가이드",
       "source": "Wikis/pages/entities/Stripe Atlas로 미국 Delaware C-Corp 설립 가이드.md",
       "url": "pages/stripe-atlas로-미국-delaware-c-corp-설립-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "쿠팡, 샌드버드와 동일한 구조. VC 투자, M&A, IPO 전부 가능한 구조."
     },
     {
       "title": "Superpowers와 OpenSpec을 함께 사용하는 방법",
       "source": "Wikis/pages/entities/Superpowers와 OpenSpec을 함께 사용하는 방법.md",
       "url": "pages/superpowers와-openspec을-함께-사용하는-방법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "superpowers와 openspec 두 도구를 구현 규모에 따라 다르게 조합하여 사용하는 워크플로우를 제안하는 글. 핵심은 \"변경 크기에 따라 워크플로우를 나누는 것\"이며, 사양(spec)을 항상 최신 상태로 유지하는 것이 프로젝트 중후반부 비용…"
     },
     {
       "title": "Threads — superpowers와 openspec 함께 사용하는 방법 + 내부 링크 문서화",
       "source": "Wikis/pages/entities/Threads — superpowers와 openspec 함께 사용하는 방법 + 내부 링크 문서화.md",
       "url": "pages/threads-superpowers와-openspec-함께-사용하는-방법-내부-링크-문서화.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "관련 키워드: [[OpenSpec]], [[Spec-Driven Development]], [[AI Agent Workflow]], [[TDD]], [[Documentation]]"
     },
     {
       "title": "TurboVec — 구글 TurboQuant에서 영감받은 벡터 DB, SK하이닉스 영향",
       "source": "Wikis/pages/entities/TurboVec — 구글 TurboQuant에서 영감받은 벡터 DB, SK하이닉스 영향.md",
       "url": "pages/turbovec-구글-turboquant에서-영감받은-벡터-db-sk하이닉스-영향.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "CHOI (@choi.openai) 님의 Threads."
     },
     {
       "title": "adamsreview 멀티 에이전트 코드 리뷰",
       "source": "Wikis/pages/entities/adamsreview 멀티 에이전트 코드 리뷰.md",
       "url": "pages/adamsreview-멀티-에이전트-코드-리뷰.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "adamsreview라는 멀티 에이전트 코드 리뷰 도구가 Hacker News에 소개되었고, Claude Code로 작성한 코드에 대해 여러 관점의 리뷰와 수정까지 자동화한다는 내용의 Threads 포스트."
     },
     {
       "title": "hwp2md — HWP(한글) 문서를 Markdown으로 변환하는 CLI 도구",
       "source": "Wikis/pages/entities/hwp2md — HWP(한글) 문서를 Markdown으로 변환하는 CLI 도구.md",
       "url": "pages/hwp2md-hwp-한글-문서를-markdown으로-변환하는-cli-도구.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "한국에서 피할 수 없는 HWP 파일을 명령어 한 줄로 Markdown으로 변환하는 Go 기반 CLI 도구. 단순 텍스트 추출을 넘어 복잡한 표나 구조를 최대한 살리며, 선택적으로 LLM을 연동해 가독성 높은 Markdown을 생성한다."
     },
     {
       "title": "바이브코딩 프로젝트 무료티어 초과와 인프라 최적화",
       "source": "Wikis/pages/entities/바이브코딩 프로젝트 무료티어 초과와 인프라 최적화.md",
       "url": "pages/바이브코딩-프로젝트-무료티어-초과와-인프라-최적화.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "무료 티어 초과나 트래픽 급증 상황에서 바이브코딩 기반 토이프로젝트가 당황하지 않고 최적화, 인프라, 애널리틱스 점검으로 대응해야 한다는 내용."
     },
     {
       "title": "샤오미 OmniVoice, 3초 음성복제로 600개 언어 TTS",
       "source": "Wikis/pages/entities/샤오미 OmniVoice, 3초 음성복제로 600개 언어 TTS.md",
       "url": "pages/샤오미-omnivoice-3초-음성복제로-600개-언어-tts.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Threads 포스트 기준, 샤오미가 발표한 오픈소스 음성 모델 OmniVoice는"
     },
     {
       "title": "에이전틱 풀스택 바이브코딩 토탈 가이드",
       "source": "Wikis/pages/entities/에이전틱 풀스택 바이브코딩 토탈 가이드.md",
       "url": "pages/에이전틱-풀스택-바이브코딩-토탈-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "문서 버전: 2026-02-17 | 대상: 멀티 에이전트 병렬 개발 환경 구축을 위한 종합 운영 가이드"
     },
     {
       "title": "한국 변호사를 위한 Claude Code 통합 패키지",
       "source": "Wikis/pages/entities/한국 변호사를 위한 Claude Code 통합 패키지.md",
       "url": "pages/한국-변호사를-위한-claude-code-통합-패키지.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "한국 변호사를 대상으로, 사건 폴더를 통째로 읽고 준비서면 초안 작성까지 돕는 Claude Code 통합 패키지를 공개했다는 Threads 글."
     },
     {
       "title": "🗣️ yoonhwan × 자비스 대화 정리 (2026-02-28 22 27~22 56)",
       "source": "Wikis/pages/entities/🗣️ yoonhwan × 자비스 대화 정리 (2026-02-28 22 27~22 56).md",
       "url": "pages/yoonhwan-자비스-대화-정리-2026-02-28-22-27-22-56.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "yoonhwan: Pi는 Codex/Claude Code를 호출하는 게 아니라, LangGraph처럼 컨텍스트를 직접 관리하고 LLM API를 직접 호출하는 방식이구나"
     },
     {
       "title": "🚀 2026년 마케터 AI 툴 5대장",
       "source": "Wikis/pages/entities/🚀 2026년 마케터 AI 툴 5대장.md",
       "url": "pages/2026년-마케터-ai-툴-5대장.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "마케팅 부서 하나가 통째로 툴 안으로 들어간 수준. 데이터 분석부터 워크플로우 자동화까지, 인간의 단순 노동을 대체하는 AI 툴 5가지."
     },
     {
       "title": "LangChain 스킬 공개, Claude Code 통과율 25 에서 95 로 끌어올린 방법",
       "source": "Wikis/pages/patterns/LangChain 스킬 공개, Claude Code 통과율 25 에서 95 로 끌어올린 방법.md",
       "url": "pages/langchain-스킬-공개-claude-code-통과율-25-에서-95-로-끌어올린-방법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "LangChain이 AI 코딩 에이전트를 위한 첫 번째 스킬 세트를 공개했다."
     },
     {
       "title": "2026-04-15 ReactNative AI QA 자동화 agent device",
       "source": "Wikis/pages/references/2026-04-15 ReactNative AI QA 자동화 agent device.md",
       "url": "pages/2026-04-15-reactnative-ai-qa-자동화-agent-device.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "ReactNative 에서는 agent device를 사용해서 AI에게 QA를 맡길 수 있어요"
     },
     {
       "title": "65줄 텍스트가 AI 코딩을 바꿨다 하루 400 스타 받은 CLAUDE.md의 정체",
       "source": "Wikis/pages/references/65줄 텍스트가 AI 코딩을 바꿨다 하루 400 스타 받은 CLAUDE.md의 정체.md",
       "url": "pages/65줄-텍스트가-ai-코딩을-바꿨다-하루-400-스타-받은-claude-md의-정체.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Andrej Karpathy가 지적한 LLM 코딩 문제점을 해결하려는 단 65줄짜리 Markdown 파일(CLAUDE.md)이 GitHub에서 폭발적 인기를 끌며, Claude Code 사용자들 사이에서 \"이 파일 하나만 넣으면 AI가 훨씬 똑똑해진…"
     },
     {
       "title": "AI 영상 제작 프로세스 (챗지피티 + Seedance 2.0)",
       "source": "Wikis/pages/references/AI 영상 제작 프로세스 (챗지피티 + Seedance 2.0).md",
       "url": "pages/ai-영상-제작-프로세스-챗지피티-seedance-2-0.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "AI 영상 만들 때 제가 쓰는 프로세스입니다."
     },
     {
       "title": "AI 코딩 세션 핸드오프 문서 팁 - manusai_kr",
       "source": "Wikis/pages/references/AI 코딩 세션 핸드오프 문서 팁 - manusai_kr.md",
       "url": "pages/ai-코딩-세션-핸드오프-문서-팁-manusai-kr.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "\"대부분의 AI 이용자가 모르는 사실 31:\""
     },
     {
       "title": "AI로 인물을 만들 때 현실성을 높여주는 프롬프트 한 줄",
       "source": "Wikis/pages/references/AI로 인물을 만들 때 현실성을 높여주는 프롬프트 한 줄.md",
       "url": "pages/ai로-인물을-만들-때-현실성을-높여주는-프롬프트-한-줄.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "✨ \"인물 얼굴을 자연광으로 자연스럽게 리라이팅해\""
     },
     {
       "title": "Anthropic Claude Skill 제작 가이드 - 5가지 핵심 패턴",
       "source": "Wikis/pages/references/Anthropic Claude Skill 제작 가이드 - 5가지 핵심 패턴.md",
       "url": "pages/anthropic-claude-skill-제작-가이드-5가지-핵심-패턴.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Anthropic이 직접 작성한 Claude Skill 제작 매뉴얼의 핵심 내용을 @keunyoung이 한국어로 정리한 쓰레드. Claude에게 반복되는 설명을 Skill로 자동화하고, 더 좋은 결과를 얻기 위한 5가지 핵심 패턴을 다룬다. Skil…"
     },
     {
       "title": "CLAUDE.md",
       "source": "Wikis/pages/references/CLAUDE.md.md",
       "url": "pages/claude-md.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed."
     },
     {
       "title": "ChatGPT 사주 프롬프트 — 대만신 50페이지 종합 리포트",
       "source": "Wikis/pages/references/ChatGPT 사주 프롬프트 — 대만신 50페이지 종합 리포트.md",
       "url": "pages/chatgpt-사주-프롬프트-대만신-50페이지-종합-리포트.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "ChatGPT에게 \"만년을 살아온 대만신(大萬神)\" 역할을 부여하여, 사주팔자 기반 50페이지 분량의 프리미엄 종합 사주 리포트를 단계별로 생성하게 하는 프롬프트. 22.5K 조회수, 200+ 좋아요를 기록한 인기 글."
     },
     {
       "title": "Claude Code + Kimi CLI 멀티 AI 에이전트 엔지니어링",
       "source": "Wikis/pages/references/Claude Code + Kimi CLI 멀티 AI 에이전트 엔지니어링.md",
       "url": "pages/claude-code-kimi-cli-멀티-ai-에이전트-엔지니어링.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "AI 코딩 도구 하나만 쓰는 시대가 끝났다는 주장. Claude Code(설계)와 Kimi CLI(구현)를 조합해 리팩토링을 \"예술의 경지\"로 끌어올렸다는 사용기."
     },
     {
       "title": "Claude Code — 문서가 알려주지 않는 설정 가능한 모든 것",
       "source": "Wikis/pages/references/Claude Code — 문서가 알려주지 않는 설정 가능한 모든 것.md",
       "url": "pages/claude-code-문서가-알려주지-않는-설정-가능한-모든-것.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Claude Code 2.1.87에는 공식 문서에 없는 설정/기능이 많음. 개인(~/.claude/)과 프로젝트(.claude/) 단위로 설정을 분리해 Hooks, Skills, Agents를 세밀하게 제어 가능."
     },
     {
       "title": "Claude Code 쓴다면 tmux 필수 설정 팁",
       "source": "Wikis/pages/references/Claude Code 쓴다면 tmux 필수 설정 팁.md",
       "url": "pages/claude-code-쓴다면-tmux-필수-설정-팁.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Claude Code 사용자를 위한 tmux 꿀팁. tmux는 하나의 터미널에서 여러 터미널을 관리하는 도구로, Claude Code의 터미널 사용 수요 증가에 맞춰 핵심 설정 2가지를 공유."
     },
     {
       "title": "Claude Code 완전 가이드 해커톤 우승자의 70가지 파워 팁",
       "source": "Wikis/pages/references/Claude Code 완전 가이드 해커톤 우승자의 70가지 파워 팁.md",
       "url": "pages/claude-code-완전-가이드-해커톤-우승자의-70가지-파워-팁.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Anthropic 해커톤 우승자 ykdojo의 43가지 팁 + Anthropic DevRel Ado Kukic의 31가지 팁을 집대성한 Claude Code 실전 가이드. 에이전틱 개발자(Agentic Developer)로서의 사고방식부터 고급 자동…"
     },
     {
       "title": "Claude 에이전트 팀 템플릿 6가지 - 실전 가이드",
       "source": "Wikis/pages/references/Claude 에이전트 팀 템플릿 6가지 - 실전 가이드.md",
       "url": "pages/claude-에이전트-팀-템플릿-6가지-실전-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Anthropic 공식 데모 6종을 분석하고 산업별 에이전트 팀 템플릿 6가지를 직접 구성/테스트한 실전 가이드."
     },
     {
       "title": "Everything Claude Code (ECC)",
       "source": "Wikis/pages/references/Everything Claude Code (ECC).md",
       "url": "pages/everything-claude-code-ecc.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "AI 에이전트 하네스를 위한 성능 최적화 시스템. Anthropic 해커톤 우승작."
     },
     {
       "title": "Huashu Design — Claude Design을 역설계한 오픈소스 스킬",
       "source": "Wikis/pages/references/Huashu Design — Claude Design을 역설계한 오픈소스 스킬.md",
       "url": "pages/huashu-design-claude-design을-역설계한-오픈소스-스킬.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "중국의 유명 개발자 유튜버 화슈(Huashu)가 'Claude Design'을 역설계한 'Huashu Design'을 GitHub에 무료 오픈소스로 공개했습니다."
     },
     {
       "title": "Jungmin Lee 수신율 최고 고객 인도 상황",
       "source": "Wikis/pages/references/Jungmin Lee 수신율 최고 고객 인도 상황.md",
       "url": "pages/jungmin-lee-수신율-최고-고객-인도-상황.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "예상은 했지만 한 번에 동작했고 수신율도 좋으며 고객 인도만 남았다는 짧은 진행 공유."
     },
     {
       "title": "LangChain Agent Skills AI 코딩 어시스턴트를 도메인 전문가로 만드는 법",
       "source": "Wikis/pages/references/LangChain Agent Skills AI 코딩 어시스턴트를 도메인 전문가로 만드는 법.md",
       "url": "pages/langchain-agent-skills-ai-코딩-어시스턴트를-도메인-전문가로-만드는-법.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "LangChain/LangGraph 문서는 훌륭하지만 맥락적이지 않다."
     },
     {
       "title": "MCP에서 Skills로 대체되는 트렌드 — 스킬 매장지 소개",
       "source": "Wikis/pages/references/MCP에서 Skills로 대체되는 트렌드 — 스킬 매장지 소개.md",
       "url": "pages/mcp에서-skills로-대체되는-트렌드-스킬-매장지-소개.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "@petercha (바이브코딩 Vibe coding) 님이 소개하는 스킬 매장지 + 스킬이 각광받는 이유."
     },
     {
       "title": "MOSS-TTS — 가중치까지 무료로 푼 오픈웨이트 음성 생성 모델",
       "source": "Wikis/pages/references/MOSS-TTS — 가중치까지 무료로 푼 오픈웨이트 음성 생성 모델.md",
       "url": "pages/moss-tts-가중치까지-무료로-푼-오픈웨이트-음성-생성-모델.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "OpenMOSS 팀이 음성 생성 모델 MOSS-TTS를 가중치까지 통째로 무료로 공개. 한국어 포함 31개 언어 지원. 유료 음성 AI에 쓰던 더빙·내레이션을 내 PC에 받아 직접 구동 가능."
     },
     {
       "title": "OmniGen Vault — OpenAI Pro 계정으로 무한 GPT Image 2 생성하기",
       "source": "Wikis/pages/references/OmniGen Vault — OpenAI Pro 계정으로 무한 GPT Image 2 생성하기.md",
       "url": "pages/omnigen-vault-openai-pro-계정으로-무한-gpt-image-2-생성하기.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "OpenAI Pro 계정으로 무한 GPT Image 2 생성하기!"
     },
     {
       "title": "OpenClaw 설치 후 필수 세팅 7가지 가이드",
       "source": "Wikis/pages/references/OpenClaw 설치 후 필수 세팅 7가지 가이드.md",
       "url": "pages/openclaw-설치-후-필수-세팅-7가지-가이드.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "OpenClaw을 설치한 후 필수적으로 해야 할 7가지 세팅을 정리한 가이드. 따로 뭐 찾아볼 필요 없이 한마디만 치면 알아서 세팅해준다는 것이 핵심 포인트. OpenClaw 공식 한국어 계정(@openclawko)이 직접 작성."
     },
     {
       "title": "OpenClaw에 Google Embedding 2 연결하기 — 메모리 검색 대폭 향상",
       "source": "Wikis/pages/references/OpenClaw에 Google Embedding 2 연결하기 — 메모리 검색 대폭 향상.md",
       "url": "pages/openclaw에-google-embedding-2-연결하기-메모리-검색-대폭-향상.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "OpenClaw에 Google Embedding 2 (Gemini API) 를 연결하면 에이전트의 메모리 검색 품질이 크게 향상된다는 실사용 후기. 파일 458개를 통째로 기억하며, 이전 임베딩 대비 질문 의도를 훨씬 정확하게 파악한다."
     },
     {
       "title": "Threads scrap — Jungmin Lee (@jungmin7818)",
       "source": "Wikis/pages/references/Threads scrap — Jungmin Lee (@jungmin7818).md",
       "url": "pages/threads-scrap-jungmin-lee-jungmin7818.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "한방에 동작시켰습니다"
     },
     {
       "title": "Threads — Karpathy autoresearch를 Claude Code Cowork 스킬에 적용한 자기개선 루프",
       "source": "Wikis/pages/references/Threads — Karpathy autoresearch를 Claude Code Cowork 스킬에 적용한 자기개선 루프.md",
       "url": "pages/threads-karpathy-autoresearch를-claude-code-cowork-스킬에-적용한-자기개선-루프.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "안드레 카파시가 고안한 \"autoresearch\" 방법론을 Claude Code와 Cowork에 적용해 프롬프트를 스스로 개선하는 스킬이 공개됐습니다."
     },
     {
       "title": "cmux — 에이전트 코딩용 터미널 추천",
       "source": "Wikis/pages/references/cmux — 에이전트 코딩용 터미널 추천.md",
       "url": "pages/cmux-에이전트-코딩용-터미널-추천.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "맥에서 cmux 터미널이 에이전트 코딩에 최적이라는 리뷰. tmux의 GUI 부재, Codex App의 느린 반응속도, VS Code의 프로젝트 탭 관리 문제를 모두 해결한 터미널이라는 평가."
     },
     {
       "title": "threads-voidlight00-DWl2c5yD3jf",
       "source": "Wikis/pages/references/threads-voidlight00-DWl2c5yD3jf.md",
       "url": "pages/threads-voidlight00-dwl2c5yd3jf.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "원본 링크: https://www.threads.com/@voidlight00/post/DWl2c5yD3jf?xmt=AQF0r8swKFniipUA5RqlrJBThYene2fCUdlpBj2aDDS0iL9o4XOF8BH4xSXrdLTdbNuZWZ0v&s…"
     },
     {
       "title": "산업별 에이전트 팀 템플릿 6가지 (복붙용)",
       "source": "Wikis/pages/references/산업별 에이전트 팀 템플릿 6가지 (복붙용).md",
       "url": "pages/산업별-에이전트-팀-템플릿-6가지-복붙용.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Lead Architect (sonnet)"
     },
     {
       "title": "오라클 클라우드 서버 무료로 얻기 성공기",
       "source": "Wikis/pages/references/오라클 클라우드 서버 무료로 얻기 성공기.md",
       "url": "pages/오라클-클라우드-서버-무료로-얻기-성공기.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Oracle Cloud Always Free에서 OCI CLI와 Codex를 활용해 A1 Flex 인스턴스를 생성·증설하여 최종적으로 4 OCPU / 24GB RAM 서버를 확보했다는 경험담."
     },
     {
       "title": "참고 자료 및 리소스",
       "source": "Wikis/pages/references/참고 자료 및 리소스.md",
       "url": "pages/참고-자료-및-리소스.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "1. Claude Code Swarms – Addy Osmani"
     },
     {
       "title": "🎨 Figma 시대의 끝 Storybook + Claude 조합으로 생산성 폭발",
       "source": "Wikis/pages/references/🎨 Figma 시대의 끝 Storybook + Claude 조합으로 생산성 폭발.md",
       "url": "pages/figma-시대의-끝-storybook-claude-조합으로-생산성-폭발.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Figma는 디자인 언어를 개발 언어로 변환하는 커뮤니케이션 도구였다. 두 영역이 하나로 융합되어야 생산성 폭발이 가능하므로, AI 도구 친화적 환경으로 전환해야 한다."
     },
     {
       "title": "2026-03-20 Karpathy Autoresearch로 Claude Code 스킬 자동 개선하기",
       "source": "Wikis/pages/workflows/2026-03-20 Karpathy Autoresearch로 Claude Code 스킬 자동 개선하기.md",
       "url": "pages/2026-03-20-karpathy-autoresearch로-claude-code-스킬-자동-개선하기.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Andrej Karpathy의 autoresearch 루프를 Claude Code 스킬에 적용하여, 스킬이 밤새 스스로 개선되는 방법을 소개한 글."
     },
     {
       "title": "LangGraphics LangGraph 에이전트 실시간 시각화 도구",
       "source": "Wikis/pages/workflows/LangGraphics LangGraph 에이전트 실시간 시각화 도구.md",
       "url": "pages/langgraphics-langgraph-에이전트-실시간-시각화-도구.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "LangGraph 에이전트의 실행 과정을 브라우저에서 실시간으로 시각화해주는 오픈소스 도구. 컴파일된 그래프를 watch()로 감싸기만 하면 설정 끝."
     },
     {
       "title": "카파시 LLM 위키 시스템 — RAG 없이 마크다운으로 지식관리",
       "source": "Wikis/pages/workflows/카파시 LLM 위키 시스템 — RAG 없이 마크다운으로 지식관리.md",
       "url": "pages/카파시-llm-위키-시스템-rag-없이-마크다운으로-지식관리.html",
-      "raw_body_merged": false
+      "raw_body_merged": false,
+      "excerpt": "Andrej Karpathy (AI의 아버지, vibe coding 창시자)가 공개한 LLM Knowledge Base 시스템."
     }
   ]
 }
