@@ -5,13 +5,13 @@
   "domains": [
     {
       "domain": "ai-agent",
-      "public_url": "https://yoonhwan.github.io/jarvis-public-wiki/",
+      "public_url": "https://yoonhwan.github.io/jarvis-public-wiki/domains/ai-agent/",
       "category_count": 9,
       "page_count": 111
     },
     {
       "domain": "trading",
-      "public_url": "https://yoonhwan.github.io/jarvis-public-wiki/",
+      "public_url": "https://yoonhwan.github.io/jarvis-public-wiki/domains/trading/",
       "category_count": 9,
       "page_count": 38
     }
