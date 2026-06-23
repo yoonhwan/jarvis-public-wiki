@@ -1,0 +1,38 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>진짜 자동매매 트레이더들이 기본적으로 통과해야하는 19가지 테스트 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260623-103841-KST">Jarvis Wiki / trading</a><h1>진짜 자동매매 트레이더들이 기본적으로 통과해야하는 19가지 테스트</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>진짜 자동매매 트레이더들이 기본적으로 통과해야하는 19가지 테스트</h1>
+<blockquote>Source candidate from <code>News-Links/2026-06-14 자동매매 트레이더 19가지 테스트 (coin.bara)/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>진짜 자동매매 트레이더들이 기본적으로 통과해야하는 19가지 테스트</h1>
+<blockquote>Threads @coin.bara 포스트 — 자동매매(알고리즘 트레이딩) 시스템 검증 체크리스트</blockquote>
+<h2>본문 (Main Post)</h2>
+<table><thead><tr><th>#</th><th>테스트</th><th>중요도</th><th>설명</th></tr></thead><tbody>
+<tr><td>1</td><td>데이터 검증</td><td>필수</td><td>과거 데이터의 정합성, survivorship bias, look-ahead bias 점검</td></tr>
+<tr><td>2</td><td>과최적화 검증</td><td>●●</td><td>파라미터 과적합(overfitting) 여부 판별</td></tr>
+<tr><td>3</td><td>Walk Forward Analysis</td><td>필수</td><td>기간별 최적화 → OOS 검증 반복</td></tr>
+<tr><td>4</td><td>Out of Sample Test</td><td>필수</td><td>최적화에 사용하지 않은 데이터로 검증</td></tr>
+<tr><td>5</td><td>몬테카를로 시뮬레이션</td><td>●●</td><td>무작위 실행 분포로 전략의 통계적 유의성 검증</td></tr>
+<tr><td>6</td><td>스트레스 테스트</td><td>필수</td><td>실제 위기 상황(2008, 2020 등) 적용</td></tr>
+<tr><td>7</td><td>거래비용 시뮬레이션</td><td>필수</td><td>수수료, 슬리피지, 스프레드 반영</td></tr>
+<tr><td>8</td><td>용량 분석</td><td>필수</td><td>최대 수용 가능한 시드/자금 규모 측정</td></tr>
+<tr><td>9</td><td>켈리 공식</td><td>●●●●</td><td>최적 베팅 비율 산출 및 리스크 관리</td></tr>
+<tr><td>10</td><td>MDD 제한</td><td>필수</td><td>최대 낙폭(Max Drawdown) 허용 범위 설정</td></tr>
+<tr><td>11</td><td>샤프 비율</td><td>필수</td><td>위험 대비 초과 수익률 측정</td></tr>
+<tr><td>12</td><td>소르티노 비율</td><td>필수</td><td>하방 위험만 고려한 위험 조정 수익률 (기관 선호)</td></tr>
+<tr><td>13</td><td>Calmar Ratio</td><td>필수</td><td>연간 수익률 / MDD</td></tr>
+<tr><td>14</td><td>수익팩터</td><td>목표</td><td>1.5 이상 양호, 2 이상 우수 (Gross Profit / Gross Loss)</td></tr>
+<tr><td>15</td><td>Recovery Factor</td><td>목표</td><td>손실 후 회복 속도 측정</td></tr>
+<tr><td>16</td><td>파산확률</td><td>필수</td><td>Risk of Ruin — 자본 소진 확률</td></tr>
+<tr><td>17</td><td>Regime Test</td><td>필수</td><td>상승장/하락장/횡보장 등 시장 상황별 분석</td></tr>
+<tr><td>18</td><td>상관관계</td><td>필수</td><td>기존 전략/포트폴리오와의 상관성 분석</td></tr>
+<tr><td>19</td><td>팩터 익스포저</td><td>고급</td><td>특정 팩터(모멘텀, 가치, 저변동성 등)에 대한 노출도 분석</td></tr>
+</tbody></table>
+<h2>Key Insights</h2>
+<ul>
+<li><strong>●● = 중요도 아이콘</strong>: 게시자가 강조한 핵심 항목 — 과최적화 검증(2), 몬테카를로(5), 켈리공식(9)에 특히 중요도 표시</li>
+<li><strong>기관 선호</strong>: 기관 트레이더들은 샤프 비율보다 <strong>소르티노 비율</strong>을 더 선호 (하방 변동성만 리스크로 간주)</li>
+<li><strong>기본 통과 기준</strong>: 위 19가지 테스트를 모두 통과해야 &quot;진짜&quot; 자동매매 시스템으로 인정받을 수 있다는 취지</li>
+<li><strong>종합 평가</strong>: 백테스팅(1-8) → 리스크 관리(9-10, 16) → 성과 지표(11-15) → 시장 적응(17-19) 순서로 구성된 종합 검증 프레임워크</li>
+</ul>
+<h2>관련 자료</h2>
+<ul>
+<li><a href="https://www.threads.com/@coin.bara/post/DZhdenLHfKI">Threads 원본</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-06-14 자동매매 트레이더 19가지 테스트 (coin.bara)/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

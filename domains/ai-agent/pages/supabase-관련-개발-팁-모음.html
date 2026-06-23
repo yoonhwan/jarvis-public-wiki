@@ -1,0 +1,52 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Supabase 관련 개발 팁 모음 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260623-103841-KST">Jarvis Wiki / ai-agent</a><h1>Supabase 관련 개발 팁 모음</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Supabase 관련 개발 팁 모음</h1>
+<blockquote>Source candidate from <code>News-Links/2026-06-20 Supabase 개발 팁 모음 - dalgom.bami/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Supabase 관련 개발 팁 모음</h1>
+<blockquote>Threads <code>@dalgom.bami</code> — Supabase를 실제로 쓰며 정리한 비용·보안·운영 꿀팁 12선</blockquote>
+<h2>본문 (Main Post)</h2>
+<h3>비용 / 무료 플랜 활용</h3>
+<ol>
+<li><strong>MAU 5만까지 Free</strong> — MVP·PMF 찾기 전까지 DB 비용을 아낄 수 있어 최고.</li>
+<li><strong>Storage는 1GB까지 무료</strong> — 보통 이걸 초과해 유료 결제하게 되는 포인트. 굳이 쓸 필요 없이 <strong>Cloudflare R2</strong>를 쓰면 월 10GB 무료.</li>
+</ol>
+<h3>구글 로그인 / 도메인</h3>
+<ol>
+<li><strong>구글 로그인 연동이 쉽다.</strong> 단, 연동 시 <code>{랜덤문자}.supabase.co</code> 같은 도메인이 로그인 화면에 노출돼 이상한 사이트처럼 보임. 이걸 해결하려고 $10짜리 커스텀 도메인을 결제하는 사람들이 있는데 <strong>그럴 필요 없다.</strong> GCP OAuth → <strong>Branding에서 verification</strong>만 제대로 하면 이상한 URL 대신 <strong>아이콘 + 서비스 이름</strong>으로 노출 가능.</li>
+<li><strong>커스텀 도메인(+$10/월)</strong> 은 주소창에 순간적으로 뜨는 리다이렉트 주소까지 거슬릴 때만 하는 것.</li>
+</ol>
+<h3>백업 / 마이그레이션</h3>
+<ol>
+<li><strong>Free는 자동 백업 안 됨</strong> — 직접 dump를 떠야 함. 보통 이것 때문에 Pro 플랜을 시작함. Pro는 하루 1번, 최근 7일간 DB 데이터를 저장/복구 가능. 서버 지식이 없는 바이브코더라면 이거라도 해두자 — 개발자가 날아간 DB를 살려줄 수 있다.</li>
+<li><strong>추후 다른 DB로 마이그레이션 계획이 있다면 RLS로 클라이언트↔Supabase 직접 연결 로직을 쓰면 나중에 엄청 고통받는다.</strong> 그냥 wrapping하는 서버를 띄우고 service role로 권한 체크하는 <strong>전통적인 백엔드 방식</strong>으로 하면 추후 스무스하게 마이그레이션 가능.</li>
+<li><strong>로컬 Supabase를 개발 DB로 사용</strong>하고, DB 스키마 변경은 무조건 <strong>migration 파일을 생성</strong>해 로컬에서 반영·테스트 → 운영(또는 스테이징)에 supabase client로 migration 반영. 웹 대시보드에서 테이블 구조를 막 바꾸면 안 됨.</li>
+</ol>
+<h3>트랜잭션 / 운영</h3>
+<ol>
+<li><strong>트랜잭션이 필요하면 RPC를 써야 하는데</strong>, 파일이 아닌 DB에 로직이 저장되다 보니 유지보수가 힘듦. 트랜잭션이 특히 중요한 애플리케이션이면 <strong>전통적인 Server↔DB client 구조 권장.</strong></li>
+<li><strong>무료 플랜은 1주일간 트래픽 없으면 일시정지됨.</strong> 꾸준히 직접 들어가거나 cron으로 호출해서 해결 (단, cron 자동 정기 호출은 정책 위반).</li>
+<li><strong>보안</strong> — 제대로 알고 쓰면 보안 이슈 거의 없음. 좋은 백엔드 스택을 가져와도 쓰는 사람이 모르면 허점이 생김. 단, Supabase는 권장 사용 방식대로 쓰다 보면 <strong>보안적으로 실수하기 좋은 구조</strong>임.</li>
+<li><strong>queue, cron도 Supabase plugin으로 바로 쓸 수 있지만 유지보수가 지옥 — 비추.</strong></li>
+<li><strong>로컬에 세팅해두고 쓰는 Supabase DB 테스트가 진짜 사기(꿀)임.</strong></li>
+</ol>
+<blockquote>추후 Supabase 도입 계획이 있다면 저장해두고 나중에 보세요!</blockquote>
+<h2>댓글 스레드 (Comments)</h2>
+<p><strong>Q. GCP OAuth Branding verification 했는데도 이상한 URL이 떠요. 반영에 시간이 걸리나요? 클로드는 커스텀 도메인 사야 적용된다던데..</strong></p>
+<p><strong>Q. Firebase보다 Supabase가 더 좋아?</strong></p>
+<p><strong>C. 정리 너무 좋네요! 세팅이 똑같으시네요 — auto branching까지 있어서 로컬 도커-깃헙-Vercel CICD 구축 가능, realtime도 있고 팔방미인.</strong></p>
+<p><strong>Q. (브랜치) 2개까지밖에 안 되는 건 어떻게 해결하시나요?</strong></p>
+<blockquote><strong>A (작성자).</strong> 보통 회사 이메일 계정으로 시작했다가 Pro 플랜을 씀. 무료로 여러 프로젝트를 계속 하려면 <strong>다계정</strong>밖에 답이 없을 듯.</blockquote>
+<p><strong>C. 8번 진짜 공감 — 클라이언트 사이드 페칭 first 철학을 고수하는데, 트랜잭션이랑 raw SQL 쿼리는 좀 열어줬으면. 제발!!</strong></p>
+<blockquote>백번 양보해 클라이언트 커넥션 트랜잭션은 그렇다 쳐도 <strong>edge function에서는 돼야 하는 거 아닌가.</strong> edge function은 Deno 환경이라 잘 안 쓰게 됨 — 장점이 없음.</blockquote>
+<blockquote><strong>C. Deno는 진짜 최악의 수, 왜 아직도 번복 안 하는지 이해가 안 됨.</strong></blockquote>
+<p><strong>Q. 웬만하면 걍 써도 된다로 느껴지네요.</strong></p>
+<blockquote><strong>A (작성자).</strong> 제품 초기엔 추천. 저도 항상 Supabase로 시작하고, 제품이 검증되고 트래픽이 늘면 서서히 마이그레이션함.</blockquote>
+<p><strong>C. 이건 진짜 사용하고 나오는 찐꿀팁이네요.</strong></p>
+<p><strong>C. 도메인 변경(3번)은 진짜 꿀팁이네요!</strong></p>
+<p><strong>C. 3번! 나도 이거 고민이었는데 고마워요!</strong></p>
+<h2>참고 자료</h2>
+<ul>
+<li><a href="https://supabase.com/docs">Supabase 공식 문서</a></li>
+<li><a href="https://supabase.com/docs/guides/local-development">Supabase Local Development / CLI</a></li>
+<li><a href="https://developers.cloudflare.com/r2/">Cloudflare R2</a></li>
+<li><a href="https://www.threads.com/@dalgom.bami/post/DV-3JstEmA2">원문 Threads 포스트</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-06-20 Supabase 개발 팁 모음 - dalgom.bami/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

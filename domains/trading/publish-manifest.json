@@ -1,247 +1,254 @@
 {
-  "generated_at": "2026-05-24T10:36:07.641456",
-  "source": "Wikis/trading/wiki",
+  "generated_at": "2026-06-23T10:47:05.099066",
+  "source": "Wikis/pages",
+  "domain": "trading",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "build-v2-20260524",
+  "version": "20260623-103841-KST",
   "categories": {
     "concept": {
-      "folder": "wiki/concepts",
+      "folder": "pages/concepts",
       "description": "Trading concepts, tools, screeners, market data libraries, indicators."
     },
     "strategy": {
-      "folder": "wiki/strategies",
+      "folder": "pages/strategies",
       "description": "Trading strategies, entry/exit rules, risk management, backtesting ideas."
     },
     "entity": {
-      "folder": "wiki/entities",
+      "folder": "pages/entities",
       "description": "Companies, exchanges, tickers, protocols, products, people."
     },
     "reference": {
-      "folder": "wiki/references",
+      "folder": "pages/references",
       "description": "Guides, docs, external resources, tutorials."
     }
   },
   "pages": [
     {
       "title": "@nowtimeisthat on Threads",
-      "source": "Wikis/trading/wiki/entities/@nowtimeisthat on Threads.md",
+      "source": "Wikis/pages/entities/@nowtimeisthat on Threads.md",
       "url": "pages/nowtimeisthat-on-threads.html",
       "raw_body_merged": false
     },
     {
       "title": "Best Way (Margin, Futures, Perpetual etc.) To Scalp Cryptocurrencies",
-      "source": "Wikis/trading/wiki/entities/Best Way (Margin, Futures, Perpetual etc.) To Scalp Cryptocurrencies.md",
+      "source": "Wikis/pages/entities/Best Way (Margin, Futures, Perpetual etc.) To Scalp Cryptocurrencies.md",
       "url": "pages/best-way-margin-futures-perpetual-etc-to-scalp-cryptocurrencies.html",
       "raw_body_merged": false
     },
     {
       "title": "Claude Opus 4.6을 활용한 아웃리치 시스템 구축 10가지 프롬프트",
-      "source": "Wikis/trading/wiki/entities/Claude Opus 4.6을 활용한 아웃리치 시스템 구축 10가지 프롬프트.md",
+      "source": "Wikis/pages/entities/Claude Opus 4.6을 활용한 아웃리치 시스템 구축 10가지 프롬프트.md",
       "url": "pages/claude-opus-4-6을-활용한-아웃리치-시스템-구축-10가지-프롬프트.html",
       "raw_body_merged": false
     },
     {
       "title": "Claude로 월스트리트 애널리스트처럼 주식 분석 — 10개 프롬프트",
-      "source": "Wikis/trading/wiki/entities/Claude로 월스트리트 애널리스트처럼 주식 분석 — 10개 프롬프트.md",
+      "source": "Wikis/pages/entities/Claude로 월스트리트 애널리스트처럼 주식 분석 — 10개 프롬프트.md",
       "url": "pages/claude로-월스트리트-애널리스트처럼-주식-분석-10개-프롬프트.html",
       "raw_body_merged": false
     },
     {
       "title": "Codex 서브에이전트 136개 모음집",
-      "source": "Wikis/trading/wiki/entities/Codex 서브에이전트 136개 모음집.md",
+      "source": "Wikis/pages/entities/Codex 서브에이전트 136개 모음집.md",
       "url": "pages/codex-서브에이전트-136개-모음집.html",
       "raw_body_merged": false
     },
     {
       "title": "MCP 서버로 금 은 비트코인 실시간 데이터 조회하기",
-      "source": "Wikis/trading/wiki/entities/MCP 서버로 금 은 비트코인 실시간 데이터 조회하기.md",
+      "source": "Wikis/pages/entities/MCP 서버로 금 은 비트코인 실시간 데이터 조회하기.md",
       "url": "pages/mcp-서버로-금-은-비트코인-실시간-데이터-조회하기.html",
       "raw_body_merged": false
     },
     {
       "title": "OpenClaw 활용 사례 모음 — @yaaado_",
-      "source": "Wikis/trading/wiki/entities/OpenClaw 활용 사례 모음 — @yaaado_.md",
+      "source": "Wikis/pages/entities/OpenClaw 활용 사례 모음 — @yaaado_.md",
       "url": "pages/openclaw-활용-사례-모음-yaaado.html",
       "raw_body_merged": false
     },
     {
       "title": "PostHog — 분석 도구 10개를 하나로 합친 오픈소스",
-      "source": "Wikis/trading/wiki/entities/PostHog — 분석 도구 10개를 하나로 합친 오픈소스.md",
+      "source": "Wikis/pages/entities/PostHog — 분석 도구 10개를 하나로 합친 오픈소스.md",
       "url": "pages/posthog-분석-도구-10개를-하나로-합친-오픈소스.html",
       "raw_body_merged": false
     },
     {
       "title": "S&P500 커버드콜 옵션 매도 전략 — @jkimmorgan",
-      "source": "Wikis/trading/wiki/entities/S&P500 커버드콜 옵션 매도 전략 — @jkimmorgan.md",
+      "source": "Wikis/pages/entities/S&P500 커버드콜 옵션 매도 전략 — @jkimmorgan.md",
       "url": "pages/s-p500-커버드콜-옵션-매도-전략-jkimmorgan.html",
       "raw_body_merged": false
     },
     {
       "title": "TensorTrade 강화학습 알고리즘 트레이딩 Python 라이브러리",
-      "source": "Wikis/trading/wiki/entities/TensorTrade 강화학습 알고리즘 트레이딩 Python 라이브러리.md",
+      "source": "Wikis/pages/entities/TensorTrade 강화학습 알고리즘 트레이딩 Python 라이브러리.md",
       "url": "pages/tensortrade-강화학습-알고리즘-트레이딩-python-라이브러리.html",
       "raw_body_merged": false
     },
     {
       "title": "TradingView Screener MCP 연동 — AI 에이전트가 조건 검색을 직접 수행",
-      "source": "Wikis/trading/wiki/entities/TradingView Screener MCP 연동 — AI 에이전트가 조건 검색을 직접 수행.md",
+      "source": "Wikis/pages/entities/TradingView Screener MCP 연동 — AI 에이전트가 조건 검색을 직접 수행.md",
       "url": "pages/tradingview-screener-mcp-연동-ai-에이전트가-조건-검색을-직접-수행.html",
       "raw_body_merged": false
     },
     {
       "title": "고졸퇴사자가 방구석컴퓨터 1대로 달러버는 방법",
-      "source": "Wikis/trading/wiki/entities/고졸퇴사자가 방구석컴퓨터 1대로 달러버는 방법.md",
+      "source": "Wikis/pages/entities/고졸퇴사자가 방구석컴퓨터 1대로 달러버는 방법.md",
       "url": "pages/고졸퇴사자가-방구석컴퓨터-1대로-달러버는-방법.html",
       "raw_body_merged": false
     },
     {
       "title": "남편이 미국 동료 John에게 작별 노래를 선물한 이야기",
-      "source": "Wikis/trading/wiki/entities/남편이 미국 동료 John에게 작별 노래를 선물한 이야기.md",
+      "source": "Wikis/pages/entities/남편이 미국 동료 John에게 작별 노래를 선물한 이야기.md",
       "url": "pages/남편이-미국-동료-john에게-작별-노래를-선물한-이야기.html",
       "raw_body_merged": false
     },
     {
       "title": "띵크보이 AI 사이드잡 자동화 • AI 인사이트 (@think.5x)",
-      "source": "Wikis/trading/wiki/entities/띵크보이 AI 사이드잡 자동화 • AI 인사이트 (@think.5x).md",
+      "source": "Wikis/pages/entities/띵크보이 AI 사이드잡 자동화 • AI 인사이트 (@think.5x).md",
       "url": "pages/띵크보이-ai-사이드잡-자동화-ai-인사이트-think-5x.html",
       "raw_body_merged": false
     },
     {
+      "title": "마지막, 텐버거 찾는 꿀 Tip. 요새 어닝콜 많으니깐, 일일히 챙겨보기 힘드시죠",
+      "source": "Wikis/pages/entities/마지막, 텐버거 찾는 꿀 Tip. 요새 어닝콜 많으니깐, 일일히 챙겨보기 힘드시죠.md",
+      "url": "pages/마지막-텐버거-찾는-꿀-tip-요새-어닝콜-많으니깐-일일히-챙겨보기-힘드시죠.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "미국 월배당 ETF TOP 5 — 월 배당으로 제 2의 월급 만들기",
-      "source": "Wikis/trading/wiki/entities/미국 월배당 ETF TOP 5 — 월 배당으로 제 2의 월급 만들기.md",
+      "source": "Wikis/pages/entities/미국 월배당 ETF TOP 5 — 월 배당으로 제 2의 월급 만들기.md",
       "url": "pages/미국-월배당-etf-top-5-월-배당으로-제-2의-월급-만들기.html",
       "raw_body_merged": false
     },
     {
-      "title": "변창석-Threads-딸에게-주식-공부를-가르치는-첫날",
-      "source": "Wikis/trading/wiki/entities/변창석-Threads-딸에게-주식-공부를-가르치는-첫날.md",
+      "title": "변창석 Threads — 딸에게 주식 공부를 가르치는 첫날",
+      "source": "Wikis/pages/entities/변창석 Threads — 딸에게 주식 공부를 가르치는 첫날.md",
       "url": "pages/변창석-threads-딸에게-주식-공부를-가르치는-첫날.html",
       "raw_body_merged": false
     },
     {
       "title": "시그마봇 거래소 차익거래 광고 (의심)",
-      "source": "Wikis/trading/wiki/entities/시그마봇 거래소 차익거래 광고 (의심).md",
+      "source": "Wikis/pages/entities/시그마봇 거래소 차익거래 광고 (의심).md",
       "url": "pages/시그마봇-거래소-차익거래-광고-의심.html",
       "raw_body_merged": false
     },
     {
       "title": "유퀴즈 박현주 - 주가 지수 리밸런싱 투자 전략",
-      "source": "Wikis/trading/wiki/entities/유퀴즈 박현주 - 주가 지수 리밸런싱 투자 전략.md",
+      "source": "Wikis/pages/entities/유퀴즈 박현주 - 주가 지수 리밸런싱 투자 전략.md",
       "url": "pages/유퀴즈-박현주-주가-지수-리밸런싱-투자-전략.html",
       "raw_body_merged": false
     },
     {
+      "title": "평생 주식 8가지 철칙",
+      "source": "Wikis/pages/entities/평생 주식 8가지 철칙.md",
+      "url": "pages/평생-주식-8가지-철칙.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "How to Trade Crypto Futures (Crypto Day Trading for Beginners)",
-      "source": "Wikis/trading/wiki/references/How to Trade Crypto Futures (Crypto Day Trading for Beginners).md",
+      "source": "Wikis/pages/references/How to Trade Crypto Futures (Crypto Day Trading for Beginners).md",
       "url": "pages/how-to-trade-crypto-futures-crypto-day-trading-for-beginners.html",
       "raw_body_merged": false
     },
     {
       "title": "OpenClaw 자동매매봇 구축 5단계 가이드",
-      "source": "Wikis/trading/wiki/references/OpenClaw 자동매매봇 구축 5단계 가이드.md",
+      "source": "Wikis/pages/references/OpenClaw 자동매매봇 구축 5단계 가이드.md",
       "url": "pages/openclaw-자동매매봇-구축-5단계-가이드.html",
       "raw_body_merged": false
     },
     {
-      "title": "Threads-DYIzKocEmUr-원문-접근-제한",
-      "source": "Wikis/trading/wiki/references/Threads-DYIzKocEmUr-원문-접근-제한.md",
-      "url": "pages/threads-dyizkocemur-원문-접근-제한.html",
-      "raw_body_merged": false
-    },
-    {
-      "title": "Threads-Log-in",
-      "source": "Wikis/trading/wiki/references/Threads-Log-in.md",
-      "url": "pages/threads-log-in.html",
-      "raw_body_merged": false
-    },
-    {
-      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로",
-      "source": "Wikis/trading/wiki/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로.md",
-      "url": "pages/page.html",
+      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 3",
+      "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 3.md",
+      "url": "pages/3.html",
       "raw_body_merged": false
     },
     {
       "title": "불스리서치 - ETF 효율 10배 높이는 방법",
-      "source": "Wikis/trading/wiki/references/불스리서치 - ETF 효율 10배 높이는 방법.md",
+      "source": "Wikis/pages/references/불스리서치 - ETF 효율 10배 높이는 방법.md",
       "url": "pages/불스리서치-etf-효율-10배-높이는-방법.html",
       "raw_body_merged": false
     },
     {
+      "title": "애 이름으로 적금 들지 마라 — 자녀 통장은 '연금저축펀드'부터",
+      "source": "Wikis/pages/references/애 이름으로 적금 들지 마라 — 자녀 통장은 '연금저축펀드'부터.md",
+      "url": "pages/애-이름으로-적금-들지-마라-자녀-통장은-연금저축펀드-부터.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "자비스 트레이딩 시스템 v1.0",
-      "source": "Wikis/trading/wiki/references/자비스 트레이딩 시스템 v1.0.md",
+      "source": "Wikis/pages/references/자비스 트레이딩 시스템 v1.0.md",
       "url": "pages/자비스-트레이딩-시스템-v1-0.html",
       "raw_body_merged": false
     },
     {
+      "title": "캔들스틱을 '언어'로 번역한 첫 번째 AI — Kronos",
+      "source": "Wikis/pages/references/캔들스틱을 '언어'로 번역한 첫 번째 AI — Kronos.md",
+      "url": "pages/캔들스틱을-언어-로-번역한-첫-번째-ai-kronos.html",
+      "raw_body_merged": false
+    },
+    {
       "title": "클로드 헤지펀드 (Threads Fund AI)",
-      "source": "Wikis/trading/wiki/references/클로드 헤지펀드 (Threads Fund AI).md",
+      "source": "Wikis/pages/references/클로드 헤지펀드 (Threads Fund AI).md",
       "url": "pages/클로드-헤지펀드-threads-fund-ai.html",
       "raw_body_merged": false
     },
     {
-      "title": "텐버거-찾는-꿀-Tip-어닝콜-리서치",
-      "source": "Wikis/trading/wiki/references/텐버거-찾는-꿀-Tip-어닝콜-리서치.md",
-      "url": "pages/텐버거-찾는-꿀-tip-어닝콜-리서치.html",
-      "raw_body_merged": false
-    },
-    {
       "title": "📌 주린이들 무조건 저장 — 주식으로 돈 절대 안 잃는 법",
-      "source": "Wikis/trading/wiki/references/📌 주린이들 무조건 저장 — 주식으로 돈 절대 안 잃는 법.md",
+      "source": "Wikis/pages/references/📌 주린이들 무조건 저장 — 주식으로 돈 절대 안 잃는 법.md",
       "url": "pages/주린이들-무조건-저장-주식으로-돈-절대-안-잃는-법.html",
       "raw_body_merged": false
     },
     {
       "title": "🚀 News-Links Q&A Bot 만들기 — LangGraph 초급 가이드",
-      "source": "Wikis/trading/wiki/references/🚀 News-Links Q&A Bot 만들기 — LangGraph 초급 가이드.md",
+      "source": "Wikis/pages/references/🚀 News-Links Q&A Bot 만들기 — LangGraph 초급 가이드.md",
       "url": "pages/news-links-q-a-bot-만들기-langgraph-초급-가이드.html",
       "raw_body_merged": false
     },
     {
       "title": "80만원에서 150억을 만든 RSI '진짜' 매매법!",
-      "source": "Wikis/trading/wiki/strategies/80만원에서 150억을 만든 RSI '진짜' 매매법!.md",
+      "source": "Wikis/pages/strategies/80만원에서 150억을 만든 RSI '진짜' 매매법!.md",
       "url": "pages/80만원에서-150억을-만든-rsi-진짜-매매법.html",
       "raw_body_merged": false
     },
     {
       "title": "80만원에서 150억을 만든 RSI '진짜' 매매법",
-      "source": "Wikis/trading/wiki/strategies/80만원에서 150억을 만든 RSI '진짜' 매매법.md",
+      "source": "Wikis/pages/strategies/80만원에서 150억을 만든 RSI '진짜' 매매법.md",
       "url": "pages/strategies-80만원에서-150억을-만든-rsi-진짜-매매법.html",
       "raw_body_merged": false
     },
     {
       "title": "Binance Futures Setting Take Profit & Stop Loss (Step-by-Step)",
-      "source": "Wikis/trading/wiki/strategies/Binance Futures Setting Take Profit & Stop Loss (Step-by-Step).md",
+      "source": "Wikis/pages/strategies/Binance Futures Setting Take Profit & Stop Loss (Step-by-Step).md",
       "url": "pages/binance-futures-setting-take-profit-stop-loss-step-by-step.html",
       "raw_body_merged": false
     },
     {
       "title": "How to Set a Stop Loss & Take Profit with Crypto (Binance, Bybit)",
-      "source": "Wikis/trading/wiki/strategies/How to Set a Stop Loss & Take Profit with Crypto (Binance, Bybit).md",
+      "source": "Wikis/pages/strategies/How to Set a Stop Loss & Take Profit with Crypto (Binance, Bybit).md",
       "url": "pages/how-to-set-a-stop-loss-take-profit-with-crypto-binance-bybit.html",
       "raw_body_merged": false
     },
     {
-      "title": "SPY-GOOG-장기투자-원칙",
-      "source": "Wikis/trading/wiki/strategies/SPY-GOOG-장기투자-원칙.md",
-      "url": "pages/spy-goog-장기투자-원칙.html",
+      "title": "로컬 AI 음성 워크플로우와 TTS STT 목소리 클로닝",
+      "source": "Wikis/pages/strategies/로컬 AI 음성 워크플로우와 TTS STT 목소리 클로닝.md",
+      "url": "pages/로컬-ai-음성-워크플로우와-tts-stt-목소리-클로닝.html",
       "raw_body_merged": false
     },
     {
       "title": "비트코인 선물 거래 5분봉 매매법 단 1가지 (실제 100억 트레이더들의 매매법)",
-      "source": "Wikis/trading/wiki/strategies/비트코인 선물 거래 5분봉 매매법 단 1가지 (실제 100억 트레이더들의 매매법).md",
+      "source": "Wikis/pages/strategies/비트코인 선물 거래 5분봉 매매법 단 1가지 (실제 100억 트레이더들의 매매법).md",
       "url": "pages/비트코인-선물-거래-5분봉-매매법-단-1가지-실제-100억-트레이더들의-매매법.html",
       "raw_body_merged": false
     },
     {
-      "title": "평생-주식-8가지-철칙",
-      "source": "Wikis/trading/wiki/strategies/평생-주식-8가지-철칙.md",
-      "url": "pages/평생-주식-8가지-철칙.html",
+      "title": "진짜 자동매매 트레이더들이 기본적으로 통과해야하는 19가지 테스트",
+      "source": "Wikis/pages/strategies/진짜 자동매매 트레이더들이 기본적으로 통과해야하는 19가지 테스트.md",
+      "url": "pages/진짜-자동매매-트레이더들이-기본적으로-통과해야하는-19가지-테스트.html",
       "raw_body_merged": false
     },
     {
       "title": "해외에서 돈 쓸어 담는다는 트레이딩 기법 feat. 팀멘사",
-      "source": "Wikis/trading/wiki/strategies/해외에서 돈 쓸어 담는다는 트레이딩 기법 feat. 팀멘사.md",
+      "source": "Wikis/pages/strategies/해외에서 돈 쓸어 담는다는 트레이딩 기법 feat. 팀멘사.md",
       "url": "pages/해외에서-돈-쓸어-담는다는-트레이딩-기법-feat-팀멘사.html",
       "raw_body_merged": false
     }

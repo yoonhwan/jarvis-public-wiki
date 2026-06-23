@@ -1,29 +1,49 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ctx2Skill - Skill.md 강화 루프 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=build-v2-20260524">Jarvis Wiki / ai-agent</a><h1>Ctx2Skill - Skill.md 강화 루프</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Ctx2Skill: Skill.md 강화 루프</h1>
-<p><strong>한 줄 요약:</strong> Ctx2Skill 논문은 긴 컨텍스트에서 스킬을 자동 추출·개선하는 자기진화형 multi-agent loop를 제안하며, Skill.md 강화 방식의 참고 자료로 볼 수 있다.</p>
-<h2>개요</h2>
-<p>Ctx2Skill은 긴 기술 문서나 복잡한 컨텍스트에서 사람이 수동으로 스킬을 작성하지 않아도, 모델이 스스로 과제와 평가 기준을 만들고 실패 사례를 분석해 context-specific skill을 발견·정제·선택하는 프레임워크다.</p>
-<h2>핵심 아키텍처: 5개 에이전트 루프</h2>
-<table><thead><tr><th>역할</th><th>설명</th></tr></thead><tbody>
-<tr><td><strong>Challenger</strong></td><td>과제 생성 및 난이도 설정</td></tr>
-<tr><td><strong>Reasoner</strong></td><td>추론 및 분석 수행</td></tr>
-<tr><td><strong>Judge</strong></td><td>결과 평가 및 판정</td></tr>
-<tr><td><strong>Proposer</strong></td><td>개선 방안 제안</td></tr>
-<tr><td><strong>Generator</strong></td><td>최종 스킬 코드/문서 생성</td></tr>
-</tbody></table>
-<p>핵심 메커니즘으로 <strong>Cross-time Replay</strong>를 통해 과적합된 스킬 축적을 줄이고 일반화 가능한 스킬 세트를 선택한다.</p>
-<h2>성능 수치 (논문/Threads 주장)</h2>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ctx2Skill Skill.md 강화 루프 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260623-103841-KST">Jarvis Wiki / ai-agent</a><h1>Ctx2Skill Skill.md 강화 루프</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Ctx2Skill Skill.md 강화 루프</h1>
+<blockquote>Source candidate from <code>News-Links/2026-05-06 Ctx2Skill Skill 강화 루프/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Ctx2Skill: Skill.md 강화 루프</h1>
+<blockquote>원본: <a href="https://www.threads.com/@ai<em>crazyman/post/DX9Mezum4j4?xmt=AQF0-uHqVxfsmTgWO2CP3GMoZAdygsEBezPFrcRt2hl8L24FXaHHml9GexURhaapieHU0us&amp;slof=1">https://www.threads.com/@ai</em>crazyman/post/DX9Mezum4j4?xmt=AQF0-uHqVxfsmTgWO2CP3GMoZAdygsEBezPFrcRt2hl8L24FXaHHml9GexURhaapieHU0us&amp;slof=1</a></blockquote>
+<blockquote>작성자: @ai_crazyman (Threads)</blockquote>
+<h2>한 줄 요약</h2>
+<p>Ctx2Skill 논문은 긴 컨텍스트에서 스킬을 자동 추출·개선하는 자기진화형 multi-agent loop를 제안하며, Skill.md 강화 방식의 참고 자료로 볼 수 있다.</p>
+<h2>원문</h2>
+<p>사실 카파시 오토리서치를 돌리면</p>
+<p>Skill.md 를 강화할때 시간 과 토큰을 녹이는거대비 </p>
+<p>성능향상이 없고 새로운 스킬을 넣을때도 </p>
+<p>Context Learning 을 시키면 </p>
+<p>이게 제대로 된건지 첨부를 제대로 해석한건지 </p>
+<p>검증하기가 힘들었는데 </p>
+<p>드디어 찾았음</p>
+<p><a href="https://arxiv.org/abs/2604.27660">https://arxiv.org/abs/2604.27660</a></p>
+<p>이논문에서는 </p>
+<p>Ctx2skill 이라는 쉽게말하자면 Skill.md 강화프로그램임</p>
+<p>성능향상 리서치는 </p>
+<p>GPT-4.1 11.1%에서 Ctx2Skill 16.5%</p>
+<p>GPT-5.1 21.1%에서 25.8%</p>
+<p>GPT-5.2 18.2%에서 21.4%</p>
+<p>이런 숫자말고 나는 어떻게 Skill 을 강화시키는지를 보는데 </p>
+<p>5개 llm 에이전트 가 루프를 돌고 도는방식임 </p>
+<p>Challenge -&gt; Reasonet -&gt; Judge -&gt; Proposer-&gt; Generator </p>
+<p>더 디테일한건 GPT 나 클로드에게 논문 정리해줘! 라고 하고</p>
+<p>어제는 SSL 오늘은 이거임</p>
+<h2>메타데이터</h2>
 <ul>
-<li>GPT-4.1: 11.1% → Ctx2Skill 적용 시 16.5%</li>
-<li>GPT-5.1: 21.1% → Ctx2Skill 적용 시 25.8%</li>
-<li>GPT-5.2: 18.2% → Ctx2Skill 적용 시 21.4%</li>
+<li>Threads canonical URL: <a href="https://www.threads.com/@ai<em>crazyman/post/DX9Mezum4j4">https://www.threads.com/@ai</em>crazyman/post/DX9Mezum4j4</a></li>
+<li>Threads title: crazy<em>aiman (@ai</em>crazyman) on Threads</li>
+<li>OG image: <a href="https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-19/651065988<em>17879834865487781</em>2228170084385581326<em>n.jpg">https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-19/651065988</em>17879834865487781<em>2228170084385581326</em>n.jpg</a></li>
+<li>관련 논문: <a href="https://arxiv.org/abs/2604.27660">From Context to Skills: Can Language Models Learn from Context Skillfully?</a></li>
+<li>논문 저자: Shuzheng Si, Haozhe Zhao, Yu Lei, Qingyi Wang, Dingwei Chen, Zhitong Wang, Zhenhailong Wang, Kangyang Luo, Zheng Wang, Gang Chen, Fanchao Qi, Minjia Zhang, Maosong Sun</li>
 </ul>
-<h2>자비스 관점</h2>
+<h2>논문 초록 기반 요약</h2>
+<p>Ctx2Skill은 긴 기술 문서나 복잡한 컨텍스트에서 사람이 수동으로 스킬을 작성하지 않아도, 모델이 스스로 과제와 평가 기준을 만들고 실패 사례를 분석해 context-specific skill을 발견·정제·선택하는 프레임워크다. 핵심 루프는 Challenger, Reasoner, Judge, Proposer, Generator로 구성되며, Cross-time Replay로 과적합된 스킬 축적을 줄이고 일반화 가능한 스킬 세트를 고르는 방식이다.</p>
+<h2>자비스 관점 메모</h2>
 <ul>
-<li>Hermes skill 관리에도 직접 연결되는 주제. &quot;실패 사례 → 스킬 업데이트 제안 → 검증 → 선택&quot; 루프는 수동 skill patch 규칙을 자동화할 때 참고할 만하다.</li>
-<li>Ctx2Skill의 5-에이전트 루프(Challenger→Reasoner→Judge→Proposer→Generator)는 Hermes의 멀티 에이전트 워크플로 설계에 직접 적용 가능하다.</li>
+<li>Hermes skill 관리에도 직접 연결되는 주제다. 특히 “실패 사례 → 스킬 업데이트 제안 → 검증 → 선택” 루프는 지금의 수동 skill patch 규칙을 자동화할 때 참고할 만하다.</li>
+<li>Threads 원문에는 “Reasonet”이라고 적혀 있으나, 논문 초록 기준 역할명은 “Reasoner”다. 원문은 그대로 보존하고 메모에서만 정정한다.</li>
+<li>수치 주장은 Threads 원문에 근거해 기록했다. 논문 본문 테이블 검증은 별도 후속 리서치가 필요하다. 딱딱 체크 완료, 삐빅 🤖</li>
 </ul>
 <h2>관련 링크</h2>
 <ul>
-<li><a href="https://www.threads.com/@ai_crazyman/post/DX9Mezum4j4">Threads 원문</a></li>
-<li><a href="https://arxiv.org/abs/2604.27660">arXiv 논문: From Context to Skills</a></li>
+<li>Threads 원문: <a href="https://www.threads.com/@ai<em>crazyman/post/DX9Mezum4j4?xmt=AQF0-uHqVxfsmTgWO2CP3GMoZAdygsEBezPFrcRt2hl8L24FXaHHml9GexURhaapieHU0us&amp;slof=1">https://www.threads.com/@ai</em>crazyman/post/DX9Mezum4j4?xmt=AQF0-uHqVxfsmTgWO2CP3GMoZAdygsEBezPFrcRt2hl8L24FXaHHml9GexURhaapieHU0us&amp;slof=1</a></li>
+<li>arXiv: <a href="https://arxiv.org/abs/2604.27660">https://arxiv.org/abs/2604.27660</a></li>
 </ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-05-06 Ctx2Skill Skill 강화 루프/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

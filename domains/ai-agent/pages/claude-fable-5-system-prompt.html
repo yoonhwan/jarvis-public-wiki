@@ -1,0 +1,40 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude Fable 5 — System Prompt · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260623-103841-KST">Jarvis Wiki / ai-agent</a><h1>Claude Fable 5 — System Prompt</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Claude Fable 5 — System Prompt</h1>
+<blockquote>Source candidate from <code>News-Links/2026-06-10 Claude Fable 5 System Prompt/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Claude Fable 5 — System Prompt</h1>
+<p><strong>Threads 포스트</strong> by CHOI (@choi.openai)가 공유한 GitHub 링크.  </p>
+<p>elder-plinius/CL4R1T4S 레포지토리의 <code>ANTHROPIC/CLAUDE-FABLE-5.md</code> 파일.</p>
+<h2>원문 (Threads Post)</h2>
+<blockquote>깃허브 :</blockquote>
+<blockquote><a href="https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md">https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md</a></blockquote>
+<h2>GitHub 파일 요약</h2>
+<p><strong>파일명:</strong> <code>CLAUDE-FABLE-5.md</code> (1,585줄)  </p>
+<p><strong>레포:</strong> <a href="https://github.com/elder-plinius/CL4R1T4S">elder-plinius/CL4R1T4S</a></p>
+<p>Anthropic Claude Fable 5의 시스템 프롬프트로 추정되는 문서. 주요 섹션:</p>
+<table><thead><tr><th>섹션</th><th>내용</th></tr></thead><tbody>
+<tr><td><strong>product_information</strong></td><td>Claude Fable 5 / Mythos 5 모델 소개. Opus 위의 Mythos-class tier. Fable 5 = 일반可用, Mythos 5 = 승인 조직 전용</td></tr>
+<tr><td><strong>refusal_handling</strong></td><td>유해 콘텐츠 거절 규칙 (무기, 마약, 악성코드, 허위 인용 등)</td></tr>
+<tr><td><strong>legal<em>and</em>financial_advice</strong></td><td>금융/법률 조언 시 사실 정보 제공, 추천 금지</td></tr>
+<tr><td><strong>tone<em>and</em>formatting</strong></td><td>따뜻한 톤, 과도한 포맷팅 금지, 리스트/불릿 최소화</td></tr>
+<tr><td><strong>user_wellbeing</strong></td><td>정신 건강 관련 주의사항 (자해, 섭식장애, 자살 예방)</td></tr>
+<tr><td><strong>citation_instructions</strong></td><td>웹검색 결과 인용 규칙 (<code>{antml:cite}</code> 태그 사용)</td></tr>
+<tr><td><strong>available_skills</strong></td><td>docx, pdf, pptx, xlsx, product-self-knowledge 등 스킬 목록</td></tr>
+<tr><td><strong>network_configuration</strong></td><td>허용 도메인 목록 (github.com, pypi.org 등)</td></tr>
+<tr><td><strong>filesystem_configuration</strong></td><td>읽기 전용 마운트 경로</td></tr>
+</tbody></table>
+<h3>주요 특징</h3>
+<ul>
+<li><strong>{antml:voice_note} 블록 사용 금지</strong> — 첫 줄부터 명시</li>
+<li><strong>{antml:thinking<em>mode}auto{/antml:thinking</em>mode}</strong> — 마지막 줄에 명시</li>
+<li><strong>웹검색 도구</strong>: <code>web<em>search</em>20250305</code> 타입</li>
+<li><strong>MCP 서버 통합</strong> 지원</li>
+<li><strong>PDF/이미지 입력</strong>: base64 + media_type 방식</li>
+<li><strong>컨텍스트 윈도우 관리</strong>: 매 요청마다 전체 히스토리 전송 필요</li>
+<li><strong>에러 처리</strong>: JSON 파싱 시 코드 펜스 제거 후 파싱</li>
+</ul>
+<h2>참고</h2>
+<ul>
+<li><code>CL4R1T4S</code> 레포는 elder-plinius가 수집한 AI 모델 시스템 프롬프트/탈옥 관련 자료 모음으로 보임</li>
+<li>해당 시스템 프롬프트의 진위 여부는 확인되지 않음</li>
+<li>Threads SSR failure로 댓글 스레드 미확보 ⚠️</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-06-10 Claude Fable 5 System Prompt/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
