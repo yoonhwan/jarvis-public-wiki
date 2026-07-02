@@ -1,0 +1,50 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FastContext — 코딩 에이전트용 repo 탐색 전담 subagent · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260702-184756-KST">Jarvis Wiki / ai-agent</a><h1>FastContext — 코딩 에이전트용 repo 탐색 전담 subagent</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>FastContext — 코딩 에이전트용 repo 탐색 전담 subagent</h1>
+<blockquote>Source candidate from <code>News-Links/2026-06-25 FastContext - 코딩 에이전트 repo 탐색 subagent/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>FastContext — 코딩 에이전트용 repo 탐색 전담 subagent</h1>
+<blockquote>@verbio_labs (인생을 레버리지하라) Threads 포스트</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>AI 코딩 에이전트의 진짜 비용은 &#x27;코드 작성&#x27;보다, repo를 뒤지며 컨텍스트를 낭비하는 시간에서 터진다.</p>
+<ul>
+<li><strong>오늘 repo spotlight</strong>: <code>microsoft/FastContext</code></li>
+<li>2026-06-02 공개 후 <strong>23일 만에 922 stars · 64 forks</strong>까지 올라온 Python 오픈소스</li>
+<li><strong>핵심</strong>: 메인 에이전트가 모든 파일을 읽게 하지 않고, 읽기 전용 탐색 subagent가 Read/Glob/Grep로 관련 파일·라인만 찾아 주며 <strong>main-agent token을 최대 60.3% 절감</strong></li>
+<li>제품팀에서 바로 볼 실무 포인트 5개를 댓글 스레드에 정리</li>
+</ul>
+<h2>댓글 스레드 (Reply Thread — 작성자 1/5~5/5)</h2>
+<h3>1/5 — repo: microsoft/FastContext</h3>
+<p>한 줄로 말하면 &#x27;코딩 에이전트용 repo 탐색 전담 subagent&#x27;. 메인 모델이 넓게 파일을 읽고 검색하며 컨텍스트를 태우는 대신, FastContext가 자연어 질문을 받아 <strong>관련 파일 경로 + line range를 compact evidence로 반환</strong>한다.</p>
+<h3>2/5 — 왜 중요한가</h3>
+<p>Claude Code, Codex, Cursor 같은 도구를 오래 쓰면 병목은 모델 지능보다 <strong>context hygiene</strong>으로 온다. 문제 해결 모델과 repo 탐색 모델을 분리하면:</p>
+<ul>
+<li>히스토리에 불필요한 스니펫이 쌓이는 것을 줄임</li>
+<li>수정·테스트 단계에 더 많은 토큰을 남길 수 있음</li>
+</ul>
+<h3>3/5 — 실무 적용 1: 큰 코드베이스 온보딩</h3>
+<p>새 기능을 넣기 전 &#x27;인증 흐름이 어디에 있나&#x27;, &#x27;결제 예외 처리는 어디서 하나&#x27; 같은 질문을 FastContext류 탐색기로 먼저 실행. 결과는 <strong>파일명 + 라인 범위만</strong> 받게 해서 사람 리뷰와 에이전트 작업지시서에 그대로 붙이면 좋다.</p>
+<h3>4/5 — 실무 적용 2: agent 평가셋 만들기</h3>
+<p>팀 내부 repo에서 자주 나오는 20개 변경 요청을 뽑고, 정답 파일/라인을 라벨링한다. 이후 에이전트를 바꿀 때 구현 성공률만 보지 말고 <strong>&#x27;관련 파일을 먼저 찾는 정확도&#x27;와 token 사용량</strong>도 같이 보면 도구 선택이 훨씬 명확해진다.</p>
+<h3>5/5 — 실무 적용 3: 자동화 구조</h3>
+<p>추천 패턴은 4단계:</p>
+<ol>
+<li>read-only 탐색</li>
+<li>evidence 압축</li>
+<li>메인 에이전트 구현</li>
+<li>테스트/리뷰</li>
+</ol>
+<p>FastContext는 SWE-bench 계열에서 <strong>최대 +5.5 score improvement</strong>와 <strong>최대 60.3% main-agent token 절감</strong>을 보고.</p>
+<h2>핵심 요약</h2>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody>
+<tr><td>repo</td><td><a href="https://github.com/microsoft/fastcontext">microsoft/fastcontext</a></td></tr>
+<tr><td>언어</td><td>Python</td></tr>
+<tr><td>인기</td><td>23일 만에 922 stars · 64 forks</td></tr>
+<tr><td>역할</td><td>코딩 에이전트용 읽기 전용 repo 탐색 subagent</td></tr>
+<tr><td>도구</td><td>Read / Glob / Grep</td></tr>
+<tr><td>효과</td><td>main-agent token 최대 60.3% 절감, SWE-bench 최대 +5.5 score</td></tr>
+<tr><td>핵심 원리</td><td>탐색(context 수집)과 구현(코드 작성)을 분리해 context hygiene 확보</td></tr>
+</tbody></table>
+<h2>참고 자료</h2>
+<ul>
+<li>원본 repo: <a href="https://github.com/microsoft/fastcontext">https://github.com/microsoft/fastcontext</a></li>
+<li>Threads 원문: <a href="https://www.threads.com/@verbio<em>labs/post/DZ</em>Lfd7EnAf">https://www.threads.com/@verbio<em>labs/post/DZ</em>Lfd7EnAf</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-06-25 FastContext - 코딩 에이전트 repo 탐색 subagent/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

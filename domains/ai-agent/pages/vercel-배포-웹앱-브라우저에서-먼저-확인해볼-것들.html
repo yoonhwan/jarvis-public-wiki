@@ -1,0 +1,45 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vercel 배포 웹앱, 브라우저에서 먼저 확인해볼 것들 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260702-184756-KST">Jarvis Wiki / ai-agent</a><h1>Vercel 배포 웹앱, 브라우저에서 먼저 확인해볼 것들</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Vercel 배포 웹앱, 브라우저에서 먼저 확인해볼 것들</h1>
+<blockquote>Source candidate from <code>News-Links/2026-06-24 Vercel 배포 웹앱 브라우저 보안 점검/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Vercel 배포 웹앱, 브라우저에서 먼저 확인해볼 것들</h1>
+<blockquote>작성자: 카페인코더 (@caffeine__coder) on Threads</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>Vercel로 배포한 웹앱이라면 브라우저에서 먼저 확인해볼 만한 것들이 있습니다.</p>
+<p>개발자도구를 열고 <strong>Network</strong>나 <strong>Sources</strong>를 보면 생각보다 많은 정보가 보입니다.</p>
+<p>예를 들면 이런 것들입니다.</p>
+<table><thead><tr><th>#</th><th>점검 항목</th></tr></thead><tbody>
+<tr><td>1</td><td><code>NEXT<em>PUBLIC</em></code> 변수에 이상한 값이 없는지</td></tr>
+<tr><td>2</td><td>브라우저 JS에 secret처럼 보이는 값이 없는지</td></tr>
+<tr><td>3</td><td>API 주소가 그대로 노출되어 있는지</td></tr>
+<tr><td>4</td><td>sourcemap 파일이 열리는지</td></tr>
+<tr><td>5</td><td>에러 메시지에 내부 정보가 보이는지</td></tr>
+<tr><td>6</td><td>관리자/테스트 경로가 추측 가능한지</td></tr>
+<tr><td>7</td><td>요청 응답에 불필요한 헤더가 많은지</td></tr>
+<tr><td>8</td><td>로그성 응답이 사용자에게 보이지 않는지</td></tr>
+<tr><td>9</td><td>인증 없이 호출되는 API가 없는지</td></tr>
+<tr><td>10</td><td>Preview 주소가 아무나 접근 가능한지</td></tr>
+</tbody></table>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 내용)</h2>
+<p>여기서 중요한 건 <strong>&quot;보이면 무조건 위험하다&quot;가 아니라, 보이는 정보로 무엇을 할 수 있는지</strong>입니다.</p>
+<ul>
+<li>API Key도 공개용 key일 수 있고, API 주소도 공개되어도 괜찮을 수 있습니다.</li>
+<li>하지만 그 값으로</li>
+<ul>
+<li>다른 사람의 데이터에 접근하거나,</li>
+<li>관리 기능을 호출하거나,</li>
+<li>운영 정보를 볼 수 있다면 → <strong>문제가 됩니다.</strong></li>
+</ul>
+</ul>
+<p>배포 후에는 화면만 볼 게 아니라, <strong>브라우저에 같이 내려간 정보</strong>도 한번 보는 게 좋습니다.</p>
+<h2>핵심 정리</h2>
+<ul>
+<li>프론트엔드 배포물은 클라이언트로 모든 코드/설정이 함께 내려간다는 전제로 점검할 것.</li>
+<li>노출 자체보다 <strong>노출된 값으로 권한 상승·데이터 접근이 가능한지</strong>가 실질적 리스크.</li>
+<li>점검 포인트: 환경변수 / sourcemap / API 인증 / Preview 접근 제어 / 에러 메시지 정보 누출.</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li><a href="https://www.threads.com/@caffeine__coder/post/DZ638dKEfeU">원문 Threads 포스트</a></li>
+<li><a href="https://nextjs.org/docs/app/building-your-application/configuring/environment-variables">Next.js — Environment Variables (NEXT<em>PUBLIC</em>)</a></li>
+<li><a href="https://vercel.com/docs/security/deployment-protection">Vercel — Deployment Protection</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-06-24 Vercel 배포 웹앱 브라우저 보안 점검/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

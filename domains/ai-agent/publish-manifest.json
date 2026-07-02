@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-23T11:39:58.912612",
+  "generated_at": "2026-07-02T18:48:48.748547",
   "source": "Wikis/pages",
   "domain": "ai-agent",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260623-103841-KST",
+  "version": "20260702-184756-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -28,6 +28,246 @@
     }
   },
   "pages": [
+    {
+      "title": "LangChain OpenWiki — AI 코드베이스 문서 자동화",
+      "source": "Wikis/pages/references/LangChain OpenWiki — AI 코드베이스 문서 자동화.md",
+      "url": "pages/langchain-openwiki-ai-코드베이스-문서-자동화.html",
+      "raw_body_merged": false,
+      "excerpt": "매번 코드 바뀔 때마다 문서 수정하는 귀찮은 작업, 이제 AI에게 온전히 맡기셔도 될 것 같습니다.",
+      "excerpt_hero": "매번 코드 바뀔 때마다 문서 수정하는 귀찮은 작업, 이제 AI에게 온전히 맡기셔도 될 것 같습니다.",
+      "excerpt_list": "매번 코드 바뀔 때마다 문서 수정하는 귀찮은 작업, 이제 AI에게 온전히 맡기셔도 될 것…",
+      "date": "2026-07-02",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-02",
+        1782960430.7192116
+      ]
+    },
+    {
+      "title": "Qwen3.6-27B-AEON-Ultimate-Uncensored-MLX 사용기",
+      "source": "Wikis/pages/references/Qwen3.6-27B-AEON-Ultimate-Uncensored-MLX 사용기.md",
+      "url": "pages/qwen3-6-27b-aeon-ultimate-uncensored-mlx-사용기.html",
+      "raw_body_merged": false,
+      "excerpt": "zerotodaa(@zerotodaa)님이 흥미로운 로컬 LLM 모델을 발견해 사용기를 공유한 Threads 포스트.",
+      "excerpt_hero": "zerotodaa(@zerotodaa)님이 흥미로운 로컬 LLM 모델을 발견해 사용기를 공유한 Threads 포스트.",
+      "excerpt_list": "zerotodaa(@zerotodaa)님이 흥미로운 로컬 LLM 모델을 발견해 사용기를 공유한 Threads 포스트.",
+      "date": "2026-07-01",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-01",
+        1782880841.5010672
+      ]
+    },
+    {
+      "title": "하버드·스탠퍼드 뇌과학 공부법 — 백지 인출과 목적이 다른 5회독",
+      "source": "Wikis/pages/concepts/하버드·스탠퍼드 뇌과학 공부법 — 백지 인출과 목적이 다른 5회독.md",
+      "url": "pages/하버드-스탠퍼드-뇌과학-공부법-백지-인출과-목적이-다른-5회독.html",
+      "raw_body_merged": false,
+      "excerpt": "하버드·스탠퍼드 뇌과학 공부법을 보고 충격받음. \"열심히 하면 안 되는 게 없다, 노력 부족이다\"라고 하지만, 뇌과학적으로는 억지로 책상에 오래 앉아 노력하는 것만큼 비효율적인…",
+      "excerpt_hero": "하버드·스탠퍼드 뇌과학 공부법을 보고 충격받음. \"열심히 하면 안 되는 게 없다, 노력 부족이다\"라고 하지만, 뇌과학적으로는 억지로 책상에 오래 앉아 노력하는 것만큼 비효율적인 게 없다.",
+      "excerpt_list": "하버드·스탠퍼드 뇌과학 공부법을 보고 충격받음. \"열심히 하면 안 되는 게 없다, 노력 부족이다\"라고 하지만…",
+      "date": "2026-06-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-29",
+        1782743032.1358855
+      ]
+    },
+    {
+      "title": "EBS 영어 강사가 소개하는 EBS영어 혁신",
+      "source": "Wikis/pages/concepts/EBS 영어 강사가 소개하는 EBS영어 혁신.md",
+      "url": "pages/ebs-영어-강사가-소개하는-ebs영어-혁신.html",
+      "raw_body_merged": false,
+      "excerpt": "EBS 강사 효린파파(성기홍) 가 소개하는, 의외로 잘 알려지지 않은 EBS의 무료 영어 학습 콘텐츠 두 가지.",
+      "excerpt_hero": "EBS 강사 효린파파(성기홍) 가 소개하는, 의외로 잘 알려지지 않은 EBS의 무료 영어 학습 콘텐츠 두 가지.",
+      "excerpt_list": "EBS 강사 효린파파(성기홍) 가 소개하는, 의외로 잘 알려지지 않은 EBS의 무료 영어 학습 콘텐츠…",
+      "date": "2026-06-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-29",
+        1782743011.140636
+      ]
+    },
+    {
+      "title": "4학년 이전에 꼭 길러야 할 4가지 습관",
+      "source": "Wikis/pages/concepts/4학년 이전에 꼭 길러야 할 4가지 습관.md",
+      "url": "pages/4학년-이전에-꼭-길러야-할-4가지-습관.html",
+      "raw_body_merged": false,
+      "excerpt": "19년차 초등교사가 추천하는, 사춘기(보통 5학년, 빠르면 4학년) 이전에 길러두면 좋은 습관 정리.",
+      "excerpt_hero": "19년차 초등교사가 추천하는, 사춘기(보통 5학년, 빠르면 4학년) 이전에 길러두면 좋은 습관 정리.",
+      "excerpt_list": "19년차 초등교사가 추천하는, 사춘기(보통 5학년, 빠르면 4학년) 이전에 길러두면 좋은 습관 정리.",
+      "date": "2026-06-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-29",
+        1782742996.3604753
+      ]
+    },
+    {
+      "title": "Firma.dev — 개발자를 위한 전자 서명 API ( 전자 서명계의 Stripe )",
+      "source": "Wikis/pages/concepts/Firma.dev — 개발자를 위한 전자 서명 API ( 전자 서명계의 Stripe ).md",
+      "url": "pages/firma-dev-개발자를-위한-전자-서명-api-전자-서명계의-stripe.html",
+      "raw_body_merged": false,
+      "excerpt": "SaaS 만들다 보면 전자 서명 기능이 꼭 필요한 순간이 오잖아. 계약서, 동의서, 각종 문서에 법적 효력 있는 서명 받아야 하는데, 이걸 직접…",
+      "excerpt_hero": "SaaS 만들다 보면 전자 서명 기능이 꼭 필요한 순간이 오잖아. 계약서, 동의서, 각종 문서에 법적 효력 있는 서명 받아야 하는데, 이걸 직접 구현하자니 GDPR이나 전자서명법 같은 컴플라이언스 지옥이 기다리고 있고.",
+      "excerpt_list": "SaaS 만들다 보면 전자 서명 기능이 꼭 필요한 순간이 오잖아. 계약서, 동의서, 각종 문서에…",
+      "date": "2026-06-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-29",
+        1782712417.4828267
+      ]
+    },
+    {
+      "title": "아이 공부 리듬은 부모가 먼저 만든다",
+      "source": "Wikis/pages/concepts/아이 공부 리듬은 부모가 먼저 만든다.md",
+      "url": "pages/아이-공부-리듬은-부모가-먼저-만든다.html",
+      "raw_body_merged": false,
+      "excerpt": "어머니 같으면 하고 싶겠어요?",
+      "excerpt_hero": "어머니 같으면 하고 싶겠어요?",
+      "excerpt_list": "어머니 같으면 하고 싶겠어요?",
+      "date": "2026-06-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-29",
+        1782712261.0247364
+      ]
+    },
+    {
+      "title": "SK하이닉스 AI DT 경력직 공고 분석 (~26.7.6)",
+      "source": "Wikis/pages/entities/SK하이닉스 AI DT 경력직 공고 분석 (~26.7.6).md",
+      "url": "pages/sk하이닉스-ai-dt-경력직-공고-분석-26-7-6.html",
+      "raw_body_merged": false,
+      "excerpt": "이 공고는 AI 개발자를 뽑는 것처럼 보이지만, 실제로는 반도체 P&T(Package & Test) 현장을 이해하고 AI로 서비스화할 수 있는 \"AI 서비스 엔지니어\" 를…",
+      "excerpt_hero": "이 공고는 AI 개발자를 뽑는 것처럼 보이지만, 실제로는 반도체 P&T(Package & Test) 현장을 이해하고 AI로 서비스화할 수 있는 \"AI 서비스 엔지니어\" 를 찾는 공고에 가깝다.",
+      "excerpt_list": "이 공고는 AI 개발자를 뽑는 것처럼 보이지만, 실제로는 반도체 P&T(Package & Test) 현장을 이해하고…",
+      "date": "2026-06-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-29",
+        1782712252.8293896
+      ]
+    },
+    {
+      "title": "AI 스킬 조합으로 슬라이드 만들기",
+      "source": "Wikis/pages/references/AI 스킬 조합으로 슬라이드 만들기.md",
+      "url": "pages/ai-스킬-조합으로-슬라이드-만들기.html",
+      "raw_body_merged": false,
+      "excerpt": "여러 전문 스킬을 조합해서 슬라이드 한 장을 만드는 워크플로우 공유. 각 단계마다 전문 툴을 쓰고, 최종적으로 lazycodex에게 전체 계획을 한 번에 실행시키는…",
+      "excerpt_hero": "여러 전문 스킬을 조합해서 슬라이드 한 장을 만드는 워크플로우 공유. 각 단계마다 전문 툴을 쓰고, 최종적으로 lazycodex에게 전체 계획을 한 번에 실행시키는 방식.",
+      "excerpt_list": "여러 전문 스킬을 조합해서 슬라이드 한 장을 만드는 워크플로우 공유. 각 단계마다 전문 툴을…",
+      "date": "2026-06-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-29",
+        1782712221.8663142
+      ]
+    },
+    {
+      "title": "서비스 운영 메일 주소 조합 Purelymail + Resend",
+      "source": "Wikis/pages/concepts/서비스 운영 메일 주소 조합 Purelymail + Resend.md",
+      "url": "pages/서비스-운영-메일-주소-조합-purelymail-resend.html",
+      "raw_body_merged": false,
+      "excerpt": "서비스 하나 굴리기 시작하면 메일 주소가 알아서 불어납니다. support@, hello@, noreply@... 끝이 없죠. 직접 쓰면서 정착한 조합 공유.",
+      "excerpt_hero": "서비스 하나 굴리기 시작하면 메일 주소가 알아서 불어납니다. support@, hello@, noreply@... 끝이 없죠. 직접 쓰면서 정착한 조합 공유.",
+      "excerpt_list": "서비스 하나 굴리기 시작하면 메일 주소가 알아서 불어납니다. support@, hello@, noreply@... 끝이 없죠. 직접…",
+      "date": "2026-06-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-29",
+        1782712198.9192197
+      ]
+    },
+    {
+      "title": "클로드 코드 AI 사주 스킬",
+      "source": "Wikis/pages/references/클로드 코드 AI 사주 스킬.md",
+      "url": "pages/클로드-코드-ai-사주-스킬.html",
+      "raw_body_merged": false,
+      "excerpt": "요즘 AI 사주가 너무 판치길래",
+      "excerpt_hero": "요즘 AI 사주가 너무 판치길래",
+      "excerpt_list": "요즘 AI 사주가 너무 판치길래",
+      "date": "2026-06-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-29",
+        1782712197.2875383
+      ]
+    },
+    {
+      "title": "'위대한 클리셰', 원형적 캐릭터 만드는 법",
+      "source": "Wikis/pages/concepts/'위대한 클리셰', 원형적 캐릭터 만드는 법.md",
+      "url": "pages/위대한-클리셰-원형적-캐릭터-만드는-법.html",
+      "raw_body_merged": false,
+      "excerpt": "인류가 신화와 이야기로 수천 년 공유해온 인식 패턴이 있음ㅇㅇ",
+      "excerpt_hero": "인류가 신화와 이야기로 수천 년 공유해온 인식 패턴이 있음ㅇㅇ",
+      "excerpt_list": "인류가 신화와 이야기로 수천 년 공유해온 인식 패턴이 있음ㅇㅇ",
+      "date": "2026-06-25",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-25",
+        1782389771.2711277
+      ]
+    },
+    {
+      "title": "FastContext — 코딩 에이전트용 repo 탐색 전담 subagent",
+      "source": "Wikis/pages/entities/FastContext — 코딩 에이전트용 repo 탐색 전담 subagent.md",
+      "url": "pages/fastcontext-코딩-에이전트용-repo-탐색-전담-subagent.html",
+      "raw_body_merged": false,
+      "excerpt": "AI 코딩 에이전트의 진짜 비용은 '코드 작성'보다, repo를 뒤지며 컨텍스트를 낭비하는 시간에서 터진다.",
+      "excerpt_hero": "AI 코딩 에이전트의 진짜 비용은 '코드 작성'보다, repo를 뒤지며 컨텍스트를 낭비하는 시간에서 터진다.",
+      "excerpt_list": "AI 코딩 에이전트의 진짜 비용은 '코드 작성'보다, repo를 뒤지며 컨텍스트를 낭비하는 시간에서 터진다.",
+      "date": "2026-06-25",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-25",
+        1782389677.6382873
+      ]
+    },
+    {
+      "title": "Qwen3.6-27B-AEON-Ultimate-Uncensored-MLX 사용기 (@zerotodaa)",
+      "source": "Wikis/pages/references/Qwen3.6-27B-AEON-Ultimate-Uncensored-MLX 사용기 (@zerotodaa).md",
+      "url": "pages/qwen3-6-27b-aeon-ultimate-uncensored-mlx-사용기-zerotodaa.html",
+      "raw_body_merged": false,
+      "excerpt": "https://github.com/AEON-7/Qwen3.6-27B-AEON-Ultimate-Uncensored-MLX",
+      "excerpt_hero": "https://github.com/AEON-7/Qwen3.6-27B-AEON-Ultimate-Uncensored-MLX",
+      "excerpt_list": "https://github.com/AEON-7/Qwen3.6-27B-AEON-Ultimate-Uncensored-MLX",
+      "date": "2026-06-24",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-24",
+        1782306974.548766
+      ]
+    },
+    {
+      "title": "브랜드가 안 되는 사람의 특징 10가지",
+      "source": "Wikis/pages/references/브랜드가 안 되는 사람의 특징 10가지.md",
+      "url": "pages/브랜드가-안-되는-사람의-특징-10가지.html",
+      "raw_body_merged": false,
+      "excerpt": "브랜드가 안 되는 건 노력이 부족해서가 아니다. 방향을 잘못 읽어서다.",
+      "excerpt_hero": "브랜드가 안 되는 건 노력이 부족해서가 아니다. 방향을 잘못 읽어서다.",
+      "excerpt_list": "브랜드가 안 되는 건 노력이 부족해서가 아니다. 방향을 잘못 읽어서다.",
+      "date": "2026-06-24",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-24",
+        1782255666.1330245
+      ]
+    },
+    {
+      "title": "Vercel 배포 웹앱, 브라우저에서 먼저 확인해볼 것들",
+      "source": "Wikis/pages/concepts/Vercel 배포 웹앱, 브라우저에서 먼저 확인해볼 것들.md",
+      "url": "pages/vercel-배포-웹앱-브라우저에서-먼저-확인해볼-것들.html",
+      "raw_body_merged": false,
+      "excerpt": "Vercel로 배포한 웹앱이라면 브라우저에서 먼저 확인해볼 만한 것들이 있습니다.",
+      "excerpt_hero": "Vercel로 배포한 웹앱이라면 브라우저에서 먼저 확인해볼 만한 것들이 있습니다.",
+      "excerpt_list": "Vercel로 배포한 웹앱이라면 브라우저에서 먼저 확인해볼 만한 것들이 있습니다.",
+      "date": "2026-06-24",
+      "hero_image": "",
+      "_sort": [
+        "2026-06-24",
+        1782254939.9874604
+      ]
+    },
     {
       "title": "AI로 인물을 만들 때 현실성을 높여주는 프롬프트 한 줄",
       "source": "Wikis/pages/references/AI로 인물을 만들 때 현실성을 높여주는 프롬프트 한 줄.md",
