@@ -1,19 +1,19 @@
 {
-  "version": "20260702-184756-KST",
+  "version": "20260714-164354-KST",
   "domain_count": 2,
-  "page_count": 165,
+  "page_count": 183,
   "domains": [
     {
       "domain": "ai-agent",
       "public_url": "https://yoonhwan.github.io/jarvis-public-wiki/domains/ai-agent/",
       "category_count": 9,
-      "page_count": 127
+      "page_count": 143
     },
     {
       "domain": "trading",
       "public_url": "https://yoonhwan.github.io/jarvis-public-wiki/domains/trading/",
       "category_count": 9,
-      "page_count": 38
+      "page_count": 40
     }
   ]
 }

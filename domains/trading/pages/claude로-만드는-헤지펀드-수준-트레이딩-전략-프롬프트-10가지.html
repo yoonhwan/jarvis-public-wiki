@@ -1,0 +1,181 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude로 만드는 헤지펀드 수준 트레이딩 전략 — 프롬프트 10가지 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260714-164354-KST">Jarvis Wiki / trading</a><h1>Claude로 만드는 헤지펀드 수준 트레이딩 전략 — 프롬프트 10가지</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Claude로 만드는 헤지펀드 수준 트레이딩 전략 — 프롬프트 10가지</h1>
+<blockquote>Source candidate from <code>News-Links/2026-07-08 Claude 트레이딩 전략 프롬프트 10가지/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Claude로 만드는 헤지펀드 수준 트레이딩 전략 — 프롬프트 10가지</h1>
+<blockquote>Threads @easygpt2526 스레드. Claude를 활용해 트레이딩 전략을 백테스트하고, 리스크 대비 수익을 분석하며, 높은 확률의 매매 기회를 찾는 데 사용할 수 있는 프롬프트 모음. (댓글 스레드 포함 ✅)</blockquote>
+<blockquote></blockquote>
+<blockquote>⚠️ 원 게시물은 &quot;10가지 프롬프트&quot;를 표방하나, SSR 데이터에는 6개(1·2·3·5·6·7번)만 로드됨. 8~10번은 SSR 미로드 구간이라 미확보. 필요 시 브라우저로 추가 확보 가능.</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>이제 Claude는 헤지펀드 수준의 트레이딩 전략을 만들 수 있다(100% 무료).</p>
+<p>다음은 전략 백테스트, 리스크 대비 수익 분석, 그리고 높은 확률의 매매 기회를 찾는 데 사용할 수 있는 10가지 프롬프트이다. (미래를 위해 저장해두자)</p>
+<h2>댓글 스레드 (Reply Thread) — 프롬프트 모음</h2>
+<h3>1. 간단한 트레이딩 전략 백테스트하기</h3>
+<p><strong>1.1 역할 및 기본 정보</strong></p>
+<p>전문 퀀트 트레이딩 애널리스트 역할을 수행하세요.</p>
+<p>다음 트레이딩 전략의 백테스트를 도와주세요.</p>
+<ul>
+<li>시장: [주식 / 암호화폐 / 외환 / 지수]</li>
+<li>자산: [BTC, ETH, SPY, AAPL, EUR/USD 등]</li>
+<li>시간 프레임: [1시간봉 / 4시간봉 / 일봉 / 주봉]</li>
+<li>기간: [시작일] ~ [종료일]</li>
+</ul>
+<p><strong>1.2 전략 규칙</strong></p>
+<ul>
+<li>진입 조건: [예: 종가가 50 EMA 위에서 마감될 때 매수]</li>
+<li>확인 조건: [예: RSI가 50 이상이어야 함]</li>
+<li>청산 조건: [예: 종가가 20 EMA 아래에서 마감될 때 매도]</li>
+<li>손절: [예: 진입가 대비 -2%]</li>
+<li>익절: [예: 진입가 대비 +4%]</li>
+<li>포지션 크기: [예: 거래당 자본의 1%만 위험 노출]</li>
+</ul>
+<p><strong>1.3 요청 사항</strong></p>
+<p>다음 내용을 제공해주세요.</p>
+<ol>
+<li>이 전략이 어떻게 작동하는지 쉽게 설명</li>
+<li>백테스트 로직을 단계별로 설명</li>
+<li>추적해야 할 핵심 지표</li>
+<ul>
+<li>승률</li>
+<li>평균 수익</li>
+<li>평균 손실</li>
+<li>Profit Factor</li>
+<li>최대 낙폭(Drawdown)</li>
+<li>샤프 비율(Sharpe Ratio)</li>
+<li>손익비(Risk-Reward Ratio)</li>
+</ul>
+<li>수동 기록용 거래 로그 표 양식</li>
+<li>과최적화(Overfitting)를 피하면서 전략을 개선하는 방법</li>
+</ol>
+<p>초보자도 이해할 수 있도록 설명해주세요.</p>
+<h3>2. 진입 전 손익비 분석하기</h3>
+<p><strong>2.1 역할 및 거래 정보</strong></p>
+<p>전문 트레이딩 데스크 리스크 매니저 역할을 수행하세요.</p>
+<p>다음 거래를 분석해주세요.</p>
+<ul>
+<li>자산: [자산명]</li>
+<li>진입가: [가격]</li>
+<li>손절가: [가격]</li>
+<li>목표가 1: [가격]</li>
+<li>목표가 2: [가격]</li>
+<li>계좌 규모: [$금액]</li>
+<li>거래당 허용 위험: [%]</li>
+<li>방향: [롱 / 숏]</li>
+</ul>
+<p><strong>2.2 계산 요청</strong></p>
+<p>다음을 계산해주세요.</p>
+<ol>
+<li>거래당 실제 위험 금액</li>
+<li>위험 한도 기준 적정 포지션 크기</li>
+<li>각 목표가의 손익비</li>
+<li>손익분기점 승률</li>
+<li>손익비 관점에서 매력적인 거래인지 여부</li>
+<li>이 설정에서 발생할 수 있는 문제점</li>
+<li>필요하다면 더 나은 손절·익절 위치 제안</li>
+</ol>
+<p>초보자도 이해할 수 있게 쉽게 설명해주세요.</p>
+<h3>3. 내 트레이딩 전략의 약점 찾기</h3>
+<p><strong>3.1 역할 및 전략 입력</strong></p>
+<p>헤지펀드 전략 리뷰어 역할을 수행하세요.</p>
+<p>내 전략은 다음과 같습니다.</p>
+<ul>
+<li>시장: [시장]</li>
+<li>시간 프레임: [시간 프레임]</li>
+</ul>
+<p>진입 조건: [진입 규칙 입력]</p>
+<p>청산 조건: [청산 규칙 입력]</p>
+<p>리스크 관리: [손절, 익절, 포지션 크기, 최대 거래 수 등]</p>
+<p><strong>3.2 분석 요청</strong></p>
+<p>다음을 분석해주세요.</p>
+<ol>
+<li>전략의 가장 강한 부분</li>
+<li>가장 약한 부분</li>
+<li>실제 시장에서 실패할 수 있는 구간</li>
+<li>추세장, 횡보장, 변동성 장세 중 어디에 적합한지</li>
+<li>피해야 할 거래를 걸러낼 필터</li>
+<li>제대로 백테스트하기 위해 필요한 데이터</li>
+<li>규칙이 너무 많다면 단순화하는 방법</li>
+</ol>
+<p>모호한 조언 말고 구체적으로 설명해주세요.</p>
+<h3>5. 이동평균선 전략 만들기</h3>
+<p><strong>5.1 역할 및 조건</strong></p>
+<p>퀀트 트레이딩 전략가 역할을 수행하세요.</p>
+<p>다음 조건에 맞는 이동평균선 전략을 설계해주세요.</p>
+<ul>
+<li>자산: [자산]</li>
+<li>시간 프레임: [시간 프레임]</li>
+<li>매매 스타일: [스캘핑 / 데이트레이딩 / 스윙 / 장기투자]</li>
+<li>위험 성향: [낮음 / 중간 / 높음]</li>
+</ul>
+<p><strong>5.2 포함 사항</strong></p>
+<ol>
+<li>사용할 이동평균선과 그 이유</li>
+<li>정확한 매수 조건</li>
+<li>정확한 매도 조건</li>
+<li>손절 규칙</li>
+<li>익절 규칙</li>
+<li>거래를 피해야 하는 상황</li>
+<li>수동 백테스트 방법</li>
+<li>추적해야 할 성과 지표</li>
+<li>흔한 가짜 신호와 필터링 방법</li>
+<li>초보자용 예시 거래</li>
+</ol>
+<p>일반적인 설명이 아닌 규칙 기반 전략으로 작성해주세요.</p>
+<h3>6. RSI 전략 만들기</h3>
+<p><strong>6.1 역할 및 조건</strong></p>
+<p>전문 기술적 분석가 역할을 수행하세요.</p>
+<p>다음 조건에 맞는 RSI 전략을 설계해주세요.</p>
+<ul>
+<li>자산: [자산]</li>
+<li>시간 프레임: [시간 프레임]</li>
+<li>거래 방향: [롱 전용 / 숏 전용 / 양방향]</li>
+<li>시장 환경: [추세장 / 횡보장 / 변동성 장세]</li>
+</ul>
+<p><strong>6.2 포함 사항</strong></p>
+<ol>
+<li>RSI 설정값</li>
+<li>정확한 진입 신호</li>
+<li>확인 신호</li>
+<li>무효화 조건</li>
+<li>손절 위치</li>
+<li>익절 목표</li>
+<li>최소 손익비 기준</li>
+<li>진입하면 안 되는 상황</li>
+<li>RSI 가짜 신호를 줄이는 방법</li>
+<li>백테스트 체크리스트</li>
+</ol>
+<p>또한 RSI가 이 전략에서 반전 도구로 더 적합한지, 추세 확인 도구로 더 적합한지도 설명해주세요.</p>
+<h3>7. 두 트레이딩 전략 비교하기</h3>
+<p>트레이딩 전략 분석가 역할을 수행하세요.</p>
+<p>다음 두 전략을 비교해주세요.</p>
+<p>전략 A: [전략 규칙 입력]</p>
+<p>전략 B: [전략 규칙 입력]</p>
+<p>다음 기준으로 비교해주세요.</p>
+<ol>
+<li>단순성</li>
+<li>손익비 잠재력</li>
+<li>예상 승률</li>
+<li>낙폭 위험</li>
+<li>예상 거래 횟수</li>
+<li>적합한 시장 환경</li>
+<li>불리한 시장 환경</li>
+<li>백테스트 난이도</li>
+</ol>
+<p>그리고 각 항목을 1~10점으로 평가한 표를 만든 뒤 최종 추천을 해주세요.</p>
+<blockquote>ℹ️ 원문 스레드에는 번호 4번 항목 자리에 작성자의 강의 홍보 댓글이 삽입되어 있어 프롬프트 번호가 1→2→3→5→6→7 순으로 이어짐 (아래 &quot;댓글 (Other Content)&quot; 참고).</blockquote>
+<h2>댓글 (Other Content) — 작성자 광고</h2>
+<blockquote>⚠️ 투자, 막막하고 어려우시죠? 저희 부모님에게 알려준다 생각하고 진심을 담아 만든 AI 활용 강의입니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>✅ 1만 명이 참여한 베스트셀러 저자 EASY GPT 무료 라이브가 새로운 내용으로 돌아왔습니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>🗓 7월 30일(목) 오후 7:30</blockquote>
+<blockquote></blockquote>
+<blockquote>〈AI로 투자를 설계하다 무료 라이브 커리큘럼〉</blockquote>
+<blockquote>- 개인이 AI 투자에 실패하는 진짜 이유</blockquote>
+<blockquote>- 기관만큼 당신의 수익률을 끌어 올리는 AI 활용법</blockquote>
+<blockquote>- AI로 10배 오를 종목 찾아내는 방법</blockquote>
+<blockquote></blockquote>
+<blockquote>📩 무료 강의방 링크: <a href="https://open.kakao.com/o/gs2v23ci">https://open.kakao.com/o/gs2v23ci</a></blockquote>
+<h2>참고 자료</h2>
+<ul>
+<li>원문: <a href="https://www.threads.com/@easygpt2526/post/Dag2Oemk7uJ">Threads @easygpt2526</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-07-08 Claude 트레이딩 전략 프롬프트 10가지/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

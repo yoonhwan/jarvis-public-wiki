@@ -1,0 +1,62 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>공무원이 만든 법제처 국가법령정보 MCP · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260714-164354-KST">Jarvis Wiki / ai-agent</a><h1>공무원이 만든 법제처 국가법령정보 MCP</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>공무원이 만든 법제처 국가법령정보 MCP</h1>
+<blockquote>Source candidate from <code>News-Links/2026-07-11 공무원이 만든 법제처 국가법령정보 MCP/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>공무원이 만든 법제처 국가법령정보 MCP</h1>
+<blockquote>법제처 42개 API를 10개 도구로 묶은 MCP 서버 + CLI. Claude Desktop, Cursor, Windsurf, Zed, Claude.ai 등에서 바로 사용 가능. (MIT 라이선스, npm 배포)</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>공무원이 만든 법제처 국가법령정보 MCP</p>
+<p>법제처 42개 API를 10개 도구로. 법령, 판례, 행정규칙, 자치법규, 조약, 해석례(국세청 포함) + LLM 환각 방지 인용 검증(실존+내용) + 조문 영향 그래프 + 시점 비교 자동 diff + 이럴 땐 이렇게 — 5단계 안내 + 판례 생사 확인(Citator) + 행위시법 판단 + 조례 정비 레이더를 AI 어시스턴트나 터미널에서 바로 사용.</p>
+<p>원본 코드: <a href="https://github.com/chrisryugj/korean-law-mcp">https://github.com/chrisryugj/korean-law-mcp</a></p>
+<h2>핵심 기능 정리</h2>
+<table><thead><tr><th>도구 / 기능</th><th>설명</th></tr></thead><tbody>
+<tr><td><strong>통합 검색</strong></td><td>법령·판례·행정규칙·자치법규·조약·해석례(국세청 포함) 조회</td></tr>
+<tr><td><strong><code>verify_citations</code> (인용 검증)</strong></td><td>LLM 환각 방지 — 조문 실존 확인 + 제목·내용 일치까지 대조(<code>CONTENT_MISMATCH</code> 탐지)</td></tr>
+<tr><td><strong><code>impact_map</code> (조문 영향 그래프)</strong></td><td>조문 한 줄의 파급효과를 판례·헌재결정·해석·자치법규까지 역/정방향 탐색 → mermaid 그래프 자동 생성</td></tr>
+<tr><td><strong>시점 비교 (자동 diff)</strong></td><td>특정 시점 조문 vs 현행 비교</td></tr>
+<tr><td><strong><code>applicable_law</code> (행위시법 판단)</strong></td><td>기준일에 시행 중이던 버전(MST) 특정 + 부칙 경과규정 자동 발췌</td></tr>
+<tr><td><strong><code>cite_check</code> (판례 생사 확인)</strong></td><td>한국형 Shepard&#x27;s Citator — 후속 판례 역추적으로 변경·폐기 신호 감지</td></tr>
+<tr><td><strong><code>ordinance_radar</code> (조례 정비 레이더)</strong></td><td>상위법 개정 대비 조례 정비 검토 대상 자동 플래그</td></tr>
+<tr><td><strong>5단계 안내 (&quot;이럴 땐 이렇게&quot;)</strong></td><td>시나리오별 단계별 가이드</td></tr>
+</tbody></table>
+<h2>주요 버전 히스토리 (README 기준)</h2>
+<ul>
+<li><strong>v4.7.0</strong> — 조례 정비 레이더(<code>ordinance_radar</code>): 조례 제1조(목적)의 「」 인용에서 근거 상위법령 추출 → 현행 시행일 대조로 정비 검토 대상 자동 플래그</li>
+<li><strong>v4.6.x</strong> — 운영 안정화: 핸드셰이크를 rate limit에서 제외(claude.ai 공유 egress IP 429 해결), JSON-RPC 배치 증폭 차단, graceful shutdown</li>
+<li><strong>v4.6.0</strong> — 인용 검증 내용 대조 강화 + law.go.kr JS 안티봇 우회(클라우드 IP)</li>
+<li><strong>v4.5.0</strong> — 시행예정 법령 감지(제명변경 오판 방지)</li>
+<li><strong>v4.4.0</strong> — 노출 도구 19개 → 9개 통폐합(ListTools 컨텍스트 52% 감축, ~15.1KB → ~7.2KB): <code>chain<em>*</code> 8개 → <code>legal</em>research</code>, 킬러피처 4개 → <code>legal_analysis</code></li>
+<li><strong>v4.3</strong> — <code>cite<em>check</code>(판례 생사 확인) + <code>applicable</em>law</code>(행위시법 판단)</li>
+<li><strong>v4.0</strong> — 3개 킬러 기능 동시 추가: <code>impact_map</code> + 시점 비교 + 단계별 안내</li>
+</ul>
+<h2>인사이트</h2>
+<ul>
+<li>법제처 Open API를 실무 관점(공무원·법무팀·연구자)에서 재조립한 사례. 단순 API 래핑이 아니라 <strong>LLM이 법률 도메인에서 저지르는 전형적 오류(존재하지 않는 조문/제목 환각, 변경·폐기된 판례를 유효한 것처럼 인용, 현행법 오적용)를 구조적으로 차단</strong>하는 데 초점.</li>
+<li>도구 통폐합(19→9)으로 MCP ListTools 컨텍스트를 절반으로 줄인 최적화가 실용적 참고점.</li>
+</ul>
+<h2>유즈케이스 10</h2>
+<ol>
+<li><strong>계약서 리스크 검토 자동화</strong> — 계약 조항에 인용된 법령·조문을 <code>verify_citations</code>로 실존+내용 대조해, 존재하지 않거나 개정으로 문구가 바뀐 조항을 즉시 플래그. 법무팀 검토 1차 필터.</li>
+<li><strong>AI 법률 답변 환각 차단 레이어</strong> — 사내 법률 챗봇 뒤에 붙여, LLM이 &quot;○○법 제△조&quot; 인용할 때마다 실제 조문과 대조(<code>CONTENT_MISMATCH</code> 탐지). 잘못된 조문 인용을 사용자에게 내보내기 전에 차단.</li>
+<li><strong>과거 사건 적용법 판단(행위시법)</strong> — <code>applicable_law</code>로 행위 시점에 시행 중이던 버전(MST) 특정 + 부칙 경과규정 자동 발췌. 소급·경과 이슈 사건에서 적용 버전 근거 확보.</li>
+<li><strong>판례 유효성 실시간 검증(Citator)</strong> — 준비서면에 인용할 판례를 <code>cite_check</code>로 후속 판례 역추적해 변경·폐기·재확인 신호 감지. &quot;죽은 판례&quot; 인용 방지.</li>
+<li><strong>법 개정 파급효과 분석</strong> — <code>impact_map</code>으로 개정 대상 조문이 연결된 판례·헌재결정·해석례·자치법규까지 그래프(mermaid)로 시각화. 입법·개정 영향평가 보고서 초안.</li>
+<li><strong>조례 정비 레이더(지자체 실무)</strong> — <code>ordinance_radar</code>로 상위법령 개정 시 정비 필요 조례를 자동 플래그. 지자체 법무 담당의 상시 모니터링.</li>
+<li><strong>조문 시점 비교 diff</strong> — 특정 시점 조문 vs 현행 자동 diff. 조항 변경 이력 추적 → 컴플라이언스 변경 이력 문서화.</li>
+<li><strong>세무 실무 해석례 검색</strong> — 국세청 해석례 포함 통합 검색으로 세무 이슈의 유권해석 근거 즉시 확보. 세무사·회계법인 리서치 시간 단축.</li>
+<li><strong>민원/상담 5단계 안내 봇</strong> — &quot;이럴 땐 이렇게&quot; 시나리오 가이드를 시민 민원 챗봇에 연결. 절차·근거 법령을 단계별 안내하는 공공 서비스.</li>
+<li><strong>개발자 CLI 통합 리서치</strong> — Claude Desktop / Cursor / 터미널에서 코딩 중 규제·컴플라이언스 조문 바로 조회(예: 개인정보보호법 확인하며 코드 작성).</li>
+</ol>
+<h3>핵심 아이디어 요약</h3>
+<ul>
+<li><strong>단순 API 래핑이 아님</strong>: 법률 도메인 LLM의 3대 오류(조문 환각 / 죽은 판례 인용 / 현행법 오적용)를 구조적으로 차단하는 게 진짜 가치.</li>
+<li><strong>적용층별 침투</strong>: 법무팀(리스크 검토) → 지자체(조례 정비) → 세무(해석례) → 개발자(CLI)까지 수요층이 넓음.</li>
+<li><strong>AI 신뢰성 인프라</strong>: 리걸테크가 &quot;환각 없는 법률 AI&quot;를 만들 때 검증 백엔드로 그대로 얹을 수 있는 오픈소스 부품.</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/chrisryugj/korean-law-mcp">https://github.com/chrisryugj/korean-law-mcp</a></li>
+<li>npm: <a href="https://www.npmjs.com/package/korean-law-mcp">https://www.npmjs.com/package/korean-law-mcp</a></li>
+<li>Threads 원문: <a href="https://www.threads.com/@bluenyx/post/DaoxI8RD5Xc">https://www.threads.com/@bluenyx/post/DaoxI8RD5Xc</a></li>
+</ul>
+<hr>
+<p><em>댓글 스레드: SSR 데이터에 추가 텍스트 없음 (본문 단일 포스트)</em></p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-07-11 공무원이 만든 법제처 국가법령정보 MCP/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

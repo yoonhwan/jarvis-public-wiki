@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-03T00:39:27.588792",
+  "generated_at": "2026-07-14T16:46:05.243794",
   "source": "Wikis/pages",
   "domain": "ai-agent",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260702-184756-KST",
+  "version": "20260714-164354-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -28,6 +28,246 @@
     }
   },
   "pages": [
+    {
+      "title": "토스페이먼츠, PG 업계 최초 AI 연동 MCP 서버 도입",
+      "source": "Wikis/pages/concepts/토스페이먼츠, PG 업계 최초 AI 연동 MCP 서버 도입.md",
+      "url": "pages/토스페이먼츠-pg-업계-최초-ai-연동-mcp-서버-도입.html",
+      "raw_body_merged": false,
+      "excerpt": "토스페이먼츠가 PG 업계 최초로 AI 연동이 가능한 MCP(Model Context Protocol) 서버를 도입했습니다.",
+      "excerpt_hero": "토스페이먼츠가 PG 업계 최초로 AI 연동이 가능한 MCP(Model Context Protocol) 서버를 도입했습니다.",
+      "excerpt_list": "토스페이먼츠가 PG 업계 최초로 AI 연동이 가능한 MCP(Model Context Protocol) 서버를 도입했습니다.",
+      "date": "2026-07-13",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-13",
+        1783940625.3405075
+      ]
+    },
+    {
+      "title": "잘 모르고 앱 출시하면 참교육 당하는 '법' 11가지 👨‍⚖️ (2026.07.07 기준)",
+      "source": "Wikis/pages/concepts/잘 모르고 앱 출시하면 참교육 당하는 '법' 11가지 👨‍⚖️ (2026.07.07 기준).md",
+      "url": "pages/잘-모르고-앱-출시하면-참교육-당하는-법-11가지-2026-07-07-기준.html",
+      "raw_body_merged": false,
+      "excerpt": "A: 빠진 건 아니고, 원래 10가지인데 목록 숫자를 잘못 맞춰서 11가지가 됐네요. 😅",
+      "excerpt_hero": "A: 빠진 건 아니고, 원래 10가지인데 목록 숫자를 잘못 맞춰서 11가지가 됐네요. 😅",
+      "excerpt_list": "A: 빠진 건 아니고, 원래 10가지인데 목록 숫자를 잘못 맞춰서 11가지가 됐네요. 😅",
+      "date": "2026-07-13",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-13",
+        1783940319.4319158
+      ]
+    },
+    {
+      "title": "PG사 승인 없이 즉시 결제 붙이는 도구 — Polar.sh",
+      "source": "Wikis/pages/concepts/PG사 승인 없이 즉시 결제 붙이는 도구 — Polar.sh.md",
+      "url": "pages/pg사-승인-없이-즉시-결제-붙이는-도구-polar-sh.html",
+      "raw_body_merged": false,
+      "excerpt": "PG사 승인 기다리느라 제품 출시 늦어지는 거, 진짜 비효율 그 자체임🤦🏻‍♂️",
+      "excerpt_hero": "PG사 승인 기다리느라 제품 출시 늦어지는 거, 진짜 비효율 그 자체임🤦🏻‍♂️",
+      "excerpt_list": "PG사 승인 기다리느라 제품 출시 늦어지는 거, 진짜 비효율 그 자체임🤦🏻‍♂️",
+      "date": "2026-07-13",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-13",
+        1783940312.610566
+      ]
+    },
+    {
+      "title": "ima2-gen — LLM 공간감각 한계를 diffusion 모델로 보완하는 웹디자인 워크플로우",
+      "source": "Wikis/pages/references/ima2-gen — LLM 공간감각 한계를 diffusion 모델로 보완하는 웹디자인 워크플로우.md",
+      "url": "pages/ima2-gen-llm-공간감각-한계를-diffusion-모델로-보완하는-웹디자인-워크플로우.html",
+      "raw_body_merged": false,
+      "excerpt": "디자인을 ai가 못하지 않습니다",
+      "excerpt_hero": "디자인을 ai가 못하지 않습니다",
+      "excerpt_list": "디자인을 ai가 못하지 않습니다",
+      "date": "2026-07-13",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-13",
+        1783896981.2408414
+      ]
+    },
+    {
+      "title": "공무원이 만든 법제처 국가법령정보 MCP",
+      "source": "Wikis/pages/references/공무원이 만든 법제처 국가법령정보 MCP.md",
+      "url": "pages/공무원이-만든-법제처-국가법령정보-mcp.html",
+      "raw_body_merged": false,
+      "excerpt": "공무원이 만든 법제처 국가법령정보 MCP",
+      "excerpt_hero": "공무원이 만든 법제처 국가법령정보 MCP",
+      "excerpt_list": "공무원이 만든 법제처 국가법령정보 MCP",
+      "date": "2026-07-11",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-11",
+        1783780431.8624332
+      ]
+    },
+    {
+      "title": "Meng To의 Agent Skills 라이브러리 오픈소스 공개",
+      "source": "Wikis/pages/references/Meng To의 Agent Skills 라이브러리 오픈소스 공개.md",
+      "url": "pages/meng-to의-agent-skills-라이브러리-오픈소스-공개.html",
+      "raw_body_merged": false,
+      "excerpt": "CHOI(@choi.openai)가 Threads에 소개한, Design+Code 창업자이자 Aura 제작자인 Meng To가 공개한 오픈소스 Agent Skills 라이브러리.",
+      "excerpt_hero": "CHOI(@choi.openai)가 Threads에 소개한, Design+Code 창업자이자 Aura 제작자인 Meng To가 공개한 오픈소스 Agent Skills 라이브러리.",
+      "excerpt_list": "CHOI(@choi.openai)가 Threads에 소개한, Design+Code 창업자이자 Aura 제작자인 Meng To가 공개한 오픈소스 Agent Ski…",
+      "date": "2026-07-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-08",
+        1783507195.8740032
+      ]
+    },
+    {
+      "title": "페이블5 오픈 대비 — 장애 시 전화 알림 팁 (솔라피)",
+      "source": "Wikis/pages/concepts/페이블5 오픈 대비 — 장애 시 전화 알림 팁 (솔라피).md",
+      "url": "pages/페이블5-오픈-대비-장애-시-전화-알림-팁-솔라피.html",
+      "raw_body_merged": false,
+      "excerpt": "개발하시는 분들아 ㅋ",
+      "excerpt_hero": "개발하시는 분들아 ㅋ",
+      "excerpt_list": "개발하시는 분들아 ㅋ",
+      "date": "2026-07-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-08",
+        1783491510.7723672
+      ]
+    },
+    {
+      "title": "바이브코딩 웹사이트 전문가 기본세팅 프롬프트",
+      "source": "Wikis/pages/references/바이브코딩 웹사이트 전문가 기본세팅 프롬프트.md",
+      "url": "pages/바이브코딩-웹사이트-전문가-기본세팅-프롬프트.html",
+      "raw_body_merged": false,
+      "excerpt": "바이브코딩으로 웹사이트 만든 분?",
+      "excerpt_hero": "바이브코딩으로 웹사이트 만든 분?",
+      "excerpt_list": "바이브코딩으로 웹사이트 만든 분?",
+      "date": "2026-07-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-08",
+        1783476189.2377875
+      ]
+    },
+    {
+      "title": "잘 모르고 앱 출시하면 참교육 당하는 '법' 11가지 👨‍⚖️",
+      "source": "Wikis/pages/concepts/잘 모르고 앱 출시하면 참교육 당하는 '법' 11가지 👨‍⚖️.md",
+      "url": "pages/잘-모르고-앱-출시하면-참교육-당하는-법-11가지.html",
+      "raw_body_merged": false,
+      "excerpt": "Q: 구글 로그인으로 개인정보를 직접 수집하지 않으면 문제없을까요?",
+      "excerpt_hero": "Q: 구글 로그인으로 개인정보를 직접 수집하지 않으면 문제없을까요?",
+      "excerpt_list": "Q: 구글 로그인으로 개인정보를 직접 수집하지 않으면 문제없을까요?",
+      "date": "2026-07-07",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-07",
+        1783419269.9567754
+      ]
+    },
+    {
+      "title": "OpenMed — 완전 오프라인 온디바이스 헬스케어 AI 스택",
+      "source": "Wikis/pages/references/OpenMed — 완전 오프라인 온디바이스 헬스케어 AI 스택.md",
+      "url": "pages/openmed-완전-오프라인-온디바이스-헬스케어-ai-스택.html",
+      "raw_body_merged": false,
+      "excerpt": "단 한 줄의 코드로 완벽하게 오프라인에서 동작하는 헬스케어 AI 스택이 공개됐습니다.",
+      "excerpt_hero": "단 한 줄의 코드로 완벽하게 오프라인에서 동작하는 헬스케어 AI 스택이 공개됐습니다.",
+      "excerpt_list": "단 한 줄의 코드로 완벽하게 오프라인에서 동작하는 헬스케어 AI 스택이 공개됐습니다.",
+      "date": "2026-07-07",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-07",
+        1783418943.491241
+      ]
+    },
+    {
+      "title": "TREK — 셀프호스트 AI 여행 플래너 (MCP 도구 150개+)",
+      "source": "Wikis/pages/concepts/TREK — 셀프호스트 AI 여행 플래너 (MCP 도구 150개+).md",
+      "url": "pages/trek-셀프호스트-ai-여행-플래너-mcp-도구-150개.html",
+      "raw_body_merged": false,
+      "excerpt": "작성자: SungYong, Eom (@life.of.haru)",
+      "excerpt_hero": "작성자: SungYong, Eom (@life.of.haru)",
+      "excerpt_list": "작성자: SungYong, Eom (@life.of.haru)",
+      "date": "2026-07-06",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-06",
+        1783325888.7676988
+      ]
+    },
+    {
+      "title": "클로드코드 사용할 때 적용해두면 좋은 스킬 5선",
+      "source": "Wikis/pages/references/클로드코드 사용할 때 적용해두면 좋은 스킬 5선.md",
+      "url": "pages/클로드코드-사용할-때-적용해두면-좋은-스킬-5선.html",
+      "raw_body_merged": false,
+      "excerpt": "클로드코드 사용할 때 적용해두면 좋은 스킬",
+      "excerpt_hero": "클로드코드 사용할 때 적용해두면 좋은 스킬",
+      "excerpt_list": "클로드코드 사용할 때 적용해두면 좋은 스킬",
+      "date": "2026-07-06",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-06",
+        1783312134.2550054
+      ]
+    },
+    {
+      "title": "아직도 S3 쓰세요 스토리지 CDN egress 비용 비교 (Cloudflare R2)",
+      "source": "Wikis/pages/concepts/아직도 S3 쓰세요 스토리지 CDN egress 비용 비교 (Cloudflare R2).md",
+      "url": "pages/아직도-s3-쓰세요-스토리지-cdn-egress-비용-비교-cloudflare-r2.html",
+      "raw_body_merged": false,
+      "excerpt": "일반 서비스 운영용 스토리지/CDN, 아직도 S3 쓰세요? 웬만하면 Cloudflare R2 쓰세요.",
+      "excerpt_hero": "일반 서비스 운영용 스토리지/CDN, 아직도 S3 쓰세요? 웬만하면 Cloudflare R2 쓰세요.",
+      "excerpt_list": "일반 서비스 운영용 스토리지/CDN, 아직도 S3 쓰세요? 웬만하면 Cloudflare R2 쓰세요.",
+      "date": "2026-07-06",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-06",
+        1783312130.2013874
+      ]
+    },
+    {
+      "title": "클로드코드로 Meta 광고 분석하는 법",
+      "source": "Wikis/pages/references/클로드코드로 Meta 광고 분석하는 법.md",
+      "url": "pages/클로드코드로-meta-광고-분석하는-법.html",
+      "raw_body_merged": false,
+      "excerpt": "클로드코드로 meta 광고분석하는 법 알려준다 ㅇㅇ",
+      "excerpt_hero": "클로드코드로 meta 광고분석하는 법 알려준다 ㅇㅇ",
+      "excerpt_list": "클로드코드로 meta 광고분석하는 법 알려준다 ㅇㅇ",
+      "date": "2026-07-06",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-06",
+        1783312116.1320252
+      ]
+    },
+    {
+      "title": "개발 잘 모르고 배포했다가 참교육 당하는 보안 요소 7가지",
+      "source": "Wikis/pages/concepts/개발 잘 모르고 배포했다가 참교육 당하는 보안 요소 7가지.md",
+      "url": "pages/개발-잘-모르고-배포했다가-참교육-당하는-보안-요소-7가지.html",
+      "raw_body_merged": false,
+      "excerpt": "개발 잘 모르고 배포했다가 참교육 당하는 보안 요소 7가지",
+      "excerpt_hero": "개발 잘 모르고 배포했다가 참교육 당하는 보안 요소 7가지",
+      "excerpt_list": "개발 잘 모르고 배포했다가 참교육 당하는 보안 요소 7가지",
+      "date": "2026-07-04",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-04",
+        1783166268.6475444
+      ]
+    },
+    {
+      "title": "Fable 오케스트레이션 — 토큰 아끼려면 말 이 아니라 강제 게이트 로 막아라",
+      "source": "Wikis/pages/entities/Fable 오케스트레이션 — 토큰 아끼려면 말 이 아니라 강제 게이트 로 막아라.md",
+      "url": "pages/fable-오케스트레이션-토큰-아끼려면-말-이-아니라-강제-게이트-로-막아라.html",
+      "raw_body_merged": false,
+      "excerpt": "Fable(메인 오케스트레이터) 오케스트레이션의 핵심은 \"Fable이 똑똑하게 일하게 하는 것\"이 아니라 \"Fable이 비싼 일을 직접 못 하게 물리적으로 막는 것\". CLAUDE.md에 \"지휘만 하고…",
+      "excerpt_hero": "Fable(메인 오케스트레이터) 오케스트레이션의 핵심은 \"Fable이 똑똑하게 일하게 하는 것\"이 아니라 \"Fable이 비싼 일을 직접 못 하게 물리적으로 막는 것\". CLAUDE.md에 \"지휘만 하고 구현은 위임한다\"고 적는 건 권고일 뿐이라 모델이 언제든 우회 가능.…",
+      "excerpt_list": "Fable(메인 오케스트레이터) 오케스트레이션의 핵심은 \"Fable이 똑똑하게 일하게 하는 것\"이 아니라 \"Fable이 비싼 일을 직접…",
+      "date": "2026-07-03",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-03",
+        1783067516.3421447
+      ]
+    },
     {
       "title": "LangChain OpenWiki — AI 코드베이스 문서 자동화",
       "source": "Wikis/pages/references/LangChain OpenWiki — AI 코드베이스 문서 자동화.md",

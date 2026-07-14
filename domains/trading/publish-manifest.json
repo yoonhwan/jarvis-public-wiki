@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-03T00:39:27.659824",
+  "generated_at": "2026-07-14T16:46:05.326155",
   "source": "Wikis/pages",
   "domain": "trading",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260702-184756-KST",
+  "version": "20260714-164354-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -24,6 +24,36 @@
     }
   },
   "pages": [
+    {
+      "title": "주식시장에서 결국 돈 버는 5가지 유형",
+      "source": "Wikis/pages/concepts/주식시장에서 결국 돈 버는 5가지 유형.md",
+      "url": "pages/주식시장에서-결국-돈-버는-5가지-유형.html",
+      "raw_body_merged": false,
+      "excerpt": "주식시장에서 결국 돈 버는 5가지 유형:",
+      "excerpt_hero": "주식시장에서 결국 돈 버는 5가지 유형:",
+      "excerpt_list": "주식시장에서 결국 돈 버는 5가지 유형:",
+      "date": "2026-07-12",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-12",
+        1783855235.1434112
+      ]
+    },
+    {
+      "title": "Claude로 만드는 헤지펀드 수준 트레이딩 전략 — 프롬프트 10가지",
+      "source": "Wikis/pages/strategies/Claude로 만드는 헤지펀드 수준 트레이딩 전략 — 프롬프트 10가지.md",
+      "url": "pages/claude로-만드는-헤지펀드-수준-트레이딩-전략-프롬프트-10가지.html",
+      "raw_body_merged": false,
+      "excerpt": "이제 Claude는 헤지펀드 수준의 트레이딩 전략을 만들 수 있다(100% 무료).",
+      "excerpt_hero": "이제 Claude는 헤지펀드 수준의 트레이딩 전략을 만들 수 있다(100% 무료).",
+      "excerpt_list": "이제 Claude는 헤지펀드 수준의 트레이딩 전략을 만들 수 있다(100% 무료).",
+      "date": "2026-07-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-08",
+        1783476567.471461
+      ]
+    },
     {
       "title": "애 이름으로 적금 들지 마라 — 자녀 통장은 '연금저축펀드'부터",
       "source": "Wikis/pages/references/애 이름으로 적금 들지 마라 — 자녀 통장은 '연금저축펀드'부터.md",
@@ -490,9 +520,9 @@
       ]
     },
     {
-      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로",
-      "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로.md",
-      "url": "pages/page.html",
+      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 2",
+      "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 2.md",
+      "url": "pages/2.html",
       "raw_body_merged": false,
       "excerpt": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각 영역(아키텍처, 프론트엔드, 백엔드, DB, 인증, 결제, 실시간, DevOps…",
       "excerpt_hero": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각 영역(아키텍처, 프론트엔드, 백엔드, DB, 인증, 결제, 실시간, DevOps, 테스트, 프로젝트 관리, 디자인 시스템, 코드 리뷰)에 대해 프로덕션 레벨의…",

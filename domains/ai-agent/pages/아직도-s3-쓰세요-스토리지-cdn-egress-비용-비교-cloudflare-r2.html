@@ -1,0 +1,48 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>아직도 S3 쓰세요 스토리지 CDN egress 비용 비교 (Cloudflare R2) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260714-164354-KST">Jarvis Wiki / ai-agent</a><h1>아직도 S3 쓰세요 스토리지 CDN egress 비용 비교 (Cloudflare R2)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>아직도 S3 쓰세요 스토리지 CDN egress 비용 비교 (Cloudflare R2)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-07-06 R2 vs S3 스토리지 egress 비용/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>아직도 S3 쓰세요? 스토리지/CDN egress 비용 비교 (Cloudflare R2)</h1>
+<blockquote><a href="https://www.threads.com/@dev<em>coach</em>kr">@dev<em>coach</em>kr</a> on Threads</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>일반 서비스 운영용 스토리지/CDN, 아직도 S3 쓰세요? 웬만하면 <strong>Cloudflare R2</strong> 쓰세요.</p>
+<p>이유는 딱 하나 — <strong>egress(전송비)</strong> 입니다.</p>
+<table><thead><tr><th>서비스</th><th>저장 $/GB·월</th><th>전송비</th></tr></thead><tbody>
+<tr><td><strong>Cloudflare R2</strong></td><td>$0.015</td><td><strong>전송 무료</strong> (S3 호환 API, 요청 과금은 있음)</td></tr>
+<tr><td><strong>Backblaze B2</strong></td><td>$0.006</td><td>저장량 3배까지 무료, 이후 $0.01</td></tr>
+<tr><td><strong>Wasabi</strong></td><td>~$0.0069</td><td>무료 (단 최소 90일·1TB 과금 → 소량·단기엔 부적합)</td></tr>
+<tr><td><strong>AWS S3 Standard</strong></td><td>$0.025(서울) / $0.023(us-east-1)</td><td>$0.126(서울) / $0.09(us-east-1)</td></tr>
+</tbody></table>
+<p>전송비에서 게임이 끝납니다.</p>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 내용)</h2>
+<h3>왜 R2는 egress가 공짜일까?</h3>
+<ol>
+<li><strong>AWS 전송비는 원가가 아니라 마진+락인</strong>이에요. 도매 대역폭은 GB당 1센트도 안 되는데 AWS는 $0.09~0.126을 받습니다. &quot;데이터 빼는 데 돈 들게 해서 못 떠나게&quot; 만드는 <strong>데이터 중력(data gravity)</strong> 전략이죠.</li>
+</ol>
+<ol>
+<li><strong>Cloudflare는 본업이 네트워크(CDN·보안) 회사</strong>예요. 전 세계에 자기 망이 깔려 있고 ISP와 무정산 피어링(settlement-free peering)이 많아 대역폭 한계비용이 사실상 0. 퍼주는 게 아니라 원래 깔아둔 인프라에 얹는 겁니다.</li>
+</ol>
+<ol>
+<li><strong>그럼 R2는 뭘로 돈 벌까?</strong> 저장료 + 요청 수로 회수합니다. 과금 포인트를 대역폭에서 저장·요청으로 옮긴 것뿐이에요. 세상에 진짜 공짜는 없습니다.</li>
+</ol>
+<ol>
+<li>전략적으로 보면, AWS의 가장 약한 고리(<strong>탈출 비용</strong>)를 없애서 고객을 끌어오는 <strong>쐐기 상품</strong>인 거죠.</li>
+</ol>
+<blockquote>정리하면, R2의 egress 무료는 자선이 아니라 아주 잘 설계된 비즈니스 모델입니다.</blockquote>
+<h3>반대로, R2가 항상 답은 아니다</h3>
+<p>거의 접근 안 하는 <strong>대용량 콜드 아카이브</strong>라면? egress 강점이 안 살고 순수 저장 단가 싸움이 됩니다. 이땐 R2가 최저가가 아니에요.</p>
+<p><strong>4TB 월 저장비</strong></p>
+<table><thead><tr><th>서비스</th><th>$/GB·월</th><th>월 비용</th><th>비고</th></tr></thead><tbody>
+<tr><td>AWS Glacier Deep Archive</td><td>~$0.001</td><td>~$4</td><td>초저가, 복원 느림·복원비</td></tr>
+<tr><td>Backblaze B2</td><td>$0.006</td><td>~$24</td><td>즉시 접근, egress 3배 무료</td></tr>
+<tr><td>Cloudflare R2 IA</td><td>$0.01</td><td>$40</td><td>+retrieval</td></tr>
+<tr><td>Cloudflare R2 Standard</td><td>$0.015</td><td>$60</td><td></td></tr>
+<tr><td>AWS S3 Standard(서울)</td><td>$0.025</td><td>$100</td><td>+비싼 egress</td></tr>
+</tbody></table>
+<blockquote><strong>자주 읽는 서비스용 = R2, 묵혀두는 아카이브 = Glacier.</strong> 이렇게 나눠 쓰세요.</blockquote>
+<h2>참고 자료</h2>
+<ul>
+<li><a href="https://developers.cloudflare.com/r2/pricing/">Cloudflare R2 Pricing</a></li>
+<li><a href="https://www.backblaze.com/cloud-storage/pricing">Backblaze B2 Pricing</a></li>
+<li><a href="https://aws.amazon.com/s3/pricing/">AWS S3 Pricing</a></li>
+<li><a href="https://wasabi.com/pricing">Wasabi Pricing</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-07-06 R2 vs S3 스토리지 egress 비용/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
