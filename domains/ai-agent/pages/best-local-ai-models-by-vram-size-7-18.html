@@ -1,0 +1,42 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Best Local AI Models by VRAM Size (7 18) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260805-230047-KST">Jarvis Wiki / ai-agent</a><h1>Best Local AI Models by VRAM Size (7 18)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Best Local AI Models by VRAM Size (7 18)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-07-21 Best Local AI Models by VRAM Size/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Best Local AI Models by VRAM Size (7/18)</h1>
+<blockquote>Aung Myat Moe (@aungmyatmoethegreat) on Threads</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>VRAM 크기별 추천 로컬 AI 모델 목록 (2026-07-18 기준):</p>
+<table><thead><tr><th>등급</th><th>VRAM</th><th>추천 모델</th></tr></thead><tbody>
+<tr><td>Phone</td><td>~4GB</td><td>Bonsai-27b</td></tr>
+<tr><td>Nano</td><td>~12GB</td><td>Gemma4-12b</td></tr>
+<tr><td>Micro</td><td>~36GB</td><td>Qwen3.6-27b</td></tr>
+<tr><td>Small</td><td>~128GB</td><td>Deepseek V4 Flash ds4</td></tr>
+<tr><td>Medium</td><td>~256GB</td><td>GLM-5.2-2bit</td></tr>
+<tr><td>Large</td><td>~512GB</td><td>GLM-5.2-NVFP4</td></tr>
+</tbody></table>
+<h2>댓글 스레드 (Reply Thread / 다른 사용자)</h2>
+<ul>
+<li><strong>Bonsai 27B 한계</strong>: 영어 외 언어 사용 시 실수가 잦음. 중국어 입력만 했는데도 중국어·영어·스페인어·아랍어를 섞어 답변. 별도 테스트에서는 541건 중 450건에서 곧바로 EOS 토큰만 출력.</li>
+<li><strong>로컬 vs SOTA</strong>: SOTA 모델을 경험한 뒤에는 로컬 모델로 돌아가기 어렵다. tps·트러블슈팅·결과 품질을 고려하면 구독료를 내는 게 나을 수 있음.</li>
+<ul>
+<li><strong>반론</strong>: SWE는 아니지만 데이터 추출, 요약, 웹 리서치, 이메일 검색 등 &quot;흥미로운 작업&quot;에는 로컬 모델을 적극 사용. 프라이버시 유지에도 좋음.</li>
+</ul>
+<li><strong>GTX 1060으로 Bonsai-27B 실행 성공 사례</strong>:</li>
+<ul>
+<li>Bonsai-27B Q1_0가 6GB VRAM에서 CUDA, 4096 context, 99 GPU layers로 구동</li>
+<li>프롬프트 처리 111.48 tok/s, 생성 9.50 tok/s</li>
+<li>콜드 스타트 5/5, 단일 세션 요청 5/5 성공, OOM/CUDA 에러 없음</li>
+<li>증거: <a href="https://github.com/pitill0/legacy-gpu-llm/tree/main/results/maintainer/nvidia/pascal/gtx-1060-6gb/bonsai-27b-q1<em>0">https://github.com/pitill0/legacy-gpu-llm/tree/main/results/maintainer/nvidia/pascal/gtx-1060-6gb/bonsai-27b-q1</em>0</a></li>
+</ul>
+<li><strong>기타 질문/코멘트</strong>:</li>
+<ul>
+<li>&quot;양자화(quantization) 언급이 없다&quot;</li>
+<li>&quot;Nemotron Ultra가 빠진 건 말이 안 된다&quot; → &quot;넣으면 됨&quot;</li>
+<li>&quot;24GB VRAM + 768GB DDR4는 어느 등급?&quot;</li>
+<li>Ornith-1.0-9b 다음 테스트 대상으로 Bonsai-27b 관심</li>
+</ul>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>원문 Threads: <a href="https://www.threads.com/@aungmyatmoethegreat/post/Da8cQ4umB2d">https://www.threads.com/@aungmyatmoethegreat/post/Da8cQ4umB2d</a></li>
+<li>Legacy GPU LLM 결과: <a href="https://github.com/pitill0/legacy-gpu-llm">https://github.com/pitill0/legacy-gpu-llm</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-07-21 Best Local AI Models by VRAM Size/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

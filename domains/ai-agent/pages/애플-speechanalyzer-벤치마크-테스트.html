@@ -1,0 +1,113 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>애플 SpeechAnalyzer 벤치마크 테스트 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260805-230047-KST">Jarvis Wiki / ai-agent</a><h1>애플 SpeechAnalyzer 벤치마크 테스트</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>애플 SpeechAnalyzer 벤치마크 테스트</h1>
+<blockquote>Source candidate from <code>News-Links/2026-07-27 애플 SpeechAnalyzer 벤치마크 테스트/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>애플 SpeechAnalyzer 벤치마크 테스트</h1>
+<blockquote>Jinho Jung (@jvisualschool) on Threads</blockquote>
+<h2>본문 (Main Post)</h2>
+<p><strong>SpeechAnalyzer</strong>는 macOS 26 / iOS 26부터 애플이 새로 넣은 <strong>음성 인식 엔진</strong>입니다. 로컬에서 동작합니다.</p>
+<ul>
+<li>강의, 회의, 팟캐스트 같은 몇십 분짜리 녹음도 한 번에 처리하도록 새로 설계됨</li>
+<li>M1 이상의 애플 실리콘, macOS 26 (Tahoe) 이상에서 동작</li>
+</ul>
+<h3>빌드 방식</h3>
+<ul>
+<li>SpeechAnalyzer를 이용하려면 바이너리 컴파일을 위해 Xcode가 필요</li>
+<li>작성자는 무거운 Xcode 대신 <strong>swift CLI로 빌드</strong></li>
+<li>바이너리 실행을 위한 간단한 <strong>웹 UI를 로컬에서 제작</strong></li>
+<li>대략 5분짜리 파일을 만들어 테스트 → &quot;너무너무 빠릅니다&quot;</li>
+</ul>
+<h3>테스트 장비</h3>
+<p>Apple M3 Pro, 12코어(6P+6E), 36GB, macOS 26.5.2</p>
+<h3>처리 결과</h3>
+<table><thead><tr><th>항목</th><th>값</th></tr></thead><tbody>
+<tr><td>오디오 길이</td><td>324.1초</td></tr>
+<tr><td>처리 시간</td><td>2.40초</td></tr>
+<tr><td>실시간 대비</td><td><strong>135.1배</strong></td></tr>
+<tr><td>인식 글자수</td><td>2398자</td></tr>
+</tbody></table>
+<h2>댓글 스레드 (Reply Thread)</h2>
+<p>작성자 추가 댓글:</p>
+<ul>
+<li>따라서 만들기: <a href="https://jvibeschool.com/blog/wp-content/uploads/2026/07/speechanalyzer<em>post.html">https://jvibeschool.com/blog/wp-content/uploads/2026/07/speechanalyzer</em>post.html</a></li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li><a href="https://www.threads.com/@jvisualschool/post/DbSYScuj2ej">원본 Threads 포스트</a></li>
+<li><a href="https://jvibeschool.com/blog/wp-content/uploads/2026/07/speechanalyzer_post.html">블로그 글 (따라서 만들기)</a></li>
+<li>Apple SpeechAnalyzer (macOS 26 / iOS 26)</li>
+</ul>
+<h2>블로그 코드 샘플 (따라서 만들기 — 5단계)</h2>
+<p>블로그 원문: <a href="https://jvibeschool.com/blog/wp-content/uploads/2026/07/speechanalyzer_post.html">Xcode 없이, 터미널만으로 Apple의 새 음성인식 API를 켜봤다</a></p>
+<h3>1. Command Line Tools 확인·설치</h3>
+<pre><code>$ xcode-select -p
+/Library/Developer/CommandLineTools
+
+# 없다면 설치
+$ xcode-select --install</code></pre>
+<h3>2. 작업 폴더 만들기</h3>
+<pre><code>$ mkdir -p ~/speechanalyzer-test &amp;&amp; cd ~/speechanalyzer-test</code></pre>
+<h3>3. Swift 코드 파일 만들기 (main.swift)</h3>
+<pre><code>import Speech
+import AVFoundation
+import Foundation
+
+@main
+struct SpeechAnalyzerTest {
+    static func main() async {
+        guard CommandLine.arguments.count &gt; 1 else {
+            print(&quot;사용법: ./SpeechAnalyzerTest &lt;오디오파일 경로&gt; [locale, 기본값 ko-KR]&quot;)
+            exit(1)
+        }
+        let path = CommandLine.arguments[1]
+        let localeID = CommandLine.arguments.count &gt; 2 ? CommandLine.arguments[2] : &quot;ko-KR&quot;
+        let url = URL(fileURLWithPath: path)
+        let locale = Locale(identifier: localeID)
+
+        do {
+            let transcriber = SpeechTranscriber(locale: locale, preset: .transcription)
+
+            if let request = try await AssetInventory.assetInstallationRequest(supporting: [transcriber]) {
+                print(&quot;온디바이스 언어 모델 다운로드 중...&quot;)
+                try await request.downloadAndInstall()
+                print(&quot;다운로드 완료.&quot;)
+            }
+
+            let audioFile = try AVAudioFile(forReading: url)
+            let analyzer = SpeechAnalyzer(modules: [transcriber])
+
+            let resultsTask = Task {
+                for try await result in transcriber.results {
+                    print(&quot;[결과] \(result.text)&quot;)
+                }
+            }
+
+            try await analyzer.start(inputAudioFile: audioFile, finishAfterFile: true)
+            try await analyzer.finalizeAndFinishThroughEndOfInput()
+            await resultsTask.value
+
+            print(&quot;완료.&quot;)
+        } catch {
+            print(&quot;에러 발생: \(error)&quot;)
+            exit(1)
+        }
+    }
+}</code></pre>
+<h3>4. 컴파일하기 (swiftc, Xcode 불필요)</h3>
+<pre><code>$ SDK=$(xcrun --sdk macosx --show-sdk-path)
+$ swiftc -target arm64-apple-macos26 -sdk &quot;$SDK&quot; -parse-as-library \
+    main.swift -o SpeechAnalyzerTest \
+    -framework Speech -framework AVFoundation</code></pre>
+<h3>5. 실제 오디오로 실행하기</h3>
+<pre><code>$ ./SpeechAnalyzerTest ~/Desktop/내오디오.mp3 ko-KR
+온디바이스 언어 모델 다운로드 중...
+다운로드 완료.
+[결과] 여기에 인식된 텍스트가 그대로 출력됩니다
+완료.</code></pre>
+<h3>핵심 포인트</h3>
+<ul>
+<li><strong><code>SpeechTranscriber(locale:preset:)</code></strong> — 온디바이스 트랜스크라이버 생성</li>
+<li><strong><code>AssetInventory.assetInstallationRequest</code></strong> — 언어 모델을 온디바이스로 다운로드/설치</li>
+<li><strong><code>SpeechAnalyzer(modules:)</code></strong> — 트랜스크라이버 모듈을 묶어 분석기 구성</li>
+<li><strong><code>analyzer.start(inputAudioFile:finishAfterFile:)</code></strong> — 오디오 파일 스트리밍 처리</li>
+<li><code>Speech</code> + <code>AVFoundation</code> 프레임워크만 링크하면 Xcode 없이 CLI 빌드 가능 (target: <code>arm64-apple-macos26</code>)</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-07-27 애플 SpeechAnalyzer 벤치마크 테스트/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

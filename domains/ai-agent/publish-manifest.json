@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-14T16:46:05.243794",
+  "generated_at": "2026-08-05T23:01:44.415025",
   "source": "Wikis/pages",
   "domain": "ai-agent",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260714-164354-KST",
+  "version": "20260805-230047-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -28,6 +28,441 @@
     }
   },
   "pages": [
+    {
+      "title": "마이크로소프트 SkillOpt — SKILL.md 자동 개선 오픈소스",
+      "source": "Wikis/pages/references/마이크로소프트 SkillOpt — SKILL.md 자동 개선 오픈소스.md",
+      "url": "pages/마이크로소프트-skillopt-skill-md-자동-개선-오픈소스.html",
+      "raw_body_merged": false,
+      "excerpt": "마이크로소프트에서 스킬 개선 오픈소스가 나와서 점심 시간을 반납하고 알아보았다.",
+      "excerpt_hero": "마이크로소프트에서 스킬 개선 오픈소스가 나와서 점심 시간을 반납하고 알아보았다.",
+      "excerpt_list": "마이크로소프트에서 스킬 개선 오픈소스가 나와서 점심 시간을 반납하고 알아보았다.",
+      "date": "2026-08-04",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-04",
+        1785816392.336114
+      ]
+    },
+    {
+      "title": "클린아키텍쳐 Claude Code 스킬 (Robert Martin 원칙 기반)",
+      "source": "Wikis/pages/patterns/클린아키텍쳐 Claude Code 스킬 (Robert Martin 원칙 기반).md",
+      "url": "pages/클린아키텍쳐-claude-code-스킬-robert-martin-원칙-기반.html",
+      "raw_body_merged": false,
+      "excerpt": "https://github.com/nathankim0/clean-architecture-skills",
+      "excerpt_hero": "https://github.com/nathankim0/clean-architecture-skills",
+      "excerpt_list": "https://github.com/nathankim0/clean-architecture-skills",
+      "date": "2026-08-04",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-04",
+        1785816391.7599833
+      ]
+    },
+    {
+      "title": "GLM-ASR — Zhipu AI 경량 음성인식 모델",
+      "source": "Wikis/pages/references/GLM-ASR — Zhipu AI 경량 음성인식 모델.md",
+      "url": "pages/glm-asr-zhipu-ai-경량-음성인식-모델.html",
+      "raw_body_merged": false,
+      "excerpt": "GLM-ASR은 Zhipu AI가 공개한 1.5B 파라미터 경량 음성인식(ASR) 모델입니다.",
+      "excerpt_hero": "GLM-ASR은 Zhipu AI가 공개한 1.5B 파라미터 경량 음성인식(ASR) 모델입니다.",
+      "excerpt_list": "GLM-ASR은 Zhipu AI가 공개한 1.5B 파라미터 경량 음성인식(ASR) 모델입니다.",
+      "date": "2026-08-04",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-04",
+        1785816302.638163
+      ]
+    },
+    {
+      "title": "YC QM — 회사 전체를 돌리는 멀티 에이전트 하네스",
+      "source": "Wikis/pages/entities/YC QM — 회사 전체를 돌리는 멀티 에이전트 하네스.md",
+      "url": "pages/yc-qm-회사-전체를-돌리는-멀티-에이전트-하네스.html",
+      "raw_body_merged": false,
+      "excerpt": "기존 에이전트 대부분은 개인 비서용 → 한 사람엔 잘 붙지만 회사에 붙이면 금세 복잡. QM은 처음부터 스타트업 단위로 설계:",
+      "excerpt_hero": "기존 에이전트 대부분은 개인 비서용 → 한 사람엔 잘 붙지만 회사에 붙이면 금세 복잡. QM은 처음부터 스타트업 단위로 설계:",
+      "excerpt_list": "기존 에이전트 대부분은 개인 비서용 → 한 사람엔 잘 붙지만 회사에 붙이면 금세 복잡.…",
+      "date": "2026-08-02",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-02",
+        1785629752.3523905
+      ]
+    },
+    {
+      "title": "고소득자들이 매년 하고 있는 절세방법",
+      "source": "Wikis/pages/concepts/고소득자들이 매년 하고 있는 절세방법.md",
+      "url": "pages/고소득자들이-매년-하고-있는-절세방법.html",
+      "raw_body_merged": false,
+      "excerpt": "고소득자들이 매년 하고 있는 절세방법 알려줄께.",
+      "excerpt_hero": "고소득자들이 매년 하고 있는 절세방법 알려줄께.",
+      "excerpt_list": "고소득자들이 매년 하고 있는 절세방법 알려줄께.",
+      "date": "2026-07-31",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-31",
+        1785446307.9652815
+      ]
+    },
+    {
+      "title": "잭 도시의 오픈소스 팀채팅 Buzz",
+      "source": "Wikis/pages/entities/잭 도시의 오픈소스 팀채팅 Buzz.md",
+      "url": "pages/잭-도시의-오픈소스-팀채팅-buzz.html",
+      "raw_body_merged": false,
+      "excerpt": "잭 도시(Jack Dorsey)가 Slack 쓰는 게 지겨워서 아예 새로 만든 오픈소스 팀 채팅 Buzz. 런칭 트윗에 밝힌 이유는 \"Slack과 Github 의존도를 줄이려고…",
+      "excerpt_hero": "잭 도시(Jack Dorsey)가 Slack 쓰는 게 지겨워서 아예 새로 만든 오픈소스 팀 채팅 Buzz. 런칭 트윗에 밝힌 이유는 \"Slack과 Github 의존도를 줄이려고 만들었다.\"",
+      "excerpt_list": "잭 도시(Jack Dorsey)가 Slack 쓰는 게 지겨워서 아예 새로 만든 오픈소스 팀 채팅 Buzz.…",
+      "date": "2026-07-30",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-30",
+        1785392876.8946803
+      ]
+    },
+    {
+      "title": "Chonkie — 문서 청킹에 특화한 경량 파이썬 라이브러리",
+      "source": "Wikis/pages/references/Chonkie — 문서 청킹에 특화한 경량 파이썬 라이브러리.md",
+      "url": "pages/chonkie-문서-청킹에-특화한-경량-파이썬-라이브러리.html",
+      "raw_body_merged": false,
+      "excerpt": "Chonkie는 문서 청킹에 특화한 경량 파이썬 라이브러리입니다.",
+      "excerpt_hero": "Chonkie는 문서 청킹에 특화한 경량 파이썬 라이브러리입니다.",
+      "excerpt_list": "Chonkie는 문서 청킹에 특화한 경량 파이썬 라이브러리입니다.",
+      "date": "2026-07-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-29",
+        1785318022.083561
+      ]
+    },
+    {
+      "title": "애플 SpeechAnalyzer 벤치마크 테스트",
+      "source": "Wikis/pages/concepts/애플 SpeechAnalyzer 벤치마크 테스트.md",
+      "url": "pages/애플-speechanalyzer-벤치마크-테스트.html",
+      "raw_body_merged": false,
+      "excerpt": "SpeechAnalyzer는 macOS 26 / iOS 26부터 애플이 새로 넣은 음성 인식 엔진입니다. 로컬에서 동작합니다.",
+      "excerpt_hero": "SpeechAnalyzer는 macOS 26 / iOS 26부터 애플이 새로 넣은 음성 인식 엔진입니다. 로컬에서 동작합니다.",
+      "excerpt_list": "SpeechAnalyzer는 macOS 26 / iOS 26부터 애플이 새로 넣은 음성 인식 엔진입니다. 로컬에서 동작합니다.",
+      "date": "2026-07-27",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-27",
+        1785148505.4334784
+      ]
+    },
+    {
+      "title": "pluuug — 영업부터 정산까지 올인원 (B2B)",
+      "source": "Wikis/pages/entities/pluuug — 영업부터 정산까지 올인원 (B2B).md",
+      "url": "pages/pluuug-영업부터-정산까지-올인원-b2b.html",
+      "raw_body_merged": false,
+      "excerpt": "Instagram Reel 광고 스크랩. pluuugofficial 계정의 B2B SaaS 홍보 영상.",
+      "excerpt_hero": "Instagram Reel 광고 스크랩. pluuugofficial 계정의 B2B SaaS 홍보 영상.",
+      "excerpt_list": "Instagram Reel 광고 스크랩. pluuugofficial 계정의 B2B SaaS 홍보 영상.",
+      "date": "2026-07-26",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-26",
+        1785066118.2512126
+      ]
+    },
+    {
+      "title": "Claude Code 컨텍스트 압축 훅 — ctx-diet",
+      "source": "Wikis/pages/references/Claude Code 컨텍스트 압축 훅 — ctx-diet.md",
+      "url": "pages/claude-code-컨텍스트-압축-훅-ctx-diet.html",
+      "raw_body_merged": false,
+      "excerpt": "Claude Code 쓰면서 ls -la 한 번 잘못 부르면 46,000 토큰이 날아갑니다.",
+      "excerpt_hero": "Claude Code 쓰면서 ls -la 한 번 잘못 부르면 46,000 토큰이 날아갑니다.",
+      "excerpt_list": "Claude Code 쓰면서 ls -la 한 번 잘못 부르면 46,000 토큰이 날아갑니다.",
+      "date": "2026-07-26",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-26",
+        1784991879.5034547
+      ]
+    },
+    {
+      "title": "Coqui STT — 오픈소스 음성 인식(STT) 툴킷",
+      "source": "Wikis/pages/concepts/Coqui STT — 오픈소스 음성 인식(STT) 툴킷.md",
+      "url": "pages/coqui-stt-오픈소스-음성-인식-stt-툴킷.html",
+      "raw_body_merged": false,
+      "excerpt": "Coqui STT는 Mozilla DeepSpeech를 계승한 오픈소스 STT 툴킷입니다.",
+      "excerpt_hero": "Coqui STT는 Mozilla DeepSpeech를 계승한 오픈소스 STT 툴킷입니다.",
+      "excerpt_list": "Coqui STT는 Mozilla DeepSpeech를 계승한 오픈소스 STT 툴킷입니다.",
+      "date": "2026-07-24",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-24",
+        1784860895.586758
+      ]
+    },
+    {
+      "title": "월 억대매출 상세페이지 기획 핵심 구조 5가지",
+      "source": "Wikis/pages/concepts/월 억대매출 상세페이지 기획 핵심 구조 5가지.md",
+      "url": "pages/월-억대매출-상세페이지-기획-핵심-구조-5가지.html",
+      "raw_body_merged": false,
+      "excerpt": "와... 이렇게 해야 월 억대매출 가능한거구나...",
+      "excerpt_hero": "와... 이렇게 해야 월 억대매출 가능한거구나...",
+      "excerpt_list": "와... 이렇게 해야 월 억대매출 가능한거구나...",
+      "date": "2026-07-23",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-23",
+        1784802313.546202
+      ]
+    },
+    {
+      "title": "대치초등 필수 코스 — MSC 다중인지지능 테스트 (RNA150) + 대치동 초등 수학학원 리스트",
+      "source": "Wikis/pages/concepts/대치초등 필수 코스 — MSC 다중인지지능 테스트 (RNA150) + 대치동 초등 수학학원 리스트.md",
+      "url": "pages/대치초등-필수-코스-msc-다중인지지능-테스트-rna150-대치동-초등-수학학원-리스트.html",
+      "raw_body_merged": false,
+      "excerpt": "대치동에서 초저학년이 다닐 수 있는 교과학원:",
+      "excerpt_hero": "대치동에서 초저학년이 다닐 수 있는 교과학원:",
+      "excerpt_list": "대치동에서 초저학년이 다닐 수 있는 교과학원:",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784606331.9696543
+      ]
+    },
+    {
+      "title": "Qwen3-TTS 오픈소스 공개",
+      "source": "Wikis/pages/references/Qwen3-TTS 오픈소스 공개.md",
+      "url": "pages/qwen3-tts-오픈소스-공개.html",
+      "raw_body_merged": false,
+      "excerpt": "알리바바 Qwen 팀이 \"Qwen3-TTS\" 전체 모델을 오픈소스로 공개했습니다.",
+      "excerpt_hero": "알리바바 Qwen 팀이 \"Qwen3-TTS\" 전체 모델을 오픈소스로 공개했습니다.",
+      "excerpt_list": "알리바바 Qwen 팀이 \"Qwen3-TTS\" 전체 모델을 오픈소스로 공개했습니다.",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784606186.9150627
+      ]
+    },
+    {
+      "title": "Qwen3.6-35B-A3B 오픈소스 공개 (알리바바)",
+      "source": "Wikis/pages/entities/Qwen3.6-35B-A3B 오픈소스 공개 (알리바바).md",
+      "url": "pages/qwen3-6-35b-a3b-오픈소스-공개-알리바바.html",
+      "raw_body_merged": false,
+      "excerpt": "어제(4월 16일), 알리바바가 Qwen3.6-35B-A3B를 공식 오픈소스로 풀었습니다.",
+      "excerpt_hero": "어제(4월 16일), 알리바바가 Qwen3.6-35B-A3B를 공식 오픈소스로 풀었습니다.",
+      "excerpt_list": "어제(4월 16일), 알리바바가 Qwen3.6-35B-A3B를 공식 오픈소스로 풀었습니다.",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605936.1307557
+      ]
+    },
+    {
+      "title": "Qwen-Audio-3.0-TTS — 알리바바 통이랩 음성 모델",
+      "source": "Wikis/pages/entities/Qwen-Audio-3.0-TTS — 알리바바 통이랩 음성 모델.md",
+      "url": "pages/qwen-audio-3-0-tts-알리바바-통이랩-음성-모델.html",
+      "raw_body_merged": false,
+      "excerpt": "알리바바 통이랩이 Qwen-Audio-3.0-TTS를 내놨습니다.",
+      "excerpt_hero": "알리바바 통이랩이 Qwen-Audio-3.0-TTS를 내놨습니다.",
+      "excerpt_list": "알리바바 통이랩이 Qwen-Audio-3.0-TTS를 내놨습니다.",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605919.551417
+      ]
+    },
+    {
+      "title": "쇼츠로 100만 조회수 만드는 방법 (직장인 부업)",
+      "source": "Wikis/pages/concepts/쇼츠로 100만 조회수 만드는 방법 (직장인 부업).md",
+      "url": "pages/쇼츠로-100만-조회수-만드는-방법-직장인-부업.html",
+      "raw_body_merged": false,
+      "excerpt": "내가 회사 다니면서 쇼츠로 100만 조회수 만드는 방법은 의외로 엄청 간단해!",
+      "excerpt_hero": "내가 회사 다니면서 쇼츠로 100만 조회수 만드는 방법은 의외로 엄청 간단해!",
+      "excerpt_list": "내가 회사 다니면서 쇼츠로 100만 조회수 만드는 방법은 의외로 엄청 간단해!",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605706.7923589
+      ]
+    },
+    {
+      "title": "실시간 음성 AI의 기준이 바뀐다 Cerebras, Gemma 4, 그리고 speech-to-speech 레포",
+      "source": "Wikis/pages/entities/실시간 음성 AI의 기준이 바뀐다 Cerebras, Gemma 4, 그리고 speech-to-speech 레포.md",
+      "url": "pages/실시간-음성-ai의-기준이-바뀐다-cerebras-gemma-4-그리고-speech-to-speech-레포.html",
+      "raw_body_merged": false,
+      "excerpt": "Hugging Face와 Cerebras가 Gemma 4 기반 실시간 음성 AI 데모를 공개했다. 핵심은 단순히 \"빠른 모델\"이 아니다. 음성 감지(VAD), 음성 인식(STT), 언어모델 추론(LLM)…",
+      "excerpt_hero": "Hugging Face와 Cerebras가 Gemma 4 기반 실시간 음성 AI 데모를 공개했다. 핵심은 단순히 \"빠른 모델\"이 아니다. 음성 감지(VAD), 음성 인식(STT), 언어모델 추론(LLM), 음성 합성(TTS)을 분리한 오픈소스 speech-to-speech 스택이 지연 시간과 교체 가능성을…",
+      "excerpt_list": "Hugging Face와 Cerebras가 Gemma 4 기반 실시간 음성 AI 데모를 공개했다. 핵심은 단순히 \"빠른…",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605698.3542542
+      ]
+    },
+    {
+      "title": "바이브 코더용 AI 툴 모음 (restyart.com)",
+      "source": "Wikis/pages/concepts/바이브 코더용 AI 툴 모음 (restyart.com).md",
+      "url": "pages/바이브-코더용-ai-툴-모음-restyart-com.html",
+      "raw_body_merged": false,
+      "excerpt": "바이브 코딩으로 서비스 만드는 사람이 많아졌지만, 막상 개발보다 운영이 더 어렵더라는 문제의식에서 직접 만든 AI 툴들을 공개. 모든 서비스는 매일 일정량 무료…",
+      "excerpt_hero": "바이브 코딩으로 서비스 만드는 사람이 많아졌지만, 막상 개발보다 운영이 더 어렵더라는 문제의식에서 직접 만든 AI 툴들을 공개. 모든 서비스는 매일 일정량 무료 사용 가능.",
+      "excerpt_list": "바이브 코딩으로 서비스 만드는 사람이 많아졌지만, 막상 개발보다 운영이 더 어렵더라는 문제의식에서 직접 만든…",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605667.6747804
+      ]
+    },
+    {
+      "title": "저는 Blue Green 배포를 씁니다 (goodtek.xyz)",
+      "source": "Wikis/pages/concepts/저는 Blue Green 배포를 씁니다 (goodtek.xyz).md",
+      "url": "pages/저는-blue-green-배포를-씁니다-goodtek-xyz.html",
+      "raw_body_merged": false,
+      "excerpt": "",
+      "excerpt_hero": "",
+      "excerpt_list": "",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605581.6162
+      ]
+    },
+    {
+      "title": "PNG → SVG Vectorizer (Neplex)",
+      "source": "Wikis/pages/concepts/PNG → SVG Vectorizer (Neplex).md",
+      "url": "pages/png-svg-vectorizer-neplex.html",
+      "raw_body_merged": false,
+      "excerpt": "Turn PNGs into clean, scalable SVGs.",
+      "excerpt_hero": "Turn PNGs into clean, scalable SVGs.",
+      "excerpt_list": "Turn PNGs into clean, scalable SVGs.",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605580.611183
+      ]
+    },
+    {
+      "title": "Best Local AI Models by VRAM Size (7 18)",
+      "source": "Wikis/pages/entities/Best Local AI Models by VRAM Size (7 18).md",
+      "url": "pages/best-local-ai-models-by-vram-size-7-18.html",
+      "raw_body_merged": false,
+      "excerpt": "VRAM 크기별 추천 로컬 AI 모델 목록 (2026-07-18 기준):",
+      "excerpt_hero": "VRAM 크기별 추천 로컬 AI 모델 목록 (2026-07-18 기준):",
+      "excerpt_list": "VRAM 크기별 추천 로컬 AI 모델 목록 (2026-07-18 기준):",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605579.4866765
+      ]
+    },
+    {
+      "title": "빠릿에이전트 오픈소스 출시",
+      "source": "Wikis/pages/concepts/빠릿에이전트 오픈소스 출시.md",
+      "url": "pages/빠릿에이전트-오픈소스-출시.html",
+      "raw_body_merged": false,
+      "excerpt": "빠릿에이전트 오픈소스 금일 출시",
+      "excerpt_hero": "빠릿에이전트 오픈소스 금일 출시",
+      "excerpt_list": "빠릿에이전트 오픈소스 금일 출시",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605572.5292113
+      ]
+    },
+    {
+      "title": "바이브코딩 GA4 트래픽 추적 프롬프트",
+      "source": "Wikis/pages/references/바이브코딩 GA4 트래픽 추적 프롬프트.md",
+      "url": "pages/바이브코딩-ga4-트래픽-추적-프롬프트.html",
+      "raw_body_merged": false,
+      "excerpt": "최근에 바이브코딩 하는 많은 분들이 트래픽 추적을 단순히 'GA4 추적 코드'(애널리틱스)만 프롬프트에 붙여넣는 사실을 알았음.",
+      "excerpt_hero": "최근에 바이브코딩 하는 많은 분들이 트래픽 추적을 단순히 'GA4 추적 코드'(애널리틱스)만 프롬프트에 붙여넣는 사실을 알았음.",
+      "excerpt_list": "최근에 바이브코딩 하는 많은 분들이 트래픽 추적을 단순히 'GA4 추적 코드'(애널리틱스)만 프롬프트에 붙여넣는 사실을…",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605569.7591739
+      ]
+    },
+    {
+      "title": "Qwen3-TTS 추론 5배 가속 오픈소스 (qwen3-tts-triton)",
+      "source": "Wikis/pages/entities/Qwen3-TTS 추론 5배 가속 오픈소스 (qwen3-tts-triton).md",
+      "url": "pages/qwen3-tts-추론-5배-가속-오픈소스-qwen3-tts-triton.html",
+      "raw_body_merged": false,
+      "excerpt": "Qwen3-TTS 추론 속도를 최대 5배 뻥튀기해주는 오픈소스가 나왔다. 코드 딱 한 줄이면 적용 끝.",
+      "excerpt_hero": "Qwen3-TTS 추론 속도를 최대 5배 뻥튀기해주는 오픈소스가 나왔다. 코드 딱 한 줄이면 적용 끝.",
+      "excerpt_list": "Qwen3-TTS 추론 속도를 최대 5배 뻥튀기해주는 오픈소스가 나왔다. 코드 딱 한 줄이면 적용 끝.",
+      "date": "2026-07-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-21",
+        1784605314.3124654
+      ]
+    },
+    {
+      "title": "Ternary Bonsai 27B GGUF — PrismML의 차력쇼",
+      "source": "Wikis/pages/references/Ternary Bonsai 27B GGUF — PrismML의 차력쇼.md",
+      "url": "pages/ternary-bonsai-27b-gguf-prismml의-차력쇼.html",
+      "raw_body_merged": false,
+      "excerpt": "PrismML 이 차력쇼를 계속 하고 있었네요 ㅋㅋ",
+      "excerpt_hero": "PrismML 이 차력쇼를 계속 하고 있었네요 ㅋㅋ",
+      "excerpt_list": "PrismML 이 차력쇼를 계속 하고 있었네요 ㅋㅋ",
+      "date": "2026-07-15",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-15",
+        1784116157.9230294
+      ]
+    },
+    {
+      "title": "Bonsai 27B — 1-bit LLM (54GB → 3.8GB, 브라우저 로컬 실행)",
+      "source": "Wikis/pages/entities/Bonsai 27B — 1-bit LLM (54GB → 3.8GB, 브라우저 로컬 실행).md",
+      "url": "pages/bonsai-27b-1-bit-llm-54gb-3-8gb-브라우저-로컬-실행.html",
+      "raw_body_merged": false,
+      "excerpt": "1-bit LLM",
+      "excerpt_hero": "1-bit LLM",
+      "excerpt_list": "1-bit LLM",
+      "date": "2026-07-15",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-15",
+        1784116157.872338
+      ]
+    },
+    {
+      "title": "아이가 떼쓸 때 하면 안 되는 말 3가지",
+      "source": "Wikis/pages/concepts/아이가 떼쓸 때 하면 안 되는 말 3가지.md",
+      "url": "pages/아이가-떼쓸-때-하면-안-되는-말-3가지.html",
+      "raw_body_merged": false,
+      "excerpt": "아이가 떼쓸 때 하면 안 되는 말 3가지",
+      "excerpt_hero": "아이가 떼쓸 때 하면 안 되는 말 3가지",
+      "excerpt_list": "아이가 떼쓸 때 하면 안 되는 말 3가지",
+      "date": "2026-07-15",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-15",
+        1784110883.5427005
+      ]
+    },
+    {
+      "title": "saju 🔮 — Claude Code Codex 무료 AI 사주 스킬",
+      "source": "Wikis/pages/references/saju 🔮 — Claude Code Codex 무료 AI 사주 스킬.md",
+      "url": "pages/saju-claude-code-codex-무료-ai-사주-스킬.html",
+      "raw_body_merged": false,
+      "excerpt": "원문 프로필 링크: https://github.com/be-realdeveloper/saju",
+      "excerpt_hero": "원문 프로필 링크: https://github.com/be-realdeveloper/saju",
+      "excerpt_list": "원문 프로필 링크: https://github.com/be-realdeveloper/saju",
+      "date": "2026-07-14",
+      "hero_image": "",
+      "_sort": [
+        "2026-07-14",
+        1784015929.9202905
+      ]
+    },
     {
       "title": "토스페이먼츠, PG 업계 최초 AI 연동 MCP 서버 도입",
       "source": "Wikis/pages/concepts/토스페이먼츠, PG 업계 최초 AI 연동 MCP 서버 도입.md",

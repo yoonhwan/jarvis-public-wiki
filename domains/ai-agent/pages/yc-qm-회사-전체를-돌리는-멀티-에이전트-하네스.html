@@ -1,0 +1,66 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YC QM — 회사 전체를 돌리는 멀티 에이전트 하네스 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260805-230047-KST">Jarvis Wiki / ai-agent</a><h1>YC QM — 회사 전체를 돌리는 멀티 에이전트 하네스</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>YC QM — 회사 전체를 돌리는 멀티 에이전트 하네스</h1>
+<blockquote>Source candidate from <code>News-Links/2026-08-02 YC QM 멀티 에이전트 하네스 오픈소스/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>YC QM — 회사 전체를 돌리는 멀티 에이전트 하네스</h1>
+<blockquote>YC가 새 소프트웨어를 공개하며 설치 안내를 딱 한 줄 남겼다: <strong>&quot;코딩 에이전트한테 &#x27;이 레포를 배포해&#x27;라고 시키세요.&quot;</strong></blockquote>
+<h2>핵심 요약</h2>
+<ul>
+<li>어제 YC가 내부에서 쓰던 <strong>멀티 에이전트 하네스 QM</strong>(여러 에이전트를 실제 업무에 붙여 돌리는 실행 틀)을 <strong>MIT 라이선스</strong>로 공개</li>
+<li>공개 <strong>15시간 만에 조회수 100만(1M)</strong> 돌파</li>
+<li>개인 비서가 아니라 <strong>회사 전체를 겨냥한 물건</strong> — 에이전트에게 시키는 단위가 개인에서 조직으로 이동</li>
+<li>이름 QM = <strong>quartermaster</strong>(갑판 아래에서 물자·질서를 챙기는 직책)의 약자</li>
+</ul>
+<h2>본문 (Main Post)</h2>
+<h3>1. 회계·법무·이벤트·엔지니어링 전부 에이전트로 돌린다</h3>
+<p>기존 에이전트 대부분은 개인 비서용 → 한 사람엔 잘 붙지만 회사에 붙이면 금세 복잡. <strong>QM은 처음부터 스타트업 단위로 설계</strong>:</p>
+<ul>
+<li>직원마다 자기만의 <strong>격리 워크스페이스</strong></li>
+<li>사람과 방 하나하나에 <strong>메모리, 파일, 권한, 크론, 샌드박스</strong>가 따로 부착</li>
+<li>혼자 쓰던 설정 그대로 <strong>Slack 채널·프로젝트</strong>에 들어가 같이 일함</li>
+</ul>
+<p>YC는 실제로 회계·법무·이벤트·엔지니어링을 이 위에서 돌리며, <strong>QM을 고치는 작업도 QM 안에서</strong> 한다.</p>
+<h3>2. Hermes 50대를 돌리다 한계 → QM 탄생</h3>
+<p>첫 시도가 아님. 진화 과정:</p>
+<table><thead><tr><th>단계</th><th>내용</th></tr></thead><tbody>
+<tr><td>1세대</td><td>Ruby로 짠 단순한 루프 + 내부 데이터 읽는 툴 몇 개. 쓸모는 있지만 할 수 있는 일이 좁음</td></tr>
+<tr><td>2세대</td><td>크론·웹훅 트리거를 붙여가며 버팀</td></tr>
+<tr><td>3세대</td><td>개인용 오픈소스 에이전트 <strong>OpenClaw</strong> 등장 → 방향 전환</td></tr>
+<tr><td>4세대</td><td>직원 개인 비서로 <strong>Hermes 에이전트 50대+</strong> 배포. 유연했으나 규모 관리가 버거워짐</td></tr>
+<tr><td>최종</td><td>목표 재정의: <strong>&quot;Hermes만큼 유연하되, 처음 시스템만큼 단순하게&quot;</strong> → 그 답이 QM</td></tr>
+</tbody></table>
+<h3>3. 코어는 하나, 하네스는 갈아 끼운다</h3>
+<ul>
+<li>모든 요청이 <strong>중앙 코어</strong>를 거침</li>
+<li>코어를 <strong>Pi, OpenCode, Codex, Claude Code</strong> 네 하네스가 구동 → 마음에 안 들면 교체. <strong>특정 벤더에 묶이지 않겠다는 설계</strong></li>
+<li>(재미있는 점: 출발점이던 <strong>Hermes는 이 목록에 없음</strong>)</li>
+</ul>
+<p><strong>보안 모드 3단계:</strong></p>
+<table><thead><tr><th>모드</th><th>동작</th></tr></thead><tbody>
+<tr><td>Strict</td><td>툴 호출을 사실상 전부 사람 승인에 걸어둠</td></tr>
+<tr><td>Auto (기본값)</td><td>외부 데이터·툴 결과를 분류기가 먼저 거른 뒤 모델에 넘김</td></tr>
+<tr><td>Dangerous</td><td>검사도 정지도 없음</td></tr>
+</tbody></table>
+<blockquote>단, 재귀 삭제·파괴적 SQL 같은 위험 명령은 <strong>어느 모드에서든 미리 정한 정책이 차단</strong>.</blockquote>
+<h3>4. 설치 문서가 사람을 향하지 않는다</h3>
+<ul>
+<li>공식 배포 절차: <strong><code>qm init</code></strong> 명령으로 배포용 스킬 생성 → 그 스킬을 에이전트한테 넘김</li>
+<li>인프라 설정·로그인 구성·커넥터 연결·배포·검증까지 <strong>에이전트가 진행</strong></li>
+<li>레포에 <strong><code>.claude/skills</code>, <code>.codex/skills</code></strong> 폴더가 처음부터 포함</li>
+<li><strong>이 소프트웨어의 첫 독자는 사람이 아니라 에이전트</strong></li>
+</ul>
+<h3>5. 맺음말</h3>
+<p>QM을 몇 달째 가장 많이 썼다는 YC 직원의 말:</p>
+<blockquote>&quot;우리는 일부러 말도 안 되게 작은 팀으로 남아 있는데, 아웃풋은 군대처럼 나온다.&quot;</blockquote>
+<p>YC 스스로 이 프로젝트를 <strong>실험(experiment)</strong>이라 부르며 초기 단계·버그 존재를 인정. 그러나 자기 회사를 통째로 올려 굴려본 다음 공개했다.</p>
+<blockquote><strong>&quot;다음 소프트웨어는 여러분이 설치하지 않습니다. 여러분의 에이전트가 설치합니다.&quot;</strong></blockquote>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li>&quot;오 이거 진짜 ... 너무 필요한데요&quot;</li>
+<li>&quot;번뜩!!!!ㅋㅋㅋㅋㅋ&quot;</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>소개(X) → <a href="https://x.com/ycombinator/status/2083243960684908768">https://x.com/ycombinator/status/2083243960684908768</a></li>
+<li>공식 소개 → <a href="https://qm.ycombinator.com/">https://qm.ycombinator.com/</a></li>
+<li>GitHub → <a href="https://github.com/yc-software/qm">https://github.com/yc-software/qm</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-08-02 YC QM 멀티 에이전트 하네스 오픈소스/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

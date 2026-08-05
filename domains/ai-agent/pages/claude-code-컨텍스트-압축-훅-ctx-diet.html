@@ -1,0 +1,32 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude Code 컨텍스트 압축 훅 — ctx-diet · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260805-230047-KST">Jarvis Wiki / ai-agent</a><h1>Claude Code 컨텍스트 압축 훅 — ctx-diet</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Claude Code 컨텍스트 압축 훅 — ctx-diet</h1>
+<blockquote>Source candidate from <code>News-Links/2026-07-26 Claude Code 컨텍스트 압축 훅 ctx-diet/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Claude Code 컨텍스트 압축 훅 — ctx-diet</h1>
+<blockquote>작성자: AI로 만든 것들 (@illuwa.trend) · Threads</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>Claude Code 쓰면서 <code>ls -la</code> 한 번 잘못 부르면 <strong>46,000 토큰</strong>이 날아갑니다.</p>
+<p>출력이 3,000줄이라서가 아닙니다.</p>
+<p>Claude Code는 <strong>매 턴마다 대화 전체를 다시 보냅니다.</strong> 5턴째에 들어오는 1,000토큰짜리 쓸모없는 출력은 50턴 세션이면 46번 실려 나갑니다.</p>
+<pre><code>1,000 x 46 = 46,000</code></pre>
+<p>Max 5x의 5시간 한도가 약 <strong>88,000토큰</strong>입니다. 이런 실수 두 번이면 한 창이 날아갑니다.</p>
+<p>그래서 &quot;질문을 짧게 하라&quot;는 조언은 효과가 없습니다. 질문은 원래 30토큰이었으니까요. <strong>범인은 도구 출력</strong>입니다.</p>
+<p>출력이 컨텍스트에 닿기 전에 <strong>가로채서 압축하는 훅</strong>을 만들었습니다. MIT로 공개합니다.</p>
+<p>→ github.com/illuwa/ctx-diet</p>
+<h2>압축 효과 (예시)</h2>
+<table><thead><tr><th>도구 출력</th><th>압축 전</th><th>압축 후</th></tr></thead><tbody>
+<tr><td><code>ps aux</code></td><td>7,002자</td><td>244자</td></tr>
+<tr><td>파일 목록</td><td>23,789자</td><td>1,578자</td></tr>
+</tbody></table>
+<p><strong>실패한 로그는 압축하지 않습니다.</strong> 그게 없으면 이틀 쓰다 끄게 되거든요.</p>
+<h2>핵심 인사이트</h2>
+<ul>
+<li>Claude Code의 토큰 소모는 출력 길이 자체보다 <strong>매 턴 전체 대화 재전송</strong> 구조에서 누적된다.</li>
+<li>초반 턴에 쌓인 불필요한 도구 출력일수록 세션 내내 반복 청구되어 비용이 기하급수적으로 커진다.</li>
+<li>대응책은 질문 축약이 아니라 <strong>도구 출력을 컨텍스트 진입 전에 가로채 압축</strong>하는 것.</li>
+<li>단, 실패 로그는 디버깅에 필요하므로 압축 대상에서 제외.</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>원문 GitHub: &lt;<a href="https://github.com/illuwa/ctx-diet&gt;">https://github.com/illuwa/ctx-diet&gt;</a> (MIT License)</li>
+<li>Threads 원문: &lt;<a href="https://www.threads.com/@illuwa.trend/post/DbNxaHTAYCM?xmt=AQG0sf59kabrrX2tniHJmYYJQd4kagq4etUbQo0lrtwmpRFXudX4PsK7<em>J5Je4HBJijPe9J</em>&amp;slof=1&gt;">https://www.threads.com/@illuwa.trend/post/DbNxaHTAYCM?xmt=AQG0sf59kabrrX2tniHJmYYJQd4kagq4etUbQo0lrtwmpRFXudX4PsK7<em>J5Je4HBJijPe9J</em>&amp;slof=1&gt;</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-07-26 Claude Code 컨텍스트 압축 훅 ctx-diet/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

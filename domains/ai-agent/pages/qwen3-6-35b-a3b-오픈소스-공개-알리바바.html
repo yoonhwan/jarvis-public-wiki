@@ -1,0 +1,74 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Qwen3.6-35B-A3B 오픈소스 공개 (알리바바) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260805-230047-KST">Jarvis Wiki / ai-agent</a><h1>Qwen3.6-35B-A3B 오픈소스 공개 (알리바바)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Qwen3.6-35B-A3B 오픈소스 공개 (알리바바)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-07-21 Qwen3.6-35B-A3B 오픈소스 공개/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Qwen3.6-35B-A3B 오픈소스 공개 (알리바바)</h1>
+<blockquote>Threads @qjc.ai 스크랩 — 본문 + 작성자 댓글 스레드 포함</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>어제(4월 16일), 알리바바가 <strong>Qwen3.6-35B-A3B</strong>를 공식 오픈소스로 풀었습니다.</p>
+<ul>
+<li><strong>Apache 2.0 라이선스</strong> — 상업적 자유 사용 가능</li>
+<li>그런데 스펙을 보니까 숨이 턱 막히더라는 것</li>
+</ul>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 내용)</h2>
+<h3>1. 파라미터 구조 (MoE)</h3>
+<table><thead><tr><th>항목</th><th>값</th></tr></thead><tbody>
+<tr><td>총 파라미터</td><td>350억</td></tr>
+<tr><td>활성 파라미터</td><td>30억 (단 30억!)</td></tr>
+<tr><td>구조</td><td>256명의 전문가 중 9명만 활성 (MoE)</td></tr>
+</tbody></table>
+<p>&quot;필요할 때만 필요한 전문가를 부른다&quot; — 치과 진료에 종합병원 의사 전체를 부르지 않는 것과 같은 원리.</p>
+<h3>2. 에이전틱 코딩 벤치마크 (Terminal-Bench 2.0)</h3>
+<table><thead><tr><th>모델</th><th>점수</th></tr></thead><tbody>
+<tr><td><strong>Qwen3.6-35B-A3B</strong></td><td><strong>51.5</strong></td></tr>
+<tr><td>Gemma4-31B</td><td>42.9</td></tr>
+<tr><td>Qwen3.5-35B-A3B</td><td>40.5</td></tr>
+</tbody></table>
+<p>한 세대 만에 11점 상승 — 코딩 에이전트 업계 신기록.</p>
+<h3>3. SWE-bench Verified</h3>
+<table><thead><tr><th>모델</th><th>점수</th></tr></thead><tbody>
+<tr><td><strong>Qwen3.6</strong></td><td><strong>73.4</strong></td></tr>
+<tr><td>Qwen3.5 (이전 세대)</td><td>70.0</td></tr>
+<tr><td>Gemma4-31B</td><td>52.0</td></tr>
+</tbody></table>
+<p>현업 PR 올리고 테스트 통과 비율 — 10건 중 7건 이상 해결.</p>
+<h3>4. Claude Code에 바로 연결 (핵심)</h3>
+<p>환경변수 두 줄만 바꾸면 됩니다:</p>
+<pre><code>ANTHROPIC_BASE_URL=https://dashscope-intl.aliyuncs.com/apps/anthropic
+ANTHROPIC_MODEL=qwen3.6-flash</code></pre>
+<p>코드 수정 한 줄도 없이 Qwen을 Claude Code에 꽂을 수 있음.</p>
+<h3>5. 비전-언어 성능 (vs Claude Sonnet 4.5)</h3>
+<table><thead><tr><th>벤치마크</th><th>Qwen3.6</th><th>Claude Sonnet 4.5</th></tr></thead><tbody>
+<tr><td>MMMU (대학 수준 멀티모달)</td><td><strong>81.7</strong></td><td>79.6</td></tr>
+<tr><td>RealWorldQA</td><td><strong>85.3</strong></td><td>70.3</td></tr>
+<tr><td>MMBench</td><td><strong>92.8</strong></td><td>88.3</td></tr>
+<tr><td>OmniDocBench 1.5</td><td><strong>89.9</strong></td><td>85.8</td></tr>
+</tbody></table>
+<p>오픈소스가 클로즈드 모델을 이김.</p>
+<h3>6. 컨텍스트 &amp; 모드</h3>
+<ul>
+<li>컨텍스트 <strong>131,072 토큰</strong> — 책 한 권(약 10만 단어)을 통째로 넣고 요약 가능</li>
+<li><strong>Thinking / Non-thinking 모드</strong> 전환 가능 (한 모델로 둘 다)</li>
+</ul>
+<h3>7. 로컬 실행 성능</h3>
+<table><thead><tr><th>하드웨어</th><th>속도</th></tr></thead><tbody>
+<tr><td>RTX 4090 (24GB VRAM)</td><td>초당 196 토큰</td></tr>
+<tr><td>M4 Max 맥북</td><td>60-70 토큰</td></tr>
+</tbody></table>
+<h3>8. 효율성</h3>
+<p>30억 활성 파라미터로 270억 덴스 모델(Qwen3.5-27B) 수준을 넘어섬 — 10배 작은 컴퓨팅으로 10배 큰 모델을 이긴 셈. MoE의 진짜 가치.</p>
+<h2>정리 (요약)</h2>
+<ol>
+<li>에이전틱 코딩 새 1위 (Terminal-Bench 51.5)</li>
+<li>Claude Code 설정 2줄로 즉시 전환 가능</li>
+<li>비전 성능에서 Claude Sonnet 4.5 추월</li>
+<li>24GB GPU 한 장으로 로컬 실행</li>
+<li>Apache 2.0 상업 사용 자유</li>
+<li>컨텍스트 13만 토큰</li>
+</ol>
+<blockquote>Claude만 쓰던 사람도 이제 Qwen을 대체재로 놓을 수 있게 됨 — 비용이 10분의 1.</blockquote>
+<blockquote>다음 주부터 OpenClaw 설정에 Qwen을 백업 옵션으로라도 추가 권장.</blockquote>
+<h2>참고 자료</h2>
+<ul>
+<li>원문 블로그: <a href="https://qwen.ai/blog?id=qwen3.6-35b-a3b">https://qwen.ai/blog?id=qwen3.6-35b-a3b</a></li>
+<li>Threads 소스: <a href="https://www.threads.com/@qjc.ai/post/DXNsQrAEwvf">https://www.threads.com/@qjc.ai/post/DXNsQrAEwvf</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-07-21 Qwen3.6-35B-A3B 오픈소스 공개/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

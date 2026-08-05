@@ -1,0 +1,37 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bonsai 27B — 1-bit LLM (54GB → 3.8GB, 브라우저 로컬 실행) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260805-230047-KST">Jarvis Wiki / ai-agent</a><h1>Bonsai 27B — 1-bit LLM (54GB → 3.8GB, 브라우저 로컬 실행)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Bonsai 27B — 1-bit LLM (54GB → 3.8GB, 브라우저 로컬 실행)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-07-15 Bonsai 27B 1-bit LLM/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Bonsai 27B — 1-bit LLM (54GB → 3.8GB, 브라우저 로컬 실행)</h1>
+<blockquote>Sung Kim (@sung.kim.mw) Threads 포스트 스크랩</blockquote>
+<h2>본문 (Main Post)</h2>
+<p><strong>1-bit LLM</strong></p>
+<p>Bonsai 27B, shrinked from 54GB to just 3.8GB (<strong>-93%</strong>), runs locally in your browser.</p>
+<ul>
+<li><strong>Models</strong>: <a href="https://huggingface.co/collections/prism-ml/bonsai-27b">https://huggingface.co/collections/prism-ml/bonsai-27b</a></li>
+<li><strong>Demo</strong>: <a href="https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels">https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels</a></li>
+</ul>
+<h2>핵심 요약</h2>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody>
+<tr><td>모델</td><td>Bonsai 27B (PrismML)</td></tr>
+<tr><td>원본 크기</td><td>54GB</td></tr>
+<tr><td>압축 후</td><td>3.8GB (-93%)</td></tr>
+<tr><td>양자화</td><td>1-bit</td></tr>
+<tr><td>실행 환경</td><td>브라우저 내 로컬 (WebGPU)</td></tr>
+</tbody></table>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li><strong>Q</strong>: how dumb is it gonna be? (얼마나 멍청해지나?)</li>
+<li><strong>A</strong>: It can be even better. The catch is you can&#x27;t &quot;re-quantize&quot; existing models. You need to start the training from scratch using the new architecture.</li>
+</ul>
+<p>  → 기존 모델을 재양자화하는 게 아니라, 새 아키텍처로 <strong>처음부터 학습</strong>해야 함</p>
+<ul>
+<li>&quot;works fantastically&quot; (실사용 후기 — 잘 작동함)</li>
+<li><strong>Q</strong>: 1 bit 27B 3.8gb vs 4bit 3B 3.8gb, which one needs vram how is it? (같은 3.8GB 용량에서 1-bit 27B vs 4-bit 3B 비교 질문)</li>
+<li>(광둥어) 4bit nvfp4도 좀 멍청한데 1-bit로 뭘 할 수 있나?</li>
+<li>1 bit means only storing 0 and 1 for each parameter? The accuracy will definitely decrease drastically. (파라미터당 0/1만 저장하면 정확도 급락 우려)</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>Models: <a href="https://huggingface.co/collections/prism-ml/bonsai-27b">https://huggingface.co/collections/prism-ml/bonsai-27b</a></li>
+<li>Demo (WebGPU): <a href="https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels">https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-07-15 Bonsai 27B 1-bit LLM/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

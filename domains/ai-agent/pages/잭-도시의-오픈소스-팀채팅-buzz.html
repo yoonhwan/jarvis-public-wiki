@@ -1,0 +1,58 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>잭 도시의 오픈소스 팀채팅 Buzz · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260805-230047-KST">Jarvis Wiki / ai-agent</a><h1>잭 도시의 오픈소스 팀채팅 Buzz</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>잭 도시의 오픈소스 팀채팅 Buzz</h1>
+<blockquote>Source candidate from <code>News-Links/2026-07-30 잭 도시의 오픈소스 팀채팅 Buzz/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>잭 도시의 오픈소스 팀채팅 &quot;Buzz&quot;</h1>
+<blockquote>트위터 만든 사람이 이제 팀 채팅까지 다시 만드는 이유, 기능이 아니라 종속 문제.</blockquote>
+<p>잭 도시(Jack Dorsey)가 Slack 쓰는 게 지겨워서 아예 새로 만든 오픈소스 팀 채팅 <strong>Buzz</strong>. 런칭 트윗에 밝힌 이유는 <em>&quot;Slack과 Github 의존도를 줄이려고 만들었다.&quot;</em></p>
+<h2>본문 (Main Post)</h2>
+<p>잭 도시가 Slack 쓰는 게 지겨워서 아예 새로 만들었습니다. 이름은 <strong>Buzz</strong>, 오픈소스 입니다.</p>
+<p>런칭 트윗에 이유를 직접 적어놨습니다. <em>&quot;Slack과 Github 의존도를 줄이려고 만들었다.&quot;</em> 트위터 만든 사람이 이제 팀 채팅까지 다시 만드는 이유는 기능이 아니라 <strong>종속 문제</strong>입니다.</p>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 내용)</h2>
+<h3>1. 겉모습은 Slack, 차이는 두 가지</h3>
+<p>겉모습은 Slack입니다. 채널 있고, 스레드 있고, DM 있고. 다른 건 두 가지.</p>
+<table><thead><tr><th>차이점</th><th>내용</th></tr></thead><tbody>
+<tr><td><strong>AI 에이전트 = 정식 멤버</strong></td><td>봇이 아니라 정식 멤버. 사람 계정 빌려 쓰는 게 아니라 자기 계정, 자기 암호키, 자기 권한을 따로 받음. 채널 초대 방식도 동료 초대와 동일</td></tr>
+<tr><td><strong>Git 호스팅 내장</strong></td><td>채팅, 코드 리뷰, 에이전트 작업이 한 창에서 돌아가는 구조</td></tr>
+</tbody></table>
+<p>Claude Code, Codex, goose 전부 붙습니다. 모델 안 가려요.</p>
+<h3>2. 핵심은 소유권 (Ownership)</h3>
+<p>Slack에 쌓인 몇 년 치 데이터는 다른 데로 못 옮깁니다. 그래서 다들 그냥 눌러앉죠. 모델 접근도 마찬가지.</p>
+<p>원문 필자의 지적:</p>
+<ul>
+<li>오늘 월 $200인 무제한 요금제가 내일 얼마가 될지 모름</li>
+<li>출시 며칠 만에 회수되는 모델도 실제로 봤음</li>
+</ul>
+<blockquote>채팅도 모델도 남의 손에 있으면, 그 위에 세운 사업도 남의 손에 있는 겁니다.</blockquote>
+<p><strong>Buzz의 답은 셀프호스팅.</strong> 대화, 파일, Git 원격저장소가 전부 내가 돌리는 릴레이 서버에 남습니다. 로컬 모델 받아서 팀이 나눠 쓰는 공유 컴퓨트 기능도 제공.</p>
+<h3>3. 사용자 Vinny의 워크플로 루프</h3>
+<p>팟캐스트에 나온 사용자 Vinny의 루프:</p>
+<ol>
+<li>팀 트윗 리더보드 앱을 에이전트한테 시켜서 만듦</li>
+<li>그 앱에 공개 API를 뚫음</li>
+<li>매일 수치를 채널로 끌어오는 워크플로를 걸음</li>
+<li>다이제스트에 답장으로 에이전트한테 질문: <em>&quot;최근 7일 잘된 트윗들의 공통점이 뭐야?&quot;</em></li>
+</ol>
+<p>→ 앱으로 나간 정보가 다시 에이전트 컨텍스트로 돌아오는 <strong>순환</strong> 구조.</p>
+<p>Slack에서 같은 걸 하려면 API 토큰에 플랫폼 앱에 공부할 게 한가득인데, 여기선 도구 연결이 15분이면 끝난다는 게 그의 설명.</p>
+<h3>4. 솔직한 현재 상태 (베타/알파)</h3>
+<p>솔직히 지금은 베타, 어쩌면 알파:</p>
+<ul>
+<li>워크플로는 거칠고</li>
+<li>속도는 Claude Code보다 느리고</li>
+<li>모바일 앱은 아직 작업 중</li>
+</ul>
+<p>그런데 이 제품이 드러낸 사실 하나는 이미 유효합니다:</p>
+<blockquote>팀 채팅은 어느새 컨텍스트 저장소가 됐고, 최고의 아웃풋은 컨텍스트를 가장 많이 쥔 쪽에서 나옵니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>그 저장소를 남의 서버에 둘 거냐, 내 서버에 둘 거냐 — Buzz가 던진 질문은 이겁니다.</blockquote>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li><strong>모바일 나올때까지는 존버...</strong></li>
+<li>슬랙 만들어서 타우리로 감싸서 만들어 쓰는데.. 이쪽이 200배 좋아보이네요 ㅠ</li>
+<li>잭도시라서..? ㅋㅋㅋㅋㅋㅋ / goose는 빛을 못 보지만요</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li><a href="https://github.com/block/buzz">github.com/block/buzz</a> — Buzz 오픈소스 저장소</li>
+<li>원문 Threads: <a href="https://www.threads.com/@unclejobs.ai/post/DbXiYTeCeC4">@unclejobs.ai/post/DbXiYTeCeC4</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-07-30 잭 도시의 오픈소스 팀채팅 Buzz/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

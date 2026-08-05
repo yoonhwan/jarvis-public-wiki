@@ -1,0 +1,38 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>마이크로소프트 SkillOpt — SKILL.md 자동 개선 오픈소스 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260805-230047-KST">Jarvis Wiki / ai-agent</a><h1>마이크로소프트 SkillOpt — SKILL.md 자동 개선 오픈소스</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>마이크로소프트 SkillOpt — SKILL.md 자동 개선 오픈소스</h1>
+<blockquote>Source candidate from <code>News-Links/2026-08-04 마이크로소프트 SkillOpt - 스킬 개선 오픈소스/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>마이크로소프트 SkillOpt — SKILL.md 자동 개선 오픈소스</h1>
+<blockquote>Threads @nextcocoai 포스트 스크랩. 작성자 주의: &quot;개발자 아님, 전문가 아님 — 반드시 검증하여 쓸 것&quot;</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>마이크로소프트에서 스킬 개선 오픈소스가 나와서 점심 시간을 반납하고 알아보았다.</p>
+<p><strong>(주의: 개발자 아님, 전문가 아님 — 반드시 검증하여 쓸 것)</strong></p>
+<h3>작동 방식 (추정)</h3>
+<ol>
+<li>과거 Codex·Claude 작업 기록을 읽음</li>
+<li>현재 <code>SKILL.md</code>로 그 작업을 다시 실행함</li>
+<li>잘못된 부분이나 빠진 지시를 찾음</li>
+<li>수정안을 만듦</li>
+<li>검증 점수가 좋아질 때만 수정안을 임시 보관함</li>
+<li>사용자가 확인한 뒤 <code>adopt</code>를 실행해야 실제 <code>SKILL.md</code>에 반영됨</li>
+</ol>
+<h3>실제 사용 결과 — 검증 항목</h3>
+<p>실제 사용해 본 결과 다음 항목으로 검증할 수 있었다.</p>
+<ol>
+<li>원본 Claude JSONL을 수정하지 않는가</li>
+<li>실제 파일 상태를 다시 읽는가</li>
+<li>실패 시 실행 명령·원인·다음 조치를 보고하는가</li>
+<li>Codex 대화 목록에 파일이 자동으로 나타난다고 잘못 말하지 않는가</li>
+</ol>
+<h3>추천 사용법</h3>
+<p>처음에는 <strong>dry-run</strong>으로 시험하고, 수정안 확인 후에만 실제 적용하는 것을 추천한다.</p>
+<h2>핵심 요약</h2>
+<ul>
+<li>Codex/Claude의 과거 작업 로그를 근거로 <code>SKILL.md</code>를 자동 점검·개선하는 도구</li>
+<li>검증 점수가 개선될 때만 수정안을 임시 보관 → 사용자 <code>adopt</code> 승인 후에만 반영 (안전장치)</li>
+<li>원본 로그(JSONL)는 건드리지 않고, dry-run 워크플로우 지향</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>원본 소스: &lt;<a href="https://github.com/microsoft/SkillOpt&gt;">https://github.com/microsoft/SkillOpt&gt;</a></li>
+<li>Threads 원문: &lt;<a href="https://www.threads.com/@nextcocoai/post/DbceRKWD2md&gt;">https://www.threads.com/@nextcocoai/post/DbceRKWD2md&gt;</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-08-04 마이크로소프트 SkillOpt - 스킬 개선 오픈소스/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
