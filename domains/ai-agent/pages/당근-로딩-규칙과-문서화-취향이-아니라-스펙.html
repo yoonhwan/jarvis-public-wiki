@@ -1,0 +1,37 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>당근 로딩 규칙과 문서화 — 취향이 아니라 스펙 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260813-130915-KST">Jarvis Wiki / ai-agent</a><h1>당근 로딩 규칙과 문서화 — 취향이 아니라 스펙</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>당근 로딩 규칙과 문서화 — 취향이 아니라 스펙</h1>
+<blockquote>Source candidate from <code>News-Links/2026-08-12 당근 로딩 규칙과 문서화 - 취향이 아니라 스펙/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>당근 로딩 규칙과 문서화 — &quot;취향이 아니라 스펙&quot;</h1>
+<blockquote>작성자: 문형근 (@moon_crystalpower1234) · Threads</blockquote>
+<blockquote>요지: 당근(Seed Design)이 공개한 로딩 패턴 문서는 로딩 표시를 <strong>시간 구간별로 규칙화</strong>했고, 맨 앞 규칙이 &quot;안 넣는 걸 권한다&quot;였다. 판단을 사람 기억이 아니라 숫자로 박아두면 취향이 아니라 스펙이 된다.</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>당근이 공개한 문서에 로딩 규칙이 다섯 칸 있는데요.</p>
+<p>맨 앞 칸이 <strong>&quot;안 넣는 걸 권한다&quot;</strong> 였습니다.</p>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 내용)</h2>
+<h3>1/ 시간으로 갈라놓은 로딩 규칙</h3>
+<table><thead><tr><th>소요 시간</th><th>권장 로딩 표시</th></tr></thead><tbody>
+<tr><td>~1초</td><td><strong>아무것도 띄우지 않음</strong> (띄우면 화면이 깜빡임)</td></tr>
+<tr><td>1~4초</td><td>스피너(돌기만 하는 표시) 또는 스켈레톤</td></tr>
+<tr><td>4~10초</td><td>위 + 진행 바(progress bar)</td></tr>
+<tr><td>10초 초과</td><td>남은 양을 알 수 있는 형태 (percentage 등)</td></tr>
+<tr><td>1분 초과</td><td>취소할 수 있는 방법까지 제공</td></tr>
+</tbody></table>
+<p>참고: <a href="https://seed-design.io/patterns/loading">https://seed-design.io/patterns/loading</a></p>
+<h3>2/ 기준이 없어서 &quot;이상해&quot; 보였던 것</h3>
+<p>로딩 표시가 안 보이면 일단 이상하다고 봤지만, 몇 초짜리인지는 안 재봤다. 1초 안에 끝나는 화면이면 로딩을 안 보이는 게 맞는 거였다. 기준이 없어서 이상해 보였던 것.</p>
+<h3>3/ 코드 쪽에도 같은 원리 (자동 생성 파일 보호)</h3>
+<p>자동으로 만들어지는 파일을 AI가 고치려 하면 막아버리는 장치. 단순히 막기만 하는 게 아니라 <strong>원본 위치</strong>와 <strong>다시 만들려면 무엇을 실행해야 하는지</strong>까지 함께 출력한다.</p>
+<p>→ 본인도 같은 자리에서 두 번 날려먹고 막아뒀지만, 막힌 다음 뭘 해야 하는지는 안 알려주고 있었다는 반성.</p>
+<h3>4/ 배운 것 — 판단을 숫자로 박아두기</h3>
+<p>공개된 건 웹 쪽이라 그대로 받아 쓸 건 없었지만, <strong>문서 쓰는 방식</strong>을 배웠다. 판단을 사람 기억에 안 맡기고 숫자로 박아두면, 그때부터 취향이 아니라 스펙이 된다.</p>
+<blockquote>&quot;로딩 표시 안 뜬다고 이상하다 하신 적, 있으세요?&quot; — AI 부리는 QA</blockquote>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li><strong>A</strong>: 서비스마다·화면마다 기준이 다를 수 있어 &quot;1초까진 안 띄운다&quot;로 고정하기보다 내부 테스트를 해보는 것도 좋아 보인다. 관련 아티클 공유 → <a href="https://tech.kakaopay.com/post/skeleton-ui-idea/">https://tech.kakaopay.com/post/skeleton-ui-idea/</a></li>
+<li><strong>작성자 답글</strong>: 저도 이 아티클 좋아해요. 그래서 일부러 딜레이 컴포넌트를 만들고 값을 세부 조정한다.</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>Seed Design — Loading 패턴: <a href="https://seed-design.io/patterns/loading">https://seed-design.io/patterns/loading</a></li>
+<li>카카오페이 기술블로그 — 스켈레톤 UI 아이디어: <a href="https://tech.kakaopay.com/post/skeleton-ui-idea/">https://tech.kakaopay.com/post/skeleton-ui-idea/</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-08-12 당근 로딩 규칙과 문서화 - 취향이 아니라 스펙/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

@@ -1,0 +1,34 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hindsight — 스스로 학습하는 에이전트 메모리 오픈소스 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260813-130915-KST">Jarvis Wiki / ai-agent</a><h1>Hindsight — 스스로 학습하는 에이전트 메모리 오픈소스</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Hindsight — 스스로 학습하는 에이전트 메모리 오픈소스</h1>
+<blockquote>Source candidate from <code>News-Links/2026-08-11 Hindsight - 에이전트 메모리 오픈소스/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Hindsight — 스스로 학습하는 에이전트 메모리 오픈소스</h1>
+<blockquote>Threads <a href="https://www.threads.com/@think.5x">@think.5x</a> 스크랩 (AI 사이드잡 자동화 · AI 인사이트)</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>RAG나 지식그래프로 에이전트 메모리 붙이던 방식, 이제 이 쪽도 있습니다.</p>
+<p><strong>Hindsight</strong>라는 오픈소스인데, 대화를 그대로 재생하는 대신 <strong>시간이 지날수록 스스로 학습하는 구조</strong>예요. LongMemEval 벤치마크에서 RAG와 지식그래프 방식보다 점수가 더 높다고 주장하고 있어요.</p>
+<p>벌써 <strong>19,394 stars</strong>, 하루 +81씩 늘고 있어요. 핵심 4가지 뜯어볼게요.</p>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 내용)</h2>
+<h3>1/ Retain·Recall·Reflect 3단 구조</h3>
+<p>저장할 때 LLM이 사실, 시간정보, 개체, 관계를 뽑아서 저장하는 <strong>Retain</strong>, 벡터 유사도·BM25 키워드·그래프·시간 필터링 4가지를 동시에 돌리는 <strong>Recall</strong>까지 있어요. 여기에 메모리를 다시 훑어보며 새 연결점을 만드는 <strong>Reflect</strong> 단계까지 거치니까, 예전에 놓친 맥락도 나중에 스스로 이어붙입니다.</p>
+<h3>2/ Docker 한 줄로 API+UI 동시 기동</h3>
+<pre><code>docker run -p 8888:8888 -p 9999:9999 \
+  -e HINDSIGHT_API_LLM_API_KEY=*** \
+  ghcr.io/vectorize-io/hindsight:latest</code></pre>
+<p>이 한 줄이면 API는 <strong>8888번</strong>, 관리 UI는 <strong>9999번</strong> 포트에 뜹니다.</p>
+<pre><code>pip install hindsight-client</code></pre>
+<p><code>client.retain(bank<em>id, content)</code>, <code>client.recall(bank</em>id, query)</code> 두 메서드만으로 서버 세팅 없이 바로 연동해볼 수 있어요.</p>
+<h3>3/ 메모리를 3종류로 나눠 저장</h3>
+<table><thead><tr><th>종류</th><th>설명</th></tr></thead><tbody>
+<tr><td>World facts</td><td>세계 사실</td></tr>
+<tr><td>Experiences</td><td>경험</td></tr>
+<tr><td>Mental Models</td><td>사고모델</td></tr>
+</tbody></table>
+<p>이렇게 3갈래로 나눠 저장하는 <strong>생체모방형 구조</strong>예요. LLM도 OpenAI, Anthropic, Gemini, Groq, Ollama, LMStudio, Minimax, Atlas Cloud까지 자유롭게 바꿔 끼울 수 있어서, 특정 벤더에 묶이지 않고 팀 사정에 맞춰 붙일 수 있습니다.</p>
+<h3>4/ 서버 없이 임베디드로도 동작</h3>
+<pre><code>pip install hindsight-all</code></pre>
+<p>별도 서버 없이 라이브러리 형태로 바로 붙습니다. 성능 재현은 <strong>버지니아텍 Sanghani Center</strong>와 <strong>워싱턴포스트</strong>가 독립적으로 검증했다고 밝히고 있어요. Fortune 500 기업과 AI 스타트업 실서비스에도 이미 쓰이고 있어서, 벤치마크 숫자만으로 판단하기 애매했던 팀엔 참고할 근거가 하나 더 생기는 거예요.</p>
+<h2>참고 자료</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a></li>
+<li>Threads 원문: <a href="https://www.threads.com/@think.5x/post/Db1<em>2qYn9R4">https://www.threads.com/@think.5x/post/Db1</em>2qYn9R4</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-08-11 Hindsight - 에이전트 메모리 오픈소스/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

@@ -1,0 +1,38 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AgentENV — Firecracker microVM 기반 초경량 에이전트 샌드박스 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260813-130915-KST">Jarvis Wiki / ai-agent</a><h1>AgentENV — Firecracker microVM 기반 초경량 에이전트 샌드박스</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>AgentENV — Firecracker microVM 기반 초경량 에이전트 샌드박스</h1>
+<blockquote>Source candidate from <code>News-Links/2026-08-11 AgentENV Firecracker microVM 샌드박스/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>AgentENV — Firecracker microVM 기반 초경량 에이전트 샌드박스</h1>
+<blockquote>Kimi K3의 강화학습(RL) 성과를 뒷받침한 병렬 학습 인프라</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>도커(Docker)는 너무 느리고 일반 가상머신(VM)은 무거워서 고민이셨다면, <strong>Kimi K3의 엄청난 강화학습(RL) 성과를 뒷받침한 이 비밀 무기</strong>에 주목해 보세요.</p>
+<p><code>AgentENV</code>는 <strong>Firecracker microVM</strong>을 활용해:</p>
+<table><thead><tr><th>항목</th><th>성능</th></tr></thead><tbody>
+<tr><td>부팅 시간</td><td>단 <strong>50ms</strong></td></tr>
+<tr><td>환경 복제(Fork)</td><td><strong>100ms 이내</strong></td></tr>
+<tr><td>동시 실행</td><td>수천 개의 격리된 샌드박스 병렬</td></tr>
+</tbody></table>
+<p>수천 개의 격리된 샌드박스를 동시에 가볍게 띄워 <strong>병렬 학습의 한계</strong>를 깨버립니다.</p>
+<p>기존 <strong>E2B SDK와도 코드 수정 없이 바로 호환</strong>되니, 무겁고 비싼 테스트 인프라에 지친 분들이라면 클론해 볼 만한 프로젝트입니다.</p>
+<p>🔗 출처: <a href="https://github.com/kvcache-ai/AgentENV">https://github.com/kvcache-ai/AgentENV</a></p>
+<h2>핵심 포인트</h2>
+<ul>
+<li><strong>Firecracker microVM</strong>: AWS Lambda/Fargate가 쓰는 초경량 가상화 기술. VM 수준 격리 + 컨테이너 수준 속도</li>
+<li><strong>50ms 부팅 / 100ms Fork</strong>: RL 학습 시 수천 개 환경을 병렬로 돌려야 하는 워크로드에 최적</li>
+<li><strong>E2B SDK 호환</strong>: 기존 코드 변경 없이 드롭인 교체 가능</li>
+<li>Docker(느림) vs VM(무거움) 사이의 트레이드오프를 해결</li>
+</ul>
+<h2>댓글 스레드 (Reply Thread)</h2>
+<ul>
+<li><strong>작성자(feelfree_ai)</strong>: 🔗 출처: <a href="https://github.com/kvcache-ai/AgentENV">https://github.com/kvcache-ai/AgentENV</a></li>
+</ul>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li>&quot;claude code web 도 Firecracker microVM 이죠!&quot;</li>
+<li>&quot;이런게 있을거 같았는데 그랬군요. 이런거로 RL을 시키니 이젠 툴콜과 태스크 너무 돌리는 느낌&quot;</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/kvcache-ai/AgentENV">https://github.com/kvcache-ai/AgentENV</a></li>
+<li>Firecracker: <a href="https://firecracker-microvm.github.io/">https://firecracker-microvm.github.io/</a></li>
+<li>E2B: <a href="https://e2b.dev/">https://e2b.dev/</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-08-11 AgentENV Firecracker microVM 샌드박스/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

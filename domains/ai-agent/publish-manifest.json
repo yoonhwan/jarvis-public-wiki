@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-05T23:01:44.415025",
+  "generated_at": "2026-08-13T13:10:01.362120",
   "source": "Wikis/pages",
   "domain": "ai-agent",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260805-230047-KST",
+  "version": "20260813-130915-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -28,6 +28,126 @@
     }
   },
   "pages": [
+    {
+      "title": "당근 로딩 규칙과 문서화 — 취향이 아니라 스펙",
+      "source": "Wikis/pages/concepts/당근 로딩 규칙과 문서화 — 취향이 아니라 스펙.md",
+      "url": "pages/당근-로딩-규칙과-문서화-취향이-아니라-스펙.html",
+      "raw_body_merged": false,
+      "excerpt": "당근이 공개한 문서에 로딩 규칙이 다섯 칸 있는데요.",
+      "excerpt_hero": "당근이 공개한 문서에 로딩 규칙이 다섯 칸 있는데요.",
+      "excerpt_list": "당근이 공개한 문서에 로딩 규칙이 다섯 칸 있는데요.",
+      "date": "2026-08-12",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-12",
+        1786461116.9650064
+      ]
+    },
+    {
+      "title": "AI로 만든 서비스, 개인정보처리방침 없으면 과태료 3000만원",
+      "source": "Wikis/pages/references/AI로 만든 서비스, 개인정보처리방침 없으면 과태료 3000만원.md",
+      "url": "pages/ai로-만든-서비스-개인정보처리방침-없으면-과태료-3000만원.html",
+      "raw_body_merged": false,
+      "excerpt": "내 프로젝트에서 사용자 정보를 받거나 저장하는 곳을 전부 찾아줘.",
+      "excerpt_hero": "내 프로젝트에서 사용자 정보를 받거나 저장하는 곳을 전부 찾아줘.",
+      "excerpt_list": "내 프로젝트에서 사용자 정보를 받거나 저장하는 곳을 전부 찾아줘.",
+      "date": "2026-08-11",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-11",
+        1786427442.881104
+      ]
+    },
+    {
+      "title": "Escha-W2 — Qwen3.6-35B-A3B 2비트 양자화, 16GB VRAM 실행",
+      "source": "Wikis/pages/references/Escha-W2 — Qwen3.6-35B-A3B 2비트 양자화, 16GB VRAM 실행.md",
+      "url": "pages/escha-w2-qwen3-6-35b-a3b-2비트-양자화-16gb-vram-실행.html",
+      "raw_body_merged": false,
+      "excerpt": "EschaLabs가 Qwen3.6-35B-A3B를 2비트로 양자화한 Escha-W2를 Hugging Face에 공개했습니다. 256개 expert를 사용하는 MoE 모델이며 가중치 파일은 12.3GB입니다. NVIDIA 16GB VRAM에서도 실행할…",
+      "excerpt_hero": "EschaLabs가 Qwen3.6-35B-A3B를 2비트로 양자화한 Escha-W2를 Hugging Face에 공개했습니다. 256개 expert를 사용하는 MoE 모델이며 가중치 파일은 12.3GB입니다. NVIDIA 16GB VRAM에서도 실행할 수 있고 24GB를 권장합니다.",
+      "excerpt_list": "EschaLabs가 Qwen3.6-35B-A3B를 2비트로 양자화한 Escha-W2를 Hugging Face에 공개했습니다. 256개 expert를 사용하는 M…",
+      "date": "2026-08-11",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-11",
+        1786427428.0255687
+      ]
+    },
+    {
+      "title": "사업가들이 몰래 쓰는 사이트 10선",
+      "source": "Wikis/pages/concepts/사업가들이 몰래 쓰는 사이트 10선.md",
+      "url": "pages/사업가들이-몰래-쓰는-사이트-10선.html",
+      "raw_body_merged": false,
+      "excerpt": "사업가들이 몰래 쓰는 사이트. 메모해.",
+      "excerpt_hero": "사업가들이 몰래 쓰는 사이트. 메모해.",
+      "excerpt_list": "사업가들이 몰래 쓰는 사이트. 메모해.",
+      "date": "2026-08-11",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-11",
+        1786427404.984169
+      ]
+    },
+    {
+      "title": "17살 솔로 개발자, 모델 머징 아키텍처 'Fusion'으로 Fuse-1-Lite 공개",
+      "source": "Wikis/pages/entities/17살 솔로 개발자, 모델 머징 아키텍처 'Fusion'으로 Fuse-1-Lite 공개.md",
+      "url": "pages/17살-솔로-개발자-모델-머징-아키텍처-fusion-으로-fuse-1-lite-공개.html",
+      "raw_body_merged": false,
+      "excerpt": "17살 솔로 개발자가 새로운 모델 아키텍처 'Fusion'으로 Fuse-1-Lite를 공개했다. LiquidAI의 LFM 2.5-2.6B에 Qwen 3.6-35B-A3B의 코딩 전문가(expert) 960개를 융합한 MoE 모델이다.",
+      "excerpt_hero": "17살 솔로 개발자가 새로운 모델 아키텍처 'Fusion'으로 Fuse-1-Lite를 공개했다. LiquidAI의 LFM 2.5-2.6B에 Qwen 3.6-35B-A3B의 코딩 전문가(expert) 960개를 융합한 MoE 모델이다.",
+      "excerpt_list": "17살 솔로 개발자가 새로운 모델 아키텍처 'Fusion'으로 Fuse-1-Lite를 공개했다. LiquidAI의 LFM 2.5-2.6B에 Qwen 3.6-35…",
+      "date": "2026-08-11",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-11",
+        1786427400.9178128
+      ]
+    },
+    {
+      "title": "AgentENV — Firecracker microVM 기반 초경량 에이전트 샌드박스",
+      "source": "Wikis/pages/references/AgentENV — Firecracker microVM 기반 초경량 에이전트 샌드박스.md",
+      "url": "pages/agentenv-firecracker-microvm-기반-초경량-에이전트-샌드박스.html",
+      "raw_body_merged": false,
+      "excerpt": "도커(Docker)는 너무 느리고 일반 가상머신(VM)은 무거워서 고민이셨다면, Kimi K3의 엄청난 강화학습(RL) 성과를 뒷받침한 이 비밀 무기에 주목해 보세요.",
+      "excerpt_hero": "도커(Docker)는 너무 느리고 일반 가상머신(VM)은 무거워서 고민이셨다면, Kimi K3의 엄청난 강화학습(RL) 성과를 뒷받침한 이 비밀 무기에 주목해 보세요.",
+      "excerpt_list": "도커(Docker)는 너무 느리고 일반 가상머신(VM)은 무거워서 고민이셨다면, Kimi K3의 엄청난 강화학습(RL) 성과를 뒷받침한 이…",
+      "date": "2026-08-11",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-11",
+        1786427391.5217705
+      ]
+    },
+    {
+      "title": "Hindsight — 스스로 학습하는 에이전트 메모리 오픈소스",
+      "source": "Wikis/pages/entities/Hindsight — 스스로 학습하는 에이전트 메모리 오픈소스.md",
+      "url": "pages/hindsight-스스로-학습하는-에이전트-메모리-오픈소스.html",
+      "raw_body_merged": false,
+      "excerpt": "RAG나 지식그래프로 에이전트 메모리 붙이던 방식, 이제 이 쪽도 있습니다.",
+      "excerpt_hero": "RAG나 지식그래프로 에이전트 메모리 붙이던 방식, 이제 이 쪽도 있습니다.",
+      "excerpt_list": "RAG나 지식그래프로 에이전트 메모리 붙이던 방식, 이제 이 쪽도 있습니다.",
+      "date": "2026-08-11",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-11",
+        1786427387.8404853
+      ]
+    },
+    {
+      "title": "카카오톡 로컬 DB를 뜯어 대화 요약을 자동화하기",
+      "source": "Wikis/pages/entities/카카오톡 로컬 DB를 뜯어 대화 요약을 자동화하기.md",
+      "url": "pages/카카오톡-로컬-db를-뜯어-대화-요약을-자동화하기.html",
+      "raw_body_merged": false,
+      "excerpt": "카카오톡에는 대화를 읽는 공식 API가 없다. 맥의 로컬 DB가 유일한 입구라는 관찰에서 출발해, 암호화된 로컬 대화 DB를 열고 -> 새 메시지를 요약…",
+      "excerpt_hero": "카카오톡에는 대화를 읽는 공식 API가 없다. 맥의 로컬 DB가 유일한 입구라는 관찰에서 출발해, 암호화된 로컬 대화 DB를 열고 -> 새 메시지를 요약 -> Slack/Jira로 흘려보내는 개인용 자동화 파이프라인을 구성한 이야기.",
+      "excerpt_list": "카카오톡에는 대화를 읽는 공식 API가 없다. 맥의 로컬 DB가 유일한 입구라는 관찰에서 출발해, 암호화된…",
+      "date": "2026-08-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-08",
+        1786124517.590213
+      ]
+    },
     {
       "title": "마이크로소프트 SkillOpt — SKILL.md 자동 개선 오픈소스",
       "source": "Wikis/pages/references/마이크로소프트 SkillOpt — SKILL.md 자동 개선 오픈소스.md",
