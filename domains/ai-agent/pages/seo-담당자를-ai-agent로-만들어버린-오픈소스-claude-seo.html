@@ -1,0 +1,154 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SEO 담당자를 AI Agent로 만들어버린 오픈소스 — Claude SEO · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260909-114758-KST">Jarvis Wiki / ai-agent</a><h1>SEO 담당자를 AI Agent로 만들어버린 오픈소스 — Claude SEO</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>SEO 담당자를 AI Agent로 만들어버린 오픈소스 — Claude SEO</h1>
+<blockquote>Source candidate from <code>News-Links/2026-08-27 Claude SEO 오픈소스 Skill/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>SEO 담당자를 AI Agent로 만들어버린 오픈소스 — Claude SEO</h1>
+<p>Threads: <a href="https://www.threads.com/@i.am.luna.ai/post/DcaWPPeEd0O">@i.am.luna.ai</a> 포스트 요약.</p>
+<p>Claude Code에서 쓰는 SEO 전문 Skill 오픈소스 소개. GitHub ⭐ 5,000+.</p>
+<h2>요약</h2>
+<ul>
+<li><strong>25개 SEO 서브스킬 + 18개 전문 Agent</strong>를 병렬 실행해서 사이트를 분석하는 Claude Code용 오픈소스 Skill</li>
+<li>단순 &quot;SEO 점수 알려주는 도구&quot;가 아니라, Technical SEO부터 AI 검색 최적화(GEO)까지 폭넓게 커버</li>
+<li>Google Search Console / PageSpeed / CrUX / GA4 연동 지원 → 실제 검색 데이터 기반 분석</li>
+<li>지향점: &quot;데이터 대시보드&quot;가 아니라 &quot;분석 → 문제 발견 → 우선순위 결정 → 개선 방향 제시&quot;를 Agent가 수행</li>
+</ul>
+<h2>분석 영역</h2>
+<table><thead><tr><th>영역</th><th>비고</th></tr></thead><tbody>
+<tr><td>Technical SEO</td><td></td></tr>
+<tr><td>콘텐츠 품질 / E-E-A-T</td><td></td></tr>
+<tr><td>Schema.org</td><td></td></tr>
+<tr><td>AI 검색 최적화 (GEO)</td><td>&quot;AI에게 인용되기 좋은 문장&quot;, &quot;구조화 데이터/엔티티 충분성&quot; 등 분석</td></tr>
+<tr><td>Local SEO / Google Maps</td><td></td></tr>
+<tr><td>이커머스 SEO</td><td></td></tr>
+<tr><td>국제 SEO / hreflang</td><td></td></tr>
+<tr><td>백링크</td><td></td></tr>
+<tr><td>경쟁사 분석</td><td></td></tr>
+<tr><td>Programmatic SEO</td><td></td></tr>
+<tr><td>Core Web Vitals</td><td></td></tr>
+<tr><td>Search Console / GA4 분석</td><td></td></tr>
+</tbody></table>
+<h2>설치 및 사용법</h2>
+<pre><code>/plugin marketplace add AgriciDaniel/claude-seo
+/plugin install claude-seo@agricidaniel-claude-seo
+/seo setup</code></pre>
+<p>주요 명령:</p>
+<pre><code>/seo audit https://example.com          # 전체 사이트 SEO 분석 (병렬 Agent + 우선순위 Action Plan)
+/seo page https://example.com/about     # 특정 페이지 분석
+/seo technical https://example.com      # Technical SEO
+/seo content https://example.com        # 콘텐츠 품질 분석
+/seo geo https://example.com            # GEO 분석
+/seo schema https://example.com         # Schema 분석/생성
+/seo backlinks
+/seo local
+/seo ecommerce
+/seo competitor-pages
+/seo programmatic
+/seo hreflang
+/seo cluster</code></pre>
+<p>모든 추천사항에 &quot;왜 발생했는지 → 무엇을 수정할지 → 수정 검증 방법&quot;까지 포함하는 검증 가능한 Action Plan을 지향.</p>
+<h2>본문 (Main Post, 원저자 i.am.luna.ai 카드/댓글 스레드 시간순)</h2>
+<blockquote>SEO 담당자를 AI Agent로 만들어버린 오픈소스가 나왔습니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>🔥 Claude SEO</blockquote>
+<blockquote></blockquote>
+<blockquote>이름 그대로 Claude Code에서 사용하는 SEO 전문 Skill입니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>그런데 단순히 &quot;내 사이트 SEO 점수 몇 점이야?&quot; 정도 해주는 도구가 아닙니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>25개의 SEO 서브스킬 + 18개의 전문 Agent를 병렬로 실행해서 사이트를 분석합니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>분석하는 영역도 상당히 넓습니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>→ Technical SEO</blockquote>
+<blockquote>→ 콘텐츠 품질 / E-E-A-T</blockquote>
+<blockquote>→ Schema.org</blockquote>
+<blockquote>→ AI 검색 최적화(GEO)</blockquote>
+<blockquote>→ Local SEO</blockquote>
+<blockquote>→ Google Maps</blockquote>
+<blockquote>→ 이커머스 SEO</blockquote>
+<blockquote>→ 국제 SEO / hreflang</blockquote>
+<blockquote>→ 백링크</blockquote>
+<blockquote>→ 경쟁사 분석</blockquote>
+<blockquote>→ Programmatic SEO</blockquote>
+<blockquote>→ Core Web Vitals</blockquote>
+<blockquote>→ Search Console / GA4 분석</blockquote>
+<blockquote></blockquote>
+<blockquote>등을 한 번에 다룹니다.</blockquote>
+<blockquote>특히 흥미로운 건 GEO까지 SEO 시스템 안에 포함되어 있다는 것.</blockquote>
+<blockquote></blockquote>
+<blockquote>AI 검색에서</blockquote>
+<blockquote>&quot;이 페이지의 어떤 문장이 AI에게 인용되기 좋은가?&quot;</blockquote>
+<blockquote>&quot;질문에 대한 답변이 얼마나 독립적인 문단으로 구성되어 있는가?&quot;</blockquote>
+<blockquote>&quot;구조화 데이터와 엔티티 정보가 충분한가?&quot;</blockquote>
+<blockquote>같은 부분까지 분석합니다.</blockquote>
+<blockquote>사용법도 간단합니다. Claude Code에서 Skill을 설치하면 됩니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>/plugin marketplace add AgriciDaniel/claude-seo</blockquote>
+<blockquote>/plugin install claude-seo@agricidaniel-claude-seo</blockquote>
+<blockquote>/seo setup</blockquote>
+<blockquote></blockquote>
+<blockquote>설치 후에는 Claude Code에서 바로 명령을 사용할 수 있습니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>전체 사이트 SEO 분석</blockquote>
+<blockquote>/seo audit <a href="https://example.com">https://example.com</a></blockquote>
+<blockquote></blockquote>
+<blockquote>전문 Agent들이 병렬로 사이트를 분석하고 우선순위가 정리된 Action Plan을 만들어줍니다.</blockquote>
+<blockquote>특정 페이지 분석</blockquote>
+<blockquote>/seo page <a href="https://example.com/about">https://example.com/about</a></blockquote>
+<blockquote></blockquote>
+<blockquote>Technical SEO</blockquote>
+<blockquote>/seo technical <a href="https://example.com">https://example.com</a></blockquote>
+<blockquote></blockquote>
+<blockquote>콘텐츠 품질 분석</blockquote>
+<blockquote>/seo content <a href="https://example.com">https://example.com</a></blockquote>
+<blockquote></blockquote>
+<blockquote>GEO 분석</blockquote>
+<blockquote>/seo geo <a href="https://example.com">https://example.com</a></blockquote>
+<blockquote></blockquote>
+<blockquote>Schema 분석 및 생성</blockquote>
+<blockquote>/seo schema <a href="https://example.com">https://example.com</a></blockquote>
+<blockquote></blockquote>
+<blockquote>이외에도</blockquote>
+<blockquote>/seo backlinks</blockquote>
+<blockquote>/seo local</blockquote>
+<blockquote>/seo ecommerce</blockquote>
+<blockquote>/seo competitor-pages</blockquote>
+<blockquote>/seo programmatic</blockquote>
+<blockquote>/seo hreflang</blockquote>
+<blockquote>/seo cluster</blockquote>
+<blockquote></blockquote>
+<blockquote>등 상당히 많은 명령을 제공합니다.</blockquote>
+<blockquote>Google Search Console, PageSpeed, CrUX, GA4 등도 연결할 수 있어서</blockquote>
+<blockquote></blockquote>
+<blockquote>단순히 웹페이지를 읽고 SEO 조언을 하는 수준을 넘어 실제 검색 데이터를 기반으로 분석하는 구조입니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>그리고 모든 추천사항에</blockquote>
+<blockquote>→ 왜 이런 문제가 발생했는지</blockquote>
+<blockquote>→ 무엇을 수정해야 하는지</blockquote>
+<blockquote>→ 수정이 제대로 됐는지 어떻게 검증할지</blockquote>
+<blockquote></blockquote>
+<blockquote>까지 포함하는 검증 가능한 Action Plan을 지향합니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>개인적으로 가장 중요한 포인트는 이것입니다.</blockquote>
+<blockquote>기존 SEO 툴은 &quot;SEO 데이터를 보여주는 대시보드&quot;에 가깝다면,</blockquote>
+<blockquote></blockquote>
+<blockquote>Claude SEO는 &quot;SEO 분석 → 문제 발견 → 우선순위 결정 → 개선 방향 제시&quot;를 AI Agent가 수행하는 쪽으로 넘어갑니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>GitHub에서 ⭐ 5,000+ 수준의 관심을 받고 있는 프로젝트.</blockquote>
+<blockquote></blockquote>
+<blockquote>🔗 GitHub</blockquote>
+<blockquote><a href="https://github.com/AgriciDaniel/claude-seo">https://github.com/AgriciDaniel/claude-seo</a></blockquote>
+<h2>댓글 스레드 (Reply Thread — 시간순)</h2>
+<ul>
+<li><strong>studio_tnd (스튜디오 티앤디)</strong>: 오호</li>
+<li><strong>i.am.luna.ai</strong> (원저자, 댓글로 질문 던짐): 25개 서브스킬 중에 제일 궁금한 영역 하나만 골라보라면 뭐예요?</li>
+<li><strong>xxa.sxo (송지하)</strong>: 클로드 seo 스킬은 참고할 정도 딱 그정도임.</li>
+<li><strong>bobest415 (보형)</strong>: 올👍</li>
+<li><strong>mndkang25 (브리즈)</strong>: 좋은 내용 감사합니다.</li>
+<li><strong>crowdniwant</strong>: 딱 필요했던 스킬인데 완성 된건가요??</li>
+<li><strong>i.am.luna.ai</strong> (원저자 답변, crowdniwant에게로 추정): 감사합니다, 목록 쭉 훑어보시고 필요한 영역만 골라 쓰셔도 충분해요.</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/AgriciDaniel/claude-seo">https://github.com/AgriciDaniel/claude-seo</a> (HTTP 200 확인)</li>
+<li>Threads 원문: <a href="https://www.threads.com/@i.am.luna.ai/post/DcaWPPeEd0O">https://www.threads.com/@i.am.luna.ai/post/DcaWPPeEd0O</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-08-27 Claude SEO 오픈소스 Skill/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

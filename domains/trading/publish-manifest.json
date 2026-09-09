@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-13T13:10:01.449352",
+  "generated_at": "2026-09-09T11:48:53.765904",
   "source": "Wikis/pages",
   "domain": "trading",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260813-130915-KST",
+  "version": "20260909-114758-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -24,6 +24,51 @@
     }
   },
   "pages": [
+    {
+      "title": "dartlab 소식 — 공시자료 정규화 & 재무제표 기간 비교",
+      "source": "Wikis/pages/concepts/dartlab 소식 — 공시자료 정규화 & 재무제표 기간 비교.md",
+      "url": "pages/dartlab-소식-공시자료-정규화-재무제표-기간-비교.html",
+      "raw_body_merged": false,
+      "excerpt": "간만에 dartlab 소식입니다.",
+      "excerpt_hero": "간만에 dartlab 소식입니다.",
+      "excerpt_list": "간만에 dartlab 소식입니다.",
+      "date": "2026-09-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-08",
+        1788865290.222041
+      ]
+    },
+    {
+      "title": "RTX 3090 (24GB)에서 로컬 LLM 최적화 — ollama → vLLM 전환기",
+      "source": "Wikis/pages/references/RTX 3090 (24GB)에서 로컬 LLM 최적화 — ollama → vLLM 전환기.md",
+      "url": "pages/rtx-3090-24gb-에서-로컬-llm-최적화-ollama-vllm-전환기.html",
+      "raw_body_merged": false,
+      "excerpt": "RTX 3090 24GB 단일 GPU에서 Qwen3 27B 비검열 모델을 vLLM으로 구동해",
+      "excerpt_hero": "RTX 3090 24GB 단일 GPU에서 Qwen3 27B 비검열 모델을 vLLM으로 구동해",
+      "excerpt_list": "RTX 3090 24GB 단일 GPU에서 Qwen3 27B 비검열 모델을 vLLM으로 구동해",
+      "date": "2026-08-26",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-26",
+        1787713610.03984
+      ]
+    },
+    {
+      "title": "CTA는 너무 뻔하게 쓰지 마세요",
+      "source": "Wikis/pages/strategies/CTA는 너무 뻔하게 쓰지 마세요.md",
+      "url": "pages/cta는-너무-뻔하게-쓰지-마세요.html",
+      "raw_body_merged": false,
+      "excerpt": "좋은 CTA는 '무엇을 클릭하라'가 아니라, '클릭하면 무엇을 얻게 되는지'를 말해준다.",
+      "excerpt_hero": "좋은 CTA는 '무엇을 클릭하라'가 아니라, '클릭하면 무엇을 얻게 되는지'를 말해준다.",
+      "excerpt_list": "좋은 CTA는 '무엇을 클릭하라'가 아니라, '클릭하면 무엇을 얻게 되는지'를 말해준다.",
+      "date": "2026-08-21",
+      "hero_image": "",
+      "_sort": [
+        "2026-08-21",
+        1787263334.818072
+      ]
+    },
     {
       "title": "단타 호가창 속 세력 숨소리 3가지",
       "source": "Wikis/pages/references/단타 호가창 속 세력 숨소리 3가지.md",
@@ -625,9 +670,9 @@
       ]
     },
     {
-      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프롬프트 12가지",
-      "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프롬프트 12가지.md",
-      "url": "pages/최고-엔지니어링-팀처럼-완벽한-웹-앱을-개발할-수-있도록-도와주는-클로드-프롬프트-12가지.html",
+      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로",
+      "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로.md",
+      "url": "pages/page.html",
       "raw_body_merged": false,
       "excerpt": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각 영역(아키텍처, 프론트엔드, 백엔드, DB, 인증, 결제, 실시간, DevOps…",
       "excerpt_hero": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각 영역(아키텍처, 프론트엔드, 백엔드, DB, 인증, 결제, 실시간, DevOps, 테스트, 프로젝트 관리, 디자인 시스템, 코드 리뷰)에 대해 프로덕션 레벨의…",

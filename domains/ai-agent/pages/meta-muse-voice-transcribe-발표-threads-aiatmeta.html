@@ -1,0 +1,72 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Meta Muse Voice Transcribe 발표 (Threads @aiatmeta) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260909-114758-KST">Jarvis Wiki / ai-agent</a><h1>Meta Muse Voice Transcribe 발표 (Threads @aiatmeta)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Meta Muse Voice Transcribe 발표 (Threads @aiatmeta)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-09-03 Meta Muse Voice Transcribe/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Meta Muse Voice Transcribe 발표 (Threads @aiatmeta)</h1>
+<h2>🇰🇷 한글 요약</h2>
+<p>Meta Superintelligence Labs가 <strong>Muse Voice Transcribe</strong>를 공개했다 — 실시간 음성 인식(ASR)을 수행하는 첫 번째 real-time audio perception 모델.</p>
+<h3>핵심 스펙</h3>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody>
+<tr><td><strong>모델 계열</strong></td><td>Muse Spark family (autoregressive multimodal LLM)</td></tr>
+<tr><td><strong>오디오 처리 단위</strong></td><td><strong>80ms</strong> 청크 (12.5Hz), 청크당 1개 토큰</td></tr>
+<tr><td><strong>동작 방식</strong></td><td>매 청크마다 &quot;계속 듣기&quot; vs &quot;텍스트 출력&quot; 결정</td></tr>
+<tr><td><strong>화자 분리 (diarization)</strong></td><td><strong>20명 이상</strong> 화자 지원</td></tr>
+<tr><td><strong>다국어</strong></td><td>언어 간 자연스러운 코드스위칭(code-switching) 지원</td></tr>
+<tr><td><strong>정확도 보정</strong></td><td>language/keyword/context biasing으로 정확도 향상</td></tr>
+<tr><td><strong>벤치마크</strong></td><td>Artificial Analysis streaming speech-to-text <strong>1위</strong>, 공개 diarization 벤치마크 <strong>1위</strong> (2026-09-01 기준)</td></tr>
+<tr><td><strong>제공 채널</strong></td><td>Meta Model API, Meta AI for Mac, Muse Code에서 오늘부터 이용 가능</td></tr>
+</tbody></table>
+<h3>기술 원리 (원문 스레드 기반)</h3>
+<ol>
+<li><strong>스트리밍 ASR 기반 구조</strong>: 오디오를 80ms 단위 청크로 나눠 각 청크를 하나의 soft token으로 변환. 모델은 각 청크마다 <code>&lt;|next<em>audio|&gt;</code> 토큰(더 듣기) 또는 텍스트 토큰(출력) 중 선택. 오디오 스트림이 끝나면 <code>&lt;|empty</em>audio|&gt;</code> 토큰을 삽입해 남은 텍스트를 모두 출력.</li>
+<li><strong>Adaptive Delay (적응형 지연)</strong>: RL(word error rate + delay reward 결합)로 학습되어, 어려운 단어에서는 더 오래 기다리고 쉬운 단어에서는 빨리 출력 — 단어 단위로 정확도-지연시간 트레이드오프를 조절. 이 덕분에 &quot;최종 전사까지 걸리는 시간&quot; 기준 speed-accuracy pareto frontier(최적 균형점)를 달성.</li>
+<li><strong>Diarization + Endpointing</strong>: 스트리밍 ASR 위에 특수 토큰을 추가해 확장. 화자 전환 감지용 <code>&lt;|start<em>of</em>turn|&gt;</code> 토큰과 화자 구분용 <code>&lt;|speaker_{A-Z}|&gt;</code> 태그를 사용. 화자 전환은 즉시 예측하되, 화자 태그 예측은 청크 끝까지 지연시켜 정확도를 높임.</li>
+</ol>
+<h3>댓글 반응 (요약)</h3>
+<ul>
+<li>베트남어+영어 혼합 테스트 결과 속도/정확도에 감명 — 억양이 섞인 코드스위칭 처리, 빠르게 스쳐가는 조용한 단어 캐칭 두 가지가 개선 포인트로 제안됨</li>
+<li>&quot;실시간 전사가 인간 기억을 보조하는 외부 메모리(external memory)가 될 수 있다&quot;는 철학적 코멘트도 있었음 (프라이버시/동의 전제)</li>
+</ul>
+<hr>
+<h2>🇺🇸 English Summary</h2>
+<p>Meta Superintelligence Labs announced <strong>Muse Voice Transcribe</strong>, the first real-time audio perception model, delivering real-time streaming ASR with diarization and endpointing.</p>
+<h3>Key Specs</h3>
+<table><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody>
+<tr><td><strong>Model family</strong></td><td>Muse Spark family (autoregressive multimodal LLM)</td></tr>
+<tr><td><strong>Audio processing</strong></td><td><strong>80ms</strong> chunks (12.5 Hz), one token per chunk</td></tr>
+<tr><td><strong>Decision logic</strong></td><td>At every chunk, model chooses to keep listening or emit text</td></tr>
+<tr><td><strong>Diarization</strong></td><td>Supports <strong>20+ speakers</strong></td></tr>
+<tr><td><strong>Multilingual</strong></td><td>Seamless code-switching across languages</td></tr>
+<tr><td><strong>Accuracy boost</strong></td><td>Language, keyword, and context biasing</td></tr>
+<tr><td><strong>Benchmarks</strong></td><td><strong>#1</strong> on Artificial Analysis streaming speech-to-text; <strong>#1</strong> on public diarization benchmarks (as of Sept 1, 2026)</td></tr>
+<tr><td><strong>Availability</strong></td><td>Live today via Meta Model API, Meta AI for Mac, and Muse Code</td></tr>
+</tbody></table>
+<h3>How It Works (from the original thread)</h3>
+<ol>
+<li><strong>Streaming ASR foundation</strong>: Audio is processed in 80ms chunks, each transformed into a single soft token. At every chunk, the model predicts either a <code>&lt;|next<em>audio|&gt;</code> token (keep listening) or emits text. When the stream ends, an <code>&lt;|empty</em>audio|&gt;</code> token signals no more audio, and the model flushes all remaining text.</li>
+<li><strong>Adaptive delay</strong>: Trained with RL combining word error rate and delay rewards, the model waits longer on hard words and commits sooner on easy ones — trading accuracy against latency word by word. This lets it hit the <strong>Pareto frontier on speed-accuracy trade-off</strong> measured by time-to-final-transcription.</li>
+<li><strong>Diarization + endpointing on top of ASR</strong>: Built by adding special tokens on top of the streaming ASR backbone — <code>&lt;|start<em>of</em>turn|&gt;</code> to flag a speaker switch (predicted immediately) and <code>&lt;|speaker_{A-Z}|&gt;</code> tags to differentiate speakers (prediction delayed to end of chunk for accuracy).</li>
+</ol>
+<h3>Notable Replies</h3>
+<ul>
+<li>A user tested mixed Vietnamese+English speech: impressed by speed/accuracy, suggested two improvements — (1) better handling of code-switching when foreign words are spoken with a local accent, (2) catching quieter/faster words squeezed between others.</li>
+<li>Another reply reflected on real-time transcription as a potential &quot;external memory&quot; aid for humans (with privacy/consent caveats) — human memory is great but imperfect, tech could help recall &quot;what did we talk about that day.&quot;</li>
+</ul>
+<hr>
+<h2>원문 스레드 (Author&#x27;s Thread, 4 posts)</h2>
+<ol>
+<li><em>(Main post)</em> Introducing Muse Voice Transcribe, the first real-time audio perception model from Meta Superintelligence Labs. Delivers real-time streaming ASR, diarization with 20+ speakers, and endpointing. Multilingual with seamless code-switching and improves accuracy with language, keyword, and context biasing. Ranks first on Artificial Analysis streaming speech-to-text and on public diarization benchmarks.</li>
+<li>Muse Voice Transcribe is an autoregressive multimodal LLM from the Muse Spark family. Audio is processed in 80ms chunks (12.5 Hz), one token each, and at every chunk the model decides whether to keep listening or emit text. RL with combined word error rate and delay rewards gives it adaptive delay: it waits longer on hard words and commits sooner on easy ones, trading accuracy against latency word by word.</li>
+<li>With adaptive delay, Muse Voice Transcribe achieves the pareto frontier on speed-accuracy trade-off measured by time to final transcription.</li>
+<li>Muse Voice Transcribe is available today via Meta Model API, Meta AI for Mac, and Muse Code. Learn more: <a href="https://go.meta.me/4xISnl2">https://go.meta.me/4xISnl2</a> → 리다이렉트: <a href="https://research.meta.ai/blog/introducing-muse-voice-transcribe">https://research.meta.ai/blog/introducing-muse-voice-transcribe</a></li>
+</ol>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li><strong>hoandesign</strong>: Just tested it with mixed Vietnamese and English. Really impressive with its speed and accuracy! It could be even better with two improvements: (1) handling code-switching when foreign words are spoken with a local accent better, and (2) catching the quieter, faster words that get squeezed in between.</li>
+<li><strong>koba_breezelife</strong>: Fascinating development. ☺️🌱 Real-time transcription becomes even more interesting when we think about it not only as speech-to-text, but also as a way to gently support human memory. With strong privacy protections and user consent, perhaps one day we could simply ask, &quot;What did we talk about that day?&quot; and AI could help us remember the important parts of a conversation without having to keep everything in our heads. Human memory is wonderful, but it isn&#x27;t perfect. / I&#x27;m excited by the possibility of technology becoming a safe and trustworthy &quot;external memory&quot; that supports us rather than replaces us. 🌿</li>
+<li><strong>kmnazrulislam9</strong>: Thanks pleace help me. <em>(스팸성/무관 댓글로 추정)</em></li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>출처</th><th>URL</th></tr></thead><tbody>
+<tr><td>Threads 원문 (공유 링크)</td><td><a href="https://www.threads.com/@aiatmeta/post/DcwMitflN58">https://www.threads.com/@aiatmeta/post/DcwMitflN58</a></td></tr>
+<tr><td>Meta AI Research 공식 블로그 (원본 아티클)</td><td><a href="https://research.meta.ai/blog/introducing-muse-voice-transcribe">https://research.meta.ai/blog/introducing-muse-voice-transcribe</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-09-03 Meta Muse Voice Transcribe/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

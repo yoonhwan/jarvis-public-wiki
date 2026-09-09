@@ -1,0 +1,62 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>` eli5` Skill — 개념을 인터랙티브 웹으로 설명하기 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260909-114758-KST">Jarvis Wiki / ai-agent</a><h1>` eli5` Skill — 개념을 인터랙티브 웹으로 설명하기</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1><code> eli5</code> Skill — 개념을 인터랙티브 웹으로 설명하기</h1>
+<blockquote>Source candidate from <code>News-Links/2026-08-25 eli5 Skill로 개념을 인터랙티브 웹으로 설명하기/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1><code>/eli5</code> Skill — 개념을 인터랙티브 웹으로 설명하기</h1>
+<blockquote>Builder | AppCaster (@appcast) on Threads</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>👀 요즘 <strong>Anthropic 내부에서 많이 쓴다는 <code>/eli5</code> Skill</strong>이 웹에서 화제가 되고 있음. 실시간 검색에서도 별도 화제 포스트로 묶였고, Anthropic 커뮤니티 GitHub에도 실제 Skill이 공개되어 있는데 핵심은 놀랄 정도로 단순함.</p>
+<p>핵심 지침:</p>
+<blockquote>&quot;아무것도 모르는 사람에게 설명하듯, <strong>큰 그림과 적은 글자를 사용한 HTML Artifact</strong>로 설명해라.&quot;</blockquote>
+<p>즉, 접근 방식을 바꾸는 것:</p>
+<table><thead><tr><th>❌ 기존</th><th>✅ eli5 방식</th></tr></thead><tbody>
+<tr><td>어려운 개념 → Markdown 장문 설명</td><td>어려운 개념 → 큰 그림 → 관계도 → 화살표 → 짧은 설명 → 직접 눌러보며 이해</td></tr>
+</tbody></table>
+<p>Anthropic도 공식 글에서 AI Agent의 출력이 점점 복잡해지면서 Markdown만으로는 제한적이고, <strong>HTML을 이용하면 시각화·색상·다이어그램·인터랙션을 훨씬 잘 표현</strong>할 수 있다고 설명했음.</p>
+<h3>ChatGPT에서 한 단계 더</h3>
+<p>HTML 파일을 만들어 달라고 하지 않고, <strong>&quot;대화창 안에서 바로 실행되는 인터랙티브 웹으로 설명해줘&quot;</strong> 라고 요청하는 것.</p>
+<p>예: <code>/eli5 그래프 엔지니어링</code> 뒤에 아래 프롬프트를 붙임.</p>
+<h2>실전 프롬프트</h2>
+<pre><code>다음 개념을 ELI5 방식으로 설명해줘.
+
+조건:
+• 이 주제를 전혀 모르는 사람을 기준으로 설명
+• 긴 Markdown 설명은 최소화
+• 큰 그림, 도형, 관계도, 화살표 중심
+• 단순히 이미지를 보여주는 것이 아니라 인터랙티브하게 구성
+• 버튼, 노드, 카드 등을 직접 눌러보며 개념을 탐색할 수 있게 만들기
+• 단계별 흐름이 있다면 직접 선택하면서 변화가 보이게 하기
+• 비교할 개념이 있다면 직접 눌러 차이를 확인할 수 있게 하기
+• 모바일에서도 보기 편하게 구성
+• 별도의 HTML 파일을 주지 말고 ChatGPT 대화 안에서
+  바로 실행되는 인터랙티브 웹으로 표현
+
+주제:
+[여기에 알고 싶은 내용]</code></pre>
+<h2>효과 예시 (그래프 엔지니어링)</h2>
+<p>단순히 &quot;Graph의 Node는 무엇이고 Edge는 무엇입니다&quot;라고 읽는 게 아니라:</p>
+<pre><code>[민수] ─ 사용 ─ [Python]
+  │
+ 소속
+  ↓
+ [A사]</code></pre>
+<p>같은 구조를 실제로 눌러보면서</p>
+<ul>
+<li>&quot;아, Node는 이것이고&quot;</li>
+<li>&quot;Edge는 이 관계구나&quot;</li>
+<li>&quot;A사와 Python은 민수를 통해 연결되는구나&quot;</li>
+</ul>
+<p>를 직접 탐색하며 이해할 수 있음.</p>
+<h2>핵심 인사이트</h2>
+<p>작성자는 이 변화가 꽤 중요하다고 봄. AI에게 <strong>&quot;설명해줘&quot;가 아니라 &quot;내가 이해할 수 있는 인터페이스를 만들어줘&quot;</strong> 라고 요청하는 것.</p>
+<blockquote>📄 Text → 🎨 Visual → 🕹️ Interactive</blockquote>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li>방금 사용해봤는데 글로 설명하는 것보다 훨씬 나은 결과를 제공해주네요</li>
+<li>집에 가서 한번 써봐야겠네요 / 어서 써보고 싶어서 궁금하네 이거</li>
+<li>아티팩트로 토큰 소비시키려는 권모술수 😏</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>원문: <a href="https://www.threads.com/@appcast/post/DcZnnb0Af8B">https://www.threads.com/@appcast/post/DcZnnb0Af8B</a></li>
+<li>Anthropic Agent Skills / Artifacts 공식 문서</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-08-25 eli5 Skill로 개념을 인터랙티브 웹으로 설명하기/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

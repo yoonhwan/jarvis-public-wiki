@@ -1,0 +1,55 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AGENTS.md 한 줄이 21시간 동안 에이전트를 속였습니다 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260909-114758-KST">Jarvis Wiki / ai-agent</a><h1>AGENTS.md 한 줄이 21시간 동안 에이전트를 속였습니다</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>AGENTS.md 한 줄이 21시간 동안 에이전트를 속였습니다</h1>
+<blockquote>Source candidate from <code>News-Links/2026-09-02 AGENTS.md 신뢰이동 선언 - PostHog/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>AGENTS.md 한 줄이 21시간 동안 에이전트를 속였습니다</h1>
+<p>작성자: 엉클잡스 | AI 시대, 돈이 되는 정보 전달 (@unclejobs.ai, threads.com)</p>
+<p>원본: PostHog (@posthog, X/Twitter) — 자사 사고 공개 스레드</p>
+<h2>본문 (Main Post + 작성자 댓글 스레드)</h2>
+<h3>사고 개요</h3>
+<p>merge queue 설정 줄 하나가 코드 밖 상태와 어긋난 채 <code>AGENTS.md</code>에 남아 있었다. 에이전트는 그 줄을 그대로 믿고 PR을 10시간 동안 묶어뒀고, 원인 추적에만 45분이 걸렸다. PostHog는 이 사고를 공개하며 &quot;당신의 AGENTS.md가 (에이전트의) 발목을 잡고 있다&quot;고 선언한다.</p>
+<h3>진단: 컨텍스트가 이제는 성능을 깎는다</h3>
+<ul>
+<li>예전엔 에이전트가 레포를 스스로 이해하지 못했기 때문에 규칙 파일(<code>AGENTS.md</code>/<code>CLAUDE.md</code>)을 쌓아올리는 방식이 필요했다.</li>
+<li>하지만 모델이 레포를 스스로 읽어낼 수 있게 되면서, 과거에 쌓아둔 규칙 파일이 오히려 낡은 명령으로 모델을 덮어버리는 부작용을 낳는다.</li>
+<li>Anthropic은 Claude Code 시스템 프롬프트를 80% 삭제했다.</li>
+<li>Claude Code를 만든 보리스 처니(Boris Cherny)는 6개월마다 <code>CLAUDE.md</code>를 지우라고 권한다.</li>
+</ul>
+<h3>삭제 기준: &quot;막는 실패를 말할 수 없으면 지워라&quot;</h3>
+<ul>
+<li>PostHog는 <code>/doctor</code>를 돌려 안 쓰는 플러그인 3개, 스킬 3개를 껐다.</li>
+<li>그것만으로 세션당 평균 6K 토큰이 절감됐다.</li>
+<li>방법론: 파일의 줄마다 &quot;이 줄이 막고 있는 실패가 무엇인가&quot;를 심문하고, 답할 수 없는 줄은 삭제 대상으로 분류한다.</li>
+</ul>
+<h3>지운 자리는 실패가 다시 채운다</h3>
+<ul>
+<li>실패한 프롬프트를 <code>failures.md</code>에 축적해 회귀 테스트로 돌린다.</li>
+<li>에이전트에게 직접 묻는다: &quot;어떤 컨텍스트가 있었으면 이 실패를 막았겠는가?&quot;</li>
+<li>저자는 이를 &quot;며칠 전 다룬 286개 스킬 팩&quot;과 같은 축의 문제로 본다 — 스킬/컨텍스트를 다 깔면 최악, 다 없애도 최악. 결국 &quot;넣는 관문을 높이는 것&quot;이 방법론 전체의 요지.</li>
+</ul>
+<h3>저자의 해석 — &quot;문서 정리 팁이 아니라 신뢰 이동 선언&quot;</h3>
+<ul>
+<li>지시를 미리 쌓아두는 습관은 모델을 못 믿던 시절의 산물이다.</li>
+<li>이제 모델이 레포를 스스로 읽으므로, 오래된 지시가 모델보다 낡아버린다.</li>
+<li><code>AGENTS.md</code>는 사양서(spec)가 아니라 <strong>실패 기록(failure log)</strong>이어야 한다.</li>
+<li>막았던 실패를 구체적으로 말할 수 있는 줄만 남기면, 파일은 자연히 짧아진다.</li>
+</ul>
+<h2>핵심 요약 (Key Takeaways)</h2>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody>
+<tr><td>사고</td><td>AGENTS.md의 낡은 merge queue 설정 줄 → PR 10시간 지연, 원인 추적 45분</td></tr>
+<tr><td>원인</td><td>코드 밖 규칙 파일과 실제 코드 상태의 불일치 (stale context)</td></tr>
+<tr><td>조치</td><td><code>/doctor</code>로 미사용 플러그인/스킬 정리 → 세션당 평균 6K 토큰 절감</td></tr>
+<tr><td>삭제 기준</td><td>&quot;이 줄이 막는 실패를 말할 수 없으면 지운다&quot;</td></tr>
+<tr><td>보완 장치</td><td>실패 프롬프트를 <code>failures.md</code>에 축적 → 회귀 테스트로 순환</td></tr>
+<tr><td>업계 신호</td><td>Anthropic, Claude Code 시스템 프롬프트 80% 삭제 / Boris Cherny, CLAUDE.md 6개월마다 리셋 권장</td></tr>
+<tr><td>결론</td><td>AGENTS.md는 스펙이 아니라 실패 기록이어야 함</td></tr>
+</tbody></table>
+<h2>참고 자료</h2>
+<ul>
+<li>원문(X/PostHog): <a href="https://x.com/posthog/status/2094485724171223409">https://x.com/posthog/status/2094485724171223409</a></li>
+<li>Threads 공유 링크: <a href="https://www.threads.com/@unclejobs.ai/post/DcvWxqnjC-y">https://www.threads.com/@unclejobs.ai/post/DcvWxqnjC-y</a></li>
+</ul>
+<h2>메모</h2>
+<ul>
+<li>SSR 데이터에서 본문 + 작성자 댓글 스레드(Text 0~4) 전량 확보. 다른 사용자 댓글은 없음(Text 5는 원문·소스 링크).</li>
+<li>Hermes/BYZ AGENTS.md·CLAUDE.md 운영에 참고할 만한 방법론 — &quot;실패를 못 막는 줄은 삭제&quot; 기준을 xclaw/byz-pitch 세계관 문서에도 적용 검토 가치 있음.</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-09-02 AGENTS.md 신뢰이동 선언 - PostHog/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

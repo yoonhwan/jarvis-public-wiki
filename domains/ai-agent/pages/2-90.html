@@ -1,0 +1,34 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리하 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260909-114758-KST">Jarvis Wiki / ai-agent</a><h1>새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리하</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다</h1>
+<blockquote>Source candidate from <code>News-Links/2026-09-03 카카오톡 자동 수집·백업 오픈소스(kakao-auto)/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다</h1>
+<ul>
+<li>작성자: <strong>aidan.kr (이동혁)</strong></li>
+<li>게시 시각: 2026-09-03 20:45 (KST)</li>
+<li>플랫폼: Threads → 원문 GitHub 저장소 링크</li>
+</ul>
+<h2>본문 (Main Post)</h2>
+<p>새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.</p>
+<p>업무방이 90개를 넘으니 사람이 하나씩 열어보는 건 불가능했습니다. 매일 새벽 자동으로 전체 대화를 수집하고, 방마다 CSV로 정리하고, 사진까지 챙긴 뒤 스스로 종료합니다. 모니터도 없고 사람도 없습니다.</p>
+<p>읽기 전용이고 데이터는 전부 로컬에 둡니다. 오픈소스로 공개했습니다.</p>
+<p>github.com/AidanKR/kakao-auto</p>
+<h2>댓글 (Other Users)</h2>
+<p><strong>taxailab</strong>: 오 감사합니다 써봐야겟네요 윈도우도 가능하다니</p>
+<p>대화내용중 추가되는 부분만 체리픽하는건 쓰는쪽에서 따로 구현해주는건 필요하겟네요</p>
+<h2>프로젝트 요약 — kakao-auto</h2>
+<blockquote>KakaoTalk Windows Auto Chat Collector &amp; Archiver — Windows PC에 켜둔 카카오톡의 모든 대화방을 <strong>매일 새벽 자동으로</strong> 앱 자체 <code>Ctrl+S</code> 내보내기를 이용해 수집, <strong>방마다 CSV 1개</strong>로 정리하고 사진까지 백업하는 <strong>읽기 전용·완전 오프라인</strong> 도구.</blockquote>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody>
+<tr><td><strong>플랫폼</strong></td><td>Windows 전용 (Python 불필요, 설치 실행파일 제공)</td></tr>
+<tr><td><strong>설치</strong></td><td>GitHub Releases의 <code>KakaoAuto-Setup.exe</code> 다운로드 → 실행 (Windows Defender 경고 시 &quot;추가 정보 → 실행&quot;)</td></tr>
+<tr><td><strong>동작 방식</strong></td><td>KakaoTalk을 Chats 탭에 열어두고 Enter → collect → consolidate → CSV 생성 → 사진 백업 파이프라인 실행</td></tr>
+<tr><td><strong>자동화</strong></td><td>메뉴 <code>11</code>로 매일 <strong>02:00</strong> 자동 실행 작업 등록 (관리자 권한 불필요, 절전 비활성화, 모니터 불필요 — 화면 꺼진 노트북에서도 동작 검증됨)</td></tr>
+<tr><td><strong>출력</strong></td><td><code>share<em>dir</code>(기본 <code>C:/kakao</em>share</code>) 하위에 <code>csv/&lt;room&gt;/&lt;room&gt;.csv</code>, <code>media/</code>(사진만, 이모티콘·스티커 제외), <code>kakao.db</code>(SQLite)</td></tr>
+<tr><td><strong>CSV 컬럼</strong></td><td><code>room, date, time, datetime, sender, message</code> (UTF-8-SIG, Excel/pandas 바로 호환)</td></tr>
+<tr><td><strong>부가 기능</strong></td><td>대시보드(응답 대기 현황·14일 히트맵), 전문 검색(오프라인 HTML), 관계 그래프, Excel 내보내기, 정규식 기반 금액/약속/계좌 추출, 사진 백업</td></tr>
+<tr><td><strong>라이선스/책임</strong></td><td>비공식·개인 도구, Kakao Corp와 무관. <strong>KakaoTalk 이용약관 위반 소지 있음</strong> (계정 제한 가능) — 저자는 이를 명시적으로 고지. PIPA 등 개인정보 관련 책임은 사용자에게 있음</td></tr>
+</tbody></table>
+<h2>참고 자료</h2>
+<table><thead><tr><th>소스</th><th>URL</th></tr></thead><tbody>
+<tr><td>Threads 원문</td><td><a href="https://www.threads.com/@aidan.kr/post/Dc0vFfFGICb">https://www.threads.com/@aidan.kr/post/Dc0vFfFGICb</a></td></tr>
+<tr><td>GitHub 저장소</td><td><a href="https://github.com/AidanKR/kakao-auto">https://github.com/AidanKR/kakao-auto</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-09-03 카카오톡 자동 수집·백업 오픈소스(kakao-auto)/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

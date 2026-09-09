@@ -1,0 +1,36 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>앤트로픽 claude-for-legal — 법무용 플러그인 묶음 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260909-114758-KST">Jarvis Wiki / ai-agent</a><h1>앤트로픽 claude-for-legal — 법무용 플러그인 묶음</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>앤트로픽 claude-for-legal — 법무용 플러그인 묶음</h1>
+<blockquote>Source candidate from <code>News-Links/2026-08-21 앤트로픽 claude-for-legal 법무용 플러그인/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>앤트로픽 claude-for-legal — 법무용 플러그인 묶음</h1>
+<blockquote>낭만AI (@nangman_muk) Threads 포스트 스크랩</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>AI한테 계약서를 넣어보면 답은 그럴듯하게 나오는데, 그 답이 무슨 기준으로 나온 건지를 알 수가 없습니다. 앤트로픽이 직접 공개한 법무용 플러그인 묶음은 <strong>순서가 반대</strong>입니다. 먼저 설정 인터뷰로 우리 쪽 검토 기준을 받아 파일로 적어두고, 그다음부터 그 기준대로 초안을 냅니다.</p>
+<p>깃허브 별 <strong>9,131개</strong>. 계약 검토, 개인정보, 법인, 고용, 소송, 규제, 지식재산처럼 실무 영역별로 나뉘어 있습니다. 이름은 <code>claude-for-legal</code> 입니다.</p>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가)</h2>
+<p>쓰는 법은 <strong>클로드 코드 기준</strong>입니다. 저장소를 받아서 <code>/plugin marketplace add</code> 뒤에 그 폴더 경로를 붙여 등록하고, 필요한 것만 골라 <code>/plugin install commercial-legal@claude-for-legal</code> 처럼 깝니다. 설치한 뒤에는 클로드 코드를 껐다 켜야 적용됩니다. 그다음 설정을 돌리면 기준을 묻는 인터뷰가 진행되고, 실제 작업은 <code>/commercial-legal:review</code> 같은 명령으로 부릅니다.</p>
+<p><strong>한계</strong>는 저장소가 먼저 못박아 뒀습니다. 여기서 나오는 건 전부 변호사 검토를 전제로 한 <strong>초안이지 법률 자문이 아닙니다</strong>. 작성자도 직접 돌려본 게 아니라 저장소와 공개 문서에 적힌 내용을 옮긴 것입니다.</p>
+<h2>핵심 정리</h2>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody>
+<tr><td>이름</td><td><code>claude-for-legal</code></td></tr>
+<tr><td>GitHub 별</td><td>9,131개</td></tr>
+<tr><td>특징</td><td>설정 인터뷰 → 검토 기준 파일화 → 기준대로 초안 생성 (순서가 역방향)</td></tr>
+<tr><td>실무 영역</td><td>계약 검토, 개인정보, 법인, 고용, 소송, 규제, 지식재산</td></tr>
+<tr><td>사용 환경</td><td>Claude Code 플러그인</td></tr>
+<tr><td>한계</td><td>변호사 검토 전제 초안 — 법률 자문 아님</td></tr>
+</tbody></table>
+<h3>사용 흐름 (Claude Code)</h3>
+<pre><code># 1. 마켓플레이스 등록
+/plugin marketplace add &lt;claude-for-legal 폴더 경로&gt;
+
+# 2. 필요한 플러그인만 설치
+/plugin install commercial-legal@claude-for-legal
+
+# 3. Claude Code 재시작 후 설정 인터뷰 진행
+
+# 4. 실제 작업 호출
+/commercial-legal:review</code></pre>
+<h2>참고 자료</h2>
+<ul>
+<li>원문 저장소: <a href="https://github.com/anthropics/claude-for-legal">https://github.com/anthropics/claude-for-legal</a></li>
+<li>Threads 원글: <a href="https://www.threads.com/@nangman<em>muk/post/DcH98J2E265">https://www.threads.com/@nangman</em>muk/post/DcH98J2E265</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-08-21 앤트로픽 claude-for-legal 법무용 플러그인/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

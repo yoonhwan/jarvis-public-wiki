@@ -1,0 +1,35 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>로컬 LLM 돌릴 때 GPU 전력제한 걸면 성능 지장 없이 조용해짐 (RTX 3090 + vLLM + Qwen3.8-27B) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260909-114758-KST">Jarvis Wiki / ai-agent</a><h1>로컬 LLM 돌릴 때 GPU 전력제한 걸면 성능 지장 없이 조용해짐 (RTX 3090 + vLLM + Qwen3.8-27B)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>로컬 LLM 돌릴 때 GPU 전력제한 걸면 성능 지장 없이 조용해짐 (RTX 3090 + vLLM + Qwen3.8-27B)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-09-03 RTX 3090 전력제한 vLLM 추론 속도/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>로컬 LLM 돌릴 때 GPU 전력제한 걸면 성능 지장 없이 조용해짐 (RTX 3090 + vLLM + Qwen3.8-27B)</h1>
+<h2>본문 (Main Post, @blueworkcom)</h2>
+<p>로컬 llm 돌리는 사람 주목!</p>
+<p>전력제한 걸어 보세요. 성능 지장 없고 추론할때 조용해짐.</p>
+<p>RTX 3090에서 qwen3.8 27b 모델 돌리는데.</p>
+<p>기본 350와트를 250와트로 변경 했는데도 성능 똑같고</p>
+<p>추론할때 gpu온도 많이 안올라가서 팬소음 조용해짐.</p>
+<p>속도 실측: 싱글 ~110 tok/s, 3병행 각 ~99 tok/s</p>
+<h2>스펙/설정 요약</h2>
+<table><thead><tr><th>항목</th><th>값</th></tr></thead><tbody>
+<tr><td><strong>GPU</strong></td><td>NVIDIA GeForce RTX 3090, 24GB</td></tr>
+<tr><td><strong>전력제한</strong></td><td><strong>250W</strong> (기본 350W), 현재 249W로 full-throttle</td></tr>
+<tr><td><strong>속도 (싱글)</strong></td><td><strong>~110 tok/s</strong></td></tr>
+<tr><td><strong>속도 (3병행)</strong></td><td>각 <strong>~99 tok/s</strong></td></tr>
+<tr><td>렌더링 분리</td><td>vLLM 전용 GPU — gnome은 iGPU(UHD 770) 렌더링</td></tr>
+<tr><td>OS</td><td>Ubuntu 26.04.1 LTS (PVE 호스트 192.168.100.100의 LXC 컨테이너, CTID 100)</td></tr>
+<tr><td>런타임</td><td>Python 3.14 venv + vLLM 0.28.0</td></tr>
+<tr><td>모델</td><td>Qwen3.8-27B W4A16 (ababaka AutoRound) — abliterated, 비전포함</td></tr>
+<tr><td>디코딩 옵션</td><td>MTP k=3 스펙추레이션, 128K 컨텍스트, fp8 KV</td></tr>
+<tr><td>포트</td><td>18020</td></tr>
+</tbody></table>
+<p><strong>핵심 요지</strong>: 전력제한을 350W→250W로 낮춰도 추론 속도(tok/s)는 거의 동일 — GPU 온도가 안 올라가서 팬 소음만 줄어듦. 로컬 LLM 서버 운영 시 정숙성 확보를 위한 손쉬운 트레이드오프.</p>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li><strong>@z945dx</strong>: &quot;Gpu 성능보단 램을 많이 사용하더군요. .&quot; (전력제한보다 메모리 대역폭/용량이 병목이라는 취지의 코멘트로 추정 — 원 게시물 맥락에 대한 반응, 상세 근거는 댓글 원문에 없음)</li>
+</ul>
+<h2>참고 자료</h2>
+<ul>
+<li>원문: <a href="https://www.threads.com/@blueworkcom/post/DczU<em>PcEv9p">https://www.threads.com/@blueworkcom/post/DczU</em>PcEv9p</a></li>
+<li>vLLM: <a href="https://github.com/vllm-project/vllm">https://github.com/vllm-project/vllm</a></li>
+<li>Qwen3 모델 시리즈: <a href="https://github.com/QwenLM/Qwen3">https://github.com/QwenLM/Qwen3</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-09-03 RTX 3090 전력제한 vLLM 추론 속도/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

@@ -1,0 +1,47 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>오픈소스 음성 AI, 기준이 달라졌습니다 — OmniVoice (k2-fsa) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20260909-114758-KST">Jarvis Wiki / ai-agent</a><h1>오픈소스 음성 AI, 기준이 달라졌습니다 — OmniVoice (k2-fsa)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>오픈소스 음성 AI, 기준이 달라졌습니다 — OmniVoice (k2-fsa)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-09-08 OmniVoice 오픈소스 음성AI TTS/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>오픈소스 음성 AI, 기준이 달라졌습니다 — OmniVoice (k2-fsa)</h1>
+<ul>
+<li>원문: <a href="https://www.threads.com/@think.5x/post/DdBa-XwHw2k">https://www.threads.com/@think.5x/post/DdBa-XwHw2k</a></li>
+<li>GitHub: <a href="https://github.com/k2-fsa/OmniVoice">https://github.com/k2-fsa/OmniVoice</a></li>
+<li>공개 5개월 만에 GitHub 스타 1만 돌파</li>
+</ul>
+<h2>본문 (Main Post)</h2>
+<p>오픈소스 음성 AI, 기준이 달라졌습니다.</p>
+<p>목소리 샘플 하나로 600개 언어를 복제하는 TTS, k2-fsa가 공개 5개월 만에 스타 1만을 넘겼습니다.</p>
+<p>핵심만 뜯어봤습니다.</p>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 내용)</h2>
+<h3>1/ 600개 이상 언어, 제로샷 음성 클로닝</h3>
+<p>짧은 음성 샘플 하나만 있으면 목표 화자 목소리를 복제해서 다른 언어로 말하게 만듭니다.</p>
+<p>유료 클로닝 서비스에 매달 돈 쓰던 사람이라면, 셀프호스팅으로 갈아탈 이유가 생겼어요.</p>
+<h3>2/ 추론 속도, 실시간의 40배</h3>
+<p>RTF(Real-Time Factor) 최저 <strong>0.025</strong>, 숫자가 작을수록 빠르다는 뜻입니다.</p>
+<p>대량 배치 처리든 실시간급 응답이든, 서비스에 바로 붙일 수 있는 속도라 적용 폭이 넓어지네요.</p>
+<h3>3/ 클로닝 없이 목소리를 새로 설계</h3>
+<p>성별, 나이, 피치, 방언, 속삭임까지 속성만 지정하면 새 목소리를 만들어냅니다. <code>[laughter]</code> 같은 비언어 심볼과 발음 교정도 지원해요.</p>
+<p>성우 섭외 없이 원하는 목소리를 그때그때 뽑아낼 수 있다는 얘기예요.</p>
+<h3>4/ 설치 장벽이 낮습니다</h3>
+<p><code>pip install &quot;omnivoice[tn]&quot;</code> 한 줄로 설치 끝, Python API·CLI·Gradio 데모 중 골라서 바로 실행됩니다.</p>
+<p>따로 서버 세팅 안 해도, 오늘 로컬에서 바로 돌려볼 수 있잖아요.</p>
+<h3>5/ 링크</h3>
+<p>GitHub: <a href="https://github.com/k2-fsa/OmniVoice">https://github.com/k2-fsa/OmniVoice</a></p>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li>(없음 — SSR 데이터상 작성자 본인 스레드만 확인됨: &quot;@think.5x 팔로우하시면 매일 AI 소식 올라옵니다.&quot; 는 팔로우 유도 멘트)</li>
+</ul>
+<h2>요약 (핵심 스펙)</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>의미·판단</th></tr></thead><tbody>
+<tr><td>지원 언어</td><td><strong>600개+</strong></td><td>제로샷 음성 클로닝 기준</td></tr>
+<tr><td>클로닝 방식</td><td>음성 샘플 1개</td><td>유료 클로닝 서비스 대체 가능</td></tr>
+<tr><td>RTF (Real-Time Factor)</td><td>최저 <strong>0.025</strong></td><td>실시간 대비 최대 <strong>~40배</strong> 빠른 추론</td></tr>
+<tr><td>목소리 설계</td><td>성별/나이/피치/방언/속삭임 속성 지정</td><td>클로닝 없이 신규 목소리 생성</td></tr>
+<tr><td>비언어 심볼</td><td><code>[laughter]</code> 등 지원</td><td>발음 교정 기능 포함</td></tr>
+<tr><td>설치</td><td><code>pip install &quot;omnivoice[tn]&quot;</code></td><td>Python API / CLI / Gradio 데모</td></tr>
+<tr><td>GitHub 스타</td><td><strong>1만+</strong> (공개 5개월 만)</td><td>커뮤니티 반응 빠르게 확산</td></tr>
+</tbody></table>
+<h2>참고 자료</h2>
+<table><thead><tr><th>출처</th><th>URL</th></tr></thead><tbody>
+<tr><td>GitHub (원본)</td><td><a href="https://github.com/k2-fsa/OmniVoice">https://github.com/k2-fsa/OmniVoice</a></td></tr>
+<tr><td>Threads 원문</td><td><a href="https://www.threads.com/@think.5x/post/DdBa-XwHw2k">https://www.threads.com/@think.5x/post/DdBa-XwHw2k</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-09-08 OmniVoice 오픈소스 음성AI TTS/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
