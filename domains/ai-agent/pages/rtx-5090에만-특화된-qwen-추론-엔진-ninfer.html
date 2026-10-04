@@ -1,0 +1,68 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RTX 5090에만 특화된 Qwen 추론 엔진 NInfer · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261004-140028-KST">Jarvis Wiki / ai-agent</a><h1>RTX 5090에만 특화된 Qwen 추론 엔진 NInfer</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>RTX 5090에만 특화된 Qwen 추론 엔진 NInfer</h1>
+<blockquote>Source candidate from <code>News-Links/2026-09-22 NInfer RTX 5090 Qwen 추론엔진/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>RTX 5090에만 특화된 Qwen 추론 엔진 &quot;NInfer&quot;</h1>
+<blockquote>⚠️ 이 Threads 포스트는 SSR 렌더링 실패(<code>ssr<em>disabled</em>reason: fail<em>bad</em>preloaders</code>)로 원문 카드/댓글 스레드는 확보하지 못했다. 아래는 OG meta(og:description)에서 확보한 본문 전체 텍스트 + 링크된 GitHub 리포 README 기반.</blockquote>
+<h2>본문 (Main Post, OG meta에서 확보)</h2>
+<p>RTX 5090에만 특화된 Qwen 추론 엔진이 나왔어요!</p>
+<p>NInfer는 RTX 5090(sm_120a) 전용으로 범위를 의도적으로 좁히고 단일 GPU 성능에 집중했습니다. 멀티 GPU, 분산 서빙, 가중치 오프로드는 제품 범위에서 명시적으로 제외했어요.</p>
+<p>MTP 추측 디코딩과 DFlash 드래프트, 청크 프리필을 지원하고, Qwen3.6-35B-A3B 기준 MTP3 단일 요청 디코드에서 642.5 tok/s를 기록했습니다. 정확한 프롬프트 접두사 단위로 KV와 연속 상태를 체크포인트로 저장해, 같은 접두사로 시작하는 요청에서 다시 활용해요.</p>
+<p>OpenAI·Anthropic 호환 API에는 도구 호출 파싱과 토큰 카운팅까지 포함되어 있습니다. 개인이 관심으로 진행하는 프로젝트예요.</p>
+<p>GitHub : <a href="https://github.com/Neroued/ninfer">https://github.com/Neroued/ninfer</a></p>
+<h2>원본 프로젝트 요약 (GitHub README 기반)</h2>
+<p><strong>Neroued/ninfer</strong> — &quot;Selected checkpoints. Maximum single-GPU inference performance.&quot;</p>
+<table><thead><tr><th>항목</th><th>값</th><th>비고</th></tr></thead><tbody>
+<tr><td><strong>타겟 GPU</strong></td><td><strong>NVIDIA GeForce RTX 5090</strong> 단일 GPU 전용</td><td><code>sm_120a</code> 외 CUDA 아키텍처 빌드 거부</td></tr>
+<tr><td><strong>언어/스택</strong></td><td>C/C++/CUDA (from-scratch)</td><td>CMake 3.28+, Ninja, C++20, CUDA Toolkit 13.1+</td></tr>
+<tr><td><strong>API 호환성</strong></td><td>OpenAI-/Anthropic-compatible HTTP API</td><td>도구 호출 파싱, 토큰 카운팅 포함</td></tr>
+<tr><td><strong>동시 요청</strong></td><td>시작 시 고정된 1~8개 활성 요청 용량</td><td>런타임 중 변경 불가 (startup-fixed)</td></tr>
+<tr><td><strong>성능(예시)</strong></td><td><strong>642.5 tok/s</strong></td><td>Qwen3.6-35B-A3B, MTP3 단일 요청 디코드 기준</td></tr>
+<tr><td><strong>GitHub Stars</strong></td><td>1,251</td><td>Forks 240, Open issues 33</td></tr>
+<tr><td><strong>라이선스</strong></td><td>Apache License 2.0</td><td></td></tr>
+<tr><td><strong>생성일</strong></td><td>2026-06-26</td><td></td></tr>
+</tbody></table>
+<h3>지원 모델 아티팩트</h3>
+<table><thead><tr><th>모델</th><th>가중치 프로필</th><th>아티팩트 파일명</th></tr></thead><tbody>
+<tr><td>Qwen3.6-27B</td><td>groupwise-int</td><td><code>qwen3<em>6</em>27b.ninfer</code></td></tr>
+<tr><td>Qwen3.6-27B</td><td>nvfp4</td><td><code>qwen3<em>6</em>27b_nvfp4.ninfer</code></td></tr>
+<tr><td>Qwen3.8-27B</td><td>groupwise-int</td><td><code>qwen3<em>8</em>27b.ninfer</code></td></tr>
+<tr><td>Qwen3.8-27B</td><td>nvfp4</td><td><code>qwen3<em>8</em>27b_nvfp4.ninfer</code></td></tr>
+<tr><td>Qwen3.6-35B-A3B</td><td>groupwise-int</td><td><code>qwen3<em>6</em>35b_a3b.ninfer</code></td></tr>
+</tbody></table>
+<h3>빌드 요구사항</h3>
+<ul>
+<li>64-bit Linux</li>
+<li>NVIDIA GeForce RTX 5090 (CUDA <code>sm_120a</code> 고정)</li>
+<li>CUDA Toolkit ≥ 13.1</li>
+<li>CMake ≥ 3.28, C++20 컴파일러, Ninja, pkg-config</li>
+<li>FFmpeg dev libs (<code>libavformat&gt;=60</code>, <code>libavcodec&gt;=60</code>, <code>libavutil&gt;=58</code>, <code>libswscale&gt;=7</code>)</li>
+<li><code>libcurl &gt;= 7.85</code></li>
+</ul>
+<h3>빌드 &amp; 실행 예시</h3>
+<pre><code>git clone https://github.com/Neroued/ninfer.git
+cd ninfer
+
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j</code></pre>
+<p>Hugging Face에서 아티팩트 다운로드:</p>
+<pre><code>hf download neroued/Qwen3.8-27B-nvfp4-NInfer \
+  qwen3_8_27b_nvfp4.ninfer \
+  --local-dir models</code></pre>
+<p>서빙 예시 (텍스트/에이전트 서버, 동시 요청 2 레인):</p>
+<pre><code>./build/apps/ninfer-serve models/qwen3_8_27b_nvfp4.ninfer \
+  --max-context 240000 \
+  --kv-capacity 240000 \
+  --max-concurrency 2 \
+  --kv-dtype fp8 \
+  --device-state-slots 2 \
+  --host-state-slots 8 \
+  --host-kv-mib 8192 \
+  --spec mtp --draft-tokens 3 \
+  --lm-head-draft \
+  --preserve-thinking</code></pre>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>링크</th></tr></thead><tbody>
+<tr><td>Threads 원문(공유 링크)</td><td><a href="https://www.threads.com/share/BBDzpVF07o/">https://www.threads.com/share/BBDzpVF07o/</a></td></tr>
+<tr><td>GitHub 리포</td><td><a href="https://github.com/Neroued/ninfer">https://github.com/Neroued/ninfer</a></td></tr>
+<tr><td>작성자</td><td>@aiwire_kr</td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-09-22 NInfer RTX 5090 Qwen 추론엔진/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

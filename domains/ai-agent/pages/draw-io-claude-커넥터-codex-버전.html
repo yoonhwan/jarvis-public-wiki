@@ -1,0 +1,60 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>draw.io Claude 커넥터 (+ Codex 버전) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261004-140028-KST">Jarvis Wiki / ai-agent</a><h1>draw.io Claude 커넥터 (+ Codex 버전)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>draw.io Claude 커넥터 (+ Codex 버전)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-09-18 draw.io Claude 커넥터/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>draw.io &gt; Claude 커넥터 (+ Codex 버전)</h1>
+<p>Threads 작성자: <a href="https://www.threads.com/@lucas<em>flatwhite">@lucas</em>flatwhite</a></p>
+<h2>본문 (Main Post)</h2>
+<blockquote>draw io &gt; Claude 커넥터로 들어옴. 굿.. 무조건이죱</blockquote>
+<blockquote><a href="https://claude.ai/directory/pending-draw-io">https://claude.ai/directory/pending-draw-io</a></blockquote>
+<blockquote></blockquote>
+<blockquote>Codex 버전도 있지용!</blockquote>
+<blockquote><a href="https://github.com/jgraph/drawio-mcp/tree/main/plugins/codex/drawio">https://github.com/jgraph/drawio-mcp/tree/main/plugins/codex/drawio</a></blockquote>
+<blockquote></blockquote>
+<blockquote>채팅에서 다이어그램 그려줘요 라고 말만 하면, 설치 없이 바로 편집 가능한 그림으로.</blockquote>
+<blockquote></blockquote>
+<blockquote>플로우차트, AWS/Azure 아키텍처, ERD, UML, BPMN, 조직도, Mermaid 변환까지 걱정 없음.</blockquote>
+<blockquote></blockquote>
+<blockquote>도형 라이브러리는 무려 1만 개 이상!!!</blockquote>
+<blockquote></blockquote>
+<blockquote>AWS, Azure, GCP, Kubernetes, 브랜드 로고 등등등 실제 아이콘을 다 지원..👍🏻</blockquote>
+<h2>요약</h2>
+<ul>
+<li><strong>draw.io가 Claude 커뮤니티 커넥터로 출시</strong> — 별도 설치/MCP 설정 없이 Claude 채팅창에서 &quot;다이어그램 그려줘&quot;라고 말하면 실시간 인터랙티브 draw.io 다이어그램으로 즉시 렌더링됨.</li>
+<li>채팅 안에서 확대/축소, 이동, 레이어 전환, 전체화면 모드 지원. 클릭 한 번으로 실제 draw.io 편집기에서 계속 편집 가능.</li>
+<li>지원 다이어그램: 플로우차트, 클라우드/SW 아키텍처, ER 다이어그램, 네트워크 토폴로지, UML, BPMN, 조직도, 목업 등. Mermaid 또는 draw.io XML 파일로도 생성 가능.</li>
+<li>도형 라이브러리 <strong>10,000개 이상</strong> — AWS, Azure, GCP, Kubernetes, Cisco, 전기/P&amp;ID 등 실제 브랜드 로고·아이콘 포함.</li>
+<li>계정 생성/가입 불필요.</li>
+<li>⚠️ 커뮤니티 커넥터는 자동 검토만 거쳤고 Anthropic 공식 검증은 받지 않음 — 신뢰하는 개발자만 연결 권장 (draw.io 카드 내 고지사항).</li>
+</ul>
+<h2>Codex 버전 (jgraph/drawio-mcp)</h2>
+<ul>
+<li>원문 링크: <a href="https://github.com/jgraph/drawio-mcp/tree/main/plugins/codex/drawio">https://github.com/jgraph/drawio-mcp/tree/main/plugins/codex/drawio</a></li>
+<li><strong>Codex CLI 플러그인</strong>으로, 네이티브 <code>.drawio</code> 파일을 생성. Codex가 다이어그램을 <strong>Mermaid</strong>(desktop CLI가 변환·레이아웃) 또는 <strong>draw.io XML</strong>(옵션으로 <strong>ELK 자동 레이아웃</strong>) 방식으로 직접 작성.</li>
+<li>출력 형식: PNG/SVG/PDF export(편집 가능하도록 XML 임베드), 또는 <code>app.diagrams.net</code>에서 바로 여는 브라우저 URL. 별도 MCP 셋업 불필요.</li>
+<li><strong>Claude Code plugin의 Codex 포트</strong> — host wrapping(매니페스트 스키마, invocation, 로고)만 다르고 draw.io 가이던스 자체는 <code>shared/</code>에 있는 공용 SSOT.</li>
+<li>동작 방식:</li>
+<ol>
+<li>작성 방식 선택 — 데스크톱 앱 설치 시 표준 다이어그램 타입(flowchart/sequence/class/state/ER/gantt/mindmap 등)은 <strong>Mermaid</strong>, 커스텀 스타일링/정밀 배치/특정 도형 라이브러리 필요 시 또는 데스크톱 앱 미설치 시 <strong>draw.io XML</strong></li>
+<li>네이티브 <code>.drawio</code> 파일 생성 — desktop CLI로 Mermaid 변환, 또는 XML 직접 작성(옵션으로 ELK <code>--layout</code> 패스 실행해 셀 배치 자동화)</li>
+<li>요청된 출력 처리:</li>
+<ul>
+<li>PNG/SVG/PDF → draw.io desktop CLI로 export</li>
+<li><code>url</code> → Node.js 내장 <code>zlib</code>으로 XML 압축 후 <code><a href="https://app.diagrams.net/#create=...</code>">https://app.diagrams.net/#create=...<code></a> 브라우저에서 열기 (</code>.drawio` 파일은 로컬 사본으로 유지)</li>
+<li>(default) → <code>.drawio</code> 파일 그대로 유지</li>
+</ul>
+<li>결과 열기</li>
+</ol>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>항목</th><th>링크</th></tr></thead><tbody>
+<tr><td>Claude 커넥터 디렉토리</td><td><a href="https://claude.ai/directory/pending-draw-io">https://claude.ai/directory/pending-draw-io</a></td></tr>
+<tr><td>Codex 플러그인 (GitHub)</td><td><a href="https://github.com/jgraph/drawio-mcp/tree/main/plugins/codex/drawio">https://github.com/jgraph/drawio-mcp/tree/main/plugins/codex/drawio</a></td></tr>
+<tr><td>원 Threads 포스트</td><td><a href="https://www.threads.com/@lucas<em>flatwhite/post/DdYx9O8EgmH">https://www.threads.com/@lucas</em>flatwhite/post/DdYx9O8EgmH</a></td></tr>
+</tbody></table>
+<h2>원문 카드 캡처 (Carousel, 3장)</h2>
+<ol>
+<li><strong>카드 1</strong> — Claude 채팅에서 &quot;CI/CD pipeline flowchart with draw.io XML&quot; 요청 → 실시간 플로우차트 렌더링 예시 (Scan clean? → Code review → Review approved? → Rejected)</li>
+<li><strong>카드 2</strong> — Claude 커넥터 디렉토리 상세 페이지 (draw.io 커뮤니티 커넥터, &quot;기본적으로 연결됨&quot; 상태, 기능 설명)</li>
+<li><strong>카드 3</strong> — GitHub README &quot;Draw.io Plugin for Codex&quot; — 위 Codex 플러그인 동작 방식 설명</li>
+</ol>
+<p>댓글 스레드: 없음 (SSR 확인 결과 caption 1개, 댓글 미확인)</p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-09-18 draw.io Claude 커넥터/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

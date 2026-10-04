@@ -1,0 +1,122 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bilibili, 150개 언어 텍스트·음성 번역 모델 Index-Translate 5종 공개 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261004-140028-KST">Jarvis Wiki / ai-agent</a><h1>Bilibili, 150개 언어 텍스트·음성 번역 모델 Index-Translate 5종 공개</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Bilibili, 150개 언어 텍스트·음성 번역 모델 Index-Translate 5종 공개</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-01 Bilibili Index-Translate 다국어 번역 모델/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Bilibili, 150개 언어 텍스트·음성 번역 모델 Index-Translate 5종 공개</h1>
+<p>Threads에서 PyTorchKR(@pytorch.kr) 계정이 공유한 글. 원문은 PyTorchKR 포럼(discuss.pytorch.kr)의 기술 리뷰 아티클이며, Threads 포스트 자체는 캡션 없이 외부 링크 공유(link-preview repost) 형태였음. OG meta에 전체 요약 일부가 포함되어 있었고, 전체 본문은 원문 Discourse 포스트(.json API)에서 확보.</p>
+<h2>한눈에 보기</h2>
+<ul>
+<li><strong>공개</strong>: Bilibili 산하 Index 팀, 2026-09-30</li>
+<li><strong>베이스 모델</strong>: Qwen3.5</li>
+<li><strong>라이선스</strong>: Apache 2.0 (코드+가중치 전체, 상업적 사용 가능)</li>
+<li><strong>공개처</strong>: Hugging Face, ModelScope + 27쪽 기술 리포트 + 온라인 데모</li>
+<li><strong>지원 언어</strong>: 150개 언어 (22개 핵심 언어 + 128개 추가/변종), 한국어 포함</li>
+</ul>
+<h2>모델 패밀리 (5종)</h2>
+<table><thead><tr><th>모델</th><th>크기</th><th>역할</th><th>지원 범위</th></tr></thead><tbody>
+<tr><td><strong>Index-Translate</strong></td><td>2B / 9B / 35B-A3B(프리뷰)</td><td>텍스트 번역, 지시 따르기, 밈 번역</td><td>150개 언어</td></tr>
+<tr><td><strong>Index-Echo</strong> (S2TT/S2ST)</td><td>2B / 9B</td><td>음성→자막(S2TT), 음성→동일 화자 목소리의 타 언어 음성(S2ST)</td><td>S2TT: 중→영/일/스, S2ST: 중·영 기준 6방향</td></tr>
+<tr><td><strong>Index-Homura</strong></td><td>2B / 9B</td><td>목표 음절 수에 맞춘 더빙용 번역</td><td>중→영/일/아랍/스</td></tr>
+<tr><td><strong>Index-NativeLong</strong></td><td>2B / 9B</td><td>장문 문서 전체를 한 번에 번역(청크 분할 없음)</td><td>중↔영, 중↔일 고정 템플릿</td></tr>
+</tbody></table>
+<blockquote>장문 모델은 홈페이지에서 &quot;Index-NaiLong&quot;, 리포트/README에서는 &quot;Index-NativeLong&quot;으로 표기. HF 모델 ID는 <code>IndexTeam/Index-Nailong-2B/9B</code>. 35B-A3B는 <code>IndexTeam/Index-Translate-35B-A3B-preview</code>이며 GitHub TODO 기준 정식 버전은 학습 중.</blockquote>
+<h2>핵심 설계: 왜 모델을 쪼갰나</h2>
+<ul>
+<li>번역 모델이라고 &quot;원문+목표언어 → 번역문&quot;의 단순 함수가 아니라, 실제로는 <strong>게임 공지 JSON(키/해시태그 보존)</strong>, <strong>커뮤니티 은어</strong>, <strong>더빙 시간 제약</strong>, <strong>장문 인물명 일관성</strong> 등 용도별로 요구사항이 전혀 다름.</li>
+<li><strong>공유 다국어 기반(Shared Multilingual Foundation)</strong> 위에서 일반번역/지시따르기/밈번역 3개 전문가를 <strong>파라미터 보간(Model Soups, 0.8:0.1:0.1)</strong> 으로 병합 → 약해진 부분은 <strong>MOPD(Multi-Teacher On-Policy Distillation)</strong> 로 보강.</li>
+<li>음절 제어처럼 병합 과정에서 생존율이 낮은 능력(병합 모델 SandGlass 적중률 0.1544 vs 전용모델 0.5439)은 <strong>Index-Homura로 완전히 분리</strong>.</li>
+</ul>
+<h3>학습 파이프라인 (텍스트 모델)</h3>
+<ol>
+<li><strong>중간 학습(Mid-Training)</strong>: Qwen3.5 베이스 + 다국어 중간학습. WSD 스케줄, 시퀀스 4096, 글로벌배치 4096, 총 1만 스텝(167.77B 토큰). Constant 단계(일반:병렬:단일언어=1:1:1, 7000스텝)→ Decay 단계(일반:pivot-20:pivot-148=1:4:2, 3000스텝)</li>
+<li><strong>전문가 SFT→RL</strong>: 일반번역/지시따르기/밈번역 3개 전문가를 각각 SFT 후 GRPO(일반/지시) 또는 LLM judge 보상(밈)으로 강화학습</li>
+<li><strong>병합</strong>: Model Soups 파라미터 보간 + MOPD 증류</li>
+</ol>
+<p><strong>언어 범위 확대 효과</strong>: 2B 모델 감쇠 단계 데이터를 20여개→100여개 언어로 넓히자 핵심언어 점수는 거의 유지(0.8231→0.8219)되면서 비핵심 61개 언어 평균이 0.5605→0.6570으로 상승, 오프타깃(엉뚱한 언어로 답하는) 비율 1.94%→0.89%로 감소.</p>
+<h2>벤치마크 (Table 4 발췌, 원점수 기준)</h2>
+<table><thead><tr><th>모델</th><th>FLORES-200</th><th>WMT24++</th><th>WMT26(GPT판정)</th><th>instTrans IFscore</th><th>IFMTBench IFscore</th><th>MEME</th></tr></thead><tbody>
+<tr><td>Index-Translate-35B-A3B(프리뷰)</td><td><strong>0.8794</strong></td><td>0.8586</td><td>76.76</td><td><strong>0.8336</strong></td><td>0.8991</td><td>0.7405</td></tr>
+<tr><td>Index-Translate-9B</td><td>0.8789</td><td>0.8601</td><td>75.35</td><td>0.8209</td><td>0.8760</td><td>0.7387</td></tr>
+<tr><td>Index-Translate-2B</td><td>0.8655</td><td>0.8489</td><td>60.26</td><td>0.7569</td><td>0.7584</td><td>0.6443</td></tr>
+<tr><td>Hy-MT2-30B-A3B</td><td>0.8787</td><td><strong>0.8624</strong></td><td>66.81</td><td>0.6415</td><td>0.9029</td><td>0.5812</td></tr>
+<tr><td>TranslateGemma-12B</td><td>0.8732</td><td>0.8524</td><td>71.19</td><td>0.3068</td><td>0.2892</td><td>0.4281</td></tr>
+<tr><td>DeepSeek-V4.1-Flash</td><td>0.8762</td><td>0.8510</td><td>83.55</td><td>0.6374</td><td>0.9090</td><td><strong>0.7424</strong></td></tr>
+<tr><td>GPT-5.6-Sol</td><td>0.8650</td><td>0.8469</td><td><strong>89.10</strong></td><td>0.7624</td><td><strong>0.9367</strong></td><td>0.7194</td></tr>
+</tbody></table>
+<p><strong>읽을 때 주의할 점</strong> (원문이 직접 지적):</p>
+<ul>
+<li>WMT26은 GPT-5.6-Sol이 채점자이면서 동시에 비교 대상 1위 — 자기 선호 가능성 배제 불가. 참조기반 COMET 계열에서는 Index-Translate가 대등/우세하므로 같이 봐야 함.</li>
+<li>홈페이지 대표 표는 DeepSeek-V4.1-Flash와 WMT26을 생략해 35B-A3B가 저자원/밈 번역도 1위처럼 보이지만, 리포트 전체 표 기준으로는 두 항목 모두 <strong>2위</strong>.</li>
+<li>번역 특화 대가: Index-Translate-9B는 Qwen3.5-9B 대비 일반능력 벤치마크 대폭 하락 (C-Eval 86.6→69.6, GPQA-Diamond 75.8→36.3, MMMLU 75.9→66.6). 번역 전용으로 봐야 함.</li>
+</ul>
+<h2>저자원 언어 (오프타깃 비율)</h2>
+<p>FLORES<em>minor</em>pair (62개 언어·1,040방향·10.4만 입력) 기준, 목표 언어가 아닌 언어로 답하는 비율:</p>
+<table><thead><tr><th>모델</th><th>오프타깃 비율</th></tr></thead><tbody>
+<tr><td>Hy-MT2-1.8B</td><td>54.2%</td></tr>
+<tr><td>Hy-MT2-7B</td><td>35.7%</td></tr>
+<tr><td>Index-Translate-2B</td><td>4.2%</td></tr>
+<tr><td>Index-Translate-9B</td><td>4.0%</td></tr>
+<tr><td>Index-Translate-35B-A3B(프리뷰)</td><td><strong>2.4%</strong></td></tr>
+</tbody></table>
+<p>(단, Hy-MT2는 33개 언어만 지원하는 모델이라 언어 범위 차이가 격차에 상당 부분 반영됨)</p>
+<h2>Index-Echo (음성 번역)</h2>
+<ul>
+<li>S2TT: Qwen3-Omni의 AuT 오디오 인코더 + Index-Translate 디코더, 엔드투엔드 학습. 문장 단위 타임스탬프 기본 포함.</li>
+<li>S2ST: ASR→번역→TTS 캐스케이드 대신, <strong>Hidden2CV 매퍼</strong>(~30M 파라미터)로 번역모델의 마지막 은닉 상태를 CosyVoice3 의미 계층에 직접 정렬. 증류 → DiffRO(Differentiable Reward Optimization) 2단계 학습.</li>
+<li>평가(7방향·140개 영상구간): Index-Echo-9B 번역품질(MT judge) 0.857 — Gemini-3.1-Pro(0.849)보다 높지만 Qwen3.8-Omni-Flash(0.887)보다 낮음. 원문 인식 오류·타임스탬프 오차는 2B/9B가 가장 낮음.</li>
+<li>S2ST 엔드투엔드 vs 캐스케이드: 12개 조합 중 8개에서 엔드투엔드가 내용 오류율 더 낮음. 화자 유사도는 둘 다 ~0.72로 동등.</li>
+</ul>
+<h2>Index-Homura (음절 제어 더빙 번역)</h2>
+<ul>
+<li>SandGlass 벤치마크(자막 300문장 × 4언어 × 3길이 = 3,600 사례/모델)</li>
+<li>Index-Homura-9B: 목표 음절 수 10% 이내 적중률 <strong>81.92%</strong> (GPT-5.6-Sol low 47.64%, DeepSeek-V4-Flash 16.36%, Hy-MT2-7B 18.86%)</li>
+<li>단, 번역 품질은 역전: DeepSeek-V4-Flash(0.8742) &gt; GPT-5.6-Sol(0.8715) &gt; Hy-MT2-7B(0.8560) &gt; Index-Homura-9B(0.7863)</li>
+<li>SFT→RL 전환 시 적중률 45.75%→81.92% 상승, 품질 0.8581→0.7863 하락 — 길이 제어와 품질은 트레이드오프 관계</li>
+</ul>
+<h2>Index-NativeLong (장문 번역)</h2>
+<ul>
+<li>청크 분할 없이 <strong>문서 전체를 한 번에 번역</strong> (vs 기존 LLM 번역의 chunk+glossary 방식)</li>
+<li>2B: 128K 시퀀스 감쇠 중간학습 모델 기반 / 9B: 통합 텍스트모델 기반, 중국어 기준 4K~64K 토큰 양방향 문서로 SFT</li>
+<li>평가: SEGALE로 블록 정렬 후 COMET 채점 (짝 안 맞으면 0점 — 번역 중단 시 점수 급락)</li>
+<li><strong>길이가 늘어날수록 격차 확대</strong>: Hy-MT2-7B는 GuoFeng(중→영) 4K에서 0.7334였다가 64K에서 0.0001로 붕괴(짧은 조각만 번역하고 멈추는 현상). Index-NativeLong-9B는 64K에서도 0.7382 유지.</li>
+<li>인물명 일관성 사례: <code>王妃</code>(Wang Fei)를 네이티브 9B는 32K 토큰 전체에서 일관되게 &quot;Wang Fei&quot;로 유지. 같은 9B를 청크 번역 파이프라인(TranslateBooksWithLLMs)에 넣으면 &quot;Instructor Wangfei&quot;, &quot;the Dean&quot;, &quot;The Queen Consort&quot;로 흔들림.</li>
+</ul>
+<h2>실행 방법 (vLLM)</h2>
+<pre><code>git clone https://github.com/bilibili/Index-Translate.git
+cd Index-Translate
+pip install -U vllm
+pip install -r inference/llm/requirements.txt
+vllm serve IndexTeam/Index-Translate-2B --host 127.0.0.1 --port 8000 --max-model-len 4096</code></pre>
+<pre><code>python inference/llm/translate.py \
+  &quot;你好，世界。今天天气不错，我们去公园散步吧。&quot; \
+  --target en --model IndexTeam/Index-Translate-2B</code></pre>
+<ul>
+<li>텍스트 번역: <code>temperature=0</code> 그리디 디코딩, <code>enable_thinking=False</code> 기본</li>
+<li>Index-Homura: <code>syllable_translate.py --syllables &lt;목표음절수&gt;</code></li>
+<li>Index-NativeLong: <code>doc_translate.py</code> (전체 문서 입력)</li>
+<li><strong>서빙 컨텍스트</strong>: 텍스트 모델 32K / NativeLong 2B 262,144 토큰 / NativeLong 9B 229,376 토큰</li>
+<li><strong>GPU 메모리(bf16, KV캐시 별도)</strong>: 2B ~8GB, 9B ~24GB. Index-Echo-S2ST는 별도 패키지(2B ~13GB/12GB VRAM, 9B ~26GB/24GB+ VRAM), 30초 이하 짧은 발화 단위</li>
+<li>vLLM 0.29에서 테스트됨, SGLang 서빙도 가능</li>
+<li>부가 도구: 로컬 모델 기반 웹페이지 번역 브라우저 확장, 음성분리~더빙정렬 영상 더빙 파이프라인</li>
+</ul>
+<h2>평가 수치 해석 시 주의점 (원문 직접 언급)</h2>
+<ol>
+<li><strong>자체 벤치마크 비중</strong>: instTrans, MEME, SandGlass, NativeLongBench, S2TT/S2ST 테스트셋 모두 Index 팀 자체 제작, 아직 비공개 (일부는 공개 예정)</li>
+<li><strong>LLM 판정자 의존</strong>: 지시따르기·WMT26은 GPT-5.6-Sol, 밈·SandGlass 품질은 Gemini 2.5 Flash, 음성번역 품질은 Gemini 3.1 Pro가 채점. 학습 보상에도 Gemini 계열이 쓰여 판정자-보상모델 취향이 겹칠 가능성.</li>
+<li><strong>홈페이지 vs 리포트 차이</strong>: 홈페이지 요약은 비교 대상/지표를 일부 생략한 표 기준 &quot;1위&quot; 표기 사례 있음. 순위 인용 시 리포트 전체 표 확인 권장.</li>
+<li><strong>35B-A3B는 프리뷰</strong>: 학습 중인 버전. 리포트 분석 대부분은 2B/9B 기준.</li>
+</ol>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>링크</th></tr></thead><tbody>
+<tr><td>Index-Translate 홈페이지/온라인 데모</td><td><a href="https://index-translate.bilibili.com/">https://index-translate.bilibili.com/</a></td></tr>
+<tr><td>기술 리포트 (PDF)</td><td><a href="https://github.com/bilibili/Index-Translate/blob/main/docs/Index<em>Translate</em>Series<em>Technical</em>Report.pdf">https://github.com/bilibili/Index-Translate/blob/main/docs/Index<em>Translate</em>Series<em>Technical</em>Report.pdf</a></td></tr>
+<tr><td>GitHub 저장소</td><td><a href="https://github.com/bilibili/Index-Translate">https://github.com/bilibili/Index-Translate</a></td></tr>
+<tr><td>Hugging Face 모델 컬렉션</td><td><a href="https://huggingface.co/collections/IndexTeam/index-translate">https://huggingface.co/collections/IndexTeam/index-translate</a></td></tr>
+<tr><td>ModelScope 컬렉션</td><td><a href="https://modelscope.cn/collections/IndexTeam/Index-Translate">https://modelscope.cn/collections/IndexTeam/Index-Translate</a></td></tr>
+<tr><td>HOMURA 논문 (음절 제어 RL)</td><td><a href="https://arxiv.org/abs/2601.10187">https://arxiv.org/abs/2601.10187</a></td></tr>
+<tr><td>RIVAL 논문 (보상 해킹 방지)</td><td><a href="https://arxiv.org/abs/2506.05070">https://arxiv.org/abs/2506.05070</a></td></tr>
+<tr><td>Hy-MT2 기술 리포트 (비교 모델)</td><td><a href="https://arxiv.org/abs/2605.22064">https://arxiv.org/abs/2605.22064</a></td></tr>
+<tr><td>CosyVoice3 논문</td><td><a href="https://arxiv.org/abs/2505.17589">https://arxiv.org/abs/2505.17589</a></td></tr>
+<tr><td>Qwen3-Omni 논문</td><td><a href="https://arxiv.org/abs/2509.17765">https://arxiv.org/abs/2509.17765</a></td></tr>
+<tr><td>원문 (PyTorchKR)</td><td><a href="https://discuss.pytorch.kr/t/bilibili-150-index-translate-5/12070">https://discuss.pytorch.kr/t/bilibili-150-index-translate-5/12070</a></td></tr>
+<tr><td>Threads 공유 링크</td><td><a href="https://www.threads.com/share/BCP6AizF0C/">https://www.threads.com/share/BCP6AizF0C/</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-01 Bilibili Index-Translate 다국어 번역 모델/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

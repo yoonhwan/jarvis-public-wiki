@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-09T11:48:53.554847",
+  "generated_at": "2026-10-04T14:05:17.768953",
   "source": "Wikis/pages",
   "domain": "ai-agent",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20260909-114758-KST",
+  "version": "20261004-140028-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -28,6 +28,186 @@
     }
   },
   "pages": [
+    {
+      "title": "클로드 헤비유저(기업) 사례 — Enterprise API → 로컬 AI 서버 전환 흐름",
+      "source": "Wikis/pages/entities/클로드 헤비유저(기업) 사례 — Enterprise API → 로컬 AI 서버 전환 흐름.md",
+      "url": "pages/클로드-헤비유저-기업-사례-enterprise-api-로컬-ai-서버-전환-흐름.html",
+      "raw_body_merged": false,
+      "excerpt": "1. 도입 — 클로드 헤비유저를 만난 충격",
+      "excerpt_hero": "1. 도입 — 클로드 헤비유저를 만난 충격",
+      "excerpt_list": "1. 도입 — 클로드 헤비유저를 만난 충격",
+      "date": "2026-10-04",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-04",
+        1791042571.6923013
+      ]
+    },
+    {
+      "title": "llama.cpp, 144M~27B '의사결정(Decision) 모델' 공식 지원 추가",
+      "source": "Wikis/pages/entities/llama.cpp, 144M~27B '의사결정(Decision) 모델' 공식 지원 추가.md",
+      "url": "pages/llama-cpp-144m-27b-의사결정-decision-모델-공식-지원-추가.html",
+      "raw_body_merged": false,
+      "excerpt": "댓글 스레드 (Author): 출처: huggingface.co/blog… (아래 원문 링크)",
+      "excerpt_hero": "댓글 스레드 (Author): 출처: huggingface.co/blog… (아래 원문 링크)",
+      "excerpt_list": "댓글 스레드 (Author): 출처: huggingface.co/blog… (아래 원문 링크)",
+      "date": "2026-10-03",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-03",
+        1791013258.8017797
+      ]
+    },
+    {
+      "title": "젠장 또 Jev야.. — Cloudflare, 결정 모델 Clef Clef-flash 공개",
+      "source": "Wikis/pages/entities/젠장 또 Jev야.. — Cloudflare, 결정 모델 Clef Clef-flash 공개.md",
+      "url": "pages/젠장-또-jev야-cloudflare-결정-모델-clef-clef-flash-공개.html",
+      "raw_body_merged": false,
+      "excerpt": "Threads 작성자: @choi.openai (2026-10-03 기준 2시간 전 게시, 3.7K views)",
+      "excerpt_hero": "Threads 작성자: @choi.openai (2026-10-03 기준 2시간 전 게시, 3.7K views)",
+      "excerpt_list": "Threads 작성자: @choi.openai (2026-10-03 기준 2시간 전 게시, 3.7K views)",
+      "date": "2026-10-03",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-03",
+        1791011675.8749297
+      ]
+    },
+    {
+      "title": "Bilibili, 150개 언어 텍스트·음성 번역 모델 Index-Translate 5종 공개",
+      "source": "Wikis/pages/references/Bilibili, 150개 언어 텍스트·음성 번역 모델 Index-Translate 5종 공개.md",
+      "url": "pages/bilibili-150개-언어-텍스트-음성-번역-모델-index-translate-5종-공개.html",
+      "raw_body_merged": false,
+      "excerpt": "Threads에서 PyTorchKR(@pytorch.kr) 계정이 공유한 글. 원문은 PyTorchKR 포럼(discuss.pytorch.kr)의 기술 리뷰 아티클이며, Threads 포스트 자체는 캡션 없이 외부 링크 공유(link-preview…",
+      "excerpt_hero": "Threads에서 PyTorchKR(@pytorch.kr) 계정이 공유한 글. 원문은 PyTorchKR 포럼(discuss.pytorch.kr)의 기술 리뷰 아티클이며, Threads 포스트 자체는 캡션 없이 외부 링크 공유(link-preview repost) 형태였음. OG meta에 전체 요약 일부가 포함되어 있었고, 전체 본문은 원문 Discour…",
+      "excerpt_list": "Threads에서 PyTorchKR(@pytorch.kr) 계정이 공유한 글. 원문은 PyTorchKR 포럼(discuss.pytorch.kr)의 기술 리뷰 아…",
+      "date": "2026-10-01",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-01",
+        1790864251.4228718
+      ]
+    },
+    {
+      "title": "보안때문에 로컬LLM 쓸수밖에 없는 상황 — 12GB VRAM 모델 추천 스레드",
+      "source": "Wikis/pages/entities/보안때문에 로컬LLM 쓸수밖에 없는 상황 — 12GB VRAM 모델 추천 스레드.md",
+      "url": "pages/보안때문에-로컬llm-쓸수밖에-없는-상황-12gb-vram-모델-추천-스레드.html",
+      "raw_body_merged": false,
+      "excerpt": "핵심 제약 조건",
+      "excerpt_hero": "핵심 제약 조건",
+      "excerpt_list": "핵심 제약 조건",
+      "date": "2026-09-29",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-29",
+        1790609521.593157
+      ]
+    },
+    {
+      "title": "아들이 커서도 엄마랑 가까운 사이로 남는, 지금 해두면 좋은 7가지",
+      "source": "Wikis/pages/references/아들이 커서도 엄마랑 가까운 사이로 남는, 지금 해두면 좋은 7가지.md",
+      "url": "pages/아들이-커서도-엄마랑-가까운-사이로-남는-지금-해두면-좋은-7가지.html",
+      "raw_body_merged": false,
+      "excerpt": "아들이 커서도 엄마랑 가까운 사이로 남는, 지금 해두면 좋은 7가지",
+      "excerpt_hero": "아들이 커서도 엄마랑 가까운 사이로 남는, 지금 해두면 좋은 7가지",
+      "excerpt_list": "아들이 커서도 엄마랑 가까운 사이로 남는, 지금 해두면 좋은 7가지",
+      "date": "2026-09-28",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-28",
+        1790585478.5299473
+      ]
+    },
+    {
+      "title": "빌리빌리(Bilibili) IndexTTS-2.5 — 오픈소스 목소리 복제 AI",
+      "source": "Wikis/pages/entities/빌리빌리(Bilibili) IndexTTS-2.5 — 오픈소스 목소리 복제 AI.md",
+      "url": "pages/빌리빌리-bilibili-indextts-2-5-오픈소스-목소리-복제-ai.html",
+      "raw_body_merged": false,
+      "excerpt": "빌리빌리가 목소리를 그대로 복제하는 AI 음성 모델을 오픈소스로 풀었어요.",
+      "excerpt_hero": "빌리빌리가 목소리를 그대로 복제하는 AI 음성 모델을 오픈소스로 풀었어요.",
+      "excerpt_list": "빌리빌리가 목소리를 그대로 복제하는 AI 음성 모델을 오픈소스로 풀었어요.",
+      "date": "2026-09-22",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-22",
+        1790073379.488412
+      ]
+    },
+    {
+      "title": "RTX 5090에만 특화된 Qwen 추론 엔진 NInfer",
+      "source": "Wikis/pages/entities/RTX 5090에만 특화된 Qwen 추론 엔진 NInfer.md",
+      "url": "pages/rtx-5090에만-특화된-qwen-추론-엔진-ninfer.html",
+      "raw_body_merged": false,
+      "excerpt": "RTX 5090에만 특화된 Qwen 추론 엔진이 나왔어요!",
+      "excerpt_hero": "RTX 5090에만 특화된 Qwen 추론 엔진이 나왔어요!",
+      "excerpt_list": "RTX 5090에만 특화된 Qwen 추론 엔진이 나왔어요!",
+      "date": "2026-09-22",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-22",
+        1790073352.8223774
+      ]
+    },
+    {
+      "title": "SPARSEUP - RAG 검색 성능 극대화용 150M 희소 임베딩 모델",
+      "source": "Wikis/pages/entities/SPARSEUP - RAG 검색 성능 극대화용 150M 희소 임베딩 모델.md",
+      "url": "pages/sparseup-rag-검색-성능-극대화용-150m-희소-임베딩-모델.html",
+      "raw_body_merged": false,
+      "excerpt": "Threads 포스트 자체는 위 한 줄(원문 링크)만 포함하고 있으며, 실제 설명 내용은 og:description(=포스트 본문 텍스트)에서 아래와 같이 확인됨:",
+      "excerpt_hero": "Threads 포스트 자체는 위 한 줄(원문 링크)만 포함하고 있으며, 실제 설명 내용은 og:description(=포스트 본문 텍스트)에서 아래와 같이 확인됨:",
+      "excerpt_list": "Threads 포스트 자체는 위 한 줄(원문 링크)만 포함하고 있으며, 실제 설명 내용은 og:description(=포스트 본문…",
+      "date": "2026-09-18",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-18",
+        1789704502.587326
+      ]
+    },
+    {
+      "title": "draw.io Claude 커넥터 (+ Codex 버전)",
+      "source": "Wikis/pages/entities/draw.io Claude 커넥터 (+ Codex 버전).md",
+      "url": "pages/draw-io-claude-커넥터-codex-버전.html",
+      "raw_body_merged": false,
+      "excerpt": "Threads 작성자: @lucasflatwhite",
+      "excerpt_hero": "Threads 작성자: @lucasflatwhite",
+      "excerpt_list": "Threads 작성자: @lucasflatwhite",
+      "date": "2026-09-18",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-18",
+        1789690493.3324971
+      ]
+    },
+    {
+      "title": "숙제 다 했어 대신 이 말로 — 잔소리 없이 스스로 숙제하는 아이로 키우기",
+      "source": "Wikis/pages/concepts/숙제 다 했어 대신 이 말로 — 잔소리 없이 스스로 숙제하는 아이로 키우기.md",
+      "url": "pages/숙제-다-했어-대신-이-말로-잔소리-없이-스스로-숙제하는-아이로-키우기.html",
+      "raw_body_merged": false,
+      "excerpt": "\"숙제 다 했어?\"라는 확인형 질문은 아이를 수동적으로 만든다. 할 일을 기억하고, 순서를 정하고, 빠진 걸 찾아내는 역할이 전부 부모에게 있기 때문. 부모의…",
+      "excerpt_hero": "\"숙제 다 했어?\"라는 확인형 질문은 아이를 수동적으로 만든다. 할 일을 기억하고, 순서를 정하고, 빠진 걸 찾아내는 역할이 전부 부모에게 있기 때문. 부모의 질문을 바꾸면 그 역할이 아이에게 넘어간다.",
+      "excerpt_list": "\"숙제 다 했어?\"라는 확인형 질문은 아이를 수동적으로 만든다. 할 일을 기억하고, 순서를 정하고, 빠진…",
+      "date": "2026-09-17",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-17",
+        1789649106.6716075
+      ]
+    },
+    {
+      "title": "육아 기준 28가지 - jooshik_k",
+      "source": "Wikis/pages/concepts/육아 기준 28가지 - jooshik_k.md",
+      "url": "pages/육아-기준-28가지-jooshik-k.html",
+      "raw_body_merged": false,
+      "excerpt": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 Instagram 게시물의 전체 캡션이 그대로 담겨 있음. 카드뉴스/캐러셀 이미지는…",
+      "excerpt_hero": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 Instagram 게시물의 전체 캡션이 그대로 담겨 있음. 카드뉴스/캐러셀 이미지는 없는 텍스트 전용 게시물.",
+      "excerpt_list": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 In…",
+      "date": "2026-09-14",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-14",
+        1789345695.403127
+      ]
+    },
     {
       "title": "오픈소스 음성 AI, 기준이 달라졌습니다 — OmniVoice (k2-fsa)",
       "source": "Wikis/pages/entities/오픈소스 음성 AI, 기준이 달라졌습니다 — OmniVoice (k2-fsa).md",
@@ -59,9 +239,9 @@
       ]
     },
     {
-      "title": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리하",
-      "source": "Wikis/pages/entities/새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리하.md",
-      "url": "pages/2-90.html",
+      "title": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리ᄒ 2",
+      "source": "Wikis/pages/entities/새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리ᄒ 2.md",
+      "url": "pages/2-90-2.html",
       "raw_body_merged": false,
       "excerpt": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.",
       "excerpt_hero": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.",

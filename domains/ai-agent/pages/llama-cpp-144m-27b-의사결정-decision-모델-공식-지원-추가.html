@@ -1,0 +1,124 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>llama.cpp, 144M~27B &#x27;의사결정(Decision) 모델&#x27; 공식 지원 추가 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261004-140028-KST">Jarvis Wiki / ai-agent</a><h1>llama.cpp, 144M~27B &#x27;의사결정(Decision) 모델&#x27; 공식 지원 추가</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>llama.cpp, 144M~27B &#x27;의사결정(Decision) 모델&#x27; 공식 지원 추가</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-03 llama.cpp Decision Models/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>llama.cpp, 144M~27B &#x27;의사결정(Decision) 모델&#x27; 공식 지원 추가</h1>
+<h2>본문 (Main Post, Threads)</h2>
+<blockquote>llama.cpp에서 144M 초경량 크기부터 27B까지 지원하는 &#x27;의사결정(Decision) 모델&#x27; 지원을 공식 추가했습니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>에이전트의 다음 행동 선택이나 콘텐츠 모더레이션처럼 각 옵션의 확률값만 필요한 작업을 로컬 환경에서 훨씬 빠르고 가볍게 처리할 수 있어 실제 파이프라인 구성할 때 유용할거 같습니다.</blockquote>
+<p><strong>댓글 스레드 (Author)</strong>: 출처: huggingface.co/blog… (아래 원문 링크)</p>
+<p><strong>댓글 (Other User)</strong> — focusrefresh: &quot;decision logic 을 강화시켜줄 것 같네요. 바로 설치해 봅니다.&quot;</p>
+<h2>핵심 요약 (원문: HuggingFace Blog, ggml-org, 2026-10-02 게시)</h2>
+<p>llama.cpp 서버가 <code>/v1/systemone</code> 엔드포인트를 통해 <strong>decision model(의사결정 모델)</strong>을 지원한다. 상태(state: 텍스트/JSON/스크린샷)와 타입이 지정된 질문들을 보내면, 모델이 텍스트 생성 없이 <strong>각 옵션의 확률값</strong>을 한 번의 forward pass로 반환한다.</p>
+<blockquote><strong>Decision model이란?</strong> 옵션들을 스코어링해서 답하는 모델. 챗 모델은 출력 토큰마다 forward pass가 들고 출력을 파싱해야 하지만, decision model은 입력을 한 번 읽고 항상 주어진 옵션 중 하나를 확률과 함께 반환한다. 용도: 요청 라우팅, 콘텐츠 모더레이션, 에이전트 스텝 검증, 다음 행동 선택.</blockquote>
+<p>API는 TypeSafe의 Jev 모델이 도입한 System One 포맷을 따르므로, 기존 클라이언트는 base URL만 바꾸면 된다. 구현 세부사항은 <a href="https://github.com/ggml-org/llama.cpp/pull/29818">PR #29818</a>.</p>
+<h3>지원 모델</h3>
+<table><thead><tr><th>모델</th><th>크기</th><th>베이스</th><th>언어</th><th>이미지</th><th>라이선스</th><th>속도*</th></tr></thead><tbody>
+<tr><td><a href="https://huggingface.co/ggml-org/Julia-1-GGUF">Julia-1</a></td><td><strong>144M</strong></td><td>mmBERT-small</td><td>50+</td><td>불가</td><td>Apache 2.0</td><td><strong>3ms</strong></td></tr>
+<tr><td><a href="https://huggingface.co/ggml-org/Laya-GGUF">Laya</a></td><td><strong>421M</strong></td><td>ModernBERT-large</td><td>English</td><td>불가</td><td>Apache 2.0</td><td><strong>5ms</strong></td></tr>
+<tr><td><a href="https://huggingface.co/ggml-org/Kev-4B-GGUF">Kev-4B</a></td><td><strong>4B</strong></td><td>Qwen3.5-4B-Base</td><td>English</td><td>불가</td><td>Apache 2.0</td><td><strong>12ms</strong></td></tr>
+<tr><td><a href="https://huggingface.co/ggml-org/lev-GGUF">lev</a></td><td><strong>4B</strong></td><td>Qwen3.5-4B</td><td>English</td><td>불가</td><td>Apache 2.0</td><td><strong>36ms</strong></td></tr>
+<tr><td><a href="https://huggingface.co/ggml-org/OpenJev-GGUF">OpenJev</a></td><td><strong>27B</strong></td><td>Qwen3.8-27B</td><td>en,de,fr,hi,zh,ja</td><td><strong>가능</strong></td><td>CC BY-NC 4.0</td><td><strong>43ms</strong></td></tr>
+</tbody></table>
+<p>\* NVIDIA RTX PRO 6000 기준, 질문 1개당 중간 응답 시간. <a href="https://huggingface.co/collections/ggml-org/decision-models-6abf80cca3c83f127060a769">Decision models collection</a> · <a href="https://multimodalart-jev-decision-index.static.hf.space/index.html">Decision Index 비교</a></p>
+<h3>Quick Start</h3>
+<pre><code>llama serve -hf ggml-org/Kev-4B-GGUF</code></pre>
+<p>세 가지 질문 타입:</p>
+<table><thead><tr><th>타입</th><th>보내는 것</th><th>받는 것</th></tr></thead><tbody>
+<tr><td><code>choice</code></td><td>옵션들 (설명 선택적)</td><td>최상위 옵션 + 옵션별 확률</td></tr>
+<tr><td><code>score</code></td><td>2~10단계 레벨 (낮은순)</td><td>예상 레벨 (두 단계 사이값 가능)</td></tr>
+<tr><td><code>noul</code></td><td>Yes/No 질문</td><td>Yes일 확률</td></tr>
+</tbody></table>
+<p>요청 예시:</p>
+<pre><code>curl http://localhost:8080/v1/systemone \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#x27;{
+    &quot;state&quot;: &quot;Customer message: I was charged twice for my order last week and nobody has replied.&quot;,
+    &quot;questions&quot;: {
+      &quot;route&quot;: {
+        &quot;type&quot;: &quot;choice&quot;,
+        &quot;instructions&quot;: &quot;Which team should handle this?&quot;,
+        &quot;criteria&quot;: {
+          &quot;billing&quot;: &quot;payments, charges, refunds, invoices&quot;,
+          &quot;shipping&quot;: &quot;delivery, tracking, lost or late parcels&quot;,
+          &quot;technical&quot;: &quot;bugs, errors, login problems&quot;
+        }
+      },
+      &quot;angry&quot;: { &quot;type&quot;: &quot;noul&quot;, &quot;instructions&quot;: &quot;Is the customer angry?&quot; },
+      &quot;urgency&quot;: {
+        &quot;type&quot;: &quot;score&quot;,
+        &quot;instructions&quot;: &quot;How urgent is this?&quot;,
+        &quot;criteria&quot;: [&quot;can wait&quot;, &quot;this week&quot;, &quot;today&quot;, &quot;right now&quot;]
+      }
+    }
+  }&#x27;</code></pre>
+<p>응답 (값 반올림):</p>
+<pre><code>{
+  &quot;model&quot;: &quot;ggml-org/Kev-4B-GGUF&quot;,
+  &quot;answers&quot;: {
+    &quot;route&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;choice&quot;: &quot;billing&quot;,
+      &quot;probabilities&quot;: {&quot;billing&quot;: 0.9049, &quot;shipping&quot;: 0.0275, &quot;technical&quot;: 0.0676},
+      &quot;confidence&quot;: 0.8574
+    },
+    &quot;angry&quot;: { &quot;type&quot;: &quot;noul&quot;, &quot;noul&quot;: 0.8208 },
+    &quot;urgency&quot;: {
+      &quot;type&quot;: &quot;score&quot;,
+      &quot;score&quot;: 2.2821,
+      &quot;legend&quot;: {&quot;0&quot;: &quot;can wait&quot;, &quot;1&quot;: &quot;this week&quot;, &quot;2&quot;: &quot;today&quot;, &quot;3&quot;: &quot;right now&quot;},
+      &quot;probabilities&quot;: {&quot;0&quot;: 0.036, &quot;1&quot;: 0.1937, &quot;2&quot;: 0.2225, &quot;3&quot;: 0.5478},
+      &quot;confidence&quot;: 0.2821
+    }
+  },
+  &quot;usage&quot;: {&quot;input_tokens&quot;: 130, &quot;output_tokens&quot;: 0}
+}</code></pre>
+<p>전체 레퍼런스: <a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md">llama.cpp server README</a></p>
+<h3>이미지 입력 (OpenJev)</h3>
+<p>일부 모델(현재 OpenJev)은 문서/스크린샷 같은 이미지도 읽을 수 있다. Vision projector는 자동 다운로드됨:</p>
+<pre><code>llama serve -hf ggml-org/OpenJev-GGUF</code></pre>
+<pre><code>import base64
+import requests
+
+with open(&quot;document.png&quot;, &quot;rb&quot;) as f:
+    image = &quot;data:image/png;base64,&quot; + base64.b64encode(f.read()).decode()
+
+response = requests.post(&quot;http://localhost:8080/v1/systemone&quot;, json={
+    &quot;state&quot;: &quot;A file uploaded by a customer.&quot;,
+    &quot;images&quot;: [image],
+    &quot;questions&quot;: {
+        &quot;kind&quot;: {
+            &quot;type&quot;: &quot;choice&quot;,
+            &quot;instructions&quot;: &quot;What kind of document is this?&quot;,
+            &quot;criteria&quot;: {&quot;invoice&quot;: None, &quot;receipt&quot;: None, &quot;contract&quot;: None, &quot;other&quot;: None},
+        },
+    },
+})
+
+print(response.json()[&quot;answers&quot;][&quot;kind&quot;][&quot;choice&quot;])  # invoice</code></pre>
+<p><code>state</code>는 chat message 리스트도 가능하며, data URL 형태의 <code>image_url</code> 파트는 동일하게 이미지로 읽힌다.</p>
+<h3>멀티 모델 라우터 모드</h3>
+<pre><code>llama serve
+curl http://localhost:8080/v1/systemone \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#x27;{&quot;model&quot;: &quot;ggml-org/Julia-1-GGUF:Q8_0&quot;, &quot;state&quot;: &quot;...&quot;, &quot;questions&quot;: {...}}&#x27;</code></pre>
+<p><code>/v1/models</code>로 로드된 모델 id 목록 확인 가능. 모델 1개만 로드된 경우 <code>model</code> 필드는 무시됨.</p>
+<h3>운영 팁</h3>
+<ul>
+<li><strong>여러 크기의 모델을 시도해보기</strong>: 작은 모델=빠름, 큰 모델=더 많이 안다. <a href="https://multimodalart-jev-decision-index.static.hf.space/index.html">Decision Index</a>로 비교.</li>
+<li><strong>옵션을 설명과 함께 제공</strong>: Julia-1은 레이블만 주면 &quot;충전 2회&quot; 티켓을 <code>shipping</code>으로 잘못 라우팅했지만, 옵션에 설명을 추가하자 <code>billing</code>(0.99)으로 정확히 분류.</li>
+<li><strong>모델별로 confidence cutoff를 따로 설정</strong>: 모호한 티켓(&quot;Hi, quick question about my account&quot;)이 Julia-1에서는 0.25, Kev-4B에서는 0.80으로 나왔음 — 모델마다 보정 필요.</li>
+<li><strong>질문을 배치로 묶기</strong>: 질문들은 독립적으로 답변되며, Kev-4B/lev/OpenJev는 state를 한 번만 처리.</li>
+<li><strong>다양한 quantization 시도</strong>: 일반 GGUF와 동일하게 여러 precision 제공 (예: <code>llama serve -hf ggml-org/Kev-4B-GGUF:Q8_0</code>).</li>
+</ul>
+<h3>다음 계획</h3>
+<p>매주 새로운 오픈 decision model이 나오고 있으며 계속 추가할 예정. 다음은 Cloudflare의 Clef.</p>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>HuggingFace 블로그 원문</td><td><a href="https://huggingface.co/blog/ggml-org/decision-models-in-llamacpp">https://huggingface.co/blog/ggml-org/decision-models-in-llamacpp</a></td></tr>
+<tr><td>llama.cpp PR #29818</td><td><a href="https://github.com/ggml-org/llama.cpp/pull/29818">https://github.com/ggml-org/llama.cpp/pull/29818</a></td></tr>
+<tr><td>llama.cpp server README</td><td><a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md">https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md</a></td></tr>
+<tr><td>Decision models collection</td><td><a href="https://huggingface.co/collections/ggml-org/decision-models-6abf80cca3c83f127060a769">https://huggingface.co/collections/ggml-org/decision-models-6abf80cca3c83f127060a769</a></td></tr>
+<tr><td>Decision Index (모델 비교)</td><td><a href="https://multimodalart-jev-decision-index.static.hf.space/index.html">https://multimodalart-jev-decision-index.static.hf.space/index.html</a></td></tr>
+<tr><td>Threads 원문</td><td><a href="https://www.threads.com/@feelfree<em>ai/post/DeA</em>6OhgW6d">https://www.threads.com/@feelfree<em>ai/post/DeA</em>6OhgW6d</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-03 llama.cpp Decision Models/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

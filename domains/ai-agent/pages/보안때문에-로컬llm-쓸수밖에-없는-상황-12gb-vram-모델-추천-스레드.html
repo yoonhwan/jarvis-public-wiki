@@ -1,0 +1,60 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>보안때문에 로컬LLM 쓸수밖에 없는 상황 — 12GB VRAM 모델 추천 스레드 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261004-140028-KST">Jarvis Wiki / ai-agent</a><h1>보안때문에 로컬LLM 쓸수밖에 없는 상황 — 12GB VRAM 모델 추천 스레드</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>보안때문에 로컬LLM 쓸수밖에 없는 상황 — 12GB VRAM 모델 추천 스레드</h1>
+<blockquote>Source candidate from <code>News-Links/2026-09-29 12GB VRAM 로컬LLM 모델 추천 스레드/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>보안때문에 로컬LLM 쓸수밖에 없는 상황 — 12GB VRAM 모델 추천 스레드</h1>
+<ul>
+<li>작성자: <strong>charius1004</strong> (AI Threads)</li>
+<li>게시 시점: 14시간 전 (스크랩 시점 기준)</li>
+<li>조회수: 13.5K views</li>
+</ul>
+<h2>본문 (Main Post)</h2>
+<blockquote>보안때문에 로컬LLM을 쓸수밖에 없는 상황인데요 심지어 VRAM이 12gb 밖에 없는 상황입니다</blockquote>
+<blockquote></blockquote>
+<blockquote>현재 작은 모델중에서 가장 좋은것을 찾는 중인데요 전문가분들 추천해주실 모델이 있으신가요?</blockquote>
+<blockquote></blockquote>
+<blockquote>현재 Ternary Bonsai 2 27B 를 사용하고 있고 그 보다 좋은게 있을지 찾고 있습니다</blockquote>
+<p><strong>핵심 제약 조건</strong></p>
+<table><thead><tr><th>항목</th><th>값</th></tr></thead><tbody>
+<tr><td>VRAM</td><td><strong>12GB</strong></td></tr>
+<tr><td>현재 사용 모델</td><td><strong>Ternary Bonsai 2 27B</strong> (양자화, 약 8GB 사용)</td></tr>
+<tr><td>용도</td><td>사내 문서 질의응답 (코딩 X), 이미지 포함 문서 있어 비전 지원 필요</td></tr>
+<tr><td>실제 최고난도 태스크</td><td>도면(일본어 문서)에서 비정형 수치 추출·연산 — 표시값 단순 복사가 아니라 이해 후 가감산 필요</td></tr>
+<tr><td>참고 벤치마크</td><td>Bedrock 경유 Claude: <strong>정확도 ~90%</strong> / 로컬 Bonsai2: <strong>정확도 ~80%</strong> (에이전트+OpenCV 전처리·검증 파이프라인 포함)</td></tr>
+</tbody></table>
+<h2>댓글 스레드 요약 (Reply Thread — 시간순)</h2>
+<table><thead><tr><th>사용자</th><th>발언 요지</th></tr></thead><tbody>
+<tr><td>lpaiu</td><td>12GB로 27B 모델이 돌아가냐는 의문</td></tr>
+<tr><td>kkk_lifeee</td><td>Bonsai는 양자화라 들어감</td></tr>
+<tr><td><strong>charius1004 (작성자)</strong></td><td>답변감사, 대략 8GB 정도 사용</td></tr>
+<tr><td>heung.rocks</td><td>그 정도 환경에선 실용적 토큰 속도도 어렵고 추론 결과 신뢰도도 낮을 것 같다는 우려</td></tr>
+<tr><td>kkk_lifeee</td><td>품질 저하 심하면 35B를 RAM에 올리고 active만 VRAM으로 빼서 쓰는 방법 제안</td></tr>
+<tr><td>deokvit</td><td><strong>Ornis(오니스) 1.5 35B</strong> 추천, 이후 &quot;그 사양에선 이게 베스트&quot;라고 재확인</td></tr>
+<tr><td><strong>charius1004 (작성자)</strong></td><td>오니스 1.5 테스트 해보겠다고 응답</td></tr>
+<tr><td>ninesixkr</td><td>12GB면 무리, 3B/4B/7B 완전 경량 양자화로 적재적소만 운용 권장</td></tr>
+<tr><td><strong>charius1004 (작성자)</strong></td><td>코딩용 아님, 사내 문서 Q&amp;A용, 이미지 있어 Bonsai2 비전 기능 사용 중이라 보충 설명</td></tr>
+<tr><td>luluralaaa</td><td><strong>Gemma 4 e4b</strong> 추천</td></tr>
+<tr><td>lsh_netkid</td><td>한국어 자료면 Gemma 4 e4b 좋다고 동조</td></tr>
+<tr><td><strong>charius1004 (작성자)</strong></td><td>실제 문서는 <strong>일본어</strong>. 구글(Gemma)이 다국어 강점 있으나, 정확한 정보를 간단히 출력해야 하는 요구사항 특성상 Bonsai가 Gemma보다 근소 우위. Gemma는 &quot;거짓말&quot;(hallucination)이 심하다는 평</td></tr>
+<tr><td>lastalpha_</td><td>Gemma 12 제안</td></tr>
+<tr><td><strong>charius1004 (작성자)</strong></td><td>Gemma → Bonsai로 갈아탄 상태, Bonsai가 의외로 더 낫다고 재확인</td></tr>
+<tr><td>lastalpha_</td><td>파인튜닝용이냐고 질문</td></tr>
+<tr><td><strong>charius1004 (작성자)</strong></td><td>보안상 자세히는 설명 불가하나, 도면에서 비정형 수치를 이해·연산해 추출하는 고난도 태스크. <strong>Bedrock/Claude 경유 시 정확도 ~90%, 로컬 Bonsai로는 ~80%</strong> — 단순 프롬프팅이 아니라 에이전트 수준 파이프라인(OpenCV 등 활용, 검증 단계 포함)</td></tr>
+<tr><td>lastalpha_</td><td>전처리 거쳐 로컬에서 80점이면 이미 최고 수준 아니냐는 반응, &quot;벡터 싫다ㅎㅎ&quot;</td></tr>
+<tr><td>maroow.lx</td><td><strong>Bonsai2가 현재로선 제일 나은 상황</strong>이나 디코딩/프리필 속도는 답이 없을 것</td></tr>
+<tr><td><strong>charius1004 (작성자)</strong></td><td>에이전트식으로 자율 반복 대화 구조로 구성했는데, Bonsai2가 처음 1~2턴은 똑똑한 척 하다가 4턴 이상 넘어가면 성능 저하(바보가 됨)</td></tr>
+<tr><td>maroow.lx</td><td>단순 워커용이 아닌 <strong>에이전트 용도로는 Ornith 1.5</strong> 추천</td></tr>
+<tr><td><strong>charius1004 (작성자)</strong></td><td>감사 인사, 다른 사람 추천으로 이미 테스트 중이라고 마무리</td></tr>
+</tbody></table>
+<h2>언급된 모델 정리</h2>
+<table><thead><tr><th>모델명</th><th>추천자</th><th>비고</th></tr></thead><tbody>
+<tr><td><strong>Ternary Bonsai 2 27B</strong></td><td>작성자(현재 사용 중)</td><td>양자화, VRAM ~8GB 사용, 비전 지원, 4턴 이상 대화 시 품질 저하 이슈</td></tr>
+<tr><td><strong>Ornis(오니스)/Ornith 1.5 (35B)</strong></td><td>deokvit, maroow.lx</td><td>해당 VRAM 사양에서 베스트로 언급됨, 특히 에이전트 용도로 추천</td></tr>
+<tr><td><strong>Gemma 4 e4b / Gemma 12</strong></td><td>luluralaaa, lsh<em>netkid, lastalpha</em></td><td>한국어엔 강점이나 작성자 실사용(일본어 도면)에서는 Bonsai 대비 열세, hallucination 우려 제기됨</td></tr>
+<tr><td>3B/4B/7B 경량 양자화 모델</td><td>ninesixkr</td><td>12GB 환경에서 현실적 대안으로 제시(구체 모델명 없음)</td></tr>
+</tbody></table>
+<p>⚠️ &quot;Ternary Bonsai 2&quot;, &quot;Ornis/Ornith 1.5&quot; 모델명은 원문 그대로 표기 — 공식 모델 페이지/정확한 스펠링은 미검증 상태입니다.</p>
+<h2>참고 자료</h2>
+<ul>
+<li>원문(Threads): <a href="https://www.threads.com/@charius1004/post/Ddz65OZE2py">https://www.threads.com/@charius1004/post/Ddz65OZE2py</a></li>
+<li>공유 링크: <a href="https://www.threads.com/share/BAPccPs8CM/">https://www.threads.com/share/BAPccPs8CM/</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-09-29 12GB VRAM 로컬LLM 모델 추천 스레드/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

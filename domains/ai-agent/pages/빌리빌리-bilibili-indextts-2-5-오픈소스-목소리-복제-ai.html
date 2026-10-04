@@ -1,0 +1,52 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>빌리빌리(Bilibili) IndexTTS-2.5 — 오픈소스 목소리 복제 AI · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261004-140028-KST">Jarvis Wiki / ai-agent</a><h1>빌리빌리(Bilibili) IndexTTS-2.5 — 오픈소스 목소리 복제 AI</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>빌리빌리(Bilibili) IndexTTS-2.5 — 오픈소스 목소리 복제 AI</h1>
+<blockquote>Source candidate from <code>News-Links/2026-09-22 IndexTTS-2.5 오픈소스 음성복제/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>빌리빌리(Bilibili) IndexTTS-2.5 — 오픈소스 목소리 복제 AI</h1>
+<blockquote>RealAILab | AI 현직자 (@realailab_core) Threads 포스트 요약</blockquote>
+<h2>TL;DR</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>의미</th></tr></thead><tbody>
+<tr><td>모델명</td><td><strong>IndexTTS-2.5</strong></td><td>빌리빌리(Bilibili) 팀 오픈소스</td></tr>
+<tr><td>방식</td><td><strong>Zero-shot 음성 복제</strong></td><td>참고 음성 파일 1개만 있으면 학습 없이 바로 사용</td></tr>
+<tr><td>감정/속도 제어</td><td>O</td><td>감정 레퍼런스 오디오 또는 감정 수치 파라미터로 세밀 조절</td></tr>
+<tr><td>지원 언어</td><td><strong>5개</strong></td><td>중국어·영어·일본어·스페인어·아랍어 (한국어 미지원 — 댓글에서 확인)</td></tr>
+<tr><td>서빙 경로</td><td><strong>vLLM 공식 레시피 제공</strong></td><td>로컬 실험 → 실서비스 배포까지 공식 경로 마련</td></tr>
+<tr><td>로컬 실행</td><td><code>uv run webui.py</code></td><td>코드 없이 웹 UI에서 참고 음성 + 텍스트만 입력</td></tr>
+<tr><td>라이선스/공개</td><td>오픈소스 (GitHub)</td><td>github.com/index-tts/index-tts</td></tr>
+</tbody></table>
+<h2>본문 (Main Post)</h2>
+<p>빌리빌리가 목소리를 그대로 복제하는 AI 음성 모델을 오픈소스로 풀었어요.</p>
+<ul>
+<li>참고 음성 파일 하나만 있으면 돼요. 그 목소리로 원하는 문장을 그대로 읽게 만들 수 있어요. 따로 학습시키는 과정도 필요 없어요.</li>
+<li>감정이랑 말하는 속도도 세밀하게 조절돼요. 슬픈 톤, 놀란 톤도 넣을 수 있어요. 발표 슬라이드 타이밍에 맞춰 속도도 맞출 수 있어요.</li>
+<li>중국어·영어·일본어·스페인어·아랍어, 5개 언어를 지원해요.</li>
+<li>지금 오픈소스로 완전히 공개됐어요. 로컬에서 직접 설치해서 써볼 수 있어요.</li>
+<li>실험만 하고 끝나는 게 아니라, 실제 서비스로 배포하는 공식 경로도 마련돼 있어요.</li>
+</ul>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 설명)</h2>
+<p><strong>1. 모델 소개 &amp; 저장소</strong></p>
+<p>이름은 IndexTTS-2.5예요. 빌리빌리 팀이 만든 오픈소스 음성 복제 모델이에요.</p>
+<ul>
+<li>GitHub: <a href="https://github.com/index-tts/index-tts">https://github.com/index-tts/index-tts</a></li>
+<li>이전 버전보다 속도가 더 빨라짐 — RTX 4090 기준 생성 속도 눈에 띄게 개선. 기능은 늘었는데 오히려 더 빨라짐.</li>
+</ul>
+<p><strong>2. 무엇이 달라지나</strong></p>
+<ul>
+<li><strong>목소리 복제</strong>: 예전엔 안내 음성 하나 만들려면 매번 직접 녹음 → 지금은 음성 파일 하나만 있으면 원하는 텍스트를 그 목소리로 바로 생성.</li>
+<li><strong>더빙 작업</strong>: 예전엔 슬픈 장면마다 성우 톤을 새로 맞춰야 함 → 지금은 감정 레퍼런스 오디오나 감정 수치를 코드에 넣기만 하면 됨.</li>
+</ul>
+<p><strong>3. 왜 중요한가 (실서비스 배포 경로)</strong></p>
+<ul>
+<li>실험용 데모로 끝나는 게 아님. <strong>vLLM 레시피가 공식으로 마련되어 있음</strong> (vLLM = 대규모 모델을 서비스 트래픽에 맞게 서빙하는 추론 엔진) → 로컬 실험을 그대로 실서비스로 옮길 수 있음.</li>
+<li>오늘 바로 해볼 수 있는 것: <code>uv run webui.py</code> 한 줄이면 로컬 웹 화면 실행. 코드 없이 참고 음성 + 텍스트만 입력.</li>
+<li>태그: #오픈소스AI #보이스클로닝</li>
+</ul>
+<h2>댓글 (Other Users)</h2>
+<table><thead><tr><th>사용자</th><th>시점</th><th>내용</th></tr></thead><tbody>
+<tr><td>airar.co</td><td>2d</td><td>&quot;애석하게도 한글없음 ㅠ&quot; — <strong>한국어 미지원 확인</strong> (지원 언어: 중/영/일/스/아 5개국어, 한국어 제외)</td></tr>
+</tbody></table>
+<h2>참고 자료</h2>
+<table><thead><tr><th>소스</th><th>URL</th></tr></thead><tbody>
+<tr><td>원문 Threads 포스트</td><td><a href="https://www.threads.com/@realailab<em>core/post/DdfCaYpCF87">https://www.threads.com/@realailab</em>core/post/DdfCaYpCF87</a></td></tr>
+<tr><td>GitHub 저장소</td><td><a href="https://github.com/index-tts/index-tts">https://github.com/index-tts/index-tts</a></td></tr>
+<tr><td>공유 링크 (source)</td><td><a href="https://www.threads.com/share/BAZcI9prh8/">https://www.threads.com/share/BAZcI9prh8/</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-09-22 IndexTTS-2.5 오픈소스 음성복제/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
