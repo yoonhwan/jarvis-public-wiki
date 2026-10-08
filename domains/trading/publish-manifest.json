@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-04T14:05:17.862228",
+  "generated_at": "2026-10-08T09:32:11.161734",
   "source": "Wikis/pages",
   "domain": "trading",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20261004-140028-KST",
+  "version": "20261008-093137-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -24,6 +24,21 @@
     }
   },
   "pages": [
+    {
+      "title": "육아 기준 28가지 - jooshik_k",
+      "source": "Wikis/pages/strategies/육아 기준 28가지 - jooshik_k.md",
+      "url": "pages/육아-기준-28가지-jooshik-k.html",
+      "raw_body_merged": false,
+      "excerpt": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 Instagram 게시물의 전체 캡션이 그대로 담겨 있음. 카드뉴스/캐러셀 이미지는…",
+      "excerpt_hero": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 Instagram 게시물의 전체 캡션이 그대로 담겨 있음. 카드뉴스/캐러셀 이미지는 없는 텍스트 전용 게시물.",
+      "excerpt_list": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 In…",
+      "date": "2026-09-14",
+      "hero_image": "",
+      "_sort": [
+        "2026-09-14",
+        1789345695.403127
+      ]
+    },
     {
       "title": "dartlab 소식 — 공시자료 정규화 & 재무제표 기간 비교",
       "source": "Wikis/pages/concepts/dartlab 소식 — 공시자료 정규화 & 재무제표 기간 비교.md",
@@ -670,9 +685,9 @@
       ]
     },
     {
-      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 2",
-      "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 2.md",
-      "url": "pages/2.html",
+      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로",
+      "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로.md",
+      "url": "pages/page.html",
       "raw_body_merged": false,
       "excerpt": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각 영역(아키텍처, 프론트엔드, 백엔드, DB, 인증, 결제, 실시간, DevOps…",
       "excerpt_hero": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각 영역(아키텍처, 프론트엔드, 백엔드, DB, 인증, 결제, 실시간, DevOps, 테스트, 프로젝트 관리, 디자인 시스템, 코드 리뷰)에 대해 프로덕션 레벨의…",

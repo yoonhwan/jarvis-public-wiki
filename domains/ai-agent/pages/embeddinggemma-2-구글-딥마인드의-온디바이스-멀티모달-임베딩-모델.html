@@ -1,0 +1,56 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EmbeddingGemma 2 — 구글 딥마인드의 온디바이스 멀티모달 임베딩 모델 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261008-093137-KST">Jarvis Wiki / ai-agent</a><h1>EmbeddingGemma 2 — 구글 딥마인드의 온디바이스 멀티모달 임베딩 모델</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>EmbeddingGemma 2 — 구글 딥마인드의 온디바이스 멀티모달 임베딩 모델</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-07 EmbeddingGemma 2 공개/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>EmbeddingGemma 2 — 구글 딥마인드의 온디바이스 멀티모달 임베딩 모델</h1>
+<blockquote>🚨 속보) 구글 딥마인드가 텍스트·사진·영상·음성·코드를 한 번에 검색하는 임베딩 모델 <strong>&#x27;EmbeddingGemma 2&#x27;</strong>를 오픈소스로 공개했습니다.</blockquote>
+<blockquote>파라미터 <strong>7억 4천만 개</strong>로 스마트폰 안에서 인터넷 없이 돌아가고, <strong>Apache 2.0</strong>이라 상업적으로도 무료로 쓸 수 있습니다. 🧵</blockquote>
+<h2>핵심 요약 (TL;DR)</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>비교/의미</th></tr></thead><tbody>
+<tr><td><strong>파라미터</strong></td><td><strong>7억 4천만</strong> (텍스트 전용 2.7억 + 비전 1.7억 + 오디오 3억, 선택형)</td><td>텍스트만 쓰면 2.7억, 텍스트+이미지 4.4억, 텍스트+음성 5.7억로 경량화 가능</td></tr>
+<tr><td><strong>라이선스</strong></td><td><strong>Apache 2.0</strong></td><td>상업적 이용 무료</td></tr>
+<tr><td><strong>출력 벡터</strong></td><td>768차원 (마트료시카 학습으로 512/256/128 축소 가능)</td><td>128차원이면 저장공간 1/6 (벡터 100만개 기준 1.5GB→250MB)</td></tr>
+<tr><td><strong>입력 길이</strong></td><td>8,192 토큰 (1세대 대비 4배)</td><td>음성 약 5분30초, 이미지 29장, 영상 프레임 58장 동시 처리</td></tr>
+<tr><td><strong>기반 모델</strong></td><td>Gemma 4 구조</td><td>1세대는 Gemma 3 270M 기반 텍스트 전용</td></tr>
+<tr><td><strong>코드 검색(MTEB Code)</strong></td><td>78.68점 (1세대 68.76 → +9.92)</td><td>알리바바 Qwen3-Embedding-0.6B 상회, Qwen3-Embedding-8B에 근접</td></tr>
+<tr><td><strong>다국어 검색(MTEB 다국어)</strong></td><td>61.36점 (1세대 61.15 유지)</td><td>-</td></tr>
+<tr><td><strong>이미지(MIEB lite)</strong></td><td>64.64점</td><td>4배 큰 LCO-Embedding-Omni-3B에 근접</td></tr>
+<tr><td><strong>영상 검색</strong></td><td>50.67점</td><td>-</td></tr>
+<tr><td><strong>음성 검색(MSEB)</strong></td><td>69.54점</td><td>e5-omni-3B(~48점), Qwen2-Audio-7B(~35점) 상회</td></tr>
+<tr><td><strong>기기 메모리(Pixel 11 Pro)</strong></td><td>텍스트 전용 ~191MB / 전체 모델 ~567MB</td><td>QAT(학습단계 4·8비트 양자화) 적용</td></tr>
+</tbody></table>
+<h2>본문 (Main Post + 작성자 스레드, 1~12)</h2>
+<p><strong>1/</strong> 구글 딥마인드가 온디바이스 멀티모달 임베딩 모델 &#x27;EmbeddingGemma 2&#x27;를 공개했습니다. 임베딩 모델은 글이나 사진의 의미를 768개의 숫자로 바꿔 좌표처럼 저장하는 모델인데요. 뜻이 비슷한 자료는 가까운 좌표에 놓이기 때문에, 검색할 때는 질문도 숫자로 바꾼 뒤 가장 가까운 자료를 꺼냅니다. 작년에 나온 1세대는 텍스트만 다뤘지만, 이번 모델은 코드, 이미지, 영상, 음성을 같은 좌표 공간에 넣습니다. 음성 메모로 특정 영상 클립을 찾거나, 문장 하나로 몇 시간 분량의 녹음 속 구간을 찾는 일을 모델 하나로 처리할 수 있게 된 겁니다. Gemma 4 구조를 기반으로 만들었고, 상업 이용이 자유로운 Apache 2.0 라이선스로 허깅페이스와 캐글에 가중치를 올렸습니다.</p>
+<p><strong>2/</strong> 모델 한가운데에는 텍스트와 코드를 처리하는 2억 7천만 파라미터 본체가 있고, 이미지·영상용 비전 인코더(1억 7천만)와 오디오 인코더(3억)가 선택형으로 붙습니다. 사진이나 음성은 각 인코더를 거쳐 같은 본체로 들어가고, 마지막에는 모두 768차원 벡터로 나옵니다. 그래서 플라밍고 사진, 플라밍고 영상, 플라밍고의 분홍빛을 설명하는 문장이 서로 가까운 자리에 놓입니다. 지금까지 기기에서 이런 검색을 만들려면 사진에 설명문을 붙이는 모델, 음성을 글로 받아 적는 모델, 텍스트 임베딩 모델을 차례로 이어야 했는데, 구글은 이 중간 단계를 없애 지연 시간과 메모리 부담을 줄였다고 설명합니다. 필요한 인코더만 골라 올릴 수도 있어서, 텍스트만 쓰면 2억 7천만, 텍스트와 이미지는 4억 4천만, 텍스트와 음성은 5억 7천만 파라미터로 가볍게 돌릴 수 있습니다.</p>
+<p><strong>3/</strong> 작년 9월 공개된 1세대 EmbeddingGemma는 Gemma 3 270M 기반의 텍스트 전용 모델이었습니다. 200MB 이하 메모리로 돌아가고 2,048토큰까지 읽는 것이 강점이었는데요. 1년 만에 가장 크게 오른 건 코드 검색입니다. 코드 검색 벤치마크 MTEB Code에서 68.76점이던 점수가 78.68점으로 9.92점 올랐고, 다국어 텍스트 검색(MTEB 다국어)은 61.15점에서 61.36점으로 기존 수준을 지켰습니다. 한 번에 읽는 길이도 8,192토큰으로 네 배가 돼, 음성 약 5분 30초나 이미지 29장, 영상 프레임 58장을 한꺼번에 넣을 수 있습니다. 구글 차트는 코드 점수를 텍스트 본체 크기 기준으로 표시했는데, 이 크기에서 알리바바의 Qwen3-Embedding-0.6B를 앞섰고 Qwen3-Embedding-8B와는 몇 점 차이까지 따라붙었습니다.</p>
+<p><strong>4/</strong> 새로 추가된 이미지·음성 영역에서도 크기 대비 점수가 높게 나왔습니다. 이미지 임베딩 벤치마크 MIEB(lite)에서 64.64점을 받아, 파라미터가 네 배 가까이 큰 LCO-Embedding-Omni-3B에 근접했고 jina-embeddings-v5-omni-small과 SigLIP 계열 모델을 앞섰습니다. 문서 이미지 검색(MMEB v2 VisDoc)은 67.84점, 영상 검색은 50.67점, 음성 검색(MSEB)은 69.54점을 기록했는데요. 오디오 벤치마크 MAEB에서는 49.39점으로, 구글 차트에서도 1B 안팎의 jina-embeddings-v5-omni-nano가 조금 앞서고 2.5B·7B급 모델이 더 높게 나옵니다. 그래도 e5-omni-3B(약 48점)와 Qwen2-Audio-7B(약 35점)를 앞서, 휴대폰에 들어가는 크기로 음성까지 검색할 수 있는 선택지가 생겼습니다.</p>
+<p><strong>5/</strong> 실제 기기에서 쓰는 메모리와 속도도 공개됐습니다. 구글 픽셀 11 프로에서 양자화 모델을 돌리면 텍스트 전용은 약 191MB, 모든 인코더를 올린 전체 모델은 약 567MB를 씁니다. 지난 6월 Gemma 4 E2B를 약 1GB까지 줄였던 QAT(학습 단계부터 4비트·8비트 압축을 반영하는 방식)를 이번에도 적용했는데요. 이미지 한 장을 벡터로 바꾸는 시간은 맥북 M5 프로 GPU에서 37.3ms(초당 26.9장), 픽셀 11 프로 XL NPU에서 48.9ms, 아이폰 18 프로 GPU에서 69.8ms입니다(이미지당 비전 토큰 70개 기준). 라즈베리파이 5 CPU에서는 1.76초가 걸려, 저전력 기기에서는 사진을 미리 색인해 두는 작업에 어울립니다. Gemma 4와 텍스트 토크나이저, 오디오 인코더를 공유하기 때문에, 두 모델을 한 앱에 함께 올리면 전체 메모리 사용량도 따로 올릴 때보다 줄어듭니다.</p>
+<p><strong>6/</strong> 검색 기능을 운영하면 비용이 계속 쌓이는 곳은 벡터를 저장하는 데이터베이스입니다. EmbeddingGemma 2는 마트료시카 표현 학습(MRL)으로 학습돼, 768개 숫자 가운데 앞부분만 잘라 512, 256, 128차원으로 써도 의미가 남도록 만들어졌는데요. 벡터 100만 개를 저장하면 768차원은 약 1.5GB, 128차원은 약 250MB로 저장 공간이 6분의 1로 줄어듭니다. 256차원까지는 품질 손실이 작습니다. 코드 검색은 78.68점에서 76.18점, 이미지 검색(MIEB)은 64.64점에서 63.13점으로 내려가는 정도입니다. 128차원에서는 멀티모달 검색(MMEB) 점수가 59.01점에서 45.65점으로 크게 떨어져, 구글도 128차원은 텍스트 전용 대규모 색인이나 1차 후보를 추리는 용도로 권합니다. 사진과 영상 검색은 256차원 이상, 텍스트 대량 색인은 128차원으로 나눠 쓰면 저장 공간과 품질을 함께 챙길 수 있습니다.</p>
+<p><strong>7/</strong> 가중치를 Apache 2.0으로 공개해 기업이 자사 서비스에 넣어 팔아도 라이선스 비용이 없고, 사용자 기기에서 돌리면 호출할 때마다 나가는 API 요금도 없습니다. 같은 기술을 쓰는 구글의 유료 API &#x27;Gemini Embedding 2&#x27;와 비교하면 비용 차이가 커집니다. Gemini Embedding 2는 100만 토큰당 텍스트 0.20달러, 이미지 0.45달러(장당 0.00012달러), 오디오 6.50달러(초당 0.00016달러), 영상 12달러(프레임당 0.00079달러)를 받는데요. 1시간짜리 회의 녹음 하나를 색인하면 약 0.58달러, 사진 1만 장이면 1.2달러가 드는 셈입니다. 무료 등급으로 쓰면 입력 데이터가 구글 제품 개선에 쓰일 수 있다고 가격표에 명시돼 있습니다. 개인 사진첩과 회의 녹음처럼 밖으로 보내기 어려운 데이터를 기기 안에서 비용 없이 색인할 수 있다는 점이 이번 모델의 가장 실용적인 장점입니다.</p>
+<p><strong>8/</strong> 일반 사용자는 구글의 온디바이스 AI 체험 앱 &#x27;Google AI Edge Gallery&#x27;에서 바로 써볼 수 있습니다. 작년 5월 Gemma 3n과 함께 나온 이 앱에 두 기능이 추가됐는데요. &#x27;Instant Media Search&#x27;는 휴대폰 사진첩을 기기 안에서 벡터로 바꿔 저장해 두고, 검색어를 한 글자 칠 때마다 결과를 다시 정렬합니다. 독일어로 &#x27;Katze&#x27;(고양이)를 입력하면 고양이 사진이 모이고, &#x27;키보드 위에서 자는 고양이&#x27;까지 이어 치면 그 사진이 맨 위로 올라옵니다. 갖고 있는 사진이나 카메라 화면을 검색어로 쓸 수도 있습니다. &#x27;Video Moments Finder&#x27;는 영상의 장면과 소리를 받아쓰기나 자막 생성 없이 바로 색인하고, &#x27;거북이가 먹이를 먹는 장면&#x27; 같은 문장을 넣으면 해당 시점을 표시해 줍니다. 안드로이드와 iOS에서 모두 받을 수 있습니다.</p>
+<p><strong>9/</strong> 개발자에게 가장 직접적인 용도는 코드 검색입니다. 구글이 공개한 데모에서는 Gemma 4 26B-A4B로 돌리는 코딩 에이전트가 허깅페이스 transformers 저장소의 함수·클래스 49,160개를 텍스트 전용 EmbeddingGemma 2로 색인해 둔 상태에서 &#x27;Gemma 4는 이미지를 어떻게 패치로 나누고, 생성할 때 top-k와 top-p로 어떻게 걸러내는가&#x27;라는 질문을 받았는데요. 에이전트는 의미 검색 세 번으로 이미지 전처리, 모델 구조, 로짓 처리 코드를 차례로 찾아냈고, 쓴 토큰은 5,694개였습니다. 검색이 정확하면 에이전트가 엉뚱한 파일을 열어 읽는 횟수가 줄고, 그만큼 토큰과 시간이 덜 듭니다. 지난 7월 엔비디아가 Nemotron 3 Embed를 내놓으며 검색 정확도가 에이전트의 토큰 비용을 좌우한다고 강조했는데, 이번에는 그 검색 단계를 노트북 안에서 2억 7천만 파라미터로 처리하는 사례가 나온 겁니다.</p>
+<p><strong>10/</strong> Gemma 4와 짝을 이룬 활용은 맥용 회의 도우미 &#x27;Google AI Edge Foresight&#x27;에서 볼 수 있습니다. 시스템 오디오와 마이크로 회의를 받아쓰면서, 사용자가 대충 적어둔 메모를 회의 내용으로 채워 넣는데요. 회의 중 질문이 나오면 EmbeddingGemma 2가 내 문서, 이미지, 지난 대화 기록에서 관련 자료를 찾고, Gemma 4가 그 자료로 답을 만들어 화면에 띄웁니다. 검색과 답변 생성이 모두 맥 안에서 이뤄져 어떤 화상회의 앱과도 함께 쓸 수 있고, 인터넷이 끊겨도 작동합니다. 지난 4월 Gemma 4가 Apache 2.0으로 풀리면서 기업이 데이터를 밖으로 보내지 않고 자체 AI를 만들 수 있게 됐는데, 이번에는 그 생성 모델에 붙일 검색 모델까지 같은 조건으로 나왔습니다. 회의록과 사내 문서로 RAG(검색 증강 생성)를 돌리는 구성을 노트북 한 대로 만들 수 있게 된 셈입니다.</p>
+<p><strong>11/</strong> EmbeddingGemma 2는 분류와 라우팅에도 쓸 수 있습니다. 구글은 MediaPipe의 Decision 기능에 EmbeddingGemma 2를 붙여, 학습 데이터나 파인튜닝 없이 입력을 미리 적어둔 선택지 설명과 비교해 가장 가까운 것을 고르게 했는데요. 공룡 달리기 게임 데모에서는 매 순간 점프, 숙이기, 달리기 중 하나를 고르는 데 약 47ms가 걸렸고, 같은 판단을 일반 LLM에 맡기자 640ms가 걸렸습니다. 체스 데모에서는 매 수마다 전략 선택지 500개를 100ms 안에 평가합니다. 답을 문장으로 생성하지 않고 벡터 사이의 거리만 계산하기 때문에 이런 속도가 나옵니다. 사용자 요청을 어떤 기능이나 모델로 보낼지 정하는 라우터, 화면 상태를 보고 다음 행동을 고르는 앱처럼 즉시 반응해야 하는 곳에 맞는 방식입니다. 구글은 몇 주 안에 안드로이드 ML Kit에서도 NPU 가속과 함께 이 모델을 제공할 계획입니다.</p>
+<p><strong>12/</strong> 배포 경로도 넓게 열어뒀습니다. 허깅페이스와 캐글 가중치 외에 transformers, sentence-transformers, vLLM, llama.cpp, Ollama, LM Studio, MLX에서 바로 돌릴 수 있고, transformers.js와 WebGPU로 브라우저에서도 실행됩니다. 개발자 가이드에는 사용자가 그린 그림을 실시간으로 벡터로 바꿔 어떤 과일과 가장 가까운지 점수를 매기는 허깅페이스 데모도 실렸습니다. 멀티모달 임베딩 경쟁은 이미 오픈 웨이트 쪽으로 넘어왔는데요. 8월 텐센트가 공개한 WeMM-Embedding 9B는 MMEB-v2에서 80.6점으로 1위에 올랐는데, EmbeddingGemma 2는 그 12분의 1 크기로 휴대폰 메모리 안에 들어가는 쪽을 택했습니다. 사진첩, 녹음, 코드처럼 개인 기기에 쌓인 데이터를 서버로 보내지 않고 검색하는 기능을, 이제 앱 개발자가 사용료 없이 붙일 수 있게 됐습니다.</p>
+<p><strong>상세내용</strong>: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/">blog.google — EmbeddingGemma 2: an open, lightweight multimodal embedding model</a></p>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li><strong>kimjhs24</strong>: &quot;그게 구글의 큰 그림이지 / 모바일 엣지 컴퓨팅 로컬 모델 역량 강화 / 구글은 안드로이드가 앞으로 능동적이고 / 그게 계속 모바일에서 돌아가야 먹고사는 애들임&quot;</li>
+<li><strong>t<em>y</em>park</strong>: &quot;차원수가좀 낮아보이긴 하지만 미쳤다! 임베딩 모델 교체해야디&quot;</li>
+<li><strong>samlee0329</strong>: &quot;오!&quot;</li>
+<li><strong>yoruno.archive</strong>: &quot;오&quot;</li>
+</ul>
+<h2>Related threads (타 계정의 동일 주제 포스트, choi.openai 본인 포함 — OP 스레드 댓글 아님)</h2>
+<ul>
+<li><strong>choi.openai</strong> (09/21/26): Google Gemma의 &quot;DiffusionGemma as Jev&quot; — 선택지를 토큰 단위로 생성하지 않고 병렬 평가하는 텍스트 디퓨전 결정 레이어. DGX Spark에서 ~0.2초 처리.</li>
+<li><strong>mirror<em>one</em>official</strong> (5d): Gemma 4 비전 시연 — 카메라로 방을 비추면 중세 음유시인 말투로 물건을 설명하는 VQA(시각 질의응답) 데모.</li>
+<li><strong>victor198481 (AI Threads)</strong> (09/11/26): 구글 제미나이 윈도우 PC 전용 앱 출시 — Alt+Space와 MS 코파일럿의 경쟁 구도.</li>
+<li><strong>conja153.official</strong> (09/24/26): 구글 내부 코드명 &#x27;아르곤(Argon)&#x27; = 제미나이 4 프로 초기 체크포인트 테스트 유출. 25만6000 토큰 출력 한계.</li>
+<li><strong>easyai.kr (AI Threads)</strong> (09/07/26): 구글 크롬 13년된 보안 결함을 &#x27;제미나이 3.8 플래시&#x27; 보안 특화 버전이 발견. 사람 패치보다 2.6배 정확.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>공식 블로그 (원문)</td><td><a href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/">https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/</a></td></tr>
+<tr><td>Threads 원본 포스트</td><td><a href="https://www.threads.com/@choi.openai/post/DeKQ2ljD3ZO">https://www.threads.com/@choi.openai/post/DeKQ2ljD3ZO</a></td></tr>
+<tr><td>공유 링크</td><td><a href="https://www.threads.com/share/BBRz0Rq8fO/">https://www.threads.com/share/BBRz0Rq8fO/</a></td></tr>
+</tbody></table>
+<p>&lt;/content&gt;</p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-07 EmbeddingGemma 2 공개/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

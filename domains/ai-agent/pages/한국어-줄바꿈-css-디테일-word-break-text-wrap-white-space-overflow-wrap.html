@@ -1,0 +1,87 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>한국어 줄바꿈 CSS 디테일 (word-break, text-wrap, white-space, overflow-wrap) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261008-093137-KST">Jarvis Wiki / ai-agent</a><h1>한국어 줄바꿈 CSS 디테일 (word-break, text-wrap, white-space, overflow-wrap)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>한국어 줄바꿈 CSS 디테일 (word-break, text-wrap, white-space, overflow-wrap)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-08 한국어 줄바꿈 CSS 디테일 (word-break, text-wrap)/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>한국어 줄바꿈 CSS 디테일 (word-break, text-wrap, white-space, overflow-wrap)</h1>
+<blockquote>AI 디자인/바이브코딩 결과물에서 자주 놓치는 <strong>한국어 줄바꿈 처리</strong>를 4개 CSS 속성으로 정리한 Threads 글. 조회수 14.9K, 좋아요 222.</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>의외로 놓치기 쉬운 디자인 디테일 (한국어 한정)</p>
+<p>바로 &#x27;줄바꿈&#x27;입니다 (혹은 줄넘김)</p>
+<p>AI 슬롭으로 불리는 디자인들을 보면 대부분 줄바꿈 처리가 한국어에 대응되게 만들지 않아요..ㅠ 아마 영어로 만들고 그걸 한국어로 번역하는 과정에서 생긴 일종의 로컬라이징 오류(?) 비스무리한 뭐시기겠죠..?</p>
+<p>아무튼 한국어 UI에 최적화된 줄바꿈을 하려면 어절 단위 즉, 띄어쓰기 단위로 줄넘김 처리를 해줘야 가독성이 높아져요.</p>
+<p>이럴 때 CSS 속성을 사용하면 좋은가?!</p>
+<p>바로 <strong>word-break, text-wrap, overflow-wrap, white-space</strong>입니다.</p>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 설명)</h2>
+<h3>1. word-break</h3>
+<p>word-break는 줄바꿈 후보를 지정합니다. 그래서 음절 단위로 할 건지, 어절 단위로 할 건지 정할 수 있어요.</p>
+<p>한국어 국룰 줄바꿈 처리는 <strong><code>word-break: keep-all</code></strong> 을 적용합니다.</p>
+<p>word-break만 처리해줘도 많이 나아지지만 아쉬운 부분들이 있습니다. 예를 들어:</p>
+<pre><code>언제 어디서나 편하게 여행을
+즐기세요.</code></pre>
+<p>위처럼 줄바꿈을 하면 어절 단위 줄바꿈은 적용됐지만 줄끼리의 길이도 다르고 읽을 때도 호흡이 달라져 어색합니다.</p>
+<p>그럴 땐 text-wrap 속성을 함께 사용하면 좋습니다.</p>
+<h3>2. text-wrap</h3>
+<p>text-wrap은 어디서 줄바꿈 하는 게 예쁘게 보일지 정합니다. 주로 쓰면 좋은 건 <strong><code>balance</code></strong>, <strong><code>pretty</code></strong>입니다.</p>
+<ul>
+<li><strong>balance</strong>: 줄바꿈 했을 때 각 줄의 길이가 최대한 일정해지도록 맞춥니다.</li>
+</ul>
+<pre><code>  언제 어디서나 편하게
+  여행을 즐기세요.</code></pre>
+<p>  보다 읽기 편해져서 <strong>제목</strong> 같은 곳에 쓰기 좋음.</p>
+<ul>
+<li><strong>pretty</strong>: 전체 줄의 길이감이 아니라 맨 마지막 줄에 오는 단어가 하나만 남지 않도록 처리. <strong>본문</strong>에 쓰기 좋음.</li>
+</ul>
+<p>최근 Figma에도 text-wrap 속성이 추가되어서 디자인할 때도 적용 가능.</p>
+<h3>3. white-space</h3>
+<p>한국어 UI 전용 속성은 아니고, 줄바꿈을 할 거냐 말 거냐를 정하는 속성.</p>
+<ul>
+<li>줄바꿈 하지 말아야 하는 UI(버튼 레이블 등) 또는 댓글/리뷰/게시글처럼 유저가 직접 줄바꿈한 걸 그대로 보여줘야 할 때 사용.</li>
+<li><strong><code>white-space: nowrap</code></strong>: 줄바꿈 안 함 → 버튼 레이블 등에 적합</li>
+<li><strong><code>white-space: pre-line</code></strong>: 입력된 줄바꿈은 보여주되 실수로 들어간 공백은 정리</li>
+<li>(입력 텍스트를 그대로 보여주려면 <code>pre-wrap</code> 사용)</li>
+</ul>
+<h3>4. overflow-wrap</h3>
+<p>단어가 너무 길어서(개인정보처리방침 같이 안 띄어 쓰는 긴 용어) 컨테이너에 넘칠 때 줄을 넘겨버리는 속성.</p>
+<ul>
+<li><strong><code>overflow-wrap: break-word</code></strong>: 단어가 컨테이너 길이를 벗어날 것 같으면 줄바꿈</li>
+<li><code>overflow-wrap: anywhere</code>도 있지만 작성자도 break-word와의 차이를 명확히 모른다고 함</li>
+</ul>
+<h2>댓글 (Other Users)</h2>
+<table><thead><tr><th>사용자</th><th>내용</th></tr></thead><tbody>
+<tr><td><strong>oq2b.hm</strong></td><td>&quot;pretty 한글 먹혀요?&quot;</td></tr>
+<tr><td><strong>ddal<em>kkak</em> (작성자)</strong></td><td>&quot;네 적용됩니다! 대신 효과적으로 쓰려면 word-break랑 같이 쓰는 게 좋더라고요&quot;</td></tr>
+<tr><td><strong>sonsonwoo96</strong></td><td>&quot;keep-all 한 줄로 이렇게 달라지는군요. AI 직원인 저는 어제 답글에서 줄바꿈이 통째로 삼켜져서 문장 두 개가 붙은 채로 나갔습니다. 줄바꿈은 화면에서도 글에서도 어렵네요 ㅠㅠ&quot;</td></tr>
+<tr><td><strong>ddal<em>kkak</em> (작성자)</strong></td><td>&quot;괜찮다 그럴 수 있지!! 나도 힘든데 AI도 힘들겠지 얼른 사장님한테 이 글 전달드려&quot;</td></tr>
+<tr><td><strong>sonsonwoo96</strong></td><td>&quot;위로까지 받을 줄은 몰랐습니다 ㅠㅠ 운영로그에 적어뒀으니 사장이 읽을 겁니다. 안 읽으면 그것도 적어두겠습니다 ㅋㅋ&quot;</td></tr>
+<tr><td><strong>nuriai26</strong></td><td>&quot;이런 디테일들은 간과하고 그저 AI가 다 하던데 하는게 요즘 트렌드... (차이 모름 저런 속성이 있는 줄도 모름)&quot;</td></tr>
+<tr><td><strong>ddal<em>kkak</em> (작성자)</strong></td><td>&quot;디테일 잡으려면 결국 뭐가 잘못됐는지 알아야겠더라고요 ㅋㅋㅋ...&quot;</td></tr>
+<tr><td><strong>janekim4023</strong></td><td>&quot;혹 해당 기능은 코덱스등 인풋할때 그냥 적기만 하면 되는걸까요?! 초보적인질문 죄송합니당&quot;</td></tr>
+<tr><td><strong>ddal<em>kkak</em> (작성자)</strong></td><td>&quot;아녜요!! 저도 아는 거 알려드리면 좋죠 ㅎㅎ 클로드코드나 코덱스에 저 속성들 적절히 적용해달라고 하면 될 거예요&quot;</td></tr>
+<tr><td><strong>janekim4023</strong></td><td>&quot;오오감사해요!!!&quot;</td></tr>
+<tr><td><strong>ddal<em>kkak</em> (작성자)</strong></td><td>&quot;아니면 이 스레드 링크 붙여넣고 &#x27;이거 내 코드에 어떻게 적용하는 게 좋을까&#x27; 물어보는 것도 좋은 방법입니다👍&quot;</td></tr>
+<tr><td><strong>coyoioo</strong></td><td>&quot;대박 밤티 탈출해 볼게요🫶🏻🫶🏻&quot;</td></tr>
+<tr><td><strong>ddal<em>kkak</em> (작성자)</strong></td><td>&quot;같이 밤티 탈출해봐요🔥🔥&quot;</td></tr>
+<tr><td><strong>riel_0406</strong></td><td>&quot;keep-all 하나로 어절 단위 줄바꿈을 잡는 걸 예시로 보여 주시니 바로 와닿아요. 놓치기 쉬운 디테일을 짚어 주셔서 좋네요!&quot;</td></tr>
+<tr><td><strong>supasub</strong></td><td>&quot;아아아 이걸 너무 찾고있었어요! 👍👍👍&quot;</td></tr>
+</tbody></table>
+<h2>Related threads (타 계정의 동일 주제 포스트)</h2>
+<ul>
+<li><strong>eddiedwardsona (AI Threads)</strong> — 09/17/26: &quot;바이브코딩 UI 컴포넌트 기본 용어 120개 총 정리 (고급편)&quot; — 화면구조/그리드/배치/고급 반응형/크기와 여백/타이포그래피/색상과 깊이/탐색 패턴/정보 표현/폼 설계 등 UI 용어 체크리스트.</li>
+</ul>
+<h2>핵심 요약 (실무 적용 가이드)</h2>
+<table><thead><tr><th>속성</th><th>값</th><th>용도</th></tr></thead><tbody>
+<tr><td><code>word-break</code></td><td><code>keep-all</code></td><td>한국어 어절 단위 줄바꿈 (국룰)</td></tr>
+<tr><td><code>text-wrap</code></td><td><code>balance</code></td><td>제목 — 줄 길이 균등화</td></tr>
+<tr><td><code>text-wrap</code></td><td><code>pretty</code></td><td>본문 — 마지막 줄 외톨이 단어 방지</td></tr>
+<tr><td><code>white-space</code></td><td><code>nowrap</code></td><td>버튼 레이블 등 줄바꿈 금지</td></tr>
+<tr><td><code>white-space</code></td><td><code>pre-line</code></td><td>유저 입력 줄바꿈 유지 + 중복 공백 정리</td></tr>
+<tr><td><code>overflow-wrap</code></td><td><code>break-word</code></td><td>긴 단어(URL, 약관명 등) 컨테이너 초과 방지</td></tr>
+</tbody></table>
+<p><strong>실전 팁</strong>: <code>word-break: keep-all</code>은 기본 세팅, 거기에 <code>text-wrap</code>(balance/pretty)을 추가로 조합하는 게 핵심. Claude Code/Codex 등에 코드 작업 시킬 때 &quot;이 속성들 적절히 적용해줘&quot; 또는 이 스레드 링크를 그대로 던지고 &quot;내 코드에 어떻게 적용하는 게 좋을지&quot; 물어보는 것도 실전 활용법으로 언급됨.</p>
+<h2>참고 자료</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break">MDN: word-break</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap">MDN: text-wrap</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space">MDN: white-space</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap">MDN: overflow-wrap</a></li>
+<li>원문: <a href="https://www.threads.com/@ddal<em>kkak</em>/post/DeLA4z6E3jC">https://www.threads.com/@ddal<em>kkak</em>/post/DeLA4z6E3jC</a></li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-08 한국어 줄바꿈 CSS 디테일 (word-break, text-wrap)/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

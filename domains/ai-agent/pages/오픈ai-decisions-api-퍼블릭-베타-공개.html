@@ -1,0 +1,55 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>오픈AI &#x27;Decisions API&#x27; 퍼블릭 베타 공개 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261008-093137-KST">Jarvis Wiki / ai-agent</a><h1>오픈AI &#x27;Decisions API&#x27; 퍼블릭 베타 공개</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>오픈AI &#x27;Decisions API&#x27; 퍼블릭 베타 공개</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-07 OpenAI Decisions API/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>오픈AI &#x27;Decisions API&#x27; 퍼블릭 베타 공개</h1>
+<blockquote>choi.openai (Threads) · 2026-10-07 수집</blockquote>
+<h2>요약</h2>
+<p>오픈AI가 <strong>모델 선택, 문의 분류, 버튼 클릭 같은 실시간 판단</strong>을 전담하는 <code>Decisions API</code>를 퍼블릭 베타로 모든 개발자에게 공개했다. 텍스트+이미지 입력을 지원하며, 문장을 생성하는 기존 Responses API보다 <strong>최대 10배 빠르다</strong>.</p>
+<h2>핵심 포인트</h2>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody>
+<tr><td><strong>응답 형태</strong></td><td>문장 생성 대신 3가지 구조화 출력: predicate(조건 참 확률), choice(선택지+신뢰도), score(단계별 점수)</td></tr>
+<tr><td><strong>입력</strong></td><td>텍스트 + 이미지 동시 지원</td></tr>
+<tr><td><strong>모델</strong></td><td>현재 <strong>GPT-6 Luna</strong> 단일 모델</td></tr>
+<tr><td><strong>속도</strong></td><td>같은 Luna를 Responses API로 호출할 때보다 <strong>약 10배 빠름</strong> (공식 시연 기준 150ms vs 1.6s 수준)</td></tr>
+<tr><td><strong>가격</strong></td><td>입력 100만 토큰당 <strong>$0.10</strong>, 출력/캐시 요금 없음 (Responses API는 출력 100만 토큰당 $0.50 별도)</td></tr>
+<tr><td><strong>정식 출시</strong></td><td>몇 주 내 예정</td></tr>
+</tbody></table>
+<h2>1/ Decisions API 개요</h2>
+<p>앱이 어떤 모델/도구/행동을 쓸지 같은 판단을 거의 실시간으로 내리게 하는 전용 API. 텍스트나 이미지를 넣고 질문을 정해두면 세 가지 형태로 답을 돌려준다:</p>
+<ul>
+<li><strong>predicate</strong>: 조건이 참일 확률 (예: 사진 속 캔이 찌그러졌는지 확률 1.00)</li>
+<li><strong>choice</strong>: 미리 정한 선택지 중 하나 + 신뢰도 (예: 도로 그림에서 2번 차선을 0.94로 선택)</li>
+<li><strong>score</strong>: 단계별 기준에 따른 점수</li>
+</ul>
+<p>모델은 GPT-6 Luna 하나, Responses API 대비 약 10배 빠름. 정식 출시는 몇 주 내.</p>
+<h2>2/ 시연 — 영업 문의 분류</h2>
+<p>이메일마다 회사 유형·팀 규모·구매 단계·요구사항·일정·다음 단계를 한번에 판단. 여러 질문을 한 요청에 묶어 동시 처리 가능(판단 항목이 늘어도 호출 안 늘어남). 오픈AI는 확률 높은 결과는 자동 처리, 애매한 건만 사람에게 넘기도록 기준 확률을 실데이터로 정하라고 안내.</p>
+<h2>3/ 이미지 입력 — 화면 기반 선택</h2>
+<p>도로 화면 이미지를 넣고 장애물을 피해 차선(1/2/3번) 중 하나를 매 순간 선택하는 데모. 오픈AI 개발자경험팀 Charlie Guo가 공개한 비하인드 데모: 장소/날씨/시간대에 따라 옷장 사진에서 상의/하의/아우터/신발을 재선택 (API 처리 69ms, 결정 4개). 버튼 선택·입력 폼 이동 같은 에이전트 동작도 동일 방식.</p>
+<h2>4/ 음성 연동</h2>
+<p>Live API의 클라이언트 위임 기능과 결합 — 사용자가 말로 요청하면 Decisions API가 실행할 동작을 고르고 결과를 음성으로 재안내. GPT-Live-1(대화 담당)과 Decisions API(실행 판단 담당)로 역할 분리, 음성 요청→화면 동작 간 대기시간 단축이 목적.</p>
+<h2>5/ 가격 및 경쟁 비교</h2>
+<table><thead><tr><th>비교</th><th>Decisions API (OpenAI)</th><th>Jev (TypeSafe)</th></tr></thead><tbody>
+<tr><td><strong>입력 단가</strong> (100만 토큰)</td><td>$0.10</td><td>$0.042</td></tr>
+<tr><td><strong>출력 비용</strong></td><td>없음</td><td>무료</td></tr>
+<tr><td><strong>특징</strong></td><td>데이터 미보관(ZDR), HIPAA, 미국/EU 처리 지역 지정 지원</td><td>3주 먼저 출시, 텍스트 생성 불가 판단 전용 모델</td></tr>
+</tbody></table>
+<p>Jev는 ChatGPT/RLHF 개발 참여자 Diogo Almeida가 2년간 개발한 의사결정 특화 모델(문장 생성 불가, 기존 LLM 대비 20~200배 빠르고 40~400배 저렴 주장). Decisions API 발표 직후 커뮤니티에서는 Jev와의 벤치마크 비교를 묻는 반응이 다수. 입력 단가는 Jev의 약 2.4배지만 ZDR/HIPAA/지역 지정 등 엔터프라이즈 요건은 OpenAI가 우위. 기존 OpenAI API 고객은 별도 계약 없이 바로 사용 가능.</p>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li><strong>kyobum.uk</strong>: &quot;JEV에 대한 대응인가요&quot; — Jev 대응 여부를 묻는 질문 (본문에서 실제로 Jev 비교가 언급됨)</li>
+</ul>
+<h2>Related threads (타 계정의 동일 주제 포스트)</h2>
+<p>Threads 알고리즘이 추천한, 동일 주제(Decisions API)를 다룬 <strong>타 계정들의 독립적인 포스트</strong>(이 글의 댓글이 아님):</p>
+<ul>
+<li><strong>aikorea24</strong>: 폭주하는 AI 에이전트를 제어할 핵심 도구로 주목받고 있다는 논조</li>
+<li><strong>metallab.ai</strong>: 요청당 150ms, 기존 Responses API 1.6s 대비 약 10배 빠름 — 구체적 수치 재확인</li>
+<li><strong>mj.plist (AI Threads)</strong>: Luna 모델 기반, 이미지 입력 가능, 전체 응답 수백ms 이내</li>
+<li><strong>kwonsoonki</strong>: &quot;자유롭게 답해줘&quot;가 아닌 정해진 선택지 안에서의 판단이 자동화에 유용하다는 관점 — 제한적 프리뷰 상태라고 언급</li>
+<li><strong>luke78511 (AI Threads)</strong>: 에이전트 파이프라인에서 별도 프롬프트로 처리하던 판단 로직을 표준 API로 분리할 수 있다는 평가, 비용/지연시간 실개선 여부가 관전 포인트</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>링크</th></tr></thead><tbody>
+<tr><td>공식 문서</td><td><a href="https://developers.openai.com/api/docs/guides/decisions">https://developers.openai.com/api/docs/guides/decisions</a></td></tr>
+<tr><td>Threads 원문</td><td><a href="https://www.threads.com/@choi.openai/post/DeK4fFcjC7e">https://www.threads.com/@choi.openai/post/DeK4fFcjC7e</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-07 OpenAI Decisions API/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

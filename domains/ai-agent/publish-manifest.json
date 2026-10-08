@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-04T14:05:17.768953",
+  "generated_at": "2026-10-08T09:32:11.071876",
   "source": "Wikis/pages",
   "domain": "ai-agent",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20261004-140028-KST",
+  "version": "20261008-093137-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -28,6 +28,126 @@
     }
   },
   "pages": [
+    {
+      "title": "한국어 줄바꿈 CSS 디테일 (word-break, text-wrap, white-space, overflow-wrap)",
+      "source": "Wikis/pages/references/한국어 줄바꿈 CSS 디테일 (word-break, text-wrap, white-space, overflow-wrap).md",
+      "url": "pages/한국어-줄바꿈-css-디테일-word-break-text-wrap-white-space-overflow-wrap.html",
+      "raw_body_merged": false,
+      "excerpt": "의외로 놓치기 쉬운 디자인 디테일 (한국어 한정)",
+      "excerpt_hero": "의외로 놓치기 쉬운 디자인 디테일 (한국어 한정)",
+      "excerpt_list": "의외로 놓치기 쉬운 디자인 디테일 (한국어 한정)",
+      "date": "2026-10-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-08",
+        1791417585.1906343
+      ]
+    },
+    {
+      "title": "150개 언어를 번역하는 오픈소스 LLM, Index-Translate (Bilibili)",
+      "source": "Wikis/pages/entities/150개 언어를 번역하는 오픈소스 LLM, Index-Translate (Bilibili).md",
+      "url": "pages/150개-언어를-번역하는-오픈소스-llm-index-translate-bilibili.html",
+      "raw_body_merged": false,
+      "excerpt": "150개 언어를 번역하는 오픈소스 LLM이 공개됐어요.",
+      "excerpt_hero": "150개 언어를 번역하는 오픈소스 LLM이 공개됐어요.",
+      "excerpt_list": "150개 언어를 번역하는 오픈소스 LLM이 공개됐어요.",
+      "date": "2026-10-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-08",
+        1791413641.085591
+      ]
+    },
+    {
+      "title": "Vela 2.0 — Open Foundation Routing Models (vLLM Semantic Router)",
+      "source": "Wikis/pages/entities/Vela 2.0 — Open Foundation Routing Models (vLLM Semantic Router).md",
+      "url": "pages/vela-2-0-open-foundation-routing-models-vllm-semantic-router.html",
+      "raw_body_merged": false,
+      "excerpt": "RAG 시스템에서 늘 골치 아팠던 할루시네이션과 개인정보(PII) 필터링, 이제 텍스트 위치까지 정확히 짚어주는 가벼운 모델로 이를 빠르게 해결할 수 있을 것 같습니다.",
+      "excerpt_hero": "RAG 시스템에서 늘 골치 아팠던 할루시네이션과 개인정보(PII) 필터링, 이제 텍스트 위치까지 정확히 짚어주는 가벼운 모델로 이를 빠르게 해결할 수 있을 것 같습니다.",
+      "excerpt_list": "RAG 시스템에서 늘 골치 아팠던 할루시네이션과 개인정보(PII) 필터링, 이제 텍스트 위치까지 정확히 짚어주는 가벼운…",
+      "date": "2026-10-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-08",
+        1791413508.7036848
+      ]
+    },
+    {
+      "title": "Oki Home — 개인용 AI 컴퓨터 ($1,799)",
+      "source": "Wikis/pages/entities/Oki Home — 개인용 AI 컴퓨터 ($1,799).md",
+      "url": "pages/oki-home-개인용-ai-컴퓨터-1-799.html",
+      "raw_body_merged": false,
+      "excerpt": "개인용 AI 컴퓨터 경쟁이 빠르게 시작되고 있습니다.",
+      "excerpt_hero": "개인용 AI 컴퓨터 경쟁이 빠르게 시작되고 있습니다.",
+      "excerpt_list": "개인용 AI 컴퓨터 경쟁이 빠르게 시작되고 있습니다.",
+      "date": "2026-10-08",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-08",
+        1791390708.076953
+      ]
+    },
+    {
+      "title": "Qwen3.8 MTP 드래프트 어휘사전 — 한국어 디코딩 +54",
+      "source": "Wikis/pages/entities/Qwen3.8 MTP 드래프트 어휘사전 — 한국어 디코딩 +54.md",
+      "url": "pages/qwen3-8-mtp-드래프트-어휘사전-한국어-디코딩-54.html",
+      "raw_body_merged": false,
+      "excerpt": "Threads: @pyjinnode (pyjinnode, 매일 AI 소식 1차 출처 확인 계정)",
+      "excerpt_hero": "Threads: @pyjinnode (pyjinnode, 매일 AI 소식 1차 출처 확인 계정)",
+      "excerpt_list": "Threads: @pyjinnode (pyjinnode, 매일 AI 소식 1차 출처 확인 계정)",
+      "date": "2026-10-07",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-07",
+        1791374148.659055
+      ]
+    },
+    {
+      "title": "오픈AI 'Decisions API' 퍼블릭 베타 공개",
+      "source": "Wikis/pages/references/오픈AI 'Decisions API' 퍼블릭 베타 공개.md",
+      "url": "pages/오픈ai-decisions-api-퍼블릭-베타-공개.html",
+      "raw_body_merged": false,
+      "excerpt": "오픈AI가 모델 선택, 문의 분류, 버튼 클릭 같은 실시간 판단을 전담하는 Decisions API를 퍼블릭 베타로 모든 개발자에게 공개했다. 텍스트+이미지 입력을 지원하며, 문장을…",
+      "excerpt_hero": "오픈AI가 모델 선택, 문의 분류, 버튼 클릭 같은 실시간 판단을 전담하는 Decisions API를 퍼블릭 베타로 모든 개발자에게 공개했다. 텍스트+이미지 입력을 지원하며, 문장을 생성하는 기존 Responses API보다 최대 10배 빠르다.",
+      "excerpt_list": "오픈AI가 모델 선택, 문의 분류, 버튼 클릭 같은 실시간 판단을 전담하는 Decisions API를 퍼블릭…",
+      "date": "2026-10-07",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-07",
+        1791335172.181517
+      ]
+    },
+    {
+      "title": "EmbeddingGemma 2 — 구글 딥마인드의 온디바이스 멀티모달 임베딩 모델",
+      "source": "Wikis/pages/entities/EmbeddingGemma 2 — 구글 딥마인드의 온디바이스 멀티모달 임베딩 모델.md",
+      "url": "pages/embeddinggemma-2-구글-딥마인드의-온디바이스-멀티모달-임베딩-모델.html",
+      "raw_body_merged": false,
+      "excerpt": "1/ 구글 딥마인드가 온디바이스 멀티모달 임베딩 모델 'EmbeddingGemma 2'를 공개했습니다. 임베딩 모델은 글이나 사진의 의미를 768개의 숫자로 바꿔 좌표처럼 저장하는 모델인데요. 뜻이…",
+      "excerpt_hero": "1/ 구글 딥마인드가 온디바이스 멀티모달 임베딩 모델 'EmbeddingGemma 2'를 공개했습니다. 임베딩 모델은 글이나 사진의 의미를 768개의 숫자로 바꿔 좌표처럼 저장하는 모델인데요. 뜻이 비슷한 자료는 가까운 좌표에 놓이기 때문에, 검색할 때는 질문도 숫자로…",
+      "excerpt_list": "1/ 구글 딥마인드가 온디바이스 멀티모달 임베딩 모델 'EmbeddingGemma 2'를 공개했습니다. 임베딩 모델은 글이나 사진의…",
+      "date": "2026-10-07",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-07",
+        1791335156.5067222
+      ]
+    },
+    {
+      "title": "6-7세 자녀가 부모를 만만하게 볼 때 - 권위(서열) 세우는 훈육법 7가지",
+      "source": "Wikis/pages/concepts/6-7세 자녀가 부모를 만만하게 볼 때 - 권위(서열) 세우는 훈육법 7가지.md",
+      "url": "pages/6-7세-자녀가-부모를-만만하게-볼-때-권위-서열-세우는-훈육법-7가지.html",
+      "raw_body_merged": false,
+      "excerpt": "(좋아요 881 / 리포스트 22 / 인용 184 / 댓글 626)",
+      "excerpt_hero": "(좋아요 881 / 리포스트 22 / 인용 184 / 댓글 626)",
+      "excerpt_list": "(좋아요 881 / 리포스트 22 / 인용 184 / 댓글 626)",
+      "date": "2026-10-06",
+      "hero_image": "",
+      "_sort": [
+        "2026-10-06",
+        1791270834.8387551
+      ]
+    },
     {
       "title": "클로드 헤비유저(기업) 사례 — Enterprise API → 로컬 AI 서버 전환 흐름",
       "source": "Wikis/pages/entities/클로드 헤비유저(기업) 사례 — Enterprise API → 로컬 AI 서버 전환 흐름.md",
@@ -194,21 +314,6 @@
       ]
     },
     {
-      "title": "육아 기준 28가지 - jooshik_k",
-      "source": "Wikis/pages/concepts/육아 기준 28가지 - jooshik_k.md",
-      "url": "pages/육아-기준-28가지-jooshik-k.html",
-      "raw_body_merged": false,
-      "excerpt": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 Instagram 게시물의 전체 캡션이 그대로 담겨 있음. 카드뉴스/캐러셀 이미지는…",
-      "excerpt_hero": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 Instagram 게시물의 전체 캡션이 그대로 담겨 있음. 카드뉴스/캐러셀 이미지는 없는 텍스트 전용 게시물.",
-      "excerpt_list": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 In…",
-      "date": "2026-09-14",
-      "hero_image": "",
-      "_sort": [
-        "2026-09-14",
-        1789345695.403127
-      ]
-    },
-    {
       "title": "오픈소스 음성 AI, 기준이 달라졌습니다 — OmniVoice (k2-fsa)",
       "source": "Wikis/pages/entities/오픈소스 음성 AI, 기준이 달라졌습니다 — OmniVoice (k2-fsa).md",
       "url": "pages/오픈소스-음성-ai-기준이-달라졌습니다-omnivoice-k2-fsa.html",
@@ -239,9 +344,9 @@
       ]
     },
     {
-      "title": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리ᄒ 2",
-      "source": "Wikis/pages/entities/새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리ᄒ 2.md",
-      "url": "pages/2-90-2.html",
+      "title": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다",
+      "source": "Wikis/pages/entities/새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.md",
+      "url": "pages/새벽-2시-아무도-없는-사무실에서-화면-깨진-노트북-한-대가-카톡-대화방-90개를-정리합니다.html",
       "raw_body_merged": false,
       "excerpt": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.",
       "excerpt_hero": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.",

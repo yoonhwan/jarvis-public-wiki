@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>150개 언어를 번역하는 오픈소스 LLM, Index-Translate (Bilibili) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261008-093137-KST">Jarvis Wiki / ai-agent</a><h1>150개 언어를 번역하는 오픈소스 LLM, Index-Translate (Bilibili)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>150개 언어를 번역하는 오픈소스 LLM, Index-Translate (Bilibili)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-08 Index-Translate 오픈소스 번역LLM/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>150개 언어를 번역하는 오픈소스 LLM, Index-Translate (Bilibili)</h1>
+<h2>본문 (Main Post, @aiwire_kr)</h2>
+<p>150개 언어를 번역하는 오픈소스 LLM이 공개됐어요.</p>
+<p>Bilibili의 IndexTeam이 Qwen3.5 기반 번역 LLM 패밀리를 공개했습니다. 2B·9B·35B 모델이 HuggingFace·ModelScope에 있고, 용어·서식·내용 보존을 지시할 수 있어요.</p>
+<p>음성→자막·음성→음성 더빙(Index-Echo), 음절 수 맞춤 번역(Index-Homura), 장문 문서 번역(Index-NativeLong)으로 확장되며, llama.cpp·vLLM 양자화 빌드와 OpenAI 호환 무료 API, 번역 벤치마크까지 함께 제공합니다.</p>
+<p>GitHub: <a href="https://github.com/bilibili/Index-Translate">https://github.com/bilibili/Index-Translate</a></p>
+<h2>핵심 요약 (README 기준)</h2>
+<ul>
+<li><strong>베이스 모델</strong>: Qwen3.5</li>
+<li><strong>지원 언어</strong>: 텍스트 번역 150개 언어 (음성/장문 패키지는 언어 범위 별도)</li>
+<li><strong>라이선스</strong>: Apache 2.0</li>
+<li><strong>공개 시점</strong>: 2026-09-30 (2B/9B/35B-A3B preview 가중치) → 2026-10-03 양자화 빌드 → 2026-10-04 무료 API + 벤치마크 공개</li>
+</ul>
+<h3>모델 패밀리</h3>
+<table><thead><tr><th>모델</th><th>역할</th><th>크기</th></tr></thead><tbody>
+<tr><td><strong>Index-Translate</strong></td><td>텍스트/구조화 콘텐츠/커뮤니티 표현 번역</td><td>2B · 9B · 35B-A3B(preview)</td></tr>
+<tr><td><strong>Index-Echo (S2TT)</strong></td><td>음성→자막</td><td>2B · 9B</td></tr>
+<tr><td><strong>Index-Echo (S2ST)</strong></td><td>음성→음성 더빙(원 화자 음색 유지)</td><td>2B · 9B</td></tr>
+<tr><td><strong>Index-Homura</strong></td><td>목표 음절 수 맞춤 번역</td><td>2B · 9B</td></tr>
+<tr><td><strong>Index-NativeLong</strong></td><td>장문 문서 번역(문맥 유지), 모델ID는 <code>Index-Nailong</code></td><td>2B · 9B</td></tr>
+</tbody></table>
+<p>양자화: 전 모델 <strong>GGUF</strong>(llama.cpp 로컬), <strong>FP8</strong>(vLLM W8A8), <strong>FP4</strong>(vLLM NVFP4, Blackwell용) 공식 제공.</p>
+<h3>0. 셀프호스팅 (로컬/자체 서버 운영 — yoonhwan 환경 1차 경로)</h3>
+<pre><code>git clone https://github.com/bilibili/Index-Translate.git
+cd Index-Translate
+pip install -U vllm
+pip install -r inference/llm/requirements.txt
+vllm serve IndexTeam/Index-Translate-2B --host 127.0.0.1 --port 8000 --max-model-len 4096</code></pre>
+<p>다른 터미널에서:</p>
+<pre><code>python inference/llm/translate.py \
+  &quot;你好，世界。今天天气不错，我们去公园散步吧。&quot; \
+  --target en --model IndexTeam/Index-Translate-2B</code></pre>
+<p>→ <code>Hello, world. The weather is nice today. Let&#x27;s go for a walk in the park.</code></p>
+<ul>
+<li>텍스트 클라이언트 기본값: <code><a href="http://127.0.0.1:8000/v1</code>,">http://127.0.0.1:8000/v1<code>,</a> API key </code>EMPTY<code>. </code>--base-url<code>/</code>--api-key<code>/</code>OPENAI<em>BASE</em>URL<code>/</code>OPENAI<em>API</em>KEY`로 override 가능.</li>
+<li>GGUF 빌드는 llama.cpp로 로컬(CPU/Apple Silicon 포함) 서빙 가능 — Mac MLX 환경에선 GGUF 경로가 가장 적합.</li>
+<li><code>serve_vllm.sh</code> 기준 context: 2B/9B <code>32768</code> (35B는 별도 preset 없음).</li>
+</ul>
+<h4>강제 조건(Instruction Following) 예시 — 셀프호스팅 공통</h4>
+<pre><code># 용어집 강제
+python inference/llm/translate.py &quot;王平仲采用了更加昂贵的碳纤维材料。碳纤维的好处就是它抗裂缝。&quot; \
+  --target en -g &quot;碳纤维:carbon fiber, 抗裂缝:crack resistance&quot;
+
+# JSON 포맷 보존
+python inference/llm/translate.py \
+  &#x27;{&quot;user_id&quot;: 1024, &quot;event&quot;: &quot;purchase&quot;, &quot;message&quot;: &quot;您的订单已支付完成。&quot;}&#x27; \
+  --target en -H &quot;保留源文中的 JSON 格式标记不变&quot;
+
+# 음절수 맞춤 (Index-Homura)
+python inference/llm/syllable_translate.py &quot;我们今天去看电影吧&quot; --syllables 7 --target en --glossary &quot;电影:cinema&quot;</code></pre>
+<h3>1. (참고/보조) 무료 공개 API — GPU 불필요</h3>
+<p>Bilibili가 공개 운영하는 무료 엔드포인트, OpenAI 호환. (yoonhwan 환경은 셀프호스팅이 1차지만, 빠른 테스트용으로 참고)</p>
+<pre><code># zero-dependency 커맨드라인 번역
+python inference/llm/call_api.py &quot;你好，世界。&quot; --target en
+
+# OpenAI 호환 Chat Completions
+curl https://index-translate.bilibili.com/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#x27;{&quot;model&quot;: &quot;Index-Translate-35B-A3B&quot;, &quot;messages&quot;: [{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;번역해줘...&quot;}]}&#x27;</code></pre>
+<p>브라우저 확장(이머시브 트랜스레이트 등)에서 쓰려면 CORS/WAF 때문에 로컬 프록시 필요: <code>python inference/llm/call_api.py --serve</code> → <code><a href="http://127.0.0.1:8080/v1</code>.">http://127.0.0.1:8080/v1`.</a></p>
+<h3>성능 비교 (FLORES/WMT26 기준)</h3>
+<table><thead><tr><th>모델</th><th>FLORES↑</th><th>WMT26↑</th><th>instTrans Quality↑</th><th>MEME↑</th></tr></thead><tbody>
+<tr><td><strong>Index-Translate-35B-A3B(preview)</strong></td><td>0.8794</td><td>76.76</td><td>0.6901</td><td>0.7405</td></tr>
+<tr><td><strong>Index-Translate-9B</strong></td><td>0.8789</td><td>75.35</td><td>0.6771</td><td>0.7387</td></tr>
+<tr><td>Index-Translate-2B</td><td>0.8655</td><td>60.26</td><td>0.5391</td><td>0.6443</td></tr>
+<tr><td>GPT-5.6-Sol (비교군)</td><td>0.8650</td><td>89.10</td><td>0.6902</td><td>0.7194</td></tr>
+<tr><td>DeepSeek-V4.1-Flash (비교군)</td><td>0.8762</td><td>83.55</td><td>0.6068</td><td>0.7424</td></tr>
+</tbody></table>
+<p>→ WMT26(일반 번역 품질)은 상위 상용 LLM이 더 높지만, instTrans(지시 준수 번역 — 용어집/포맷 강제)와 MEME(커뮤니티 표현)에서는 Index-Translate-35B가 경쟁력 있음. <strong>&quot;번역 지시 준수&quot;가 핵심 차별점.</strong></p>
+<h2>관련 스레드 (타 계정의 동일 주제 포스트)</h2>
+<ul>
+<li><strong>theboss00518</strong> (4d): &quot;150개 언어&quot; 표기만 보지 말고 용어집·JSON 구조 유지 조건 실제 테스트 권장. 10/3 로컬용 GGUF, 서버용 FP8 공개 확인. Apache 2.0.</li>
+<li><strong>counter_parrot.ai</strong> (4d): 관련 GitHub <code>mlsubgen</code> — 로컬 다국어 자막 생성기(OCR+STT+로컬 LLM 번역, 영상/자막이 기기 밖으로 안 나감). 출력 37개 언어.</li>
+<li><strong>ais.root</strong> (09/09/26): 구글 번역 대체용 로컬 AI 번역 모델 소개 (다른 모델, 참고용).</li>
+<li>aiwire_kr의 이전 포스트들(oobabooga textgen, Pi 에이전트 툴킷)은 본 토픽과 무관한 다른 주제 — 생략.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>항목</th><th>링크</th></tr></thead><tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/bilibili/Index-Translate">https://github.com/bilibili/Index-Translate</a></td></tr>
+<tr><td>Technical Report (arXiv)</td><td><a href="https://arxiv.org/abs/2609.40181">https://arxiv.org/abs/2609.40181</a></td></tr>
+<tr><td>Hugging Face Collection</td><td><a href="https://huggingface.co/collections/IndexTeam/index-translate">https://huggingface.co/collections/IndexTeam/index-translate</a></td></tr>
+<tr><td>ModelScope</td><td><a href="https://modelscope.cn/collections/IndexTeam/Index-Translate">https://modelscope.cn/collections/IndexTeam/Index-Translate</a></td></tr>
+<tr><td>온라인 데모</td><td><a href="https://index-translate.bilibili.com/">https://index-translate.bilibili.com/</a></td></tr>
+<tr><td>원문 Threads</td><td><a href="https://www.threads.com/@aiwire<em>kr/post/DeNOuydkyON">https://www.threads.com/@aiwire</em>kr/post/DeNOuydkyON</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-08 Index-Translate 오픈소스 번역LLM/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

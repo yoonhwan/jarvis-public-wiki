@@ -1,0 +1,109 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vela 2.0 — Open Foundation Routing Models (vLLM Semantic Router) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261008-093137-KST">Jarvis Wiki / ai-agent</a><h1>Vela 2.0 — Open Foundation Routing Models (vLLM Semantic Router)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><h1>Vela 2.0 — Open Foundation Routing Models (vLLM Semantic Router)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-08 Vela 2.0 오픈 라우팅 모델/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Vela 2.0 — Open Foundation Routing Models (vLLM Semantic Router)</h1>
+<h2>본문 (Main Post)</h2>
+<p>RAG 시스템에서 늘 골치 아팠던 할루시네이션과 개인정보(PII) 필터링, 이제 텍스트 위치까지 정확히 짚어주는 가벼운 모델로 이를 빠르게 해결할 수 있을 것 같습니다.</p>
+<p>vLLM팀에서 새롭게 공개한 &#x27;Vela 2.0&#x27;은 단 한 번의 호출만으로 문장 내 특정 단어가 개인정보인지, 혹은 RAG 답변 중 어떤 부분이 문서에 근거하지 않은 거짓인지 그 정확한 위치(span)를 콕 집어내어 찾아내는 오픈 라우팅 모델입니다.</p>
+<p>0.3B부터 9B까지 4가지 사이즈로 제공됩니다.</p>
+<h2>댓글 스레드 (Reply Thread — 작성자)</h2>
+<blockquote>출처: huggingface.co/collections/vllm-sr/vela-20</blockquote>
+<blockquote>⛵ Vela 2.0 - a vllm-sr Collection</blockquote>
+<p>(원문 포스트 반응: 좋아요 10 / 리포스트 1 / 인용 3 / 댓글 7)</p>
+<h2>무엇인가 (요약)</h2>
+<p><strong>Vela 2.0</strong>은 vLLM Semantic Router 팀(vllm-sr) × KR Labs가 공개한 &quot;오픈 파운데이션 라우팅 모델&quot; 패밀리. 텍스트 생성을 하지 않고, 하나의 요청으로:</p>
+<ul>
+<li><strong>라우팅 결정</strong> (요청을 어떤 경로/모델로 보낼지)</li>
+<li><strong>프롬프트 공격(탈옥) 탐지</strong></li>
+<li><strong>PII(개인정보) 탐지</strong> — 17종 트레이닝된 라벨</li>
+<li><strong>비근거 주장(할루시네이션) 탐지</strong> — RAG 답변이 context에 근거하지 않은 구간 탐지</li>
+</ul>
+<p>를 <strong>문자 단위 span(시작/끝 offset)</strong>으로 정확히 짚어 반환한다.</p>
+<h3>모델 사이즈 (4종)</h3>
+<table><thead><tr><th>모델</th><th>사이즈(파라미터)</th><th>비고</th></tr></thead><tbody>
+<tr><td><strong>Vela-2.0-0.3B</strong></td><td>~0.3B</td><td>가장 가벼움, 온디바이스/엣지용 추정</td></tr>
+<tr><td><strong>Vela-2.0-0.8B</strong></td><td>~0.8B</td><td></td></tr>
+<tr><td><strong>Vela-2.0-4B</strong></td><td>~4B</td><td></td></tr>
+<tr><td><strong>Vela-2.0-9B</strong></td><td><strong>7.9B</strong> (reported)</td><td>최상위, 32-layer Qwen3.5 하이브리드(Gated DeltaNet + gated GQA) 백본</td></tr>
+</tbody></table>
+<h3>9B 스펙 (대표 모델)</h3>
+<table><thead><tr><th>항목</th><th>값</th></tr></thead><tbody>
+<tr><td>백본</td><td>32-layer Qwen3.5 hybrid (Gated DeltaNet + gated GQA)</td></tr>
+<tr><td>입력 한계</td><td><strong>16,384 tokens</strong></td></tr>
+<tr><td>출력 타입</td><td>Choice / Yes-no(Noul) / Score / Span / Set — <strong>텍스트 생성 없음</strong></td></tr>
+<tr><td>평가 정밀도</td><td>FP32 파라미터, bf16 backbone autocast(GPU), FP32 heads</td></tr>
+<tr><td>GPU 파라미터 메모리</td><td>약 <strong>32GB</strong> (FP32 기준)</td></tr>
+<tr><td>라이선스</td><td><strong>Apache-2.0</strong></td></tr>
+<tr><td>지원 언어</td><td>17개 언어 (한국어 포함: ar/zh/cs/nl/en/fr/de/hi/it/ja/<strong>ko</strong>/pl/pt/ru/es/sv/th)</td></tr>
+</tbody></table>
+<h3>질문 타입 (Questions &amp; Outputs)</h3>
+<table><thead><tr><th>타입</th><th>용도</th><th>출력</th></tr></thead><tbody>
+<tr><td>Choice</td><td>요청 라우팅, 2~255개 옵션 중 선택</td><td>선택 키 + 분포</td></tr>
+<tr><td>Yes/no (Noul)</td><td>조건 체크</td><td>P(yes)</td></tr>
+<tr><td>Score</td><td>2~10단계 순위 평가</td><td>기대 레벨 + 분포</td></tr>
+<tr><td><strong>Span</strong></td><td>PII/비근거주장/엔티티/관계/근거 텍스트 위치 추출</td><td>텍스트 span + character offset + probability</td></tr>
+<tr><td>Set</td><td>다중 라벨 선택</td><td>선택된 라벨 + 라벨별 probability</td></tr>
+</tbody></table>
+<h3>성능 결과 (9B 체크포인트)</h3>
+<table><thead><tr><th>벤치마크</th><th>결과</th><th>지표/모드</th></tr></thead><tbody>
+<tr><td>Safety (14개 public sets)</td><td><strong>0.921</strong></td><td>Mean AUC (학습된 task family)</td></tr>
+<tr><td>Prompt attacks (unseen families)</td><td><strong>0.989</strong></td><td>AUC</td></tr>
+<tr><td>PII (8K-token 문서)</td><td><strong>0.940</strong></td><td>F1 (shipped calibration)</td></tr>
+<tr><td>Hallucination (10,698 examples)</td><td><strong>0.885</strong></td><td>Example-F1</td></tr>
+<tr><td>ACL-Verbatim evidence</td><td>24.5</td><td>Word-F1 (broad span head, zero-shot)</td></tr>
+<tr><td>Jev Decision Index 0.2.1</td><td><strong>41.63</strong></td><td>38개 벤치마크 (noul_calibration=True)</td></tr>
+</tbody></table>
+<h3>사용 예시 (Quickstart)</h3>
+<pre><code>pip install torch &quot;transformers&gt;=5.17&quot; safetensors tokenizers numpy
+pip install flash-linear-attention   # GPU 가속 (선택)</code></pre>
+<pre><code>from transformers import AutoModel
+
+m = AutoModel.from_pretrained(&quot;vllm-sr/Vela-2.0-9B&quot;, trust_remote_code=True)
+m = m.to(&quot;cuda&quot;)
+
+PII_LABELS = m.vela2_engine.cal[&quot;pii_schema&quot;][&quot;labels&quot;]  # 17종 PII 타입
+
+result = m.system_one(
+    state={
+        &quot;request&quot;: &quot;Hi, I&#x27;m Tom Baker (tom.baker@example.com). What is the maximum daily dose of paracetamol for an adult?&quot;,
+        &quot;source&quot;: &quot;For adults, the maximum dose of paracetamol is 4 grams in 24 hours, taken as 500 mg to 1 g every 4 to 6 hours.&quot;,
+        &quot;answer&quot;: &quot;Adults can take up to 6 grams of paracetamol in 24 hours, in doses of 500 mg to 1 g every 4 to 6 hours.&quot;,
+    },
+    questions={
+        &quot;pii&quot;: {&quot;type&quot;: &quot;span&quot;, &quot;instructions&quot;: &quot;Which spans are personal information?&quot;,
+                &quot;criteria&quot;: PII_LABELS, &quot;over&quot;: &quot;request&quot;},
+        &quot;halu&quot;: {&quot;type&quot;: &quot;span&quot;, &quot;instructions&quot;: &quot;Which spans of the answer are not supported by the context?&quot;,
+                 &quot;criteria&quot;: {&quot;unsupported&quot;: &quot;a claim not supported by the context&quot;}},
+        &quot;domain&quot;: {&quot;type&quot;: &quot;choice&quot;, &quot;instructions&quot;: &quot;Which subject area is this request about?&quot;, &quot;over&quot;: &quot;request&quot;,
+                   &quot;criteria&quot;: {&quot;health&quot;: &quot;medicine, clinical practice...&quot;, &quot;math&quot;: &quot;...&quot;, &quot;other&quot;: &quot;...&quot;}},
+    },
+)</code></pre>
+<p>반환 예시(발췌) — PII span과 hallucination span을 character offset과 probability로 함께 받는다:</p>
+<pre><code>{
+  &quot;spans&quot;: {
+    &quot;pii&quot;: [
+      {&quot;label&quot;: &quot;PERSON&quot;, &quot;start&quot;: 8, &quot;end&quot;: 17, &quot;text&quot;: &quot;Tom Baker&quot;, &quot;probability&quot;: 0.999},
+      {&quot;label&quot;: &quot;EMAIL_ADDRESS&quot;, &quot;start&quot;: 19, &quot;end&quot;: 40, &quot;text&quot;: &quot;tom.baker@example.com&quot;, &quot;probability&quot;: 1.0}
+    ],
+    &quot;halu&quot;: [
+      {&quot;label&quot;: &quot;unsupported&quot;, &quot;start&quot;: 22, &quot;end&quot;: 29, &quot;text&quot;: &quot;6 grams&quot;, &quot;probability&quot;: 0.982}
+    ]
+  }
+}</code></pre>
+<h3>핵심 포인트 요약</h3>
+<ol>
+<li><strong>한 번 호출로 다용도</strong>: 라우팅 + 프롬프트 공격 탐지 + PII + 할루시네이션 탐지를 동시에 처리</li>
+<li><strong>텍스트 생성 없음</strong> — 분류/span 추출 전용 모델이라 가볍고 빠름 (0.3B~9B)</li>
+<li><strong>정확한 위치(span)</strong> 반환 — &quot;어디가 틀렸는지/어디가 개인정보인지&quot;를 character offset으로 짚어줌</li>
+<li><strong>Apache-2.0 라이선스</strong> — 상업적 사용 가능, 자체 서빙 가능</li>
+<li><strong>한국어 포함 17개 언어</strong> 지원</li>
+</ol>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>HuggingFace Collection</td><td><a href="https://huggingface.co/collections/vllm-sr/vela-20">https://huggingface.co/collections/vllm-sr/vela-20</a></td></tr>
+<tr><td>Vela-2.0-9B 모델 카드</td><td><a href="https://huggingface.co/vllm-sr/Vela-2.0-9B">https://huggingface.co/vllm-sr/Vela-2.0-9B</a></td></tr>
+<tr><td>공식 Docs</td><td><a href="https://vllm-sr.ai/">https://vllm-sr.ai/</a></td></tr>
+<tr><td>공식 Blog</td><td><a href="https://vllm-sr.ai/blog/vela-2-0-open-foundation-routing-models">https://vllm-sr.ai/blog/vela-2-0-open-foundation-routing-models</a></td></tr>
+<tr><td>GitHub (vLLM Semantic Router)</td><td><a href="https://github.com/vllm-project/semantic-router">https://github.com/vllm-project/semantic-router</a></td></tr>
+<tr><td>Threads 원문</td><td><a href="https://www.threads.com/@feelfree<em>ai/post/DeMgooQgU3Q">https://www.threads.com/@feelfree</em>ai/post/DeMgooQgU3Q</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-08 Vela 2.0 오픈 라우팅 모델/README.md</code></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
