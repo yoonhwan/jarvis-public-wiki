@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-08T09:32:11.161734",
+  "generated_at": "2026-10-12T15:26:37.850612",
   "source": "Wikis/pages",
   "domain": "trading",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20261008-093137-KST",
+  "version": "20261012-152619-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -34,6 +34,7 @@
       "excerpt_list": "Threads(@jooshikk)가 공유한 Instagram 게시물 링크. Threads 자체 캡션은 없고, 링크 미리보기(link preview)에 원문 In…",
       "date": "2026-09-14",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-09-14",
         1789345695.403127
@@ -49,6 +50,7 @@
       "excerpt_list": "간만에 dartlab 소식입니다.",
       "date": "2026-09-08",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-09-08",
         1788865290.222041
@@ -64,6 +66,7 @@
       "excerpt_list": "RTX 3090 24GB 단일 GPU에서 Qwen3 27B 비검열 모델을 vLLM으로 구동해",
       "date": "2026-08-26",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-26",
         1787713610.03984
@@ -79,6 +82,7 @@
       "excerpt_list": "좋은 CTA는 '무엇을 클릭하라'가 아니라, '클릭하면 무엇을 얻게 되는지'를 말해준다.",
       "date": "2026-08-21",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-08-21",
         1787263334.818072
@@ -94,6 +98,7 @@
       "excerpt_list": "단타에서 가장 많이 당하는 함정은 ‘호가창’을 제대로 못 읽어서 생겨. 차트만 보다가 호가창을 간과하면…",
       "date": "2026-08-04",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-04",
         1785816414.7232091
@@ -109,6 +114,7 @@
       "excerpt_list": "당일매매에서 진짜 승부는 '속도'가 아니라 '참는 능력'이다.",
       "date": "2026-07-27",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-27",
         1785147957.244982
@@ -124,6 +130,7 @@
       "excerpt_list": "많은 사람들이 단타(데이트레이딩)는 9시부터 1시 30분까지 화면만 뚫어져라 쳐다보는 거라고 생각한다. 치타가 가젤을 노리듯이.…",
       "date": "2026-07-23",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-07-23",
         1784803547.7401881
@@ -139,6 +146,7 @@
       "excerpt_list": "스레드 최초, 거래량으로 세력 매집/분산 구분하는 법 다 까발립니다 — \"RSI 2편\"",
       "date": "2026-07-23",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-23",
         1784802270.7285528
@@ -154,6 +162,7 @@
       "excerpt_list": "일목균형표 제대로 뜯어봅니다. 이거 하나면 추세·지지·저항 다 한 번에 보임.",
       "date": "2026-07-22",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-22",
         1784652242.3764234
@@ -169,6 +178,7 @@
       "excerpt_list": "스레드 최초 — 지표 4개 겹쳐서 세력 자리 찾는 법 다 까발립니다.",
       "date": "2026-07-22",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-22",
         1784651837.5149515
@@ -184,6 +194,7 @@
       "excerpt_list": "tradingcodex 당장 써야 하는 이유",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-21",
         1784608977.443701
@@ -199,6 +210,7 @@
       "excerpt_list": "주식시장에서 결국 돈 버는 5가지 유형:",
       "date": "2026-07-12",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-12",
         1783855235.1434112
@@ -214,6 +226,7 @@
       "excerpt_list": "이제 Claude는 헤지펀드 수준의 트레이딩 전략을 만들 수 있다(100% 무료).",
       "date": "2026-07-08",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-07-08",
         1783476567.471461
@@ -229,6 +242,7 @@
       "excerpt_list": "애 이름으로 적금 들고 뿌듯해하지마.",
       "date": "2026-06-21",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-21",
         1782004670.288452
@@ -244,6 +258,7 @@
       "excerpt_list": "캔들스틱을 '언어'로 번역한 첫 번째 AI가 나왔다.",
       "date": "2026-06-20",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-20",
         1781890129.4571917
@@ -259,6 +274,7 @@
       "excerpt_list": "",
       "date": "2026-06-14",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-06-14",
         1781367057.0270677
@@ -274,6 +290,7 @@
       "excerpt_list": "장 초반 변동성, 시가 지지/이탈, 거래대금·유통시총 조건, 역배열 회피를 기준으로 한 단기 주식 매매…",
       "date": "2026-05-20",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-20",
         1779240025.490703
@@ -289,6 +306,7 @@
       "excerpt_list": "ElevenLabs 같은 구독형 음성 서비스를 대체할 수 있는 로컬 AI 기반 TTS/STT/목소리 클로닝 워크플로우와…",
       "date": "2026-05-13",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-05-13",
         1778625975.4621513
@@ -304,6 +322,7 @@
       "excerpt_list": "마지막, 텐버거 찾는 꿀 Tip. 요새 어닝콜 많으니깐, 일일히 챙겨보기 힘드시죠. 저는 보통 주말에…",
       "date": "2026-05-12",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-12",
         1778549787.7986119
@@ -319,6 +338,7 @@
       "excerpt_list": "변창석이 고려대학교를 갓 졸업한 딸에게 주식 공부를 가르치기 시작한다고 알린 Threads 게시물.",
       "date": "2026-05-09",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-09",
         1778339828.9601412
@@ -334,6 +354,7 @@
       "excerpt_list": "Hermes가 조사해준 GitHub에 AI 자동매매 오픈소스 1 | FinRL | ⭐3.1k · DRL 강화학습…",
       "date": "2026-05-04",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-04",
         1777882422.43163
@@ -349,6 +370,7 @@
       "excerpt_list": "TensorTrade라는 강화학습 기반 알고리즘 트레이딩용 오픈소스 Python 프레임워크를 소개하는 Threads 게시물입니다.",
       "date": "2026-05-04",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-04",
         1777872830.9780345
@@ -364,6 +386,7 @@
       "excerpt_list": "음성 AI 오픈소스 생태계가 빠르게 확장되고 있습니다. Whisper 이후를 노린 마이크로소프트의 VibeVoice가 46,000개 스타와…",
       "date": "2026-05-04",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-04",
         1777872792.5154934
@@ -379,6 +402,7 @@
       "excerpt_list": "TradingView 스크리너를 AI 에이전트에 붙여서, RSI·시가총액·시장 조건 같은 필터를 자연어로 지시하고 결과를 직접 표로…",
       "date": "2026-04-29",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-29",
         1777449749.953439
@@ -394,6 +418,7 @@
       "excerpt_list": "GA + Amplitude + LaunchDarkly + Sentry를 단일 플랫폼으로 통합한 오픈소스 제품 분석 스택.…",
       "date": "2026-04-29",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-29",
         1777442031.8226697
@@ -409,6 +434,7 @@
       "excerpt_list": "원본: https://www.threads.com/@sisenamza92/post/DXif9EUn157",
       "date": "2026-04-25",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-25",
         1777118386.7255332
@@ -424,6 +450,7 @@
       "excerpt_list": "전형적인 시그마봇 시세차익(arbitrage) 강의 마케팅 패턴. \"기수 신청\" 댓글로 미루어 유료 강의/리퍼럴 사업 가능성…",
       "date": "2026-04-25",
       "hero_image": "../assets/media/고졸퇴사자가-방구석컴퓨터-1대로-달러버는-방법/screenshot.png",
+      "subtype": "entities",
       "_sort": [
         "2026-04-25",
         1777115812.1041076
@@ -439,6 +466,7 @@
       "excerpt_list": "🔗 원본: https://youtu.be/cZXvGZoY6fE?si=ZYNlUDWKlKyNKBn4",
       "date": "2026-03-29",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-03-29",
         1774742767.6998322
@@ -454,6 +482,7 @@
       "excerpt_list": "🔗 원본: https://youtu.be/5Jm69jifbAk?si=zlYSxgTdaT1Ycni",
       "date": "2026-03-29",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-03-29",
         1774742677.0
@@ -469,6 +498,7 @@
       "excerpt_list": "🔗 원본: https://youtu.be/6fEhvy7mREc?si=40yq4mZz9dOKDNMq",
       "date": "2026-03-29",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-03-29",
         1774742527.2702441
@@ -484,6 +514,7 @@
       "excerpt_list": "책 #자본주의시대에서살아남기위한최소한의경제공부 할인 구매링크는 @billionman10 프로필에 있습니다.",
       "date": "2026-03-21",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-03-21",
         1774100824.4458728
@@ -499,6 +530,7 @@
       "excerpt_list": "Claude Code 장애 시점에 맞춰 공유된 Codex 서브에이전트 136개 모음집. 10개 카테고리로 정리되어 있으며…",
       "date": "2026-03-18",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-18",
         1773846180.2321107
@@ -514,6 +546,7 @@
       "excerpt_list": "남편의 동료 John이 미국으로 돌아가기 전 집에 놀러 왔다.",
       "date": "2026-03-16",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-16",
         1773671696.0
@@ -529,6 +562,7 @@
       "excerpt_list": "1. S&P500 주식을 100주까지 모아라 — 옵션 1계약 = 100주 단위",
       "date": "2026-03-13",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-13",
         1773360214.0
@@ -544,6 +578,7 @@
       "excerpt_list": "바이낸스 Perpetual Futures의 높은 수수료 문제로 스캘핑에 더 적합한 대안을 찾는 질문 글. 작성자는…",
       "date": "2026-03-11",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-11",
         1773223483.0
@@ -559,6 +594,7 @@
       "excerpt_list": "미국 전설의 트레이더 로스 카메론(Ross Cameron)이 단돈 80만원으로 1년 만에 150억을 만든 RSI 매매…",
       "date": "2026-03-11",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-03-11",
         1773223441.0
@@ -574,6 +610,7 @@
       "excerpt_list": "Claude AI를 사용해 골드만삭스, 모건스탠리, 브리지워터 등 월스트리트 최고 기관 수준의 주식 분석을 무료로…",
       "date": "2026-03-06",
       "hero_image": "../assets/media/claude로-월스트리트-애널리스트처럼-주식-분석-10개-프롬프트/slide_1.png",
+      "subtype": "entities",
       "_sort": [
         "2026-03-06",
         1772751726.3467178
@@ -589,6 +626,7 @@
       "excerpt_list": "1. TP/SL의 본질 — 둘 다 동일한 매도 주문, 가격이 익절/손절을 결정",
       "date": "2026-03-05",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-03-05",
         1772714506.0495138
@@ -604,6 +642,7 @@
       "excerpt_list": "1. 스팟 vs 선물 차이",
       "date": "2026-03-05",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-03-05",
         1772714031.8381977
@@ -619,6 +658,7 @@
       "excerpt_list": "출처: YouTube",
       "date": "2026-03-05",
       "hero_image": "",
+      "subtype": "strategies",
       "_sort": [
         "2026-03-05",
         1772713378.3316433
@@ -634,6 +674,7 @@
       "excerpt_list": "목표: 자비스와 yoonhwan 오빠가 함께 성장하는 트레이딩 시스템",
       "date": "2026-03-05",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-03-05",
         1772681409.0
@@ -649,6 +690,7 @@
       "excerpt_list": "잠자는 동안에도 통장에 꽂히는 달러 월급을 현실로 만드는 방법. 단순히 배당률만 높은 종목이 아니라…",
       "date": "2026-02-27",
       "hero_image": "../assets/media/미국-월배당-etf-top-5-월-배당으로-제-2의-월급-만들기/slide_2.png",
+      "subtype": "entities",
       "_sort": [
         "2026-02-27",
         1772197302.0
@@ -664,6 +706,7 @@
       "excerpt_list": "📊 조회수: 4.2K | ❤️ 24 | 💬 10 | 🔄 10 | 📤…",
       "date": "2026-02-22",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-22",
         1771725262.0
@@ -679,6 +722,7 @@
       "excerpt_list": "OpenClaw 유저 @yaaado가 실제로 세팅해서 쓰고 있는 신박한 활용 사례 7가지를 공유한 스레드. 팀…",
       "date": "2026-02-20",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-20",
         1771586983.0
@@ -694,6 +738,7 @@
       "excerpt_list": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각…",
       "date": "2026-02-20",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-20",
         1771586181.0
@@ -709,6 +754,7 @@
       "excerpt_list": "OpenClaw는 내 대신 24시간 시장을 감시해야 하므로, 컴퓨터가 항상 켜져 있어야 합니다.",
       "date": "2026-02-20",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-20",
         1771516489.0
@@ -724,6 +770,7 @@
       "excerpt_list": "작성일: 2026-02-16",
       "date": "2026-02-16",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-16",
         1771221093.7462106
@@ -739,6 +786,7 @@
       "excerpt_list": "주식하면 무조건 외우세요",
       "date": "2026-02-12",
       "hero_image": "../assets/media/불스리서치-etf-효율-10배-높이는-방법/slide_1.png",
+      "subtype": "references",
       "_sort": [
         "2026-02-12",
         1770855688.441529
@@ -754,6 +802,7 @@
       "excerpt_list": "출처: Threads @choisungh",
       "date": "2026-02-08",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-08",
         1770552745.378745
@@ -769,6 +818,7 @@
       "excerpt_list": "원본: Instagram 포스트",
       "date": "2026-02-07",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-07",
         1770427780.0
@@ -784,6 +834,7 @@
       "excerpt_list": "원본: Threads 포스트",
       "date": "2026-02-07",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-07",
         1770427691.0954561

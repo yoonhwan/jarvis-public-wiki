@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-08T09:32:11.071876",
+  "generated_at": "2026-10-12T15:26:36.104100",
   "source": "Wikis/pages",
   "domain": "ai-agent",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20261008-093137-KST",
+  "version": "20261012-152619-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -38,6 +38,7 @@
       "excerpt_list": "의외로 놓치기 쉬운 디자인 디테일 (한국어 한정)",
       "date": "2026-10-08",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-10-08",
         1791417585.1906343
@@ -53,6 +54,7 @@
       "excerpt_list": "150개 언어를 번역하는 오픈소스 LLM이 공개됐어요.",
       "date": "2026-10-08",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-10-08",
         1791413641.085591
@@ -68,6 +70,7 @@
       "excerpt_list": "RAG 시스템에서 늘 골치 아팠던 할루시네이션과 개인정보(PII) 필터링, 이제 텍스트 위치까지 정확히 짚어주는 가벼운…",
       "date": "2026-10-08",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-10-08",
         1791413508.7036848
@@ -83,6 +86,7 @@
       "excerpt_list": "개인용 AI 컴퓨터 경쟁이 빠르게 시작되고 있습니다.",
       "date": "2026-10-08",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-10-08",
         1791390708.076953
@@ -98,6 +102,7 @@
       "excerpt_list": "Threads: @pyjinnode (pyjinnode, 매일 AI 소식 1차 출처 확인 계정)",
       "date": "2026-10-07",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-10-07",
         1791374148.659055
@@ -113,6 +118,7 @@
       "excerpt_list": "오픈AI가 모델 선택, 문의 분류, 버튼 클릭 같은 실시간 판단을 전담하는 Decisions API를 퍼블릭…",
       "date": "2026-10-07",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-10-07",
         1791335172.181517
@@ -128,6 +134,7 @@
       "excerpt_list": "1/ 구글 딥마인드가 온디바이스 멀티모달 임베딩 모델 'EmbeddingGemma 2'를 공개했습니다. 임베딩 모델은 글이나 사진의…",
       "date": "2026-10-07",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-10-07",
         1791335156.5067222
@@ -143,6 +150,7 @@
       "excerpt_list": "(좋아요 881 / 리포스트 22 / 인용 184 / 댓글 626)",
       "date": "2026-10-06",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-10-06",
         1791270834.8387551
@@ -158,6 +166,7 @@
       "excerpt_list": "1. 도입 — 클로드 헤비유저를 만난 충격",
       "date": "2026-10-04",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-10-04",
         1791042571.6923013
@@ -173,6 +182,7 @@
       "excerpt_list": "댓글 스레드 (Author): 출처: huggingface.co/blog… (아래 원문 링크)",
       "date": "2026-10-03",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-10-03",
         1791013258.8017797
@@ -188,6 +198,7 @@
       "excerpt_list": "Threads 작성자: @choi.openai (2026-10-03 기준 2시간 전 게시, 3.7K views)",
       "date": "2026-10-03",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-10-03",
         1791011675.8749297
@@ -203,6 +214,7 @@
       "excerpt_list": "Threads에서 PyTorchKR(@pytorch.kr) 계정이 공유한 글. 원문은 PyTorchKR 포럼(discuss.pytorch.kr)의 기술 리뷰 아…",
       "date": "2026-10-01",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-10-01",
         1790864251.4228718
@@ -218,6 +230,7 @@
       "excerpt_list": "핵심 제약 조건",
       "date": "2026-09-29",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-29",
         1790609521.593157
@@ -233,6 +246,7 @@
       "excerpt_list": "아들이 커서도 엄마랑 가까운 사이로 남는, 지금 해두면 좋은 7가지",
       "date": "2026-09-28",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-09-28",
         1790585478.5299473
@@ -248,6 +262,7 @@
       "excerpt_list": "빌리빌리가 목소리를 그대로 복제하는 AI 음성 모델을 오픈소스로 풀었어요.",
       "date": "2026-09-22",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-22",
         1790073379.488412
@@ -263,6 +278,7 @@
       "excerpt_list": "RTX 5090에만 특화된 Qwen 추론 엔진이 나왔어요!",
       "date": "2026-09-22",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-22",
         1790073352.8223774
@@ -278,6 +294,7 @@
       "excerpt_list": "Threads 포스트 자체는 위 한 줄(원문 링크)만 포함하고 있으며, 실제 설명 내용은 og:description(=포스트 본문…",
       "date": "2026-09-18",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-18",
         1789704502.587326
@@ -293,6 +310,7 @@
       "excerpt_list": "Threads 작성자: @lucasflatwhite",
       "date": "2026-09-18",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-18",
         1789690493.3324971
@@ -308,6 +326,7 @@
       "excerpt_list": "\"숙제 다 했어?\"라는 확인형 질문은 아이를 수동적으로 만든다. 할 일을 기억하고, 순서를 정하고, 빠진…",
       "date": "2026-09-17",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-09-17",
         1789649106.6716075
@@ -323,6 +342,7 @@
       "excerpt_list": "오픈소스 음성 AI, 기준이 달라졌습니다.",
       "date": "2026-09-08",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-08",
         1788865240.6334255
@@ -338,21 +358,23 @@
       "excerpt_list": "Microsoft가 공개한 VibeVoice-ASR-Streaming — 마이크 입력을 실시간으로 받아쓰는 스트리밍 음성인식(ASR) 모델. 회의가 끝나길 기다릴…",
       "date": "2026-09-04",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-04",
         1788454599.302895
       ]
     },
     {
-      "title": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다",
-      "source": "Wikis/pages/entities/새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.md",
-      "url": "pages/새벽-2시-아무도-없는-사무실에서-화면-깨진-노트북-한-대가-카톡-대화방-90개를-정리합니다.html",
+      "title": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리하",
+      "source": "Wikis/pages/entities/새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리하.md",
+      "url": "pages/2-90.html",
       "raw_body_merged": false,
       "excerpt": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.",
       "excerpt_hero": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.",
       "excerpt_list": "새벽 2시, 아무도 없는 사무실에서 화면 깨진 노트북 한 대가 카톡 대화방 90개를 정리합니다.",
       "date": "2026-09-03",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-03",
         1788459703.4715106
@@ -368,6 +390,7 @@
       "excerpt_list": "로컬 llm 돌리는 사람 주목!",
       "date": "2026-09-03",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-03",
         1788431705.8415496
@@ -383,6 +406,7 @@
       "excerpt_list": "Meta Superintelligence Labs가 Muse Voice Transcribe를 공개했다 — 실시간 음성 인식(ASR)을 수행하는 첫 번째…",
       "date": "2026-09-03",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-03",
         1788414816.631089
@@ -398,6 +422,7 @@
       "excerpt_list": "Qwen 공식 GitHub(QwenLM/Qwen3-TTS)는 Python 라이브러리만 제공한다 — 상주 HTTP 서버나 \"프로파일 저장/관리\" 기능이 없다.…",
       "date": "2026-09-03",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-03",
         1788391302.575945
@@ -413,6 +438,7 @@
       "excerpt_list": "작성자: @simon.dsgn (시몬, 디자이너)",
       "date": "2026-09-03",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-03",
         1788366838.3997645
@@ -428,6 +454,7 @@
       "excerpt_list": "GLM-TTS는 중국 Zhipu AI(Z.ai)가 공개한 오픈소스 텍스트 음성 변환(TTS) 모델입니다.",
       "date": "2026-09-02",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-09-02",
         1788357456.8952296
@@ -443,6 +470,7 @@
       "excerpt_list": "Claude를 \"4시간 안에 나를 처음부터 끝까지 가르쳐야 하는 개인 과외 선생님\"으로 세팅해 특정 기술을…",
       "date": "2026-09-02",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-09-02",
         1788303581.547126
@@ -458,6 +486,7 @@
       "excerpt_list": "작성자: 엉클잡스 | AI 시대, 돈이 되는 정보 전달 (@unclejobs.ai, threads.com)",
       "date": "2026-09-02",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-09-02",
         1788279363.9150746
@@ -473,6 +502,7 @@
       "excerpt_list": "Pipecat 팀이 전화 상담에서 AI가 한 박자 늦게 대답하는 문제를 줄이기 위해 오픈웨이트 모델…",
       "date": "2026-08-31",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-31",
         1788163452.626434
@@ -488,6 +518,7 @@
       "excerpt_list": "이름과 그 글자에 녹여 넣고 싶은 오브젝트만 정하면 챗GPT가 손글씨 서명 로고를 그려줍니다. X의…",
       "date": "2026-08-30",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-30",
         1788074194.399889
@@ -503,6 +534,7 @@
       "excerpt_list": "Argmax가 개발한 Apple 실리콘 온디바이스 음성 AI SDK입니다.",
       "date": "2026-08-30",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-08-30",
         1788053440.3676898
@@ -518,6 +550,7 @@
       "excerpt_list": "허브스팟이 1인 기업용 CRM을 내놨습니다.",
       "date": "2026-08-30",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-30",
         1788052915.7487526
@@ -533,6 +566,7 @@
       "excerpt_list": "초등 자녀가 있는 한국인 89.4%는 아이 교육을 자기주도력 키우는 방법을 모르고 있다는거 알아?",
       "date": "2026-08-28",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-28",
         1787880884.3409111
@@ -548,6 +582,7 @@
       "excerpt_list": "수집: HTTP fetch + SSR pk-block 추출 (텍스트 전용 스레드, 이미지/캐러셀 없음)",
       "date": "2026-08-28",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-08-28",
         1787875418.1731653
@@ -563,6 +598,7 @@
       "excerpt_list": "Threads: @i.am.luna.ai 포스트 요약.",
       "date": "2026-08-27",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-27",
         1787807462.903414
@@ -578,6 +614,7 @@
       "excerpt_list": "작성자: 버스터 (@erickim24) on Threads",
       "date": "2026-08-26",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-26",
         1787739912.4734359
@@ -593,6 +630,7 @@
       "excerpt_list": "작성자: 클러치 AI (@k1utchai) on Threads",
       "date": "2026-08-26",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-26",
         1787739906.6472516
@@ -608,6 +646,7 @@
       "excerpt_list": "👀 요즘 Anthropic 내부에서 많이 쓴다는 /eli5 Skill이 웹에서 화제가 되고 있음. 실시간 검색에서도…",
       "date": "2026-08-25",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-25",
         1787666545.7891238
@@ -623,6 +662,7 @@
       "excerpt_list": "검색 결과 상단에 노출되는 것만으로는 부족한 시대가 왔습니다. 이제 사람들은 검색창 대신 ChatGPT 같은…",
       "date": "2026-08-21",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-21",
         1787263546.8280113
@@ -638,6 +678,7 @@
       "excerpt_list": "",
       "date": "2026-08-21",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-21",
         1787263363.7418773
@@ -653,6 +694,7 @@
       "excerpt_list": "3080Ti 12GB 한 장 기준으로 실제 돌아가는지 확인한 오픈모델 정리.",
       "date": "2026-08-21",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-21",
         1787263355.7337983
@@ -668,6 +710,7 @@
       "excerpt_list": "오픈소스 RAG 엔진 판도가 한 곳으로 쏠리고 있습니다.",
       "date": "2026-08-21",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-08-21",
         1787263339.0647764
@@ -683,6 +726,7 @@
       "excerpt_list": "작성자: 한장 (Page One) · 글로벌 · 디자인 수익화 (@pageone.designer)",
       "date": "2026-08-21",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-08-21",
         1787263328.7640145
@@ -698,6 +742,7 @@
       "excerpt_list": "음색 복제 성능부터 54ms 초저지연 반응까지 다 잡은 2B 크기의 오픈소스 TTS 모델 dots.tts가…",
       "date": "2026-08-21",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-21",
         1787263310.1531615
@@ -713,6 +758,7 @@
       "excerpt_list": "AI한테 계약서를 넣어보면 답은 그럴듯하게 나오는데, 그 답이 무슨 기준으로 나온 건지를 알 수가…",
       "date": "2026-08-21",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-21",
         1787263302.0986438
@@ -728,6 +774,7 @@
       "excerpt_list": "큐웬3(Qwen3) 8/27B 는 내 작업에 안맞다. 계륵 수준도 안된다. 뮤즈(Muse)가 약간 계륵. 로컬 패왕은…",
       "date": "2026-08-15",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-15",
         1786805543.005806
@@ -743,6 +790,7 @@
       "excerpt_list": "일론 머스크가 X 코드를 세상에 또 공개했어요 😳",
       "date": "2026-08-14",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-08-14",
         1786675353.3910928
@@ -758,6 +806,7 @@
       "excerpt_list": "당근이 공개한 문서에 로딩 규칙이 다섯 칸 있는데요.",
       "date": "2026-08-12",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-08-12",
         1786461116.9650064
@@ -773,6 +822,7 @@
       "excerpt_list": "내 프로젝트에서 사용자 정보를 받거나 저장하는 곳을 전부 찾아줘.",
       "date": "2026-08-11",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-11",
         1786427442.881104
@@ -788,6 +838,7 @@
       "excerpt_list": "EschaLabs가 Qwen3.6-35B-A3B를 2비트로 양자화한 Escha-W2를 Hugging Face에 공개했습니다. 256개 expert를 사용하는 M…",
       "date": "2026-08-11",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-11",
         1786427428.0255687
@@ -803,6 +854,7 @@
       "excerpt_list": "사업가들이 몰래 쓰는 사이트. 메모해.",
       "date": "2026-08-11",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-08-11",
         1786427404.984169
@@ -818,6 +870,7 @@
       "excerpt_list": "17살 솔로 개발자가 새로운 모델 아키텍처 'Fusion'으로 Fuse-1-Lite를 공개했다. LiquidAI의 LFM 2.5-2.6B에 Qwen 3.6-35…",
       "date": "2026-08-11",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-11",
         1786427400.9178128
@@ -833,6 +886,7 @@
       "excerpt_list": "도커(Docker)는 너무 느리고 일반 가상머신(VM)은 무거워서 고민이셨다면, Kimi K3의 엄청난 강화학습(RL) 성과를 뒷받침한 이…",
       "date": "2026-08-11",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-11",
         1786427391.5217705
@@ -848,6 +902,7 @@
       "excerpt_list": "RAG나 지식그래프로 에이전트 메모리 붙이던 방식, 이제 이 쪽도 있습니다.",
       "date": "2026-08-11",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-11",
         1786427387.8404853
@@ -863,6 +918,7 @@
       "excerpt_list": "카카오톡에는 대화를 읽는 공식 API가 없다. 맥의 로컬 DB가 유일한 입구라는 관찰에서 출발해, 암호화된…",
       "date": "2026-08-08",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-08",
         1786124517.590213
@@ -878,6 +934,7 @@
       "excerpt_list": "마이크로소프트에서 스킬 개선 오픈소스가 나와서 점심 시간을 반납하고 알아보았다.",
       "date": "2026-08-04",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-04",
         1785816392.336114
@@ -893,6 +950,7 @@
       "excerpt_list": "https://github.com/nathankim0/clean-architecture-skills",
       "date": "2026-08-04",
       "hero_image": "",
+      "subtype": "patterns",
       "_sort": [
         "2026-08-04",
         1785816391.7599833
@@ -908,6 +966,7 @@
       "excerpt_list": "GLM-ASR은 Zhipu AI가 공개한 1.5B 파라미터 경량 음성인식(ASR) 모델입니다.",
       "date": "2026-08-04",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-08-04",
         1785816302.638163
@@ -923,6 +982,7 @@
       "excerpt_list": "기존 에이전트 대부분은 개인 비서용 → 한 사람엔 잘 붙지만 회사에 붙이면 금세 복잡.…",
       "date": "2026-08-02",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-08-02",
         1785629752.3523905
@@ -938,6 +998,7 @@
       "excerpt_list": "고소득자들이 매년 하고 있는 절세방법 알려줄께.",
       "date": "2026-07-31",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-31",
         1785446307.9652815
@@ -953,6 +1014,7 @@
       "excerpt_list": "잭 도시(Jack Dorsey)가 Slack 쓰는 게 지겨워서 아예 새로 만든 오픈소스 팀 채팅 Buzz.…",
       "date": "2026-07-30",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-07-30",
         1785392876.8946803
@@ -968,6 +1030,7 @@
       "excerpt_list": "Chonkie는 문서 청킹에 특화한 경량 파이썬 라이브러리입니다.",
       "date": "2026-07-29",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-29",
         1785318022.083561
@@ -983,6 +1046,7 @@
       "excerpt_list": "SpeechAnalyzer는 macOS 26 / iOS 26부터 애플이 새로 넣은 음성 인식 엔진입니다. 로컬에서 동작합니다.",
       "date": "2026-07-27",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-27",
         1785148505.4334784
@@ -998,6 +1062,7 @@
       "excerpt_list": "Instagram Reel 광고 스크랩. pluuugofficial 계정의 B2B SaaS 홍보 영상.",
       "date": "2026-07-26",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-07-26",
         1785066118.2512126
@@ -1013,6 +1078,7 @@
       "excerpt_list": "Claude Code 쓰면서 ls -la 한 번 잘못 부르면 46,000 토큰이 날아갑니다.",
       "date": "2026-07-26",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-26",
         1784991879.5034547
@@ -1028,6 +1094,7 @@
       "excerpt_list": "Coqui STT는 Mozilla DeepSpeech를 계승한 오픈소스 STT 툴킷입니다.",
       "date": "2026-07-24",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-24",
         1784860895.586758
@@ -1043,6 +1110,7 @@
       "excerpt_list": "와... 이렇게 해야 월 억대매출 가능한거구나...",
       "date": "2026-07-23",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-23",
         1784802313.546202
@@ -1058,6 +1126,7 @@
       "excerpt_list": "대치동에서 초저학년이 다닐 수 있는 교과학원:",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-21",
         1784606331.9696543
@@ -1073,6 +1142,7 @@
       "excerpt_list": "알리바바 Qwen 팀이 \"Qwen3-TTS\" 전체 모델을 오픈소스로 공개했습니다.",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-21",
         1784606186.9150627
@@ -1088,6 +1158,7 @@
       "excerpt_list": "어제(4월 16일), 알리바바가 Qwen3.6-35B-A3B를 공식 오픈소스로 풀었습니다.",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-07-21",
         1784605936.1307557
@@ -1103,6 +1174,7 @@
       "excerpt_list": "알리바바 통이랩이 Qwen-Audio-3.0-TTS를 내놨습니다.",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-07-21",
         1784605919.551417
@@ -1118,6 +1190,7 @@
       "excerpt_list": "내가 회사 다니면서 쇼츠로 100만 조회수 만드는 방법은 의외로 엄청 간단해!",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-21",
         1784605706.7923589
@@ -1133,6 +1206,7 @@
       "excerpt_list": "Hugging Face와 Cerebras가 Gemma 4 기반 실시간 음성 AI 데모를 공개했다. 핵심은 단순히 \"빠른…",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-07-21",
         1784605698.3542542
@@ -1148,6 +1222,7 @@
       "excerpt_list": "바이브 코딩으로 서비스 만드는 사람이 많아졌지만, 막상 개발보다 운영이 더 어렵더라는 문제의식에서 직접 만든…",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-21",
         1784605667.6747804
@@ -1163,6 +1238,7 @@
       "excerpt_list": "",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-21",
         1784605581.6162
@@ -1178,6 +1254,7 @@
       "excerpt_list": "Turn PNGs into clean, scalable SVGs.",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-21",
         1784605580.611183
@@ -1193,6 +1270,7 @@
       "excerpt_list": "VRAM 크기별 추천 로컬 AI 모델 목록 (2026-07-18 기준):",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-07-21",
         1784605579.4866765
@@ -1208,6 +1286,7 @@
       "excerpt_list": "빠릿에이전트 오픈소스 금일 출시",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-21",
         1784605572.5292113
@@ -1223,6 +1302,7 @@
       "excerpt_list": "최근에 바이브코딩 하는 많은 분들이 트래픽 추적을 단순히 'GA4 추적 코드'(애널리틱스)만 프롬프트에 붙여넣는 사실을…",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-21",
         1784605569.7591739
@@ -1238,6 +1318,7 @@
       "excerpt_list": "Qwen3-TTS 추론 속도를 최대 5배 뻥튀기해주는 오픈소스가 나왔다. 코드 딱 한 줄이면 적용 끝.",
       "date": "2026-07-21",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-07-21",
         1784605314.3124654
@@ -1253,6 +1334,7 @@
       "excerpt_list": "PrismML 이 차력쇼를 계속 하고 있었네요 ㅋㅋ",
       "date": "2026-07-15",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-15",
         1784116157.9230294
@@ -1268,6 +1350,7 @@
       "excerpt_list": "1-bit LLM",
       "date": "2026-07-15",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-07-15",
         1784116157.872338
@@ -1283,6 +1366,7 @@
       "excerpt_list": "아이가 떼쓸 때 하면 안 되는 말 3가지",
       "date": "2026-07-15",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-15",
         1784110883.5427005
@@ -1298,6 +1382,7 @@
       "excerpt_list": "원문 프로필 링크: https://github.com/be-realdeveloper/saju",
       "date": "2026-07-14",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-14",
         1784015929.9202905
@@ -1313,6 +1398,7 @@
       "excerpt_list": "토스페이먼츠가 PG 업계 최초로 AI 연동이 가능한 MCP(Model Context Protocol) 서버를 도입했습니다.",
       "date": "2026-07-13",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-13",
         1783940625.3405075
@@ -1328,6 +1414,7 @@
       "excerpt_list": "A: 빠진 건 아니고, 원래 10가지인데 목록 숫자를 잘못 맞춰서 11가지가 됐네요. 😅",
       "date": "2026-07-13",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-13",
         1783940319.4319158
@@ -1343,6 +1430,7 @@
       "excerpt_list": "PG사 승인 기다리느라 제품 출시 늦어지는 거, 진짜 비효율 그 자체임🤦🏻‍♂️",
       "date": "2026-07-13",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-13",
         1783940312.610566
@@ -1358,6 +1446,7 @@
       "excerpt_list": "디자인을 ai가 못하지 않습니다",
       "date": "2026-07-13",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-13",
         1783896981.2408414
@@ -1373,6 +1462,7 @@
       "excerpt_list": "공무원이 만든 법제처 국가법령정보 MCP",
       "date": "2026-07-11",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-11",
         1783780431.8624332
@@ -1388,6 +1478,7 @@
       "excerpt_list": "CHOI(@choi.openai)가 Threads에 소개한, Design+Code 창업자이자 Aura 제작자인 Meng To가 공개한 오픈소스 Agent Ski…",
       "date": "2026-07-08",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-08",
         1783507195.8740032
@@ -1403,6 +1494,7 @@
       "excerpt_list": "개발하시는 분들아 ㅋ",
       "date": "2026-07-08",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-08",
         1783491510.7723672
@@ -1418,6 +1510,7 @@
       "excerpt_list": "바이브코딩으로 웹사이트 만든 분?",
       "date": "2026-07-08",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-08",
         1783476189.2377875
@@ -1433,6 +1526,7 @@
       "excerpt_list": "Q: 구글 로그인으로 개인정보를 직접 수집하지 않으면 문제없을까요?",
       "date": "2026-07-07",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-07",
         1783419269.9567754
@@ -1448,6 +1542,7 @@
       "excerpt_list": "단 한 줄의 코드로 완벽하게 오프라인에서 동작하는 헬스케어 AI 스택이 공개됐습니다.",
       "date": "2026-07-07",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-07",
         1783418943.491241
@@ -1463,6 +1558,7 @@
       "excerpt_list": "작성자: SungYong, Eom (@life.of.haru)",
       "date": "2026-07-06",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-06",
         1783325888.7676988
@@ -1478,6 +1574,7 @@
       "excerpt_list": "클로드코드 사용할 때 적용해두면 좋은 스킬",
       "date": "2026-07-06",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-06",
         1783312134.2550054
@@ -1493,6 +1590,7 @@
       "excerpt_list": "일반 서비스 운영용 스토리지/CDN, 아직도 S3 쓰세요? 웬만하면 Cloudflare R2 쓰세요.",
       "date": "2026-07-06",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-06",
         1783312130.2013874
@@ -1508,6 +1606,7 @@
       "excerpt_list": "클로드코드로 meta 광고분석하는 법 알려준다 ㅇㅇ",
       "date": "2026-07-06",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-06",
         1783312116.1320252
@@ -1523,6 +1622,7 @@
       "excerpt_list": "개발 잘 모르고 배포했다가 참교육 당하는 보안 요소 7가지",
       "date": "2026-07-04",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-07-04",
         1783166268.6475444
@@ -1538,6 +1638,7 @@
       "excerpt_list": "Fable(메인 오케스트레이터) 오케스트레이션의 핵심은 \"Fable이 똑똑하게 일하게 하는 것\"이 아니라 \"Fable이 비싼 일을 직접…",
       "date": "2026-07-03",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-07-03",
         1783067516.3421447
@@ -1553,6 +1654,7 @@
       "excerpt_list": "매번 코드 바뀔 때마다 문서 수정하는 귀찮은 작업, 이제 AI에게 온전히 맡기셔도 될 것…",
       "date": "2026-07-02",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-02",
         1782960430.7192116
@@ -1568,6 +1670,7 @@
       "excerpt_list": "zerotodaa(@zerotodaa)님이 흥미로운 로컬 LLM 모델을 발견해 사용기를 공유한 Threads 포스트.",
       "date": "2026-07-01",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-07-01",
         1782880841.5010672
@@ -1583,6 +1686,7 @@
       "excerpt_list": "하버드·스탠퍼드 뇌과학 공부법을 보고 충격받음. \"열심히 하면 안 되는 게 없다, 노력 부족이다\"라고 하지만…",
       "date": "2026-06-29",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-29",
         1782743032.1358855
@@ -1598,6 +1702,7 @@
       "excerpt_list": "EBS 강사 효린파파(성기홍) 가 소개하는, 의외로 잘 알려지지 않은 EBS의 무료 영어 학습 콘텐츠…",
       "date": "2026-06-29",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-29",
         1782743011.140636
@@ -1613,6 +1718,7 @@
       "excerpt_list": "19년차 초등교사가 추천하는, 사춘기(보통 5학년, 빠르면 4학년) 이전에 길러두면 좋은 습관 정리.",
       "date": "2026-06-29",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-29",
         1782742996.3604753
@@ -1628,6 +1734,7 @@
       "excerpt_list": "SaaS 만들다 보면 전자 서명 기능이 꼭 필요한 순간이 오잖아. 계약서, 동의서, 각종 문서에…",
       "date": "2026-06-29",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-29",
         1782712417.4828267
@@ -1643,6 +1750,7 @@
       "excerpt_list": "어머니 같으면 하고 싶겠어요?",
       "date": "2026-06-29",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-29",
         1782712261.0247364
@@ -1658,6 +1766,7 @@
       "excerpt_list": "이 공고는 AI 개발자를 뽑는 것처럼 보이지만, 실제로는 반도체 P&T(Package & Test) 현장을 이해하고…",
       "date": "2026-06-29",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-06-29",
         1782712252.8293896
@@ -1673,6 +1782,7 @@
       "excerpt_list": "여러 전문 스킬을 조합해서 슬라이드 한 장을 만드는 워크플로우 공유. 각 단계마다 전문 툴을…",
       "date": "2026-06-29",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-29",
         1782712221.8663142
@@ -1688,6 +1798,7 @@
       "excerpt_list": "서비스 하나 굴리기 시작하면 메일 주소가 알아서 불어납니다. support@, hello@, noreply@... 끝이 없죠. 직접…",
       "date": "2026-06-29",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-29",
         1782712198.9192197
@@ -1703,6 +1814,7 @@
       "excerpt_list": "요즘 AI 사주가 너무 판치길래",
       "date": "2026-06-29",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-29",
         1782712197.2875383
@@ -1718,6 +1830,7 @@
       "excerpt_list": "인류가 신화와 이야기로 수천 년 공유해온 인식 패턴이 있음ㅇㅇ",
       "date": "2026-06-25",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-25",
         1782389771.2711277
@@ -1733,6 +1846,7 @@
       "excerpt_list": "AI 코딩 에이전트의 진짜 비용은 '코드 작성'보다, repo를 뒤지며 컨텍스트를 낭비하는 시간에서 터진다.",
       "date": "2026-06-25",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-06-25",
         1782389677.6382873
@@ -1748,6 +1862,7 @@
       "excerpt_list": "https://github.com/AEON-7/Qwen3.6-27B-AEON-Ultimate-Uncensored-MLX",
       "date": "2026-06-24",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-24",
         1782306974.548766
@@ -1763,6 +1878,7 @@
       "excerpt_list": "브랜드가 안 되는 건 노력이 부족해서가 아니다. 방향을 잘못 읽어서다.",
       "date": "2026-06-24",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-24",
         1782255666.1330245
@@ -1778,6 +1894,7 @@
       "excerpt_list": "Vercel로 배포한 웹앱이라면 브라우저에서 먼저 확인해볼 만한 것들이 있습니다.",
       "date": "2026-06-24",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-24",
         1782254939.9874604
@@ -1793,6 +1910,7 @@
       "excerpt_list": "✨ \"인물 얼굴을 자연광으로 자연스럽게 리라이팅해\"",
       "date": "2026-06-22",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-22",
         1782137481.6151278
@@ -1808,6 +1926,7 @@
       "excerpt_list": "GitHub 트렌드 1위, 별표 바로 2만+ 찍음. 오픈소스 음성 합성 AI VoxCPM2, 해외에서 이미…",
       "date": "2026-06-20",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-20",
         1781890128.32248
@@ -1823,6 +1942,7 @@
       "excerpt_list": "1. MAU 5만까지 Free — MVP·PMF 찾기 전까지 DB 비용을 아낄 수 있어 최고.",
       "date": "2026-06-20",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-20",
         1781890124.8600504
@@ -1838,6 +1958,7 @@
       "excerpt_list": "AI 영상 만들 때 제가 쓰는 프로세스입니다.",
       "date": "2026-06-20",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-20",
         1781890116.9651325
@@ -1853,6 +1974,7 @@
       "excerpt_list": "중국의 유명 개발자 유튜버 화슈(Huashu)가 'Claude Design'을 역설계한 'Huashu Design'을 GitHub에 무료 오픈소스로 공개했습니다.",
       "date": "2026-06-20",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-20",
         1781890114.564979
@@ -1868,6 +1990,7 @@
       "excerpt_list": "OpenAI Pro 계정으로 무한 GPT Image 2 생성하기!",
       "date": "2026-06-20",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-20",
         1781890095.6462786
@@ -1883,6 +2006,7 @@
       "excerpt_list": "OpenMOSS 팀이 음성 생성 모델 MOSS-TTS를 가중치까지 통째로 무료로 공개. 한국어 포함 31개 언어…",
       "date": "2026-06-19",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-06-19",
         1781823965.3331785
@@ -1898,6 +2022,7 @@
       "excerpt_list": "Google Research가 자연어를 SQL로 변환하는 Gemini-SQL2를 공개했다. Gemini 3.1 Pro 기반으로 개발되었으며, 텍스트로 질문하면…",
       "date": "2026-06-14",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-06-14",
         1781416801.1312544
@@ -1913,6 +2038,7 @@
       "excerpt_list": "같은 주에 Peter Steinberger도 같은 메시지를 던졌습니다.",
       "date": "2026-06-14",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-06-14",
         1781415485.4915316
@@ -1928,6 +2054,7 @@
       "excerpt_list": "Threads 포스트 by CHOI (@choi.openai)가 공유한 GitHub 링크.",
       "date": "2026-06-10",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-06-10",
         1781103569.8118987
@@ -1943,6 +2070,7 @@
       "excerpt_list": "회사 파산 시 체불 임금과 퇴직금을 받는 절차를 설명하는 유튜브 쇼츠.",
       "date": "2026-06-09",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-09",
         1780986370.2705357
@@ -1958,6 +2086,7 @@
       "excerpt_list": "CHOI (@choi.openai) 님의 Threads.",
       "date": "2026-06-09",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-06-09",
         1780968989.733741
@@ -1973,6 +2102,7 @@
       "excerpt_list": "Threads 사용자 ok.mommy가 작성한 육아 관련 카드뉴스(14장). emotionclassic2015(HoJin Lee)가 리포스트. 과잉보호/과잉간섭…",
       "date": "2026-06-09",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-06-09",
         1780966795.2404106
@@ -1988,6 +2118,7 @@
       "excerpt_list": "Claude Code 2.1.87에는 공식 문서에 없는 설정/기능이 많음. 개인(~/.claude/)과 프로젝트(.claude/) 단위로 설정을 분리해 Hook…",
       "date": "2026-05-31",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-05-31",
         1780196743.2354584
@@ -2003,6 +2134,7 @@
       "excerpt_list": "복단대 OpenMOSS 팀이 오픈소스 TTS 패밀리 MOSS-TTS 5종을 공개. MOSS-TTSD는 주관 평가에서 Doubao·Gemini 2.5-pro까지…",
       "date": "2026-05-31",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-31",
         1780195866.0571299
@@ -2018,6 +2150,7 @@
       "excerpt_list": "한 독일 개발자의 GitHub 프로그램 하나로 Meta Llama의 안전장치가 10분 만에 제거되었으며, FT가 5/25…",
       "date": "2026-05-26",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-05-26",
         1779754842.944055
@@ -2033,6 +2166,7 @@
       "excerpt_list": "Supertonic just dropped a TTS model that’s 167x faster than real-time speech.",
       "date": "2026-05-20",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-05-20",
         1779240030.3925283
@@ -2048,6 +2182,7 @@
       "excerpt_list": "한국 변호사를 대상으로, 사건 폴더를 통째로 읽고 준비서면 초안 작성까지 돕는 Claude Code 통합…",
       "date": "2026-05-18",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-18",
         1779106030.3722873
@@ -2063,6 +2198,7 @@
       "excerpt_list": "Claude Code용 CLAUDE.md 규칙 템플릿을 소개하며, 카파시식 4규칙(가정 명시·최소 코드·외과적 변경·목표 기반 실행)과 후속…",
       "date": "2026-05-15",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-15",
         1778857005.4148924
@@ -2078,6 +2214,7 @@
       "excerpt_list": "Oracle Cloud Always Free에서 OCI CLI와 Codex를 활용해 A1 Flex 인스턴스를 생성·증설하여 최종적으로 4…",
       "date": "2026-05-14",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-05-14",
         1778732874.3121066
@@ -2093,6 +2230,7 @@
       "excerpt_list": "작성일: 2026년 5월 14일",
       "date": "2026-05-14",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-05-14",
         1778730261.192114
@@ -2108,6 +2246,7 @@
       "excerpt_list": "Threads 원문 페이지가 현재 invalidpost / 로그인 페이지로만 응답하여, 원문 본문은 확인하지 못했고 링크와…",
       "date": "2026-05-12",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-05-12",
         1778549836.078355
@@ -2123,6 +2262,7 @@
       "excerpt_list": "adamsreview라는 멀티 에이전트 코드 리뷰 도구가 Hacker News에 소개되었고, Claude Code로 작성한 코드에 대해…",
       "date": "2026-05-12",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-12",
         1778549825.5980496
@@ -2138,6 +2278,7 @@
       "excerpt_list": "매달 SPY와 GOOG에 투자하되, 하락 시 추가 매수하고 큰 상승 구간에서는 일부만 매도하는 단순한…",
       "date": "2026-05-12",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-05-12",
         1778549796.9168146
@@ -2153,6 +2294,7 @@
       "excerpt_list": "미군들이 2분 안에 잠들기 위해 사용했다는 수면법을 고3 조카에게 알려준 뒤 성적이 올랐다는 사례를…",
       "date": "2026-05-12",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-05-12",
         1778549782.6103296
@@ -2168,6 +2310,7 @@
       "excerpt_list": "Join Threads to share ideas, ask questions, post random thoughts, find your people and…",
       "date": "2026-05-12",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-05-12",
         1778549771.428505
@@ -2183,6 +2326,7 @@
       "excerpt_list": "Ctx2Skill 논문은 긴 컨텍스트에서 스킬을 자동 추출·개선하는 자기진화형 multi-agent loop를 제안하며, Skill.md 강화 방식의…",
       "date": "2026-05-06",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-05-06",
         1778013322.0640495
@@ -2198,6 +2342,7 @@
       "excerpt_list": "조던 피터슨이 책 내용을 암기할 때 쓰는 독서 방식이 있으며, 아이들의 책 읽기에 적용해보라는…",
       "date": "2026-05-04",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-05-04",
         1777872833.389433
@@ -2213,6 +2358,7 @@
       "excerpt_list": "Pretext가 바이럴은 글자들 사이에 거대한 용이나 막 이미지가 지나가도 자연스럽게 움직이는 것으로 많이 됐지만…",
       "date": "2026-05-04",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-05-04",
         1777872782.2513344
@@ -2228,6 +2374,7 @@
       "excerpt_list": "예상은 했지만 한 번에 동작했고 수신율도 좋으며 고객 인도만 남았다는 짧은 진행 공유.",
       "date": "2026-04-30",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-04-30",
         1777528067.8061066
@@ -2243,6 +2390,7 @@
       "excerpt_list": "무료 티어 초과나 트래픽 급증 상황에서 바이브코딩 기반 토이프로젝트가 당황하지 않고 최적화, 인프라, 애널리틱스…",
       "date": "2026-04-30",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-30",
         1777528067.8054256
@@ -2258,6 +2406,7 @@
       "excerpt_list": "자다깼는데 무료티어 경고가 뜨고 어어어?! 하는 사이에 무료 티어를 넘어버렸다!",
       "date": "2026-04-30",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-04-30",
         1777527551.1525145
@@ -2273,6 +2422,7 @@
       "excerpt_list": "한방에 동작시켰습니다",
       "date": "2026-04-30",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-04-30",
         1777527498.4343631
@@ -2288,6 +2438,7 @@
       "excerpt_list": "HeyGen의 HyperFrames가 OpenAI Codex 플러그인 형태까지 제공되면서, AI 에이전트가 HTML 기반으로 영상 컴포지션을 작성하고…",
       "date": "2026-04-29",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-29",
         1777446176.083386
@@ -2303,6 +2454,7 @@
       "excerpt_list": "이집트 개발자 Karim Shoair가 혼자 만든 파이썬 웹 스크래핑 프레임워크. GitHub 38,700 스타, BS4…",
       "date": "2026-04-29",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-04-29",
         1777443707.8862083
@@ -2318,6 +2470,7 @@
       "excerpt_list": "원본: https://www.threads.com/@bunniesossdev/post/DXo4spikX0G",
       "date": "2026-04-29",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-29",
         1777443233.157083
@@ -2333,6 +2486,7 @@
       "excerpt_list": "ChatGPT한테 \"광고 마스터 모드\"가 있다",
       "date": "2026-04-25",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-25",
         1777128214.6578047
@@ -2348,6 +2502,7 @@
       "excerpt_list": "Gemini에 \"마케팅 전략가 모드\"처럼 활용할 수 있는 프롬프트 세트를 소개하는 게시물.",
       "date": "2026-04-25",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-25",
         1777127005.1465423
@@ -2363,6 +2518,7 @@
       "excerpt_list": "원본: https://www.threads.com/@ju0ju0/post/DXfuLv3j5K4",
       "date": "2026-04-25",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-25",
         1777116870.1179247
@@ -2378,6 +2534,7 @@
       "excerpt_list": "Threads 포스트 기준, 샤오미가 발표한 오픈소스 음성 모델 OmniVoice는",
       "date": "2026-04-21",
       "hero_image": "../assets/media/샤오미-omnivoice-3초-음성복제로-600개-언어-tts/cover.jpg",
+      "subtype": "entities",
       "_sort": [
         "2026-04-21",
         1776706694.7169442
@@ -2393,6 +2550,7 @@
       "excerpt_list": "ARR 1,400억 원 규모 회사가 자사 제품을 무료로 푼 이유를, 단순한 퍼주기가 아니라 Remotion…",
       "date": "2026-04-21",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-21",
         1776701807.8373528
@@ -2408,6 +2566,7 @@
       "excerpt_list": "2026 스탠포드 AI 인덱스 리포트를 분석하며 AI 경쟁의 본질이 모델 성능 경쟁에서 컴퓨트/인프라 경쟁으로…",
       "date": "2026-04-16",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-16",
         1776334430.070836
@@ -2423,6 +2582,7 @@
       "excerpt_list": "격리된 환경(VM)을 제공하는 건 이제 기본이지만, 외부 통신 제어가 핵심이라는 내용.",
       "date": "2026-04-16",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-04-16",
         1776333939.1073134
@@ -2438,6 +2598,7 @@
       "excerpt_list": "한국인 개발자들이 파인튜닝한 SUPER GEMMA 4 26B 모델 공개. 일반 Gemma-4 26B 대비 성능이…",
       "date": "2026-04-15",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-15",
         1776236446.2265208
@@ -2453,6 +2614,7 @@
       "excerpt_list": "ReactNative 에서는 agent device를 사용해서 AI에게 QA를 맡길 수 있어요",
       "date": "2026-04-15",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-04-15",
         1776217473.3174748
@@ -2468,6 +2630,7 @@
       "excerpt_list": "alwaysThinkingEnabled: true와 CLAUDECODEEFFORTLEVEL=max를 settings.json에 설정해도, Claude Code…",
       "date": "2026-04-14",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-14",
         1776126076.0515487
@@ -2483,6 +2646,7 @@
       "excerpt_list": "HKUDS 연구팀이 공개한 오픈소스 DeepTutor — 단순 Q&A 챗봇이 아닌, 학습자 수준을 진단하고 약점부터…",
       "date": "2026-04-10",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-04-10",
         1776236800.142308
@@ -2498,6 +2662,7 @@
       "excerpt_list": "Andrej Karpathy (AI의 아버지, vibe coding 창시자)가 공개한 LLM Knowledge Base 시스템.",
       "date": "2026-04-08",
       "hero_image": "",
+      "subtype": "workflows",
       "_sort": [
         "2026-04-08",
         1775656528.8748746
@@ -2513,6 +2678,7 @@
       "excerpt_list": "Source: github.trending@Threads",
       "date": "2026-04-08",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-08",
         1775656514.4203992
@@ -2528,6 +2694,7 @@
       "excerpt_list": "관련 키워드: [[OpenSpec]], [[Spec-Driven Development]], [[AI Agent Workflow]], [[TDD]], [[Docu…",
       "date": "2026-04-05",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-05",
         1775380581.0
@@ -2543,6 +2710,7 @@
       "excerpt_list": "안드레 카파시가 고안한 \"autoresearch\" 방법론을 Claude Code와 Cowork에 적용해 프롬프트를 스스로 개선하는 스킬이 공개됐습니다.",
       "date": "2026-04-03",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-04-03",
         1775381033.0
@@ -2558,6 +2726,7 @@
       "excerpt_list": "원본 링크: https://www.threads.com/@voidlight00/post/DWl2c5yD3jf?xmt=AQF0r8swKFniipUA5RqlrJBT…",
       "date": "2026-04-03",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-04-03",
         1775185640.0
@@ -2573,6 +2742,7 @@
       "excerpt_list": "Claude Code 소스코드에서 피처 플래그 44개 중 ULTRAPLAN이 발견됨. Matt Maher의 Plan Mode 벤치마크와…",
       "date": "2026-04-03",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-04-03",
         1775183606.9639423
@@ -2588,6 +2758,7 @@
       "excerpt_list": "https://www.reddit.com/r/ClaudeAI/comments/1s7mkn3/psaclaudecodehastwocachebugsthatcan/",
       "date": "2026-04-01",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-04-01",
         1774977504.5210772
@@ -2603,6 +2774,7 @@
       "excerpt_list": "OpenAI Whisper보다 오류율 27% 낮고 3.6배 빠른 오픈소스 STT 모델. 한국어 포함 14개 언어…",
       "date": "2026-03-28",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-28",
         1774684213.988774
@@ -2618,6 +2790,7 @@
       "excerpt_list": "Mermaid 다이어그램을 브라우저 없이 터미널이나 Python 앱에서 바로 렌더링하는 pure Python 도구.",
       "date": "2026-03-28",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-28",
         1774684009.6177886
@@ -2633,6 +2806,7 @@
       "excerpt_list": "PlayerZero는 버그 원인 파악과 테스트를 자동으로 처리하는 \"엔지니어링 월드 모델\". 슬랙 대화, PR 리뷰…",
       "date": "2026-03-24",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-24",
         1774361717.483468
@@ -2648,6 +2822,7 @@
       "excerpt_list": "Grafeo는 Rust로 처음부터 만든 그래프 데이터베이스. 임베디드 라이브러리로도, 독립 서버로도 운영 가능하며 벤치마크상 Neo4j…",
       "date": "2026-03-24",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-24",
         1774331639.3291426
@@ -2663,6 +2838,7 @@
       "excerpt_list": "ChatGPT에게 \"만년을 살아온 대만신(大萬神)\" 역할을 부여하여, 사주팔자 기반 50페이지 분량의 프리미엄 종합 사주 리포트를…",
       "date": "2026-03-22",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-03-22",
         1774134839.384673
@@ -2678,6 +2854,7 @@
       "excerpt_list": "superpowers와 openspec 두 도구를 구현 규모에 따라 다르게 조합하여 사용하는 워크플로우를 제안하는 글. 핵심은…",
       "date": "2026-03-22",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-22",
         1774128331.979308
@@ -2693,6 +2870,7 @@
       "excerpt_list": "AI 에이전트 하네스를 위한 성능 최적화 시스템. Anthropic 해커톤 우승작.",
       "date": "2026-03-21",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-03-21",
         1774052125.811324
@@ -2708,6 +2886,7 @@
       "excerpt_list": "AI 기반 회의 자동 녹음·전사·요약·분석 SaaS. 100만+ 기업 사용, Fortune 500 CIO들이 선택하는 엔터프라이즈급…",
       "date": "2026-03-20",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-20",
         1773987355.7518616
@@ -2723,6 +2902,7 @@
       "excerpt_list": "Andrej Karpathy의 autoresearch 루프를 Claude Code 스킬에 적용하여, 스킬이 밤새 스스로 개선되는 방법을 소개한…",
       "date": "2026-03-20",
       "hero_image": "",
+      "subtype": "workflows",
       "_sort": [
         "2026-03-20",
         1773941353.2719839
@@ -2738,6 +2918,7 @@
       "excerpt_list": "맥에서 cmux 터미널이 에이전트 코딩에 최적이라는 리뷰. tmux의 GUI 부재, Codex App의 느린 반응속도…",
       "date": "2026-03-18",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-03-18",
         1773845409.2091625
@@ -2753,6 +2934,7 @@
       "excerpt_list": "Microsoft가 개발한 Qlib — AI 기반 퀀트 투자 오픈소스 플랫폼 소개. GitHub 스타 36,000+개를…",
       "date": "2026-03-18",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-18",
         1773842985.9781916
@@ -2768,6 +2950,7 @@
       "excerpt_list": "Palantir는 신입 엔지니어에게 엔지니어링 책을 한 권도 주지 않는다. 대신 \"문제 해결의 본질\"에 집중하는…",
       "date": "2026-03-18",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-18",
         1773765487.1482472
@@ -2783,6 +2966,7 @@
       "excerpt_list": "에이전트 = 역할(Role) + 스킬(Skills) + 기억(Memory) + 채널(Channel)",
       "date": "2026-03-16",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-16",
         1773671696.0
@@ -2798,6 +2982,7 @@
       "excerpt_list": "에이전트 = 역할 + 스킬 + 기억 + 채널",
       "date": "2026-03-16",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-16",
         1773665055.0
@@ -2813,6 +2998,7 @@
       "excerpt_list": "OpenClaw에 Google Embedding 2 (Gemini API) 를 연결하면 에이전트의 메모리 검색 품질이 크게 향상된다는…",
       "date": "2026-03-16",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-03-16",
         1773590461.0606878
@@ -2828,6 +3014,7 @@
       "excerpt_list": "LangChain이 Claude Code의 아키텍처를 MIT 라이선스로 완전 오픈소스화한 프로젝트. 'Deep Agents'라는 이름으로, LangGraph 기…",
       "date": "2026-03-15",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-15",
         1773569318.1034186
@@ -2843,6 +3030,7 @@
       "excerpt_list": "한국에서 피할 수 없는 HWP 파일을 명령어 한 줄로 Markdown으로 변환하는 Go 기반 CLI…",
       "date": "2026-03-15",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-15",
         1773555350.0
@@ -2858,6 +3046,7 @@
       "excerpt_list": "JndiLookup 클래스를 classpath에서 제거:",
       "date": "2026-03-15",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-15",
         1773552675.0
@@ -2873,6 +3062,7 @@
       "excerpt_list": "TablePro는 macOS 전용 네이티브 데이터베이스 클라이언트로, AI 어시스턴트가 내장되어 있다. SQL 자동완성, 인라인 편집…",
       "date": "2026-03-14",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-14",
         1773455009.6291797
@@ -2888,6 +3078,7 @@
       "excerpt_list": "→ 핵심 대비: 부자 가정의 아이 10살 vs 일반인 40살 — 30년 격차",
       "date": "2026-03-14",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-14",
         1773427089.0
@@ -2903,6 +3094,7 @@
       "excerpt_list": "2026년 3월부터 초등학교 1~2학년 돌봄 교실 학생 약 60만 명에게 국산 과일 간식이 주…",
       "date": "2026-03-12",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-03-12",
         1773290484.9451945
@@ -2918,6 +3110,7 @@
       "excerpt_list": "@petercha (바이브코딩 Vibe coding) 님이 소개하는 스킬 매장지 + 스킬이 각광받는 이유.",
       "date": "2026-03-10",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-03-10",
         1773147343.1688452
@@ -2933,6 +3126,7 @@
       "excerpt_list": "스킬은 일종의 프롬프트 — 예상치 못한 방식으로 에이전트 동작에 영향을 줄 수 있다.",
       "date": "2026-03-10",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-10",
         1773129469.4987965
@@ -2948,6 +3142,7 @@
       "excerpt_list": "에이전트 네이티브 CLI — 코딩 에이전트(와 개발자)가 LangSmith 내 모든 것을 처리하는 빌딩블록",
       "date": "2026-03-10",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-10",
         1773129469.3079863
@@ -2963,6 +3158,7 @@
       "excerpt_list": "전문 도메인에서 코딩 에이전트 성능을 향상시키기 위해 큐레이션된 지침, 스크립트, 리소스의 묶음.",
       "date": "2026-03-10",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-03-10",
         1773129469.1371467
@@ -2978,6 +3174,7 @@
       "excerpt_list": "LangChain이 AI 코딩 에이전트를 위한 첫 번째 스킬 세트를 공개했다.",
       "date": "2026-03-10",
       "hero_image": "",
+      "subtype": "patterns",
       "_sort": [
         "2026-03-10",
         1773129468.978499
@@ -2993,6 +3190,7 @@
       "excerpt_list": "Google이 공식 Workspace CLI를 출시. npm install -g @googleworkspace/cli 한 줄로 Gmail, Drive, Cale…",
       "date": "2026-03-06",
       "hero_image": "../assets/media/google-workspace-공식-cli-출시-gmail-drive-calendar-docs-터미널에서/post.png",
+      "subtype": "entities",
       "_sort": [
         "2026-03-06",
         1772760271.3034267
@@ -3008,6 +3206,7 @@
       "excerpt_list": "AI 코딩 도구 하나만 쓰는 시대가 끝났다는 주장. Claude Code(설계)와 Kimi CLI(구현)를 조합해 리팩토링을…",
       "date": "2026-03-06",
       "hero_image": "../assets/media/claude-code-kimi-cli-멀티-ai-에이전트-엔지니어링/post.png",
+      "subtype": "references",
       "_sort": [
         "2026-03-06",
         1772759807.878656
@@ -3023,6 +3222,7 @@
       "excerpt_list": "LangGraph 에이전트의 실행 과정을 브라우저에서 실시간으로 시각화해주는 오픈소스 도구. 컴파일된 그래프를 watch()로 감싸기만 하면…",
       "date": "2026-03-01",
       "hero_image": "",
+      "subtype": "workflows",
       "_sort": [
         "2026-03-01",
         1772328118.0
@@ -3038,6 +3238,7 @@
       "excerpt_list": "npx skills add de-novo/pencil-skill",
       "date": "2026-02-28",
       "hero_image": "../assets/media/pencil-skill-openclaw-디자인-시스템-자동-생성/screenshot_1.png",
+      "subtype": "entities",
       "_sort": [
         "2026-02-28",
         1772288339.0
@@ -3053,6 +3254,7 @@
       "excerpt_list": "yoonhwan: Pi는 Codex/Claude Code를 호출하는 게 아니라, LangGraph처럼 컨텍스트를 직접 관리하고 LLM API를 직접…",
       "date": "2026-02-28",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-28",
         1772287086.0
@@ -3068,6 +3270,7 @@
       "excerpt_list": "무료이지만 유료급 성능을 자랑하는 바이브 디자인(Vibe Design) 전용 도구. 마음에 드는 웹사이트의 디자인 요소를…",
       "date": "2026-02-25",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-25",
         1772030709.0
@@ -3083,6 +3286,7 @@
       "excerpt_list": "/plugins → 검색 → 설치",
       "date": "2026-02-25",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-25",
         1772018326.0
@@ -3098,6 +3302,7 @@
       "excerpt_list": "Claude Code 사용자를 위한 tmux 꿀팁. tmux는 하나의 터미널에서 여러 터미널을 관리하는 도구로, Claude…",
       "date": "2026-02-24",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-24",
         1771920201.0
@@ -3113,6 +3318,7 @@
       "excerpt_list": "Ollie Warren의 OpenClaw 에이전트 Larry가 TikTok 슬라이드쇼 자동 생성으로 800만+ 뷰를 달성한 사례. 해당…",
       "date": "2026-02-18",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-18",
         1771392621.0
@@ -3128,6 +3334,7 @@
       "excerpt_list": "쿠팡, 샌드버드와 동일한 구조. VC 투자, M&A, IPO 전부 가능한 구조.",
       "date": "2026-02-18",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-18",
         1771391997.0
@@ -3143,6 +3350,7 @@
       "excerpt_list": "알리바바에서 오픈소스로 공개한 \"벡터 DB계의 SQLite\". 서버 없이 앱/코드에 바로 내장(in-process)해서 쓸 수 있는…",
       "date": "2026-02-17",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-02-17",
         1771321445.202014
@@ -3158,6 +3366,7 @@
       "excerpt_list": "문서 버전: 2026-02-17 | 대상: 멀티 에이전트 병렬 개발 환경 구축을 위한 종합 운영…",
       "date": "2026-02-17",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-17",
         1771315895.2486012
@@ -3173,6 +3382,7 @@
       "excerpt_list": "Lucide vs Hugeicons 비교 이미지 포스트 (22.3K views, 295 likes). 댓글에서 Solar, Iconify 등…",
       "date": "2026-02-17",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-02-17",
         1771302704.0
@@ -3188,6 +3398,7 @@
       "excerpt_list": "Figma는 디자인 언어를 개발 언어로 변환하는 커뮤니케이션 도구였다. 두 영역이 하나로 융합되어야 생산성 폭발이…",
       "date": "2026-02-17",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-17",
         1771302234.0
@@ -3203,6 +3414,7 @@
       "excerpt_list": "마케팅 부서 하나가 통째로 툴 안으로 들어간 수준. 데이터 분석부터 워크플로우 자동화까지, 인간의 단순…",
       "date": "2026-02-17",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-17",
         1771289222.0
@@ -3218,6 +3430,7 @@
       "excerpt_list": "LangChain/LangGraph 문서는 훌륭하지만 맥락적이지 않다.",
       "date": "2026-02-16",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-16",
         1771216441.613419
@@ -3233,6 +3446,7 @@
       "excerpt_list": "미국 상류층은 개인이 아닌 '가족 시스템'으로 돈을 굴린다.",
       "date": "2026-02-14",
       "hero_image": "../assets/media/미국-상류층의-가족-은행-록펠러-워터폴-방식/slide_3.png",
+      "subtype": "concepts",
       "_sort": [
         "2026-02-14",
         1771046482.1473482
@@ -3248,6 +3462,7 @@
       "excerpt_list": "Andrej Karpathy가 지적한 LLM 코딩 문제점을 해결하려는 단 65줄짜리 Markdown 파일(CLAUDE.md)이 GitHub에서 폭발적 인기를…",
       "date": "2026-02-14",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-14",
         1771035036.6782334
@@ -3263,6 +3478,7 @@
       "excerpt_list": "Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific i…",
       "date": "2026-02-14",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-14",
         1771035017.0040257
@@ -3278,6 +3494,7 @@
       "excerpt_list": "@asincartel 님이 개발한 Oc-Memory — OpenClaw의 장기 기억을 압축하여 토큰 비용을 90% 이상 절감할…",
       "date": "2026-02-13",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-13",
         1770976196.0
@@ -3293,6 +3510,7 @@
       "excerpt_list": "Excalidraw가 공식 MCP(Model Context Protocol) 서버를 출시했다. AI 에이전트가 자연어 프롬프트만으로 손으로 그린 스타일의…",
       "date": "2026-02-12",
       "hero_image": "../assets/media/excalidraw-공식-mcp-서버-출시/screenshot.png",
+      "subtype": "entities",
       "_sort": [
         "2026-02-12",
         1770898307.8399327
@@ -3308,6 +3526,7 @@
       "excerpt_list": "\"대부분의 AI 이용자가 모르는 사실 31:\"",
       "date": "2026-02-12",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-12",
         1770829309.3616173
@@ -3323,6 +3542,7 @@
       "excerpt_list": "Anthropic 해커톤 우승자 ykdojo의 43가지 팁 + Anthropic DevRel Ado Kukic의 31가지 팁을 집대성한…",
       "date": "2026-02-09",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-09",
         1770646527.5439603
@@ -3338,6 +3558,7 @@
       "excerpt_list": "Lead Architect (sonnet)",
       "date": "2026-02-08",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-08",
         1771138536.0
@@ -3353,6 +3574,7 @@
       "excerpt_list": "1. Claude Code Swarms – Addy Osmani",
       "date": "2026-02-08",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-08",
         1771138536.0
@@ -3368,6 +3590,7 @@
       "excerpt_list": "Anthropic 공식 데모 6종을 분석하고 산업별 에이전트 팀 템플릿 6가지를 직접 구성/테스트한 실전 가이드.",
       "date": "2026-02-08",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-08",
         1770621437.0
@@ -3383,6 +3606,7 @@
       "excerpt_list": "작성일: 2026-02-08",
       "date": "2026-02-08",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-08",
         1770544938.0
@@ -3398,6 +3622,7 @@
       "excerpt_list": "출처: Threads @feelfreeai",
       "date": "2026-02-08",
       "hero_image": "",
+      "subtype": "entities",
       "_sort": [
         "2026-02-08",
         1770542400.0
@@ -3413,6 +3638,7 @@
       "excerpt_list": "엘리트 집안의 교육 방식은 복종이 아닌 주도성, 지시가 아닌 사고력, 보호가 아닌 책임감을 키우는…",
       "date": "2026-02-06",
       "hero_image": "",
+      "subtype": "concepts",
       "_sort": [
         "2026-02-06",
         1770356340.0
@@ -3428,6 +3654,7 @@
       "excerpt_list": "OpenClaw을 설치한 후 필수적으로 해야 할 7가지 세팅을 정리한 가이드. 따로 뭐 찾아볼 필요…",
       "date": "2026-02-04",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-04",
         1770207498.0
@@ -3443,6 +3670,7 @@
       "excerpt_list": "Anthropic이 직접 작성한 Claude Skill 제작 매뉴얼의 핵심 내용을 @keunyoung이 한국어로 정리한 쓰레드. Claude에게…",
       "date": "2026-02-04",
       "hero_image": "",
+      "subtype": "references",
       "_sort": [
         "2026-02-04",
         1770189668.0
