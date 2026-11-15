@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-12T15:26:37.850612",
+  "generated_at": "2026-11-15T11:54:28.348910",
   "source": "Wikis/pages",
   "domain": "trading",
   "raw_markdown_files_included": false,
   "full_body_rendered": true,
-  "version": "20261012-152619-KST",
+  "version": "20261115-115301-KST",
   "categories": {
     "concept": {
       "folder": "pages/concepts",
@@ -24,6 +24,70 @@
     }
   },
   "pages": [
+    {
+      "title": "일목균형표 쉽게 풀이 30년 걸려 만든 지표 (@bullstory1)",
+      "source": "Wikis/pages/references/일목균형표 쉽게 풀이 30년 걸려 만든 지표 (@bullstory1).md",
+      "url": "pages/일목균형표-쉽게-풀이-30년-걸려-만든-지표-bullstory1.html",
+      "raw_body_merged": false,
+      "excerpt": "일목균형표는 미래를 맞히는 도구가 아니라 \"여기 깨지면 판다\"는 기준을 미리 정해두는 도구다. 선 5개 중 전환선·기준선 2개와 구름(천장/바닥)만 보면 된다는 입문 해설이다.…",
+      "excerpt_hero": "일목균형표는 미래를 맞히는 도구가 아니라 \"여기 깨지면 판다\"는 기준을 미리 정해두는 도구다. 선 5개 중 전환선·기준선 2개와 구름(천장/바닥)만 보면 된다는 입문 해설이다. 사례 차트는 KOSPI 일봉이다.",
+      "excerpt_list": "일목균형표는 미래를 맞히는 도구가 아니라 \"여기 깨지면 판다\"는 기준을 미리 정해두는 도구다. 선 5개…",
+      "date": "2026-11-05",
+      "hero_image": "",
+      "subtype": "references",
+      "_sort": [
+        "2026-11-05",
+        1793885887.434975
+      ]
+    },
+    {
+      "title": "동네 치과의 AX전환기 - AI 로컬 홈랩 채널",
+      "source": "Wikis/pages/references/동네 치과의 AX전환기 - AI 로컬 홈랩 채널.md",
+      "url": "pages/동네-치과의-ax전환기-ai-로컬-홈랩-채널.html",
+      "raw_body_merged": false,
+      "excerpt": "치대 졸업 후 개원한 동네 치과 원장이 \"내가 AI로 뭘 할 수 있나\" 가벼운 궁금증에서 시작해, 코딩 비전공자인 채로 AI 코딩 에이전트(클로드+코덱스)를…",
+      "excerpt_hero": "치대 졸업 후 개원한 동네 치과 원장이 \"내가 AI로 뭘 할 수 있나\" 가벼운 궁금증에서 시작해, 코딩 비전공자인 채로 AI 코딩 에이전트(클로드+코덱스)를 팀원처럼 부리며 병원 전체를 AI-네이티브 인프라로 재구축한 기록. 핵심 원칙은…",
+      "excerpt_list": "치대 졸업 후 개원한 동네 치과 원장이 \"내가 AI로 뭘 할 수 있나\" 가벼운…",
+      "date": "2026-10-15",
+      "hero_image": "",
+      "subtype": "references",
+      "_sort": [
+        "2026-10-15",
+        1792050664.8233838
+      ]
+    },
+    {
+      "title": "Don't feel sorry for millennials. They are living it up now",
+      "source": "Wikis/pages/references/Don't feel sorry for millennials. They are living it up now.md",
+      "url": "pages/don-t-feel-sorry-for-millennials-they-are-living-it-up-now.html",
+      "raw_body_merged": false,
+      "excerpt": "섹션: Finance & economics (\"The comeback generation\")",
+      "excerpt_hero": "섹션: Finance & economics (\"The comeback generation\")",
+      "excerpt_list": "섹션: Finance & economics (\"The comeback generation\")",
+      "date": "2026-10-13",
+      "hero_image": "",
+      "subtype": "references",
+      "_sort": [
+        "2026-10-13",
+        1791868688.2896042
+      ]
+    },
+    {
+      "title": "장난감 많이 X, 한 가지에 깊게 몰입 O — 고하준 맞춤 가이드 (진짜 ELI5)",
+      "source": "Wikis/pages/strategies/장난감 많이 X, 한 가지에 깊게 몰입 O — 고하준 맞춤 가이드 (진짜 ELI5).md",
+      "url": "pages/장난감-많이-x-한-가지에-깊게-몰입-o-고하준-맞춤-가이드-진짜-eli5.html",
+      "raw_body_merged": false,
+      "excerpt": "장난감 상자를 생각해보자. 상자 안에 장난감이 20개 들어있으면, 아이는 이것 잡았다가 금방 놓고, 저것 잡았다가 금방 놓는다. 마치 TV 채널을 계속 돌리는…",
+      "excerpt_hero": "장난감 상자를 생각해보자. 상자 안에 장난감이 20개 들어있으면, 아이는 이것 잡았다가 금방 놓고, 저것 잡았다가 금방 놓는다. 마치 TV 채널을 계속 돌리는 거랑 똑같다. 재밌는 걸 찾는 게 아니라 그냥 눌러보는 거다.",
+      "excerpt_list": "장난감 상자를 생각해보자. 상자 안에 장난감이 20개 들어있으면, 아이는 이것 잡았다가 금방 놓고, 저것…",
+      "date": "2026-10-13",
+      "hero_image": "",
+      "subtype": "strategies",
+      "_sort": [
+        "2026-10-13",
+        1791854905.4428751
+      ]
+    },
     {
       "title": "육아 기준 28가지 - jooshik_k",
       "source": "Wikis/pages/strategies/육아 기준 28가지 - jooshik_k.md",
@@ -729,9 +793,9 @@
       ]
     },
     {
-      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로",
-      "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프로.md",
-      "url": "pages/page.html",
+      "title": "최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 2",
+      "source": "Wikis/pages/references/최고 엔지니어링 팀처럼 완벽한 웹 앱을 개발할 수 있도록 도와주는 클로드 프ᄅ 2.md",
+      "url": "pages/2.html",
       "raw_body_merged": false,
       "excerpt": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각 영역(아키텍처, 프론트엔드, 백엔드, DB, 인증, 결제, 실시간, DevOps…",
       "excerpt_hero": "클로드에게 구글/Vercel/Stripe/Netflix 등 세계 최고 기업의 시니어 엔지니어 역할을 부여하여, 웹 앱 개발의 각 영역(아키텍처, 프론트엔드, 백엔드, DB, 인증, 결제, 실시간, DevOps, 테스트, 프로젝트 관리, 디자인 시스템, 코드 리뷰)에 대해 프로덕션 레벨의…",

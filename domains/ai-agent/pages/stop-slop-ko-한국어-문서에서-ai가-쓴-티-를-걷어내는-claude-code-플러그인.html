@@ -1,0 +1,97 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>stop-slop-ko 한국어 문서에서 AI가 쓴 티 를 걷어내는 Claude Code 플러그인 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>stop-slop-ko 한국어 문서에서 AI가 쓴 티 를 걷어내는 Claude Code 플러그인</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>stop-slop-ko 한국어 문서에서 AI가 쓴 티 를 걷어내는 Claude Code 플러그인</span></nav><h1>stop-slop-ko 한국어 문서에서 AI가 쓴 티 를 걷어내는 Claude Code 플러그인</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-25 stop-slop-ko 한국어 AI 티 제거 Claude Code 플러그인/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>stop-slop-ko: 한국어 문서에서 &quot;AI가 쓴 티&quot;를 걷어내는 Claude Code 플러그인</h1>
+<ul>
+<li>Threads: <a href="https://www.threads.com/@pm<em>anyway/post/De6O5T6FTzj">https://www.threads.com/@pm</em>anyway/post/De6O5T6FTzj</a> (공유 링크: <a href="https://www.threads.com/share/BAcu-1RoD0/)">https://www.threads.com/share/BAcu-1RoD0/)</a></li>
+<li>원문(GitHub): <a href="https://github.com/leeandev/stop-slop-ko">https://github.com/leeandev/stop-slop-ko</a></li>
+<li>GeekNews: <a href="https://news.hada.io/topic?id=35913">https://news.hada.io/topic?id=35913</a> (직접 fetch 403, Threads 링크 프리뷰 제목만 확인: &quot;stop-slop-ko - 한국어 문서에서 AI가 쓴 티를 걷어내는 Claude Code | GeekNews&quot;)</li>
+<li>작성자 표기: 만든 사람은 GeekNews의 leeandev, 소개 포스트는 pm_anyway (수집 시점 게시 후 약 3시간, 조회 431. 아이콘 옆 숫자 18 / 11 / 3 / 23은 라벨 없이 나와 항목 구분 미확인)</li>
+</ul>
+<h2>한눈에 보기</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>기준·단위</th><th>의미</th></tr></thead><tbody>
+<tr><td>정체</td><td>Claude Code 플러그인 마켓플레이스</td><td>플러그인 3개 포함</td><td>필요한 것만 골라 설치</td></tr>
+<tr><td>핵심 플러그인</td><td><strong>stop-slop-ko</strong></td><td>생성 / 정제 / 톤 맞춤 3모드</td><td>한국어 실무문서의 AI 티 제거</td></tr>
+<tr><td>예제 검사 결과</td><td><strong>WARN 9 → 0</strong></td><td>스캐너 <code>slop_scan.py</code></td><td>before.md FAIL → after.md PASS</td></tr>
+<tr><td>스캐너 지원 포맷</td><td>docx, pptx, xlsx, md, txt, html</td><td>파이썬 표준 라이브러리만 사용</td><td>의존성 부담 낮음</td></tr>
+<tr><td>라이선스</td><td>MIT</td><td>영어판 hardikpandya/stop-slop에서 아이디어</td><td>한국어 개조식에 맞게 재설계</td></tr>
+</tbody></table>
+<h2>본문 (Main Post)</h2>
+<blockquote>클로드가 쓴 한국어에서 AI 티를 걷어내는 도구가 나옴</blockquote>
+<blockquote></blockquote>
+<blockquote>잡는 건 이런 거임: 긴 줄표(—), 가운뎃점 나열, ~되어지다 같은 번역투</blockquote>
+<p>(<code>read</code> 출력 기준 본문은 위 텍스트가 전부. 이미지 카드는 텍스트 덤프에 나타나지 않았으나 이미지 존재 여부는 별도로 검증하지 않음)</p>
+<h2>댓글 스레드 (Reply Thread, 작성자 pm_anyway 본인 연속 댓글 10개)</h2>
+<ol>
+<li>만든 사람은 긱뉴스의 leeandev. 클로드한테 회의록이나 보고서를 맡길 때마다 매번 손으로 고치다가, 그 규칙을 모아서 Claude Code 플러그인으로 공개함.</li>
+<li>본문에 쓴 것 말고도 다 본 적 있는 것들을 잡음: ★랑 이모지, &quot;~을 통하여&quot;, &quot;React 와&quot;처럼 조사 앞 띄어쓰기.</li>
+<li>예시 문장:</li>
+<ul>
+<ul>
+<li>전: &quot;본 과제는 … 사용 편의성을 제고하고 — 대여 절차를 간소화하는 것을 목표로 함&quot;</li>
+<li>후: &quot;사내 도서 대여 앱의 검색 구조를 바꿔 쓰기 편하게 하고 대여 절차를 줄이는 것을 목표로 함&quot;</li>
+</ul>
+</ul>
+<li>이 문장이 들어 있던 예제 문서에서 경고가 9개 떴는데, 고치고 나니 0개가 됨.</li>
+<li>재밌는 점: 영어판을 그대로 옮기지 않음. 영어판 stop-slop의 핵심은 &quot;능동태로, 짧게&quot;인데 한국어 보고서에 쓰면 오히려 더 이상해짐.</li>
+<li>&quot;정의함&quot;이 &quot;정의한다&quot;로 바뀌기 때문. 한국어 보고서의 &quot;~함, ~됨&quot; 개조식은 AI 티가 아니라 원래 정상 문체. 그래서 다듬기 모드는 끝맺음을 건드리지 않고 부호와 번역투만 잡음.</li>
+<li>가운뎃점도 다 잡는 게 아님. &quot;성능·품질&quot;처럼 붙여 쓴 건 한 단어처럼 쓰는 거라 그대로 둠. AI 티는 &quot;A · B · C&quot;처럼 띄어서 줄줄이 늘어놓을 때 남.</li>
+<li>에세이/블로그 글은 옵션 하나 켜면 더 깐깐하게 봄: &quot;~의 중요성을 깨달았다&quot;식 교훈형 마무리, &quot;~라고 생각한다&quot; 반복, &quot;또한&quot;으로 시작하는 문단이 몰려 있는 것.</li>
+<li>같이 든 도구도 결이 같음: 경영진/타팀용으로 글을 바꿔 쓸 때 원문에 없는 진척률은 지어내지 않고 &quot;확인 필요&quot;로 남김. 자소서도 대신 써 주지 않고 인터뷰로 경험을 꺼내 본인 말투로 초안을 씀.</li>
+<li>그러니까 &quot;~함, ~임&quot;으로 끝나는 이 글은 AI 티가 아니라는 거임. (작성자 본인 유머)</li>
+</ol>
+<p>링크 프리뷰: <code>출처: news.hada.io/topic…, github.com/leean…</code> (GeekNews 글 + GitHub 리포)</p>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li>공개 뷰에서 이 포스트에 달린 다른 사용자 댓글 텍스트는 확인되지 않음 (비로그인 뷰의 <code>read</code> 출력에서 작성자 본인 스레드 외 다른 사용자 댓글은 확인되지 못함. 댓글이 없다는 뜻은 아님).</li>
+<li>&quot;Related threads&quot;로 노출된 포스트(결제오류 불만, 디시 관련, 전자책 팔이 등)는 이 주제와 무관한 알고리즘 추천이라 노트에서 제외.</li>
+</ul>
+<h2>원문 상세 (GitHub README 보강)</h2>
+<blockquote>아래는 OP의 말이 아니라 <code>leeandev/stop-slop-ko</code> README(main 브랜치)에서 정리한 보강 내용.</blockquote>
+<h3>포함된 플러그인 3종</h3>
+<table><thead><tr><th>플러그인</th><th>하는 일</th><th>설치 명령</th></tr></thead><tbody>
+<tr><td><strong>stop-slop-ko</strong></td><td>생성 / 정제 / 톤 맞춤 3모드로 문체 규칙 적용. 서술형 글(리포트, 에세이, 블로그)도 지원. 스캐너 + 자동 적용 훅 포함</td><td><code>/plugin install stop-slop-ko@stop-slop-ko</code></td></tr>
+<tr><td><strong>stakeholder-brief</strong></td><td>설계서/분석/진행 현황을 청중 4종(경영진·스폰서, 고객 PM, 저년차·타팀 개발자, 고객 개발자) 눈높이로 재구성해 HTML/DOCX/MD 출력. 마지막 문체 정리는 stop-slop-ko에 위임</td><td><code>/plugin install stakeholder-brief@stop-slop-ko</code></td></tr>
+<tr><td><strong>jasoseo</strong></td><td>자소서를 대신 쓰지 않고 인터뷰 → 경험 은행(<code>jasoseo/stories.md</code>) → 본인 말투 초안. 근거 없는 수치는 <code>[확인 필요: ...]</code>로 비움. 글자 수 계산기(<code>count.py</code>) 포함. 단독 동작</td><td><code>/plugin install jasoseo@stop-slop-ko</code></td></tr>
+</tbody></table>
+<p>설치 순서: 먼저 <code>/plugin marketplace add leeandev/stop-slop-ko</code> (1회) → 필요한 플러그인만 install → Claude Code 재시작.</p>
+<h3>stop-slop-ko 3모드</h3>
+<table><thead><tr><th>모드</th><th>동작</th><th>불변 항목</th></tr></thead><tbody>
+<tr><td>생성</td><td>회의록/보고서/메일을 처음부터 규칙대로 작성, 파일 생성 후 스캐너로 검사해 PASS/FAIL 보고</td><td>-</td></tr>
+<tr><td>정제</td><td>기존 문서에서 부호, 번역투, 상투구만 수정</td><td>숫자, 요구사항 번호, 기술용어, <strong>종결어미</strong></td></tr>
+<tr><td>톤 맞춤</td><td>동료 문서/승인 문서의 문체 6축(종결어미, 부호, 목록기호 등)을 추출해 내 글을 맞춤</td><td>-</td></tr>
+</tbody></table>
+<h3>스캐너 <code>slop_scan.py</code></h3>
+<ul>
+<li>사용: <code>python plugins/stop-slop-ko/skills/stop-slop-ko/scripts/slop_scan.py 보고서.docx --info</code></li>
+<li>서술형 글은 <code>--prose</code> 옵션으로 추가 검사</li>
+<li>exit code: <strong>0 = PASS, 1 = FAIL(WARN 있음), 2 = 입력 오류</strong></li>
+<li>스캐너가 못 잡는 것(상투구, 과한 명사화, 기계적 3단 병렬)은 스킬이 읽고 판단</li>
+<li><code>--prose</code> 신호: INFO는 교훈형 마무리, &quot;단순한 ~이 아닌&quot;, 빈 강조어(&quot;정말&quot;, &quot;매우&quot;) 등. WARN은 &quot;~라고 생각한다&quot; 3회 이상이면서 1,000자당 1회 이상, 연결어(&quot;또한&quot;, &quot;나아가&quot;) 시작 문단이 3개 이상이면서 전체의 25% 이상. 글이 길수록 기준이 올라감</li>
+<li>요구사항: Python 3.8+, pptx 정제는 <code>python-pptx</code>, DOCX 출력은 <code>python-docx</code></li>
+</ul>
+<h3>Before / After 예시 (README)</h3>
+<table><thead><tr><th>전</th><th>후</th></tr></thead><tbody>
+<tr><td>★ 검색 속도 개선 · 예약 기능 추가 · 반납 알림 강화</td><td>검색 속도 개선, 예약 기능 추가, 반납 알림 강화</td></tr>
+<tr><td>기존 화면 대비 메뉴 구성이 상이하여 사용자 안내가 필요함</td><td>메뉴 구성이 기존 화면과 달라 사용자 안내가 필요함</td></tr>
+<tr><td>새 검색 엔진을 통하여 3,000 권 목록을 1초 안에 조회 가능해짐 ✅</td><td>새 검색 엔진으로 3,000권 목록을 1초 안에 조회 가능</td></tr>
+<tr><td>대여 기록 관리에 있어서 확인 절차가 추가되어짐</td><td>대여 기록 확인 절차 추가됨</td></tr>
+<tr><td>React 와 SQLite 를 사용함</td><td>React와 SQLite를 사용함</td></tr>
+<tr><td>이번 개선은 사내 독서 문화 활성화의 핵심이라 할 수 있다.</td><td>이번 개선으로 사내 도서를 찾고 빌리기가 쉬워짐.</td></tr>
+</tbody></table>
+<h3>영어판 규칙을 그대로 쓰면 안 되는 이유 (README 요지)</h3>
+<ul>
+<li><code>~함/~됨</code> 개조식은 슬롭이 아니라 한국 공식문서의 정상 문체. 정제 모드는 종결어미를 바꾸지 않음</li>
+<li>한국어 슬롭 신호는 문장부호와 번역투: em-dash, 공백 가운뎃점 나열, <code>★</code>, <code>~에 있어서</code>, <code>~되어지다</code>, 조사 앞 공백</li>
+<li>영어판의 &quot;3항목 나열 금지&quot;, &quot;not X but Y 금지&quot;는 한국어 요구사항/스펙 열거에 적용하지 않음 (문체가 아니라 내용이므로)</li>
+<li>붙임 복합어(<code>성능·품질</code>)의 가운뎃점은 보존</li>
+</ul>
+<h3>자동 적용 훅</h3>
+<p>&quot;회의록 만들어줘&quot;, &quot;보고서 pptx로&quot;, &quot;AI 티 빼줘&quot; 같은 요청을 감지하면 스킬 사용을 안내. 청중이 정해진 요청(&quot;경영진용&quot;, &quot;브리프&quot;)이면 stakeholder-brief를 먼저 안내. 요청에 &quot;stop-slop 빼고&quot;나 &quot;원문 그대로&quot;를 넣으면 개입하지 않음.</p>
+<h2>참고 자료</h2>
+<table><thead><tr><th>출처</th><th>URL</th><th>비고</th></tr></thead><tbody>
+<tr><td>Threads 포스트</td><td><a href="https://www.threads.com/@pm<em>anyway/post/De6O5T6FTzj">https://www.threads.com/@pm</em>anyway/post/De6O5T6FTzj</a></td><td>본문 + 작성자 댓글 10개</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/leeandev/stop-slop-ko">https://github.com/leeandev/stop-slop-ko</a></td><td>README 직접 확인 (200)</td></tr>
+<tr><td>GeekNews</td><td><a href="https://news.hada.io/topic?id=35913">https://news.hada.io/topic?id=35913</a></td><td>본문 미확보 (403), 제목만 확인</td></tr>
+<tr><td>영어 원본</td><td><a href="https://github.com/hardikpandya/stop-slop">https://github.com/hardikpandya/stop-slop</a></td><td>README 링크로만 확인, 미열람</td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-25 stop-slop-ko 한국어 AI 티 제거 Claude Code 플러그인/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

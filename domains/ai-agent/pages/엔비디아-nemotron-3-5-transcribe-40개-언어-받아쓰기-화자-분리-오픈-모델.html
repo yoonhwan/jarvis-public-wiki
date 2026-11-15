@@ -1,0 +1,89 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>엔비디아 Nemotron 3.5 Transcribe 40개 언어 받아쓰기 + 화자 분리 오픈 모델 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>엔비디아 Nemotron 3.5 Transcribe 40개 언어 받아쓰기 + 화자 분리 오픈 모델</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>엔비디아 Nemotron 3.5 Transcribe 40개 언어 받아쓰기 + 화자 분리 오픈 모델</span></nav><h1>엔비디아 Nemotron 3.5 Transcribe 40개 언어 받아쓰기 + 화자 분리 오픈 모델</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-29 Nvidia Nemotron 3.5 Transcribe/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>엔비디아 Nemotron 3.5 Transcribe: 40개 언어 받아쓰기 + 화자 분리 오픈 모델</h1>
+<ul>
+<li>소스(Threads): <a href="https://www.threads.com/@jay.ai.daily/post/DfCvRK8CVN9">https://www.threads.com/@jay.ai.daily/post/DfCvRK8CVN9</a></li>
+<li>원문(HF 모델카드): <a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B">https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B</a></li>
+<li>릴리스: 2026-10-28 (Hugging Face / build.nvidia.com / GitHub NeMo Speech / NGC)</li>
+</ul>
+<blockquote>⚠️ 댓글 스레드 미확보: SSR에 댓글 데이터가 없었고 agent-browser 세션도 응답하지 않아 본문(og:description)만 확보했어요. 본문은 모델카드와 대조해 검증했습니다.</blockquote>
+<h2>본문 (Main Post)</h2>
+<p>회의록·자막·인터뷰 받아쓰는 분들, 엔비디아가 받아쓰기 AI 모델 Nemotron 3.5 Transcribe를 허깅페이스에 무료로 풀었어요. 한국어를 포함해 40개 언어를 받아 적고, 31개 언어는 영어와 서로 번역하고, 최대 1시간 녹음에서 화자 8명까지 누가 말했는지 나눠줘요. 허깅페이스 오픈 ASR 순위표에서 영어 오류율 5.33%로 공개 모델 1위이고, 학습에 쓴 48개 언어 음성 데이터 Granary v2(약 46만 시간)도 같이 풀었어요. 상업적으로 써도 되는 라이선스(OpenMDW)이고, FP8·NVFP4로 줄인 버전은 RTX 5090 같은 그래픽카드에서도 돌아가요.</p>
+<h2>핵심 수치: 본문 주장 vs 모델카드 검증</h2>
+<table><thead><tr><th>항목</th><th>본문 주장</th><th>모델카드/자료 확인</th><th>판정</th></tr></thead><tbody>
+<tr><td>지원 언어</td><td><strong>40개</strong></td><td>언어 매트릭스 ASR ✓ <strong>40개</strong> (Norwegian은 ASR 칸 비어 있음)</td><td>일치</td></tr>
+<tr><td>영어와 번역</td><td><strong>31개 언어</strong></td><td>매트릭스 Translation ✓ 행 32개 − 영어 1행 = <strong>31개</strong></td><td>일치 (직접 센 값)</td></tr>
+<tr><td>화자 분리</td><td>최대 <strong>8명</strong>, 1시간</td><td>컨텍스트 65,536 토큰, 녹음 최대 <strong>1시간</strong>. 학습 데이터에 최대 8화자 혼합(AuMix)</td><td>일치</td></tr>
+<tr><td>영어 WER</td><td><strong>5.33%</strong>, 오픈 모델 1위</td><td>The New Stack도 5.33%로 보도. 모델카드는 &quot;9개 공개 세트 평균 <strong>4.71</strong>&quot;로 표기</td><td>지표 기준이 다름 (아래 참고)</td></tr>
+<tr><td>라이선스</td><td>OpenMDW</td><td><strong>OpenMDW-1.1</strong>, 상업·비상업 사용 가능</td><td>일치</td></tr>
+<tr><td>경량 버전</td><td>FP8·NVFP4, RTX 5090</td><td>FP8·NVFP4 변종 공개. 지원 하드웨어 표에 RTX 5090 + NVFP4 있음</td><td>일치</td></tr>
+<tr><td>Granary v2</td><td>48개 언어, 약 46만 시간</td><td>HF 데이터셋 페이지가 401(게이트)이라 [확인 필요: 규모]</td><td>미검증</td></tr>
+</tbody></table>
+<p>참고: 5.33%(순위표 영어 평균, 보도 기준)와 4.71(모델카드 &quot;Open ASR Leaderboard, 9 public sets&quot;)은 서로 다른 집계로 보여요. 어느 쪽이 맞는지 이 노트에서는 판단하지 않고 둘 다 적어 둡니다.</p>
+<h2>모델 상세 (HuggingFace 모델카드 보강)</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>의미</th></tr></thead><tbody>
+<tr><td>모델명</td><td>NVIDIA-Nemotron-3.5-Transcribe-30B-A4B</td><td>이름의 30B-A4B는 MoE 규모 표기</td></tr>
+<tr><td>파라미터</td><td>총 <strong>34B</strong> (활성 <strong>4.3B</strong>, 오디오 인코더 포함)</td><td>활성 파라미터가 적어 단일 GPU 가능</td></tr>
+<tr><td>구조</td><td>Mamba-2 + Transformer 하이브리드 MoE, 병렬 전문가 인코더(ASR + 화자 인코더)</td><td>SALM(Speech-Augmented LM) 방식</td></tr>
+<tr><td>입력/출력</td><td>오디오+텍스트 → 텍스트(옵션: 단어 타임스탬프)</td><td>프롬프트로 스타일 지정</td></tr>
+<tr><td>컨텍스트</td><td><strong>65,536</strong> 토큰, 녹음 최대 <strong>1시간</strong></td><td></td></tr>
+<tr><td>정밀도</td><td>BF16 / FP8 / NVFP4</td><td></td></tr>
+<tr><td>기준 배포</td><td>H100 80GB 1장 (vLLM 0.32.0)</td><td>로컬은 FP8·NVFP4 변종 권장</td></tr>
+<tr><td>성격</td><td><strong>오프라인 모델.</strong> 실시간 스트리밍 ASR 아님</td><td>라이브 자막용은 별도 모델 필요</td></tr>
+</tbody></table>
+<h3>프롬프트로 바꾸는 작업</h3>
+<table><thead><tr><th>원하는 것</th><th>지시 방식</th><th>쓰임새</th></tr></thead><tbody>
+<tr><td>있는 그대로</td><td><code>Wording: verbatim, including fillers and repetitions</code></td><td>연구용 전사</td></tr>
+<tr><td>읽기 좋게</td><td><code>omit fillers and accidental repetitions</code></td><td>자막, 회의록</td></tr>
+<tr><td>전문 용어</td><td><code>Context terms: &lt;용어 목록&gt;</code></td><td>실적 발표, 기술 토론</td></tr>
+<tr><td>누가 말했나</td><td>화자 태그 <code>&lt;spk:0&gt; &lt;spk:1&gt; ...</code> + 단어 타임스탬프 켜기</td><td>회의 검토</td></tr>
+<tr><td>번역</td><td><code>Please translate the given speech to &lt;target language&gt;.</code></td><td>다국어 미디어</td></tr>
+<tr><td>질문</td><td>오디오에 대해 질문 + reasoning 켜기</td><td>오디오 검색</td></tr>
+</tbody></table>
+<h3>모델카드 주요 벤치마크</h3>
+<table><thead><tr><th>영역</th><th>벤치마크</th><th>지표</th><th>Nemotron 3.5</th><th>차순위</th></tr></thead><tbody>
+<tr><td>다화자 ASR</td><td>AMI, CALLHOME, Mixer 6, NOTSOFAR-1</td><td>평균 cpWER ↓</td><td><strong>15.80</strong></td><td>DiCoW v3.3 + DiariZen 16.83</td></tr>
+<tr><td>스타일 제어</td><td>Preference-ASR</td><td>WER ↓ (기본/지시)</td><td><strong>7.56 / 6.16</strong></td><td>Canary-Qwen 8.16 / 8.36</td></tr>
+<tr><td>영어 ASR</td><td>Open ASR 9개 공개 세트</td><td>평균 WER ↓</td><td><strong>4.71</strong></td><td>Qwen3-ASR-1.7B 4.94</td></tr>
+<tr><td>장문 ASR</td><td>Open ASR long-form</td><td>평균 WER ↓</td><td><strong>10.98</strong></td><td>Parakeet-TDT-0.6B-v3 13.37</td></tr>
+<tr><td>다국어 ASR</td><td>Multilingual Open ASR 7개 언어</td><td>평균 WER ↓</td><td><strong>4.62</strong></td><td>Qwen3-ASR-1.7B 6.49</td></tr>
+</tbody></table>
+<p>(모델카드 기준 결과 기록일 2026-10-12. 발표 기관 자체 수치이므로 독립 검증은 아님.)</p>
+<h3>한국어 지원 상태</h3>
+<table><thead><tr><th>항목</th><th>값</th></tr></thead><tbody>
+<tr><td>ASR</td><td>✓</td></tr>
+<tr><td>영어 번역 (양방향)</td><td>✓</td></tr>
+<tr><td>다화자 ASR</td><td>✓</td></tr>
+<tr><td>코드 스위칭</td><td>✓</td></tr>
+<tr><td>품질 등급</td><td><strong>Leading</strong> (카드 정의: 별도 튜닝 없이 최고 수준 근처)</td></tr>
+</tbody></table>
+<h3>속도 (엔비디아 NIM 기준, 오픈소스 릴리스에는 미포함)</h3>
+<table><thead><tr><th>항목</th><th>값</th><th>조건</th></tr></thead><tbody>
+<tr><td>처리량</td><td>초당 최대 <strong>2,238초</strong> 분량 오디오</td><td>RTX PRO 6000 Blackwell 1장, NVFP4 + DFlash2</td></tr>
+<tr><td>30초 녹음 응답</td><td><strong>0.13초</strong></td><td>위와 동일</td></tr>
+<tr><td>공개 vLLM 통합</td><td>위 최적화보다 약 <strong>2배 느림</strong></td><td>모델 개발용</td></tr>
+</tbody></table>
+<h2>외부 보도 (보조 확인)</h2>
+<ul>
+<li>The New Stack: 이 모델은 &quot;promptable&quot; 전사 모델이라는 점이 핵심. 30B MoE, 활성 4B. Artificial Analysis 벤치에서 WER 2.81%로 Voxtral Small 2.77%에 근접하면서 활성 파라미터는 약 4B 대 24B라고 보도 (런타임·메모리 비교는 아님).</li>
+<li>SiliconANGLE: 화자 최대 8명, 40개 언어, 단일 패스 처리. 같은 날 보도 중 일부 수치는 모델카드와 달라 이 노트에는 채택하지 않음.</li>
+</ul>
+<h2>우리 쪽 참고 (판단은 오빠 몫)</h2>
+<ul>
+<li>BYZ 통역 계열에 바로 맞는지는 [확인 필요]: 이 모델은 <strong>오프라인 전용</strong>이라 실시간 통역 경로에는 맞지 않고, 통화녹음(#call-records) 같은 사후 전사 + 화자 분리 용도에 가까움.</li>
+<li>같은 날 별도 모델 <code>nvidia/nemotron-3.5-asr-streaming-0.6b</code>(0.6B, 스트리밍 80~1120ms 청크, 40개 로케일)도 공개돼 있어 실시간 용도는 이쪽이 후보. (검색 결과 기준, 이 노트에서는 모델카드 직접 확인 안 함)</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>HF 모델카드</td><td><a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B">https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B</a></td></tr>
+<tr><td>FP8 변종</td><td><a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B-FP8">https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B-FP8</a></td></tr>
+<tr><td>NVFP4 변종</td><td><a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B-NVFP4">https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B-NVFP4</a></td></tr>
+<tr><td>라이브 데모</td><td><a href="https://huggingface.co/spaces/nvidia/nemotron-transcribe">https://huggingface.co/spaces/nvidia/nemotron-transcribe</a></td></tr>
+<tr><td>학습 데이터 Granary v2</td><td><a href="https://huggingface.co/datasets/nvidia/Granary-v2">https://huggingface.co/datasets/nvidia/Granary-v2</a></td></tr>
+<tr><td>NeMo Speech</td><td><a href="https://github.com/NVIDIA-NeMo/Speech">https://github.com/NVIDIA-NeMo/Speech</a></td></tr>
+<tr><td>기술 보고서</td><td><a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Transcribe-Technical-Report.pdf">https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Transcribe-Technical-Report.pdf</a></td></tr>
+<tr><td>OpenMDW 라이선스</td><td><a href="https://openmdw.ai/license/1-1/">https://openmdw.ai/license/1-1/</a></td></tr>
+<tr><td>The New Stack</td><td><a href="https://thenewstack.io/nvidia-nemotron-promptable-transcription">https://thenewstack.io/nvidia-nemotron-promptable-transcription</a></td></tr>
+<tr><td>SiliconANGLE</td><td><a href="https://siliconangle.com/2026/10/28/nvidia-releases-all-in-one-adaptable-nemotron-3-5-audio-transcription-and-translation-model">https://siliconangle.com/2026/10/28/nvidia-releases-all-in-one-adaptable-nemotron-3-5-audio-transcription-and-translation-model</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-29 Nvidia Nemotron 3.5 Transcribe/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

@@ -1,0 +1,96 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</span></nav><h1>에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</h1>
+<blockquote>Source candidate from <code>News-Links/2026-11-08 에이전트 메모리 설계 - Anthropic 드리밍과 위키/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</h1>
+<ul>
+<li>소스(GeekNews): <a href="https://news.hada.io/topic?id=36775">https://news.hada.io/topic?id=36775</a> (2026-11-08 게시)</li>
+<li>원문(Anthropic Research, &quot;The components of agent memory&quot;): <a href="https://www.anthropic.com/research/components-of-agent-memory">https://www.anthropic.com/research/components-of-agent-memory</a></li>
+<li>스크랩 방식: GeekNews 페이지가 자동접속을 차단해 r.jina.ai 리더로 본문을 확보함. 아래 수치는 GeekNews 요약 기준이며 원문 대조는 검색 스니펫 수준까지만 함.</li>
+</ul>
+<h2>핵심 요약</h2>
+<p>Anthropic이 Claude로 실험한 결과다. 에이전트는 세션 중 노트를 남기고, 세션 사이에 <strong>드리밍(dreaming)</strong> 으로 그 노트를 원본 대화 로그와 대조해 오류를 고치고 위키로 묶는다. 기록이 많다고 좋은 것이 아니다. 무엇을 남길지 판단하는 일과 틀린 기억을 바로잡는 일이 성능을 가른다.</p>
+<h2>핵심 수치</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>기준</th><th>의미</th></tr></thead><tbody>
+<tr><td>원문 검색 + 위키</td><td><strong>53% → 최대 61%</strong></td><td>내부 문서 평가 채점 기준 충족률</td><td>검색 단독보다 병용이 낫다</td></tr>
+<tr><td>토큰 절감</td><td>질문당 약 <strong>2만 토큰</strong></td><td>검색 + 위키 병용</td><td>위키가 탐색 비용을 줄인다</td></tr>
+<tr><td>위키 단독 점수</td><td><strong>13% → 48%</strong></td><td>드리밍 2개 → 128개 세션</td><td>드리밍을 늘릴수록 위키가 좋아진다</td></tr>
+<tr><td>Stainless 코퍼스</td><td>약 <strong>35만 파일 / 4.2억 토큰</strong></td><td>25개 질문 평가</td><td>5월에 인수한 회사의 내부 문서</td></tr>
+<tr><td>합병 문서 종합 질문</td><td>위키 <strong>87%</strong> vs 검색 <strong>73%</strong></td><td>여러 문서 종합 + 판단/계산 항목</td><td>종합형 과제에서 위키 이득이 큼</td></tr>
+<tr><td>초기 위키 서면</td><td>57개 중 41개 (<strong>72%</strong>)</td><td>필수 사실 포함률</td><td>공유 표 동시 수정으로 누락 발생</td></tr>
+<tr><td>개선 루프 후</td><td><strong>100%</strong></td><td>채점 기준 충족</td><td>계약별 페이지 + 원문 인용 방식</td></tr>
+<tr><td>Pokémon Red (Sonnet 3.7)</td><td>413 파일 / 225 폴더 / 배지 <strong>1개</strong></td><td>약 1만 단계 시점</td><td>과도한 기록은 플레이를 잠식</td></tr>
+<tr><td>Pokémon Red (Fable 5)</td><td>9 파일 / 2 폴더 + <code>global.md</code> / 배지 <strong>4개</strong></td><td>약 1만 단계 시점</td><td>목표와 전략 중심 메모리</td></tr>
+</tbody></table>
+<h2>1. 세션 중 기록과 세션 밖 드리밍</h2>
+<ul>
+<li>에이전트 메모리는 이후 세션에서 읽을 수 있게 저장한 컨텍스트다. 모델 가중치 변화, in-context learning, compaction과는 구분한다.</li>
+<li>사람의 해마와 수면 중 재생에서 착안했다. Letta + UC Berkeley의 sleep-time compute와 같은 계열이다.</li>
+<li>세션 중에는 미래에 무엇이 필요할지 모르는 채 중요도를 판단해야 한다. 그래서 기록은 미래 필요에 대한 예측이다.</li>
+</ul>
+<h2>2. 무엇을 기억할까 (학습 루프)</h2>
+<ul>
+<li>CL-Bench 1.0 데이터베이스 질의 과제에서 문제마다 새 세션을 시작하고 메모리 디렉터리만 유지했다.</li>
+<li>모델별 차이는 다음과 같다.</li>
+</ul>
+<table><thead><tr><th>모델</th><th>메모리 활용 수준</th></tr></thead><tbody>
+<tr><td>Sonnet 4.6</td><td>여러 파일에 검증하지 않은 추측을 흩어 둠</td></tr>
+<tr><td>Opus 4.7</td><td>노트를 하나의 참조 문서로 통합, 확인된 사실과 미확인 구분</td></tr>
+<tr><td>Sonnet 5</td><td>채점된 답을 확인됨으로 표시, 오답 수정</td></tr>
+<tr><td>Opus 5</td><td>규칙 + 검증 근거 + 이전 답변 + 함정 경고를 함께 기록, 학습 루프를 처음으로 완성</td></tr>
+<tr><td>Opus 5.5 / Sonnet 5.5</td><td>검증된 규칙을 기록, 메모리 점수는 Opus 5와 비슷, 메모리 없는 기본 성능은 더 높음</td></tr>
+</tbody></table>
+<ul>
+<li>소지금이나 현재 위치처럼 매 턴 화면에서 볼 수 있는 정보는 저장이 중복이다. 스스로 도출한 전략과 검증된 규칙은 기록하지 않으면 사라진다.</li>
+<li>Fable 5는 Magikarp 포획에 7회 연속 실패한 뒤 대기 입력을 넣어 성공했다. 그리고 &quot;3회 이상 실패하면 입력 타이밍을 바꿔라&quot;는 규칙을 남겼다.</li>
+</ul>
+<h2>3. 메모리 작성 지침의 구체성</h2>
+<ul>
+<li>메모리 폴더가 있다는 <strong>일반 안내</strong>만으로도 Opus 4.7과 Opus 5 성능이 눈에 띄게 올랐다.</li>
+<li>&quot;<strong>실패만 기록하라</strong>&quot; 같은 고정 규칙은 두 모델의 메모리 이득을 크게 줄였다. 강한 모델에는 중요도 판단을 맡기는 편이 낫다.</li>
+<li>구체적 유도는 구형 모델에 유효했다. Sonnet 4.6에 답변 전 메모리 읽기와 오답 원인 가설 검증을 지시하자 점수가 거의 두 배가 되었다.</li>
+<li>기본 동작도 달랐다. 답변 전 메모리를 읽은 비율이 Sonnet 5는 10회 중 9회, Sonnet 4.6은 절반 미만이었다.</li>
+<li>결론: 최신 모델에는 &quot;사용자가 요청하거나 기억할 가치가 명백할 때 노트를 만들라&quot;는 단순한 지침을 준다.</li>
+</ul>
+<h2>4. 드리밍으로 잘못된 메모리 바로잡기</h2>
+<ul>
+<li>Pokémon Mt. Moon 실험에서 Claude가 서쪽 입구의 PokéCenter를 동쪽이라고 잘못 기록했다. 산을 통과하지 않았는데 완료로 판단했고, 턱 아래로 떨어졌다.</li>
+<li>잘못된 노트에 드리밍을 적용하자 대화 기록에서 오류를 찾아 고쳤고 Cerulean City에 도달했다.</li>
+<li>수정하지 않은 실행은 같은 경로로 3번 떨어졌고 Cerulean City에 도달하지 못한 채 끝났다.</li>
+</ul>
+<h2>5. 위키 기반 지식 구조</h2>
+<ul>
+<li>드리밍은 주제별 지식과 관련 노트를 링크로 잇는 위키(Karpathy LLM Wiki 방식)를 만든다. 링크는 메모리 탐색용 지식 지도 역할을 한다.</li>
+<li>Stainless 평가에서 Opus 5 에이전트가 최대 128개 세션에 걸쳐 탐색, 페이지 작성, 중복 병합, 원문 대조를 했다. 공유 로그로 작업을 조율했다.</li>
+<li>한계: 단일 문서 텍스트 검색으로 풀리는 Harvey LAB 과제에서는 뚜렷한 이득이 없었다. 어떤 과제에서는 위키가 원문보다 커져 추상화 역할을 못 했다(Borges의 「On Exactitude in Science」 비유).</li>
+</ul>
+<h2>6. 메모리 계층과 목표별 재구성</h2>
+<ul>
+<li>드리밍은 중요한 노트를 상위 계층으로 올려 세션 시작 시 컨텍스트에 미리 넣게 한다. 다만 토큰을 쓰고, 틀린 노트가 모든 세션에 전달되며, 읽었다고 따르는 것도 아니다.</li>
+<li>상위 계층은 작게 유지한다. Claude Code 문서는 지시 파일이 길수록 준수율이 낮아진다고 경고한다. 자동 메모리는 <code>MEMORY.md</code>의 첫 200줄 또는 25KB만 불러온다. 이 부분은 색인(index) 역할을 한다.</li>
+<li>합병 계약 분석 과제에서 여러 에이전트가 공유 계약 조건 표를 동시에 수정하며 서로 덮어썼다. 개선 루프로 &quot;계약마다 별도 페이지, 단일 에이전트가 작성, 요약 대신 원문 인용&quot;으로 바꾸자 100%를 달성했다.</li>
+<li>두 번째 드리밍에서 누락 페이지 링크 9개를 기존 페이지로 연결하고, 색인 포함 새 페이지 3개를 추가했다.</li>
+</ul>
+<h2>7. 남은 설계 문제</h2>
+<table><thead><tr><th>문제</th><th>상충관계</th></tr></thead><tbody>
+<tr><td>언제 만들까</td><td>작업 중 기록은 즉시 반영되지만 주의를 뺏는다. 드리밍은 분리되지만 결과가 늦다</td></tr>
+<tr><td>최신성과 정확성</td><td>연산 비용이 든다. 변하기 쉬운 정보에 드리밍을 집중하거나 접근 빈도로 주기를 조절한다</td></tr>
+<tr><td>대화 기록 검색</td><td>위키 + 검색이 효과적이지만 지식 구조에 환각이 쌓이지 않게 유지하는 비용이 든다</td></tr>
+</tbody></table>
+<h2>우리 환경에 연결되는 점 (스크랩 노트 메모, 원문 주장 아님)</h2>
+<ul>
+<li>Hermes의 memory/skills 분리, Obsidian wiki 구조가 이 글의 &quot;상위 계층은 작게, 세부는 링크로&quot; 원칙과 같은 방향이다.</li>
+<li>&quot;실패만 기록하라&quot; 같은 고정 규칙이 강한 모델에 해롭다는 결과는 메모리 지침 설계 시 참고할 만하다.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>GeekNews 요약</td><td><a href="https://news.hada.io/topic?id=36775">https://news.hada.io/topic?id=36775</a></td></tr>
+<tr><td>Anthropic 원문</td><td><a href="https://www.anthropic.com/research/components-of-agent-memory">https://www.anthropic.com/research/components-of-agent-memory</a></td></tr>
+<tr><td>Dreams (Managed Agents 문서)</td><td><a href="https://platform.claude.com/docs/en/managed-agents/dreams">https://platform.claude.com/docs/en/managed-agents/dreams</a></td></tr>
+<tr><td>메모리 도구 문서</td><td><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool">https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool</a></td></tr>
+<tr><td>드리밍 시작하기 cookbook</td><td><a href="https://platform.claude.com/cookbook/managed-agents-cma-dreaming-with-a-dynamic-workflow">https://platform.claude.com/cookbook/managed-agents-cma-dreaming-with-a-dynamic-workflow</a></td></tr>
+<tr><td>지식 위키 예제</td><td><a href="https://github.com/anthropics/claude-quickstarts/tree/main/managed-agents/knowledge-wiki">https://github.com/anthropics/claude-quickstarts/tree/main/managed-agents/knowledge-wiki</a></td></tr>
+<tr><td>Sleep-time compute (Letta, UC Berkeley)</td><td><a href="https://arxiv.org/abs/2504.13171">https://arxiv.org/abs/2504.13171</a></td></tr>
+<tr><td>CL-Bench 1.0</td><td><a href="https://continual-learning-bench.com/news/cl-bench-1-0/">https://continual-learning-bench.com/news/cl-bench-1-0/</a></td></tr>
+<tr><td>Karpathy LLM Wiki gist</td><td><a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</a></td></tr>
+<tr><td>Claude Code 메모리 문서</td><td><a href="https://code.claude.com/docs/en/memory">https://code.claude.com/docs/en/memory</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-11-08 에이전트 메모리 설계 - Anthropic 드리밍과 위키/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-07</span> <a href="daiso-mcp-다이소-편의점-재고-조회-공개-mcp.html?v=20261115-115301-KST">DAISO MCP 다이소·편의점 재고 조회 공개 MCP</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

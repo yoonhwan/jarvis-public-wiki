@@ -1,0 +1,78 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Meta Astryx 8년간 내부에서 쓴 디자인 시스템 오픈소스 공개 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>Meta Astryx 8년간 내부에서 쓴 디자인 시스템 오픈소스 공개</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/design-creative.html?v=20261115-115301-KST">디자인·크리에이티브</a> &rsaquo; <span>Meta Astryx 8년간 내부에서 쓴 디자인 시스템 오픈소스 공개</span></nav><h1>Meta Astryx 8년간 내부에서 쓴 디자인 시스템 오픈소스 공개</h1>
+<blockquote>Source candidate from <code>News-Links/2026-11-08 Meta Astryx 디자인 시스템 오픈소스/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Meta Astryx: 8년간 내부에서 쓴 디자인 시스템 오픈소스 공개</h1>
+<ul>
+<li>소스(Threads): <a href="https://www.threads.com/@ai.mogoo/post/DfdOFSVDtLJ">https://www.threads.com/@ai.mogoo/post/DfdOFSVDtLJ</a></li>
+<li>원문(GitHub): <a href="https://github.com/meta/astryx">https://github.com/meta/astryx</a></li>
+<li>문서: <a href="https://astryx.atmeta.com">https://astryx.atmeta.com</a> (Docs / Storybook / Sandbox)</li>
+</ul>
+<h2>본문 (Main Post, @ai.mogoo)</h2>
+<p>메타가 8년간 내부에서 쓴 디자인 시스템을 오픈소스로 풀었다 — Astryx.</p>
+<p>1만 3천 개 넘는 앱을 지탱한 시스템으로, 접근성 갖춘 컴포넌트 150개 이상, 브랜드 테마·다크모드·템플릿·CLI를 한 묶음으로 제공한다. React 19+ 기반, TypeScript. 사람과 AI 에이전트가 같은 도구로 UI를 만든다는 게 특징이다.</p>
+<p>쓸모: 코딩 에이전트와 함께 프론트를 만들 때, 컴포넌트부터 다시 짜지 않고 바로 조립할 수 있다.</p>
+<p>링크: github.com/meta/astryx</p>
+<p>AI와 함께 UI를 짤 때, 디자인 시스템이 얼마나 달라질까?</p>
+<p>(작성자의 추가 댓글 스레드 없음. 참여 지표 숫자는 라벨 없이 표시되어 기록하지 않음.)</p>
+<h2>핵심 수치</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>기준</th><th>의미</th></tr></thead><tbody>
+<tr><td>내부 사용 기간</td><td><strong>8년</strong></td><td>README Overview</td><td>Meta 내부 최대·최다 사용 디자인 시스템</td></tr>
+<tr><td>지탱한 앱 수</td><td><strong>13,000+</strong></td><td>README Overview</td><td>대규모 실전 검증</td></tr>
+<tr><td>컴포넌트</td><td><strong>150+</strong></td><td>README</td><td>접근성(a11y) 포함, TypeScript 타입 지원</td></tr>
+<tr><td>공식 테마</td><td><strong>7종</strong></td><td><code>@astryxdesign/theme-*</code></td><td>neutral, butter, chocolate, matcha, stone, gothic, y2k</td></tr>
+<tr><td>요구 버전</td><td><strong>React 19+</strong></td><td>peer dependency</td><td>하위 버전 사용 불가</td></tr>
+<tr><td>상태</td><td><strong>Beta</strong></td><td>README</td><td>안정 릴리스 전</td></tr>
+<tr><td>라이선스</td><td><strong>MIT</strong></td><td>README</td><td>상업적 사용 가능</td></tr>
+</tbody></table>
+<h2>GitHub README 요약 (meta/astryx, 별도 소스 보강)</h2>
+<h3>특징 4가지</h3>
+<ol>
+<li><strong>Open internals</strong>: 컴포넌트를 어느 층위에서든 조합 가능. <code>swizzle</code> 로 컴포넌트 전체 소스를 프로젝트로 꺼내 직접 소유.</li>
+<li><strong>No styling lock-in</strong>: 내부는 StyleX 로 작성하지만 사용자에게는 보이지 않음. Tailwind, CSS modules, plain CSS 의 <code>className</code> 으로 override.</li>
+<li><strong>Customize without wrapping</strong>: 테마 = CSS custom property override 묶음. fork·wrapping 없이 브랜드화.</li>
+<li><strong>Built for people and agents</strong>: API, 문서, CLI 를 함께 설계해 사람과 AI 어시스턴트가 같은 레퍼런스로 작업.</li>
+</ol>
+<h3>설치</h3>
+<pre><code>npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex
+npm install -D @astryxdesign/cli
+
+# CLI 전역 설치 (어떤 폴더에서도 astryx 사용, 코딩 에이전트가 Astryx 인식)
+npm i -g @astryxdesign/cli</code></pre>
+<ul>
+<li>설정은 CSS import 몇 줄 + theme provider. build plugin, PostCSS, Babel 설정 불필요.</li>
+<li>Next.js, Tailwind, Vite, CDN 가이드는 <code>packages/core/README.md</code> Quick Start 참조.</li>
+<li>에이전트가 경로 오류 없이 CLI 를 부르게 하려면 <code>package.json</code> 에 script 추가: <code>&quot;astryx&quot;: &quot;node node_modules/@astryxdesign/cli/clients/cli/bin/astryx.mjs&quot;</code> → <code>npm run astryx -- component --list</code></li>
+<li>프로젝트/전역 설치 비교: <code>astryx docs global/project-global-or-both</code> (둘 다 설치 권장)</li>
+</ul>
+<h3>패키지</h3>
+<table><thead><tr><th>패키지</th><th>역할</th></tr></thead><tbody>
+<tr><td><code>@astryxdesign/core</code></td><td>컴포넌트, 테마 시스템, 유틸리티</td></tr>
+<tr><td><code>@astryxdesign/cli</code></td><td>컴포넌트 문서, 템플릿, 스캐폴딩, 테마, codemod</td></tr>
+<tr><td><code>@astryxdesign/build</code></td><td>StyleX 소스 빌드용 plugin</td></tr>
+<tr><td><code>@astryxdesign/theme-*</code></td><td>7종 테마</td></tr>
+</tbody></table>
+<ul>
+<li><code>@astryxdesign/lab</code>(실험 컴포넌트)은 npm 미배포(Storybook·sandbox 내부용).</li>
+<li><code>@astryxdesign/vega</code>, <code>@astryxdesign/charts</code> 는 <code>@canary</code> dist-tag 로만 배포. stable 릴리스 없음.</li>
+</ul>
+<h3>원칙</h3>
+<ul>
+<li>Guidance over enforcement (가드레일보다 capability)</li>
+<li>Strong, documented conventions (이름·prop·조합 규칙 통일)</li>
+<li>One system for humans and AI</li>
+<li>Earned by measurement (규칙을 측정으로 검증)</li>
+</ul>
+<h3>구조</h3>
+<p>Foundations(타이포·색·레이아웃·a11y) → Components(150+) → Patterns(table page, detail layout, form wizard, navigation, data entry)</p>
+<h2>Related threads (타 계정의 동일 주제 포스트, 이 글의 댓글 아님)</h2>
+<table><thead><tr><th>계정</th><th>날짜</th><th>내용</th></tr></thead><tbody>
+<tr><td>lu.cyai</td><td>10/14/26</td><td>AI 홈페이지 제작용 GitHub 자료 3개: frontend-design(방향 잡기), <strong>Astryx</strong>(React 화면 부품), web-design-guidelines(코드 점검). 모두 설치하는 세트는 아님. Astryx 는 React 19+ 필요한 베타. 작성자는 직접 설치 검증은 안 했다고 명시.</td></tr>
+<tr><td>clicksolnews</td><td>1d</td><td>메타가 AI 코딩 스타트업 &#x27;컨덕터&#x27; 인수 (금액 미공개). 올해 3월 몰트북 인수에 이은 두 번째로 언급.</td></tr>
+<tr><td>sandwich.ai_</td><td>10/15/26</td><td>피그마가 AI 에이전트의 브랜드 훼손 문제를 &quot;규칙 파일&quot;로 푼다는 내용(제목만 확인).</td></tr>
+<tr><td>jwcha10004, feelfree_ai</td><td>10/11~10/18</td><td>오픈소스 REA(앱 역공학 분석 도구) 관련. Astryx 와 직접 관련 없음.</td></tr>
+</tbody></table>
+<h2>메모</h2>
+<ul>
+<li>이 노트의 수치와 기능 설명 중 README 에서 온 것은 <code>meta/astryx</code> main 브랜치 README 기준이다. 직접 설치·실행 검증은 하지 않았다.</li>
+<li>비교 후보: 에이전트용 UI 부품 라이브러리로서 shadcn/ui 류와 비교 필요 시 별도 리서치 요청 가능.</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-11-08 Meta Astryx 디자인 시스템 오픈소스/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — 디자인·크리에이티브</h2><ul><li><span class="card-date">2026-11-04</span> <a href="ai-디자인-슬롭-방지-에이전트에게-줄-디자인-레퍼런스-5곳.html?v=20261115-115301-KST">AI 디자인 슬롭 방지 에이전트에게 줄 디자인 레퍼런스 5곳</a></li><li><span class="card-date">2026-10-25</span> <a href="엔비디아-nemotron-3-5-parse-문서-이미지-파서-공개.html?v=20261115-115301-KST">엔비디아 Nemotron 3.5 Parse — 문서 이미지 파서 공개</a></li><li><span class="card-date">2026-10-08</span> <a href="한국어-줄바꿈-css-디테일-word-break-text-wrap-white-space-overflow-wrap.html?v=20261115-115301-KST">한국어 줄바꿈 CSS 디테일 (word-break, text-wrap, white-space, overflow-wrap)</a></li><li><span class="card-date">2026-08-30</span> <a href="이름-하나로-나만의-시그니처-로고를-만든다.html?v=20261115-115301-KST">이름 하나로 나만의 시그니처 로고를 만든다</a></li><li><span class="card-date">2026-08-21</span> <a href="의외로-잘-모르는-해외에서-먹히는-폰트-5개.html?v=20261115-115301-KST">의외로 잘 모르는 해외에서 먹히는 폰트 5개</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

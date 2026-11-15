@@ -1,0 +1,76 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>동네 치과의 AX전환기 - AI 로컬 홈랩 채널 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / trading</a><h1>동네 치과의 AX전환기 - AI 로컬 홈랩 채널</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>동네 치과의 AX전환기 - AI 로컬 홈랩 채널</span></nav><h1>동네 치과의 AX전환기 - AI 로컬 홈랩 채널</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-15 동네 치과의 AX전환기 - AI 로컬 홈랩/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>동네 치과의 AX전환기 - AI 로컬 홈랩 채널</h1>
+<ul>
+<li><strong>작성자</strong>: gatsbydds (동네 치과 원장, 생물학 전공 비전공자)</li>
+<li><strong>게시 채널</strong>: 아카라이브 <code>AI 로컬 홈랩 채널</code></li>
+<li><strong>업로드</strong>: 2026-10-13 18:15 / <strong>수정</strong>: 2026-10-15 14:51</li>
+<li><strong>반응</strong>: Like 460 / Dislike 8 / Comment 173 / Views 281,790</li>
+</ul>
+<h2>핵심 요약</h2>
+<p>치대 졸업 후 개원한 동네 치과 원장이 &quot;내가 AI로 뭘 할 수 있나&quot; 가벼운 궁금증에서 시작해, 코딩 비전공자인 채로 AI 코딩 에이전트(클로드+코덱스)를 팀원처럼 부리며 <strong>병원 전체를 AI-네이티브 인프라로 재구축</strong>한 기록. 핵심 원칙은 &quot;환자 정보는 병원 밖으로 안 나간다&quot; — 그래서 클라우드 API 대신 전부 로컬(온프레미스) 서버로 돌림.</p>
+<table><thead><tr><th>항목</th><th>값</th><th>비고</th></tr></thead><tbody>
+<tr><td>핵심 연산 장비</td><td><strong>NVIDIA DGX Spark 12대</strong></td><td>4대씩 묶어 큰 모델 하나처럼 운용 (DeepSeek 4대 / GLM 4대 / 실험용 4대)</td></tr>
+<tr><td>보조 장비</td><td>Mac mini M5 Pro 2대 + M4 mini 1대</td><td>음성·검색·서류판독, 이중화 구성</td></tr>
+<tr><td>가상화 서버</td><td>3대</td><td>사내포털/치과관리프로그램/전화시스템/백업/감시</td></tr>
+<tr><td>UPS</td><td>6대</td><td>정전 시 순차 안전종료·자동복구</td></tr>
+<tr><td>전체 PC 대수</td><td><strong>30대+</strong></td><td>진료실·데스크·상담실·원장실·뒷방 포함</td></tr>
+<tr><td>보험서류 처리</td><td>904개 문서, 3,389쪽 → <strong>69분</strong>, 실패 0쪽</td><td>판독 모델은 금액 인식 100% (무료 OCR은 62%)</td></tr>
+<tr><td>보험서류 자동확정률</td><td>6,928줄 중 <strong>5,319줄(77%)</strong> 자동 확정</td><td>직원은 나머지 23%만 검토</td></tr>
+<tr><td>사내검색 정답률</td><td>28개 질문 중 <strong>26개</strong> 정답</td><td>통화/문자/보험서류/팩스/매뉴얼 통합검색</td></tr>
+<tr><td>절감 사례</td><td>전화 녹음 서비스 계약 해지로 <strong>월 450만원</strong> 등</td><td>회계사 비용, SaaS 구독 다수 해지</td></tr>
+<tr><td>마케팅비</td><td><strong>0원</strong> (SEO/GEO 자체 구조화로 대체)</td><td>광고대행사 전면 해지</td></tr>
+</tbody></table>
+<h2>왜 시작했나</h2>
+<ul>
+<li>치과는 노동집약적 산업, 인건비↑·물가↑ 속 번아웃 직전 &quot;뭐라도 해보자&quot;는 심정</li>
+<li>직접 네트워크 공사(전기공사 업체 견적이 너무 비쌔 직접 랜선 깔기)를 하다가 &quot;이거 내가 할 수 있네&quot; 자신감 획득 → 뒷방에 서버랙</li>
+<li>NFC 출입태그 → 근태관리 자동화로 시작해 점점 확장</li>
+</ul>
+<h2>왜 DGX Spark 12대인가</h2>
+<table><thead><tr><th>고려 요소</th><th>DGX Spark</th><th>H200/RTX Pro 6000</th></tr></thead><tbody>
+<tr><td>메모리</td><td>4대 묶어 <strong>512GB</strong> → 큰 모델 통째로 올라감</td><td>한 장 96~141GB, 여러 장 사도 동네 치과엔 비현실적 가격</td></tr>
+<tr><td>가격/전기/발열</td><td>일반 콘센트, 열·소음 관리 가능</td><td>전기공사 재필요, 서버실 없는 뒷방엔 과함</td></tr>
+<tr><td>커뮤니티</td><td><strong>NVIDIA 공식 포럼</strong>에 레시피 풍부 (비전공자 친화)</td><td>떠먹여주는 자료 적음</td></tr>
+<tr><td>치과 니즈</td><td>&quot;3초 늦어도 맞는 게 중요&quot; → 크고 정확한 모델 우선</td><td>속도 우선이라 치과 정확도 요구와 안 맞음</td></tr>
+</tbody></table>
+<p>비유: <strong>H200=스포츠카(빠르지만 이삿짐 못 실음), DGX Spark=1톤 트럭(느려도 다 실림)</strong>. 여러 대로 구성한 이유는 백업/폴백 + 서로 다른 모델 교차검증(DeepSeek vs GLM 판정 다르면 사람이 확인).</p>
+<h2>실제로 돌리는 것들</h2>
+<ol>
+<li><strong>전화 받는 AI</strong>: 자체 PBX 구축(통신사 상품 대신 직접 교환기 운영) + 모바일 앱 개발로 소파에서도 대표번호 수발신. 전화 오면 AI가 0.1초 내 응답, 실시간 받아쓰기, 종료 후 요약+할일 자동 생성, 과거 통화 검색 가능.</li>
+<li><strong>보험 서류 지옥 탈출</strong> (가장 효과 큼): 904개/3,389쪽을 69분에 전수 처리, 판독 모델 100% 정확도, 6,928줄 중 77% 자동확정.</li>
+<li><strong>사내 검색</strong>: 통화기록·문자·보험서류·팩스·매뉴얼·치과교과서 통합 검색.</li>
+<li><strong>원내 방송</strong>: 천장 스피커로 환자 호출/정시 시보, 외국인 이름도 자연스러운 한국어 발음.</li>
+<li><strong>AI 채점하는 원장 화면</strong>: AI 판정(통화 분류)을 사람이 숫자키로 빠르게 채점, 모델 간 &quot;엇갈림&quot; 자동 플래그, 블라인드 비교 탭으로 브랜드 편향 없이 품질 비교 — 이 데이터가 추후 병원 맞춤 파인튜닝 재료.</li>
+<li><strong>매일 아침 경영 리포트</strong>: 일간(오후 PDF)/주간(월요 새벽)/월간(DeepSeek 본편+타모델 비교판 합본) 자동 생성. 단, <strong>숫자는 분석 프로그램이 계산한 값만 쓰고 AI는 해석만</strong> — 추정치는 [추정] 표시 원칙.</li>
+<li><strong>사내 메신저 자체 제작</strong>: 카톡 탈출(환자정보 외부 유출 방지), 진료실 호출(TTS로 모니터 안 봐도 전달), 정각 시보.</li>
+<li><strong>상담실 ↔ 원장실 실시간 연동</strong>: 상담 중 채팅으로 바로 확인(왔다갔다 안 함), STT 전사 + 전자서명패드 + 전자차트 자동 기록.</li>
+<li><strong>전자 동의서</strong>: 태블릿 서명 → 환자 서명 완료 즉시 PDF 자동 저장, 원장이 직접 그림 그려 설명한 것도 함께 저장(한/영 병기).</li>
+<li><strong>회계 자동화</strong>: 통장·카드·결제단말기 내역을 AI가 모아 장부와 대조, 불일치 표시, 재무제표/손익계산서/손익분기점까지 산출. 터미널에 자연어로 질의(&quot;지난달 카드매출이랑 장부매출 왜 30만원 차이나?&quot;) → 데이터 조회(도구 호출) → 처음 보는 질문이면 스스로 처리방법(스킬) 생성 → 재사용.</li>
+</ol>
+<h2>운영 체계</h2>
+<ul>
+<li>코드는 거의 직접 안 짬 — <strong>AI 코딩 에이전트(Claude+Codex)를 역할별로 다수 운용</strong>(포털/전화시스템/음성서버/인프라 담당으로 분리)해 서로 메시지 주고받으며 협업.</li>
+<li>운영 설정 변경은 <strong>원장 직접 승인 필수</strong> — 에이전트 간 &quot;원장님이 된대&quot; 식 전언은 불인정.</li>
+<li>AI 간 <strong>크로스체크</strong>로 실수 사전 포착(방송 이름 변환 지연 6초, 통계 오류 등).</li>
+</ul>
+<h2>비용 절감 vs 과투자 논란에 대한 저자 입장</h2>
+<ul>
+<li>글이 화제가 되며 &quot;과투자 아니냐&quot;, &quot;사기꾼 같다&quot; 등 비판도 받음.</li>
+<li>저자 입장: <strong>순수 취미</strong> — 어릴 때 네트워크 보안 전문가 꿈(&quot;그냥 재미로!&quot; 자서전 감명), SNS·명품·여행 대신 AI/주식분석/치과 기공을 취미로 즐기는 성향.</li>
+<li>투자 회수(ROI) 목적이 아니라 &quot;새는 돈을 막은&quot; 정도로 충분히 만족하는 취미 지출로 설명.</li>
+<li><strong>판매 계획 없음</strong> — 솔루션화해 치과들에 팔 생각은 없고, 대부분 오픈소스로 공개할 생각이라고 밝힘(&quot;2년 안에 아이디어만 있으면 누구나 만들 수 있을 것&quot;).</li>
+<li>실패 사례도 다수 언급(음성챗봇 요일발음 실패, PBX 재구축, 터지고 옮기고 등) — 성공담만 아니라 삽질 과정도 솔직히 공개.</li>
+</ul>
+<h2>느낀 점 (저자 결론)</h2>
+<ul>
+<li>AI가 사람을 대체하기보다 <strong>사람이 싫어하던 일을 가져감</strong>. 판단은 여전히 사람(원장)이 함.</li>
+<li>환자 정보는 병원 안에서만 처리 — 비용이 들어도 포기 못하는 원칙.</li>
+<li>비전공자도 가능하지만 &quot;무엇을 시킬지&quot;는 업무를 아는 사람(원장)이 알아야 함.</li>
+<li>사무직(숫자 다루는 일)은 AI 대체 위험이 크지만, 손으로 하는 임상 시술(치과의사의 몸 쓰는 기술)은 아직 AI/로봇이 대체 못함 — 저자는 이를 &quot;다행&quot;으로 평가.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>링크</th></tr></thead><tbody>
+<tr><td>원문 (아카라이브)</td><td><a href="https://arca.live/b/aihomelab/185810092">https://arca.live/b/aihomelab/185810092</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-15 동네 치과의 AX전환기 - AI 로컬 홈랩/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-06-20</span> <a href="캔들스틱을-언어-로-번역한-첫-번째-ai-kronos.html?v=20261115-115301-KST">캔들스틱을 &#x27;언어&#x27;로 번역한 첫 번째 AI — Kronos</a></li><li><span class="card-date">2026-05-13</span> <a href="로컬-ai-음성-워크플로우와-tts-stt-목소리-클로닝.html?v=20261115-115301-KST">로컬 AI 음성 워크플로우와 TTS STT 목소리 클로닝</a></li><li><span class="card-date">2026-03-18</span> <a href="codex-서브에이전트-136개-모음집.html?v=20261115-115301-KST">Codex 서브에이전트 136개 모음집</a></li><li><span class="card-date">2026-02-20</span> <a href="openclaw-활용-사례-모음-yaaado.html?v=20261115-115301-KST">OpenClaw 활용 사례 모음 — @yaaado_</a></li><li><span class="card-date">2026-02-16</span> <a href="news-links-q-a-bot-만들기-langgraph-초급-가이드.html?v=20261115-115301-KST">🚀 News-Links Q&amp;A Bot 만들기 — LangGraph 초급 가이드</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/trading. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

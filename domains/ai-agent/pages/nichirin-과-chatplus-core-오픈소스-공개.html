@@ -1,0 +1,96 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>nichirin(日輪)과 chatplus-core 오픈소스 공개 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>nichirin(日輪)과 chatplus-core 오픈소스 공개</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>nichirin(日輪)과 chatplus-core 오픈소스 공개</span></nav><h1>nichirin(日輪)과 chatplus-core 오픈소스 공개</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-14 nichirin-chatplus-core 오픈소스 공개/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>nichirin(日輪)과 chatplus-core 오픈소스 공개</h1>
+<p>작성자: <a href="https://www.threads.com/@croissmouse">@croissmouse</a> (크로아상생쥐)</p>
+<p>원문: <a href="https://www.threads.com/@croissmouse/post/DeatoVakn4L">https://www.threads.com/@croissmouse/post/DeatoVakn4L</a></p>
+<h2>핵심 요약</h2>
+<p>개인 프로젝트 &quot;헤임달&quot;의 메신저 통합 도구 <strong>4종</strong>이 전부 오픈소스로 공개 완료. 카카오톡/채팅+(SK텔레콤)/텔레그램/디스코드/슬랙을 로컬에서 읽고·추적하고·보내는 CLI + 웹 클라이언트 + 어댑터 모음 구조.</p>
+<table><thead><tr><th>저장소</th><th>역할</th><th>저장소 URL</th><th>비고</th></tr></thead><tbody>
+<tr><td><strong>nichirin</strong> (日輪·일륜도)</td><td>Windows/macOS 카카오톡 CLI (kanao/kamado 통합)</td><td>github.com/sanguneo/nichirin</td><td>의존성 0개, 읽기는 전부 로컬, HTTP+SSE로 serve</td></tr>
+<tr><td><strong>saya</strong> (さや·칼집)</td><td>웹 클라이언트 (nichirin/tsuba의 HTTP+SSE 표면을 그림)</td><td>github.com/sanguneo/saya</td><td>자체 코어 없음, &quot;릿지(ledge)&quot; UX: 보낸 것과 입력만 된 것을 구분</td></tr>
+<tr><td><strong>tsuba</strong> (つば·코등이)</td><td>메신저 어댑터 모음 (Telegram/Discord/Slack)</td><td>github.com/sanguneo/tsuba</td><td>어댑터마다 계정 1개, saya와 공통 계약 공유</td></tr>
+<tr><td><strong>chatplus-core</strong></td><td>채팅+ (SK텔레콤) PC 클라이언트 로컬 캐시 리더/어댑터</td><td>github.com/sanguneo/chatplus-core</td><td>tsuba 계약 그대로 답함, TUI 없음</td></tr>
+</tbody></table>
+<h2>⚠️ 중요 — 비공식 도구 / 계정 제한 위험</h2>
+<ul>
+<li><strong>카카오/SK텔레콤과 무관한 개인(비공식) 도구</strong>다. 공식 API가 아니라 <strong>로컬에 저장된 데이터를 직접 읽고, 로그인된 클라이언트 창을 대신 조작</strong>해서 보낸다.</li>
+<li>이 방식 때문에 각 서비스 <strong>약관상 계정이 일시/영구 제한될 수 있음</strong> — 책임은 전부 사용 당사자. 각 저장소 상단 + DISCLAIMER.md에 명시.</li>
+</ul>
+<h2>본문 (Main Post)</h2>
+<blockquote>&quot;nichirin(日輪)과 chatplus-core 오픈소스 공개&quot;</blockquote>
+<blockquote></blockquote>
+<blockquote>카카오톡을 PC/Mac에서 읽고 보내는 nichirin(kanao+kamado)</blockquote>
+<blockquote>채팅+를 잇는 chatplus-core도 오픈소스로 열었어요.</blockquote>
+<blockquote></blockquote>
+<blockquote>먼저 열어 둔 saya(さや) / tsuba(つば)까지,</blockquote>
+<blockquote>메신저를 한 화면에 모으는 도구 네 개가 이제 전부 공개상태입니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>프로젝트 헤임달로, 미리 함께해주신 모든분들 감사합니다.</blockquote>
+<h2>댓글 스레드 (Reply Thread — 작성자 추가 내용)</h2>
+<ol>
+<li><strong>관련성 해명</strong>: nichirin은 카카오, chatplus-core는 SK텔레콤과 &quot;아무 관련 없는 개인 도구&quot;다. 공식 API가 아니라 내 컴퓨터에 저장된 데이터를 읽고, 로그인된 앱을 대신 눌러서 보낸다. 약관상 계정이 제한될 수 있고, 무엇을 읽고 보낼지의 책임은 전부 쓰는 사람에게 있다. 각 저장소 면책 고지에 자세히 적음.</li>
+<li><strong>저장소 링크 공개</strong>:</li>
+<ul>
+<li>검집(saya): github.com/sanguneo/saya</li>
+<li>일륜도(nichirin): github.com/sanguneo/nichirin</li>
+<li>코등이(tsuba): github.com/sanguneo/tsuba</li>
+<li>채팅+ 코어(chatplus-core): github.com/sanguneo/chatplus-core</li>
+<li>tsuba에 &quot;내 메신저를 직접 어댑터로 만들어 붙이는 가이드&quot; 포함. Star 요청.</li>
+</ul>
+<li><strong>이름 유래 (재밌는 비하인드)</strong>: kakao → &quot;not kakao&quot; 발음하려다 &quot;카나오&quot;가 됨 → 귀멸의 칼날 캐릭터 이름과 겹침을 발견 → 전체 테마를 귀멸의 칼날 네이밍으로 확장. Windows=카나오, macOS=카마도. &quot;다 펼칠 수 있는 것&quot;을 만들자는 아이디어에서 처음엔 히노카미카구라로 가려다 &quot;너무 십덕같다&quot;며 <strong>검집(saya)</strong>으로 리네이밍. 다른 칼(메신저)도 들어올 수 있게 하자 → <strong>코등이(tsuba)</strong>. 카카오 둘(PC/Mac)을 하나로 합치며 → <strong>일륜도(nichirin)</strong>. &quot;개발만큼이나 브랜딩이 재밌다&quot;는 작성자 코멘트.</li>
+</ol>
+<h2>저장소별 핵심 상세 (README 기반 보강)</h2>
+<h3>nichirin (github.com/sanguneo/nichirin)</h3>
+<ul>
+<li>Windows(<code>kanao</code>, Python 3.10+) / macOS(<code>kamado</code>, Python 3.9+) 빌드를 하나의 리포로 통합 (<code>#77</code>, 구 <code>kanao-cli</code>+<code>kamado-cli</code> 병합)</li>
+<li>의존성 0개 — Python 표준 라이브러리 + OS API만 사용. 읽기는 네트워크 접근 없이 전부 로컬.</li>
+<li>기능: <code>status</code>/<code>context --room</code>/<code>follow</code>(NDJSON 스트림)/<code>tui</code>(터미널 UI, 사진·답장 인용 지원)/<code>serve</code>(HTTP+SSE, <code>openapi.json</code> 계약)</li>
+<li>Windows는 실행 중인 카카오톡 메모리에서 방별 키를 찾아 DB 읽기 + Win32 입력으로 전송. macOS는 기기 정보로 키 유도해 계정 DB 하나를 읽음(카톡 꺼져 있어도 읽기 가능) + Accessibility(AX)로 전송.</li>
+<li><strong>2026-10-06 변경</strong>: saya 연결 방식이 &quot;설정 적어넣기&quot;에서 &quot;자동 등록&quot;으로 전환 (<code>SAYA<em>REGISTER</em>URL</code>/<code>SAYA<em>REGISTER</em>TOKEN</code>/<code>SAYA<em>ADVERTISE</em>URL</code> 3개 env로 <code>serve</code> 자체등록).</li>
+</ul>
+<h3>saya (github.com/sanguneo/saya)</h3>
+<ul>
+<li>nichirin/tsuba의 HTTP+SSE 표면을 그리는 <strong>웹 클라이언트</strong> (Bun 기반, <code>bun run dev</code> → localhost:5173). 자체 코어 로직 없음 — &quot;날은 코어가 쥐고, 여기는 화면만&quot;.</li>
+<li><strong>&quot;릿지(ledge)&quot; UX 설계</strong>: 대화창을 가로지르는 1px 선 — 선 위는 &quot;되읽어 확인된 전송&quot;, 선 아래는 &quot;입력만 됨·전달 미확인&quot;. <code>/send</code> 응답에 메시지 id/nonce/전달확인이 없어서 생긴 설계 — 불확실한 전송을 자동 재전송하지 않음.</li>
+<li>계약(OpenAPI): <code>/health</code>, <code>/rooms</code>, <code>/context</code>, <code>/digest</code>, <code>/stream</code>(SSE: ready→message→cursor→ping), <code>/send</code>. 타입은 수기 작성 금지, <code>bun run contract:generate</code>가 계약 문서에서 자동 생성 + 해시로 바이트 동일성 검증.</li>
+<li>브라우저 제약 다수 명시: CORS 없음(동일 origin 필요), <code>EventSource</code> 불가(Bearer 헤더 때문에 <code>fetch</code>+<code>ReadableStream</code> 직접 구현), 동시 <code>/stream</code> 기계당 8개 제한, ID가 2^53 초과하는 문자열(Number() 변환 금지).</li>
+<li>&quot;화면이 약속하지 않는 것&quot; 섹션: 방 미리보기 없으면 &quot;미리보기 없음&quot; 그대로 표시, 읽음 처리 라우트 없음(안읽음 배지=데스크톱 숫자 그대로), 과거 1000개 초과는 &quot;닿지 않는 것&quot;으로 표시 — 거짓 정보를 지어내지 않는 설계 원칙.</li>
+</ul>
+<h3>tsuba (github.com/sanguneo/tsuba)</h3>
+<ul>
+<li>메신저 <strong>어댑터 모음</strong> — 계약 버전 0.2.5, 공통 OpenAPI: <code>/health</code>, <code>/capabilities</code>, <code>/icon</code>, <code>/rooms</code>, <code>/messages</code>, <code>/media</code>, <code>/stream</code>, <code>/send</code>, <code>/edit</code>, <code>/delete</code>, <code>/react</code>, <code>/read</code>.</li>
+<li>구현된 어댑터 3종:</li>
+<ul>
+<li><strong>Telegram</strong> (mtcute 기반, 사용자 계정): 방 목록(쓰기 가능 여부 포함)/이전 메시지/첨부/커서 스트림(수정·삭제·반응)/전송·답장·수정·삭제·반응·읽음처리</li>
+<li><strong>Discord</strong> (discord.js, <strong>봇 계정</strong>): 초대된 서버의 일반 텍스트 채널/이전 메시지/첨부/커서 스트림/전송·답장·수정·삭제·반응</li>
+<li><strong>Slack</strong> (공식 사용자 토큰 + Socket Mode, <strong>내 계정</strong>): 채널/비공개채널/DM/그룹DM/이전 메시지/첨부/커서 스트림/전송·답장(스레드+채널)·수정·삭제·반응·읽음처리</li>
+</ul>
+<li><code>GET /capabilities</code>로 기능 신고 — &quot;밝히지 않은 기능은 없는 것&quot;이라는 명시적 원칙 (클라이언트는 신고된 것만 렌더링).</li>
+<li>새 메신저 추가 가이드(<code>docs/custom-adapter.md</code>) + 예제(<code>examples/memo</code>) 제공 — TypeScript 아니어도 계약에 답하고 saya에 등록하면 됨.</li>
+</ul>
+<h3>chatplus-core (github.com/sanguneo/chatplus-core)</h3>
+<ul>
+<li>SK텔레콤 <strong>채팅+</strong> PC 클라이언트(Windows/macOS)의 로컬 캐시를 읽어 tsuba 어댑터 계약(0.2.7)으로 답하는 어댑터. TUI 없음, tsuba와 별도 저장소.</li>
+<li>읽기: <code>rooms.list</code>, <code>messages.read</code>(before 페이지네이션), <code>messages.stream</code>(SSE). 쓰기: <code>messages.send</code>(텍스트, maxLength 3072), <code>attachments.send</code>(이미지만, jpeg/png/gif, 최대 10MiB) — 클라이언트 창을 사람처럼 조작해서 전송.</li>
+<li><strong>동작 원리(기술적으로 상세)</strong>: Windows 자격증명 관리자의 16바이트 AES 키 → <code>.secure</code> cipher-key 파일(AES-GCM) 복호화 → 32바이트 Hive AES 키 획득 → Hive v2 박스 파일(<code>folder.hive</code>/<code>object.hive</code>, AES-256-CBC+PKCS7, CRC32 무결성) 복호화 → FastAPI가 tsuba 계약으로 응답. <strong>읽기 전용, 발송 없음</strong>(API 레벨에서는).</li>
+<li>macOS 버전은 동일 코드가 <code>/Applications/ChattingPlus.app</code>(<code>com.sktelecom.torchlight</code>)의 샌드박스 컨테이너 캐시를 읽음. Hive 키는 키체인이 아닌 <code>shared_preferences</code>(plist)에서 획득.</li>
+<li><code>unread</code>는 항상 0(캐시 읽음상태 미매핑), 토큰 32바이트 미만이면 서버 시작 안 함, 루프백 바인딩 전용.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>원문 Threads 포스트</td><td><a href="https://www.threads.com/@croissmouse/post/DeatoVakn4L">https://www.threads.com/@croissmouse/post/DeatoVakn4L</a></td></tr>
+<tr><td>공유 링크</td><td><a href="https://www.threads.com/share/BACVI5yPB6/">https://www.threads.com/share/BACVI5yPB6/</a></td></tr>
+<tr><td>nichirin 저장소</td><td><a href="https://github.com/sanguneo/nichirin">https://github.com/sanguneo/nichirin</a></td></tr>
+<tr><td>saya 저장소</td><td><a href="https://github.com/sanguneo/saya">https://github.com/sanguneo/saya</a></td></tr>
+<tr><td>tsuba 저장소</td><td><a href="https://github.com/sanguneo/tsuba">https://github.com/sanguneo/tsuba</a></td></tr>
+<tr><td>chatplus-core 저장소</td><td><a href="https://github.com/sanguneo/chatplus-core">https://github.com/sanguneo/chatplus-core</a></td></tr>
+</tbody></table>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li><strong>buidlermason</strong>: &quot;README에 이름 유래까지 써두셨네요ㅋㅋ 칼집이 웹 클라이언트인 거 좋네요.&quot; / &quot;처음부터 귀멸로 맞춘 줄 알았는데 not kakao에서 시작한 거였네요ㅋㅋ&quot;</li>
+<li><strong>ai_dopro</strong>: &quot;어찌 활용하는거에요?&quot;</li>
+</ul>
+<blockquote>이 질문들에 대한 작성자의 후속 답변은 스레드 추출 범위(위 &quot;읽기&quot; 시점) 밖이라 이 노트에는 미반영. 추가 답글 필요하면 요청 시 업데이트.</blockquote>
+<h2>Related threads (타 계정의 동일 주제 포스트 — 참고용, 본 게시물 댓글 아님)</h2>
+<p>같은 포스트의 &quot;Related threads&quot;로 뜬 <strong>무관한 주제(멀티모달 의사결정 모델 AI 뉴스)</strong> — 본 게시물과 직접 연관 없음, 플랫폼 추천 알고리즘 노출분이라 생략.</p><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-14 nichirin-chatplus-core 오픈소스 공개/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

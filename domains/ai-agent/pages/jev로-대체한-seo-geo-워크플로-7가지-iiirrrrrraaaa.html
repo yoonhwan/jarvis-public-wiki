@@ -1,0 +1,72 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</span></nav><h1>Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-11-13 Jev SEO GEO 워크플로 7가지 (iiirrrrrraaaa)/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</h1>
+<ul>
+<li>소스(Threads): <a href="https://www.threads.com/share/BAYZNQhRtJ">https://www.threads.com/share/BAYZNQhRtJ</a></li>
+<li>원문(Threads): <a href="https://www.threads.com/@iiirrrrrraaaa/post/DfpjTiLjMqn">https://www.threads.com/@iiirrrrrraaaa/post/DfpjTiLjMqn</a></li>
+<li>원문(X): <a href="https://x.com/irabukht/status/2101090579127951694">https://x.com/irabukht/status/2101090579127951694</a></li>
+<li>수집: 2026-11-13 16:25 KST (수집 시점 조회수 9.5K, 게시 약 14시간 전)</li>
+</ul>
+<h2>요약</h2>
+<p>Ryze AI의 Ira Bodnar가 <strong>Jev</strong>(TypeSafe AI의 판단 전용 모델)로 대체한 SEO·GEO 워크플로 7개를 정리한 스레드다. 공통 구조는 &quot;코드가 데이터를 모으고, Jev가 각 행에 대해 제한된 선택지로 판정하고, 임계값이 자동 적용·승인 대기·폐기를 나눈다&quot;이다. 글쓰기는 Jev가 하지 않는다. Jev는 판단만 하고, 통과한 행에 대해서만 LLM이 문장을 쓴다.</p>
+<h2>7가지 워크플로</h2>
+<table><thead><tr><th>#</th><th>워크플로</th><th>Jev가 내리는 판단</th><th>나오는 결과</th></tr></thead><tbody>
+<tr><td>1</td><td>어떤 경쟁사 페이지를 베낄지 평가</td><td>페이지마다 정답성·깊이·근거·최신성 점수</td><td>Google·ChatGPT 순위와 함께 &quot;베낄 가치 있는 페이지&quot; 선별</td></tr>
+<tr><td>2</td><td>인용되려면 어떤 요소를 바꿔야 하는지</td><td>title·meta·H1·FAQ·schema를 읽고 각각 판정</td><td>요소별 keep/change + 신뢰도(confidence)</td></tr>
+<tr><td>3</td><td>페이지가 사람들이 AI에게 묻는 것에 답하는지</td><td>실제 구매자 질문 ↔ 가장 잘 맞는 페이지 매칭</td><td>답할 페이지가 없는 질문 목록, 대신 AI가 인용한 사이트</td></tr>
+<tr><td>4</td><td>각 페이지의 인용 가능성 평가</td><td>URL마다 인용 확률</td><td>확률 + &quot;첫 번째로 할 수정&quot;(예: 비교표 추가)</td></tr>
+<tr><td>5</td><td>검색어 정렬</td><td>&quot;이 쿼리가 구매자에게서 나온 것인가&quot; yes/no</td><td>Search Console 전체 export 기준, 전환되는 검색어만 남김</td></tr>
+<tr><td>6</td><td>내부 링크 맵 작성</td><td>페이지마다 가장 가까운 후보 15개의 링크 적합성</td><td>&quot;정직한 이유&quot;가 있는 링크만 연결</td></tr>
+<tr><td>7</td><td>AI가 쓴 페이지 검증</td><td>초안마다 20개 yes/no 체크</td><td>통과한 초안만 사람에게 전달</td></tr>
+</tbody></table>
+<p>작성자 마무리: &quot;Ryze AI 앱과 MCP/Claude Connector에서 사용 가능, 링크는 첫 댓글에&quot;.</p>
+<h2>Jev 모델 요약 (공식 문서 보강)</h2>
+<p>Jev는 TypeSafe AI가 만든 첫 <strong>System One 모델</strong>이다. 문장을 생성하지 않고, 미리 정해진 선택지 안에서 확률이 붙은 구조화된 결정만 돌려준다. Choice(목록 중 택1), Score(구간 점수), Noul(예/아니오 확률) 세 가지 질문 유형이 기본이고, 1.14부터 Box가 추가됐다.</p>
+<table><thead><tr><th>항목</th><th>값</th><th>비고</th></tr></thead><tbody>
+<tr><td>모델 ID</td><td><code>jev-1.14.0</code> (이전 <code>jev-1.13.0</code>)</td><td>1.14는 2026-10-14 공개</td></tr>
+<tr><td>가격</td><td><strong>$42 / Btok · $0.042 / Mtok</strong></td><td>입력 토큰만 과금, 출력 무료</td></tr>
+<tr><td>컨텍스트</td><td>64k 요청당 / 32k 질문당</td><td>Long context 헤더 사용 시 262k</td></tr>
+<tr><td>입력</td><td>텍스트, PNG·JPEG 이미지</td><td>오디오·비디오 미지원</td></tr>
+<tr><td>질문 유형</td><td>Choice, Score, Noul, Box</td><td>Box는 1.14 전용</td></tr>
+<tr><td>응답 시간</td><td>70~500ms (제조사 표기)</td><td>제3자 측정 중앙값 약 244ms</td></tr>
+<tr><td>호출 엔드포인트</td><td><code>POST /v1/systemone</code></td><td>모델 필드로 버전 선택</td></tr>
+</tbody></table>
+<p>문서가 명시한 한계: Jev는 계산기가 아니다. &quot;이 검색어가 $50 이상 썼나&quot;, &quot;이 페이지에 단어가 세 번 들어갔나&quot; 같은 집계형 질문은 코드로 답해야 한다. 판정만 맡기고 셈은 스크립트가 한다.</p>
+<h2>비용 감각 (TypeSafe 리스트 가격 기준 산술)</h2>
+<p>아래 값은 제조사 공개 단가로 계산한 추정이며 실측 실행값이 아니다.</p>
+<table><thead><tr><th>작업 규모</th><th>추정 비용</th></tr></thead><tbody>
+<tr><td>결정 1건</td><td>약 <strong>$0.0004</strong></td></tr>
+<tr><td>검색어 5,000개 분류</td><td>약 $0.02</td></tr>
+<tr><td>검색어 20,000개 분류</td><td>약 $0.07</td></tr>
+<tr><td>초안 1,000건 사전 품질 게이트</td><td>약 $0.42</td></tr>
+</tbody></table>
+<p>원문 X 게시물의 주장은 &quot;Jev가 SEO/GEO 수정 비용을 90% 낮췄다, 예전 클라이언트당 약 $250&quot;이다. 이 수치는 작성자 경험값이지 독립 검증된 값이 아니다.</p>
+<h2>댓글 스레드</h2>
+<table><thead><tr><th>작성자</th><th>내용</th></tr></thead><tbody>
+<tr><td>ideacipta</td><td>&quot;Jev의 고유 능력이 정말 그런 것이냐&quot;는 질문. 답변: 맞다. Jev는 글을 쓰는 게 아니라 <strong>판정</strong>한다. TypeSafe의 System One이 keep/change·점수·인용 확률 같은 구조화된 결정을 보정 확률과 함께 반환하므로, 판단하려면 먼저 외부 데이터가 필요하다.</td></tr>
+<tr><td>ideacipta</td><td>&quot;완전 무료 API가 있냐, 아니면 자본주의냐&quot;는 질문. 답변: TypeSafe 직접 무료 티어·트라이얼 크레딧은 없다. 공식 단가 $0.042/1M 입력 토큰, 출력 무료, 접근은 웨이트리스트. 무료로 써보려면 <code>console.typesafe.ai</code> 플레이그라운드(수동 테스트) 또는 BeatAPI의 <code>jev-1.13-free</code>(제로 밸런스에서 입출력 $0, 충전 전 분당 1회) 같은 서드파티 경로.</td></tr>
+<tr><td>kraayenjon</td><td>&quot;Jev 유즈케이스를 더 모아둔 사이트가 있다&quot;며 <code>MadewithJeV.com</code> 공유.</td></tr>
+</tbody></table>
+<p>⚠️ 위 답변 3건은 게시물에 <code>meta.ai</code> 라벨이 붙은 <strong>Meta AI가 작성한 답변</strong>이다. 원문 인용이 아니라 AI 요약이므로, 가격·무료 정책은 TypeSafe 공식 문서를 기준으로 봐야 한다.</p>
+<h2>참고 링크</h2>
+<table><thead><tr><th>이름</th><th>URL</th><th>성격</th></tr></thead><tbody>
+<tr><td>TypeSafe 공식 모델 문서</td><td><a href="https://docs.typesafe.ai/models">https://docs.typesafe.ai/models</a></td><td>단가·컨텍스트·질문 유형 (SSOT)</td></tr>
+<tr><td>TypeSafe 콘솔(플레이그라운드)</td><td><a href="http://console.typesafe.ai/">http://console.typesafe.ai/</a></td><td>웨이트리스트·수동 테스트 (curl 기준 403 — 로그인/차단 페이지)</td></tr>
+<tr><td>원문 X 스레드</td><td><a href="https://x.com/irabukht/status/2101090579127951694">https://x.com/irabukht/status/2101090579127951694</a></td><td>작성자 원 게시물</td></tr>
+<tr><td>MadewithJeV</td><td><a href="http://MadewithJeV.com/">http://MadewithJeV.com/</a></td><td>커뮤니티 유즈케이스 모음</td></tr>
+<tr><td>Ryze AI</td><td><a href="https://get-ryze.ai/">https://get-ryze.ai/</a></td><td>Jev를 쓰는 SEO/GEO 앱 + MCP</td></tr>
+</tbody></table>
+<h2>Related threads (타 계정의 동일 주제 포스트)</h2>
+<p>이 게시물의 답글이 아니라 Threads가 추천한, 같은 SEO 주제의 다른 계정 글이다.</p>
+<ul>
+<li><code>hridoyreh</code>: &quot;X vs Y&quot; 비교 키워드 기법으로 한 아티클에서 유입 1,670+ (별도 글에서는 1,630+ 방문·47,800+ 노출·CTR 3.4%).</li>
+<li><code>searchrankproo</code>: Google Search Ranking System 2026 Edition. 100페이지 32챕터 플레이북 + 트래커 5종 + 90일 로드맵.</li>
+<li><code>rapidindexchecker</code>: URL을 실제 Google 결과와 대조해 Indexed / Not found / Indexable but not found로 라벨링, CSV·PDF 내보내기.</li>
+<li><code>graphorank</code>: &quot;SEO는 발견, AEO는 답변, GEO는 인용&quot; — 셋 다 링크 위에 서 있다는 주장.</li>
+<li><code>professionalinternetseo</code>: 구글 SERP가 랭크 트래커 결과를 바꿔치기하는 방식에 대한 글.</li>
+</ul>
+<h2>관련 노트</h2>
+<ul>
+<li><code>News-Links/2026-11-07 AutoRAG Agent - Jev 활용법 (bunniesossdev)/</code> — 개인 사서 에이전트에서 Jev를 5곳에 쓰는 구조. 이 노트의 &quot;판정만 맡기고 글쓰기는 LLM&quot; 원칙과 같은 결론.</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-11-13 Jev SEO GEO 워크플로 7가지 (iiirrrrrraaaa)/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li><li><span class="card-date">2026-11-07</span> <a href="daiso-mcp-다이소-편의점-재고-조회-공개-mcp.html?v=20261115-115301-KST">DAISO MCP 다이소·편의점 재고 조회 공개 MCP</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

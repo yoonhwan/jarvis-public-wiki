@@ -1,0 +1,106 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NVIDIA Auto Ontology 공개 (온톨로지 자동 구축 오픈소스) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>NVIDIA Auto Ontology 공개 (온톨로지 자동 구축 오픈소스)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>NVIDIA Auto Ontology 공개 (온톨로지 자동 구축 오픈소스)</span></nav><h1>NVIDIA Auto Ontology 공개 (온톨로지 자동 구축 오픈소스)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-11-04 NVIDIA Auto Ontology 공개/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>NVIDIA Auto Ontology 공개 (온톨로지 자동 구축 오픈소스)</h1>
+<ul>
+<li>소스(Threads): <a href="https://www.threads.com/@choi.openai/post/DfS2c0uD6F0">https://www.threads.com/@choi.openai/post/DfS2c0uD6F0</a></li>
+<li>원문(GitHub): <a href="https://github.com/NVIDIA/auto-ontology">https://github.com/NVIDIA/auto-ontology</a> (HTTP 200 확인)</li>
+<li>작성자: @choi.openai (게시 약 1시간 전 기준, 2026-11-04 수집)</li>
+<li>처리 시각: 2026-11-04 07:39 KST</li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>NVIDIA가 기업 데이터의 메타데이터에서 온톨로지(의미·관계 체계)를 자동 생성하고, AI 에이전트가 올바른 데이터를 골라 SQL을 쓰도록 돕는 <strong>Auto Ontology</strong>를 Apache-2.0 오픈소스로 공개했다.</p>
+<h2>본문 (Main Post)</h2>
+<p>NVIDIA가 온톨로지를 자동으로 구축하는 오픈소스 Auto Ontology를 공개했다.</p>
+<ul>
+<li>온톨로지는 데이터의 의미와 관계를 정리한 체계다.</li>
+<li>예: 회사에 매출을 뜻하는 항목이 여러 개 있으면, 각각의 정의와 관계를 구분해 AI가 잘못된 데이터를 쓰지 않도록 돕는다.</li>
+<li>Auto Ontology는 데이터베이스를 분석해 이런 체계를 자동으로 만들고, AI가 질문에 맞는 데이터를 찾아 SQL을 작성하도록 지원한다.</li>
+<li>Postgres, Snowflake 등을 지원하며 MCP를 통해 Claude Desktop이나 Cursor에서도 쓸 수 있다.</li>
+</ul>
+<h2>댓글 스레드 (Reply Thread, 작성자)</h2>
+<ul>
+<li>깃허브: <code>github.com/NVIDIA/auto-ontology</code> (링크 미리보기: &quot;Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent...&quot;)</li>
+</ul>
+<h2>댓글 (Other Users)</h2>
+<table><thead><tr><th>사용자</th><th>내용</th></tr></thead><tbody>
+<tr><td>siya_dl</td><td>&quot;항상 감사합니다&quot;</td></tr>
+</tbody></table>
+<blockquote>게시물에 조회수 2.1K 표기가 있음. 그 외 숫자 카운터는 Threads 화면에서 라벨 없이 출력되어 좋아요/댓글 등으로 단정하지 않고 생략함.</blockquote>
+<h2>GitHub README 보강 (원문 저장소)</h2>
+<p>README 원문(raw, <code>main</code> 브랜치)을 기준으로 정리한 내용이다. 작성자 본문이 아닌 별도 출처 보강이다.</p>
+<h3>무엇인가</h3>
+<p>에이전트는 문서를 검색하고 DB를 조회할 수 있지만, &quot;매출 지표가 틀리면 빨리 답해도 소용없다&quot;는 신뢰성 문제가 병목이다. Auto Ontology는 기업 메타데이터에서 컨텍스트 계층(어디에 데이터가 있고, 무슨 뜻이며, 써도 되는지, 어떻게 쓰는지, 출처, 유사 항목)을 만들고 MCP, CLI, API로 어떤 에이전트 하네스에도 노출한다. 고객이 이미 가진 시맨틱 모델을 대체하지 않고 보완한다고 설명한다.</p>
+<h3>5가지 역할</h3>
+<table><thead><tr><th>단계</th><th>하는 일</th></tr></thead><tbody>
+<tr><td>Discover</td><td>메타데이터로 엔터프라이즈 온톨로지 생성, 기존 온톨로지·시맨틱 모델 연결, AI용 지식 그래프 구축</td></tr>
+<tr><td>Ground</td><td>지표·엔터티·관계의 비즈니스 의미를 에이전트에 제공, 시스템 간 불일치 정의 정리</td></tr>
+<tr><td>Validate</td><td>생성된 쿼리를 인증된 정의와 계보(lineage)로 검증, 답변마다 출처(provenance) 반환</td></tr>
+<tr><td>Expose</td><td>MCP, CLI, API로 어떤 에이전트 하네스에도 컨텍스트 제공</td></tr>
+<tr><td>Learn</td><td>인증된 수정·사용 이력을 온톨로지에 되먹임</td></tr>
+</tbody></table>
+<h3>구성 요소</h3>
+<table><thead><tr><th>컴포넌트</th><th>기술</th><th>역할</th><th>기본 포트</th></tr></thead><tbody>
+<tr><td>Frontend</td><td>Next.js 16 (React 19, TypeScript, Tailwind CSS 4), Better Auth, Prisma</td><td>웹 UI, 인증, API 게이트웨이</td><td><strong>3000</strong></td></tr>
+<tr><td>Backend</td><td>FastAPI (Python 3.12+), LangChain</td><td>채팅/NL-to-SQL, 카탈로그, 데이터소스 API</td><td><strong>3001</strong></td></tr>
+<tr><td>Ingestion worker</td><td>FastAPI (Python 3.12+)</td><td>표 형식 데이터 수집, 임베딩 기록</td><td><strong>3002</strong></td></tr>
+<tr><td>Postgres + pgvector</td><td>관계형 DB</td><td>앱 메타데이터, 카탈로그·온톨로지, 벡터 저장소</td><td><strong>5432</strong></td></tr>
+<tr><td>HashiCorp Vault</td><td>선택</td><td>연결 자격증명 보관</td><td>—</td></tr>
+</tbody></table>
+<h3>기본 모델 (NVIDIA NIM)</h3>
+<table><thead><tr><th>역할</th><th>기본값(<code>.env.example</code>)</th></tr></thead><tbody>
+<tr><td>LLM</td><td><code>nvidia/nemotron-3-nano-30b-a3b</code></td></tr>
+<tr><td>Embeddings</td><td><code>nvidia/nemotron-3-embed-1b</code></td></tr>
+<tr><td>Reranking</td><td><code>nvidia/llama-nemotron-rerank-vl-1b-v2</code></td></tr>
+</tbody></table>
+<ul>
+<li>호스팅 NVIDIA API 카탈로그(<code>integrate.api.nvidia.com</code>) 또는 자체 호스팅 NIM 중 선택.</li>
+<li>모델 역할별 <code>&lt;PREFIX&gt;<em>ENDPOINT / </em>API<em>KEY / </em>MODEL</code> 3종 세트(<code>DEFAULT<em>MODELS</code>, <code>REASONING</code>, <code>NON</em>REASONING</code>, <code>EMBED</code>, <code>RERANK</code>). 비워 두면 <code>DEFAULT<em>MODELS</em>*</code>로 폴백.</li>
+<li>API 키(<code>nvapi-...</code>)가 필요하다.</li>
+</ul>
+<h3>지원 데이터소스</h3>
+<p>Databricks, Postgres, Snowflake, DuckDB (README Prerequisites 기준).</p>
+<h3>설치·배포</h3>
+<ul>
+<li>로컬: Docker Compose v2 → <code>.env.example</code>을 복사해 <code>.env</code> 작성 → <code>docker compose up -d --build</code> → UI는 <code><a href="http://localhost:3000</code>.">http://localhost:3000`.</a></li>
+<li>쿠버네티스: Helm 차트, <code>DEPLOYMENT.md</code> 참조.</li>
+<li><code>AUTH<em>SECRET</code>, <code>APP</em>URL</code>은 필수. 없으면 Better Auth &quot;default secret&quot; 오류가 난다.</li>
+</ul>
+<h3>API·에이전트 연동</h3>
+<ul>
+<li>인증: SSO 지원, 스크립트용 <strong>API 토큰</strong>(<code>x-api-key</code> 또는 <code>Authorization: Bearer</code>). 토큰은 소유자 권한으로 동작하고 SHA-256 해시만 저장된다.</li>
+<li>대화형 질의: <code>POST /api/chat/completions</code> (SSE 스트림, <code>step</code>/<code>result</code>/<code>error</code> 이벤트 후 <code>[DONE]</code>). <code>conversation_id</code>(UUID)를 주면 최근 5턴(최대 12,000자)을 반영해 &quot;8월은?&quot; 같은 질문을 독립 질문으로 재작성한다.</li>
+<li>MCP 서버: <code>mcp/</code> 디렉터리, 상세는 <code>docs/mcp.md</code>. Cursor, Claude Desktop에서 질의 가능.</li>
+<li>코딩 에이전트용 스킬: <code>skills/</code>에 <code>nvidia-ontology-setup</code>, <code>nvidia-ontology-management</code>, <code>nvidia-ontology-query</code>. 진입점은 <code>AGENTS.md</code>.</li>
+<li>벤치마크: BIRD 같은 text-to-SQL 평가는 별도 저장소 <code>NVIDIA/ontology-sql-eval</code> 참조.</li>
+</ul>
+<h3>주의할 점</h3>
+<table><thead><tr><th>항목</th><th>내용</th><th>의미</th></tr></thead><tbody>
+<tr><td>라이선스</td><td>Apache-2.0</td><td>상용 사용 가능</td></tr>
+<tr><td>외부 기여</td><td><strong>현재 받지 않음</strong></td><td>PR 기대 불가, 포크 기반 사용</td></tr>
+<tr><td>자격증명</td><td>UI로 추가한 DB 연결은 <strong>Vault 미설정 시 Postgres에 평문 저장</strong></td><td>운영 전 Vault 구성 필요</td></tr>
+<tr><td>FastAPI 포트</td><td>신뢰된 내부 경계, 외부 노출 금지 (<code>x-auto-ontology-user-id</code> 헤더 미검증)</td><td>반드시 Next.js 게이트웨이 뒤에 둘 것</td></tr>
+<tr><td>외부 의존</td><td>NIM 추론에 NVIDIA API 키 필요(자체 호스팅 NIM 가능)</td><td>완전 로컬 운영은 NIM 자체 호스팅 필요</td></tr>
+</tbody></table>
+<h2>Related threads (타 계정의 동일 주제 포스트)</h2>
+<p>이 게시물에 단 댓글이 아니라, Threads가 추천한 같은 주제의 독립 게시물이다.</p>
+<table><thead><tr><th>계정</th><th>시점</th><th>요지</th></tr></thead><tbody>
+<tr><td>mirror<em>one</em>official</td><td>10/22/26</td><td>GTC Berlin에서 오픈소스 Agent Toolkit에 <strong>NVIDIA Agent Knowledge Foundation</strong> 추가. 데이터 이동이나 기존 워크플로·거버넌스 변경 없이 회사 데이터를 에이전트가 찾고 이해하고 예측에 쓰는 지식으로 변환. 새 Auto-Ontology 라이브러리가 원시 데이터를 고객·제품·주문 같은 비즈니스 개념과 관계로 정리</td></tr>
+<tr><td>geumverse_ai</td><td>16h</td><td>&quot;①②&quot; 시리즈형 해설. 같은 &quot;매출&quot;도 총매출·순매출·환불 제외 매출·결제 완료 매출은 전혀 다른 숫자이며, Auto Ontology는 이 의미와 관계를 AI가 이해하게 하는 Semantic Layer라는 설명. Customer → Order → Payment → Revenue 예시 (일부만 확보, 이후 카드는 미수집)</td></tr>
+<tr><td>aiwire_kr</td><td>6d</td><td>메타데이터에서 온톨로지·시맨틱 카탈로그 생성, Databricks·Postgres·Snowflake·DuckDB에서 NL→SQL 실행, 인증된 정의와 계보로 검증 후 출처 반환. MCP·CLI·API로 연동, 기본 모델은 Nemotron 계열, Docker Compose·Helm 배포, Apache-2.0이나 외부 기여 불가</td></tr>
+<tr><td>ai.card.daily</td><td>10/21/26</td><td>GTC 베를린 발표: Agent Toolkit에 Agent Knowledge Foundation 추가 (본문 일부만 확보)</td></tr>
+</tbody></table>
+<blockquote>참고: 같은 Related 영역의 deajeonai(10/10/26) 게시물은 NVIDIA Omniverse 시뮬레이션 사례로 주제가 달라 제외했다.</blockquote>
+<h2>메모</h2>
+<ul>
+<li>게시물은 &quot;공개했다&quot;고만 하고 공개 시점은 적지 않았다. Related threads 시점(aiwire_kr 6일 전, GTC Berlin 관련 10/21~22)으로 보아 GTC Berlin 발표와 함께 알려진 것으로 보이지만, 정확한 공개일은 <strong>[확인 필요]</strong>.</li>
+<li>README의 벤치마크 수치는 저장소에 없고 별도 평가 저장소를 가리킨다. 성능 수치는 확인하지 못했다.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>출처</th><th>URL</th></tr></thead><tbody>
+<tr><td>Threads 원문</td><td><a href="https://www.threads.com/@choi.openai/post/DfS2c0uD6F0">https://www.threads.com/@choi.openai/post/DfS2c0uD6F0</a></td></tr>
+<tr><td>GitHub 저장소</td><td><a href="https://github.com/NVIDIA/auto-ontology">https://github.com/NVIDIA/auto-ontology</a></td></tr>
+<tr><td>README (raw)</td><td><a href="https://raw.githubusercontent.com/NVIDIA/auto-ontology/main/README.md">https://raw.githubusercontent.com/NVIDIA/auto-ontology/main/README.md</a></td></tr>
+<tr><td>평가 저장소</td><td><a href="https://github.com/NVIDIA/ontology-sql-eval/">https://github.com/NVIDIA/ontology-sql-eval/</a></td></tr>
+<tr><td>NVIDIA API 카탈로그</td><td><a href="https://build.nvidia.com">https://build.nvidia.com</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-11-04 NVIDIA Auto Ontology 공개/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

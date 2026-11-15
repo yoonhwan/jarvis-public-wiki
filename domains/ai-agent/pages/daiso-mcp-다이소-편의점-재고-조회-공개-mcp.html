@@ -1,0 +1,92 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DAISO MCP 다이소·편의점 재고 조회 공개 MCP · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>DAISO MCP 다이소·편의점 재고 조회 공개 MCP</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>DAISO MCP 다이소·편의점 재고 조회 공개 MCP</span></nav><h1>DAISO MCP 다이소·편의점 재고 조회 공개 MCP</h1>
+<blockquote>Source candidate from <code>News-Links/2026-11-07 DAISO MCP 다이소·편의점 재고 조회/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>DAISO MCP: 다이소·편의점 재고 조회 공개 MCP</h1>
+<ul>
+<li>소스(Threads): <a href="https://www.threads.com/@developk88/post/DfbRfk7DwI3">https://www.threads.com/@developk88/post/DfbRfk7DwI3</a></li>
+<li>원문(GitHub): <a href="https://github.com/hmmhmmhm/daiso-mcp">https://github.com/hmmhmmhm/daiso-mcp</a></li>
+<li>서버/웹: <a href="https://mcp.aka.page">https://mcp.aka.page</a> (링크 카드 제목: &quot;DAISO MCP: 설치 없이 상품·매장·재고 조회&quot;)</li>
+</ul>
+<h2>본문 (Main Post)</h2>
+<blockquote>근처 다이소에 수납박스가 있는지 AI에게 물어볼 수 있는 MCP가 있다고 하네요.</blockquote>
+<blockquote></blockquote>
+<blockquote>DAISO MCP는 다이소, 올리브영, GS25, CU, 세븐일레븐, 이마트24의 상품과 재고에 CGV·메가박스·롯데시네마 시간표와 잔여 좌석, 주유소 가격까지 조회한대요. 계정도 API 키도 필요 없는 공개 원격 서버라고 합니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>Claude Code에선 <code>claude mcp add daiso-mcp <a href="https://mcp.aka.page">https://mcp.aka.page</a> --transport http</code> 한 줄이면 되고, MIT예요. 재고는 조회 뒤 달라질 수 있다니 참고용으로 보는 게 좋겠고요.</blockquote>
+<blockquote></blockquote>
+<blockquote>개발 도구는 아니지만 한국 생활 정보가 바로 붙는다는 점이 재밌어 보여요.</blockquote>
+<ul>
+<li>작성 시점: 수집 기준 약 7시간 전 게시</li>
+<li>댓글 스레드: 작성자 추가 답글 없음, 다른 사용자 댓글 없음 (로그아웃 상태 <code>read</code> 기준)</li>
+</ul>
+<h2>핵심 정보</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>기준</th><th>의미</th></tr></thead><tbody>
+<tr><td>서버 URL</td><td><strong><a href="https://mcp.aka.page</strong>">https://mcp.aka.page**</a></td><td>README</td><td>원격 MCP, 설치 불필요</td></tr>
+<tr><td>전송 방식</td><td><strong>Streamable HTTP</strong> (<code>http</code>)</td><td>README</td><td><code>--transport http</code></td></tr>
+<tr><td>인증</td><td><strong>없음</strong></td><td>README</td><td>계정·API 키 불필요</td></tr>
+<tr><td>라이선스</td><td><strong>MIT</strong></td><td>README 배지</td><td>자유 사용</td></tr>
+<tr><td>실행 환경</td><td><strong>Cloudflare Workers</strong></td><td>README 배지</td><td>서버리스 호스팅</td></tr>
+<tr><td>MCP 도구 수</td><td><strong>10개 고정</strong></td><td>README 안내문</td><td><code>service</code> + <code>operation</code> 파라미터로 서비스 선택</td></tr>
+</tbody></table>
+<h2>지원 서비스</h2>
+<table><thead><tr><th>분류</th><th>서비스</th><th>주요 기능</th></tr></thead><tbody>
+<tr><td>생활용품·뷰티</td><td>다이소, 올리브영</td><td>상품·매장·재고, 올리브영 오늘의 특가</td></tr>
+<tr><td>편의점</td><td>GS25, CU, 세븐일레븐, 이마트24</td><td>상품·매장·재고</td></tr>
+<tr><td>일본</td><td>일본 다이소</td><td>온라인 상품·엔화 가격·매장 (<strong>매장 재고 미지원</strong>)</td></tr>
+<tr><td>영화관</td><td>CGV, 메가박스, 롯데시네마, 디트릭스</td><td>시간표·잔여 좌석</td></tr>
+<tr><td>주변 정보</td><td>네이버 지역 검색, 오피넷</td><td>주변 장소·주유소 가격</td></tr>
+</tbody></table>
+<ul>
+<li>롯데마트는 지원 종료됨 (README 이용 안내).</li>
+</ul>
+<h2>사용법</h2>
+<h3>1. 원격 MCP 연결</h3>
+<pre><code>claude mcp add daiso-mcp https://mcp.aka.page --transport http</code></pre>
+<ul>
+<li>그 외 AI 앱: &quot;원격 MCP 서버 추가&quot; 화면에서 서버 URL 입력, 전송 방식은 HTTP / Streamable HTTP 선택</li>
+<li>요청 예: <code>다이소 MCP로 수납박스 검색해줘</code></li>
+</ul>
+<h3>2. CLI</h3>
+<pre><code>npx daiso products 수납박스 --json</code></pre>
+<ul>
+<li>에이전트용 Skill: <code>clawhub install daiso-cli</code> (원격 MCP만 쓰면 CLI·Skill 설치 불필요)</li>
+</ul>
+<h3>3. 웹 조회 (MCP 연결 불가 환경)</h3>
+<ul>
+<li><code>/browse/</code> 경로의 자동 HTML GET: <a href="https://mcp.aka.page/browse/quick">https://mcp.aka.page/browse/quick</a></li>
+<li>REST 사용법: <a href="https://mcp.aka.page/prompt">https://mcp.aka.page/prompt</a></li>
+</ul>
+<h3>질문 예시 (README)</h3>
+<ul>
+<li>다이소 수납박스 찾아줘</li>
+<li>강남역 근처 GS25 오감자 재고 알려줘</li>
+<li>주변에서 휘발유가 가장 저렴한 주유소 찾아줘</li>
+<li>오늘 강남 CGV 시간표 알려줘</li>
+<li>콜라 어디가 싼지 비교해줘 (판매처별 가격 후보 비교)</li>
+</ul>
+<h2>주의사항</h2>
+<ul>
+<li>재고와 잔여 좌석은 조회 후 달라질 수 있음. 미확인 결과는 품절·재고 0과 구분됨.</li>
+<li>느린 다이소 조회는 <code>pending</code>(접수 상태)으로 올 수 있음. 새 결과 확인 링크를 최대 3번 선택하고, 계속 pending이면 미확인으로 처리.</li>
+<li>공개 서버라서 요청이 제3자 서버(Cloudflare Workers)를 거침. 위치·검색어가 전달되는 점은 [확인 필요: 서버 쪽 로그 정책은 README에 명시 없음].</li>
+</ul>
+<h2>링크 카드 / 관련 문서</h2>
+<table><thead><tr><th>문서</th><th>경로</th></tr></thead><tbody>
+<tr><td>연결·사용 가이드</td><td>docs/client-guide.md</td></tr>
+<tr><td>서비스 레퍼런스</td><td>docs/service-reference.md</td></tr>
+<tr><td>일본 다이소</td><td>docs/daiso-jp-network-analysis.md</td></tr>
+<tr><td>독립·예술영화관(디트릭스)</td><td>docs/dtryx.md</td></tr>
+<tr><td>AI 조회 가이드</td><td>docs/ai-instruction.md</td></tr>
+<tr><td>실시간 서비스 상태</td><td><a href="https://aka-page.betteruptime.com/">https://aka-page.betteruptime.com/</a></td></tr>
+</tbody></table>
+<h2>Related threads (타 계정의 유사 주제 포스트)</h2>
+<p>Threads 추천 목록이며 이 글의 댓글이 아님. 각각 독립 계정의 글.</p>
+<table><thead><tr><th>계정</th><th>날짜</th><th>요지</th></tr></thead><tbody>
+<tr><td>ai.gabi_cat</td><td>10/31/26</td><td><strong>korea-data-mcp</strong>: DART·부동산·법령 등 한국 공공 API를 AI가 틀리게 읽지 않게 하는 MCP 서버. Apache-2.0, 무료 API 키, 로컬 실행. 함정 <strong>47개</strong> 사전 처리 (예: DART 반기보고서 금액이 2분기 3개월치라 삼성전자 상반기 매출을 74.6조 원으로 오답, 실제 누적 153.7조 원)</td></tr>
+<tr><td>yuunaae_01</td><td>10/19/26</td><td><strong>Aside</strong>: AI용 브라우저. 로그인 상태 그대로 AI가 사이트를 열고 클릭·입력. <code>aside mcp</code>로 Claude Code와 연결. 맥 위주, 무료 플랜 있음</td></tr>
+</tbody></table>
+<h2>메모</h2>
+<ul>
+<li>한국 생활 정보(재고·영화·유가)를 MCP로 바로 붙이는 사례. 개발 도구가 아니라 생활형 MCP.</li>
+<li>우리 쪽 활용 후보: 가족 일정 자동화(키즈카페·영화 시간표) 쪽에서 CGV/메가박스/롯데시네마 시간표 조회 [확인 필요: 실제 적용 여부는 오빠 판단].</li>
+</ul><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-11-07 DAISO MCP 다이소·편의점 재고 조회/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

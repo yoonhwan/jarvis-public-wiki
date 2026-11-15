@@ -1,0 +1,71 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>앱 UI 메뉴판 (app-menu) — Giting 스킬 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>앱 UI 메뉴판 (app-menu) — Giting 스킬</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>앱 UI 메뉴판 (app-menu) — Giting 스킬</span></nav><h1>앱 UI 메뉴판 (app-menu) — Giting 스킬</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-23 앱 UI 메뉴판 app-menu/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>앱 UI 메뉴판 (app-menu) — Giting 스킬</h1>
+<h2>본문 (Main Post, OG meta 추출)</h2>
+<blockquote>「아래에서 올라오는 그거 있잖아」 하고 AI 에게 앱 화면을 시키면 매번 다른 게 나옴.</blockquote>
+<blockquote></blockquote>
+<blockquote>그 판은 바텀시트.</blockquote>
+<blockquote>「밀면 나오는 삭제 버튼」은 스와이프 액션.</blockquote>
+<blockquote>「위에서 당기면 새로고침」은 Pull to Refresh.</blockquote>
+<blockquote>「회색 네모 반짝」은 스켈레톤.</blockquote>
+<blockquote></blockquote>
+<blockquote>이름으로 시키면 AI 가 실제 부품을 바로 집음.</blockquote>
+<blockquote>바텀시트면 SwiftUI 는 <code>.presentationDetents</code>, Flutter 는 <code>showModalBottomSheet</code>.</blockquote>
+<blockquote></blockquote>
+<blockquote>모바일 앱 UI 를 이렇게 정리한 메뉴판, 8코스 72항목.</blockquote>
+<blockquote>부르는 말, 정식 이름, 시키는 문장, 프레임워크 부품까지 한 줄씩.</blockquote>
+<blockquote>웹 UI 메뉴판의 앱 판.</blockquote>
+<blockquote></blockquote>
+<blockquote>무료, MIT.</blockquote>
+<blockquote>giting.kr/skills/app-menu</blockquote>
+<ul>
+<li>작성 계정: <code>@giting.kr</code> (Threads)</li>
+<li>추출 방식: <code>pk</code>/<code>caption</code> 블록 0개 (SSR 데이터 자체가 희박한 케이스) → <code>og:description</code>에 본문 전문이 담겨 있어 그대로 사용</li>
+</ul>
+<h2>무엇인가 — app-menu 스킬 (giting.kr)</h2>
+<p>모바일 앱 UI를 &quot;말&quot;이 아니라 &quot;이름&quot;으로 AI에게 시킬 수 있게 해주는 <strong>72항목 사전</strong>. 웹 UI 사전인 <code>ui-menu</code>의 모바일판.</p>
+<table><thead><tr><th>항목</th><th>값</th><th>비고</th></tr></thead><tbody>
+<tr><td><strong>구성</strong></td><td><strong>8코스 72항목</strong></td><td>화면 뼈대8·화면 이동8·목록8·입력받는 것12·골라 넣는 것7·누르는 것11·위에 띄우는 것9·상태·표시9</td></tr>
+<tr><td><strong>네이티브 매핑</strong></td><td><strong>38항목</strong></td><td>SwiftUI·Flutter·React Native 실제 컴포넌트명 연결 (예: 탭바 → <code>TabView</code>/<code>BottomNavigationBar</code>/<code>Tab.Navigator</code>)</td></tr>
+<tr><td><strong>버전/검수일</strong></td><td>0.1.0 · 2026-09-16</td><td>검수 기준, 수치는 검수 시점 실측</td></tr>
+<tr><td><strong>라이선스</strong></td><td>MIT</td><td>무료</td></tr>
+<tr><td><strong>대상</strong></td><td>iOS·안드로이드 앱 (Expo·Flutter·SwiftUI)</td><td>웹 UI는 <code>ui-menu</code> 별도</td></tr>
+</tbody></table>
+<h3>핵심 아이디어</h3>
+<p>&quot;아래에서 올라오는 그거 있잖아&quot;가 <strong>바텀시트</strong>라는 걸 아는 순간, 손잡이·높이 단계(반높이/전체높이)·바깥 탭 닫기까지 한 번에 따라온다. 이 사전은 생성기가 아니라 <strong>이름·요청 문장·빠짐 점검표</strong>를 준다 — 코드는 사람이 짠다.</p>
+<h3>8코스 구성 예시</h3>
+<table><thead><tr><th>코스</th><th>항목수</th><th>대표 예시</th></tr></thead><tbody>
+<tr><td>① 화면 뼈대</td><td>8</td><td>앱바(App Bar), 하단 탭바(Tab Bar → SwiftUI <code>TabView</code>/Flutter <code>BottomNavigationBar</code>/RN <code>Tab.Navigator</code>)</td></tr>
+<tr><td>② 화면 이동</td><td>8</td><td>뒤로가기, 세그먼티드 컨트롤(<code>Picker(.segmented)</code>/<code>SegmentedButton</code>), 드로어(<code>Drawer</code>)</td></tr>
+<tr><td>③ 목록</td><td>8</td><td>섹션 헤더, 카드(Card)</td></tr>
+<tr><td>④ 입력받는 것</td><td>12</td><td>비밀번호 토글, 체크박스</td></tr>
+<tr><td>⑤ 골라 넣는 것</td><td>7</td><td>별점(Rating), 수량 스텝퍼(<code>Stepper</code>)</td></tr>
+<tr><td>⑥ 누르는 것</td><td>11</td><td>프라이머리/세컨더리/디스트럭티브 버튼, 메뉴(<code>Menu</code>/<code>PopupMenuButton</code>), FAB(<code>FloatingActionButton</code>), 탭 타깃 44pt</td></tr>
+<tr><td>⑦ 위에 띄우는 것</td><td>9</td><td>팝오버(Popover), 툴팁(Tooltip)</td></tr>
+<tr><td>⑧ 상태·표시</td><td>9</td><td>아바타(Avatar), 상태 점(Status Dot)</td></tr>
+</tbody></table>
+<p>각 항목은 &quot;부르는 말(별칭) → 정식 이름 → AI에게 시키는 문장 예시 → 네이티브 컴포넌트명&quot;까지 한 줄로 연결되어 있다.</p>
+<h3>웹/앱 관례 차이 짚음</h3>
+<p>같은 단어라도 웹과 앱에서 쓰임이 다른 경우를 구분해준다:</p>
+<ul>
+<li><strong>모달</strong>: 웹은 중앙 팝업, 앱은 아래서 올라오는 풀스크린</li>
+<li><strong>셀렉트</strong>: 웹은 드롭다운, 앱은 시트(바텀시트)로 열림</li>
+<li><strong>호버</strong>: 웹은 마우스 오버, 앱은 길게 누르기(long press)</li>
+</ul>
+<h3>빠짐 점검 체크리스트</h3>
+<p>모바일 개발에서 자주 빠뜨리는 것들을 체크리스트로 제공: 세이프 에어리어, 탭 타깃 44pt, 엠프티 스테이트, 로딩 버튼 잠금 등.</p>
+<h3>설치 (Claude Code)</h3>
+<pre><code>/plugin marketplace add hanmariyang/giting-skills
+/plugin install app-menu@giting</code></pre>
+<p>다른 에이전트(Cursor/Codex/Copilot/Amp 등):</p>
+<pre><code>npx skills add hanmariyang/giting-skills --skill app-menu</code></pre>
+<p>GitHub 소스: <a href="https://github.com/hanmariyang/giting-skills">https://github.com/hanmariyang/giting-skills</a></p>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>링크</th></tr></thead><tbody>
+<tr><td>스킬 페이지</td><td><a href="https://giting.kr/skills/app-menu">https://giting.kr/skills/app-menu</a></td></tr>
+<tr><td>GitHub 소스</td><td><a href="https://github.com/hanmariyang/giting-skills">https://github.com/hanmariyang/giting-skills</a></td></tr>
+<tr><td>llms.txt (AI용 통째 읽기)</td><td><a href="https://giting.kr/skills/app-menu/llms.txt">https://giting.kr/skills/app-menu/llms.txt</a></td></tr>
+<tr><td>웹 UI판 (ui-menu)</td><td><a href="https://giting.kr/">https://giting.kr/</a> (스킬 목록 내)</td></tr>
+<tr><td>Threads 원문 (share link)</td><td><a href="https://www.threads.com/share/BCNCdxHVTR/">https://www.threads.com/share/BCNCdxHVTR/</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-23 앱 UI 메뉴판 app-menu/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

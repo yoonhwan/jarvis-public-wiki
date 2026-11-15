@@ -1,0 +1,125 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>speakrs Rust GPU 커널로 pyannote 대비 화자 분리 60배 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>speakrs Rust GPU 커널로 pyannote 대비 화자 분리 60배</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>speakrs Rust GPU 커널로 pyannote 대비 화자 분리 60배</span></nav><h1>speakrs Rust GPU 커널로 pyannote 대비 화자 분리 60배</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-31 speakrs Rust GPU 커널 화자분리 60배/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>speakrs: Rust GPU 커널로 pyannote 대비 화자 분리 60배</h1>
+<ul>
+<li>소스(Threads): <a href="https://www.threads.com/@feelfree<em>ai/post/DfJQPYpgYP</em>">https://www.threads.com/@feelfree<em>ai/post/DfJQPYpgYP</em></a> (공유 링크: <a href="https://www.threads.com/share/<em>6Lx6mRMW/)">https://www.threads.com/share/</em>6Lx6mRMW/)</a></li>
+<li>원문(블로그): <a href="https://avencera.com/blog/writing-gpu-kernels-in-rust-speakrs-60x-faster-than-pyannote">https://avencera.com/blog/writing-gpu-kernels-in-rust-speakrs-60x-faster-than-pyannote</a></li>
+<li>처리일: 2026-10-31 16:51 KST</li>
+<li>블로그 작성: Praveen Perera (Avencera), 2026-10-26 게시, 2026-10-29 갱신</li>
+</ul>
+<h2>본문 (Main Post) — @feelfree_ai</h2>
+<p>Rust로 GPU 커널을 직접 구현해 기존 pyannote 대비 화자 분리 속도를 60배 끌어올린 speakrs가 공개되었습니다.</p>
+<p>cuda-oxide를 활용해 작성된 이 도구는 동일한 RTX 4090 환경에서 전체 음성 인식과 화자 라벨링 속도 또한 WhisperX보다 17.7배 빠르게 처리합니다.</p>
+<p>파이썬 중심이던 오디오 AI 파이프라인에서도 Rust 기반 커널 최적화가 압도적인 성능 차이를 보여주는 만큼 대용량 음성 처리 실무에 도입해 볼 만한거 같습니다.</p>
+<h2>댓글 스레드 (Reply Thread, 작성자 본인)</h2>
+<ul>
+<li>출처: avencera.com/blog… (링크 미리보기: &quot;GPU kernels in Rust: speakrs is 60× faster than pyannote&quot;)</li>
+</ul>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li>직접 댓글은 확보되지 않음. 페이지의 &quot;Related threads&quot;(타 계정의 무관한 포스트 2건)는 제외함.</li>
+<li>참고: 게시물 우측 숫자(14 / 1 / 1 / 2 등)는 라벨이 없어 의미를 확인하지 못했고 기록하지 않음.</li>
+</ul>
+<h2>팩트 체크: 게시물 vs 원문 블로그</h2>
+<table><thead><tr><th>항목</th><th>Threads 게시물</th><th>원문 블로그</th><th>판단</th></tr></thead><tbody>
+<tr><td>화자 분리 속도</td><td>pyannote 대비 <strong>60배</strong></td><td>VoxConverse dev, RTX 4090: <strong>60.2배</strong> (38.2 s vs 2301.3 s)</td><td>일치</td></tr>
+<tr><td>전체 음성 인식 + 화자 라벨</td><td><strong>17.7배</strong> WhisperX 대비, &quot;RTX 4090&quot;</td><td><strong>17.7배</strong>는 dialogrs(Parakeet v3 + speakrs) 결과이고 측정 GPU는 <strong>RTX 5090</strong></td><td>게시물이 GPU와 제품명을 섞어 씀</td></tr>
+<tr><td>도구</td><td>speakrs</td><td>17.7배는 speakrs 단독이 아니라 dialogrs 조합</td><td>구분 필요</td></tr>
+</tbody></table>
+<h2>핵심 요약</h2>
+<p>speakrs는 pyannote community-1 파이프라인(분할, 화자 임베딩, PLDA + VBx 클러스터링)을 Rust로 구현한 오픈소스 화자 분리 라이브러리다. 3주 전까지는 CUDA 모드가 ONNX Runtime 위에서 돌았다. 지금은 cuda-oxide(Rust로 GPU 커널을 쓰는 NVIDIA cuda-rust 프로젝트)로 직접 쓴 커널로 돌고, NVIDIA 드라이버만 있으면 빌드가 된다. 저자는 커널 코드 대부분을 AI 코딩 에이전트가 작성했고, 목표와 합격 기준(DER 악화 없음)은 자신이 정했다고 밝힌다.</p>
+<h2>핵심 수치 (RTX 4090, 전체 데이터셋)</h2>
+<table><thead><tr><th>데이터셋</th><th>모드</th><th>pyannote</th><th>cuda-oxide 이전</th><th>cuda-oxide 이후</th><th>이전 대비</th><th>pyannote 대비</th><th>DER (speakrs / pyannote)</th></tr></thead><tbody>
+<tr><td>VoxConverse dev (216 파일)</td><td>cuda</td><td>2301.3 s (38분)</td><td>1236.3 s</td><td><strong>38.2 s</strong></td><td>32.4배</td><td><strong>60.2배</strong></td><td>7.0% / 7.2%</td></tr>
+<tr><td>VoxConverse dev</td><td>cuda-fast</td><td>2301.3 s</td><td>604.4 s</td><td><strong>20.0 s</strong></td><td>30.2배</td><td>115.1배</td><td>7.4% / 7.2%</td></tr>
+<tr><td>Earnings-21 (44 파일)</td><td>cuda</td><td>8036.8 s (2시간 14분)</td><td>2692.1 s</td><td><strong>75.3 s</strong></td><td>35.8배</td><td>106.7배</td><td>9.7% / 9.7%</td></tr>
+<tr><td>Earnings-21</td><td>cuda-fast</td><td>8036.8 s</td><td>1284.1 s</td><td><strong>39.1 s</strong></td><td>32.8배</td><td>205.5배</td><td>9.2% / 9.7%</td></tr>
+</tbody></table>
+<ul>
+<li>cuda-fast는 스텝을 1초 대신 2초로 쓰는 모드이며 DER이 약간 달라질 수 있음.</li>
+<li>RTFx(오디오 길이 / 처리 시간): RTX 4090 cuda 기준 <strong>1912배</strong>, RTX 5090 <strong>2922배</strong>. 1시간 오디오를 4090에서 약 1.9초, 5090에서 약 1.2초에 처리.</li>
+<li>8개 벤치마크 총 229시간 오디오를 RTX 4090에서 cuda 8분 미만, cuda-fast 4분 미만에 처리.</li>
+</ul>
+<h2>속도가 나온 곳</h2>
+<table><thead><tr><th>단계</th><th>변경</th><th>측정 이득</th></tr></thead><tbody>
+<tr><td>#36</td><td>ONNX Runtime 대신 네이티브 CUDA 백엔드(FP32)</td><td><strong>1.81배</strong> (cuda)</td></tr>
+<tr><td>#36</td><td>TF32 임베딩, persistent LSTM, CUDA graphs</td><td>1.33배</td></tr>
+<tr><td>#36</td><td>cuda-oxide 커널 3개(ResNet 3x3 conv, BiLSTM, SincNet)</td><td>1.23배</td></tr>
+<tr><td>#37</td><td>모든 레이어에 자체 커널, cuDNN/cuBLAS 제거(driver-only)</td><td>1.54~1.55배</td></tr>
+<tr><td>#43</td><td>모든 GPU에서 speakrs 커널 기본 사용</td><td>+26.8%</td></tr>
+<tr><td>#44</td><td>디코드/클러스터링을 GPU 추론과 겹침</td><td>+20.4%</td></tr>
+<tr><td>#75</td><td>RTX 5090 전용 레시피(FP16 Winograd)</td><td>1.57배</td></tr>
+</tbody></table>
+<ul>
+<li>각 이득은 서로 다른 GPU와 파일 집합에서 쟀기 때문에 곱해도 헤드라인 수치와 맞지 않는다고 저자가 명시.</li>
+<li>헤드라인은 이전과 이후를 같은 조건에서 직접 비교한 값.</li>
+</ul>
+<h2>cuda-oxide 사용 소감 (저자)</h2>
+<ul>
+<li>장점: Rust 안에서 호스트 코드와 같은 타입으로 커널 작성, 생성된 PTX가 읽기 쉬움, FP32에서 cuDNN과 비트 단위 동일 결과(SincNet), PTX/cubin을 미리 빌드해 crate에 포함하므로 사용자는 안정(stable) Rust와 CUDA 툴킷 없이 사용 가능.</li>
+<li>거친 부분: 일부 intrinsic이 sm<em>80 이상으로 제한(Turing은 ptx</em>asm! 우회), 라이브러리 crate가 prebuilt 커널을 배포하는 공식 방법 없음, 텐서코어 코드는 대부분 raw PTX.</li>
+<li>저자 결론: &quot;cuda-oxide is ready.&quot; 단, cuDNN/cuBLAS 완전 대체는 &quot;대부분 가치 없음&quot;. GPU마다 새로 렌탈, 프로파일링, 튜닝이 필요하고 렌탈 비용은 약 $150. 사용자 GPU가 소수로 정해져 있거나 이미지 2GB 절감이 중요하지 않으면 라이브러리를 유지하고 느린 레이어만 커널로 쓰라고 권고.</li>
+</ul>
+<h2>driver-only 빌드</h2>
+<ul>
+<li>예: <code>speakrs = { version = &quot;0.7&quot;, features = [&quot;cuda-rtx40&quot;] }</code></li>
+<li>libcuda와 드라이버 PTX JIT만 열며 드라이버 <strong>570 이상</strong> 필요. cuDNN/cuBLAS 링크 없음(ldd, strace로 확인했다고 기술).</li>
+<li>GPU 이미지에서 약 <strong>2GB</strong> 절감(cuDNN 9 약 1.2GB + cuBLAS 12 약 0.8GB).</li>
+</ul>
+<table><thead><tr><th>GPU</th><th>feature</th></tr></thead><tbody>
+<tr><td>RTX 20 시리즈, T4</td><td>cuda-rtx20</td></tr>
+<tr><td>RTX 30 시리즈, A10</td><td>cuda-rtx30</td></tr>
+<tr><td>RTX 40 시리즈, L4, L40S</td><td>cuda-rtx40</td></tr>
+<tr><td>A100</td><td>cuda-a100</td></tr>
+<tr><td>H100</td><td>cuda-sm90 (아직 튜닝 안 됨)</td></tr>
+<tr><td>RTX 50 시리즈</td><td>cuda-rtx50</td></tr>
+</tbody></table>
+<ul>
+<li><code>speakrs cuda tune</code>으로 사용자 GPU에서 레이어별 커널을 측정해 선택(RTX 카드 기준 30초 미만).</li>
+</ul>
+<h2>에이전트 활용에서 얻은 교훈 (저자)</h2>
+<ul>
+<li>증명 하네스(provably no slower)에 약 5일을 썼으나 그 기간에 머지한 PR은 1개(#36). 하네스를 버리고 &quot;byte-identical RTTM 또는 DER 불변 + 고정 파일셋 RTFx 향상&quot;이라는 단순 기준으로 바꾸자 이후 8시간에 더 많이 출시.</li>
+<li>새 GPU마다 반드시 프로파일링(소비자 카드에서 이긴 커널이 A100에서는 cuDNN보다 1.4배 느렸음).</li>
+<li>에이전트가 자기 스크립트 오타에도 멈춰서 기다리지 않게 할 것. GPU 렌탈 3건 1회에 $0.21.</li>
+</ul>
+<h2>다음 단계: dialogrs와 17.7배의 정체</h2>
+<table><thead><tr><th>항목</th><th>dialogrs (Parakeet v3 + speakrs)</th><th>WhisperX (large-v3 + pyannote)</th></tr></thead><tbody>
+<tr><td>WER</td><td><strong>20.7%</strong></td><td>23.1%</td></tr>
+<tr><td>cpWER</td><td><strong>28.0%</strong></td><td>30.5%</td></tr>
+<tr><td>DER</td><td>21.9%</td><td>21.8%</td></tr>
+<tr><td>RTFx</td><td><strong>1355배</strong></td><td>77배</td></tr>
+<tr><td>배수</td><td><strong>17.7배</strong></td><td>1배</td></tr>
+<tr><td>총 시간</td><td><strong>5분 3초</strong></td><td>1시간 29분</td></tr>
+</tbody></table>
+<ul>
+<li>측정 조건: RTX 5090, 6개 영어 데이터셋 212개 녹음, 114시간.</li>
+<li>게시물의 &quot;17.7배&quot;는 이 dialogrs 결과다. speakrs 단독 수치가 아니다.</li>
+<li>scriptrs(Parakeet TDT 0.6B v2/v3, ONNX Runtime/PyTorch 없이): RTX 5090, LibriSpeech test-clean RTFx 1534배, NeMo 대비 3.2배, ONNX Runtime 대비 6.1배, WER 1.93% 동일.</li>
+<li>저자는 저가 API를 곧 연다고 예고(이메일 사전 신청 중). 저자 자체 벤치마크이며 독립 검증은 확인하지 못함.</li>
+</ul>
+<h2>설치 (원문 기준)</h2>
+<pre><code># Rust
+speakrs = { version = &quot;0.7&quot;, features = [&quot;cuda-rtx40&quot;] }   # GPU를 알면
+speakrs = { version = &quot;0.7&quot;, features = [&quot;cuda&quot;] }         # 모르면 (cuDNN 폴백 포함)
+
+# Python
+pip install speakrs
+import speakrs
+pipeline = speakrs.Pipeline.from_pretrained(&quot;cuda&quot;)
+print(pipeline.diarize_file(&quot;meeting.wav&quot;).rttm())</code></pre>
+<ul>
+<li>Python wheel: Linux x86_64는 CPU + CUDA, macOS arm64는 CPU + CoreML.</li>
+<li>RTX 20 시리즈와 T4 이후 GPU 지원.</li>
+</ul>
+<h2>메모</h2>
+<ul>
+<li>모든 성능 수치는 저자 본인의 측정이다. 독립 검증 [확인 필요].</li>
+<li>오빠 환경 관점: macOS(Apple Silicon)에서는 CoreML 경로만 해당. CUDA 경로는 NVIDIA GPU 서버(OCI/GPU VM)에서 쓰는 경우에 해당.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>원문 블로그</td><td><a href="https://avencera.com/blog/writing-gpu-kernels-in-rust-speakrs-60x-faster-than-pyannote">https://avencera.com/blog/writing-gpu-kernels-in-rust-speakrs-60x-faster-than-pyannote</a></td></tr>
+<tr><td>Threads 게시물</td><td><a href="https://www.threads.com/@feelfree<em>ai/post/DfJQPYpgYP</em>">https://www.threads.com/@feelfree<em>ai/post/DfJQPYpgYP</em></a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-31 speakrs Rust GPU 커널 화자분리 60배/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

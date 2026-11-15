@@ -1,0 +1,119 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</span></nav><h1>Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</h1>
+<blockquote>Source candidate from <code>News-Links/2026-11-13 Vercel shadcn UI SDK/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Vercel × shadcn &quot;UI SDK&quot; — AI 에이전트가 화면을 직접 만드는 시대</h1>
+<ul>
+<li>원문: &lt;<a href="https://www.threads.com/@choi.openai/post/DfrUCITiROV&gt;">https://www.threads.com/@choi.openai/post/DfrUCITiROV&gt;</a></li>
+<li>소스: &lt;<a href="https://www.threads.com/share/BAr-6-bP-F&gt;">https://www.threads.com/share/BAr-6-bP-F&gt;</a></li>
+<li>작성: choi.openai, 2026-11-13 18:30 KST (2026-11-13T09:30:19Z)</li>
+<li>수집: 2026-11-13 18:55 KST</li>
+</ul>
+<h2>핵심 요약</h2>
+<p>Vercel과 shadcn이 <strong>UI SDK</strong>를 공개했다. 컴포넌트 묶음이 아니라 <strong>행동(behavior) 라이브러리</strong>다. 버튼·셀렉트의 클릭 처리, 키보드 내비게이션, 포커스 이동, 팝업·선택 로직처럼 매번 다시 짜던 부분을 뽑아 재사용 가능한 단위로 만들었다. AI 에이전트가 예약 화면 같은 UI를 만들 때 이 동작들을 처음부터 구현하지 않아도 된다.</p>
+<p>핵심 차이는 추상화의 위치다. shadcn은 발표문에서 &quot;에이전트가 인터페이스의 생산자이자 사용자가 되고 있다. 그러면 추상화는 어디에 있어야 하나&quot;라고 문제를 던진다. 답은 <strong>스타일이 아니라 동작</strong>이다. 마크업·디자인은 각 프로젝트가 가져가고, 동작과 접근성(ARIA)만 SDK가 제공한다.</p>
+<h2>메타 정보</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>기준·단위</th><th>의미·판단</th></tr></thead><tbody>
+<tr><td>배포 형태</td><td><code>@ui-sdk/core</code> + 프레임워크 어댑터</td><td>npm 패키지</td><td>동작은 core, 렌더링은 어댑터</td></tr>
+<tr><td>지원 프레임워크</td><td>React · Vue · Svelte · Solid · Web Components</td><td>5종</td><td>같은 primitive를 5개 런타임에서 공유</td></tr>
+<tr><td>React 요구 버전</td><td>React 19 이상</td><td>버전</td><td>React 18 프로젝트는 진입 불가</td></tr>
+<tr><td>성숙도</td><td>Public Beta</td><td>릴리스 단계</td><td>API·문서가 GA 전 변경 가능</td></tr>
+<tr><td>문서</td><td>ui-sdk.dev/docs</td><td>사이트</td><td>Quickstart에 에이전트용 프롬프트 제공</td></tr>
+<tr><td>에이전트 장착</td><td><code>npx skills add vercel-labs/ui --skill ui-sdk</code></td><td>CLI 1회</td><td>스킬 설치로 코딩 에이전트가 규약을 학습</td></tr>
+<tr><td>원문 조회수</td><td>1.2K views</td><td>Threads 표기</td><td>공개 직후 25분 시점 수치</td></tr>
+</tbody></table>
+<h2>본문 (Main Post)</h2>
+<blockquote>이제 AI가 필요한 화면을 직접 만들어 사용하는 시대가 다가오고 있습니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>Vercel과 shadcn이 UI SDK를 공개했는데요. 버튼이나 선택 메뉴의 클릭, 키보드 조작 같은 동작을 재사용할 수 있도록 분리한 개발 도구입니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>예를 들어 AI가 예약 화면을 만들 때 메뉴를 선택하고 입력값을 처리하는 기능을 처음부터 구현할 필요가 없습니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>개발 환경에 관계없이 활용할 수 있어, AI가 상황에 맞는 화면을 직접 만드는 데 도움이 될 것으로 보입니다.</blockquote>
+<p>작성자 댓글(같은 스레드)에는 원출처 두 개만 달려 있다.</p>
+<ul>
+<li>GitHub: &lt;<a href="https://github.com/vercel-labs/ui&gt;">https://github.com/vercel-labs/ui&gt;</a></li>
+<li>X 발표: &lt;<a href="https://x.com/shadcn/status/2120951116682682646&gt;">https://x.com/shadcn/status/2120951116682682646&gt;</a></li>
+</ul>
+<h2>원 발표문 (shadcn, X, 2026-11-12)</h2>
+<blockquote>Today we&#x27;re introducing UI SDK.</blockquote>
+<blockquote></blockquote>
+<blockquote>Agents are becoming both the builders and the users of interfaces. So we asked ourselves: where should the abstraction live?</blockquote>
+<blockquote></blockquote>
+<blockquote>Take a Select. There&#x27;s a popup, selection logic, keyboard navigation and focus management. Those same behaviors are …</blockquote>
+<p>발표 트윗은 스레드 형식이라 첫 트윗만 확보했다. 이하 내용은 공식 문서와 GitHub README로 보강했다.</p>
+<h2>GitHub README 보강 (vercel-labs/ui)</h2>
+<h3>무엇을 파는가</h3>
+<blockquote>A library of behaviors for agents to build the next generation of user interfaces.</blockquote>
+<p>키보드 내비게이션, 포커스, 선택, 닫기(dismissal), 팝업, 드래그 앤 드롭, 그리고 그 동작들이 필요로 하는 ARIA가 <code>@ui-sdk/core</code>에 들어 있고, React·Vue·Svelte·Solid·Web Components 어댑터가 그 위에 붙는다.</p>
+<h3>설치</h3>
+<pre><code>npm install @ui-sdk/react @ui-sdk/core
+# 다른 프레임워크는 @ui-sdk/vue / @ui-sdk/svelte / @ui-sdk/solid / @ui-sdk/web</code></pre>
+<p>에이전트에 스킬을 장착한다.</p>
+<pre><code>npx skills add vercel-labs/ui --skill ui-sdk</code></pre>
+<h3>사용 방식 — primitive 정의 → 파트로 렌더</h3>
+<p>컴포넌트를 직접 쓰는 게 아니라 <strong>primitive를 정의하고</strong>, 그 primitive를 <code>createParts</code>로 각 프레임워크에 맞게 렌더한다. 검색 필드 예시를 요약하면 이렇다.</p>
+<pre><code>import { createFocusRecovery, definePrimitive } from &quot;@ui-sdk/core&quot;
+
+const searchField = definePrimitive({
+  name: &quot;search-field&quot;,
+  state: () =&gt; ({ value: &quot;&quot; }),
+  api: (context) =&gt; ({
+    set: (value: string) =&gt; context.store.set({ value }),
+    recovery: createFocusRecovery({ fallback: () =&gt; context.element(&quot;input&quot;) }),
+  }),
+  slots: (slot) =&gt; ({
+    input: slot({ /* value 바인딩 + input 이벤트 */ }),
+    clear: slot({ /* 값이 있을 때만 노출, 클릭 시 초기화, 포커스 복구 */ }),
+  }),
+})</code></pre>
+<pre><code>import { createParts } from &quot;@ui-sdk/react/primitive&quot;
+import { searchField } from &quot;./search-field&quot;
+
+const parts = createParts(searchField, { input: &quot;input&quot;, clear: &quot;button&quot; })
+const SearchField = parts.Root
+const SearchFieldInput = parts.Input
+const SearchFieldClear = parts.Clear</code></pre>
+<p>README가 강조하는 지점은 &quot;이 코드를 사람이 배울 필요는 없다. 에이전트가 쓴다&quot;이다. 즉 <strong>사람이 라이브러리를 익히는 게 아니라 에이전트가 규약대로 생성하는 것</strong>을 전제로 설계됐다.</p>
+<h3>프레임워크별 파트 렌더 비교</h3>
+<table><thead><tr><th>프레임워크</th><th>import</th><th>렌더 단위</th><th>비고</th></tr></thead><tbody>
+<tr><td>React</td><td><code>@ui-sdk/react/primitive</code></td><td><code>parts.Root</code>, <code>parts.Input</code></td><td>React 19+</td></tr>
+<tr><td>Vue</td><td><code>@ui-sdk/vue/primitive</code></td><td>동일 parts</td><td>SFC 템플릿</td></tr>
+<tr><td>Svelte</td><td><code>@ui-sdk/svelte/primitive</code></td><td>동일 parts</td><td>runes 기반</td></tr>
+<tr><td>Solid</td><td><code>@ui-sdk/solid/primitive</code></td><td>동일 parts</td><td>JSX</td></tr>
+<tr><td>Web Components</td><td><code>@ui-sdk/web</code></td><td><code>createParts</code> + 커스텀 엘리먼트 등록</td><td><code>wrappedChild</code>, <code>wrappedButton</code></td></tr>
+</tbody></table>
+<h2>공식 문서 보강 (ui-sdk.dev/docs)</h2>
+<h3>문서가 나누는 행동 카테고리</h3>
+<p>Focus and Keys · Selection · Drag and Drop · Lists · Trees · Transitions and Gestures · Popups and Layers · Preferences · Canvas Tools · Observe · Testing</p>
+<p>컴포넌트는 이 행동들을 조합해서 만든다. 문서가 바로 제공하는 완성 컴포넌트 예시는 Select, Field, Tabs, Combobox, Date Picker, Menu다.</p>
+<h3>에이전트 온보딩이 문서의 1급 시민</h3>
+<p>Quickstart 첫 화면이 사람용 설명이 아니라 <strong>에이전트에 붙여넣는 프롬프트</strong>다. React 기준 프롬프트가 시키는 일은 세 가지다.</p>
+<ol>
+<li><code>@ui-sdk/react</code>와 <code>@ui-sdk/core</code> 설치 (React 19 이상)</li>
+<li><code>AGENTS.md</code>에 규칙 추가 — &quot;ui-sdk를 쓰기 전에 설치된 ui-sdk 스킬을 따르고, <code>node_modules/@ui-sdk/react/docs/llms.txt</code>를 읽는다. 새 컴포넌트를 만들 때는 <code>docs/core.md</code>를 헤딩으로 검색하고 <code>rendering.md</code>를 함께 읽는다&quot;</li>
+<li><code>npx skills add vercel-labs/ui --skill ui-sdk</code></li>
+</ol>
+<p>즉 라이브러리가 <strong>패키지 안에 자기 문서(<code>llms.txt</code>)를 넣고, 에이전트가 그걸 읽고 조립</strong>하는 구조다. 사람용 API 레퍼런스보다 에이전트용 컨텍스트가 앞에 놓인다.</p>
+<h2>그래서 무엇이 달라지나</h2>
+<table><thead><tr><th>관점</th><th>기존 (shadcn/ui 등)</th><th>UI SDK</th></tr></thead><tbody>
+<tr><td>배포물</td><td>복사해서 쓰는 컴포넌트 코드</td><td>동작 primitive + 어댑터</td></tr>
+<tr><td>커스터마이즈 지점</td><td>스타일·마크업 전체</td><td>스타일은 그대로, 동작만 가져옴</td></tr>
+<tr><td>접근성(ARIA)</td><td>컴포넌트마다 구현 상태</td><td>core가 제공</td></tr>
+<tr><td>소비자</td><td>사람 개발자</td><td>에이전트 (사람은 결과만 확인)</td></tr>
+<tr><td>위험</td><td>없음 (코드 소유)</td><td>Beta API 변경, React 19 강제</td></tr>
+</tbody></table>
+<h2>실무 판단 포인트</h2>
+<ul>
+<li><strong>Beta다.</strong> API·문서·동작이 GA 전에 바뀔 수 있다고 README가 명시한다. 사내 프로덕션 핵심 화면에 바로 넣기보다 신규 화면·프로토타입부터 적용하는 편이 안전하다.</li>
+<li><strong>React 19 미만은 막힌다.</strong> React 18 기반 레거시 프로젝트는 어댑터 진입 자체가 안 되므로, 적용 검토 전에 런타임 버전을 먼저 확인해야 한다.</li>
+<li><strong>에이전트 스킬 설치가 사실상 필수 경로다.</strong> 문서 Quickstart가 <code>AGENTS.md</code> 규칙과 스킬 설치를 전제하므로, 스킬을 안 붙이고 사람이 손으로 primitive를 쓰는 방식은 권장 경로가 아니다.</li>
+<li><strong>&quot;동작만 가져온다&quot;는 것이 실질 이득.</strong> 디자인 시스템이 이미 있는 팀은 마크업을 유지한 채 키보드·포커스·ARIA만 교체할 수 있다. 디자인 시스템이 없는 팀은 이득이 작다.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>구분</th><th>링크</th></tr></thead><tbody>
+<tr><td>Threads 원문</td><td>&lt;<a href="https://www.threads.com/@choi.openai/post/DfrUCITiROV&gt;">https://www.threads.com/@choi.openai/post/DfrUCITiROV&gt;</a></td></tr>
+<tr><td>GitHub 저장소</td><td>&lt;<a href="https://github.com/vercel-labs/ui&gt;">https://github.com/vercel-labs/ui&gt;</a></td></tr>
+<tr><td>공식 문서</td><td>&lt;<a href="https://ui-sdk.dev/docs&gt;">https://ui-sdk.dev/docs&gt;</a></td></tr>
+<tr><td>shadcn 발표 (X)</td><td>&lt;<a href="https://x.com/shadcn/status/2120951116682682646&gt;">https://x.com/shadcn/status/2120951116682682646&gt;</a></td></tr>
+</tbody></table>
+<blockquote>수집 메모: Threads <code>/share/</code> 링크는 SSR이 비어 있어 <code>agent-browser</code> headed 세션으로 해석했고, 작성자 댓글의 링크는 <code>l.threads.com</code> 리다이렉트에서 원 URL을 복원했다. X 발표문은 oEmbed/syndication으로 첫 트윗만 확보했다(스레드 나머지는 미확보).</blockquote><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-11-13 Vercel shadcn UI SDK/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li><li><span class="card-date">2026-11-07</span> <a href="daiso-mcp-다이소-편의점-재고-조회-공개-mcp.html?v=20261115-115301-KST">DAISO MCP 다이소·편의점 재고 조회 공개 MCP</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

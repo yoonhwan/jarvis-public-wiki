@@ -1,0 +1,105 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>엔비디아 Nemotron 3.5 Parse — 문서 이미지 파서 공개 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>엔비디아 Nemotron 3.5 Parse — 문서 이미지 파서 공개</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/design-creative.html?v=20261115-115301-KST">디자인·크리에이티브</a> &rsaquo; <span>엔비디아 Nemotron 3.5 Parse — 문서 이미지 파서 공개</span></nav><h1>엔비디아 Nemotron 3.5 Parse — 문서 이미지 파서 공개</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-25 엔비디아 Nemotron 3.5 Parse 문서 파서 공개/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>엔비디아 Nemotron 3.5 Parse — 문서 이미지 파서 공개</h1>
+<ul>
+<li>소스(Threads): <a href="https://www.threads.com/share/BAIcrJD0eD/">https://www.threads.com/share/BAIcrJD0eD/</a> (canonical: <a href="https://www.threads.com/@aipeekme/post/De5Q-z9ktx0)">https://www.threads.com/@aipeekme/post/De5Q-z9ktx0)</a></li>
+<li>원문(HuggingFace): <a href="https://huggingface.co/nvidia/Nemotron-3.5-Parse">https://huggingface.co/nvidia/Nemotron-3.5-Parse</a></li>
+<li>작성자: @aipeekme (AI PEEKME) · 게시 약 5시간 전 기준 수집 · 조회 134</li>
+</ul>
+<h2>본문 (Main Post)</h2>
+<p>엔비디아가 문서 이미지 파서 모델인 네모트론 3.5 파스를 공개했습니다.</p>
+<p>문서의 시각적 레이아웃과 바운딩 박스, 읽기 순서를 기계 판독 가능한 구조화된 텍스트로 변환하는 모델입니다.</p>
+<p>비전 인코더와 엠바트 디코더를 결합해 시각적 시퀀스를 처리하도록 설계됐습니다.</p>
+<p>씨-라디오브이포-에스오400엠 비전 인코더와 10레이어 엠바트 디코더 조합으로 이루어져 있습니다.</p>
+<p>다국어 토크나이저를 채택했으며 차트 인식 기능도 함께 지원합니다.</p>
+<p>72,505토큰 규모의 다국어 토크나이저와 클래스 차트 토큰을 통한 차트 인식 출력을 제공합니다.</p>
+<p>트랜스포머를 비롯해 브이엘엘엠과 에스지랭크 등을 통해 구동할 수 있습니다.</p>
+<p>도커 모델 러너를 포함해 트랜스포머, 브이엘엘엠, 에스지랭크 등을 통해 구동할 수 있습니다.</p>
+<p>문서 이해나 정보 검색뿐만 아니라 멀티모달 데이터 정제 워크플로우에 활용될 것으로 보입니다.</p>
+<p>📷 사진 출처: huggingface.co</p>
+<h2>댓글 스레드 (Reply Thread)</h2>
+<ul>
+<li>(작성자 자기 답글) 🔗 원문·자세히 보기 → huggingface.co/nvidia/Nemotron-3.5-Parse</li>
+</ul>
+<h2>댓글 (Other Users)</h2>
+<ul>
+<li>없음 (직접 댓글 0건 확인)</li>
+</ul>
+<h3>Related threads (타 계정의 동일 주제 포스트 — 이 글의 댓글 아님)</h3>
+<table><thead><tr><th>계정</th><th>시점</th><th>내용 요약</th></tr></thead><tbody>
+<tr><td>aipeekme</td><td>6일 전</td><td>엔비디아 Nemotron Labs Dory 1.0 4비트 BF16 공개 — 슬라이딩 윈도우+전체 어텐션 교차, 공유 계층 반복 적용, OpenMDW-1.1 라이선스</td></tr>
+<tr><td>passionplus_ai</td><td>10/17</td><td>Nemotron 3.5 공개 — GPU 인프라 강화 + 오픈소스 동시 겨냥 전략</td></tr>
+<tr><td>ai<em>entrepreneur</em></td><td>10/16</td><td>Nemotron 3.5 Super VL (10/15 공개): 120B 중 12B 활성, 최대 100만 토큰, SWE-bench Pro 51.78 (Qwen3.5-122B 44.9 상회, Qwen3.8-Flash-Next 60.37엔 열세), 한국어는 후학습 집중 언어 아님</td></tr>
+<tr><td>sunho.psh</td><td>10/16</td><td>Nemotron 3.5 Super VL — 단일 GPU 처리량 동급 오픈 모델 대비 최대 5배, 가중치·레시피·데이터셋 공개 (출처: AI타임스)</td></tr>
+</tbody></table>
+<h2>모델 상세 (HuggingFace 모델카드 보강)</h2>
+<blockquote>아래는 모델카드(<code>raw/main/README.md</code>)에서 직접 확인한 내용. 본문 게시물과 별개의 출처.</blockquote>
+<h3>핵심 스펙</h3>
+<table><thead><tr><th>항목</th><th>값</th><th>비고</th></tr></thead><tbody>
+<tr><td>모델</td><td><strong>Nemotron 3.5 Parse</strong></td><td>NVIDIA, Nemotron 계열</td></tr>
+<tr><td>릴리스</td><td><strong>2026-10-17</strong> (HF)</td><td></td></tr>
+<tr><td>파라미터</td><td><strong>약 0.631B</strong> (630,800,496)</td><td>MTP 헤드 포함, 공유 임베딩 1회 계산</td></tr>
+<tr><td>비전 인코더</td><td><strong>C-RADIOv4-SO400M</strong></td><td>dynamic rectangular NaViT 전처리</td></tr>
+<tr><td>디코더</td><td><strong>10-layer mBART</strong></td><td>GQA: 16 query / 8 KV heads</td></tr>
+<tr><td>토크나이저</td><td><strong>72,505 entries</strong></td><td>임베딩은 72,512행으로 패딩</td></tr>
+<tr><td>권장 최대 입력</td><td><strong>1664 × 2048</strong></td><td>RGB</td></tr>
+<tr><td>출력</td><td>텍스트(시맨틱 클래스 + 정규화 bbox + 읽기 순서)</td><td>markdown/HTML/LaTeX/JSON/CSV 후처리 지원</td></tr>
+<tr><td>라이선스</td><td><strong>OpenMDW 1.1</strong></td><td>상업·비상업 사용 가능, 토크나이저는 MIT 표기 별도</td></tr>
+<tr><td>라이브러리</td><td>transformers (<code>trust<em>remote</em>code=True</code>)</td><td></td></tr>
+<tr><td>지원 OS / 기준 HW</td><td>Linux / H100 BF16</td><td></td></tr>
+</tbody></table>
+<h3>벤치마크 — ParseBench (2,078 pages)</h3>
+<table><thead><tr><th>모델</th><th>ParseBench</th><th>pages/s (H100)</th></tr></thead><tbody>
+<tr><td><strong>Nemotron 3.5 Parse (triple-pass)</strong></td><td><strong>75.20</strong></td><td><strong>10.62</strong></td></tr>
+<tr><td>LightOnOCR-3-4B</td><td>75.10</td><td>2.76</td></tr>
+<tr><td><strong>Nemotron 3.5 Parse (double-pass)</strong></td><td><strong>74.92</strong></td><td><strong>11.65</strong></td></tr>
+<tr><td>LightOnOCR-3-0.8B</td><td>74.60</td><td>5.69</td></tr>
+<tr><td>Infinity-Parser2-Flash</td><td>73.25</td><td>3.06</td></tr>
+<tr><td>MinerU2.5-Pro-2605-1.2B</td><td>72.78</td><td>4.13</td></tr>
+<tr><td><strong>Nemotron 3.5 Parse (single-pass)</strong></td><td><strong>72.74</strong></td><td><strong>15.42</strong></td></tr>
+<tr><td>KDL-Frontier-Parser-nano</td><td>72.38</td><td>2.98</td></tr>
+<tr><td>LightOnOCR-3-1B</td><td>71.40</td><td>2.44</td></tr>
+<tr><td>Chandra-ocr-2</td><td>70.10</td><td>2.01</td></tr>
+<tr><td>PaddleOCR-VL-1.6</td><td>67.43</td><td>3.11</td></tr>
+<tr><td>PaddleOCR-VL-1.5</td><td>65.95</td><td>3.40</td></tr>
+<tr><td>Nemotron Parse 2.0 (이전 버전)</td><td>63.91</td><td>3.95</td></tr>
+</tbody></table>
+<ul>
+<li>해석: 정확도 1위(75.20)지만 2위 LightOnOCR-3-4B(75.10)와 <strong>0.10점 차</strong>. 차별점은 <strong>속도</strong>(동급 대비 처리량 약 3~5배, 모델카드 자체 측정·H100 기준).</li>
+<li><strong>Single → Double pass +2.18점</strong>, Double → Triple +0.28점 (처리량 약 9% 감소). 모델카드: &quot;double pass가 정확도 이득 대부분을 확보&quot;.</li>
+<li>세부 카테고리(Triple pass): Mean <strong>75.20</strong> / Tables <strong>84.67</strong> / Charts <strong>64.40</strong> / Content Faithfulness <strong>87.96</strong> / Semantic Formatting <strong>68.28</strong> / Visual Grounding <strong>70.67</strong>.</li>
+<li>기타: IndicVisionBench OCR <strong>83.73 ANLS-char</strong>(876 pages, 10개 언어), MOSCAR <strong>99.51 char-bag F1</strong>(8,111 pages, 163 language/script). MOSCAR는 단순 합성 렌더링이라 복잡한 스캔·필기·열화 이미지 정확도를 보장하지 않는다고 모델카드가 명시.</li>
+</ul>
+<h3>실행 방법 (모델카드 기준)</h3>
+<pre><code># Transformers (Python 3.12 권장)
+python3.12 -m venv .venv &amp;&amp; source .venv/bin/activate
+python -m pip install &quot;transformers==5.14.1&quot; &quot;torchvision==0.26.0&quot; &quot;timm==1.0.22&quot;</code></pre>
+<p>기본 프롬프트: <code>&lt;/s&gt;&lt;s&gt;&lt;predict<em>bbox&gt;&lt;predict</em>classes&gt;&lt;output<em>markdown&gt;&lt;predict</em>text<em>in</em>pic&gt;</code></p>
+<pre><code>model = AutoModel.from_pretrained(&quot;nvidia/Nemotron-3.5-Parse&quot;, trust_remote_code=True, dtype=torch.bfloat16).to(&quot;cuda:0&quot;).eval()
+processor = AutoProcessor.from_pretrained(&quot;nvidia/Nemotron-3.5-Parse&quot;, trust_remote_code=True)</code></pre>
+<ul>
+<li><strong>vLLM</strong>: Nemotron 플러그인 필요, vLLM <code>&gt;=0.25.0,&lt;0.33</code>. <code>vllm serve . --served-model-name nemotron-parse --dtype bfloat16 ...</code> (MTP 1-token 추측 디코딩 + FA3 자동 활성화).</li>
+<li><strong>Docker</strong>: 모델카드에 &quot;serving guide(docs/serving.md) 참고&quot;로만 언급.</li>
+</ul>
+<h2>⚠️ 본문 ↔ 모델카드 대조 메모</h2>
+<table><thead><tr><th>항목</th><th>게시물 주장</th><th>모델카드 확인 결과</th></tr></thead><tbody>
+<tr><td>구성 (C-RADIOv4-SO400M + 10L mBART)</td><td>O</td><td>✅ 일치</td></tr>
+<tr><td>토크나이저 72,505 / Chart 토큰</td><td>O</td><td>✅ 일치 (<code>&lt;class_Chart&gt;</code>)</td></tr>
+<tr><td>Transformers / vLLM 구동</td><td>O</td><td>✅ 일치 (Runtime Engine: Transformers, vLLM)</td></tr>
+<tr><td><strong>SGLang 구동</strong></td><td>&quot;에스지랭크 등&quot;</td><td>❓ <strong>모델카드 README에서 SGLang 언급 확인 안 됨</strong> (README 내 <code>sglang</code> 0건) — 게시물만의 주장, 별도 문서(docs/serving.md 등)에 있을지는 미확인</td></tr>
+<tr><td>Docker Model Runner</td><td>&quot;도커 모델 러너&quot;</td><td>❓ README엔 Docker 배포 시 <code>docs/serving.md</code> 참고 한 줄뿐 — &quot;Docker Model Runner&quot; 명칭은 미확인</td></tr>
+</tbody></table>
+<h2>시사점 (메모)</h2>
+<ul>
+<li>0.63B급 소형 파서로 OCR/문서 파싱 최상위권 + 높은 처리량 → RAG 전처리·데이터 큐레이션 파이프라인 후보.</li>
+<li>단, 공식 지원 OS <strong>Linux / H100 기준</strong> → 로컬 Mac(MLX) 직접 구동은 모델카드상 미지원(확인된 경로 없음).</li>
+<li>벤치마크 속도는 NVIDIA 자체 측정(H100)이므로 타 하드웨어 일반화 주의.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>HF 모델카드</td><td><a href="https://huggingface.co/nvidia/Nemotron-3.5-Parse">https://huggingface.co/nvidia/Nemotron-3.5-Parse</a></td></tr>
+<tr><td>OpenMDW License 1.1</td><td><a href="https://openmdw.ai/license/1-1/">https://openmdw.ai/license/1-1/</a></td></tr>
+<tr><td>C-RADIOv4-SO400M</td><td><a href="https://huggingface.co/nvidia/C-RADIOv4-SO400M">https://huggingface.co/nvidia/C-RADIOv4-SO400M</a></td></tr>
+<tr><td>Threads 원글</td><td><a href="https://www.threads.com/@aipeekme/post/De5Q-z9ktx0">https://www.threads.com/@aipeekme/post/De5Q-z9ktx0</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-25 엔비디아 Nemotron 3.5 Parse 문서 파서 공개/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — 디자인·크리에이티브</h2><ul><li><span class="card-date">2026-11-08</span> <a href="meta-astryx-8년간-내부에서-쓴-디자인-시스템-오픈소스-공개.html?v=20261115-115301-KST">Meta Astryx 8년간 내부에서 쓴 디자인 시스템 오픈소스 공개</a></li><li><span class="card-date">2026-11-04</span> <a href="ai-디자인-슬롭-방지-에이전트에게-줄-디자인-레퍼런스-5곳.html?v=20261115-115301-KST">AI 디자인 슬롭 방지 에이전트에게 줄 디자인 레퍼런스 5곳</a></li><li><span class="card-date">2026-10-08</span> <a href="한국어-줄바꿈-css-디테일-word-break-text-wrap-white-space-overflow-wrap.html?v=20261115-115301-KST">한국어 줄바꿈 CSS 디테일 (word-break, text-wrap, white-space, overflow-wrap)</a></li><li><span class="card-date">2026-08-30</span> <a href="이름-하나로-나만의-시그니처-로고를-만든다.html?v=20261115-115301-KST">이름 하나로 나만의 시그니처 로고를 만든다</a></li><li><span class="card-date">2026-08-21</span> <a href="의외로-잘-모르는-해외에서-먹히는-폰트-5개.html?v=20261115-115301-KST">의외로 잘 모르는 해외에서 먹히는 폰트 5개</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

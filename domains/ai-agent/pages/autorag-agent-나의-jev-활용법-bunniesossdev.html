@@ -1,0 +1,111 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AutoRAG Agent 나의 Jev 활용법 (@bunniesossdev) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>AutoRAG Agent 나의 Jev 활용법 (@bunniesossdev)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>AutoRAG Agent 나의 Jev 활용법 (@bunniesossdev)</span></nav><h1>AutoRAG Agent 나의 Jev 활용법 (@bunniesossdev)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-11-07 AutoRAG Agent - Jev 활용법 (bunniesossdev)/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>AutoRAG Agent: &quot;나의 Jev 활용법&quot; (@bunniesossdev)</h1>
+<ul>
+<li>소스(Threads): <a href="https://www.threads.com/@bunniesossdev/post/DfZwlrPkzE6">https://www.threads.com/@bunniesossdev/post/DfZwlrPkzE6</a></li>
+<li>원문(GitHub): <a href="https://github.com/Marker-Inc-Korea/AutoRAG">https://github.com/Marker-Inc-Korea/AutoRAG</a></li>
+<li>수집: 2026-11-07 (게시 약 1시간 전 시점, 조회수 456은 수집 시점 값)</li>
+</ul>
+<h2>요약</h2>
+<p>작성자가 만든 개인용 사서 에이전트 AutoRAG Agent에서 <strong>Jev</strong>(판단 전용 모델)를 5곳에 쓰는 방법을 소개한 글이다. 핵심은 &quot;에이전트 루프에 들어가기 전과 후에 Jev가 판단만 맡는다&quot;는 구조다.</p>
+<h2>본문 (Main Post)</h2>
+<p>나의 Jev 활용법</p>
+<table><thead><tr><th>#</th><th>용도</th><th>내용</th></tr></thead><tbody>
+<tr><td>1</td><td>라우팅</td><td>에이전트 루프에 들어가기 전에 로컬 검색인지, 일반 작업인지, 설정 변경인지 분기한다</td></tr>
+<tr><td>2</td><td>답변 검증</td><td>먼저 빠른 답을 낸다. 그 답이 충분한지 판단하고, 부족하면 에이전트가 추가로 탐색한다</td></tr>
+<tr><td>3</td><td>인용 검증</td><td>LLM이 엉뚱한 근거를 인용하는 일이 있다. 문장·질의·근거를 Jev에 넣어 근거가 뒷받침하는지 판단한다</td></tr>
+<tr><td>4</td><td>메모리 관리</td><td>그럴듯하지만 쓸모없는 데이터가 메모리에 쌓인다. 저장 전에 Jev로 검증한다</td></tr>
+<tr><td>5</td><td>실행 승인 게이트</td><td>&quot;뭐 다들 하시죠?&quot; (작성자 코멘트, 설명 없음)</td></tr>
+</tbody></table>
+<p>이 모든 것이 적용된 개인용 사서 에이전트가 <strong>AutoRAG Agent</strong>다. &quot;빠르게 당신의 파일들을 다 뒤져서 정보를 찾아내요.&quot;</p>
+<ul>
+<li>링크 프리뷰: GitHub - Marker-Inc-Korea/AutoRAG: Your Personal Librarian Agent. Ask anything on your computer, organize files, remember important info and files.</li>
+<li>이미지/카드: 없음 (텍스트 포스트)</li>
+<li>댓글 스레드: 작성자 추가 답글 없음. 다른 사용자 직접 댓글은 수집 시점에 보이지 않음.</li>
+<li>참여 수치 <code>9 / 1 / 9</code>는 라벨 없이 출력되어 의미를 확인하지 못함 (좋아요/댓글 등으로 단정하지 않음).</li>
+</ul>
+<h2>원문 보강: AutoRAG Agent README (GitHub)</h2>
+<blockquote>위 내용은 Threads 본문이 아니라 README에서 가져온 보강 자료다.</blockquote>
+<h3>한눈에 보기</h3>
+<table><thead><tr><th>항목</th><th>내용</th><th>비고</th></tr></thead><tbody>
+<tr><td>정체</td><td>AutoRAG 2.0. 사무용 개인 사서 에이전트</td><td>기존 Python AutoRAG(RAG AutoML)는 <code>legacy/</code>로 이동, 유지보수 모드</td></tr>
+<tr><td>런타임</td><td>Pi agent framework 위에서 동작</td><td>단일 모델이 검색·직접 읽기·정리를 맡음</td></tr>
+<tr><td>라이선스</td><td>Apache-2.0</td><td></td></tr>
+<tr><td>요구 환경</td><td>Node &gt;= 24, Bun &gt;= 1.2</td><td>npm 패키지 <code>@autorag/librarian</code></td></tr>
+<tr><td>형태</td><td>CLI, TUI(<code>autorag tui</code>), TypeScript 라이브러리, MCP 서버(Lite), 데스크톱 앱</td><td></td></tr>
+</tbody></table>
+<h3>핵심 원칙 3가지</h3>
+<ol>
+<li><strong>데이터를 옮기지 않는다.</strong> 업로드·ETL·중앙 vector DB 없이 데이터가 있는 곳에서 그대로 질의한다(in-place federation).</li>
+<li><strong>설정이 거의 필요 없다.</strong> 파이프라인 튜닝, vector DB 관리, 원격 embedding 키가 필요 없다. MinSync가 증분 CDC chunking을 처리하고 로컬 embedding backend를 기본 제공한다.</li>
+<li><strong>빠르게 동작한다.</strong> 다중 에이전트 계층 대신 단일 모델이 전체 루프를 맡는다.</li>
+</ol>
+<h3>아키텍처 5개 서브시스템</h3>
+<table><thead><tr><th>#</th><th>서브시스템</th><th>역할</th></tr></thead><tbody>
+<tr><td>1</td><td>Retrieval Memory (<code>check_memory</code>)</td><td>답변 뒤에 Jev가 &quot;실제로 뒷받침한다&quot;고 판단한 인용 근거만 <code>~/.autorag/memory.json</code>에 저장. 이후 검색에 참고용(advisory)으로만 제공</td></tr>
+<tr><td>2</td><td>다중 검색</td><td>SPLADE sparse, 의미(vector), hybrid, Jikji find-first, 파일명 검색(Everything/FSearch), datasource skills</td></tr>
+<tr><td>3</td><td>Result Merger</td><td>방식 간 중복 제거, 점수 정규화, 범위 좁히기</td></tr>
+<tr><td>4</td><td>Direct Evidence Reading</td><td><code>bash</code>의 <code>cat</code>/<code>grep</code>/<code>find</code>로 유망한 파일을 직접 열어 사실 확인</td></tr>
+<tr><td>5</td><td>Curation</td><td>최종 답변의 인라인 <code>[eN]</code> 인용을 번호가 붙은 근거 링크로 변환</td></tr>
+</tbody></table>
+<h3>Jev의 역할 (README 기준)</h3>
+<p>README의 Jev Decisions 항목은 Jev를 <strong>필수(required) 판단 모델</strong>로 설명한다. 작성자 글의 5가지 활용과 README 설명이 겹치는 부분은 다음과 같다.</p>
+<table><thead><tr><th>작성자 글</th><th>README 대응</th></tr></thead><tbody>
+<tr><td>라우팅</td><td>질문을 local search / <code>extra</code>(지식 답변·기타 작업) / <code>organize</code>(파일 이동·이름 변경·정리) / <code>config</code> 분기로 보냄. 신뢰도 하한 0.75</td></tr>
+<tr><td>답변 검증</td><td>빠른 답변(fast answer)을 먼저 내고, 그 답이 완전하면 거기서 종료. 아니면 verification 단계 진행</td></tr>
+<tr><td>인용/메모리 검증</td><td>근거가 답을 뒷받침한다고 Jev가 판단한 경우만 memory에 저장</td></tr>
+</tbody></table>
+<ul>
+<li>Jev는 다중 질문을 최대 5개 병렬 검색으로 나누는 단계, 검색할 datasource를 고르는 단계 앞에서도 쓰인다.</li>
+<li>Jev 백엔드: <code>dazzi</code>(기본 모델 <code>jev-1.13</code>), <code>openrouter</code>, <code>openai</code>, <code>typesafe</code>, <code>vercel-ai-gateway</code>, <code>cloudflare-workers-ai</code>, <code>opencode</code>. <code>autorag models list --decision</code>으로 후보를 확인한다.</li>
+<li>첫 질문마다 Jev 응답을 점검한다. 응답이 없으면 sLLM fallback으로 넘어가고, 그것도 실패하면 <code>decision-model-unavailable</code>(exit 3)로 멈춘다.</li>
+<li>호스팅 플랜: Dazzi Models. TUI에서 <code>/login</code>으로 로그인(API 키 환경변수 없음).</li>
+</ul>
+<h3>지원 datasource</h3>
+<table><thead><tr><th>분류</th><th>항목</th></tr></thead><tbody>
+<tr><td>메신저</td><td>KakaoTalk, Discord, WhatsApp, Telegram, Slack</td></tr>
+<tr><td>문서·노트</td><td>Local Documents, Notion, Obsidian Vaults</td></tr>
+<tr><td>메일</td><td>Email Archives (Gmail, IMAP, Maildir, eml/mbox)</td></tr>
+<tr><td>개발</td><td>GitHub Issues/PR, GitHub Gists, Coding-Agent Sessions (Codex, Claude Code, OpenCode, pi, omp)</td></tr>
+<tr><td>기타</td><td>Photos &amp; Shots (OCR/시각 검색), RSS, Browser History (Hister)</td></tr>
+</tbody></table>
+<h3>빠른 시작 (README 기준)</h3>
+<pre><code># 설치 (Node.js 24 이상 또는 Bun)
+bun install -g @autorag/librarian    # 또는 npm install -g @autorag/librarian
+
+# 문서 폴더 지정
+autorag init --search-paths ~/Documents/research
+
+# 색인 → 상태 확인
+autorag refresh
+autorag status
+
+# 검색, 인터랙티브 TUI
+autorag search &quot;질문&quot;
+autorag tui</code></pre>
+<blockquote><code>init</code>/<code>refresh</code>/<code>status</code>는 README Quick Start 절 그대로다. <code>search</code>와 <code>tui</code>는 README의 CLI 절에 나온 명령이다. 첫 실행 시 chat model 1개와 Jev가 필요하다. TUI에서 <code>/login</code>과 <code>/model</code>로 설정하고, Jev는 Dazzi Models 로그인 또는 <code>OPENROUTER<em>API</em>KEY</code>로 쓴다.</blockquote>
+<h2>Related threads (타 계정의 동일 주제 포스트)</h2>
+<p>Threads가 추천한 <strong>무관한 계정들의 독립 포스트</strong>다. 이 글의 댓글이 아니다.</p>
+<table><thead><tr><th>계정</th><th>날짜</th><th>요지</th></tr></thead><tbody>
+<tr><td>aiinsightjournal_kr</td><td>10/20/26</td><td>&quot;Jev 처음 써보기②&quot;: API 키 발급부터 택배 사칭 문자 판별 코드 실행까지. 문자 12건으로 질문 범위·기준선 차이 확인</td></tr>
+<tr><td>promp_talk</td><td>10/09/26</td><td>JEV로 Agent 만드는 지인 이야기. 객관식 답에서 정답을 0.2초에 추정(작성자 전언). 간단한 판단은 JEV, 복잡한 생성은 LLM으로 넘기는 구조</td></tr>
+<tr><td>hanib_tech</td><td>2일 전</td><td>&quot;LLM보다 444배 싸다&quot;는 Jev를 웹 자동화에 붙여 보니 기대만큼은 아님. 범위 밖 상황에서 틀려도 자신만만. 다만 &quot;비싼 AI를 깨울지 말지&quot; 판단만 맡기는 용도는 유효</td></tr>
+</tbody></table>
+<ul>
+<li>0.2초, 444배 수치는 각 작성자의 주장이며 이 노트에서 검증하지 않았다.</li>
+<li>같은 주제와 무관한 billionnapkin 계정의 도구 소개 포스트 2건은 노트에서 제외했다.</li>
+</ul>
+<h2>메모 (yoonhwan 오빠 관점의 활용 포인트)</h2>
+<ul>
+<li>&quot;판단 전용 소형 모델이 라우팅·검증·게이트를 맡고, 무거운 LLM은 필요할 때만 깨운다&quot;는 패턴이 핵심이다.</li>
+<li>메모리 저장 전 검증(4번)은 Hermes 메모리 관리와 같은 문제의식이다.</li>
+<li>Slack, KakaoTalk, Obsidian, 코딩 에이전트 세션을 datasource로 지원하므로 jarvis-vault 검색 후보로 볼 수 있다.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>Threads 원글</td><td><a href="https://www.threads.com/@bunniesossdev/post/DfZwlrPkzE6">https://www.threads.com/@bunniesossdev/post/DfZwlrPkzE6</a></td></tr>
+<tr><td>AutoRAG GitHub</td><td><a href="https://github.com/Marker-Inc-Korea/AutoRAG">https://github.com/Marker-Inc-Korea/AutoRAG</a></td></tr>
+<tr><td>Jev Decisions 문서</td><td><a href="https://github.com/Marker-Inc-Korea/AutoRAG/blob/main/docs/jev-decisions.md">https://github.com/Marker-Inc-Korea/AutoRAG/blob/main/docs/jev-decisions.md</a></td></tr>
+<tr><td>Retrieval Memory 문서</td><td><a href="https://github.com/Marker-Inc-Korea/AutoRAG/blob/main/docs/retrieval-memory.md">https://github.com/Marker-Inc-Korea/AutoRAG/blob/main/docs/retrieval-memory.md</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-11-07 AutoRAG Agent - Jev 활용법 (bunniesossdev)/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

@@ -1,0 +1,66 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Krisp Voice Isolation — STT 정확도 벤치마크 공개 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>Krisp Voice Isolation — STT 정확도 벤치마크 공개</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>Krisp Voice Isolation — STT 정확도 벤치마크 공개</span></nav><h1>Krisp Voice Isolation — STT 정확도 벤치마크 공개</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-17 Krisp Voice Isolation STT 벤치마크/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Krisp Voice Isolation — STT 정확도 벤치마크 공개</h1>
+<p>음성 AI 에이전트가 주변 사람 말소리까지 섞어 알아듣는 문제(화자 중첩)를, STT 모델을 바꾸지 않고 <strong>전처리 단계의 음성 분리(Voice Isolation)만으로</strong> 얼마나 개선할 수 있는지 Krisp이 공개 데이터셋 + HuggingFace Space로 검증한 벤치마크.</p>
+<h2>본문 (Main Post)</h2>
+<blockquote>음성 AI 에이전트가 주변 사람의 말까지 섞어 알아듣는 문제를 해결하기 위해, Krisp에서 STT 모델 변경 없이 음성 분리(Voice Isolation) 적용만으로 평균 단어 오류율(WER)을 69.57%에서 2.97%까지 낮춘 벤치마크를 공개했습니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>업무 환경과 콜센터 등 실제 녹음 데이터 265개를 활용해 화자 중첩 구간에서의 배경 음성 억제 효과를 검증했으며, 주변 소음이 적은 일반 통화에서는 오류율이 3.5%에서 3.9%로 소폭 오르는 한계까지 과장 없이 투명하게 비교했다고 합니다.</blockquote>
+<p>출처 표기(작성자 댓글): <code>huggingface.co/spaces/Krisp-AI/VoiceIsolation-Benchmark</code></p>
+<h2>댓글 스레드 (작성자 feelfree_ai, Related thread — 같은 주제 추가 포스트)</h2>
+<p>Threads 상에서 &quot;Related threads&quot;로 묶여 있으나 실제로는 <strong>같은 작성자(feelfree_ai)가 이틀 전(10/04) 올린 선행 포스트</strong>로, 같은 벤치마크를 다른 수치로 다시 소개:</p>
+<blockquote>아무리 강력한 LLM을 연동해도 주변 사람의 목소리가 텍스트로 섞여 들어가는 순간, 음성 에이전트는 사용자의 본래 의도를 복구할 수 없습니다.</blockquote>
+<blockquote></blockquote>
+<blockquote>Krisp 벤치마크 결과를 보면 배경 소음보다 다른 사람의 말이 겹치는 환경에서 음성 분리(Voice Isolation)를 거쳤을 때 오류율이 23.3%에서 6.2%까지 극적으로 떨어집니다.</blockquote>
+<h2>⚠️ 수치 불일치 — 원문 캡션 vs 공식 벤치마크 페이지</h2>
+<p>같은 Threads 계정이 올린 두 포스트가 서로 다른 숫자를 인용하고 있고, 공식 Krisp 벤치마크 페이지(<code>krisp.ai/benchmarks/voice-isolation-benchmark/</code>)의 <strong>전체 집계 수치와도 다릅니다</strong>. 원문을 과장 없이 전달하기 위해 세 출처를 모두 표로 남깁니다.</p>
+<table><thead><tr><th>출처</th><th>적용 전 WER</th><th>적용 후 WER</th><th>비고</th></tr></thead><tbody>
+<tr><td>이번 스크랩 원문(캡션)</td><td><strong>69.57%</strong></td><td><strong>2.97%</strong></td><td>공식 페이지의 corpus-level 평균과 불일치 — 특정 엔진/시나리오 조합의 극단값일 가능성이 있으나 공식 페이지 텍스트에서 이 숫자 자체는 확인 안 됨</td></tr>
+<tr><td>같은 계정의 선행 포스트(10/04)</td><td>23.3%</td><td>6.2%</td><td>공식 페이지의 전체 평균(23.2%→6.2%)과 거의 일치 — 반올림 차이만 있음</td></tr>
+<tr><td><strong>공식 Krisp 벤치마크 페이지 (2026-09 측정)</strong></td><td><strong>23.2%</strong></td><td><strong>6.2%</strong></td><td>265개 녹음 × 11개 STT 구성 전체 pooled corpus-level WER</td></tr>
+</tbody></table>
+<p><strong>판단</strong>: 공식 페이지 기준으로는 전체 평균이 <strong>23.2% → 6.2%</strong>가 맞는 숫자입니다. 원문이 인용한 &quot;69.57% → 2.97%&quot;는 공식 benchmark 페이지 텍스트 어디에도 그대로 나오지 않아 — 특정 STT 엔진(11개 구성 중 하나) 또는 특정 시나리오(업무/콜센터 등)의 개별 수치를 평균인 것처럼 잘못 인용했을 가능성이 있습니다. HuggingFace Space의 인터랙티브 결과 테이블(JS 렌더링이라 정적 추출 불가)을 직접 열어 확인하지 않는 한 어느 조합의 숫자인지는 확정할 수 없습니다.</p>
+<h2>모델 상세 (공식 벤치마크 페이지 보강)</h2>
+<p><strong>출처</strong>: <a href="https://krisp.ai/benchmarks/voice-isolation-benchmark/">krisp.ai/benchmarks/voice-isolation-benchmark</a> (Krisp Technologies, 2026년 9월 측정, Live Voice Isolation 2.5 기준)</p>
+<h3>벤치마크 핵심 수치</h3>
+<table><thead><tr><th>항목</th><th>값</th><th>기준</th><th>의미</th></tr></thead><tbody>
+<tr><td>전체 corpus WER (적용 전→후)</td><td><strong>23.2% → 6.2%</strong></td><td>265개 녹음 × 11개 STT 구성 전체 pooled</td><td>화자 중첩이 있는 음성에서 평균 오류율 73% 감소</td></tr>
+<tr><td>업무(동료가 같은 공간 공유) 시나리오</td><td><strong>31.8% → 6.3%</strong></td><td>work scenario, 96개 녹음</td><td>가장 큰 개선 폭 — 동료 간 소리 겹침이 가장 큰 오류 원인</td></tr>
+<tr><td>화자 중첩 시나리오 전체(업무+콜센터)</td><td>70~80% 감소</td><td>work + call-center 시나리오</td><td>경쟁 음성이 있을 때 오류의 약 3/4가 제거됨</td></tr>
+<tr><td>전화통화(phone calls) 시나리오</td><td>변화 거의 없음(±0.5%p 이내)</td><td>63개 녹음, narrowband 특성상 경쟁 음성 적음</td><td>제거할 잡음이 적어 효과 미미 — 일부 파일은 소폭 악화 가능(아래 캐비엇 참고)</td></tr>
+<tr><td>개선된 STT 구성 수</td><td>11개 전부 개선, 악화 0건</td><td>11개 streaming/batch STT 설정 pooled 기준</td><td>&quot;순위 매기기&quot;가 아니라 &quot;모든 엔진이 예외 없이 좋아졌다&quot;는 메시지</td></tr>
+</tbody></table>
+<h3>데이터셋 구성</h3>
+<ul>
+<li><strong>265개 녹음 · 47명 화자 · 3개 시나리오 · 65개 스크립트</strong> — 전부 실제 녹음, 인위적 믹싱 없음</li>
+<li>업무 환경(work): 96개 녹음 · 29명 화자 · 24개 디바이스 · 4개 공간 유형 · 17개 스크립트</li>
+<li>콜센터/헤드셋(call center): 106개 녹음 · 7명 화자 · 13개 헤드셋 · 4개 장소 · 28개 스크립트</li>
+<li>전화통화(phone): 63개 녹음 · 26명 화자 · 18개 기기 · 4개 장소 유형 · 20개 스크립트</li>
+<li>각 파일에 사람이 직접 검수한 verbatim 전사본 + 주/혼합/보조 화자 구간 라벨 + 디바이스/환경 메타데이터 포함</li>
+</ul>
+<h3>Voice Isolation 2.5 모델 4종</h3>
+<table><thead><tr><th>모델</th><th>특징</th></tr></thead><tbody>
+<tr><td>Default</td><td>가장 많이 제거(가장 공격적)</td></tr>
+<tr><td>Balanced</td><td>음성 자연스러움 최대 유지</td></tr>
+<tr><td>Lite</td><td>연산량 약 1/3 수준 — 경량 배포용</td></tr>
+<tr><td>HD</td><td>32kHz 스트림 전용</td></tr>
+</tbody></table>
+<h3>측정 방법론</h3>
+<ul>
+<li>WER 계산: <code>jiwer 4.0.0</code>, word-level alignment, corpus-level pooling</li>
+<li>정규화 3단계: ① 정규식으로 우편번호/문자-숫자 토큰(NG-228 등)/4자리 숫자/전화번호 패턴 분리 → ② NVIDIA NeMo WFST로 숫자·통화·서수·시간 스펠아웃 → ③ jiwer로 소문자화, 축약형 전개, 구두점 제거, 필러워드(um/uh) 제거 후 단어 단위 정렬</li>
+<li>체감 음질: DNSMOS-C(NISQA 학습) — 주 화자가 말하는 구간에만 적용(무음 구간 품질은 측정 안 함), 4개 모델 전부 모든 시나리오에서 MOS 상승</li>
+</ul>
+<h3>캐비엇 (공식 페이지가 직접 명시)</h3>
+<p>전화통화 시나리오는 이미 narrowband이고 경쟁 음성이 거의 없어 제거할 게 적음. 대부분 모델이 raw 대비 ±0.5%p 이내에 머물고, 파일 단위로는 중립이거나 개선되는 경우가 대부분이지만 음질이 나쁘거나 매우 시끄러운 일부 파일에서는 주 화자 분리가 어려워 오히려 소폭 악화되는 경우도 있음(예외 사례로 공개됨, 숨기지 않음).</p>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>링크</th></tr></thead><tbody>
+<tr><td>원문 Threads 포스트</td><td><a href="https://www.threads.com/@feelfree<em>ai/post/Dejr3B1gVv-">https://www.threads.com/@feelfree</em>ai/post/Dejr3B1gVv-</a></td></tr>
+<tr><td>같은 계정 선행 포스트(10/04)</td><td>threads.com @feelfree_ai, 2026-10-04</td></tr>
+<tr><td>공식 벤치마크 페이지 (Krisp)</td><td><a href="https://krisp.ai/benchmarks/voice-isolation-benchmark/">https://krisp.ai/benchmarks/voice-isolation-benchmark/</a></td></tr>
+<tr><td>HuggingFace Space (인터랙티브 결과, 직접 오디오 테스트 가능)</td><td><a href="https://huggingface.co/spaces/Krisp-AI/VoiceIsolation-Benchmark">https://huggingface.co/spaces/Krisp-AI/VoiceIsolation-Benchmark</a></td></tr>
+<tr><td>원본 데이터셋 (265개 녹음 raw)</td><td><a href="https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset">https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset</a></td></tr>
+<tr><td>전처리된 데이터셋 (4개 모델 출력 포함)</td><td><a href="https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset-Processed">https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset-Processed</a></td></tr>
+<tr><td>컬렉션 전체</td><td><a href="https://huggingface.co/collections/Krisp-AI/krisp-voice-isolation-benchmark-suite">https://huggingface.co/collections/Krisp-AI/krisp-voice-isolation-benchmark-suite</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-17 Krisp Voice Isolation STT 벤치마크/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

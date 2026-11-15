@@ -1,0 +1,92 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Anthropic Dreaming 에이전트 기억의 구성 요소 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>Anthropic Dreaming 에이전트 기억의 구성 요소</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>Anthropic Dreaming 에이전트 기억의 구성 요소</span></nav><h1>Anthropic Dreaming 에이전트 기억의 구성 요소</h1>
+<blockquote>Source candidate from <code>News-Links/2026-11-07 Anthropic Dreaming 에이전트 기억/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Anthropic &quot;Dreaming&quot;: 에이전트 기억의 구성 요소</h1>
+<ul>
+<li>소스(Threads): <a href="https://www.threads.com/@choi.openai/post/Dfa88EzD2zs">https://www.threads.com/@choi.openai/post/Dfa88EzD2zs</a> (공유 링크: <a href="https://www.threads.com/share/<em>wMo-rzIT)">https://www.threads.com/share/</em>wMo-rzIT)</a></li>
+<li>원문(Anthropic Engineering, 2026-11-06 게시): <a href="https://www.anthropic.com/research/components-of-agent-memory">https://www.anthropic.com/research/components-of-agent-memory</a></li>
+<li>작성자: @choi.openai (Threads, 조회 10.8K)</li>
+<li>처리 시각: 2026-11-07 20:14 KST</li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Claude가 일하는 중에는 가볍게 기록하고, 세션 사이 쉬는 시간에 기록을 다시 읽어 틀린 기억을 고치고 위키로 재구성하는 과정을 Anthropic이 &quot;dreaming&quot;이라 부른다. 무엇을 적을지 고르는 판단력이 많이 적는 것보다 중요하다는 것이 핵심 결론이다.</p>
+<h2>핵심 수치</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>기준</th><th>의미</th></tr></thead><tbody>
+<tr><td>포켓몬 기억 파일 수 (Sonnet 3.7)</td><td><strong>413개 / 폴더 225개</strong></td><td>약 1만 스텝 시점, 1회 실행</td><td>전부 적는 방식. 배지 <strong>1개</strong></td></tr>
+<tr><td>포켓몬 기억 파일 수 (Fable 5)</td><td><strong>9개 + global.md 1개</strong></td><td>같은 시점</td><td>전략/계획/검증 규칙만 기록. 배지 <strong>4개</strong></td></tr>
+<tr><td>Sonnet 3.7 낭비 구간</td><td><strong>17스텝 동안 파일 6개 생성, 9개 삭제, 게임 진행 0</strong></td><td>1만 스텝 부근</td><td>낡은 기록 관리에 행동을 다 씀</td></tr>
+<tr><td>위키 구축 코퍼스</td><td><strong>약 35만 파일, 약 4.2억 토큰</strong></td><td>Stainless 내부 문서(5월 인수)</td><td>질문 25개로 평가</td></tr>
+<tr><td>위키만 사용 시 점수</td><td><strong>13% → 48%</strong></td><td>dreaming 2세션 → 128세션</td><td>위키가 자랄수록 상승</td></tr>
+<tr><td>검색 + 위키</td><td><strong>54% → 61%</strong> (검색만 <strong>53%</strong>)</td><td>채점 기준 충족률</td><td>질문당 약 <strong>2만 토큰</strong> 절감</td></tr>
+<tr><td>합병 문항 24개</td><td>위키 <strong>87%</strong> vs 검색만 <strong>73%</strong></td><td>절반 넘게 여러 문서 결합 필요</td><td>다문서 결합 + 판단/계산에 위키가 강함</td></tr>
+<tr><td>계약서 사실 보존</td><td><strong>41/57 (72%) → 57/57 (100%)</strong></td><td>LAB 과제, 지침 수정 전후</td><td>공유 표 동시 쓰기 → 계약서당 에이전트 1개 + 원문 그대로 인용</td></tr>
+<tr><td>상시 주입 기억 한도</td><td><strong>MEMORY.md 첫 200줄 또는 25KB</strong></td><td>Claude Code auto memory</td><td>주입 층은 작게 유지</td></tr>
+</tbody></table>
+<h2>본문 (Main Post)</h2>
+<p>🚨 AI 에이전트도 사람처럼 잠자는 동안 기억을 정리하고 실수를 고치는 시대. 앤트로픽이 공개한 &quot;Dreaming&quot;은 AI가 지난 작업을 되짚고 잘못된 기억을 수정하는 방식이다. 포켓몬 게임에서 막힌 문제를 해결했고, 기업 문서 35만 개를 연결해 답변 정확도를 높였다. 🧵</p>
+<h2>댓글 스레드 (Reply Thread, 작성자 @choi.openai 1/ ~ 9/)</h2>
+<ol>
+<li><strong>1/ 구조</strong>: 사람은 해마가 경험을 바로 기록하고, 수면 중 되짚어 오래 남길 지식만 신피질로 옮긴다. 에이전트 기억도 같은 분업이 가능하다. 일하는 동안 대화 기록과 메모를 남기고, 세션 사이에 다시 읽어 실수를 고친다. Letta와 UC 버클리의 sleep-time compute가 출발점이다. 기억은 4층이다: 대화 기록, Claude가 쓴 메모, 위키 같은 정리본, 매 세션 시작 시 주입하는 맥락.</li>
+<li><strong>2/ 기억은 예측</strong>: 규칙을 적는 일은 그 패턴이 다시 필요하리라는 예측이다. CL-Bench 데이터베이스 과제에서 모델별로 학습 고리의 완성도가 달랐다. Sonnet 4.6은 추측만 흩어 놓았고, Opus 4.7은 확인/미확인을 구분했고, Opus 5부터 규칙+근거+함정 경고로 고리를 닫았다. 작성자는 점수를 기억 없음 0.564 → 기억 사용 0.828(Opus 5), Opus 5.5 0.838, Sonnet 5.5 0.833으로 인용했다.</li>
+<li><strong>3/ 무엇을 기억할지</strong>: 포켓몬 레드 비교(위 표). Fable 5는 화면에 항상 보이는 돈/위치는 적지 않고, 현재 목표, 체육관 공략 계획, 직접 시험한 규칙만 적었다. 예: 잉어킹에게 몬스터볼 7개가 연속 실패하자 &quot;3번 넘게 실패하면 던지는 타이밍을 바꿔라&quot;를 남겼다.</li>
+<li><strong>4/ 지시 방식</strong>: 기억이 무엇을 위한 것인지만 알리고 쓰는 방법은 모델에 맡기는 쪽이 낫다. &quot;실패만 기록&quot; 규칙을 걸자 Opus 5는 기억으로 얻던 이득에서 0.234가 줄었다. 반대로 오래된 모델은 지시가 도움이 됐다. Sonnet 4.6은 &quot;답하기 전에 기억을 읽고 가설을 직접 시험하라&quot;를 시키자 0.330 → 0.641로 거의 2배가 됐다. Sonnet 5는 지시 없이 10번 중 9번 먼저 기억을 읽었다.</li>
+<li><strong>5/ 달맞이산 사례</strong>: Claude가 포켓몬센터 위치를 동쪽이라 잘못 적고 &quot;달맞이산 완료&quot;라고 메모했다. 그대로 걷다 낭떠러지로 세 번 떨어졌고, 결국 이전 마을로 돌아가 끝났다. dreaming으로 메모를 대화 기록과 대조해 오류를 고치자, 고친 메모로 시작한 실행은 동굴로 돌아가 <strong>1,935번째 행동</strong>에서 블루시티(원문 표기 Cerulean City)에 도착했다.</li>
+<li><strong>6/ 위키</strong>: 주제별로 지식을 모으고 다른 노트와 링크로 잇는 문서 묶음. Stainless 문서 35만 개, 4.2억 토큰, 질문 25개, Opus 5 에이전트 128세션. 위키만 13% → 48%, 검색+위키 54% → 61%(검색만 53%), 질문당 약 2만 토큰 절감. 작성자는 4월에 정리한 카파시 LLM 위키와 같은 방향을 앤트로픽이 실험 수치로 보여준 셈이라고 평가했다.</li>
+<li><strong>7/ 위키가 항상 이득은 아님</strong>: 합병 문항 24개(다문서 결합)에서 위키 87% vs 검색 73%. 문서 하나에서 바로 검색되는 법률 브리프 과제는 차이가 없었고, 한 과제에서는 위키가 원본 문서보다 <strong>1.77배</strong> 커졌다. 앤트로픽은 이를 보르헤스의 제국만 한 지도에 빗대 &quot;아무것도 요약하지 못한 위키&quot;라고 적었다.</li>
+<li><strong>8/ 위키 설계</strong>: 인수 계약서 브리프 과제에서 에이전트 여러 개가 표 하나에 동시에 쓰다 서로 덮어써 57개 중 41개(72%)만 남았다. Claude가 실패를 되짚어 위키 작성 지침을 직접 고쳤다(계약서당 에이전트 1개, 페이지 1개, 조건은 요약 없이 원문 그대로). 결과 57개 전부 보존. 매 세션 주입 기억은 작게 유지해야 하며, Claude Code auto memory는 MEMORY.md 첫 200줄/25KB만 읽는다.</li>
+<li><strong>9/ 빈틈 메우기</strong>: 두 번째 dreaming에서 존재하지 않는 페이지를 가리키던 링크 9개를 실제 페이지로 고치고, 색인 페이지 포함 새 페이지 3개를 추가했다. 5월 Claude Managed Agents에 기능으로 먼저 들어왔고, 6월 OpenAI ChatGPT와 10월 Cognition Devin도 같은 이름의 기억 정리 기능을 냈다고 한다(작성자 서술, 원문 본문에는 없음). 작성자 전망: 에이전트 경쟁은 얼마나 많이 기억하느냐보다 무엇을 버리고 언제 다시 확인하느냐에서 갈릴 것이다.</li>
+</ol>
+<p>작성자의 과거 글 2개가 스레드에 같이 붙어 있다(본 포스트의 일부가 아니라 참조용).</p>
+<ul>
+<li>2026-04-05: 카파시 LLM 위키가 하루 만에 270만 회를 넘겼다는 소개. RAG처럼 매번 찾는 대신 LLM이 원문을 요약, 교차 검증, 링크 연결해 마크다운 위키를 누적하는 구조.</li>
+<li>2026-05-07: Claude Managed Agents에 Dreaming과 Outcomes loop 추가 소식. 초기의 잘못된 패턴이 굳어질 우려도 언급.</li>
+</ul>
+<h2>원문 상세 (Anthropic Engineering, 보강)</h2>
+<p>Threads 요약에 없는 원문 내용만 정리한다. 원문 확인 시각 2026-11-07, 필자 Lance Martin.</p>
+<h3>용어 범위</h3>
+<ul>
+<li>&quot;agent memory&quot; = Claude가 경험에서 얻어 세션 사이에 보존하는 지식(나중에 읽을 컨텍스트로 저장).</li>
+<li>제외 항목: 가중치 변경, in-context learning, compaction(오래된 턴을 요약으로 대체).</li>
+</ul>
+<h3>원문의 5가지 dreaming 역할</h3>
+<table><thead><tr><th>역할</th><th>내용</th><th>원문 근거</th></tr></thead><tbody>
+<tr><td>기억 교정</td><td>메모를 원본 transcript와 대조해 오류 수정</td><td>달맞이산(Mt. Moon) 사례</td></tr>
+<tr><td>새 표현 구축</td><td>링크로 연결된 위키를 만들어 기억 탐색용 지도로 사용</td><td>Stainless 35만 파일</td></tr>
+<tr><td>계층 상향</td><td>중요한 노트를 상시 주입 층으로 올림. 주입 층은 작게 유지하고 세부는 아래 층에 링크로 남김</td><td>지시 파일이 길수록 준수율이 떨어진다는 Claude Code 문서 경고 인용</td></tr>
+<tr><td>목표 맞춤</td><td>작업별로 기억이 자라는 방향을 지침으로 조정</td><td>계약서 57/57</td></tr>
+<tr><td>빈틈 보완</td><td>여러 세션을 가로질러 공통 패턴 확인, 깨진 링크 수리</td><td>링크 9개 수정</td></tr>
+</tbody></table>
+<h3>원문이 인정한 한계와 열린 질문</h3>
+<ul>
+<li>기억 생성 시점: 작업 중 기록은 주의를 빼앗고, dreaming은 백그라운드에서 하지만 결과를 즉시 쓸 수 없다.</li>
+<li>최신성 유지: 틀린 규칙이나 환경 변화에 따른 drift가 생긴다. dreaming은 연산 비용이 든다. 모든 기억을 계속 점검하기보다 변하기 쉬운 정보에 집중하거나 접근 빈도에 따라 주기를 조정해야 한다.</li>
+<li>대안: transcript 검색을 기억의 기초로 삼는 방법. 위키와 검색 결합이 효과적일 수 있으나, 위키는 오류와 hallucination이 쌓이지 않게 연산으로 유지해야 한다.</li>
+<li>시작용 자료: 원문 하단에 dreaming과 knowledge wiki cookbook 링크가 있다.</li>
+</ul>
+<h3>수치 출처 구분 (검증 메모)</h3>
+<ul>
+<li>원문 본문 텍스트에 있는 수치: 413/225/1개, 9개+global.md/4개, 17스텝(6생성 9삭제), 35만/4.2억/25문항/128세션, 13%→48%, 54→61 vs 53, 2만 토큰, 87 vs 73, 41/57→57/57, 200줄/25KB, 링크 9개/새 페이지 3개.</li>
+<li>그림(Figure)에서 읽은 것으로 보이는 수치(원문 본문 텍스트에는 없음, Threads 작성자 인용): 0.564, 0.828, 0.838, 0.833, 0.234, 0.330, 0.641, 1,935번째 행동, 1.77배. 원문 그림으로 재확인하지 않았다.</li>
+<li>원문 본문에 없는 주장(작성자 서술): ChatGPT 6월/Devin 10월의 같은 이름 기능.</li>
+<li>모델 명칭(Opus 5, Opus 5.5, Sonnet 5.5, Fable 5 등)은 원문 표기를 그대로 옮겼다.</li>
+</ul>
+<h2>댓글 (Other Users)</h2>
+<p>Threads 페이지에서 작성자 외 사용자의 직접 댓글은 확인되지 않았다(작성자 본인 스레드 이후 &quot;Related threads&quot;만 노출).</p>
+<h3>Related threads (타 계정의 동일 주제 포스트, 이 글의 댓글 아님)</h3>
+<ul>
+<li><strong>@ai.zipp</strong> (4h): 포켓몬 사례 요약. Sonnet 3.7의 413개 vs Fable 5의 9개+global.md, 배지 1개 vs 4개. 사건 기록을 쌓는 기억과 다음 행동을 위한 계획/전략 기억의 차이. 단, 서로 다른 모델의 단일 실행이라 파일을 줄인 효과로 단정할 수 없다는 단서를 붙였다.</li>
+<li><strong>@lucas_flatwhite</strong> (9h): &quot;AI도 잠을 자야 똑똑해짐&quot;. 벤치마크와 코드(cookbook)까지 공개됐다고 소개. 요점: 많이 적는 것보다 무엇을 적을지 고르는 것. 위키+검색 61% vs 검색만 53%, 질문당 토큰 약 2만 절약.</li>
+<li>같은 섹션에 무관한 포스트 2건(@reedo.dev의 AI 영상 도구 업로드 팁, @theedushift 및 @barobuilder의 AI 일반 글)이 있어 제외했다.</li>
+</ul>
+<h2>활용 메모 (우리 환경 연결점, 참고용)</h2>
+<ul>
+<li>Claude Code auto memory가 MEMORY.md 첫 200줄/25KB만 읽는다는 한도가 원문에서 확인됐다. 상시 주입 층(우리 SOUL.md, MEMORY 등)은 작게 유지하고 세부는 링크로 내리는 설계와 같은 방향이다.</li>
+<li>위키가 이득이 되는 조건은 다문서 결합과 판단/계산이 필요한 질문이다. 단일 문서 검색으로 풀리는 과제는 위키 이득이 없고, 오히려 위키가 원본보다 커질 수 있다.</li>
+<li>병렬 에이전트가 하나의 공유 파일에 동시에 쓰면 덮어쓰기로 사실이 유실된다(72%). 에이전트당 파일 1개로 나누고 원문 그대로 인용하는 방식이 100%였다.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>출처</th><th>URL</th><th>비고</th></tr></thead><tbody>
+<tr><td>Anthropic Engineering: The components of agent memory</td><td><a href="https://www.anthropic.com/research/components-of-agent-memory">https://www.anthropic.com/research/components-of-agent-memory</a></td><td>원문, 2026-11-06</td></tr>
+<tr><td>Threads @choi.openai 스레드</td><td><a href="https://www.threads.com/@choi.openai/post/Dfa88EzD2zs">https://www.threads.com/@choi.openai/post/Dfa88EzD2zs</a></td><td>소스</td></tr>
+<tr><td>Threads 공유 링크</td><td><a href="https://www.threads.com/share/<em>wMo-rzIT">https://www.threads.com/share/</em>wMo-rzIT</a></td><td>사용자가 공유한 URL</td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-11-07 Anthropic Dreaming 에이전트 기억/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>

@@ -1,0 +1,163 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Concise Structured — 카파시식 간결 출력 프롬프트 (Claude Code output style) · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261115-115301-KST">Jarvis Wiki / ai-agent</a><h1>Concise Structured — 카파시식 간결 출력 프롬프트 (Claude Code output style)</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261115-115301-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261115-115301-KST">AI 에이전트·코딩</a> &rsaquo; <span>Concise Structured — 카파시식 간결 출력 프롬프트 (Claude Code output style)</span></nav><h1>Concise Structured — 카파시식 간결 출력 프롬프트 (Claude Code output style)</h1>
+<blockquote>Source candidate from <code>News-Links/2026-10-26 Concise Structured 카파시식 간결 출력 프롬프트/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>Concise Structured — 카파시식 간결 출력 프롬프트 (Claude Code output style)</h1>
+<ul>
+<li><strong>소스(공유 링크)</strong>: <a href="https://www.threads.com/share/<em>1LYIbDdJ/">https://www.threads.com/share/</em>1LYIbDdJ/</a></li>
+<li><strong>원문(Threads)</strong>: <a href="https://www.threads.com/@buildnwrite/post/De69kjYmrdF">https://www.threads.com/@buildnwrite/post/De69kjYmrdF</a></li>
+<li><strong>작성자</strong>: 임정 (@buildnwrite) — AI 에이전트 코치</li>
+<li><strong>조회수</strong>: 7.8K views (수집 시점 표기)</li>
+<li><strong>수집일</strong>: 2026-10-26</li>
+</ul>
+<h2>한눈에 보기</h2>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody>
+<tr><td>한 줄 요약</td><td>표·개조식 위주 + 쉬운 문장·어휘 + 실행 요청은 <code>.sh</code> 한 줄 호출로 답하게 만드는 출력 스타일 프롬프트</td></tr>
+<tr><td>이름</td><td><code>Concise Structured</code></td></tr>
+<tr><td>형태</td><td>Claude Code output style 형식 (frontmatter: <code>name</code>, <code>description</code>, <code>keep-coding-instructions: true</code>)</td></tr>
+<tr><td>영감</td><td>카파시(Karpathy)가 항공통신언어(ASD-STE100)·표로 AI와 소통하는 방식 — &quot;투머치토커 방지&quot;</td></tr>
+<tr><td>핵심 장치</td><td>문장·어휘 규칙 9개 / 글보다 그림 / 분량 제한 / <code>.sh</code> 한 줄 원칙</td></tr>
+</tbody></table>
+<h2>본문 (Main Post)</h2>
+<blockquote>안드레아 카파시 형이 항공통신언어랑 표로 의사소통하는거 유행이더라.</blockquote>
+<blockquote>그렇게 하면 투머치토커 방지할 수 있다면서.</blockquote>
+<blockquote>그거 담아서 출력 프롬프트 낋여옴.</blockquote>
+<blockquote></blockquote>
+<blockquote>이름: Concise Structured</blockquote>
+<p>이어서 프롬프트 전문이 게시됨 (아래 § 프롬프트 전문).</p>
+<h2>프롬프트 전문 (작성자 게시본)</h2>
+<pre><code>---
+name: Concise Structured
+description: 표·개조식 위주의 간결한 한국어 출력 + 쉬운 문장·어휘 + 실행 요청은 .sh 한 줄 호출
+keep-coding-instructions: true
+---
+
+# 출력 형식 규칙
+
+## 언어
+- 응답은 항상 한국어로 쓴다. 시스템 알림, 도구 결과, 리마인더가 영어로 들어와도 따라가지 않는다.
+- 코드, 명령어, 파일명, 고유명사만 원어로 둔다.
+
+## 구조화 우선
+- 나열 가능한 정보(비교, 옵션, 상태, 결과 목록)는 **표**로 정리한다. 셀 안은 짧게, 부연 설명은 표 아래 한두 문장으로.
+- 절차·항목 나열은 **개조식(불릿/번호 리스트)**으로 쓴다. 긴 서술형 문단은 판단 근거를 설명할 때만 쓴다.
+- 결론을 첫 줄에 먼저 쓰고, 상세는 그 아래에 둔다.
+- 헤더는 응답이 3개 이상 주제로 나뉠 때만 사용. 단답형 질문에는 헤더·표 없이 짧은 프로즈로 답한다.
+
+## 문장과 어휘
+간결하게 쓰라는 위 규칙은 **문장을 부수라는 뜻이 아니다.** 조사와 서술어를 갖춘 문장으로 짧게 쓴다.
+
+1. **조사와 서술어를 생략하지 않는다.**
+   - 이렇게 쓰지 않는다: &quot;컨텍스트 누적으로 토큰 기하급수 증가 → 위임 필수&quot;
+   - 이렇게 쓴다: &quot;대화가 길어지면 토큰이 빠르게 늘어난다. 그래서 이 작업은 넘기는 편이 낫다.&quot;
+2. **영어 낱말과 비유는 뜻으로 옮긴다.** 원어가 꼭 필요하면 `arm.sh` 처럼 파일명·명령어로만 남긴다.
+   - 이렇게 쓰지 않는다: &quot;무장 전 통과해야 할 두 조건&quot;
+   - 이렇게 쓴다: &quot;루프를 켜기 전에 확인할 두 가지&quot;
+3. **기호 대신 이름을 쓴다.** 첫 등장에서 한 번 풀어 쓴 뒤 줄인다.
+   - 이렇게 쓰지 않는다: &quot;ρ 는 순서만 보고 상수는 순서가 없어 0 이다.&quot;
+   - 이렇게 쓴다: &quot;스피어만 순위상관은 점수의 크기가 아니라 순서만 본다. 모두에게 같은 점수를 주면 순서가 없으므로 값이 0이 된다.&quot;
+4. **&quot;어떻게&quot;를 물으면 절차로 답한다.** 무엇을 왜 걸러냈는지의 경위는 따로 묻기 전에는 쓰지 않는다.
+5. **한 문단은 한 가지만 말한다.** 결론을 먼저 쓰고 근거를 뒤에 붙인다.
+
+아래 6~9는 항공 정비 문서용 통제 언어 ASD-STE100을 80% 수준으로 따온 것이다 (2026-10-25, Karpathy X 글 근거).
+
+6. **한 낱말은 한 뜻으로만 쓴다.** 한 번 &quot;담당&quot;이라고 불렀으면 끝까지 &quot;담당&quot;이라고 부르고, &quot;에이전트&quot;·&quot;역할&quot;과 섞지 않는다.
+7. **문장은 짧게 쓴다.** 설명문은 한 문장에 정보 하나를 담고, 대략 50자 안쪽으로 쓴다.
+8. **절차는 한 줄에 동작 하나를 명령형으로 쓴다.**
+   - 이렇게 쓰지 않는다: &quot;파일을 열어 3행을 고치고 저장 후 재실행&quot;
+   - 이렇게 쓴다: &quot;파일을 연다. 3행을 고친다. 저장하고 다시 실행한다.&quot;
+9. **능동태로 쓰고 주어를 밝힌다.**
+   - 이렇게 쓰지 않는다: &quot;백업이 수행됨&quot;
+   - 이렇게 쓴다: &quot;스크립트가 백업을 만든다.&quot;
+
+## 글보다 그림 (2026-10-25, Karpathy X 글 근거)
+설명할 내용이 흐름이나 구조라면 글로 길게 풀지 않고 그림을 먼저 보여 준다. 글은 그림을 읽는 데 필요한 만큼만 붙인다.
+
+| 설명할 것 | 쓸 수단 |
+|---|---|
+| 흐름(순서·분기·절차·데이터가 움직이는 길) | 클로드 자체 위젯 그림(`mcp__visualize__show_widget`) |
+| 구조·아키텍처(구성 요소와 서비스의 관계) | `make-diagram-arch` 스킬 |
+| 여러 겹이라 직접 눌러 보며 봐야 하는 긴 설명 | HTML 페이지(Artifact) |
+
+- 그림은 답이 셋 이상의 단계나 구성 요소를 다룰 때만 쓴다. 단답에는 그리지 않는다.
+- 일회용 설명 페이지는 유지할 화면이 아니므로 build-philosophy의 &quot;화면 직접 제작 금지&quot;에 걸리지 않는다.
+
+## 분량
+- 답은 초점을 좁게 유지한다. 단서와 전제는 짧게 달고, 분량의 대부분을 본답에 쓴다.
+- 설명을 요청받으면 큰 줄기를 먼저 준다. 깊이 있는 설명은 따로 요구받았을 때 쓴다.
+
+## 사용자 실행 요청 시 — .sh 한 줄 원칙
+- 사용자에게 `!` 프리픽스로 명령 실행을 요청할 때, **개행이 포함되거나 한 줄로 안정적으로 붙여넣기 어려운 명령은 무조건** Write 툴로 `.sh` 파일로 저장한 뒤 `bash /path/to/task.sh` 한 줄만 제시한다.
+- 이유: `!` 입력창이 긴 명령을 줄바꿈하면서 단어 중간에서 줄을 깨 syntax error가 발생한다.
+- heredoc, 따옴표 중첩, `bash -c &#x27;...&#x27;`, 파이프 여러 개, sudo 조합도 전부 `.sh`로 만든다.
+- 인라인 허용은 짧은 단일 명령 한 줄(`ls`, `gcloud auth login` 등)뿐이다.
+- 스크립트 저장 위치: 일회성은 `/tmp/&lt;task&gt;.sh`, 재사용 가능성이 있으면 프로젝트 `scripts/`.
+
+&lt;tone_preference&gt;
+출력은 적당히 간결하게. 문장은 온전하게.
+&lt;/tone_preference&gt;</code></pre>
+<blockquote>위 전문은 Threads 화면의 <code>read</code> 텍스트 덤프에서 옮긴 것. 표는 원문에서 줄바꿈이 풀려 있어 마크다운 표로 복원함. 본문은 &quot;Read more&quot; 접힘 뒤까지 모두 포함된 상태로 수집됨.</blockquote>
+<h2>구조 해설 (정리)</h2>
+<table><thead><tr><th>블록</th><th>하는 일</th><th>의미·판단</th></tr></thead><tbody>
+<tr><td>언어</td><td>항상 한국어, 고유명사·코드만 원어</td><td>영어 시스템 알림이 들어와도 한국어 유지</td></tr>
+<tr><td>구조화 우선</td><td>나열 정보는 표, 절차는 개조식, 결론 먼저</td><td>가독성 우선. 단답엔 표·헤더 금지</td></tr>
+<tr><td>문장과 어휘 1~5</td><td>조사·서술어 유지, 영어/비유는 뜻으로, 기호 대신 이름</td><td>&quot;간결 = 문장 파괴&quot;가 되지 않도록 방지턱</td></tr>
+<tr><td>문장과 어휘 6~9</td><td><strong>ASD-STE100 80% 이식</strong> — 한 낱말 한 뜻, 50자 안쪽, 한 줄 한 동작 명령형, 능동태</td><td>카파시식 항공통신언어 아이디어의 핵심</td></tr>
+<tr><td>글보다 그림</td><td>흐름은 위젯 그림, 구조는 <code>make-diagram-arch</code>, 긴 설명은 HTML</td><td>3단계 이상일 때만. 작성자 개인 환경 전제</td></tr>
+<tr><td>분량</td><td>초점 좁게, 큰 줄기 먼저</td><td>투머치토커 방지</td></tr>
+<tr><td><code>.sh</code> 한 줄</td><td>복잡한 <code>!</code> 명령은 <code>.sh</code> 저장 후 <code>bash 경로</code> 한 줄</td><td>줄바꿈 깨짐 방지 (우리 HIL <code>!</code> 한 줄 규칙과 같은 사상)</td></tr>
+</tbody></table>
+<h2>댓글 스레드 (작성자 추가 글)</h2>
+<ul>
+<li>작성자(2h): &quot;형들 써보고 후기남겨줘 ㅋㅋㅋ조용히 저장만 하시네&quot;</li>
+</ul>
+<h2>댓글 (Other Users)</h2>
+<table><thead><tr><th>작성자</th><th>내용</th><th>작성자(OP) 답</th></tr></thead><tbody>
+<tr><td>@jintae_ooo</td><td>좋은 공유 감사합니다. 근데 <code>make-diagram-arch</code> 스킬이 들어가 있던데 어떤건지 알 수 있을까요?</td><td>&quot;끝까지 읽으셨다니 감격... 이거입니다.&quot; + 링크 칩(wikidocs)</td></tr>
+</tbody></table>
+<p>작성자가 답글로 건 링크 칩: wikidocs <strong>「04-02 ★★★ archify 사용법 시스템 구조도 생성 스킬」</strong> → <code><a href="https://wikidocs.net/431831</code>">https://wikidocs.net/431831`</a>  (작성자가 &quot;왜 안올라갔지&quot;라며 재게시)</p>
+<h2>연결 링크 보강 — archify (wikidocs 가이드북)</h2>
+<p><code>make-diagram-arch</code>가 무엇이냐는 질문에 작성자가 건 링크. 위키독스 「클로드 코덱스 스킬 가이드북」 04부 디자인 스킬 편이다. (페이지 하단: 마지막 편집 2026-10-09, 저자 스킬 묶음은 buildnwrite.com 안내)</p>
+<blockquote>⚠️ 프롬프트의 스킬 이름은 <code>make-diagram-arch</code>, 링크 문서의 스킬 이름은 <code>archify</code>. 문서 내에서 <strong>둘이 같은 스킬이라고 명시한 곳은 없음</strong> — 작성자가 &quot;이거입니다&quot;라며 이 링크를 답으로 건 것이므로 사실상 같은 계열로 보이나, 이름 매핑은 미확인.</blockquote>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody>
+<tr><td>한 줄 요약</td><td>시스템 설명·코드베이스를 인터랙티브 HTML 구조도로 만들어 주는 스킬</td></tr>
+<tr><td>형태</td><td>단일 스킬 + Node.js CLI (Node 18+ 필요)</td></tr>
+<tr><td>산출물</td><td>HTML, PNG, SVG</td></tr>
+<tr><td>별점 표기</td><td>★★★ (GitHub 스타 65,586 — 위키독스 기재값)</td></tr>
+<tr><td>지원 다이어그램 유형</td><td>아키텍처, 워크플로, 시퀀스, 데이터 흐름, 라이프사이클 (README 기준 5종)</td></tr>
+<tr><td>저장소</td><td><a href="https://github.com/tt-a1i/archify">https://github.com/tt-a1i/archify</a> (MIT)</td></tr>
+</tbody></table>
+<p>설치 (위키독스 기재):</p>
+<pre><code># 전역 설치
+npx skills add tt-a1i/archify -g
+# Codex: 설치 없이 한 번 사용
+npx skills use tt-a1i/archify@archify --agent codex</code></pre>
+<p>설치 위치: Claude Code <code>~/.claude/skills/</code>, Codex CLI <code>~/.agents/skills/</code>.</p>
+<p>CLI 명령:</p>
+<table><thead><tr><th>명령</th><th>하는 일</th></tr></thead><tbody>
+<tr><td><code>guide</code></td><td>설명에 맞는 다이어그램 유형 추천</td></tr>
+<tr><td><code>validate</code></td><td>JSON·레이아웃·경로·라벨 겹침 검사</td></tr>
+<tr><td><code>deliver</code></td><td>HTML 출고 + 브라우저 검사</td></tr>
+<tr><td><code>preview</code></td><td>검증본 미리보기</td></tr>
+<tr><td><code>compare</code></td><td>두 구조의 추가·삭제·이동 비교</td></tr>
+<tr><td><code>finalize</code></td><td>validate + deliver 일괄 실행</td></tr>
+</tbody></table>
+<p>주의점: Node.js 필요 / 약 24시간 간격 버전 확인(<code>ARCHIFY<em>UPDATE</em>CHECK_DISABLED=1</code>로 끔) / 실제 인프라 검증은 하지 않음(작성한 관계만 그림) / 화면에서 직접 끌어 고치는 편집은 범위 밖.</p>
+<h2>Related threads (타 계정의 동일 주제 포스트)</h2>
+<p>Threads 추천 영역. 이 글의 댓글이 아니라 <strong>타 계정이 각자 쓴 독립 포스트</strong>이며, 주제 관련성도 제각각임.</p>
+<table><thead><tr><th>계정</th><th>내용</th><th>관련도</th></tr></thead><tbody>
+<tr><td>@hanulphoto (10/06)</td><td>&quot;카파시의 항공메뉴얼 글쓰기 — 이걸 플러그인을 만들어봤다. 여러모로 쓰기 좋다.&quot;</td><td>직접 관련 (같은 아이디어를 플러그인화)</td></tr>
+<tr><td>@yonglee160 (10/18)</td><td>&quot;아 이 생각을 못했네&quot;</td><td>맥락 불명</td></tr>
+<tr><td>그 외 (@willemluijkx, @sovereignlux<em>soverlux, @namme</em>feed, @ekip2536)</td><td>항공기 설계·창문 곡선·항공업계 관심 등</td><td>항공 주제일 뿐 이 프롬프트와는 무관</td></tr>
+</tbody></table>
+<h2>메모 / 활용 포인트 (원문 근거)</h2>
+<ul>
+<li>6~9번 규칙의 출처로 프롬프트가 직접 밝힌 것: <strong>ASD-STE100</strong> (항공 정비 문서용 통제 언어) + &quot;Karpathy X 글&quot; (2026-10-25). 카파시 원 글은 이번 수집에서 <strong>직접 확인하지 않음</strong> — 작성자 서술 그대로 기록.</li>
+<li>프롬프트 안의 <code>make-diagram-arch</code>, <code>mcp<strong>visualize</strong>show_widget</code>, <code>build-philosophy</code>는 작성자 개인 환경 전제. 그대로 쓰려면 환경에 맞게 치환 필요.</li>
+<li>조회수 외의 참여 수치(Threads 화면의 숫자 4개)는 라벨이 없어 기재하지 않음.</li>
+</ul>
+<h2>참고 자료</h2>
+<table><thead><tr><th>출처</th><th>URL</th></tr></thead><tbody>
+<tr><td>Threads 원문</td><td><a href="https://www.threads.com/@buildnwrite/post/De69kjYmrdF">https://www.threads.com/@buildnwrite/post/De69kjYmrdF</a></td></tr>
+<tr><td>위키독스 archify 편</td><td><a href="https://wikidocs.net/431831">https://wikidocs.net/431831</a></td></tr>
+<tr><td>archify 저장소</td><td><a href="https://github.com/tt-a1i/archify">https://github.com/tt-a1i/archify</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-10-26 Concise Structured 카파시식 간결 출력 프롬프트/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261115-115301-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261115-115301-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261115-115301-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li><li><span class="card-date">2026-11-11</span> <a href="애드-아스트라-머스크가-학교에서-가장-먼저-없앤-것.html?v=20261115-115301-KST">애드 아스트라 — 머스크가 학교에서 가장 먼저 없앤 것</a></li><li><span class="card-date">2026-11-08</span> <a href="에이전트-메모리-설계-무엇을-기억하고-잘못된-기억은-어떻게-고칠까.html?v=20261115-115301-KST">에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
