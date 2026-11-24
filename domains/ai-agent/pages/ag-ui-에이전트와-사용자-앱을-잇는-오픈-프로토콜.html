@@ -1,0 +1,101 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AG-UI — 에이전트와 사용자 앱을 잇는 오픈 프로토콜 · Jarvis Wiki</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><header><a class="badge" href="../index.html?v=20261124-092525-KST">Jarvis Wiki / ai-agent</a><h1>AG-UI — 에이전트와 사용자 앱을 잇는 오픈 프로토콜</h1><p class="muted">Public GitHub Pages export · full wiki body rendered · raw files excluded</p></header><nav class="breadcrumb"><a href="../../../index.html?v=20261124-092525-KST">Portal</a> &rsaquo; <a href="../../../categories/ai-agent-coding.html?v=20261124-092525-KST">AI 에이전트·코딩</a> &rsaquo; <span>AG-UI — 에이전트와 사용자 앱을 잇는 오픈 프로토콜</span></nav><h1>AG-UI — 에이전트와 사용자 앱을 잇는 오픈 프로토콜</h1>
+<blockquote>Source candidate from <code>News-Links/2026-11-18 AG-UI 에이전트-사용자 상호작용 프로토콜/README.md</code></blockquote>
+<h2>Source Content</h2>
+<h1>AG-UI — 에이전트와 사용자 앱을 잇는 오픈 프로토콜</h1>
+<p>에이전트를 서비스 화면에 붙일 때 필요한 „에이전트 ↔ 사용자 앱&quot; 통신을 표준화한 오픈 프로토콜. 에이전트가 <strong>타입이 붙은 이벤트 스트림</strong>을 내보내면, 어떤 프레임워크로 만들었든 아무 클라이언트(웹·모바일·터미널·Slack)나 그 이벤트를 렌더한다. 스펙 <strong>1.0</strong>이 동결됐고 TypeScript·Python·.NET SDK가 스펙에서 생성된다.</p>
+<h2>핵심 수치</h2>
+<table><thead><tr><th>항목</th><th>값</th><th>기준·단위</th><th>의미·판단</th></tr></thead><tbody>
+<tr><td>GitHub 스타</td><td><strong>20,001</strong></td><td>2026-11-18 조회 (GitHub API)</td><td>게시글 표기는 „약 1.9만&quot; — 조회 시점에 2만 돌파</td></tr>
+<tr><td>포크</td><td><strong>2,067</strong></td><td>동일 조회</td><td>스타 대비 포크 10% 수준</td></tr>
+<tr><td>오픈 이슈</td><td><strong>588</strong></td><td>동일 조회</td><td>도입 대비 유지보수 이슈 누적</td></tr>
+<tr><td>라이선스</td><td><strong>MIT</strong></td><td>GitHub API <code>license</code></td><td>상업 이용·포크 자유</td></tr>
+<tr><td>최초 공개</td><td><strong>2025-05-07</strong></td><td><code>created_at</code></td><td>약 1년 6개월에 2만 스타</td></tr>
+<tr><td>최근 커밋</td><td><strong>2026-11-17</strong></td><td><code>pushed_at</code></td><td>게시글 작성일과 같은 날까지 활발</td></tr>
+<tr><td>주 언어</td><td><strong>TypeScript</strong></td><td><code>language</code></td><td>SDK 3종은 TS·Python·.NET</td></tr>
+<tr><td>트렌딩 순위</td><td><strong>10위 / 1,445 stars today</strong></td><td>github.com/trending daily, 2026-11-18 조회</td><td>게시글의 „1위&quot; 표기는 작성일(11-17) 기준이라 재확인 불가</td></tr>
+</tbody></table>
+<h2>본문 (Main Post)</h2>
+<blockquote>AI 에이전트를 서비스에 붙일 사람이라면 반드시 알아야 하는 도구가 오늘 GitHub Trending 1위 찍음 👀</blockquote>
+<ul>
+<li>이름은 <strong>AG-UI</strong>. 에이전트와 사용자 앱 사이의 통신을 표준화하는 오픈 프로토콜.</li>
+<li>어떤 에이전트든 웹·모바일·Slack·터미널에 연결.</li>
+<li>스트리밍 채팅, 생성형 UI, 공유 상태 지원.</li>
+<li>프론트엔드 도구 호출.</li>
+<li>사람 승인·수정·거절 후 이어서 실행.</li>
+<li>추론 표시, 서브에이전트, 멀티모달까지 지원.</li>
+<li>핵심 구도: <strong>AG-UI = 에이전트 ↔ 사용자</strong>, <strong>MCP = 에이전트 ↔ 도구·데이터</strong>, <strong>A2A = 에이전트 ↔ 다른 에이전트</strong>.</li>
+<li>LangChain, CrewAI, Google ADK, Microsoft Agent Framework 등과 연결. TypeScript·Python·.NET SDK 제공. MIT 오픈소스, 현재 약 1.9만 스타.</li>
+</ul>
+<p>원문 링크: <a href="https://github.com/ag-ui-protocol/ag-ui">https://github.com/ag-ui-protocol/ag-ui</a></p>
+<h2>3층 구도 — AG-UI · MCP · A2A</h2>
+<p>공식 문서는 AG-UI를 „에이전트 프로토콜 생태계의 세 번째 축&quot;으로 규정한다. 셋은 경쟁이 아니라 층이 다르고, 한 에이전트가 셋을 동시에 쓴다.</p>
+<table><thead><tr><th>프로토콜</th><th>잇는 것</th><th>역할</th><th>판단</th></tr></thead><tbody>
+<tr><td><strong>AG-UI</strong></td><td>에이전트 ↔ 사용자</td><td>사용자 앱과 에이전트 사이 이벤트 스트림</td><td>화면·상호작용 층. MCP·A2A 에이전트를 „앞단에서 대신 받는(front for)&quot; 핸드셰이크 지원</td></tr>
+<tr><td><strong>MCP</strong></td><td>에이전트 ↔ 도구·컨텍스트</td><td>도구·데이터 연결</td><td>도구 층. 도구 자체가 에이전트화되는 추세</td></tr>
+<tr><td><strong>A2A</strong></td><td>에이전트 ↔ 에이전트</td><td>에이전트 간 협업</td><td>협업 층</td></tr>
+</tbody></table>
+<p>생성형 UI 스펙(A2UI, MCP Apps, Open-JSON-UI)과는 역할이 다르다. 그 셋은 „에이전트가 어떤 UI를 보여주고 싶은지&quot;를 서술하고, AG-UI는 그 페이로드를 포함한 모든 이벤트를 나르는 <strong>런타임 프로토콜</strong>이다.</p>
+<h2>동작 방식</h2>
+<ol>
+<li>앱이 <code>RunAgentInput</code> 하나를 보낸다 — 대화, 프론트엔드가 제공하는 도구, 공유 상태, 컨텍스트.</li>
+<li>에이전트는 <strong>8계열 · 31종</strong>의 타입 이벤트를 스트림으로 돌려준다.</li>
+<li>필수는 <strong>run 라이프사이클뿐</strong>이다. 최소 에이전트는 몇 개 이벤트만 내보내고 거기서 확장한다.</li>
+</ol>
+<table><thead><tr><th>이벤트 계열</th><th>이벤트</th><th>용도</th></tr></thead><tbody>
+<tr><td>Runs·steps</td><td><code>RUN<em>STARTED</code> <code>RUN</em>FINISHED</code> <code>RUN<em>ERROR</code> <code>STEP</em>STARTED</code> <code>STEP_FINISHED</code></td><td>실행 진행·오류</td></tr>
+<tr><td>Text messages</td><td><code>TEXT<em>MESSAGE</em>START</code> <code>TEXT<em>MESSAGE</em>CONTENT</code> <code>TEXT<em>MESSAGE</em>END</code> <code>TEXT<em>MESSAGE</em>CHUNK</code></td><td>토큰 단위 스트리밍</td></tr>
+<tr><td>Tool calls</td><td><code>TOOL<em>CALL</em>START</code> <code>TOOL<em>CALL</em>ARGS</code> <code>TOOL<em>CALL</em>END</code> <code>TOOL<em>CALL</em>RESULT</code> <code>TOOL<em>CALL</em>CHUNK</code></td><td>도구 호출·결과</td></tr>
+<tr><td>State</td><td><code>STATE<em>SNAPSHOT</code> <code>STATE</em>DELTA</code>(JSON Patch) <code>MESSAGES_SNAPSHOT</code></td><td>에이전트·앱 공유 상태 동기화</td></tr>
+<tr><td>Reasoning</td><td><code>REASONING<em>START</code> <code>REASONING</em>MESSAGE<em>*</code> <code>REASONING</em>ENCRYPTED<em>VALUE</code> <code>REASONING</em>END</code></td><td>추론 과정 노출·암호화 왕복</td></tr>
+<tr><td>Activity</td><td><code>ACTIVITY<em>SNAPSHOT</code> <code>ACTIVITY</em>DELTA</code></td><td>진행 중 작업 상태</td></tr>
+<tr><td>Subagents</td><td><code>SUBAGENT<em>STARTED</code> <code>SUBAGENT</em>FINISHED</code> <code>SUBAGENT_ERROR</code></td><td>서브에이전트 산출물 귀속</td></tr>
+<tr><td>Passthrough</td><td><code>RAW</code> <code>CUSTOM</code></td><td>원본·커스텀 이벤트</td></tr>
+</tbody></table>
+<p>전송 계층은 고정하지 않는다. 스펙은 <strong>HTTP+SSE</strong>와 <strong>HTTP+Protobuf(바이너리)</strong> 바인딩을 정의하고, WebSocket 등 다른 전송은 미들웨어로 붙인다. 이벤트 구조도 AG-UI 형식과 정확히 일치할 필요는 없고 „호환되면&quot; 된다 — 기존 프레임워크가 자기 이벤트를 최소 수정으로 변환한다.</p>
+<h2>프레임워크·SDK·클라이언트</h2>
+<table><thead><tr><th>구분</th><th>목록</th><th>비고</th></tr></thead><tbody>
+<tr><td>에이전트 프레임워크</td><td><strong>LangChain·LangGraph, CrewAI, Microsoft Agent Framework, Google ADK</strong>(Python 미들웨어·JS 런타임), Google Antigravity, AWS Strands Agents, Mastra, Pydantic AI, Agno, LlamaIndex, AG2, OpenAI Agents SDK, Claude Agent SDK·Claude Managed Agents, Langroid, Cloudflare Agents, Omnara</td><td>README 표기 „Google·Microsoft·Amazon·Oracle 채택, 대부분 프레임워크에 내장&quot;</td></tr>
+<tr><td>배포·인프라</td><td><strong>Amazon Bedrock AgentCore</strong></td><td>프로토콜 네이티브, 관리형 인증·세션 격리·오토스케일</td></tr>
+<tr><td>SDK (공식)</td><td>TypeScript <code>npm install @ag-ui/client</code> · Python <code>pip install ag-ui-protocol</code> · .NET <code>dotnet add package AGUI.Client</code></td><td>1.0 스펙에서 생성</td></tr>
+<tr><td>SDK (커뮤니티)</td><td>Kotlin, Go, Java, Dart, Rust, Ruby, C++, Swift</td><td>스펙 준수 수준은 개별 확인 필요</td></tr>
+<tr><td>클라이언트</td><td>CopilotKit(React·Angular·Vue·React Native), Slack·Microsoft Teams 채널 SDK, 터미널, OpenBot</td><td>게시글의 „웹·모바일·Slack·터미널&quot;과 일치</td></tr>
+</tbody></table>
+<h2>1.0 스펙과 시작점</h2>
+<ul>
+<li><strong>1.0 동결</strong>: JSON Schema 기반의 안정 스펙. TS·Python·.NET SDK가 스펙에서 생성된다.</li>
+<li><strong>양방향 호환</strong>: 0.x 에이전트와 1.0 클라이언트, 그 반대 조합 모두 동작.</li>
+<li>최소 구현은 „HTTP 엔드포인트 하나 + <code>RunAgentInput</code> 받고 이벤트 스트림 반환&quot;이다. README 예제는 Python 3.9+ 에서 <code>ag-ui-protocol</code>·FastAPI·uvicorn 만으로 30줄 서버·클라이언트를 보여준다.</li>
+<li>앱 스캐폴딩은 <code>npx create-ag-ui-app@latest</code> — CopilotKit(Next.js) 또는 터미널 클라이언트를 고른 프레임워크에 연결한다. 생성 템플릿은 OpenAI를 호출하므로 <code>OPENAI<em>API</em>KEY</code>가 필요하다(README 예제 서버는 키 불필요).</li>
+</ul>
+<h2>사람 개입(HITL) 설계 포인트</h2>
+<p>문서 기준으로 „사람이 승인·수정·거절 후 이어서 실행&quot;은 <strong>run이 <code>interrupt</code> 결과로 끝나고, 사용자 결정 후 다음 run이 이어받는</strong> 구조다.</p>
+<ul>
+<li>실행을 멈춘 채로 세션을 붙잡고 있지 않는다 → 승인 대기 시간이 인프라 비용이 되지 않는다.</li>
+<li>승인 대기 중 상태는 <code>STATE<em>SNAPSHOT</code>/<code>STATE</em>DELTA</code>로 앱과 동기화되고, 재개 시 같은 thread에서 run을 새로 시작한다.</li>
+<li>이 구조는 „오래 떠 있는 에이전트의 유휴 비용&quot; 문제와 직결된다. 같은 주제를 다룬 타 계정 게시글도 유휴 시간이 실제 작업의 20% 수준이라며 비용 최적화를 논한다(수치는 그 계정 주장, 원 출처 미확인).</li>
+</ul>
+<h2>댓글</h2>
+<ul>
+<li><code>kaigooddevv</code> — „이건 일단 저장해둬야겠네요 ㅎㅎ&quot; (본문 찬성, 추가 정보 없음)</li>
+<li>관련 스레드(같은 주제를 다룬 <strong>다른 계정</strong>의 독립 포스트, 이 글의 답글 아님): <code>saigon_bluetee</code>(2d, „MCP가 에이전트에게 도구를 줬다면 AG-UI는 에이전트를 사람 앞에 세워준다&quot;, 별 1만 7천 개 표기), <code>genielabs.io</code>(2d, 이벤트 기반 상태·인터럽트 설명), <code>terries.ai</code>(1d, 유휴 에이전트 비용), <code>richardlee0202</code>(6d, 에이전틱 워크플로 일반론)</li>
+</ul>
+<h2>미검증·확인 필요</h2>
+<table><thead><tr><th>항목</th><th>상태</th><th>근거</th></tr></thead><tbody>
+<tr><td>„오늘 GitHub Trending <strong>1위</strong>&quot;</td><td><strong>미확인</strong></td><td>작성일(2026-11-17) 순위는 지나가서 재확인 불가. 2026-11-18 daily 트렌딩에서 ag-ui는 10위·1,445 stars today</td></tr>
+<tr><td>„약 <strong>1.9만</strong> 스타&quot;</td><td>게시글 작성 시점 값으로 추정</td><td>조회 시점(11-18) GitHub API는 <strong>20,001</strong>. 작성일과 조회일 사이 증가분인지 반올림인지는 구분 불가</td></tr>
+<tr><td>„Google·Microsoft·Amazon·Oracle <strong>채택</strong>&quot;</td><td>제조사(README) 표기</td><td>개별 기업의 프로덕션 사용 실적은 확인하지 않음. 통합 목록·데모 존재까지만 확인</td></tr>
+<tr><td>유휴 시간 20%·비용 40% 절감</td><td><strong>타 계정 주장</strong></td><td><code>terries.ai</code> 게시글. 원 출처(Google Cloud 블로그) 대조 안 함</td></tr>
+</tbody></table>
+<h2>참고 자료</h2>
+<table><thead><tr><th>자료</th><th>URL</th></tr></thead><tbody>
+<tr><td>원문 포스트 (hyunsoo.it)</td><td><a href="https://www.threads.com/@hyunsoo.it/post/Df01KPODyam">https://www.threads.com/@hyunsoo.it/post/Df01KPODyam</a></td></tr>
+<tr><td>GitHub 저장소</td><td><a href="https://github.com/ag-ui-protocol/ag-ui">https://github.com/ag-ui-protocol/ag-ui</a></td></tr>
+<tr><td>공식 문서</td><td><a href="https://docs.ag-ui.com">https://docs.ag-ui.com</a></td></tr>
+<tr><td>문서 인덱스 (llms.txt)</td><td><a href="https://docs.ag-ui.com/llms.txt">https://docs.ag-ui.com/llms.txt</a></td></tr>
+<tr><td>1.0 스펙</td><td><a href="https://docs.ag-ui.com/spec/1.0">https://docs.ag-ui.com/spec/1.0</a></td></tr>
+<tr><td>MCP·A2A·AG-UI 관계</td><td><a href="https://docs.ag-ui.com/agentic-protocols">https://docs.ag-ui.com/agentic-protocols</a></td></tr>
+<tr><td>통합 목록</td><td><a href="https://docs.ag-ui.com/integrations">https://docs.ag-ui.com/integrations</a></td></tr>
+<tr><td>데모(Dojo)</td><td><a href="https://dojo.ag-ui.com">https://dojo.ag-ui.com</a></td></tr>
+<tr><td>Discord</td><td><a href="https://discord.gg/Jd3FzfdJa8">https://discord.gg/Jd3FzfdJa8</a></td></tr>
+<tr><td>GitHub 트렌딩 (조회용)</td><td><a href="https://github.com/trending?since=daily">https://github.com/trending?since=daily</a></td></tr>
+</tbody></table><section class="sourcebox"><h2>Source Trace</h2><ul><li><code>News-Links/2026-11-18 AG-UI 에이전트-사용자 상호작용 프로토콜/README.md</code></li></ul></section><section class="related"><h2>같은 카테고리 다른 글 — AI 에이전트·코딩</h2><ul><li><span class="card-date">2026-11-22</span> <a href="아버지-또는-어머니께-살아계실-때-꼭-한번-물어보자-jbkim7606.html?v=20261124-092525-KST">아버지 또는 어머니께 살아계실 때 꼭 한번 물어보자 — @jbkim7606</a></li><li><span class="card-date">2026-11-22</span> <a href="libraries-dev-ui-이펙트-라이브러리-에이전트용-프롬프트.html?v=20261124-092525-KST">Libraries.dev — UI 이펙트 라이브러리 + 에이전트용 프롬프트</a></li><li><span class="card-date">2026-11-15</span> <a href="perplexity-decider-v1-3-판단-정보추출-특화-오픈소스-모델.html?v=20261124-092525-KST">Perplexity Decider v1.3 — 판단·정보추출 특화 오픈소스 모델</a></li><li><span class="card-date">2026-11-13</span> <a href="vercel-shadcn-ui-sdk-ai-에이전트가-화면을-직접-만드는-시대.html?v=20261124-092525-KST">Vercel × shadcn UI SDK — AI 에이전트가 화면을 직접 만드는 시대</a></li><li><span class="card-date">2026-11-13</span> <a href="jev로-대체한-seo-geo-워크플로-7가지-iiirrrrrraaaa.html?v=20261124-092525-KST">Jev로 대체한 SEO·GEO 워크플로 7가지 (@iiirrrrrraaaa)</a></li></ul></section><div class="footer">Generated from Obsidian Wikis/ai-agent. Raw markdown files are not included in this repository; their reviewed body content is rendered into these public wiki pages.</div></main></body></html>
